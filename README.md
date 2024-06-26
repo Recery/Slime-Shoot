@@ -5,4 +5,6 @@ Just don't use the music of the game since most of it isn't mine.
 
 And credit is not needed, but DON'T CLAIM things from here as yours (Except you're one of the music artists that composed one of the themes of the game, of course)
 
+Download the game here in itch.io: https://senkosan12543.itch.io/slime-shoot
+
 ![Portada](https://github.com/SenkoChansey12543/Slime-Shoot/assets/142628253/b3a354a6-fa82-489e-a244-04d8cfa9b88f)
