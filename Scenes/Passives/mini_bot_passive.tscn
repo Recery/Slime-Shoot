@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6sp51iby0xnt"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Mini_Bot_Passive.gd" id="1_0u4of"]
+[ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="2_fiohj"]
+
+[node name="Mini_Bot_Passive" type="Node2D"]
+script = ExtResource("1_0u4of")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_fiohj")

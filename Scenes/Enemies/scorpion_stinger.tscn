@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmgkfen53526i"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Scorpion_Stinger.gd" id="1_3yp55"]
+[ext_resource type="Texture2D" uid="uid://cdu3xw1rlpp73" path="res://Sprites/Enemies/ScorpionStinger.png" id="2_v5v2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cuvyt"]
+size = Vector2(6, 2)
+
+[node name="Scorpion_Stinger" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_3yp55")
+speed = 100
+damage = 10.0
+despawn_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v5v2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cuvyt")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

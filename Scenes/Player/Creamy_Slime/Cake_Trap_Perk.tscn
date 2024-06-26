@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://74cg2p1pauvy"]
+
+[ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="1_cmq36"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="2_jgru0"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_rde5a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
+font = ExtResource("3_rde5a")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Cake_Trap_Perk" type="Sprite2D"]
+texture = ExtResource("1_cmq36")
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_jgru0")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "60"
+label_settings = SubResource("LabelSettings_s5yo5")
+horizontal_alignment = 1
+vertical_alignment = 1

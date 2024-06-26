@@ -1,0 +1,275 @@
+[gd_scene load_steps=17 format=3 uid="uid://smhai5cdfmej"]
+
+[ext_resource type="Texture2D" uid="uid://cktyjq0axsf7s" path="res://Sprites/Enemies/Cannon/Cannon_Wheels.png" id="1_gdpfr"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Cannon.gd" id="2_415j6"]
+[ext_resource type="Texture2D" uid="uid://bvskrpagfg7kr" path="res://Sprites/Enemies/Cannon/Cannon_Shadow.png" id="2_d8f0a"]
+[ext_resource type="Texture2D" uid="uid://cqoanbqn3rq1f" path="res://Sprites/Enemies/Cannon/Cannon_Centerl.png" id="3_4s3bn"]
+[ext_resource type="Texture2D" uid="uid://o0gosrjd202o" path="res://Sprites/Enemies/Cannon/Cannon_Cannon.png" id="4_snckg"]
+[ext_resource type="AudioStream" uid="uid://mwocd27ftsdr" path="res://Sounds/CannonShot.mp3" id="6_88t57"]
+[ext_resource type="Texture2D" uid="uid://bg2gu47x6esk7" path="res://Sprites/Enemies/Cannon/Fire.png" id="6_n0ldd"]
+
+[sub_resource type="Animation" id="Animation_038hv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fire_animation:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_htmbl"]
+resource_name = "fire"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Fire:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fire_animation:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_o3g78"]
+_data = {
+"RESET": SubResource("Animation_038hv"),
+"fire": SubResource("Animation_htmbl")
+}
+
+[sub_resource type="Animation" id="Animation_kb2gs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel1_v:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wheel2_v:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_6mv18"]
+resource_name = "stop"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel1_v:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wheel2_v:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_g5fjl"]
+resource_name = "wheel_move"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Wheel1_v:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Wheel2_v:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x65wp"]
+_data = {
+"RESET": SubResource("Animation_kb2gs"),
+"stop": SubResource("Animation_6mv18"),
+"wheel_move": SubResource("Animation_g5fjl")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v4sff"]
+radius = 11.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycvuj"]
+size = Vector2(20, 30)
+
+[node name="Cannon" type="CharacterBody2D" groups=["Big_Enemies", "Enemies"]]
+scale = Vector2(0.8, 0.8)
+collision_layer = 4
+collision_mask = 4
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("2_415j6")
+score_to_add = 20
+original_damage = 11.0
+original_speed = 20.0
+original_max_life = 25.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-3.75, -5.25)
+scale = Vector2(0.666667, 0.969697)
+texture = ExtResource("2_d8f0a")
+
+[node name="Wheel1_h" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(5.25, 1.75)
+texture = ExtResource("1_gdpfr")
+hframes = 3
+
+[node name="Cannon_Center" type="Sprite2D" parent="."]
+position = Vector2(0.249996, -0.25)
+texture = ExtResource("3_4s3bn")
+hframes = 2
+
+[node name="Wheel1_v" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-12.75, 1)
+texture = ExtResource("1_gdpfr")
+hframes = 3
+frame = 1
+
+[node name="Wheel2_v" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(13.25, 1)
+texture = ExtResource("1_gdpfr")
+hframes = 3
+frame = 1
+
+[node name="Cannon_Cannon" type="Sprite2D" parent="."]
+position = Vector2(2.25, 0.75)
+texture = ExtResource("4_snckg")
+hframes = 2
+
+[node name="Shoot_Pos" type="Node2D" parent="Cannon_Cannon"]
+position = Vector2(29, -0.75)
+
+[node name="Shoot_Des" type="Node2D" parent="Cannon_Cannon"]
+position = Vector2(49, -0.75)
+
+[node name="Fire" type="Sprite2D" parent="Cannon_Cannon"]
+visible = false
+modulate = Color(1, 1, 1, 0.862745)
+position = Vector2(34, -0.125001)
+scale = Vector2(1, 1.05)
+texture = ExtResource("6_n0ldd")
+hframes = 2
+frame = 1
+
+[node name="Fire_animation" type="AnimationPlayer" parent="Cannon_Cannon"]
+libraries = {
+"": SubResource("AnimationLibrary_o3g78")
+}
+
+[node name="Wheel2_h" type="Sprite2D" parent="."]
+position = Vector2(-1.75, 4.75)
+texture = ExtResource("1_gdpfr")
+hframes = 3
+
+[node name="AnimationVWheels" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_x65wp")
+}
+autoplay = "wheel_move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+rotation = 4.71239
+shape = SubResource("CircleShape2D_v4sff")
+
+[node name="Shoot_Cooldown" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="Shoot_Sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(31.25, 0)
+stream = ExtResource("6_88t57")
+volume_db = 13.0
+pitch_scale = 1.8
+bus = &"Sounds"
+
+[node name="Shoot_Dir" type="ShapeCast2D" parent="."]
+position = Vector2(31.25, 0)
+shape = SubResource("RectangleShape2D_ycvuj")
+target_position = Vector2(150, 0)
+max_results = 1
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="animation_finished" from="Cannon_Cannon/Fire_animation" to="." method="_on_fire_animation_animation_finished"]
+[connection signal="timeout" from="Shoot_Cooldown" to="." method="_on_shoot_cooldown_timeout"]

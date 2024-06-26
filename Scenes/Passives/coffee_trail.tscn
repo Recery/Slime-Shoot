@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://stdaetu8tt20"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Coffee_Trail.gd" id="1_1xyw2"]
+[ext_resource type="Texture2D" uid="uid://dclj63ih3fagx" path="res://Sprites/Passives/CoffeeTrail.png" id="2_uow3u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vu4e"]
+size = Vector2(12, 12)
+
+[node name="Coffee_Trail" type="Area2D"]
+z_index = -1
+script = ExtResource("1_1xyw2")
+despawn_time = 2.2
+has_movement = false
+die_wait_time = 1.5
+generated_by = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uow3u")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_3vu4e")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcuwqwccrk6xi"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/False_Evil_Ball.gd" id="1_3cm7q"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_qrksi"]
+[ext_resource type="Texture2D" uid="uid://bcn06ifm80see" path="res://Sprites/Enemies/EvilBall.png" id="3_ldbnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gkhxa"]
+radius = 7.0
+
+[node name="False_Evil_Ball" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+script = ExtResource("1_3cm7q")
+original_speed = 36.0
+original_max_life = 1.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.5, 3)
+scale = Vector2(1, 1.2)
+texture = ExtResource("2_qrksi")
+hframes = 2
+
+[node name="Shading" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_ldbnw")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Ball" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_ldbnw")
+hframes = 6
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gkhxa")
+
+[node name="Fade" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Fade" to="." method="_on_fade_timeout"]

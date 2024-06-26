@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://citu06p4devrv"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Paint_Bomb_Projectile.gd" id="1_nuqpp"]
+[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="2_ohpwo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tch8c"]
+radius = 4.03113
+
+[node name="Paint_Bomb_Projectile" type="Area2D"]
+collision_layer = 14
+collision_mask = 14
+script = ExtResource("1_nuqpp")
+speed = 200
+original_damage = 2.0
+despawn_time = 5.0
+die_wait_time = 0.1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ohpwo")
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("CircleShape2D_tch8c")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://yej0rbocn4eb"]
+
+[ext_resource type="Texture2D" uid="uid://bakdrqf0833c0" path="res://Sprites/Abilities/LethalVacuumCleanerBody.png" id="1_nf16h"]
+[ext_resource type="Script" path="res://Scripts/Abilities/Lethal_Vacuum_Cleaner.gd" id="2_r6jat"]
+[ext_resource type="Texture2D" uid="uid://b6732mg6tq6ne" path="res://Sprites/Abilities/LethalVacuumCleanerHead.png" id="3_35n8u"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="4_gd8p0"]
+[ext_resource type="Texture2D" uid="uid://bbwnof1bg8cah" path="res://Sprites/Abilities/LethalVacuumCleanerAspire.png" id="4_ov3l5"]
+[ext_resource type="PackedScene" uid="uid://d21s3kgqk1hjy" path="res://Scenes/Useful/mini_progress_bar.tscn" id="6_4145l"]
+[ext_resource type="AudioStream" uid="uid://byvygiroeoqwt" path="res://Sounds/VacuumCleaner.mp3" id="7_fslyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnmjn"]
+atlas = ExtResource("4_ov3l5")
+region = Rect2(0, 0, 5, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8p0y"]
+atlas = ExtResource("4_ov3l5")
+region = Rect2(5, 0, 5, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdeci"]
+atlas = ExtResource("4_ov3l5")
+region = Rect2(10, 0, 5, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s0m1"]
+atlas = ExtResource("4_ov3l5")
+region = Rect2(15, 0, 5, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cfrpc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnmjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8p0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdeci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s0m1")
+}],
+"loop": true,
+"name": &"Aspire",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o61v"]
+size = Vector2(18, 14)
+
+[node name="Lethal_Vacuum_Cleaner" type="Sprite2D"]
+texture = ExtResource("1_nf16h")
+script = ExtResource("2_r6jat")
+
+[node name="Head" type="Node2D" parent="."]
+position = Vector2(0, -3)
+
+[node name="Head_Sprite" type="Sprite2D" parent="Head"]
+position = Vector2(7, 0)
+texture = ExtResource("3_35n8u")
+
+[node name="Aspire" type="AnimatedSprite2D" parent="Head"]
+visible = false
+position = Vector2(17, 0)
+sprite_frames = SubResource("SpriteFrames_cfrpc")
+animation = &"Aspire"
+autoplay = "Aspire"
+frame_progress = 0.620715
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(2.58594, 5)
+scale = Vector2(1.12776, 0.925)
+texture = ExtResource("4_gd8p0")
+hframes = 2
+
+[node name="Enemy_Detecter" type="Area2D" parent="."]
+collision_layer = 14
+collision_mask = 14
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Detecter"]
+shape = SubResource("RectangleShape2D_8o61v")
+
+[node name="Scan_Enemies" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="Mini_Progress_Bar" parent="." instance=ExtResource("6_4145l")]
+position = Vector2(-7.5, -11)
+max_value = 5.0
+current_value = 5.0
+
+[node name="Aspire_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_fslyr")
+volume_db = 15.0
+pitch_scale = 1.4
+bus = &"Sounds"
+
+[connection signal="body_entered" from="Enemy_Detecter" to="." method="_on_enemy_detecter_body_entered"]
+[connection signal="timeout" from="Scan_Enemies" to="." method="_on_scan_enemies_timeout"]

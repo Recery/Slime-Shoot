@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb35dol2pbpn"]
+
+[ext_resource type="Texture2D" uid="uid://h4wni5b4lyva" path="res://Sprites/Level_Elements/FireballTrap.png" id="1_nglpo"]
+[ext_resource type="Script" path="res://Scripts/Level_Elements/Fire_Trap.gd" id="2_obvnu"]
+
+[node name="Fire_Trap" type="Sprite2D"]
+texture = ExtResource("1_nglpo")
+script = ExtResource("2_obvnu")
+
+[node name="Shoot_Pos" type="Node2D" parent="."]
+position = Vector2(0, -4)
+
+[node name="Shoot_Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Shoot_Timer" to="." method="shoot"]

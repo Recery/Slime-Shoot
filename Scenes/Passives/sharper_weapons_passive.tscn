@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://camfigffwx7ea"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Sharper_Weapons_Passive.gd" id="1_e4ag8"]
+[ext_resource type="Texture2D" uid="uid://cvdtt6fqwvwsu" path="res://Sprites/Passives/SharperWeaponsPassive.png" id="2_tkwm6"]
+
+[node name="Sharper_Weapons_Passive" type="Node2D"]
+script = ExtResource("1_e4ag8")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_tkwm6")

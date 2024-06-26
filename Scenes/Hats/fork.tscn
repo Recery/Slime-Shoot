@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://jmqlowj1gi0e"]
+
+[ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="1_etmyd"]
+[ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="2_f4fh7"]
+
+[node name="Fork" instance=ExtResource("1_etmyd")]
+position = Vector2(0, -6)
+texture = ExtResource("2_f4fh7")

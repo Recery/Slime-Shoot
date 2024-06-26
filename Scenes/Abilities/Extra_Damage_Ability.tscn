@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7g880o7ku8ot"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/Extra_Damage_Ability.gd" id="1_j7215"]
+[ext_resource type="Texture2D" uid="uid://bawd6rldpsrh3" path="res://Sprites/Abilities/ExtraDamageAbility.png" id="1_ojc2e"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="2_x2gxk"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="3_3vphn"]
+[ext_resource type="AudioStream" uid="uid://c15diqbkxgdff" path="res://Sounds/Extra_Damage.mp3" id="5_fbbjc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjira"]
+font = ExtResource("2_x2gxk")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Extra_Damage_Ability" type="Node2D"]
+script = ExtResource("1_j7215")
+cooldown = 35
+starter_cooldown = 12
+energy_use = 85
+energy_recover_time = 2.0
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("1_ojc2e")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_cjira")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_3vphn")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -3.0
+offset_bottom = 6.0
+text = "85"
+label_settings = SubResource("LabelSettings_cjira")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fbbjc")
+volume_db = 9.0
+pitch_scale = 1.1
+bus = &"Sounds"
+
+[node name="Duration_Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="Particle_Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Duration_Timer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="Particle_Timer" to="." method="_on_particle_timer_timeout"]

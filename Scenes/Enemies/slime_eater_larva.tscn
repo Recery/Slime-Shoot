@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://djvly0tpgg8xn"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Slime_Eater_Larva.gd" id="1_x7tb8"]
+[ext_resource type="Texture2D" uid="uid://bo0gktl1nds1d" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterLarva.png" id="3_qy7fp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkf5n"]
+atlas = ExtResource("3_qy7fp")
+region = Rect2(0, 0, 6, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qow2b"]
+atlas = ExtResource("3_qy7fp")
+region = Rect2(6, 0, 6, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s541d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkf5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qow2b")
+}],
+"loop": true,
+"name": &"move",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_laxbm"]
+radius = 3.0
+height = 12.0
+
+[node name="Slime_Eater_Larva" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_x7tb8")
+score_to_add = 1
+original_damage = 1.0
+original_speed = 15.0
+original_max_life = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_s541d")
+animation = &"move"
+autoplay = "move"
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="AnimatedSprite2D"]
+remote_path = NodePath("../../CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_laxbm")
+
+[connection signal="die" from="." to="." method="_on_die"]

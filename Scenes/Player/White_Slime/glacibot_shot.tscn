@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://blsu1ldf1vb47"]
+
+[ext_resource type="Script" path="res://Scripts/Player/White_Slime/Glacibot_Shot.gd" id="1_22tc0"]
+[ext_resource type="Texture2D" uid="uid://c8r8lb6jtt4fy" path="res://Sprites/Player/WhiteSlime/GlacibotShot.png" id="2_3dnbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf6k8"]
+size = Vector2(6, 2)
+
+[node name="Glacibot_Shot" type="Area2D"]
+script = ExtResource("1_22tc0")
+speed = 180
+original_damage = 2.0
+despawn_time = 5.0
+generated_by = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3dnbn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jf6k8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

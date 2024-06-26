@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://c33q7ot2vsf0w"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/slime_eater_moth.gd" id="1_2e8t8"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_6suyy"]
+[ext_resource type="Texture2D" uid="uid://cpvymkcx3yxq7" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterMoth.png" id="3_i6gbq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2ge2"]
+atlas = ExtResource("3_i6gbq")
+region = Rect2(0, 0, 15, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx1hj"]
+atlas = ExtResource("3_i6gbq")
+region = Rect2(15, 0, 15, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qew0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2ge2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx1hj")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upni0"]
+radius = 7.0
+height = 18.0
+
+[node name="Slime_Eater_Moth" type="CharacterBody2D" groups=["Flying_Enemies"]]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_2e8t8")
+score_to_add = 2
+original_damage = 7.0
+original_speed = 50.0
+original_max_life = 5.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(3, 14)
+scale = Vector2(0.75, 0.9)
+texture = ExtResource("2_6suyy")
+hframes = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qew0m")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_upni0")
+
+[connection signal="die" from="." to="." method="_on_die"]

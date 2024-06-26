@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://4tc206pmc2x1"]
+
+[ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="1_51lkn"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="2_135p1"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_sw3yq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
+font = ExtResource("3_sw3yq")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Goldfish_Bless_Perk" type="Sprite2D"]
+texture = ExtResource("1_51lkn")
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+position = Vector2(3, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_135p1")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -18.0
+offset_top = -4.0
+offset_right = -4.0
+offset_bottom = 6.0
+text = "1"
+label_settings = SubResource("LabelSettings_s5yo5")
+horizontal_alignment = 1
+vertical_alignment = 1

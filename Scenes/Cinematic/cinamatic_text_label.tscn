@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf6uwlyc7wshp"]
+
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="1_qkgli"]
+
+[node name="Cinamatic_Text_Label" type="Label"]
+offset_left = -135.0
+offset_top = 51.0
+offset_right = 135.0
+offset_bottom = 78.0
+label_settings = ExtResource("1_qkgli")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 3

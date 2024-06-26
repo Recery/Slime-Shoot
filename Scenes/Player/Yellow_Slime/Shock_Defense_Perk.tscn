@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5nrfbco2byhw"]
+
+[ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="1_dgx8f"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="2_apykv"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_8jyuf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
+font = ExtResource("3_8jyuf")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Shock_Defense_Perk" type="Sprite2D"]
+texture = ExtResource("1_dgx8f")
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+position = Vector2(5, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_apykv")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "1.2"
+label_settings = SubResource("LabelSettings_s5yo5")
+horizontal_alignment = 1
+vertical_alignment = 1

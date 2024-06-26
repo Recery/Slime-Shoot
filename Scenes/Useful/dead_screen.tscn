@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://dc5ji0p7dvc45"]
+
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_dxf0n"]
+[ext_resource type="Script" path="res://Scripts/Useful/dead_screen.gd" id="1_kntju"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="3_7mfy8"]
+[ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="4_cdfqj"]
+[ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="5_7u3ra"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_glgtc"]
+font = ExtResource("1_dxf0n")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yx123"]
+font = ExtResource("1_dxf0n")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_mufnx"]
+font = ExtResource("1_dxf0n")
+font_color = Color(1, 0.231373, 0.172549, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7lsdg"]
+font = ExtResource("1_dxf0n")
+font_color = Color(0.886275, 0, 0.886275, 1)
+outline_size = 3
+outline_color = Color(0.254902, 0, 0.917647, 1)
+
+[node name="Dead_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kntju")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -149.0
+offset_top = -88.0
+offset_right = 150.0
+offset_bottom = 85.0
+color = Color(0.105882, 0.105882, 0.105882, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Dead_Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = -54.0
+offset_top = -62.0
+offset_right = 54.0
+offset_bottom = -39.0
+text = "You died!"
+label_settings = SubResource("LabelSettings_glgtc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -12.0
+offset_right = 36.0
+offset_bottom = 13.0
+
+[node name="Score_Text" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Your score:"
+label_settings = SubResource("LabelSettings_yx123")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Total_Score" type="Label" parent="Score"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "10"
+label_settings = SubResource("LabelSettings_mufnx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = -52.5
+offset_top = 33.53
+offset_right = 52.5
+offset_bottom = 61.53
+texture_normal = ExtResource("3_7mfy8")
+texture_pressed = ExtResource("4_cdfqj")
+texture_hover = ExtResource("5_7u3ra")
+
+[node name="Text" type="Label" parent="MenuButton"]
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_7lsdg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]

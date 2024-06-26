@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1r5mv3opfofm"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Critical_Damage_Passive.gd" id="1_ldnnb"]
+[ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="2_oqkk1"]
+
+[node name="Critical_Damage_Passive" type="Node2D"]
+script = ExtResource("1_ldnnb")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_oqkk1")

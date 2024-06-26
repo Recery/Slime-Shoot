@@ -1,0 +1,135 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfef272qpmr5e"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/SandstoneGolem/Sandstone_Golem.gd" id="1_ec3hk"]
+[ext_resource type="Texture2D" uid="uid://bvskrpagfg7kr" path="res://Sprites/Enemies/Cannon/Cannon_Shadow.png" id="2_0sjpr"]
+[ext_resource type="Texture2D" uid="uid://dslidq1kjojo2" path="res://Sprites/Enemies/SandstoneGolem/SandstoneGolem.png" id="3_853uk"]
+
+[sub_resource type="Animation" id="Animation_5gtyc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rb7h0"]
+resource_name = "crush"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
+}
+
+[sub_resource type="Animation" id="Animation_5i6nq"]
+resource_name = "walk"
+length = 1.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 1, 0, 3, 4, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_501ag"]
+_data = {
+"RESET": SubResource("Animation_5gtyc"),
+"crush": SubResource("Animation_rb7h0"),
+"walk": SubResource("Animation_5i6nq")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7441m"]
+radius = 15.9
+height = 38.0
+
+[node name="Sandstone_Golem" type="CharacterBody2D" groups=["Big_Enemies"]]
+collision_layer = 4
+collision_mask = 4
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_ec3hk")
+score_to_add = 30
+original_damage = 20.0
+original_speed = 20.0
+original_max_life = 60.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(-9, -1.5)
+scale = Vector2(1.0303, 1.04545)
+texture = ExtResource("2_0sjpr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_853uk")
+hframes = 5
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_501ag")
+}
+autoplay = "walk"
+speed_scale = 1.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_7441m")
+
+[node name="Attack_Cooldown" type="Timer" parent="."]
+wait_time = 7.5
+one_shot = true
+autostart = true
+
+[node name="Spawn_Pos" type="Node2D" parent="."]
+position = Vector2(0, 14)
+
+[node name="Player_Detecter" type="RayCast2D" parent="Spawn_Pos"]
+target_position = Vector2(0, 140)
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Attack_Cooldown" to="." method="_on_attack_cooldown_timeout"]

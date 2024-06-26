@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://ynrorw7w1xcy"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Passives_Module.gd" id="1_xdh2a"]
+
+[node name="Passives_Module" type="Node2D"]
+z_index = 1
+script = ExtResource("1_xdh2a")
+
+[node name="Pos_1" type="Node2D" parent="."]
+position = Vector2(-120, 2)
+
+[node name="Pos_2" type="Node2D" parent="."]
+position = Vector2(-120, 23)
+
+[node name="Pos_3" type="Node2D" parent="."]
+position = Vector2(-120, 44)

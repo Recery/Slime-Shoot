@@ -1,0 +1,1582 @@
+[gd_scene load_steps=42 format=3 uid="uid://dp0eoiclataar"]
+
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_ksbbk"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_ufowc"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_ywpcj"]
+[ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="6_lphj4"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="7_iy4b2"]
+[ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="8_vcpna"]
+[ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="9_cen6v"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection_Passives.gd" id="10_4yeco"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="10_gysxj"]
+[ext_resource type="PackedScene" uid="uid://cg6u0ffwolmut" path="res://Scenes/Passives/life_regen_passive.tscn" id="11_8ilpw"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_q4wu3"]
+[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_k78go"]
+[ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="15_q4wss"]
+[ext_resource type="PackedScene" uid="uid://btekfbe0jpc7x" path="res://Scenes/Passives/energy_loot_passive.tscn" id="16_fvnnu"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="16_svsdt"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Passives_Sprite.gd" id="17_lkvr6"]
+[ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="17_xdo0y"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="18_cj420"]
+[ext_resource type="PackedScene" uid="uid://dsvtj72ccpu5e" path="res://Scenes/Passives/resistance_passive.tscn" id="18_gotk5"]
+[ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="19_nighk"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="19_t5bww"]
+[ext_resource type="PackedScene" uid="uid://crj0pwayi1t0i" path="res://Scenes/Passives/extra_speed_passive.tscn" id="20_71gix"]
+[ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="21_ctbsa"]
+[ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="22_e1s0c"]
+[ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="23_k05s4"]
+[ext_resource type="PackedScene" uid="uid://b1r5mv3opfofm" path="res://Scenes/Passives/critical_damage_passive.tscn" id="24_j36c0"]
+[ext_resource type="Texture2D" uid="uid://cy6imfwi0wuqn" path="res://Sprites/Passives/ExtraEnergyPassive.png" id="25_6fsua"]
+[ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="26_jkijh"]
+[ext_resource type="Texture2D" uid="uid://cvdtt6fqwvwsu" path="res://Sprites/Passives/SharperWeaponsPassive.png" id="27_fwe5e"]
+[ext_resource type="PackedScene" uid="uid://camfigffwx7ea" path="res://Scenes/Passives/sharper_weapons_passive.tscn" id="28_mfbs2"]
+[ext_resource type="Texture2D" uid="uid://cy615oucucj6k" path="res://Sprites/Passives/MeteorPassive.png" id="29_i4xvq"]
+[ext_resource type="PackedScene" uid="uid://bdjxtrv6jpkxd" path="res://Scenes/Passives/meteor_passive.tscn" id="30_iv02c"]
+[ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="31_htjx6"]
+[ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="32_hh6om"]
+[ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="33_uqbx4"]
+[ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="34_0jyv0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_non8x"]
+font = ExtResource("10_gysxj")
+font_color = Color(1, 0.313726, 0.247059, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1phy"]
+font = ExtResource("10_gysxj")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jf68m"]
+font = ExtResource("10_gysxj")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Equipment_Passives" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -33.0
+offset_right = -108.0
+offset_bottom = -5.0
+
+[node name="Row1" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Energy_Loot" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Energy_Loot"]
+position = Vector2(14, 13)
+texture = ExtResource("15_q4wss")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Energy_Loot"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("16_fvnnu")
+
+[node name="1" type="Label" parent="Rows/Row1/Energy_Loot/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Energy_Loot"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("16_fvnnu")
+
+[node name="2" type="Label" parent="Rows/Row1/Energy_Loot/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Energy_Loot"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("16_fvnnu")
+
+[node name="3" type="Label" parent="Rows/Row1/Energy_Loot/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Energy_Loot"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("15_q4wss")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Energy_Loot/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The energy loot passive will make you recover energy when you kill an enemy. The energy recovered is based on the score given by the enemy."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Life_Regen" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Life_Regen"]
+position = Vector2(14, 13)
+texture = ExtResource("6_lphj4")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("11_8ilpw")
+
+[node name="1" type="Label" parent="Rows/Row1/Life_Regen/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("11_8ilpw")
+
+[node name="2" type="Label" parent="Rows/Row1/Life_Regen/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("11_8ilpw")
+
+[node name="3" type="Label" parent="Rows/Row1/Life_Regen/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Life_Regen"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("6_lphj4")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Life_Regen/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The life regen passive heals you 3HP every 6 seconds."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Resistance" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Resistance"]
+position = Vector2(14, 13)
+texture = ExtResource("17_xdo0y")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Resistance"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("18_gotk5")
+
+[node name="1" type="Label" parent="Rows/Row1/Resistance/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Resistance"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("18_gotk5")
+
+[node name="2" type="Label" parent="Rows/Row1/Resistance/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Resistance"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("18_gotk5")
+
+[node name="3" type="Label" parent="Rows/Row1/Resistance/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Resistance"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 1.0
+offset_right = -30.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("17_xdo0y")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Resistance/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the resistance passive you will receive less damage from enemy attacks."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Extra_Speed" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Speed"]
+position = Vector2(14, 13)
+texture = ExtResource("19_nighk")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Extra_Speed"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("20_71gix")
+
+[node name="1" type="Label" parent="Rows/Row1/Extra_Speed/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Extra_Speed"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("20_71gix")
+
+[node name="2" type="Label" parent="Rows/Row1/Extra_Speed/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Extra_Speed"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("20_71gix")
+
+[node name="3" type="Label" parent="Rows/Row1/Extra_Speed/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Extra_Speed"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 1.0
+offset_right = -65.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("19_nighk")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Extra_Speed/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The extra speed passive gives you a small speed buff."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Mini_Bot" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Mini_Bot"]
+position = Vector2(14, 13)
+texture = ExtResource("21_ctbsa")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Mini_Bot"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("22_e1s0c")
+
+[node name="1" type="Label" parent="Rows/Row1/Mini_Bot/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Mini_Bot"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("22_e1s0c")
+
+[node name="2" type="Label" parent="Rows/Row1/Mini_Bot/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Mini_Bot"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("22_e1s0c")
+
+[node name="3" type="Label" parent="Rows/Row1/Mini_Bot/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Mini_Bot"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 1.0
+offset_right = -100.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("21_ctbsa")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Mini_Bot/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The mini bot passive summons 2 mini bots that will help you fighting enemies."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Critical_Damage" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Critical_Damage"]
+position = Vector2(14, 13)
+texture = ExtResource("23_k05s4")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Critical_Damage"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("24_j36c0")
+
+[node name="1" type="Label" parent="Rows/Row1/Critical_Damage/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Critical_Damage"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("24_j36c0")
+
+[node name="2" type="Label" parent="Rows/Row1/Critical_Damage/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Critical_Damage"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("24_j36c0")
+
+[node name="3" type="Label" parent="Rows/Row1/Critical_Damage/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Critical_Damage"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = 1.0
+offset_right = -135.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("23_k05s4")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Critical_Damage/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The critical damage passive gives you a 10% chance to all your attacks to deal x2 damage."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Extra_Energy" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Energy"]
+position = Vector2(14, 13)
+texture = ExtResource("25_6fsua")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Extra_Energy"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("26_jkijh")
+
+[node name="1" type="Label" parent="Rows/Row1/Extra_Energy/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Extra_Energy"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("26_jkijh")
+
+[node name="2" type="Label" parent="Rows/Row1/Extra_Energy/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Extra_Energy"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("26_jkijh")
+
+[node name="3" type="Label" parent="Rows/Row1/Extra_Energy/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Extra_Energy"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -210.0
+offset_top = 1.0
+offset_right = -170.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("25_6fsua")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Extra_Energy/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The extra energy passive boosts your max energy by 75 points."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Sharper_Weapons" type="TextureButton" parent="Rows/Row1"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons"]
+position = Vector2(14, 13)
+texture = ExtResource("27_fwe5e")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Sharper_Weapons"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("28_mfbs2")
+
+[node name="1" type="Label" parent="Rows/Row1/Sharper_Weapons/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Sharper_Weapons"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("28_mfbs2")
+
+[node name="2" type="Label" parent="Rows/Row1/Sharper_Weapons/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Sharper_Weapons"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("28_mfbs2")
+
+[node name="3" type="Label" parent="Rows/Row1/Sharper_Weapons/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row1/Sharper_Weapons"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 1.0
+offset_right = -205.0
+offset_bottom = 41.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("27_fwe5e")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the sharper weapons passive, all your limited piercing attacks will pierce an extra enemy."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Row2" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Meteor" type="TextureButton" parent="Rows/Row2"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Meteor"]
+position = Vector2(14, 13)
+texture = ExtResource("29_i4xvq")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Meteor"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("30_iv02c")
+
+[node name="1" type="Label" parent="Rows/Row2/Meteor/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Meteor"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("30_iv02c")
+
+[node name="2" type="Label" parent="Rows/Row2/Meteor/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Meteor"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("30_iv02c")
+
+[node name="3" type="Label" parent="Rows/Row2/Meteor/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Meteor"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -31.0
+offset_right = 40.0
+offset_bottom = 9.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("29_i4xvq")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row2/Meteor/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the meteor passive, every 8 seconds a powerful meteor will fall at your mouse position, dealing area damage to nearby enemies."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Coffee" type="TextureButton" parent="Rows/Row2"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee"]
+position = Vector2(14, 13)
+texture = ExtResource("31_htjx6")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Coffee"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("32_hh6om")
+
+[node name="1" type="Label" parent="Rows/Row2/Coffee/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Coffee"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("32_hh6om")
+
+[node name="2" type="Label" parent="Rows/Row2/Coffee/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Coffee"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("32_hh6om")
+
+[node name="3" type="Label" parent="Rows/Row2/Coffee/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Coffee"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -31.0
+offset_right = 5.0
+offset_bottom = 9.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("31_htjx6")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row2/Coffee/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the coffee trail passive, you constantly create coffee puddles in your path. Enemies that touch it will massively increase their speed, but die after a few seconds."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Enemy_SSD" type="TextureButton" parent="Rows/Row2"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_SSD"]
+position = Vector2(14, 13)
+texture = ExtResource("33_uqbx4")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("34_0jyv0")
+
+[node name="1" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("34_0jyv0")
+
+[node name="2" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("34_0jyv0")
+
+[node name="3" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Enemy_SSD"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = -31.0
+offset_right = -30.0
+offset_bottom = 9.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("33_uqbx4")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Equipped_Passives" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(0, -56)
+texture = ExtResource("16_svsdt")
+script = ExtResource("17_lkvr6")
+
+[node name="Pos_1" type="Node2D" parent="Equipped_Passives"]
+position = Vector2(-32, 0)
+
+[node name="Pos_2" type="Node2D" parent="Equipped_Passives"]
+
+[node name="Pos_3" type="Node2D" parent="Equipped_Passives"]
+position = Vector2(32, 0)
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("12_q4wu3")
+texture_pressed = ExtResource("18_cj420")
+texture_hover = ExtResource("19_t5bww")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_jf68m")

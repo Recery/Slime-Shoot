@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfop5mnbwg0bp"]
+
+[ext_resource type="Texture2D" uid="uid://cgxtxdpova63m" path="res://Sprites/Abilities/LaserTurretBase.png" id="1_qquhr"]
+[ext_resource type="Script" path="res://Scripts/Abilities/Laser_Turret.gd" id="2_a8l2l"]
+[ext_resource type="Texture2D" uid="uid://cwg8fgdrhubd1" path="res://Sprites/Abilities/LaserTurretHead.png" id="3_kdj76"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="4_42t3k"]
+[ext_resource type="AudioStream" uid="uid://b2d26q513hxql" path="res://Sounds/LaserTurretShot.mp3" id="5_ivjt2"]
+[ext_resource type="PackedScene" uid="uid://d21s3kgqk1hjy" path="res://Scenes/Useful/mini_progress_bar.tscn" id="6_q5mji"]
+
+[node name="Laser_Turret" type="Sprite2D"]
+texture = ExtResource("1_qquhr")
+script = ExtResource("2_a8l2l")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("3_kdj76")
+hframes = 2
+
+[node name="Cannon" type="Node2D" parent="Head"]
+position = Vector2(5, 0)
+
+[node name="Walls_Detecter" type="RayCast2D" parent="Head"]
+position = Vector2(5, 0)
+target_position = Vector2(110, 0)
+collision_mask = 255
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(1.34375, 7.75)
+scale = Vector2(0.981618, 0.65)
+texture = ExtResource("4_42t3k")
+hframes = 2
+
+[node name="Shoot_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ivjt2")
+volume_db = 12.0
+pitch_scale = 1.25
+bus = &"Sounds"
+
+[node name="Life_Bar" parent="." node_paths=PackedStringArray("timer_connected") instance=ExtResource("6_q5mji")]
+position = Vector2(-7.5, -15)
+timer_connected = NodePath("../Despawn_Timer")
+fill_with_timer = false
+
+[node name="Scan_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Shoot_Cooldown" type="Timer" parent="."]
+wait_time = 2.4
+one_shot = true
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 33.0
+autostart = true
+
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_scan_timer_timeout"]
+[connection signal="timeout" from="Shoot_Cooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

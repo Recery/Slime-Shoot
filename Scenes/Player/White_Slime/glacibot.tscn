@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://ce3td6pp4grsm"]
+
+[ext_resource type="Script" path="res://Scripts/Player/White_Slime/Glacibot.gd" id="1_pjnqx"]
+[ext_resource type="Texture2D" uid="uid://cwtherbotoudb" path="res://Sprites/Player/WhiteSlime/Glacibot.png" id="2_dbgst"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg4fo"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(0, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iq3f7"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(9, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q1c4"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(18, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj8xr"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(0, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rkji"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(27, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s6s3"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(18, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krc7q"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(0, 0, 9, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ff5"]
+atlas = ExtResource("2_dbgst")
+region = Rect2(27, 0, 9, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cuxrn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg4fo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iq3f7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q1c4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj8xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rkji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hj8xr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s6s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krc7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ff5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krc7q")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70044"]
+size = Vector2(8, 8)
+
+[node name="Glacibot" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 128
+script = ExtResource("1_pjnqx")
+scan_range = 130
+idle_pos_offset = Vector2(25, 3)
+speed_weight = 0.7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cuxrn")
+animation = &"idle"
+autoplay = "walk"
+frame_progress = 0.000897447
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_70044")
+
+[node name="Shoot_Cooldown" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Shoot_Cooldown" to="." method="_on_shoot_cooldown_timeout"]

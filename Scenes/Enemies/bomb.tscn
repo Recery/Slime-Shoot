@@ -1,0 +1,157 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdh478kowhcgf"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Bomb.gd" id="1_v72fv"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_s3tyf"]
+[ext_resource type="Texture2D" uid="uid://cq50ji1owpmci" path="res://Sprites/Enemies/Bomb.png" id="3_ca0iv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xdbon"]
+radius = 7.77778
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_jk1er"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_hhflp"]
+resource_name = "explode_1"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_g3up8"]
+resource_name = "explode_2"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_vf10p"]
+resource_name = "explode_3"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_qifal"]
+resource_name = "explode_4"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_2314o"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrb5k"]
+_data = {
+"RESET": SubResource("Animation_jk1er"),
+"explode_1": SubResource("Animation_hhflp"),
+"explode_2": SubResource("Animation_g3up8"),
+"explode_3": SubResource("Animation_vf10p"),
+"explode_4": SubResource("Animation_qifal"),
+"walk": SubResource("Animation_2314o")
+}
+
+[node name="Bomb" type="CharacterBody2D" groups=["Enemies"]]
+scale = Vector2(0.9, 0.9)
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_v72fv")
+original_damage = 7.0
+original_speed = 25.0
+original_max_life = 10.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(2, 10)
+texture = ExtResource("2_s3tyf")
+hframes = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_ca0iv")
+hframes = 10
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.33333)
+shape = SubResource("CapsuleShape2D_xdbon")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wrb5k")
+}
+autoplay = "walk"
+
+[node name="Explode_Detecter" type="RayCast2D" parent="."]
+position = Vector2(0, 2)
+target_position = Vector2(0, 25)
+
+[connection signal="die" from="." to="." method="_on_die"]

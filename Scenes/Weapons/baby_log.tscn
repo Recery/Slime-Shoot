@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://k8ownvc83oig"]
+
+[ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="1_0k4ua"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Baby_Log.gd" id="2_ga6bp"]
+[ext_resource type="AudioStream" uid="uid://f0efrder0hqt" path="res://Sounds/WoodSound.mp3" id="3_663y2"]
+
+[node name="Baby_Log" type="Sprite2D"]
+texture = ExtResource("1_0k4ua")
+script = ExtResource("2_ga6bp")
+shoot_cooldown = 1.1
+original_energy_use = 26.0
+energy_recover_cooldown = 1.8
+hold_offset = Vector2(9, 0)
+
+[node name="Wood_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_663y2")
+volume_db = 9.0
+pitch_scale = 1.1
+bus = &"Sounds"
+
+[node name="Slash_Pos" type="Node2D" parent="."]
+position = Vector2(6, 0)
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpdhevfg5utky"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/enemy_HDD_passive.gd" id="1_ag7hg"]
+[ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="2_asc0l"]
+[ext_resource type="LabelSettings" uid="uid://dfkffwrdyxuu8" path="res://Resources/Setted_Resources/regular_text.tres" id="3_ykq85"]
+
+[node name="Enemy_HDD_Passive" type="Node2D"]
+script = ExtResource("1_ag7hg")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_asc0l")
+
+[node name="Restore_Life_Cooldown" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Stored_Advice" type="Label" parent="."]
+visible = false
+offset_left = -5.0
+offset_top = 5.0
+offset_right = 16.0
+offset_bottom = 12.0
+scale = Vector2(0.5, 0.5)
+text = "0"
+label_settings = ExtResource("3_ykq85")
+horizontal_alignment = 1
+
+[connection signal="timeout" from="Restore_Life_Cooldown" to="." method="_on_restore_life_cooldown_timeout"]

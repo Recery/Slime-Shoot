@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmy8jpivihtqp"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Thingy_Of_The_Thing/Vampiric_Knife.gd" id="1_rbl15"]
+[ext_resource type="Texture2D" uid="uid://c4pyims2vflum" path="res://Sprites/Weapons/ThingyOfTheThing/VampiricKnife.png" id="2_c0bl0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynsrt"]
+size = Vector2(6, 4)
+
+[node name="Vampiric_Knife" type="Area2D"]
+script = ExtResource("1_rbl15")
+speed = 180
+original_damage = 3.0
+despawn_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c0bl0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ynsrt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

@@ -1,0 +1,370 @@
+[gd_scene load_steps=13 format=3 uid="uid://66jd7vqxgo2r"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/ControlsButton.gd" id="1_davyc"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="2_phnkf"]
+[ext_resource type="Texture2D" uid="uid://cg5b4fatldgbq" path="res://Sprites/Menu/WASDFrame.png" id="3_20xd5"]
+[ext_resource type="Texture2D" uid="uid://wkhkqm8gd7te" path="res://Sprites/Menu/KeyFrameSpace.png" id="4_cy8a7"]
+[ext_resource type="Texture2D" uid="uid://kjjhgaul1uhj" path="res://Sprites/Menu/MouseFrameLeft.png" id="5_inuiy"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="6_ky5qs"]
+[ext_resource type="Texture2D" uid="uid://cp4w0hft8mwy4" path="res://Sprites/Menu/MouseFrameMiddle.png" id="7_ywcon"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="8_n0md8"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="9_dt0sy"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="10_nj2v4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wvaeq"]
+font = ExtResource("2_phnkf")
+font_color = Color(0, 0.921569, 0, 1)
+outline_size = 3
+outline_color = Color(0.0627451, 0.301961, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bt7hu"]
+font = ExtResource("2_phnkf")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_davyc")
+
+[node name="ControlsCont" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1324.8
+offset_top = -720.0
+offset_right = -965.8
+offset_bottom = -476.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(163, 0)
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Text1" type="Label" parent="ControlsCont"]
+layout_mode = 2
+text = "Controls to play the game:"
+label_settings = SubResource("LabelSettings_wvaeq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WASD" type="HBoxContainer" parent="ControlsCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text2" type="Label" parent="ControlsCont/WASD"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WASDKeys" type="TextureRect" parent="ControlsCont/WASD"]
+layout_mode = 2
+texture = ExtResource("3_20xd5")
+
+[node name="W" type="Label" parent="ControlsCont/WASD/WASDKeys"]
+layout_mode = 0
+offset_left = 35.5
+offset_top = 7.00001
+offset_right = 53.5
+offset_bottom = 21.0
+text = "W"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="A" type="Label" parent="ControlsCont/WASD/WASDKeys"]
+layout_mode = 0
+offset_left = 6.75001
+offset_top = 37.0
+offset_right = 20.75
+offset_bottom = 51.0
+text = "A"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="S" type="Label" parent="ControlsCont/WASD/WASDKeys"]
+layout_mode = 0
+offset_left = 36.75
+offset_top = 37.0
+offset_right = 50.75
+offset_bottom = 51.0
+text = "S"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="D" type="Label" parent="ControlsCont/WASD/WASDKeys"]
+layout_mode = 0
+offset_left = 65.75
+offset_top = 37.0
+offset_right = 81.75
+offset_bottom = 51.0
+text = "D"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Text3" type="Label" parent="ControlsCont/WASD"]
+layout_mode = 2
+text = "To move"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Space" type="HBoxContainer" parent="ControlsCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text4" type="Label" parent="ControlsCont/Space"]
+layout_mode = 2
+text = "Use/Hold"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpaceKey" type="TextureRect" parent="ControlsCont/Space"]
+layout_mode = 2
+texture = ExtResource("4_cy8a7")
+
+[node name="Space" type="Label" parent="ControlsCont/Space/SpaceKey"]
+layout_mode = 0
+offset_left = 1.75002
+offset_top = 7.00001
+offset_right = 71.75
+offset_bottom = 21.0
+text = "Space"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Text5" type="Label" parent="ControlsCont/Space"]
+layout_mode = 2
+text = "To use perk"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Mouse" type="HBoxContainer" parent="ControlsCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text6" type="Label" parent="ControlsCont/Mouse"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mouse" type="TextureRect" parent="ControlsCont/Mouse"]
+layout_mode = 2
+texture = ExtResource("5_inuiy")
+
+[node name="Text7" type="Label" parent="ControlsCont/Mouse"]
+layout_mode = 2
+text = "To shoot"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="F11" type="HBoxContainer" parent="ControlsCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text8" type="Label" parent="ControlsCont/F11"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F11" type="TextureRect" parent="ControlsCont/F11"]
+layout_mode = 2
+texture = ExtResource("6_ky5qs")
+
+[node name="Text10" type="Label" parent="ControlsCont/F11/F11"]
+layout_mode = 0
+offset_left = -5.75
+offset_top = 7.25
+offset_right = 36.25
+offset_bottom = 21.25
+text = "F11"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Text11" type="Label" parent="ControlsCont/F11"]
+layout_mode = 2
+text = "To fullscreen"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Esc" type="HBoxContainer" parent="ControlsCont"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text12" type="Label" parent="ControlsCont/Esc"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Esc" type="TextureRect" parent="ControlsCont/Esc"]
+layout_mode = 2
+texture = ExtResource("6_ky5qs")
+
+[node name="Text13" type="Label" parent="ControlsCont/Esc/Esc"]
+layout_mode = 0
+offset_left = -5.75
+offset_top = 7.25
+offset_right = 36.25
+offset_bottom = 21.25
+text = "Esc"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Text14" type="Label" parent="ControlsCont/Esc"]
+layout_mode = 2
+text = "To pause"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="ControlsCont2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1332.8
+offset_top = -739.0
+offset_right = -948.8
+offset_bottom = -495.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(163, 0)
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Text1" type="Label" parent="ControlsCont2"]
+layout_mode = 2
+text = "Controls to play the game:"
+label_settings = SubResource("LabelSettings_wvaeq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mouse" type="HBoxContainer" parent="ControlsCont2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Text2" type="Label" parent="ControlsCont2/Mouse"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mouse" type="TextureRect" parent="ControlsCont2/Mouse"]
+layout_mode = 2
+texture = ExtResource("7_ywcon")
+
+[node name="Text4" type="Label" parent="ControlsCont2/Mouse"]
+layout_mode = 2
+text = "To change weapon"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="123" type="HBoxContainer" parent="ControlsCont2"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Text4" type="Label" parent="ControlsCont2/123"]
+layout_mode = 2
+text = "Use"
+label_settings = SubResource("LabelSettings_bt7hu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="TextureRect" parent="ControlsCont2/123"]
+layout_mode = 2
+texture = ExtResource("6_ky5qs")
+
+[node name="1" type="Label" parent="ControlsCont2/123/1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 21.0
+text = "1"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="2" type="TextureRect" parent="ControlsCont2/123"]
+layout_mode = 2
+texture = ExtResource("6_ky5qs")
+
+[node name="2" type="Label" parent="ControlsCont2/123/2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 21.0
+text = "2"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="3" type="TextureRect" parent="ControlsCont2/123"]
+layout_mode = 2
+texture = ExtResource("6_ky5qs")
+
+[node name="3" type="Label" parent="ControlsCont2/123/3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 21.0
+offset_bottom = 21.0
+text = "3"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Text5" type="Label" parent="ControlsCont2/123"]
+layout_mode = 2
+text = "To use abilities"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Next_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 104.0
+offset_top = -72.0
+offset_right = 132.0
+offset_bottom = -44.0
+texture_normal = ExtResource("8_n0md8")
+texture_pressed = ExtResource("9_dt0sy")
+texture_hover = ExtResource("10_nj2v4")
+
+[node name="Next" type="Label" parent="Next_Button"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 19.0
+offset_bottom = 21.0
+text = ">"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -128.0
+offset_top = -72.0
+offset_right = -100.0
+offset_bottom = -44.0
+texture_normal = ExtResource("8_n0md8")
+texture_pressed = ExtResource("9_dt0sy")
+texture_hover = ExtResource("10_nj2v4")
+
+[node name="Back" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 19.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_bt7hu")
+
+[connection signal="pressed" from="Next_Button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

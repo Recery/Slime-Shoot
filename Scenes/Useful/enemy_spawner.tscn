@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://guih4rm1cjhf"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/EnemySpawner.gd" id="1_jj6oe"]
+[ext_resource type="Texture2D" uid="uid://fi8fycf5ans2" path="res://Sprites/Useful/EnemySpawner.png" id="2_vet35"]
+
+[node name="EnemySpawner" type="Node2D" groups=["Enemy_Spawner"]]
+script = ExtResource("1_jj6oe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_vet35")
+hframes = 2
+frame = 1
+
+[node name="Spawn_Cooldown" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="timeout" from="Spawn_Cooldown" to="." method="_on_spawn_cooldown_timeout"]

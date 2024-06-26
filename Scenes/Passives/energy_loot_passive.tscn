@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://btekfbe0jpc7x"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Energy_Loot_Passive.gd" id="1_0roks"]
+[ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="2_ggu3y"]
+
+[node name="Energy_Loot_Passive" type="Node2D"]
+script = ExtResource("1_0roks")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_ggu3y")

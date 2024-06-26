@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc00nddmmp4kv"]
+
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_gfs7h"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_d023j"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_bg3ys"]
+[ext_resource type="Script" path="res://Scenes/Menu/Check_Button.gd" id="4_n3t34"]
+
+[node name="Check_Button" type="TextureButton"]
+offset_left = -98.0
+offset_top = -57.0
+offset_right = -87.0
+offset_bottom = -42.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_gfs7h")
+texture_pressed = ExtResource("2_d023j")
+texture_hover = ExtResource("3_bg3ys")
+script = ExtResource("4_n3t34")
+
+[node name="Cross" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 28.0
+offset_bottom = 28.0
+mouse_filter = 2
+
+[node name="Line1" type="ColorRect" parent="Cross"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 22.0
+offset_right = 17.0
+offset_bottom = 23.0
+rotation = -0.785398
+scale = Vector2(2, 2)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Line2" type="ColorRect" parent="Cross"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 19.0
+offset_bottom = 5.0
+rotation = 0.785398
+scale = Vector2(2, 2)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

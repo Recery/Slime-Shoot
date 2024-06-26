@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://y8ick7686qso"]
+
+[ext_resource type="Texture2D" uid="uid://6puwe07vaib8" path="res://Sprites/Enemies/DesertMother/GiantEgg.png" id="1_5ugpn"]
+[ext_resource type="Script" path="res://Scripts/Enemies/DesertMother/Desert_Mother_Egg.gd" id="2_hotju"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b566m"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rm13"]
+atlas = ExtResource("1_5ugpn")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khdvm"]
+atlas = ExtResource("1_5ugpn")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6npl2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rm13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khdvm")
+}],
+"loop": true,
+"name": &"move",
+"speed": 6.0
+}]
+
+[node name="Desert_Mother_Egg" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("2_hotju")
+damage = 15.0
+despawn_time = 7.0
+has_movement = false
+die_wait_time = 0.1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b566m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6npl2")
+animation = &"move"
+autoplay = "move"

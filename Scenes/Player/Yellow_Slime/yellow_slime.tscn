@@ -1,0 +1,171 @@
+[gd_scene load_steps=11 format=3 uid="uid://3lce3d7w25x3"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Yellow_Slime/yellow_slime.gd" id="1_ha5s7"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_26rps"]
+[ext_resource type="PackedScene" uid="uid://b5nrfbco2byhw" path="res://Scenes/Player/Yellow_Slime/Shock_Defense_Perk.tscn" id="2_e5xhb"]
+[ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/PlayerSlimeYellow.png" id="3_eb4rt"]
+
+[sub_resource type="Animation" id="Animation_hcri4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1ts8f"]
+resource_name = "bounce_shadow"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation_Player_Slime:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_3gxh7"]
+resource_name = "bounce_shock"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation_Player_Slime:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ejh1s"]
+_data = {
+"RESET": SubResource("Animation_hcri4"),
+"bounce_shadow": SubResource("Animation_1ts8f"),
+"bounce_shock": SubResource("Animation_3gxh7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_remg0"]
+size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ci6ae"]
+size = Vector2(14, 10)
+
+[node name="Yellow_Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_collision")]
+script = ExtResource("1_ha5s7")
+damage_collision = NodePath("Damage_Collision")
+sprite_perk = ExtResource("2_e5xhb")
+original_speed = 100
+max_life = 120
+resistance = 2
+max_energy = 170
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("2_26rps")
+hframes = 2
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_eb4rt")
+hframes = 2
+vframes = 2
+
+[node name="Animation_Player_Slime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ejh1s")
+}
+autoplay = "bounce_shadow"
+speed_scale = 1.5
+
+[node name="Map_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_remg0")
+
+[node name="Damage_Collision" type="Area2D" parent="."]
+collision_layer = 14
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_Collision"]
+shape = SubResource("RectangleShape2D_ci6ae")
+debug_color = Color(0.686275, 0.25098, 0, 0.419608)
+
+[connection signal="_extra_physics_process" from="." to="." method="_on_extra_physics_process"]
+[connection signal="ready" from="." to="." method="_on_ready"]

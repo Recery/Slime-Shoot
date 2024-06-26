@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bodvguqwnpkwj"]
+
+[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="1_p8w08"]
+[ext_resource type="Script" path="res://Scripts/Weapons/paint_bomb.gd" id="2_ty3kk"]
+
+[node name="Paint_Bomb" type="Sprite2D"]
+texture = ExtResource("1_p8w08")
+hframes = 2
+script = ExtResource("2_ty3kk")
+shoot_cooldown = 2.1
+original_energy_use = 70.0
+energy_recover_cooldown = 2.5
+
+[node name="Recharge_Visual" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="timeout" from="Recharge_Visual" to="." method="_on_recharge_visual_timeout"]

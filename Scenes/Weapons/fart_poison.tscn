@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp3ohm71q4mrt"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Fart_Poison.gd" id="1_eyqqb"]
+
+[node name="Fart_Poison" type="Node" groups=["Color_Debuff", "Friendly_Damage"]]
+script = ExtResource("1_eyqqb")
+
+[node name="Damage_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Damage_Timer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

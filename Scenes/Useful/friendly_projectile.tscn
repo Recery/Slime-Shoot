@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://op1jyegfnb2a"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Friendly_Projectile.gd" id="1_se1se"]
+
+[node name="Friendly_Projectile" type="Area2D"]
+collision_layer = 0
+collision_mask = 14
+script = ExtResource("1_se1se")
+
+[node name="Is_Original" type="Node" parent="."]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsvtj72ccpu5e"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Resistance_Passive.gd" id="1_hjuq2"]
+[ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="2_h13kd"]
+
+[node name="Resistance_Passive" type="Node2D"]
+script = ExtResource("1_hjuq2")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_h13kd")

@@ -1,0 +1,76 @@
+[gd_scene load_steps=7 format=3 uid="uid://b70p5w5bttnxo"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Pause.gd" id="1_sfqke"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="2_ll8c5"]
+[ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="3_vmsqu"]
+[ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="4_vti3a"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="5_872kx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hlego"]
+font = ExtResource("5_872kx")
+font_color = Color(0.886275, 0, 0.886275, 1)
+outline_size = 3
+outline_color = Color(0.254902, 0, 0.917647, 1)
+
+[node name="Pause" type="Control"]
+process_mode = 3
+visible = false
+light_mask = 0
+visibility_layer = 512
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_sfqke")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = -165.0
+offset_top = -111.0
+offset_right = 165.0
+offset_bottom = 105.0
+color = Color(0, 0, 0, 0.443137)
+
+[node name="Options" type="VBoxContainer" parent="."]
+process_mode = 3
+layout_mode = 0
+offset_left = -53.0
+offset_top = -35.0
+offset_right = 52.0
+offset_bottom = 35.0
+theme_override_constants/separation = 14
+
+[node name="Resume" type="TextureButton" parent="Options"]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("2_ll8c5")
+texture_pressed = ExtResource("3_vmsqu")
+texture_hover = ExtResource("4_vti3a")
+
+[node name="Text" type="Label" parent="Options/Resume"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Resume"
+label_settings = SubResource("LabelSettings_hlego")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="TextureButton" parent="Options"]
+process_mode = 3
+layout_mode = 2
+texture_normal = ExtResource("2_ll8c5")
+texture_pressed = ExtResource("3_vmsqu")
+texture_hover = ExtResource("4_vti3a")
+
+[node name="Text" type="Label" parent="Options/Menu"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Menu"
+label_settings = SubResource("LabelSettings_hlego")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Options/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Options/Menu" to="." method="_on_menu_pressed"]

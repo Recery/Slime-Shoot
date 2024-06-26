@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=3 uid="uid://2842omy5l8bq"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/MummifiedSlime/Mummified_Slime.gd" id="1_3v5e0"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_jdsy3"]
+[ext_resource type="Texture2D" uid="uid://qxu51fwtok0y" path="res://Sprites/Enemies/MummifiedSlime/MummifiedSlime.png" id="2_kdvyf"]
+[ext_resource type="AudioStream" uid="uid://dnp6gjld44wbb" path="res://Sounds/TheFallenImmortal.ogg" id="3_6tuql"]
+[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="4_jk38n"]
+
+[sub_resource type="Animation" id="Animation_0axbv"]
+resource_name = "bounce_shadow"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mejim"]
+_data = {
+"bounce_shadow": SubResource("Animation_0axbv")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_shs5i"]
+radius = 5.0
+height = 16.0
+
+[node name="Mummified_Slime" type="CharacterBody2D" groups=["Boss"]]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_3v5e0")
+original_damage = 10.0
+original_speed = 90.0
+original_max_life = 200.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("2_jdsy3")
+hframes = 2
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture = ExtResource("2_kdvyf")
+hframes = 2
+
+[node name="Animation_Player_Slime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mejim")
+}
+autoplay = "bounce_shadow"
+
+[node name="Sandy_Eagle" type="Sprite2D" parent="."]
+texture = ExtResource("4_jk38n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_shs5i")
+
+[node name="Move_Ray" type="RayCast2D" parent="."]
+target_position = Vector2(0, 75)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6tuql")
+volume_db = 16.0
+autoplay = true
+bus = &"Music"

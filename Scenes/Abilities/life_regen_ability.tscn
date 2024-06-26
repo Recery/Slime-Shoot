@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=3 uid="uid://dru84amkg1deg"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/life_regen_abilitie.gd" id="1_hsux1"]
+[ext_resource type="Texture2D" uid="uid://c74f6wajvedd8" path="res://Sprites/Abilities/LifeRegenAbility.png" id="2_m4okc"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_8u42m"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="4_11hym"]
+[ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="5_yrb4k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vuc5h"]
+font = ExtResource("3_8u42m")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Life_Regen_Ability" type="Node2D"]
+script = ExtResource("1_hsux1")
+cooldown = 20
+starter_cooldown = 5
+energy_use = 75
+energy_recover_time = 2.0
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_m4okc")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_vuc5h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_11hym")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "75"
+label_settings = SubResource("LabelSettings_vuc5h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yrb4k")
+volume_db = 9.0
+pitch_scale = 1.1
+bus = &"Sounds"
+
+[node name="Regen_Timer" type="Timer" parent="."]
+wait_time = 0.25
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Regen_Timer" to="." method="_on_regen_timer_timeout"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2xqxtqf2v2jn"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Buff.gd" id="1_ihyuq"]
+
+[node name="Buff" type="Node"]
+script = ExtResource("1_ihyuq")
+type = "Buff"
+
+[connection signal="ready" from="." to="." method="_on_ready"]

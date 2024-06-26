@@ -1,0 +1,369 @@
+[gd_scene load_steps=38 format=3 uid="uid://c21uxf1eyhw8k"]
+
+[ext_resource type="PackedScene" uid="uid://dai0m2dapfwfo" path="res://Scenes/Tiles/tile_grass.tscn" id="1_nxj14"]
+[ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
+[ext_resource type="PackedScene" uid="uid://dx74fex81tilb" path="res://Scenes/Tiles/tile_fence.tscn" id="2_40hto"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_cnaou"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="3_qls2q"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="6_dlnqk"]
+[ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="7_djpoq"]
+[ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="8_1281r"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="10_efru8"]
+[ext_resource type="PackedScene" uid="uid://66jd7vqxgo2r" path="res://Scenes/Menu/controls.tscn" id="10_fuxtq"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="11_dw1q6"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="12_vnh5k"]
+[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="13_e5syq"]
+[ext_resource type="Texture2D" uid="uid://dyvcksxnsuf8s" path="res://Sprites/Menu/ShoppingCart.png" id="13_mrqpo"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="13_nwiw3"]
+[ext_resource type="PackedScene" uid="uid://dp0eoiclataar" path="res://Scenes/Menu/Equipment/equipment_passives.tscn" id="13_uba8n"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="14_57otj"]
+[ext_resource type="PackedScene" uid="uid://cq3m7ndadb2jt" path="res://Scenes/Menu/Equipment/equipment_weapons.tscn" id="14_mo1ho"]
+[ext_resource type="Texture2D" uid="uid://c74f6wajvedd8" path="res://Sprites/Abilities/LifeRegenAbility.png" id="14_vo8jy"]
+[ext_resource type="PackedScene" uid="uid://b6sxdtpty5qkn" path="res://Scenes/Menu/Equipment/equipment_abilities.tscn" id="15_c7pa1"]
+[ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="15_dwgj7"]
+[ext_resource type="PackedScene" uid="uid://cd4ht43jmcn7h" path="res://Scenes/Menu/Shop/shop.tscn" id="15_tg6bh"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="15_thdy0"]
+[ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="16_7gj2l"]
+[ext_resource type="PackedScene" uid="uid://xcb3sy5rg4sn" path="res://Scenes/Menu/Map_Selection/map_selection.tscn" id="20_1ko50"]
+[ext_resource type="Texture2D" uid="uid://deruwp6fuk5iw" path="res://Sprites/Menu/Settings/CogwheelIcon.png" id="20_w0s2i"]
+[ext_resource type="PackedScene" uid="uid://dl5qufxb6ccbr" path="res://Scenes/Menu/Equipment/equipment_slimes.tscn" id="21_epiw6"]
+[ext_resource type="Texture2D" uid="uid://cxj80b627drbr" path="res://Sprites/Menu/PlayCinematicIcon.png" id="21_sdcjo"]
+[ext_resource type="PackedScene" uid="uid://bqnkjpdhdu0t0" path="res://Scenes/Menu/credits.tscn" id="24_fakuu"]
+[ext_resource type="PackedScene" uid="uid://chwjvfqwhjwen" path="res://Scenes/Menu/Equipment/equipment_hats.tscn" id="28_07o7c"]
+[ext_resource type="PackedScene" uid="uid://c3355p6xk1fnk" path="res://Scenes/Menu/settings.tscn" id="28_l8aei"]
+[ext_resource type="PackedScene" uid="uid://71c34tsp0mwa" path="res://Scenes/Menu/replay_cinematics.tscn" id="31_cc2vw"]
+[ext_resource type="AudioStream" uid="uid://dne6un3kn5h2d" path="res://Sounds/ORU-Orange-Dreamsicle.ogg" id="34_sxt08"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="34_wr5eu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iwvpy"]
+font = ExtResource("3_cnaou")
+font_size = 24
+font_color = Color(0, 0.882353, 1, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pu0y0"]
+font = ExtResource("3_cnaou")
+font_color = Color(0.886275, 0, 0.886275, 1)
+outline_size = 3
+outline_color = Color(0.254902, 0, 0.917647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kv2bw"]
+font = ExtResource("3_cnaou")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1.0
+offset_bottom = 1.0
+script = ExtResource("1_xhcat")
+
+[node name="TileGrass" parent="." instance=ExtResource("1_nxj14")]
+layer_0/tile_data = PackedInt32Array(-262153, 0, 3, -196617, 65536, 3, -131081, 0, 1, -65545, 131072, 1, -9, 0, 1, 65527, 65536, 0, 131063, 0, 1, 196599, 0, 1, 262135, 65536, 0, 327671, 0, 3, -262152, 0, 3, -196616, 65536, 3, -131080, 65536, 0, -65544, 0, 0, -8, 131072, 6, 65528, 65536, 4, 131064, 65536, 4, 196600, 131072, 4, 262136, 131072, 0, 327672, 0, 3, -262151, 0, 3, -196615, 65536, 3, -131079, 0, 0, -65543, 65536, 2, -7, 0, 3, 65529, 65536, 3, 131065, 0, 3, 196601, 65536, 3, 262137, 65536, 2, 327673, 0, 3, -262150, 0, 3, -196614, 65536, 3, -131078, 0, 0, -65542, 65536, 0, -6, 0, 3, 65530, 65536, 5, 131066, 65536, 6, 196602, 65536, 3, 262138, 0, 1, 327674, 0, 3, -262149, 0, 3, -196613, 65536, 3, -131077, 65536, 0, -65541, 65536, 1, -5, 65536, 1, 65531, 65536, 0, 131067, 0, 0, 196603, 0, 2, 262139, 0, 0, 327675, 0, 3, -262148, 0, 3, -196612, 65536, 3, -131076, 0, 0, -65540, 0, 0, -4, 65536, 0, 65532, 0, 0, 131068, 65536, 0, 196604, 0, 0, 262140, 0, 0, 327676, 0, 3, -262147, 0, 3, -196611, 65536, 3, -131075, 65536, 1, -65539, 65536, 0, -3, 65536, 1, 65533, 0, 0, 131069, 0, 1, 196605, 0, 0, 262141, 65536, 1, 327677, 0, 3, -262146, 0, 3, -196610, 65536, 3, -131074, 0, 1, -65538, 0, 0, -2, 0, 2, 65534, 65536, 0, 131070, 0, 1, 196606, 0, 1, 262142, 0, 1, 327678, 0, 3, -262145, 0, 3, -196609, 65536, 3, -131073, 131072, 2, -65537, 65536, 1, -1, 65536, 0, 65535, 0, 0, 131071, 0, 1, 196607, 65536, 1, 262143, 0, 1, 327679, 0, 3, -327680, 0, 3, -262144, 65536, 3, -196608, 131072, 6, -131072, 65536, 4, -65536, 65536, 4, 0, 131072, 4, 65536, 65536, 0, 131072, 0, 1, 196608, 65536, 0, 262144, 0, 3, -327679, 0, 3, -262143, 65536, 3, -196607, 0, 3, -131071, 65536, 3, -65535, 0, 3, 1, 65536, 3, 65537, 65536, 0, 131073, 0, 1, 196609, 0, 1, 262145, 0, 3, -327678, 0, 3, -262142, 65536, 3, -196606, 0, 3, -131070, 65536, 5, -65534, 65536, 6, 2, 65536, 3, 65538, 131072, 2, 131074, 0, 0, 196610, 65536, 0, 262146, 0, 3, -327677, 0, 3, -262141, 65536, 3, -196605, 0, 0, -131069, 65536, 0, -65533, 0, 1, 3, 0, 1, 65539, 65536, 1, 131075, 0, 1, 196611, 0, 0, 262147, 0, 3, -327676, 0, 3, -262140, 65536, 3, -196604, 65536, 1, -131068, 65536, 1, -65532, 65536, 2, 4, 0, 0, 65540, 0, 1, 131076, 65536, 1, 196612, 65536, 0, 262148, 0, 3, -327675, 0, 3, -262139, 65536, 3, -196603, 65536, 0, -131067, 0, 1, -65531, 65536, 1, 5, 65536, 1, 65541, 65536, 0, 131077, 65536, 1, 196613, 65536, 1, 262149, 0, 3, -327674, 0, 3, -262138, 65536, 3, -196602, 0, 0, -131066, 131072, 6, -65530, 65536, 4, 6, 65536, 4, 65542, 131072, 4, 131078, 131072, 2, 196614, 0, 1, 262150, 0, 3, -327673, 0, 3, -262137, 65536, 3, -196601, 65536, 1, -131065, 0, 3, -65529, 65536, 3, 7, 0, 3, 65543, 65536, 3, 131079, 65536, 0, 196615, 0, 1, 262151, 0, 3, -327672, 0, 3, -262136, 65536, 3, -196600, 131072, 1, -131064, 0, 3, -65528, 65536, 5, 8, 65536, 6, 65544, 65536, 3, 131080, 131072, 2, 196616, 65536, 0, 262152, 0, 3, -327689, 0, 0, -327688, 0, 0, -327687, 0, 0, -327686, 0, 0, -327685, 0, 0, -327684, 0, 0, -327683, 0, 0, -327682, 0, 0, -327681, 0, 0, -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 0, 0, -393212, 0, 0, -393211, 0, 0, -393210, 0, 0, -393209, 0, 0, -393208, 0, 0, -393207, 0, 0, -327671, 0, 0, -262135, 0, 0, -196599, 0, 0, -131063, 0, 0, -65527, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 327688, 65536, 3, 327687, 65536, 3, 327686, 65536, 3, 327685, 65536, 3, 327684, 65536, 3, 327683, 65536, 3, 327682, 65536, 3, 327681, 65536, 3, 327680, 65536, 3, 393215, 65536, 3, 393214, 65536, 3, 393213, 65536, 3, 393212, 65536, 3, 393211, 65536, 3, 393210, 65536, 3, 393209, 65536, 3, 393208, 65536, 3, 393207, 65536, 3, 393206, 0, 0, 327670, 0, 0, 262134, 0, 0, 196598, 0, 0, 131062, 0, 0, 65526, 0, 0, -10, 0, 0, -65546, 0, 0, -131082, 0, 0, -196618, 0, 0, -262154, 0, 0, -327690, 0, 0)
+
+[node name="TileFence" parent="." instance=ExtResource("2_40hto")]
+layer_0/tile_data = PackedInt32Array(-262153, 65536, 0, -262152, 65536, 0, -262151, 65536, 0, -262150, 65536, 0, -262149, 65536, 0, -262148, 65536, 0, -262147, 65536, 0, -262146, 65536, 0, -262145, 65536, 0, -327680, 65536, 0, -327679, 65536, 0, -327678, 65536, 0, -327677, 65536, 0, -327676, 65536, 0, -327675, 65536, 0, -327674, 65536, 0, -327673, 65536, 0, -327672, 65536, 0, -8, 0, 0, 65528, 0, 1, 131064, 0, 2, -7, 65536, 0, 131065, 65536, 2, -6, 131072, 0, 65530, 131072, 1, 131066, 131072, 2, -196608, 0, 0, -131072, 0, 1, -65536, 0, 2, -196607, 65536, 0, -65535, 65536, 2, -196606, 131072, 0, -131070, 131072, 1, -65534, 131072, 2, -131066, 0, 0, -65530, 0, 1, 6, 0, 2, -131065, 65536, 0, 7, 65536, 2, -131064, 131072, 0, -65528, 131072, 1, 8, 131072, 2, 327671, 65536, 2, 327672, 65536, 2, 327673, 65536, 2, 327674, 65536, 2, 327675, 65536, 2, 327676, 65536, 2, 327677, 65536, 2, 327678, 65536, 2, 327679, 65536, 2, 262144, 65536, 2, 262145, 65536, 2, 262146, 65536, 2, 262147, 65536, 2, 262148, 65536, 2, 262149, 65536, 2, 262150, 65536, 2, 262151, 65536, 2, 262152, 65536, 2, -327671, 131072, 0, -262135, 131072, 1, -196599, 131072, 1, -131063, 131072, 1, -65527, 131072, 1, 9, 131072, 1, 65545, 131072, 1, 131081, 131072, 1, 196617, 131072, 1, 262153, 131072, 2, -262154, 0, 0, -196618, 0, 1, -131082, 0, 1, -65546, 0, 1, -10, 0, 1, 65526, 0, 1, 131062, 0, 1, 196598, 0, 1, 262134, 0, 1, 327670, 0, 2)
+
+[node name="Slime" type="Node2D" parent="."]
+position = Vector2(-8, 16)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Title" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -136.0
+offset_top = -73.0
+offset_right = 2.0
+offset_bottom = -28.0
+text = "Slime
+   Shoot"
+label_settings = SubResource("LabelSettings_iwvpy")
+
+[node name="Version" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = -6.0
+offset_right = 278.0
+offset_bottom = 1.0
+text = "v1.1.2.0"
+label_settings = ExtResource("34_wr5eu")
+
+[node name="Main_Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = -52.0
+offset_right = 135.0
+offset_bottom = 72.0
+
+[node name="Start" type="TextureButton" parent="Main_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("6_dlnqk")
+texture_pressed = ExtResource("7_djpoq")
+texture_hover = ExtResource("8_1281r")
+
+[node name="Text" type="Label" parent="Main_Buttons/Start"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Start"
+label_settings = SubResource("LabelSettings_pu0y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Controls" type="TextureButton" parent="Main_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("6_dlnqk")
+texture_pressed = ExtResource("7_djpoq")
+texture_hover = ExtResource("8_1281r")
+
+[node name="Text" type="Label" parent="Main_Buttons/Controls"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Controls"
+label_settings = SubResource("LabelSettings_pu0y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="Main_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("6_dlnqk")
+texture_pressed = ExtResource("7_djpoq")
+texture_hover = ExtResource("8_1281r")
+
+[node name="Text" type="Label" parent="Main_Buttons/Credits"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Credits"
+label_settings = SubResource("LabelSettings_pu0y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="Main_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("6_dlnqk")
+texture_pressed = ExtResource("7_djpoq")
+texture_hover = ExtResource("8_1281r")
+
+[node name="Text" type="Label" parent="Main_Buttons/Quit"]
+layout_mode = 0
+offset_right = 105.0
+offset_bottom = 28.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_pu0y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equipment_Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -137.0
+offset_top = 12.0
+offset_right = -77.0
+offset_bottom = 72.0
+
+[node name="First_Row" type="HBoxContainer" parent="Equipment_Buttons"]
+layout_mode = 2
+
+[node name="Weapons" type="TextureButton" parent="Equipment_Buttons/First_Row"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Weapon" type="Sprite2D" parent="Equipment_Buttons/First_Row/Weapons"]
+position = Vector2(14, 14)
+texture = ExtResource("13_e5syq")
+
+[node name="Abilities" type="TextureButton" parent="Equipment_Buttons/First_Row"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Ability" type="Sprite2D" parent="Equipment_Buttons/First_Row/Abilities"]
+position = Vector2(14, 14)
+texture = ExtResource("14_vo8jy")
+
+[node name="Passives" type="TextureButton" parent="Equipment_Buttons/First_Row"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Passive" type="Sprite2D" parent="Equipment_Buttons/First_Row/Passives"]
+position = Vector2(14, 14)
+texture = ExtResource("15_dwgj7")
+
+[node name="Weapons_Slime" type="HBoxContainer" parent="Equipment_Buttons"]
+layout_mode = 2
+
+[node name="Slimes" type="TextureButton" parent="Equipment_Buttons/Weapons_Slime"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Slime" type="Sprite2D" parent="Equipment_Buttons/Weapons_Slime/Slimes"]
+position = Vector2(14, 14)
+texture = ExtResource("3_qls2q")
+hframes = 2
+
+[node name="Hats" type="TextureButton" parent="Equipment_Buttons/Weapons_Slime"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Hat" type="Sprite2D" parent="Equipment_Buttons/Weapons_Slime/Hats"]
+position = Vector2(14, 14)
+texture = ExtResource("16_7gj2l")
+hframes = 2
+
+[node name="Other_Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 22.0
+offset_bottom = 40.0
+
+[node name="Shop_Button" type="TextureButton" parent="Other_Buttons"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = 44.0
+offset_right = -45.0
+offset_bottom = 72.0
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Cart" type="Sprite2D" parent="Other_Buttons/Shop_Button"]
+position = Vector2(14, 15)
+texture = ExtResource("13_mrqpo")
+
+[node name="Settings_Button" type="TextureButton" parent="Other_Buttons"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 44.0
+offset_right = 14.0
+offset_bottom = 72.0
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Cogwheel" type="Sprite2D" parent="Other_Buttons/Settings_Button"]
+position = Vector2(14, 14)
+texture = ExtResource("20_w0s2i")
+
+[node name="Cinematics_Button" type="TextureButton" parent="Other_Buttons"]
+self_modulate = Color(0, 0.972549, 0, 1)
+layout_mode = 0
+offset_left = -137.0
+offset_top = -20.0
+offset_right = -109.0
+offset_bottom = 8.0
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Play_Icon" type="Sprite2D" parent="Other_Buttons/Cinematics_Button"]
+position = Vector2(14, 14)
+texture = ExtResource("21_sdcjo")
+
+[node name="Map_Selection" parent="." instance=ExtResource("20_1ko50")]
+visible = false
+
+[node name="Controls" parent="." instance=ExtResource("10_fuxtq")]
+visible = false
+layout_mode = 1
+
+[node name="Credits" parent="." instance=ExtResource("24_fakuu")]
+
+[node name="Equipment_Slimes" parent="." instance=ExtResource("21_epiw6")]
+visible = false
+layout_mode = 1
+offset_right = -1.0
+offset_bottom = -1.0
+
+[node name="Equipment_Weapons" parent="." instance=ExtResource("14_mo1ho")]
+visible = false
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Equipment_Abilities" parent="." instance=ExtResource("15_c7pa1")]
+visible = false
+layout_mode = 1
+
+[node name="Equipment_Passives" parent="." instance=ExtResource("13_uba8n")]
+visible = false
+layout_mode = 1
+
+[node name="Equipment_Hats" parent="." instance=ExtResource("28_07o7c")]
+visible = false
+layout_mode = 1
+offset_right = -1.0
+offset_bottom = -1.0
+
+[node name="Shop" parent="." instance=ExtResource("15_tg6bh")]
+visible = false
+layout_mode = 1
+
+[node name="Settings" parent="." instance=ExtResource("28_l8aei")]
+visible = false
+layout_mode = 1
+
+[node name="Replay_Cinematics" parent="." instance=ExtResource("31_cc2vw")]
+visible = false
+
+[node name="BackButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -136.0
+offset_top = 48.0
+offset_right = -108.0
+offset_bottom = 76.0
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="BackText" type="Label" parent="BackButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_kv2bw")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_sxt08")
+volume_db = 2.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Main_Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main_Buttons/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="Main_Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Main_Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/First_Row/Weapons" to="." method="_on_weapons_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/First_Row/Abilities" to="." method="_on_abilities_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/First_Row/Passives" to="." method="_on_passives_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/Weapons_Slime/Slimes" to="." method="_on_slimes_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/Weapons_Slime/Hats" to="." method="_on_hats_pressed"]
+[connection signal="pressed" from="Other_Buttons/Shop_Button" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="Other_Buttons/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Other_Buttons/Cinematics_Button" to="." method="_on_cinematics_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

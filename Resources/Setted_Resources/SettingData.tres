@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SettingsData" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Resources/Scripts/Settings_Data.gd" id="1_pk0yw"]
+
+[resource]
+script = ExtResource("1_pk0yw")
+show_FPS_counter = true
+shadows = true
+sound_volume = -18
+music_volume = -18

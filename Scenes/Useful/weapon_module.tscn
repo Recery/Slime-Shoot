@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://b26xvn5trt68p"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Weapon_Module.gd" id="1_d37oj"]
+[ext_resource type="Texture2D" uid="uid://dpjoofpoq73bp" path="res://Sprites/Weapons/WeaponModuleFrame.png" id="2_q62fo"]
+
+[node name="Weapon_Module" type="Node2D"]
+script = ExtResource("1_d37oj")
+
+[node name="Current_Weapon_Frame" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(-12, 62)
+texture = ExtResource("2_q62fo")
+
+[node name="Cooldown_1" type="Timer" parent="."]
+
+[node name="Cooldown_2" type="Timer" parent="."]
+
+[node name="Cooldown_3" type="Timer" parent="."]
+
+[node name="Swap_Cooldown" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="timeout" from="Cooldown_1" to="." method="_on_cooldown_1_timeout"]
+[connection signal="timeout" from="Cooldown_2" to="." method="_on_cooldown_2_timeout"]
+[connection signal="timeout" from="Cooldown_3" to="." method="_on_cooldown_3_timeout"]
+[connection signal="timeout" from="Swap_Cooldown" to="." method="_on_swap_cooldown_timeout"]

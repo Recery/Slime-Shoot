@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm47yf753fn6f"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Abilities_module.gd" id="1_53hjx"]
+
+[node name="abilities_module" type="Node2D"]
+z_index = 1
+script = ExtResource("1_53hjx")
+
+[node name="Cooldown_1" type="Timer" parent="."]
+
+[node name="Cooldown_2" type="Timer" parent="."]
+
+[node name="Cooldown_3" type="Timer" parent="."]
+
+[node name="Pos_1" type="Node2D" parent="."]
+position = Vector2(120, 2)
+
+[node name="Pos_2" type="Node2D" parent="."]
+position = Vector2(120, 23)
+
+[node name="Pos_3" type="Node2D" parent="."]
+position = Vector2(120, 44)
+
+[connection signal="timeout" from="Cooldown_1" to="." method="_on_cooldown_1_timeout"]
+[connection signal="timeout" from="Cooldown_2" to="." method="_on_cooldown_2_timeout"]
+[connection signal="timeout" from="Cooldown_3" to="." method="_on_cooldown_3_timeout"]

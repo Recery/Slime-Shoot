@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyr2jw85aoy56"]
+
+[ext_resource type="LabelSettings" uid="uid://bd1nt04hrmlsy" path="res://Resources/Setted_Resources/score_text.tres" id="1_c421a"]
+
+[node name="Score" type="Label"]
+z_index = 1
+texture_filter = 1
+offset_left = -125.0
+offset_top = -70.0
+offset_right = 126.0
+offset_bottom = -56.0
+text = "1"
+label_settings = ExtResource("1_c421a")
+horizontal_alignment = 1
+vertical_alignment = 1

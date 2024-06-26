@@ -1,0 +1,2110 @@
+[gd_scene load_steps=47 format=3 uid="uid://b6sxdtpty5qkn"]
+
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_5ls3g"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="2_1sss3"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_uu6gs"]
+[ext_resource type="Texture2D" uid="uid://c74f6wajvedd8" path="res://Sprites/Abilities/LifeRegenAbility.png" id="3_2cbv0"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_4ifih"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="4_6slvp"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_g6k8v"]
+[ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="5_i7x2o"]
+[ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="6_4ukln"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection_Abilities.gd" id="7_e20du"]
+[ext_resource type="PackedScene" uid="uid://dru84amkg1deg" path="res://Scenes/Abilities/life_regen_ability.tscn" id="8_3vl7v"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_fxlry"]
+[ext_resource type="Texture2D" uid="uid://b6xujapa755a7" path="res://Sprites/Abilities/SpeedAbility.png" id="10_67vol"]
+[ext_resource type="PackedScene" uid="uid://qc03hauqrywh" path="res://Scenes/Abilities/speed_ability.tscn" id="11_1ssax"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="11_jc1er"]
+[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="12_jk483"]
+[ext_resource type="Texture2D" uid="uid://c2eeg5k2qo3oj" path="res://Sprites/Abilities/InfiniteEnergyAbility.png" id="12_rei65"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="13_0al25"]
+[ext_resource type="PackedScene" uid="uid://dghms8su3plri" path="res://Scenes/Abilities/infinite_energy_ability.tscn" id="13_obqpa"]
+[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="14_wfp74"]
+[ext_resource type="Texture2D" uid="uid://bawd6rldpsrh3" path="res://Sprites/Abilities/ExtraDamageAbility.png" id="14_y15fr"]
+[ext_resource type="PackedScene" uid="uid://c7g880o7ku8ot" path="res://Scenes/Abilities/Extra_Damage_Ability.tscn" id="15_b4dmn"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="15_uvuj7"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="16_cu37g"]
+[ext_resource type="Texture2D" uid="uid://dcgxa3j3npnnm" path="res://Sprites/Abilities/WeedtiteTurretAbility.png" id="16_dk18t"]
+[ext_resource type="PackedScene" uid="uid://ctr73444uo286" path="res://Scenes/Abilities/weedtite_turret_ability.tscn" id="17_b30jm"]
+[ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="18_t8jkq"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Abilities_Sprite.gd" id="19_81dld"]
+[ext_resource type="PackedScene" uid="uid://b7cp3t5l5cmig" path="res://Scenes/Abilities/freeze_ability.tscn" id="19_msb61"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="20_qisyp"]
+[ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="27_bsd6e"]
+[ext_resource type="PackedScene" uid="uid://kexy5pxqp74j" path="res://Scenes/Abilities/shock_attack_ability.tscn" id="28_31s68"]
+[ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="29_mhboq"]
+[ext_resource type="PackedScene" uid="uid://can76htfvmwca" path="res://Scenes/Abilities/slimy_rage_ability.tscn" id="30_46alf"]
+[ext_resource type="PackedScene" uid="uid://cewbdmkelepyc" path="res://Scenes/Abilities/laser_turret_ability.tscn" id="31_qw402"]
+[ext_resource type="Texture2D" uid="uid://dm3qoo4ay3xtb" path="res://Sprites/Abilities/LaserTurretAbility.png" id="32_xpips"]
+[ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="33_kko80"]
+[ext_resource type="PackedScene" uid="uid://b2i1l32mu6f6n" path="res://Scenes/Abilities/cheese_transmutation_ability.tscn" id="34_84nrx"]
+[ext_resource type="Texture2D" uid="uid://1q4vbol77sj2" path="res://Sprites/Abilities/LethalVacuumCleanerAbility.png" id="35_7qgsm"]
+[ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="35_m4rds"]
+[ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="37_sv7lf"]
+[ext_resource type="PackedScene" uid="uid://bhgh4u2fh214i" path="res://Scenes/Abilities/Green_Apple_Vomit_Ability.tscn" id="38_mm0ro"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_non8x"]
+font = ExtResource("9_fxlry")
+font_color = Color(1, 0.313726, 0.247059, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1phy"]
+font = ExtResource("9_fxlry")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i6m7b"]
+font = ExtResource("9_fxlry")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_jf68m"]
+font = ExtResource("9_fxlry")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Equipment_Abilities" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -33.0
+offset_right = -108.0
+offset_bottom = -5.0
+
+[node name="Row1" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Life_Regen" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Life_Regen"]
+position = Vector2(14, 13)
+texture = ExtResource("3_2cbv0")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("8_3vl7v")
+
+[node name="1" type="Label" parent="Rows/Row1/Life_Regen/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("8_3vl7v")
+
+[node name="2" type="Label" parent="Rows/Row1/Life_Regen/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Life_Regen"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("8_3vl7v")
+
+[node name="3" type="Label" parent="Rows/Row1/Life_Regen/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Life_Regen"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 40.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("3_2cbv0")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The life regen ability heals you in a timespan when you activate it."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "75"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "20
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Speed"]
+position = Vector2(14, 13)
+texture = ExtResource("10_67vol")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Speed"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("11_1ssax")
+
+[node name="1" type="Label" parent="Rows/Row1/Speed/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Speed"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("11_1ssax")
+
+[node name="2" type="Label" parent="Rows/Row1/Speed/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Speed"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("11_1ssax")
+
+[node name="3" type="Label" parent="Rows/Row1/Speed/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Speed"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("10_67vol")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Speed/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The speed ability boosts your speed for a few seconds. "
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Speed/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "90"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Speed/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "35
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Infinite_Energy" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Infinite_Energy"]
+position = Vector2(14, 13)
+texture = ExtResource("12_rei65")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Infinite_Energy"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("13_obqpa")
+
+[node name="1" type="Label" parent="Rows/Row1/Infinite_Energy/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Infinite_Energy"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("13_obqpa")
+
+[node name="2" type="Label" parent="Rows/Row1/Infinite_Energy/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Infinite_Energy"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("13_obqpa")
+
+[node name="3" type="Label" parent="Rows/Row1/Infinite_Energy/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Infinite_Energy"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 1.0
+offset_right = -30.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("12_rei65")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the infinite energy ability you get infinite energy for a few seconds. Really useful for high energy use weapons."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+position = Vector2(142, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "140"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "55
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Extra_Damage" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Extra_Damage"]
+position = Vector2(14, 13)
+texture = ExtResource("14_y15fr")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Extra_Damage"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("15_b4dmn")
+
+[node name="1" type="Label" parent="Rows/Row1/Extra_Damage/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Extra_Damage"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("15_b4dmn")
+
+[node name="2" type="Label" parent="Rows/Row1/Extra_Damage/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Extra_Damage"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("15_b4dmn")
+
+[node name="3" type="Label" parent="Rows/Row1/Extra_Damage/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Extra_Damage"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 1.0
+offset_right = -65.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("14_y15fr")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The extra damage ability will give you a little extra damage buff to all your attacks, including summons."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "85"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "35
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weedtite_Turret" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret"]
+position = Vector2(14, 13)
+texture = ExtResource("16_dk18t")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Weedtite_Turret"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("17_b30jm")
+
+[node name="1" type="Label" parent="Rows/Row1/Weedtite_Turret/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Weedtite_Turret"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("17_b30jm")
+
+[node name="2" type="Label" parent="Rows/Row1/Weedtite_Turret/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Weedtite_Turret"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("17_b30jm")
+
+[node name="3" type="Label" parent="Rows/Row1/Weedtite_Turret/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Weedtite_Turret"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 1.0
+offset_right = -100.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("16_dk18t")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The weedtite turret ability summons a turret that will fight for you. Every time it shoots it will add little extra life time to itself."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+position = Vector2(142, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "110"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "48
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Freeze" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Freeze"]
+position = Vector2(14, 13)
+texture = ExtResource("18_t8jkq")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Freeze"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("19_msb61")
+
+[node name="1" type="Label" parent="Rows/Row1/Freeze/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Freeze"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("19_msb61")
+
+[node name="2" type="Label" parent="Rows/Row1/Freeze/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Freeze"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("19_msb61")
+
+[node name="3" type="Label" parent="Rows/Row1/Freeze/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Freeze"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = 1.0
+offset_right = -135.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("18_t8jkq")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Freeze/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The freeze ability will freeze your nearby enemies and they will be unable to move for 4 seconds."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Freeze/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "55"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Freeze/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "12
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shock_Attack" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Shock_Attack"]
+position = Vector2(14, 13)
+texture = ExtResource("27_bsd6e")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Shock_Attack"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("28_31s68")
+
+[node name="1" type="Label" parent="Rows/Row1/Shock_Attack/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Shock_Attack"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("28_31s68")
+
+[node name="2" type="Label" parent="Rows/Row1/Shock_Attack/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Shock_Attack"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("28_31s68")
+
+[node name="3" type="Label" parent="Rows/Row1/Shock_Attack/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Shock_Attack"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -210.0
+offset_top = 1.0
+offset_right = -170.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("27_bsd6e")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The shock attack ability deals moderate damage to up to 8 enemies with an electricity chain."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "90"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "18
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Slimy_Rage" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row1/Slimy_Rage"]
+position = Vector2(14, 13)
+texture = ExtResource("29_mhboq")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Slimy_Rage"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("30_46alf")
+
+[node name="1" type="Label" parent="Rows/Row1/Slimy_Rage/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Slimy_Rage"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("30_46alf")
+
+[node name="2" type="Label" parent="Rows/Row1/Slimy_Rage/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Slimy_Rage"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("30_46alf")
+
+[node name="3" type="Label" parent="Rows/Row1/Slimy_Rage/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row1/Slimy_Rage"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 1.0
+offset_right = -205.0
+offset_bottom = 41.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("29_mhboq")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 236.0
+offset_bottom = 102.0
+text = "The slimy rage ability will reduce all your weapons cooldown and energy use by half. The ability will start consuming it's duration when you shoot for first time. Can be stacked up to 3 times."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "85"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "40
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Laser_Turret" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row2/Laser_Turret"]
+position = Vector2(14, 13)
+texture = ExtResource("32_xpips")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Laser_Turret"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("31_qw402")
+
+[node name="1" type="Label" parent="Rows/Row2/Laser_Turret/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Laser_Turret"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("31_qw402")
+
+[node name="2" type="Label" parent="Rows/Row2/Laser_Turret/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Laser_Turret"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("31_qw402")
+
+[node name="3" type="Label" parent="Rows/Row2/Laser_Turret/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row2/Laser_Turret"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -31.0
+offset_right = 40.0
+offset_bottom = 9.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("32_xpips")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 106.0
+text = "The laser turret ability summons a powerful laser turret that will attack your enemies, piercing them."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+position = Vector2(142, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "140"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "55
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cheese_Transmutation" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation"]
+position = Vector2(14, 13)
+texture = ExtResource("33_kko80")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Cheese_Transmutation"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("34_84nrx")
+
+[node name="1" type="Label" parent="Rows/Row2/Cheese_Transmutation/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Cheese_Transmutation"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("34_84nrx")
+
+[node name="2" type="Label" parent="Rows/Row2/Cheese_Transmutation/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Cheese_Transmutation"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("34_84nrx")
+
+[node name="3" type="Label" parent="Rows/Row2/Cheese_Transmutation/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row2/Cheese_Transmutation"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -32.0
+offset_top = -31.0
+offset_right = 8.0
+offset_bottom = 9.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("33_kko80")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 106.0
+text = "The cheese transmutation ability converts your nearest enemy into a piece of cheese. You can eat the cheese to recover 25% of your life and energy."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -3.0
+offset_bottom = 6.0
+text = "80"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "16
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lethal_Vacuum_Cleaner" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
+position = Vector2(14, 13)
+texture = ExtResource("35_7qgsm")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("35_m4rds")
+
+[node name="1" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("35_m4rds")
+
+[node name="2" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("35_m4rds")
+
+[node name="3" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -67.0
+offset_top = -31.0
+offset_right = -27.0
+offset_bottom = 9.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("35_7qgsm")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 31.0
+offset_right = 236.0
+offset_bottom = 103.0
+text = "The lethal vacuum cleaner ability summons a lethal vacuum cleaner that aspires (destroys) up to 5 enemies until being destroyed. The heavier the enemy, the slower the vacuum cleaner will attract it.
+"
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+position = Vector2(141, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -5.0
+offset_bottom = 6.0
+text = "120"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "40
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Green_Apple_Vomit" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit"]
+position = Vector2(14, 13)
+texture = ExtResource("37_sv7lf")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Green_Apple_Vomit"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("38_mm0ro")
+
+[node name="1" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Green_Apple_Vomit"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("38_mm0ro")
+
+[node name="2" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Green_Apple_Vomit"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("38_mm0ro")
+
+[node name="3" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row2/Green_Apple_Vomit"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -102.0
+offset_top = -31.0
+offset_right = -62.0
+offset_bottom = 9.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("37_sv7lf")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 236.0
+offset_bottom = 102.0
+text = "The green apple vomit is  a gross ability. Slimes love green apples because of their acidic flavor, but you ate more than normal, causing you to throw up in your enemies, damaging them and reducing their damage.
+"
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -3.0
+offset_bottom = 6.0
+text = "80"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "14
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equipped_Abilities" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(0, -56)
+texture = ExtResource("20_qisyp")
+script = ExtResource("19_81dld")
+
+[node name="Pos_1" type="Node2D" parent="Equipped_Abilities"]
+position = Vector2(-32, 0)
+
+[node name="Pos_2" type="Node2D" parent="Equipped_Abilities"]
+
+[node name="Pos_3" type="Node2D" parent="Equipped_Abilities"]
+position = Vector2(32, 0)
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("11_jc1er")
+texture_pressed = ExtResource("15_uvuj7")
+texture_hover = ExtResource("16_cu37g")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_jf68m")

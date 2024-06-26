@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvyds7w8b73bf"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Life_Module.gd" id="1_rcn81"]
+
+[node name="Life_Module" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_rcn81")

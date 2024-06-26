@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnh8ic5jmr58n"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/Map_Selection/Map_Button.gd" id="1_0w01e"]
+[ext_resource type="Texture2D" uid="uid://c8tul5bkou4pa" path="res://Sprites/Menu/MapsButtons/MapButtonLocked.png" id="1_6hpk0"]
+
+[node name="Map_Button" type="TextureButton"]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.062
+offset_right = -0.32
+offset_bottom = -0.176003
+texture_disabled = ExtResource("1_6hpk0")
+script = ExtResource("1_0w01e")

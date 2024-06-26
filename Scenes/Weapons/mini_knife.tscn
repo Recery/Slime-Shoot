@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd1txb43a6bug"]
+
+[ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="1_img25"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Mini_Knife.gd" id="2_2aqq4"]
+
+[node name="Mini_Knife" type="Sprite2D"]
+texture = ExtResource("1_img25")
+script = ExtResource("2_2aqq4")
+shoot_cooldown = 0.3
+original_energy_use = 4.0
+hold_offset = Vector2(7, 1)
+
+[node name="Slash_Pos" type="Node2D" parent="."]
+position = Vector2(6, 0)
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dci0s23f6o14y"]
+
+[ext_resource type="Texture2D" uid="uid://ctd26hwgnwp4m" path="res://Sprites/Enemies/SandstoneGolem/ExpansiveWave.png" id="1_uv21a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uera"]
+atlas = ExtResource("1_uv21a")
+region = Rect2(0, 0, 28, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvoju"]
+atlas = ExtResource("1_uv21a")
+region = Rect2(28, 0, 28, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e11h4"]
+atlas = ExtResource("1_uv21a")
+region = Rect2(56, 0, 28, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tws6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uera")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvoju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e11h4")
+}],
+"loop": false,
+"name": &"wave",
+"speed": 6.0
+}]
+
+[node name="Expansive_Wave_Sprite" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_tws6g")
+animation = &"wave"
+autoplay = "wave"
+frame = 2
+frame_progress = 1.0

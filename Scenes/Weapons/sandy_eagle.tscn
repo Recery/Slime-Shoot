@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://drstnvaxkms6w"]
+
+[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="1_d1k1q"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Sandy_Eagle.gd" id="2_vd7bm"]
+[ext_resource type="AudioStream" uid="uid://b1e8bos155d4w" path="res://Sounds/SandyEagle.mp3" id="3_v18wn"]
+[ext_resource type="Texture2D" uid="uid://bdy8whk5r4quu" path="res://Sprites/Weapons/SandyEagleFire.png" id="4_xvknt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6is1k"]
+atlas = ExtResource("4_xvknt")
+region = Rect2(0, 0, 7, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a0b6"]
+atlas = ExtResource("4_xvknt")
+region = Rect2(7, 0, 7, 7)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f84jf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6is1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a0b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6is1k")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 14.0
+}]
+
+[node name="Sandy_Eagle" type="Sprite2D"]
+texture = ExtResource("1_d1k1q")
+script = ExtResource("2_vd7bm")
+shoot_cooldown = 1.8
+original_energy_use = 42.0
+energy_recover_cooldown = 2.2
+hold_offset = Vector2(10, 0)
+
+[node name="Shoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v18wn")
+volume_db = 3.0
+bus = &"Sounds"
+
+[node name="Cannon" type="Node2D" parent="."]
+position = Vector2(7, -1.5)
+
+[node name="Fire_Effect" type="AnimatedSprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(8, -1.5)
+sprite_frames = SubResource("SpriteFrames_f84jf")
+animation = &"Fire"
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="animation_finished" from="Fire_Effect" to="." method="_on_fire_effect_animation_finished"]

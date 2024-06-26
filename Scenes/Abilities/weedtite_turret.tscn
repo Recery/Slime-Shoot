@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://bi2g1t0nfwo3u"]
+
+[ext_resource type="Texture2D" uid="uid://bs25yy5i1pm6f" path="res://Sprites/Abilities/WeedtiteTurretBase.png" id="1_5rjcy"]
+[ext_resource type="Script" path="res://Scripts/Abilities/Weedtite_Turret.gd" id="2_0blca"]
+[ext_resource type="Texture2D" uid="uid://dasfdye62vn5t" path="res://Sprites/Abilities/WeedtiteTurretHead.png" id="3_8mm6h"]
+[ext_resource type="AudioStream" uid="uid://bysirtenpt8he" path="res://Sounds/Grass_Rock.wav" id="4_jffnf"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="4_qd8ej"]
+[ext_resource type="PackedScene" uid="uid://d21s3kgqk1hjy" path="res://Scenes/Useful/mini_progress_bar.tscn" id="6_cn17d"]
+
+[sub_resource type="Animation" id="Animation_qs1xj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qtbsi"]
+resource_name = "shoot"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Head:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xb0di"]
+_data = {
+"RESET": SubResource("Animation_qs1xj"),
+"shoot": SubResource("Animation_qtbsi")
+}
+
+[node name="Weedtite_Turret" type="Sprite2D"]
+texture = ExtResource("1_5rjcy")
+script = ExtResource("2_0blca")
+
+[node name="Head" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("3_8mm6h")
+hframes = 2
+
+[node name="Cannon" type="Node2D" parent="Head"]
+position = Vector2(4, 0)
+
+[node name="Walls_Detecter" type="RayCast2D" parent="Head"]
+position = Vector2(4, 0)
+target_position = Vector2(98, 0)
+collision_mask = 255
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(1.3125, 6.5)
+scale = Vector2(0.786765, 0.7)
+texture = ExtResource("4_qd8ej")
+hframes = 2
+
+[node name="Shoot_Anim" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xb0di")
+}
+
+[node name="Shoot_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jffnf")
+volume_db = 19.0
+bus = &"Sounds"
+
+[node name="Life_Bar" parent="." node_paths=PackedStringArray("timer_connected") instance=ExtResource("6_cn17d")]
+position = Vector2(-7.5, -12)
+timer_connected = NodePath("../Despawn_Timer")
+fill_with_timer = false
+
+[node name="Scan_Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Shoot_Cooldown" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[connection signal="timeout" from="Scan_Timer" to="." method="_on_scan_timer_timeout"]
+[connection signal="timeout" from="Shoot_Cooldown" to="." method="_on_shoot_cooldown_timeout"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

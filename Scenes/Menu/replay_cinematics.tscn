@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://71c34tsp0mwa"]
+
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_d5ecy"]
+[ext_resource type="Texture2D" uid="uid://oo7n7e5pk7gj" path="res://Sprites/Cinematics/Intro/ReplayIcon.png" id="2_1mr2q"]
+[ext_resource type="Texture2D" uid="uid://c26k7628mwjpa" path="res://Sprites/Cinematics/Intro/ReplayIconHover.png" id="3_ara1b"]
+[ext_resource type="Texture2D" uid="uid://c8tul5bkou4pa" path="res://Sprites/Menu/MapsButtons/MapButtonLocked.png" id="4_71j4k"]
+[ext_resource type="Script" path="res://Scripts/Menu/Replay_Cinematics/Replay_Button.gd" id="5_kmlu1"]
+[ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="6_tn05j"]
+[ext_resource type="PackedScene" uid="uid://c61mfsv2idn4c" path="res://Scenes/Cinematic/clown_dungeon_cinematic.tscn" id="7_46j5y"]
+[ext_resource type="Texture2D" uid="uid://dsr3qgj1rxvkx" path="res://Sprites/Cinematics/ClownDungeon/ReplayIcon.png" id="7_mwgy4"]
+[ext_resource type="Texture2D" uid="uid://boov3ka5sheg0" path="res://Sprites/Cinematics/ClownDungeon/ReplayIconHover.png" id="8_w0ggr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ugia"]
+font = ExtResource("1_d5ecy")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Replay_Cinematics" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Replay_Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = -110.0
+offset_top = -76.0
+offset_right = 110.0
+offset_bottom = -53.0
+text = "Replay cinematics"
+label_settings = SubResource("LabelSettings_5ugia")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -45.0
+offset_right = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Replay_Button" type="TextureButton" parent="Row1"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("2_1mr2q")
+texture_pressed = ExtResource("3_ara1b")
+texture_hover = ExtResource("3_ara1b")
+texture_disabled = ExtResource("4_71j4k")
+script = ExtResource("5_kmlu1")
+cinematic_to_play = ExtResource("6_tn05j")
+
+[node name="Replay_Button_2" type="TextureButton" parent="Row1"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("7_mwgy4")
+texture_pressed = ExtResource("8_w0ggr")
+texture_hover = ExtResource("8_w0ggr")
+texture_disabled = ExtResource("4_71j4k")
+script = ExtResource("5_kmlu1")
+cinematic_to_play = ExtResource("7_46j5y")
+
+[connection signal="pressed" from="Row1/Replay_Button" to="Row1/Replay_Button" method="_on_pressed"]
+[connection signal="pressed" from="Row1/Replay_Button_2" to="Row1/Replay_Button_2" method="_on_pressed"]

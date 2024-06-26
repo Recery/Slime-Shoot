@@ -1,0 +1,110 @@
+[gd_scene load_steps=7 format=3 uid="uid://xfg1addbh7i3"]
+
+[ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="1_fkiqm"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Energy_Lamp.gd" id="2_s35sp"]
+[ext_resource type="Texture2D" uid="uid://30ec5brjk1j5" path="res://Sprites/Useful/Light.png" id="3_4nhpg"]
+[ext_resource type="AudioStream" uid="uid://b7hm2fasilgq8" path="res://Sounds/EnergyLamp.mp3" id="4_mf0co"]
+
+[sub_resource type="Animation" id="Animation_eb83q"]
+resource_name = "fire"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iapit"]
+_data = {
+"fire": SubResource("Animation_eb83q")
+}
+
+[node name="Energy_Lantern" type="Sprite2D"]
+texture = ExtResource("1_fkiqm")
+hframes = 2
+frame = 1
+script = ExtResource("2_s35sp")
+shoot_cooldown = 5.5
+hold_offset = Vector2(7, -2)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iapit")
+}
+autoplay = "fire"
+
+[node name="Glass_1" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.196078)
+offset_left = 2.0
+offset_right = 4.0
+offset_bottom = 6.0
+
+[node name="Square" type="ColorRect" parent="Glass_1"]
+self_modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 2.0
+
+[node name="Glass_2" type="ColorRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.196078)
+offset_left = 5.0
+offset_right = 7.0
+offset_bottom = 6.0
+
+[node name="Square" type="ColorRect" parent="Glass_2"]
+self_modulate = Color(1, 1, 1, 0.196078)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1.0
+
+[node name="Light" type="PointLight2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.470588, 0.4, 0.784314)
+texture_filter = 1
+position = Vector2(4.5, 2.5)
+scale = Vector2(1, 0.975)
+color = Color(1, 0.435294, 0.364706, 1)
+energy = 0.2
+range_z_min = -1
+range_z_max = 0
+texture = ExtResource("3_4nhpg")
+
+[node name="Light2" type="PointLight2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(4.5, 2.5)
+scale = Vector2(1.225, 1.1875)
+color = Color(1, 0.435294, 0.364706, 1)
+energy = 0.2
+range_z_min = -1
+range_z_max = 0
+texture = ExtResource("3_4nhpg")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_mf0co")
+pitch_scale = 1.5
+bus = &"Sounds"
+
+[node name="Use_Light" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(4.5, 2.5)
+scale = Vector2(2.5, 2.425)
+color = Color(1, 0.435294, 0.364706, 1)
+energy = 0.6
+texture = ExtResource("3_4nhpg")
+
+[node name="Bright_Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="timeout" from="Bright_Timer" to="." method="animate_light"]

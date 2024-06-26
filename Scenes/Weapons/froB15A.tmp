@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfyi72towt5ra"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Frost_Spike.gd" id="1_k2aup"]
+[ext_resource type="Texture2D" uid="uid://banugdtqw6l34" path="res://Sprites/Weapons/Frost_Spike.png" id="2_bx3tf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ntqdp"]
+size = Vector2(8, 6)
+
+[node name="Frost_Spike" type="Area2D"]
+script = ExtResource("1_k2aup")
+speed = 190
+original_damage = 2
+despawn_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bx3tf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ntqdp")
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Particles_Timer" to="." method="_on_particles_timer_timeout"]

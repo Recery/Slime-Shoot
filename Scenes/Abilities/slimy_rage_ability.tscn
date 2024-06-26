@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://can76htfvmwca"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/slimy_rage_ability.gd" id="1_swcq2"]
+[ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="2_1xxlh"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_64cjk"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="4_2t80o"]
+[ext_resource type="AudioStream" uid="uid://b3a2pc7ya8hr5" path="res://Sounds/Infinite_Energy.mp3" id="5_2p13t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjira"]
+font = ExtResource("3_64cjk")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
+font = ExtResource("3_64cjk")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Slimy_Rage_Ability" type="Node2D"]
+script = ExtResource("1_swcq2")
+cooldown = 40
+starter_cooldown = 22
+energy_use = 85
+energy_recover_time = 1.5
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_1xxlh")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_cjira")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_2t80o")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "85
+"
+label_settings = SubResource("LabelSettings_s5yo5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_2p13t")
+volume_db = 7.0
+pitch_scale = 1.1
+bus = &"Sounds"
+
+[node name="Duration_Timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Duration_Timer" to="." method="_on_duration_timer_timeout"]
+[connection signal="timeout" from="Particles_Timer" to="." method="_on_particles_timer_timeout"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6g1ou25bdqx1"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/laser_turret_ability.gd" id="1_1vwye"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_xjpau"]
+[ext_resource type="Texture2D" uid="uid://dm3qoo4ay3xtb" path="res://Sprites/Abilities/LaserTurretAbility.png" id="2_gejq3"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="2_yhppj"]
+[ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="5_be0h1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cjira"]
+font = ExtResource("1_xjpau")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
+font = ExtResource("1_xjpau")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Laser_Turret_Ability" type="Node2D"]
+script = ExtResource("1_1vwye")
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_gejq3")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_cjira")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_yhppj")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "140
+"
+label_settings = SubResource("LabelSettings_s5yo5")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_be0h1")
+volume_db = 9.0
+pitch_scale = 0.9
+
+[node name="Duration_Timer" type="Timer" parent="."]
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Duration_Timer" to="." method="_on_duration_timer_timeout"]

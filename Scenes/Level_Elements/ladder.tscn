@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3yc5squ0287m"]
+
+[ext_resource type="Script" path="res://Scripts/Level_Elements/Ladder.gd" id="1_8hslg"]
+[ext_resource type="Texture2D" uid="uid://dgru54jhyoen4" path="res://Sprites/Level_Elements/Ladder.png" id="2_4j2j3"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="3_vk1bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66dxp"]
+size = Vector2(16, 20)
+
+[node name="Ladder" type="Area2D" groups=["Ladder"]]
+collision_layer = 0
+script = ExtResource("1_8hslg")
+up = null
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.25, 7.25)
+scale = Vector2(0.911765, 0.75)
+texture = ExtResource("3_vk1bp")
+hframes = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4j2j3")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_66dxp")

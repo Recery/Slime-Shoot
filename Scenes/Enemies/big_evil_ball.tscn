@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkfs4hqdocdeg"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/big_evil_ball.gd" id="1_k6ngt"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_eb13n"]
+[ext_resource type="Texture2D" uid="uid://bcn06ifm80see" path="res://Sprites/Enemies/EvilBall.png" id="3_a4s6v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4jrkx"]
+radius = 7.0
+
+[node name="Big_Evil_Ball" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0174533
+script = ExtResource("1_k6ngt")
+score_to_add = 3
+original_damage = 6.0
+original_speed = 36.0
+original_max_life = 8.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.5, 3)
+scale = Vector2(1, 1.2)
+texture = ExtResource("2_eb13n")
+hframes = 2
+
+[node name="Shading" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_a4s6v")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Ball" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_a4s6v")
+hframes = 6
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4jrkx")
+
+[node name="Summon_Timer" type="Timer" parent="."]
+wait_time = 11.0
+autostart = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Summon_Timer" to="." method="summon_illusion"]

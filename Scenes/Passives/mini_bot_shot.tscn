@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://fho3ifnkso7s"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Mini_Bot_Shot.gd" id="1_68v7r"]
+[ext_resource type="Texture2D" uid="uid://bix5vtp5n1xit" path="res://Sprites/Passives/MiniBotShot.png" id="2_ppqdi"]
+[ext_resource type="Texture2D" uid="uid://30ec5brjk1j5" path="res://Sprites/Useful/Light.png" id="3_5wfq6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kx2r"]
+size = Vector2(6, 3)
+
+[node name="Mini_Bot_Shot" type="Area2D"]
+script = ExtResource("1_68v7r")
+speed = 350
+original_damage = 2.0
+despawn_time = 5
+generated_by = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ppqdi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7kx2r")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(2.08616e-07, 0)
+scale = Vector2(0.8, 0.45)
+energy = 0.25
+texture = ExtResource("3_5wfq6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

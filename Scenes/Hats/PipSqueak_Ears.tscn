@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkcixf7m5s757"]
+
+[ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="1_0p8ms"]
+[ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="2_rwrxo"]
+
+[node name="PipSqueakEars" instance=ExtResource("1_0p8ms")]
+position = Vector2(0, -4)
+texture = ExtResource("2_rwrxo")

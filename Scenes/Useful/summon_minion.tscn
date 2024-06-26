@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://utayhu1yj7t7"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Summon.gd" id="1_fx2hu"]
+
+[node name="Summon_Minion" type="CharacterBody2D"]
+editor_description = "Esta clase mayormente maneja el movimiento idle de los minions y contiene variables utiles. También busca automaticamente el enemigo más cercano. El comportamiento invidual de cada minion se debe crear manualmente."
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_fx2hu")
+
+[connection signal="ready" from="." to="." method="_on_ready"]

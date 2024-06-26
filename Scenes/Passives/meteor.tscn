@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://bsktq1o3kth4d"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Meteor.gd" id="1_op73m"]
+[ext_resource type="Texture2D" uid="uid://b5vkq8ix820o1" path="res://Sprites/Passives/Meteor.png" id="2_ybdou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dphua"]
+atlas = ExtResource("2_ybdou")
+region = Rect2(0, 0, 14, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3kkr"]
+atlas = ExtResource("2_ybdou")
+region = Rect2(14, 0, 14, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_01ayw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dphua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3kkr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_shos4"]
+radius = 34.0
+
+[node name="Meteor" type="Area2D"]
+collision_layer = 0
+collision_mask = 14
+monitoring = false
+monitorable = false
+script = ExtResource("1_op73m")
+speed = 200
+original_damage = 2.0
+despawn_time = 5.0
+die_wait_time = 0.1
+generated_by = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_01ayw")
+autoplay = "default"
+frame_progress = 0.673744
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_shos4")
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Particles_Timer" to="." method="_on_particles_timer_timeout"]

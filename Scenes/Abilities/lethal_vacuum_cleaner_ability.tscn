@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dv2jygicebcm8"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/Lethal_Vacuum_Cleaner_Passive.gd" id="1_561qt"]
+[ext_resource type="Texture2D" uid="uid://1q4vbol77sj2" path="res://Sprites/Abilities/LethalVacuumCleanerAbility.png" id="2_orfqo"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_smkdm"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="4_koxv8"]
+[ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="5_6es3j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_64pij"]
+font = ExtResource("3_smkdm")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Lethal_Vacuum_Cleaner_Ability" type="Node2D"]
+script = ExtResource("1_561qt")
+cooldown = 40
+starter_cooldown = 8
+energy_use = 120
+energy_recover_time = 1.5
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_orfqo")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_64pij")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(6, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_koxv8")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "120"
+label_settings = SubResource("LabelSettings_64pij")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_6es3j")
+volume_db = 9.0
+pitch_scale = 0.9
+bus = &"Sounds"
+
+[connection signal="activate" from="." to="." method="_on_activate"]

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byh2ontnavkxs"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Coffee_Trail_Passive.gd" id="1_2it4r"]
+[ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="2_qr4cv"]
+
+[node name="Coffee_Trail_Passive" type="Node2D"]
+script = ExtResource("1_2it4r")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_qr4cv")
+
+[node name="Create_Trail_Timer" type="Timer" parent="."]
+wait_time = 0.9
+autostart = true
+
+[connection signal="timeout" from="Create_Trail_Timer" to="." method="_on_create_trail_timer_timeout"]

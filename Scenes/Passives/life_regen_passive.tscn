@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg6u0ffwolmut"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/Life_Regen_Passive.gd" id="1_651ll"]
+[ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="2_4x57v"]
+
+[node name="Life_Regen_Passive" type="Node2D"]
+script = ExtResource("1_651ll")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4x57v")
+
+[node name="Regen_Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="Regen_Timer" to="." method="_on_regen_timer_timeout"]

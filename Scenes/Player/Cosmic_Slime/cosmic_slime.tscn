@@ -1,0 +1,160 @@
+[gd_scene load_steps=11 format=3 uid="uid://orhaho5ua2ql"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Cosmic_Slime/cosmic_slime.gd" id="1_h1xja"]
+[ext_resource type="PackedScene" uid="uid://jim6o4trucvr" path="res://Scenes/Player/Cosmic_Slime/Stellar_Mark_Perk.tscn" id="2_7yt0x"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_du7l4"]
+[ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="3_oquly"]
+
+[sub_resource type="Animation" id="Animation_31bbd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_ofu11"]
+resource_name = "bounce_bright"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_stdud"]
+resource_name = "bounce_shadow"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Animation_Player_Slime:speed_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4i7px"]
+_data = {
+"RESET": SubResource("Animation_31bbd"),
+"bounce_bright": SubResource("Animation_ofu11"),
+"bounce_shadow": SubResource("Animation_stdud")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k58m0"]
+size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfrwt"]
+size = Vector2(14, 10)
+
+[node name="Cosmic_Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_collision")]
+script = ExtResource("1_h1xja")
+damage_collision = NodePath("Damage_Collision")
+sprite_perk = ExtResource("2_7yt0x")
+original_speed = 115
+max_life = 60
+max_energy = 320
+original_energy_recover_weight = 1.3
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("2_du7l4")
+hframes = 2
+frame = 1
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_oquly")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="Animation_Player_Slime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4i7px")
+}
+autoplay = "bounce_shadow"
+speed_scale = 1.4
+
+[node name="Map_Collision" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_k58m0")
+
+[node name="Damage_Collision" type="Area2D" parent="."]
+visible = false
+collision_layer = 14
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_Collision"]
+shape = SubResource("RectangleShape2D_xfrwt")
+debug_color = Color(0.686275, 0.25098, 0, 0.419608)
+
+[node name="Mark_Cooldown" type="Timer" parent="."]
+wait_time = 1.4
+one_shot = true
+
+[node name="Particle_Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="_extra_physics_process" from="." to="." method="_on_extra_physics_process"]
+[connection signal="animation_finished" from="Animation_Player_Slime" to="." method="_on_animation_player_slime_animation_finished"]
+[connection signal="timeout" from="Mark_Cooldown" to="." method="_on_mark_cooldown_timeout"]
+[connection signal="timeout" from="Particle_Timer" to="." method="_on_particle_timer_timeout"]

@@ -1,0 +1,292 @@
+[gd_scene load_steps=12 format=3 uid="uid://bqnkjpdhdu0t0"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/credits_button.gd" id="1_dfsal"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_jqwe6"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="3_moadg"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="4_iy1dx"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="5_ql2i8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qwq8k"]
+font = ExtResource("1_jqwe6")
+font_color = Color(0, 0.921569, 0, 1)
+outline_size = 3
+outline_color = Color(0.0627451, 0.301961, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tim7q"]
+font = ExtResource("1_jqwe6")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_euyov"]
+font = ExtResource("1_jqwe6")
+font_color = Color(0.309804, 0.192157, 0.972549, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_cu7il"]
+font = ExtResource("1_jqwe6")
+font_size = 8
+font_color = Color(1, 0.32549, 0.258824, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uuebs"]
+font = ExtResource("1_jqwe6")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6q66s"]
+font = ExtResource("1_jqwe6")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dfsal")
+
+[node name="Credits_Box" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -129.0
+offset_top = -73.0
+offset_right = 129.0
+offset_bottom = -42.0
+pivot_offset = Vector2(110, 0)
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Text1" type="Label" parent="Credits_Box"]
+layout_mode = 2
+text = "Special thanks to:"
+label_settings = SubResource("LabelSettings_qwq8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box1" type="VBoxContainer" parent="Credits_Box"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Link" type="LinkButton" parent="Credits_Box/Box1"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.309804, 0.192157, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_hover_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_jqwe6")
+text = "ansimuz"
+uri = "https://ansimuz.itch.io/"
+
+[node name="Text1" type="Label" parent="Credits_Box/Box1"]
+layout_mode = 2
+text = "\"Battle Encounter\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Credits_Box/Box1"]
+layout_mode = 2
+text = "\"Magic 7\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text3" type="Label" parent="Credits_Box/Box1"]
+layout_mode = 2
+text = "\"Going up\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text4" type="Label" parent="Credits_Box/Box1"]
+layout_mode = 2
+text = "\"Dark ambient 2\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text5" type="Label" parent="Credits_Box/Box1"]
+layout_mode = 2
+text = "\"Cyberpunk city 2B\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box2" type="VBoxContainer" parent="Credits_Box"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Link" type="LinkButton" parent="Credits_Box/Box2"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.309804, 0.192157, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_hover_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_jqwe6")
+text = "ORU"
+uri = "https://www.youtube.com/@ORUMusic"
+
+[node name="Text1" type="Label" parent="Credits_Box/Box2"]
+layout_mode = 2
+text = "\"Orange Dreamsicle\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits_Box2" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -129.0
+offset_top = -73.0
+offset_right = 129.0
+offset_bottom = 94.0
+pivot_offset = Vector2(110, 0)
+theme_override_constants/separation = 8
+
+[node name="Text1" type="Label" parent="Credits_Box2"]
+layout_mode = 2
+text = "Special thanks to:"
+label_settings = SubResource("LabelSettings_qwq8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box3" type="VBoxContainer" parent="Credits_Box2"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Link" type="LinkButton" parent="Credits_Box2/Box3"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.309804, 0.192157, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_hover_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_jqwe6")
+text = "Kevin MacLeod"
+uri = "https://www.youtube.com/channel/UCSZXFhRIx6b0dFX3xS8L1yQ"
+
+[node name="Text1" type="Label" parent="Credits_Box2/Box3"]
+layout_mode = 2
+text = "\"Desert City\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box4" type="VBoxContainer" parent="Credits_Box2"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Link" type="LinkButton" parent="Credits_Box2/Box4"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.309804, 0.192157, 0.972549, 1)
+theme_override_colors/font_pressed_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_hover_color = Color(0.380392, 0.372549, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_jqwe6")
+text = "RhoLanRam"
+uri = "https://pixabay.com/users/rholanram-25502187/"
+
+[node name="Text1" type="Label" parent="Credits_Box2/Box4"]
+layout_mode = 2
+text = "\"Digital Sahara\" music"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Box5" type="VBoxContainer" parent="Credits_Box2"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Text4" type="Label" parent="Credits_Box2/Box5"]
+layout_mode = 2
+text = "You"
+label_settings = SubResource("LabelSettings_euyov")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text5" type="Label" parent="Credits_Box2/Box5"]
+layout_mode = 2
+text = "for playing the game!"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Textbox5" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 69.0
+offset_right = 72.0
+offset_bottom = 76.0
+alignment = 1
+
+[node name="Text4" type="Label" parent="Textbox5"]
+layout_mode = 2
+text = "Made by:"
+label_settings = SubResource("LabelSettings_tim7q")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text5" type="Label" parent="Textbox5"]
+layout_mode = 2
+text = "SenkoSan12543"
+label_settings = SubResource("LabelSettings_cu7il")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 112.0
+offset_top = -73.0
+offset_right = 140.0
+offset_bottom = -45.0
+texture_normal = ExtResource("3_moadg")
+texture_pressed = ExtResource("4_iy1dx")
+texture_hover = ExtResource("5_ql2i8")
+
+[node name="Next" type="Label" parent="Next_Button"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 19.0
+offset_bottom = 21.0
+text = ">"
+label_settings = SubResource("LabelSettings_uuebs")
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -140.0
+offset_top = -73.0
+offset_right = -112.0
+offset_bottom = -45.0
+texture_normal = ExtResource("3_moadg")
+texture_pressed = ExtResource("4_iy1dx")
+texture_hover = ExtResource("5_ql2i8")
+
+[node name="Back" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 19.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_6q66s")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[connection signal="pressed" from="Next_Button" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

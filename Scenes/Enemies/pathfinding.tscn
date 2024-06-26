@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c313o5a3irlfj"]
+
+[node name="Pathfinding" type="NavigationAgent2D"]
+path_max_distance = 20.0
+navigation_layers = 2
+path_postprocessing = 1

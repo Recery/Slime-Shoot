@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcq4patksr1xa"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Yellow_Slime/Shock_Perk_Damage.gd" id="1_0hoev"]
+
+[node name="Shock_Perk_Damage" type="Node2D" groups=["Friendly_Damage"]]
+script = ExtResource("1_0hoev")

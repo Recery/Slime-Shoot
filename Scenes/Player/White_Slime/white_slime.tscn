@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://btggtpp08413a"]
+
+[ext_resource type="Script" path="res://Scripts/Player/White_Slime/White_Slime.gd" id="1_xcvaf"]
+[ext_resource type="PackedScene" uid="uid://dsaekcinenbdd" path="res://Scenes/Player/White_Slime/Glacibot_Perk.tscn" id="2_fqvgv"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_me173"]
+[ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="3_yvsgs"]
+
+[sub_resource type="Animation" id="Animation_0axbv"]
+resource_name = "bounce_shadow"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slime:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mejim"]
+_data = {
+"bounce_shadow": SubResource("Animation_0axbv")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76qxg"]
+size = Vector2(14, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ets3"]
+size = Vector2(14, 10)
+
+[node name="White_Slime" type="CharacterBody2D" node_paths=PackedStringArray("damage_collision")]
+script = ExtResource("1_xcvaf")
+damage_collision = NodePath("Damage_Collision")
+sprite_perk = ExtResource("2_fqvgv")
+original_speed = 105
+max_life = 70
+max_energy = 260
+original_energy_recover_weight = 1.1
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1, 2)
+texture = ExtResource("2_me173")
+hframes = 2
+
+[node name="Slime" type="Sprite2D" parent="."]
+texture = ExtResource("3_yvsgs")
+hframes = 2
+
+[node name="Animation_Player_Slime" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mejim")
+}
+autoplay = "bounce_shadow"
+
+[node name="Map_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_76qxg")
+
+[node name="Damage_Collision" type="Area2D" parent="."]
+collision_layer = 14
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_Collision"]
+shape = SubResource("RectangleShape2D_0ets3")
+debug_color = Color(0.686275, 0.25098, 0, 0.419608)
+
+[connection signal="_extra_physics_process" from="." to="." method="_on_extra_physics_process"]

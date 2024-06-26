@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://c3355p6xk1fnk"]
+
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_cbrrn"]
+[ext_resource type="PackedScene" uid="uid://dc00nddmmp4kv" path="res://Scenes/Menu/check_button.tscn" id="2_1165m"]
+[ext_resource type="Texture2D" uid="uid://jdykgplmrjgv" path="res://Sprites/Menu/Settings/EvilBallGrabber.png" id="2_je51q"]
+[ext_resource type="Script" path="res://Scripts/Menu/Settings/Show_FPS_Counter.gd" id="3_f8cc2"]
+[ext_resource type="Script" path="res://Scripts/Menu/Settings/Shadows.gd" id="4_4tqst"]
+[ext_resource type="Script" path="res://Scripts/Menu/Settings/Volume_Slider.gd" id="4_bbpo2"]
+[ext_resource type="Texture2D" uid="uid://8jjilnqrmr34" path="res://Sprites/Menu/Settings/EvilBallGrabberHover.png" id="5_04a44"]
+[ext_resource type="Texture2D" uid="uid://didh6qqvthalc" path="res://Sprites/Useful/BossProgressBar.png" id="7_ebxqs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jv6kl"]
+font = ExtResource("1_cbrrn")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g8r5i"]
+texture = ExtResource("7_ebxqs")
+texture_margin_left = 10.0
+texture_margin_top = 4.0
+texture_margin_right = 10.0
+modulate_color = Color(0, 0.498039, 0, 1)
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -144.0
+offset_top = -81.0
+offset_right = 144.0
+offset_bottom = 81.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(144, 81)
+zoom = Vector2(4, 4)
+
+[node name="Column" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.028
+anchor_right = 0.935
+anchor_bottom = 0.473
+offset_left = -0.119991
+offset_top = 0.0639982
+offset_right = -0.104004
+offset_bottom = -0.026001
+theme_override_constants/separation = 8
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Show_FPS" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Column/Show_FPS"]
+layout_mode = 2
+text = "Show FPS counter "
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Show_FPS" parent="Column/Show_FPS" instance=ExtResource("2_1165m")]
+layout_mode = 2
+script = ExtResource("3_f8cc2")
+
+[node name="Shadows" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Column/Shadows"]
+layout_mode = 2
+text = "Shadows "
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shadows" parent="Column/Shadows" instance=ExtResource("2_1165m")]
+layout_mode = 2
+script = ExtResource("4_4tqst")
+
+[node name="Sound_Volume" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Column/Sound_Volume"]
+layout_mode = 2
+text = "  Sounds"
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume_Slider" type="HSlider" parent="Column/Sound_Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_icons/grabber = ExtResource("2_je51q")
+theme_override_icons/grabber_highlight = ExtResource("5_04a44")
+theme_override_icons/grabber_disabled = ExtResource("5_04a44")
+theme_override_styles/slider = SubResource("StyleBoxTexture_g8r5i")
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("4_bbpo2")
+bus_index = 1
+
+[node name="Music_Volume" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Column/Music_Volume"]
+layout_mode = 2
+text = "    Music"
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Volume_Slider" type="HSlider" parent="Column/Music_Volume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_icons/grabber = ExtResource("2_je51q")
+theme_override_icons/grabber_highlight = ExtResource("5_04a44")
+theme_override_icons/grabber_disabled = ExtResource("5_04a44")
+theme_override_styles/slider = SubResource("StyleBoxTexture_g8r5i")
+min_value = -30.0
+max_value = 0.0
+script = ExtResource("4_bbpo2")
+bus_index = 2
+
+[connection signal="value_changed" from="Column/Sound_Volume/Volume_Slider" to="Column/Sound_Volume/Volume_Slider" method="_on_value_changed"]
+[connection signal="value_changed" from="Column/Music_Volume/Volume_Slider" to="Column/Music_Volume/Volume_Slider" method="_on_value_changed"]

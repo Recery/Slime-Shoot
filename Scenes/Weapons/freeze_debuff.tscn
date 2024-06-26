@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgg5o1f40da3l"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Freeze_Debuff.gd" id="1_o80pu"]
+
+[node name="Freeze_Debuff" type="Node"]
+script = ExtResource("1_o80pu")
+
+[node name="Duration" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="timeout" from="Duration" to="." method="_on_duration_timeout"]

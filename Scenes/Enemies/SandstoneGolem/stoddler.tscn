@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=3 uid="uid://ufx63ptfprh1"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/SandstoneGolem/stoddler.gd" id="1_kku84"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_fgbfo"]
+[ext_resource type="Texture2D" uid="uid://dklp5olq6wawb" path="res://Sprites/Enemies/SandstoneGolem/Stoddler.png" id="3_e5r23"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u16eb"]
+atlas = ExtResource("3_e5r23")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d024"]
+atlas = ExtResource("3_e5r23")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr2sm"]
+atlas = ExtResource("3_e5r23")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_67ox0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u16eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d024")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u16eb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr2sm")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i4eoe"]
+radius = 6.0
+
+[node name="Stoddler" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_kku84")
+score_to_add = 3
+original_damage = 8.0
+original_speed = 45.0
+original_max_life = 7.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(2, 3)
+scale = Vector2(0.764706, 0.95)
+texture = ExtResource("2_fgbfo")
+hframes = 2
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_67ox0")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.322397
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i4eoe")
+
+[connection signal="die" from="." to="." method="_on_die"]

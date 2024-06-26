@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpdyfkr05iyoc"]
+
+[ext_resource type="Script" path="res://Scripts/Useful/Progress_Bar.gd" id="1_vxy4e"]
+[ext_resource type="Texture2D" uid="uid://didh6qqvthalc" path="res://Sprites/Useful/BossProgressBar.png" id="2_rcus8"]
+
+[node name="Progress_Bar" type="Node2D"]
+z_index = 1
+script = ExtResource("1_vxy4e")
+
+[node name="Frame" type="TextureRect" parent="."]
+offset_right = 97.0
+offset_bottom = 4.0
+texture = ExtResource("2_rcus8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+show_behind_parent = true
+offset_left = 1.0
+offset_right = 96.0
+offset_bottom = 4.0
+color = Color(0.603922, 0.603922, 0.603922, 1)

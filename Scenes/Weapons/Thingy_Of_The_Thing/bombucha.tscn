@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://c74xyx20ha60t"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Thingy_Of_The_Thing/Bombucha.gd" id="1_377wd"]
+[ext_resource type="Texture2D" uid="uid://blvhxlug1haeb" path="res://Sprites/Weapons/ThingyOfTheThing/Bombucha.png" id="2_7teqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35ac3"]
+size = Vector2(6, 8)
+
+[node name="Bombucha" type="Area2D"]
+collision_layer = 14
+collision_mask = 14
+script = ExtResource("1_377wd")
+speed = 170
+original_damage = 2.0
+despawn_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7teqf")
+hframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_35ac3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

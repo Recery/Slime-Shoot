@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://0fax33b8yau"]
+
+[ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="1_c0bvs"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Frost_Staff.gd" id="2_cmqgn"]
+[ext_resource type="AudioStream" uid="uid://dlkyghumbbsjx" path="res://Sounds/IceAttack.mp3" id="3_7rkv6"]
+[ext_resource type="Texture2D" uid="uid://30ec5brjk1j5" path="res://Sprites/Useful/Light.png" id="3_a36bt"]
+
+[sub_resource type="Animation" id="Animation_ywdpi"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ahefs"]
+resource_name = "shoot"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d6fed"]
+_data = {
+"RESET": SubResource("Animation_ywdpi"),
+"shoot": SubResource("Animation_ahefs")
+}
+
+[node name="Frost_Staff" type="Sprite2D"]
+texture = ExtResource("1_c0bvs")
+hframes = 3
+script = ExtResource("2_cmqgn")
+shoot_cooldown = 1.2
+original_energy_use = 30.0
+energy_recover_cooldown = 1.5
+
+[node name="Light_Shoot" type="PointLight2D" parent="."]
+texture_filter = 1
+position = Vector2(3, -3)
+enabled = false
+color = Color(0.470588, 0.639216, 1, 1)
+energy = 0.5
+texture = ExtResource("3_a36bt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d6fed")
+}
+
+[node name="Shoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7rkv6")
+volume_db = 6.0
+pitch_scale = 1.2
+bus = &"Sounds"
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

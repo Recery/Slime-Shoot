@@ -1,0 +1,2102 @@
+[gd_scene load_steps=45 format=3 uid="uid://cq3m7ndadb2jt"]
+
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_llrg5"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="2_m7hc0"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="2_nav4d"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="3_7r6lc"]
+[ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="3_78yln"]
+[ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="4_3y6fo"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection.gd" id="5_ewph1"]
+[ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="6_oxw48"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="7_gyls4"]
+[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="8_21d7m"]
+[ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="9_romfm"]
+[ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="10_6jd5v"]
+[ext_resource type="PackedScene" uid="uid://cd1txb43a6bug" path="res://Scenes/Weapons/mini_knife.tscn" id="11_10ija"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="11_amhss"]
+[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="12_ds6om"]
+[ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="12_mf6fi"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="13_2duse"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="13_o68sw"]
+[ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="13_u3wbb"]
+[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="14_70lrc"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Weapons_Sprites.gd" id="14_d2xdu"]
+[ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="14_xedje"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="15_k387t"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="16_141qd"]
+[ext_resource type="PackedScene" uid="uid://0fax33b8yau" path="res://Scenes/Weapons/frost_staff.tscn" id="16_y0bah"]
+[ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="17_lpb8w"]
+[ext_resource type="PackedScene" uid="uid://drstnvaxkms6w" path="res://Scenes/Weapons/sandy_eagle.tscn" id="18_xrxwi"]
+[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="19_0500m"]
+[ext_resource type="PackedScene" uid="uid://xfg1addbh7i3" path="res://Scenes/Weapons/energy_lantern.tscn" id="25_sr4l0"]
+[ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="26_gjgv7"]
+[ext_resource type="PackedScene" uid="uid://k8ownvc83oig" path="res://Scenes/Weapons/baby_log.tscn" id="27_smutd"]
+[ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="28_p7b6w"]
+[ext_resource type="PackedScene" uid="uid://lphu8w311olc" path="res://Scenes/Weapons/fart_rifle.tscn" id="29_m4d42"]
+[ext_resource type="Texture2D" uid="uid://didqrrgjyaa8" path="res://Sprites/Weapons/FartRifle.png" id="30_jeik0"]
+[ext_resource type="PackedScene" uid="uid://bodvguqwnpkwj" path="res://Scenes/Weapons/paint_bomb.tscn" id="33_6govg"]
+[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="34_j3gs2"]
+[ext_resource type="PackedScene" uid="uid://bxkmog2pchtmw" path="res://Scenes/Weapons/Thingy_Of_The_Thing/thingy_of_the_thing.tscn" id="35_0dovu"]
+[ext_resource type="Texture2D" uid="uid://d2usm5lv207pf" path="res://Sprites/Weapons/ThingyOfTheThing/ThingyOfTheThing.png" id="36_w3s6x"]
+[ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="37_pnldy"]
+[ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="38_5ptlu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
+font = ExtResource("7_gyls4")
+font_color = Color(1, 0.211765, 0.156863, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
+font = ExtResource("7_gyls4")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nkm4v"]
+font = ExtResource("7_gyls4")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
+font = ExtResource("7_gyls4")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Equipment_Weapons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -225.0
+offset_top = -114.0
+offset_right = 231.0
+offset_bottom = 170.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -33.0
+offset_right = -108.0
+offset_bottom = -5.0
+
+[node name="Row1" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Weedtite_Microgun" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Weedtite_Microgun"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("6_oxw48")
+
+[node name="1" type="Label" parent="Rows/Row1/Weedtite_Microgun/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Weedtite_Microgun"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("6_oxw48")
+
+[node name="2" type="Label" parent="Rows/Row1/Weedtite_Microgun/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Weedtite_Microgun"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("6_oxw48")
+
+[node name="3" type="Label" parent="Rows/Row1/Weedtite_Microgun/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun"]
+position = Vector2(14, 13)
+texture = ExtResource("8_21d7m")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Weedtite_Microgun"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("8_21d7m")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The weedtite microgun shoots basic bullets to your enemies using low energy. The Green Slime's signature weapon."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "7"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
+position = Vector2(144, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -36.0
+offset_top = -4.0
+offset_right = -12.0
+offset_bottom = 6.0
+text = "0.42
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grenade" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Grenade"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("9_romfm")
+
+[node name="1" type="Label" parent="Rows/Row1/Grenade/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Grenade"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("9_romfm")
+
+[node name="2" type="Label" parent="Rows/Row1/Grenade/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Grenade"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("9_romfm")
+
+[node name="3" type="Label" parent="Rows/Row1/Grenade/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Grenade"]
+position = Vector2(14, 13)
+texture = ExtResource("10_6jd5v")
+hframes = 2
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Grenade"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = 1.0
+offset_right = 5.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("10_6jd5v")
+hframes = 2
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Grenade/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The grenade is a slow and strong weapon. Uses lots of energy, but deals heavy damage to the first enemy and low damage to some nearby enemies."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Grenade/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "70
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Grenade/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 2.0
+offset_bottom = 6.0
+text = "3"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mini_Knife" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Mini_Knife"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("11_10ija")
+
+[node name="1" type="Label" parent="Rows/Row1/Mini_Knife/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Mini_Knife"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("11_10ija")
+
+[node name="2" type="Label" parent="Rows/Row1/Mini_Knife/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Mini_Knife"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("11_10ija")
+
+[node name="3" type="Label" parent="Rows/Row1/Mini_Knife/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Mini_Knife"]
+position = Vector2(14, 13)
+texture = ExtResource("12_mf6fi")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Mini_Knife"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 1.0
+offset_right = -30.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("12_mf6fi")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The mini knife deals low damage at fast speed. Uses low energy and it's a melee weapon."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "4
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
+position = Vector2(140, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "0.3
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rock" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Rock"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("13_u3wbb")
+
+[node name="1" type="Label" parent="Rows/Row1/Rock/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Rock"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("13_u3wbb")
+
+[node name="2" type="Label" parent="Rows/Row1/Rock/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Rock"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("13_u3wbb")
+
+[node name="3" type="Label" parent="Rows/Row1/Rock/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Rock"]
+position = Vector2(14, 13)
+texture = ExtResource("14_xedje")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Rock"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 1.0
+offset_right = -65.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("14_xedje")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Rock/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The rock can be thrown, dealing moderate damage with a moderate energy use."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Rock/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "15"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Rock/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "0.9
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Frost_Staff" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Frost_Staff"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("16_y0bah")
+
+[node name="1" type="Label" parent="Rows/Row1/Frost_Staff/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Frost_Staff"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("16_y0bah")
+
+[node name="2" type="Label" parent="Rows/Row1/Frost_Staff/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Frost_Staff"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("16_y0bah")
+
+[node name="3" type="Label" parent="Rows/Row1/Frost_Staff/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Frost_Staff"]
+position = Vector2(14, 13)
+texture = ExtResource("17_lpb8w")
+hframes = 3
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Frost_Staff"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 1.0
+offset_right = -100.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("17_lpb8w")
+hframes = 3
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The frost staff pierces up to 3 enemies, dealing low damage to each one. It also freezes them, reducing their move speed. Moderate energy use."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "30"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "1.2
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Lantern" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Energy_Lantern"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("25_sr4l0")
+
+[node name="1" type="Label" parent="Rows/Row1/Energy_Lantern/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Energy_Lantern"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("25_sr4l0")
+
+[node name="2" type="Label" parent="Rows/Row1/Energy_Lantern/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Energy_Lantern"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("25_sr4l0")
+
+[node name="3" type="Label" parent="Rows/Row1/Energy_Lantern/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Energy_Lantern"]
+position = Vector2(14, 13)
+texture = ExtResource("26_gjgv7")
+hframes = 2
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Energy_Lantern"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = 1.0
+offset_right = -135.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("26_gjgv7")
+hframes = 2
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 235.0
+offset_bottom = 97.0
+text = "While holding the energy lantern, you'll recover energy faster and you'll always be able to use energy even after running out of it. Use it and you'll recover all  your energy at the cost of 25% of your life."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "10"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "5.5
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Baby_Log" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Baby_Log"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("27_smutd")
+
+[node name="1" type="Label" parent="Rows/Row1/Baby_Log/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Baby_Log"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("27_smutd")
+
+[node name="2" type="Label" parent="Rows/Row1/Baby_Log/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Baby_Log"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("27_smutd")
+
+[node name="3" type="Label" parent="Rows/Row1/Baby_Log/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Baby_Log"]
+position = Vector2(14, 13)
+texture = ExtResource("28_p7b6w")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Baby_Log"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -210.0
+offset_top = 1.0
+offset_right = -170.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("28_p7b6w")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The baby log is a melee weapon that deals low damage to all enemies that it hits. The first enemy will receive moderate damage. Moderate energy use and moderate attack speed."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "26"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "1.1
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fart_Rifle" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row1/Fart_Rifle"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("29_m4d42")
+
+[node name="1" type="Label" parent="Rows/Row1/Fart_Rifle/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row1/Fart_Rifle"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("29_m4d42")
+
+[node name="2" type="Label" parent="Rows/Row1/Fart_Rifle/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row1/Fart_Rifle"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("29_m4d42")
+
+[node name="3" type="Label" parent="Rows/Row1/Fart_Rifle/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Fart_Rifle"]
+position = Vector2(14, 13)
+texture = ExtResource("30_jeik0")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row1/Fart_Rifle"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 1.0
+offset_right = -205.0
+offset_bottom = 41.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("30_jeik0")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The fart rifle is very disgusting. But it also is a powerful weapon. It doesn't deal any damage, but it will pierces enemies and intoxicate them with fart poison."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "42"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "1.9
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row2" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Sandy_Eagle" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Sandy_Eagle"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("18_xrxwi")
+
+[node name="1" type="Label" parent="Rows/Row2/Sandy_Eagle/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Sandy_Eagle"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("18_xrxwi")
+
+[node name="2" type="Label" parent="Rows/Row2/Sandy_Eagle/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Sandy_Eagle"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("18_xrxwi")
+
+[node name="3" type="Label" parent="Rows/Row2/Sandy_Eagle/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle"]
+position = Vector2(14, 13)
+texture = ExtResource("19_0500m")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Sandy_Eagle"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("19_0500m")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. The Yellow Slime's signature weapon."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "42"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "1.8
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Paint_Bomb" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Paint_Bomb"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("33_6govg")
+
+[node name="1" type="Label" parent="Rows/Row2/Paint_Bomb/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Paint_Bomb"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("33_6govg")
+
+[node name="2" type="Label" parent="Rows/Row2/Paint_Bomb/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Paint_Bomb"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("33_6govg")
+
+[node name="3" type="Label" parent="Rows/Row2/Paint_Bomb/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Paint_Bomb"]
+position = Vector2(14, 13)
+texture = ExtResource("34_j3gs2")
+hframes = 2
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Paint_Bomb"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -32.0
+offset_right = 5.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("34_j3gs2")
+hframes = 2
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The paint bomb deals low damage to the first enemy it hits. After that, it creates a paint puddle that will constantly damage and slow down enemies inside it."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "70"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "2.1
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Thingy_Of_The_Thing" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Thingy_Of_The_Thing"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("35_0dovu")
+
+[node name="1" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Thingy_Of_The_Thing"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("35_0dovu")
+
+[node name="2" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Thingy_Of_The_Thing"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("35_0dovu")
+
+[node name="3" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing"]
+position = Vector2(14, 13)
+texture = ExtResource("36_w3s6x")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Thingy_Of_The_Thing"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = -32.0
+offset_right = -30.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("36_w3s6x")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The... thingy of the thing? Whatever is this thing, using it you will throw multiple types of projectiles with different effects."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+position = Vector2(139, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "22"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
+position = Vector2(141, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "1.1"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pressure_Washer" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Pressure_Washer"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("37_pnldy")
+
+[node name="1" type="Label" parent="Rows/Row2/Pressure_Washer/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Pressure_Washer"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("37_pnldy")
+
+[node name="2" type="Label" parent="Rows/Row2/Pressure_Washer/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Pressure_Washer"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("37_pnldy")
+
+[node name="3" type="Label" parent="Rows/Row2/Pressure_Washer/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Pressure_Washer"]
+position = Vector2(14, 13)
+texture = ExtResource("38_5ptlu")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Pressure_Washer"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = -32.0
+offset_right = -65.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("38_5ptlu")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 236.0
+offset_bottom = 99.0
+text = "The pressure washer is a powerful weapon that constantly shoots a strong water jet, piercing through every enemy and knocking back them... It has a high energy use per second."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+position = Vector2(141, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "1.5"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 2.0
+offset_bottom = 6.0
+text = "0"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Equipped_Weapons" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(0, -56)
+texture = ExtResource("13_o68sw")
+script = ExtResource("14_d2xdu")
+
+[node name="Pos_1" type="Node2D" parent="Equipped_Weapons"]
+position = Vector2(-32, 0)
+
+[node name="Pos_2" type="Node2D" parent="Equipped_Weapons"]
+
+[node name="Pos_3" type="Node2D" parent="Equipped_Weapons"]
+position = Vector2(32, 0)
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_8yh3g")

@@ -1,0 +1,969 @@
+[gd_scene load_steps=39 format=3 uid="uid://chwjvfqwhjwen"]
+
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_14xav"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_kv48w"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_l1on5"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="3_18pgc"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_fwbb0"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_sp7jc"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_xjfgt"]
+[ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="6_auqfm"]
+[ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="6_qdbm0"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="7_c84an"]
+[ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="8_oewtk"]
+[ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="9_23mu7"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equip_Button_Hat.gd" id="10_8mbpr"]
+[ext_resource type="PackedScene" uid="uid://gtnfverwcx6s" path="res://Scenes/Hats/witch_hat.tscn" id="11_d7wnc"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="11_dyh7t"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="13_pxlf7"]
+[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="14_fex1y"]
+[ext_resource type="Texture2D" uid="uid://bfug0uet136k6" path="res://Sprites/Hats/PinkBow.png" id="15_3t8f0"]
+[ext_resource type="PackedScene" uid="uid://db0fd7hpdki3j" path="res://Scenes/Hats/pink_bow.tscn" id="16_pvmyc"]
+[ext_resource type="Texture2D" uid="uid://brp7538ftbvf5" path="res://Sprites/Hats/DevilishHorns.png" id="18_3tfvu"]
+[ext_resource type="PackedScene" uid="uid://bqp74ycuolhku" path="res://Scenes/Hats/devilish_horns.tscn" id="19_v1l5g"]
+[ext_resource type="Texture2D" uid="uid://vs2r4ttgsyrg" path="res://Sprites/Hats/ToyCrown.png" id="20_fy2i2"]
+[ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="21_5vpsv"]
+[ext_resource type="Texture2D" uid="uid://c5ar6ajgj25pa" path="res://Sprites/Hats/Sunglasses.png" id="22_xglfr"]
+[ext_resource type="PackedScene" uid="uid://dl1ke2dvw5eg2" path="res://Scenes/Hats/sunglasses.tscn" id="23_vkb1b"]
+[ext_resource type="Texture2D" uid="uid://e1nk2c32jgx1" path="res://Sprites/Hats/PartyHat.png" id="24_652rw"]
+[ext_resource type="PackedScene" uid="uid://c3m4ge4m6dysv" path="res://Scenes/Hats/party_hat.tscn" id="25_3o2om"]
+[ext_resource type="Texture2D" uid="uid://dgjs6acdj11ot" path="res://Sprites/Hats/SlimyKnight.png" id="26_7ufbh"]
+[ext_resource type="PackedScene" uid="uid://0ecwwwem6vt4" path="res://Scenes/Hats/slimy_knight.tscn" id="27_n2c2l"]
+[ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="28_w3is5"]
+[ext_resource type="PackedScene" uid="uid://jmqlowj1gi0e" path="res://Scenes/Hats/fork.tscn" id="29_q6ufc"]
+[ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="30_roeh3"]
+[ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="31_sd31b"]
+[ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="32_hpefd"]
+[ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="33_ch38e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
+font = ExtResource("11_dyh7t")
+font_color = Color(0.494118, 0.00392157, 0, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
+font = ExtResource("11_dyh7t")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
+font = ExtResource("11_dyh7t")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Equipment_Hats" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -137.0
+offset_top = -33.0
+offset_right = 137.0
+offset_bottom = -5.0
+theme_override_constants/separation = 5
+
+[node name="Row1" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="No_Hat" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/No_Hat"]
+position = Vector2(14, 14)
+texture = ExtResource("6_auqfm")
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/No_Hat"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+
+[node name="Equip" type="Label" parent="Rows/Row1/No_Hat/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/No_Hat"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("6_auqfm")
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/No_Hat/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "No hat? You're boring... Or you don't have enough points to buy one. Keep playing!"
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Witch_Hat" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Witch_Hat"]
+position = Vector2(14, 14)
+texture = ExtResource("6_qdbm0")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Witch_Hat"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("11_d7wnc")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Witch_Hat/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Witch_Hat"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -40.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("6_qdbm0")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A witch hat! I see, so you like being magic and misterious. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Pink_Bow" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Pink_Bow"]
+position = Vector2(14, 14)
+texture = ExtResource("15_3t8f0")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Pink_Bow"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("16_pvmyc")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Pink_Bow/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Pink_Bow"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -81.0
+offset_right = -41.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("15_3t8f0")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A pink bow! So you like being cute and adorable. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Devilish_Horns" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Devilish_Horns"]
+position = Vector2(14, 14)
+texture = ExtResource("18_3tfvu")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Devilish_Horns"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("19_v1l5g")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Devilish_Horns/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Devilish_Horns"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -122.0
+offset_right = -82.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("18_3tfvu")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Devilish horns? That's kind of evil and cool... And another thing that I don't want to mention. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Toy_Crown" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Toy_Crown"]
+position = Vector2(14, 14)
+texture = ExtResource("20_fy2i2")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Toy_Crown"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("21_5vpsv")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Toy_Crown/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Toy_Crown"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -163.0
+offset_right = -123.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("20_fy2i2")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A toy crown! Maybe you can replace the king slime with this one... Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Sunglasses" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Sunglasses"]
+position = Vector2(14, 14)
+texture = ExtResource("22_xglfr")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Sunglasses"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("23_vkb1b")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Sunglasses/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Sunglasses"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -204.0
+offset_right = -164.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("22_xglfr")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Sunglasses/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Sunglasses? So you like summer, and you like feeling cool. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Party_Hat" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Party_Hat"]
+position = Vector2(14, 14)
+texture = ExtResource("24_652rw")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Party_Hat"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("25_3o2om")
+
+[node name="Equip" type="Label" parent="Rows/Row1/Party_Hat/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row1/Party_Hat"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -245.0
+offset_right = -205.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("24_652rw")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row1/Party_Hat/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A party hat! You must be funny and the soul of the party. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Row2" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Slimy_Knight" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Slimy_Knight"]
+position = Vector2(14, 14)
+texture = ExtResource("26_7ufbh")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Slimy_Knight"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("27_n2c2l")
+
+[node name="Equip" type="Label" parent="Rows/Row2/Slimy_Knight/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row2/Slimy_Knight"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -33.0
+offset_right = 41.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("26_7ufbh")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Slimy Knight! You should be a fan of that funny game of that bug that says \"Garama!\", \"Shaw!\". I'm, too. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Fork" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Fork"]
+position = Vector2(14, 14)
+texture = ExtResource("28_w3is5")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Fork"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("29_q6ufc")
+
+[node name="Equip" type="Label" parent="Rows/Row2/Fork/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row2/Fork"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -40.0
+offset_top = -33.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("28_w3is5")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row2/Fork/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A fork? You're... strange. Why would you wear a fork? Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="PipSqueak_Ears" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears"]
+position = Vector2(14, 14)
+texture = ExtResource("30_roeh3")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/PipSqueak_Ears"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("31_sd31b")
+
+[node name="Equip" type="Label" parent="Rows/Row2/PipSqueak_Ears/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row2/PipSqueak_Ears"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -81.0
+offset_top = -33.0
+offset_right = -41.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("30_roeh3")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Pipsqueak ears! You must like watching Fylphiette streams... Or maybe you just think that this ears are cool! Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Godot_Plushie" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Godot_Plushie"]
+position = Vector2(14, 14)
+texture = ExtResource("32_hpefd")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Godot_Plushie"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("33_ch38e")
+
+[node name="Equip" type="Label" parent="Rows/Row2/Godot_Plushie/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Rows/Row2/Godot_Plushie"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -81.0
+offset_top = -33.0
+offset_right = -41.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("32_hpefd")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Godot Plushie! You like making games in godot, don't you? Or you like it's cuteness. In my case it's both of them. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Equipped_Hat" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(0, -55)
+texture = ExtResource("1_14xav")
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("1_14xav")
+texture_pressed = ExtResource("2_kv48w")
+texture_hover = ExtResource("3_18pgc")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_8yh3g")

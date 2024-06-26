@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvdx3imsiwqgt"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/freeze_ability_attack.gd" id="1_568sq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_stdjo"]
+radius = 42.44
+
+[node name="Freeze_Ability_Attack" type="Area2D"]
+collision_layer = 0
+collision_mask = 14
+script = ExtResource("1_568sq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_stdjo")
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 0.15
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

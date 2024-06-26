@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://du5pjf6r8vqpl"]
+
+[ext_resource type="Texture2D" uid="uid://chp0ocd8toe7x" path="res://Sprites/Player/CosmicSlime/Star.png" id="1_888ff"]
+[ext_resource type="Script" path="res://Scripts/Player/Cosmic_Slime/Stellar_Marked.gd" id="1_hyajl"]
+
+[node name="Stellar_Marked" type="Sprite2D"]
+texture = ExtResource("1_888ff")
+script = ExtResource("1_hyajl")

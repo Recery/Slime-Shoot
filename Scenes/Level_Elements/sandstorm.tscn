@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bg3bqdlf0kp06"]
+
+[ext_resource type="Texture2D" uid="uid://bsmy26fmsmmtk" path="res://Sprites/Level_Elements/Sandstorm.png" id="1_q0fp4"]
+[ext_resource type="AudioStream" uid="uid://dmgftaawbhavp" path="res://Sounds/Wind.mp3" id="2_3ripn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx00g"]
+atlas = ExtResource("1_q0fp4")
+region = Rect2(0, 0, 272, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1lm8"]
+atlas = ExtResource("1_q0fp4")
+region = Rect2(272, 0, 272, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0s64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx00g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1lm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Sandstorm_Effect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_f0s64")
+autoplay = "default"
+frame_progress = 0.971135
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3ripn")
+volume_db = 3.0
+pitch_scale = 0.8
+autoplay = true
+bus = &"Sounds"

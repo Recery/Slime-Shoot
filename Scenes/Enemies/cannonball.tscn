@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3i0fmemdmyni"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Cannonball.gd" id="1_5krs0"]
+[ext_resource type="Texture2D" uid="uid://bas43fp8m50kc" path="res://Sprites/Enemies/Cannon/Cannonball.png" id="2_pqoq7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yx6cn"]
+size = Vector2(10, 10)
+
+[node name="Cannonball" type="Area2D" groups=["Enemies_Projectiles"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5krs0")
+speed = 130
+despawn_time = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_pqoq7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yx6cn")
+
+[node name="Despawn_Timer" type="Timer" parent="."]
+wait_time = 4.0
+autostart = true
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Despawn_Timer" to="." method="_on_despawn_timer_timeout"]

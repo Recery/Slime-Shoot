@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://coxem26y61ln2"]
+
+[ext_resource type="Script" path="res://Scripts/Level_Elements/Lever.gd" id="1_ki28k"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_0wknb"]
+[ext_resource type="Texture2D" uid="uid://o7p140wxp12m" path="res://Sprites/Level_Elements/Lever.png" id="2_c6rvp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fwwgl"]
+size = Vector2(22, 22)
+
+[node name="Lever" type="Area2D"]
+collision_layer = 0
+script = ExtResource("1_ki28k")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.75, 6.5)
+scale = Vector2(1.14706, 0.7)
+texture = ExtResource("2_0wknb")
+hframes = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c6rvp")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_fwwgl")
+
+[connection signal="activated" from="." to="." method="_on_lever_activated"]

@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://1v2mp2gdem60"]
+
+[ext_resource type="Texture2D" uid="uid://wndohrfqfgps" path="res://Sprites/Menu/BigSquareButton.png" id="1_ylmxs"]
+[ext_resource type="Texture2D" uid="uid://5rm1ilivfryp" path="res://Sprites/Menu/BigSquareButtonPress.png" id="2_x7p02"]
+[ext_resource type="Texture2D" uid="uid://btbyybmf11qhp" path="res://Sprites/Menu/BigSquareButtonHover.png" id="3_0ppif"]
+[ext_resource type="Texture2D" uid="uid://q0ofxegypcqb" path="res://Sprites/Menu/BigSquareButtonGray.png" id="4_mblct"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Shop_Buy_Button.gd" id="5_7c1cf"]
+[ext_resource type="PackedScene" uid="uid://dwmfsbcjcol8y" path="res://Scenes/Player/Green_Slime/green_slime.tscn" id="6_33m07"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="7_uy546"]
+[ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="8_5fqrk"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_q85oe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s03np"]
+font = ExtResource("9_q85oe")
+font_size = 8
+font_color = Color(1, 0.286275, 0.227451, 1)
+outline_size = 3
+outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[node name="Shop_Button_Slime" type="TextureButton"]
+texture_normal = ExtResource("1_ylmxs")
+texture_pressed = ExtResource("2_x7p02")
+texture_hover = ExtResource("3_0ppif")
+texture_disabled = ExtResource("4_mblct")
+script = ExtResource("5_7c1cf")
+type_of_object = 0
+object_to_buy = ExtResource("6_33m07")
+unlocked_in_adventure = true
+
+[node name="Item" type="Sprite2D" parent="."]
+position = Vector2(30, 13)
+texture = ExtResource("7_uy546")
+hframes = 2
+
+[node name="Perk" type="Sprite2D" parent="."]
+position = Vector2(30, 32)
+texture = ExtResource("8_5fqrk")
+
+[node name="Price" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 31.0
+offset_right = -3.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_s03np")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Adventure_Advice" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 28.0
+offset_right = 8.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Unlock it in adventure!"
+label_settings = SubResource("LabelSettings_s03np")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

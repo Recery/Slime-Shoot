@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://d04oobpusi2y7"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Pressure_Washer_Shot.gd" id="1_6d8wc"]
+[ext_resource type="Texture2D" uid="uid://b48x7tocguh0x" path="res://Sprites/Weapons/PressureWasherShot.png" id="2_ge52b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4n43"]
+atlas = ExtResource("2_ge52b")
+region = Rect2(0, 0, 98, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vx30"]
+atlas = ExtResource("2_ge52b")
+region = Rect2(0, 17, 98, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2o74n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4n43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vx30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Pressure_Washer_Shot" type="Area2D"]
+visible = false
+collision_layer = 14
+collision_mask = 14
+monitoring = false
+script = ExtResource("1_6d8wc")
+original_damage = 1.0
+despawn_time = 0.0
+has_movement = false
+persistent = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.776471)
+position = Vector2(49, 0)
+sprite_frames = SubResource("SpriteFrames_2o74n")
+autoplay = "default"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, 1, 97, 9, 97, -9, 0, -1, -22, -1, -22, 1)
+
+[node name="Effects_Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Effects_Timer" to="." method="_on_effects_timer_timeout"]

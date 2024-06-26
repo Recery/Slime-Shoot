@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=3 uid="uid://c61mfsv2idn4c"]
+
+[ext_resource type="Script" path="res://Scripts/Cinematic/Cinematic.gd" id="1_k4wff"]
+[ext_resource type="Texture2D" uid="uid://c8jxe8g1ythfp" path="res://Sprites/Cinematics/ClownDungeon/Frame1ClownDungeon.png" id="2_u311i"]
+[ext_resource type="Script" path="res://Resources/Scripts/CinematicFrame.gd" id="3_38qnb"]
+[ext_resource type="Texture2D" uid="uid://b7jqp4lwci4n2" path="res://Sprites/Cinematics/ClownDungeon/Frame2ClownDungeon.png" id="4_1iahw"]
+[ext_resource type="Texture2D" uid="uid://dxeeaake1sgnm" path="res://Sprites/Cinematics/ClownDungeon/Frame3ClownDungeon.png" id="5_d8lq2"]
+[ext_resource type="Texture2D" uid="uid://jounq4s1vx7d" path="res://Sprites/Cinematics/ClownDungeon/Frame4ClownDungeon.png" id="6_wntk5"]
+[ext_resource type="AudioStream" uid="uid://b4spfkcbu7qh8" path="res://Sounds/Going-Up.ogg" id="7_u2vw5"]
+
+[sub_resource type="Resource" id="Resource_7a8q7"]
+script = ExtResource("3_38qnb")
+frame = ExtResource("2_u311i")
+text = "The Green Slime arrived to the clown dungeon to fight the clowb bomb."
+
+[sub_resource type="Resource" id="Resource_n6oh8"]
+script = ExtResource("3_38qnb")
+frame = ExtResource("4_1iahw")
+text = "After a long fight, the clown bomb has been defeated, and..."
+
+[sub_resource type="Resource" id="Resource_vms1v"]
+script = ExtResource("3_38qnb")
+frame = ExtResource("5_d8lq2")
+text = "The Yellow Slime now is free!"
+
+[sub_resource type="Resource" id="Resource_jdjyc"]
+script = ExtResource("3_38qnb")
+frame = ExtResource("6_wntk5")
+text = "Now the team arrived to the desert to destroy more bad guys!"
+
+[node name="Clown_Dungeon_Cinematic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_k4wff")
+cinematic_frames = Array[ExtResource("3_38qnb")]([SubResource("Resource_7a8q7"), SubResource("Resource_n6oh8"), SubResource("Resource_vms1v"), SubResource("Resource_jdjyc")])
+id_cinematic = 2
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_u2vw5")
+volume_db = 5.0
+autoplay = true
+bus = &"Music"

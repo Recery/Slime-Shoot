@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo14jg786kdgu"]
+
+[ext_resource type="Texture2D" uid="uid://cq88g7br8yj1u" path="res://Sprites/Abilities/GreenApple.png" id="1_blalh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uluvg"]
+atlas = ExtResource("1_blalh")
+region = Rect2(0, 0, 8, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ck4fq"]
+atlas = ExtResource("1_blalh")
+region = Rect2(8, 0, 8, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rf60t"]
+atlas = ExtResource("1_blalh")
+region = Rect2(16, 0, 8, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qxfhl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uluvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ck4fq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rf60t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Green_Apple" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qxfhl")
+autoplay = "default"
+frame_progress = 0.606625

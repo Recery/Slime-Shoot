@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://7veidvpb05ld"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/DesertMother/desert_mother.gd" id="1_dl04x"]
+[ext_resource type="Texture2D" uid="uid://dmqpp2ut1vi7" path="res://Sprites/Enemies/DesertMother.png" id="2_8oplu"]
+[ext_resource type="AudioStream" uid="uid://c7atsk1525oyf" path="res://Sounds/BigBugOfTheSands.ogg" id="3_8xmup"]
+[ext_resource type="AudioStream" uid="uid://xonmsnadlakc" path="res://Sounds/DesertMotherFly.mp3" id="4_urke8"]
+
+[sub_resource type="Animation" id="Animation_lqeno"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vmk3e"]
+resource_name = "fly"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0925055, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3env"]
+_data = {
+"RESET": SubResource("Animation_lqeno"),
+"fly": SubResource("Animation_vmk3e")
+}
+
+[node name="Desert_Mother" type="CharacterBody2D" groups=["Boss"]]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_dl04x")
+score_to_add = 1000
+original_damage = 18.0
+original_speed = 90.0
+original_max_life = 400.0
+use_pathfinding = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8oplu")
+hframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h3env")
+}
+autoplay = "fly"
+
+[node name="Shoot_Pos" type="Node2D" parent="."]
+position = Vector2(21, -20)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 3)
+polygon = PackedVector2Array(-55, 1, -55, 14, -33, 14, -33, 12, 25, 12, 53, 2, 54, -8, -13, -8, -28, -14, -42, -9, -42, 0)
+disabled = true
+
+[node name="Dash_Raycast" type="RayCast2D" parent="."]
+target_position = Vector2(-100, 0)
+
+[node name="Target" type="Node2D" parent="Dash_Raycast"]
+position = Vector2(-100, 0)
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="Attack_Timer" type="Timer" parent="."]
+wait_time = 7.5
+one_shot = true
+autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8xmup")
+volume_db = 8.0
+autoplay = true
+bus = &"Music"
+
+[node name="Fly" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_urke8")
+volume_db = 10.0
+pitch_scale = 1.2
+autoplay = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Particles_Timer" to="." method="_on_particles_timer_timeout"]
+[connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]

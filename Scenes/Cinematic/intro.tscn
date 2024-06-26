@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=3 uid="uid://btb457grqow0g"]
+
+[ext_resource type="Script" path="res://Scripts/Cinematic/Cinematic.gd" id="1_n8ul3"]
+[ext_resource type="Texture2D" uid="uid://vo2hyiap06h0" path="res://Sprites/Cinematics/Intro/Frame1Intro.png" id="2_0iqmo"]
+[ext_resource type="Script" path="res://Resources/Scripts/CinematicFrame.gd" id="3_1mhmq"]
+[ext_resource type="Texture2D" uid="uid://bdnh7atlghayk" path="res://Sprites/Cinematics/Intro/Frame2Intro.png" id="4_ca8pj"]
+[ext_resource type="Texture2D" uid="uid://dqjnpfwsixkvy" path="res://Sprites/Cinematics/Intro/Frame3Intro.png" id="5_87xd5"]
+[ext_resource type="Texture2D" uid="uid://ciqa8mdg0x5cb" path="res://Sprites/Cinematics/Intro/Frame4Intro.png" id="6_mqkgd"]
+[ext_resource type="AudioStream" uid="uid://b4spfkcbu7qh8" path="res://Sounds/Going-Up.ogg" id="7_f4ia3"]
+
+[sub_resource type="Resource" id="Resource_3gncv"]
+script = ExtResource("3_1mhmq")
+frame = ExtResource("2_0iqmo")
+text = "In the slime kingdom, there was only peace during the reign of the king slime."
+
+[sub_resource type="Resource" id="Resource_2bn2f"]
+script = ExtResource("3_1mhmq")
+frame = ExtResource("4_ca8pj")
+text = "But one day, some bad guys invaded the slime kingdom!"
+
+[sub_resource type="Resource" id="Resource_yhx72"]
+script = ExtResource("3_1mhmq")
+frame = ExtResource("5_87xd5")
+text = "The slimes could not contain the enemy attack. The coward king slime escaped the kingdom, leaving the slimes to their fate!"
+
+[sub_resource type="Resource" id="Resource_p6gnd"]
+script = ExtResource("3_1mhmq")
+frame = ExtResource("6_mqkgd")
+text = "Now the fate of the slime kingdom is on your hands. Good luck!"
+
+[node name="Intro" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_n8ul3")
+cinematic_frames = Array[ExtResource("3_1mhmq")]([SubResource("Resource_3gncv"), SubResource("Resource_2bn2f"), SubResource("Resource_yhx72"), SubResource("Resource_p6gnd")])
+id_cinematic = 1
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f4ia3")
+volume_db = 5.0
+autoplay = true
+bus = &"Music"

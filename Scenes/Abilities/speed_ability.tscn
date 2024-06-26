@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://qc03hauqrywh"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/speed_ability.gd" id="1_fcdb0"]
+[ext_resource type="Texture2D" uid="uid://b6xujapa755a7" path="res://Sprites/Abilities/SpeedAbility.png" id="2_gtmt1"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="2_tbd2o"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="3_wad0t"]
+[ext_resource type="AudioStream" uid="uid://cjxjvfa1xms8s" path="res://Sounds/Speed_Ability.mp3" id="5_78afm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vuc5h"]
+font = ExtResource("2_tbd2o")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_i1k18"]
+font = ExtResource("2_tbd2o")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[node name="Speed_Ability" type="Node2D"]
+script = ExtResource("1_fcdb0")
+cooldown = 25
+starter_cooldown = 15
+energy_use = 90
+energy_recover_time = 2.0
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_gtmt1")
+
+[node name="Cooldown_Left" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = SubResource("LabelSettings_vuc5h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Energy_Use" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_wad0t")
+
+[node name="Use" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "90"
+label_settings = SubResource("LabelSettings_i1k18")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Duration_Timer" type="Timer" parent="."]
+wait_time = 8.0
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_78afm")
+volume_db = 3.0
+pitch_scale = 1.25
+bus = &"Sounds"
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Duration_Timer" to="." method="_on_duration_timer_timeout"]

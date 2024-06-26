@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=3 uid="uid://c83mo5hvldter"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Clown_Bomb.gd" id="1_wlnha"]
+[ext_resource type="Texture2D" uid="uid://bqr6wljirf88i" path="res://Sprites/Useful/Explosion.png" id="2_1h72n"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_7pg2q"]
+[ext_resource type="Texture2D" uid="uid://3dmqivjrn2i1" path="res://Sprites/Enemies/ClownBombBoss.png" id="2_n3t55"]
+[ext_resource type="AudioStream" uid="uid://gsqiib8houlv" path="res://Sounds/Magic-Fx-7.ogg" id="5_0qs10"]
+[ext_resource type="AudioStream" uid="uid://dn0y23hd4173k" path="res://Sounds/ClownLaughInBattle.mp3" id="5_5g0hn"]
+[ext_resource type="AudioStream" uid="uid://bsq2loehidm6q" path="res://Sounds/CLownHorn.mp3" id="6_2jd6c"]
+[ext_resource type="AudioStream" uid="uid://d4mqtitdd567h" path="res://Sounds/ClownLaughBegin.mp3" id="6_tkgqv"]
+
+[sub_resource type="Animation" id="Animation_nh17v"]
+resource_name = "attack"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
+[sub_resource type="Animation" id="Animation_b4071"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cs4yl"]
+_data = {
+"attack": SubResource("Animation_nh17v"),
+"walk": SubResource("Animation_b4071")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ry5r8"]
+radius = 92.1545
+
+[node name="Clown_Bomb" type="CharacterBody2D" groups=["Big_Enemies", "Boss", "Enemies"]]
+scale = Vector2(0.75, 0.75)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_wlnha")
+score_to_add = 250
+original_damage = 15.0
+original_speed = 55.0
+original_max_life = 250.0
+
+[node name="Circle_Explosion" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 0.356863, 0.290196, 0.290196)
+scale = Vector2(9, 9)
+texture = ExtResource("2_1h72n")
+hframes = 4
+frame = 3
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(6.22222, 31.1111)
+scale = Vector2(2.84314, 3.22222)
+texture = ExtResource("2_7pg2q")
+hframes = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_n3t55")
+hframes = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cs4yl")
+}
+speed_scale = 1.2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-15, 38, 19, 38, 12, 21, 24, 4, 19, -14, 0, -23, -20, -15, -25, 1, -21, 12, -14, 20)
+disabled = true
+
+[node name="Explosion_Area" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion_Area"]
+shape = SubResource("CircleShape2D_ry5r8")
+
+[node name="Shot_Center" type="Node2D" parent="."]
+
+[node name="Shot_Pos_1" type="Node2D" parent="Shot_Center"]
+position = Vector2(0, -2)
+
+[node name="Shot_Pos_2" type="Node2D" parent="Shot_Center"]
+position = Vector2(2, 0)
+
+[node name="Shot_Pos_3" type="Node2D" parent="Shot_Center"]
+position = Vector2(0, 2)
+
+[node name="Shot_Pos_4" type="Node2D" parent="Shot_Center"]
+position = Vector2(-2, 0)
+
+[node name="Attack_Timer" type="Timer" parent="."]
+wait_time = 6.5
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0qs10")
+volume_db = 1.0
+bus = &"Music"
+
+[node name="Laugh_Begin" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_tkgqv")
+volume_db = 20.0
+bus = &"Sounds"
+
+[node name="Laugh" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_5g0hn")
+volume_db = 17.0
+bus = &"Sounds"
+
+[node name="Horn" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2jd6c")
+volume_db = 4.0
+pitch_scale = 0.95
+bus = &"Sounds"
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="body_entered" from="Explosion_Area" to="." method="_on_explosion_area_body_entered"]
+[connection signal="timeout" from="Attack_Timer" to="." method="_on_attack_timer_timeout"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu5h367ega0e5"]
+
+[ext_resource type="Texture2D" uid="uid://dstheoicql52t" path="res://Sprites/Weapons/SandBullet.png" id="1_2onoe"]
+[ext_resource type="Script" path="res://Scripts/Weapons/sandy_bullet.gd" id="1_ovrgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48dvu"]
+size = Vector2(6, 3)
+
+[node name="Sandy_Bullet" type="Area2D"]
+collision_layer = 0
+collision_mask = 14
+script = ExtResource("1_ovrgv")
+speed = 490
+original_damage = 9.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2onoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_48dvu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

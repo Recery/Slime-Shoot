@@ -1,0 +1,120 @@
+[gd_scene load_steps=9 format=3 uid="uid://cctkoce4ukxgo"]
+
+[ext_resource type="Texture2D" uid="uid://c5es377t0ci4i" path="res://Sprites/Player/CreamySlime/CakeTrap.png" id="1_15mag"]
+[ext_resource type="Script" path="res://Scripts/Player/Creamy_Slime/cake_trap.gd" id="2_702fb"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_juur7"]
+
+[sub_resource type="Animation" id="Animation_i5jlv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cake_Trap:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rnulb"]
+resource_name = "blink"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cake_Trap:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_73vup"]
+resource_name = "blink_faster"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer:speed_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cake_Trap:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dgomg"]
+_data = {
+"RESET": SubResource("Animation_i5jlv"),
+"blink": SubResource("Animation_rnulb"),
+"blink_faster": SubResource("Animation_73vup")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xagu0"]
+size = Vector2(16, 16)
+
+[node name="Cake_Trap" type="Area2D" groups=["Cake_Trap"]]
+monitoring = false
+script = ExtResource("2_702fb")
+original_damage = 2.0
+despawn_time = 0
+has_movement = false
+die_wait_time = 0.15
+generated_by = 2
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(2.25, 5.5)
+scale = Vector2(1.02941, 0.9)
+texture = ExtResource("2_juur7")
+hframes = 2
+
+[node name="Cake_Trap" type="Sprite2D" parent="."]
+texture = ExtResource("1_15mag")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dgomg")
+}
+autoplay = "blink"
+speed_scale = 1.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_xagu0")
+
+[node name="Scan_Enemies" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Explode_Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Scan_Enemies" to="." method="_on_scan_enemies_timeout"]
+[connection signal="timeout" from="Explode_Timer" to="." method="_on_explode_timer_timeout"]

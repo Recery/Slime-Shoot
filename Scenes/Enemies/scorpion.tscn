@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://csfmo746ivmxj"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/scorpion.gd" id="1_erfv8"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_d3hnx"]
+[ext_resource type="Texture2D" uid="uid://cguvtr01i3s5" path="res://Sprites/Enemies/Scorpion.png" id="3_yefjy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tjrv"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(69, 0, 23, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebyii"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(0, 0, 23, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epe5o"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(0, 0, 23, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muh83"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(23, 0, 23, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3g274"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(0, 0, 23, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6bc"]
+atlas = ExtResource("3_yefjy")
+region = Rect2(46, 0, 23, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ojph5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tjrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebyii")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epe5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muh83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3g274")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w6bc")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ql65j"]
+radius = 7.0
+height = 24.0
+
+[node name="Scorpion" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_erfv8")
+score_to_add = 5
+original_damage = 12.0
+original_speed = 55.0
+original_max_life = 8.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(2, 5)
+scale = Vector2(1.29412, 1)
+texture = ExtResource("2_d3hnx")
+hframes = 2
+
+[node name="Scorpion" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ojph5")
+animation = &"shoot"
+autoplay = "walk"
+frame = 1
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ql65j")
+
+[node name="Shoot_Pos" type="Node2D" parent="."]
+position = Vector2(5, -6)
+
+[node name="Shoot_Raycast" type="RayCast2D" parent="Shoot_Pos"]
+target_position = Vector2(-125, 0)
+
+[node name="Shoot_Cooldown" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="animation_looped" from="Scorpion" to="." method="_on_scorpion_animation_looped"]
+[connection signal="timeout" from="Shoot_Cooldown" to="." method="_on_shoot_cooldown_timeout"]
