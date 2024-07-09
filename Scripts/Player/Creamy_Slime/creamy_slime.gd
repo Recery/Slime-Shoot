@@ -14,7 +14,6 @@ func _on_extra_physics_process() -> void:
 func create_cake() -> void:
 	if reduce_energy(60, 2.2):
 		var cake_instance = load("res://Scenes/Player/Creamy_Slime/cake_trap.tscn").instantiate()
-		cake_instance.global_position = global_position
 		Vars.main_scene.get_node("Summons").add_child(cake_instance)
-		
+		cake_instance.global_position = global_position
 		get_node("Cooldown_Cake_Perk").start()

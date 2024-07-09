@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/MummifiedSlime/Mummified_Slime.gd" id="1_3v5e0"]
 [ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_jdsy3"]
 [ext_resource type="Texture2D" uid="uid://qxu51fwtok0y" path="res://Sprites/Enemies/MummifiedSlime/MummifiedSlime.png" id="2_kdvyf"]
-[ext_resource type="AudioStream" uid="uid://dnp6gjld44wbb" path="res://Sounds/TheFallenImmortal.ogg" id="3_6tuql"]
+[ext_resource type="AudioStream" uid="uid://bb6t1g1xbxpce" path="res://Sounds/TheFallenImmortal.ogg" id="3_6tuql"]
 [ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="4_jk38n"]
 
 [sub_resource type="Animation" id="Animation_0axbv"]
@@ -79,11 +79,8 @@ position = Vector2(0, 0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_shs5i")
 
-[node name="Move_Ray" type="RayCast2D" parent="."]
-target_position = Vector2(0, 75)
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6tuql")
-volume_db = 16.0
+volume_db = 8.0
 autoplay = true
 bus = &"Music"

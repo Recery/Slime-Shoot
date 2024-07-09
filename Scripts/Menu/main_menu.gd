@@ -180,6 +180,8 @@ func _on_cinematics_button_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón cinemáticas
 
+
+
 # Botón atrás
 func _on_back_button_pressed():
 	hide_all()

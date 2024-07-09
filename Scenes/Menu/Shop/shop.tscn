@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=129 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -41,14 +41,22 @@
 [ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="26_4gjfy"]
 [ext_resource type="PackedScene" uid="uid://lphu8w311olc" path="res://Scenes/Weapons/fart_rifle.tscn" id="26_4oam8"]
 [ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="26_klcqa"]
+[ext_resource type="PackedScene" uid="uid://csiujam0l4v7q" path="res://Scenes/Hats/baby_slime.tscn" id="26_m36t6"]
 [ext_resource type="Texture2D" uid="uid://didqrrgjyaa8" path="res://Sprites/Weapons/FartRifle.png" id="27_5hpak"]
 [ext_resource type="PackedScene" uid="uid://cd1txb43a6bug" path="res://Scenes/Weapons/mini_knife.tscn" id="27_8au4h"]
+[ext_resource type="Texture2D" uid="uid://dnx43yklbjlh3" path="res://Sprites/Hats/BabySlime.png" id="27_pm31i"]
 [ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="28_f1i1d"]
+[ext_resource type="PackedScene" uid="uid://bhnxht1njk536" path="res://Scenes/Hats/magic_healer_headdress.tscn" id="28_s8qm4"]
+[ext_resource type="Texture2D" uid="uid://8gjy1kt4ahi" path="res://Sprites/Hats/MagicHealerHeadress.png" id="29_5xoir"]
 [ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="29_6puqw"]
 [ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="30_dldv3"]
+[ext_resource type="PackedScene" uid="uid://cwvoxibebfyh" path="res://Scenes/Hats/cat_ears.tscn" id="30_hh2ot"]
+[ext_resource type="Texture2D" uid="uid://byuk7y5f2gtas" path="res://Sprites/Hats/CatEars.png" id="31_kmgj5"]
 [ext_resource type="PackedScene" uid="uid://0fax33b8yau" path="res://Scenes/Weapons/frost_staff.tscn" id="31_s0rhk"]
 [ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="32_wubb2"]
+[ext_resource type="PackedScene" uid="uid://6iwpe1dk5grn" path="res://Scenes/Hats/elf_ears.tscn" id="32_xo8id"]
 [ext_resource type="PackedScene" uid="uid://xfg1addbh7i3" path="res://Scenes/Weapons/energy_lantern.tscn" id="33_tj61o"]
+[ext_resource type="Texture2D" uid="uid://b45w3cgnelq77" path="res://Sprites/Hats/ElfEars.png" id="33_tyliq"]
 [ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="34_mlixs"]
 [ext_resource type="PackedScene" uid="uid://k8ownvc83oig" path="res://Scenes/Weapons/baby_log.tscn" id="35_gketx"]
 [ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="36_f73yx"]
@@ -277,6 +285,38 @@ needed_points = 500
 type_of_object = 4
 object_to_buy = ExtResource("24_hqaic")
 sprite_to_display = ExtResource("25_f0c83")
+frames_display = 2
+
+[node name="Baby_Slime" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 500
+type_of_object = 4
+object_to_buy = ExtResource("26_m36t6")
+sprite_to_display = ExtResource("27_pm31i")
+frames_display = 2
+
+[node name="Magic_Healer_Headdress" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 500
+type_of_object = 4
+object_to_buy = ExtResource("28_s8qm4")
+sprite_to_display = ExtResource("29_5xoir")
+frames_display = 2
+
+[node name="Cat_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 500
+type_of_object = 4
+object_to_buy = ExtResource("30_hh2ot")
+sprite_to_display = ExtResource("31_kmgj5")
+frames_display = 2
+
+[node name="Elf_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 500
+type_of_object = 4
+object_to_buy = ExtResource("32_xo8id")
+sprite_to_display = ExtResource("33_tyliq")
 frames_display = 2
 
 [node name="Slimes" type="Control" parent="."]

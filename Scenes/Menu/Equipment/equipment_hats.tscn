@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://chwjvfqwhjwen"]
+[gd_scene load_steps=50 format=3 uid="uid://chwjvfqwhjwen"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_14xav"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_kv48w"]
@@ -35,6 +35,16 @@
 [ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="31_sd31b"]
 [ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="32_hpefd"]
 [ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="33_ch38e"]
+[ext_resource type="Texture2D" uid="uid://dnx43yklbjlh3" path="res://Sprites/Hats/BabySlime.png" id="34_cyb8a"]
+[ext_resource type="PackedScene" uid="uid://csiujam0l4v7q" path="res://Scenes/Hats/baby_slime.tscn" id="35_e563a"]
+[ext_resource type="Texture2D" uid="uid://8gjy1kt4ahi" path="res://Sprites/Hats/MagicHealerHeadress.png" id="36_1nxlc"]
+[ext_resource type="PackedScene" uid="uid://bhnxht1njk536" path="res://Scenes/Hats/magic_healer_headdress.tscn" id="37_7afq6"]
+[ext_resource type="Texture2D" uid="uid://byuk7y5f2gtas" path="res://Sprites/Hats/CatEars.png" id="38_bsfab"]
+[ext_resource type="PackedScene" uid="uid://cwvoxibebfyh" path="res://Scenes/Hats/cat_ears.tscn" id="39_4dl6x"]
+[ext_resource type="Texture2D" uid="uid://b45w3cgnelq77" path="res://Sprites/Hats/ElfEars.png" id="40_sxhim"]
+[ext_resource type="PackedScene" uid="uid://6iwpe1dk5grn" path="res://Scenes/Hats/elf_ears.tscn" id="41_uclwu"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="42_qpt77"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="43_uvv82"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
 font = ExtResource("11_dyh7t")
@@ -46,6 +56,11 @@ font = ExtResource("11_dyh7t")
 font_size = 8
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o162y"]
+font = ExtResource("11_dyh7t")
+font_color = Color(1, 0.211765, 0.156863, 1)
+outline_size = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
 font = ExtResource("11_dyh7t")
@@ -71,7 +86,7 @@ offset_right = 227.0
 offset_bottom = 147.0
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="Rows" type="VBoxContainer" parent="."]
+[node name="Page_1" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -137.0
 offset_top = -33.0
@@ -79,11 +94,11 @@ offset_right = 137.0
 offset_bottom = -5.0
 theme_override_constants/separation = 5
 
-[node name="Row1" type="HBoxContainer" parent="Rows"]
+[node name="Row1" type="HBoxContainer" parent="Page_1"]
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="No_Hat" type="TextureButton" parent="Rows/Row1"]
+[node name="No_Hat" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -92,11 +107,11 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/No_Hat"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/No_Hat"]
 position = Vector2(14, 14)
 texture = ExtResource("6_auqfm")
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/No_Hat"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/No_Hat"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -109,7 +124,7 @@ texture_pressed = ExtResource("8_oewtk")
 texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 
-[node name="Equip" type="Label" parent="Rows/Row1/No_Hat/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/No_Hat/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -123,7 +138,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/No_Hat"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/No_Hat"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -132,20 +147,20 @@ offset_left = 1.0
 offset_right = 41.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/No_Hat/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("6_auqfm")
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/No_Hat/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/No_Hat/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/No_Hat/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/No_Hat/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/No_Hat/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -157,7 +172,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Witch_Hat" type="TextureButton" parent="Rows/Row1"]
+[node name="Witch_Hat" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -166,12 +181,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Witch_Hat"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Witch_Hat"]
 position = Vector2(14, 14)
 texture = ExtResource("6_qdbm0")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Witch_Hat"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Witch_Hat"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -185,7 +200,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("11_d7wnc")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Witch_Hat/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Witch_Hat/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -199,7 +214,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Witch_Hat"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Witch_Hat"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -207,21 +222,21 @@ anchors_preset = 0
 offset_left = -40.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Witch_Hat/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("6_qdbm0")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Witch_Hat/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Witch_Hat/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Witch_Hat/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Witch_Hat/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -233,7 +248,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Pink_Bow" type="TextureButton" parent="Rows/Row1"]
+[node name="Pink_Bow" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -242,12 +257,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Pink_Bow"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Pink_Bow"]
 position = Vector2(14, 14)
 texture = ExtResource("15_3t8f0")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Pink_Bow"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Pink_Bow"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -261,7 +276,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("16_pvmyc")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Pink_Bow/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Pink_Bow/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -275,7 +290,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Pink_Bow"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Pink_Bow"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -284,21 +299,21 @@ offset_left = -81.0
 offset_right = -41.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Pink_Bow/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("15_3t8f0")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Pink_Bow/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Pink_Bow/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Pink_Bow/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Pink_Bow/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -310,7 +325,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Devilish_Horns" type="TextureButton" parent="Rows/Row1"]
+[node name="Devilish_Horns" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -319,12 +334,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Devilish_Horns"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Devilish_Horns"]
 position = Vector2(14, 14)
 texture = ExtResource("18_3tfvu")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Devilish_Horns"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Devilish_Horns"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -338,7 +353,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("19_v1l5g")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Devilish_Horns/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Devilish_Horns/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -352,7 +367,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Devilish_Horns"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Devilish_Horns"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -361,21 +376,21 @@ offset_left = -122.0
 offset_right = -82.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Devilish_Horns/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("18_3tfvu")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Devilish_Horns/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Devilish_Horns/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Devilish_Horns/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Devilish_Horns/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -387,7 +402,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Toy_Crown" type="TextureButton" parent="Rows/Row1"]
+[node name="Toy_Crown" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -396,12 +411,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Toy_Crown"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Toy_Crown"]
 position = Vector2(14, 14)
 texture = ExtResource("20_fy2i2")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Toy_Crown"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Toy_Crown"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -415,7 +430,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("21_5vpsv")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Toy_Crown/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Toy_Crown/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -429,7 +444,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Toy_Crown"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Toy_Crown"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -438,21 +453,21 @@ offset_left = -163.0
 offset_right = -123.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Toy_Crown/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("20_fy2i2")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Toy_Crown/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Toy_Crown/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Toy_Crown/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Toy_Crown/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -464,7 +479,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Sunglasses" type="TextureButton" parent="Rows/Row1"]
+[node name="Sunglasses" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -473,12 +488,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Sunglasses"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Sunglasses"]
 position = Vector2(14, 14)
 texture = ExtResource("22_xglfr")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Sunglasses"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Sunglasses"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -492,7 +507,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("23_vkb1b")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Sunglasses/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Sunglasses/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -506,7 +521,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Sunglasses"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Sunglasses"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -515,21 +530,21 @@ offset_left = -204.0
 offset_right = -164.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Sunglasses/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("22_xglfr")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Sunglasses/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Sunglasses/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Sunglasses/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Sunglasses/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Sunglasses/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -541,7 +556,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Party_Hat" type="TextureButton" parent="Rows/Row1"]
+[node name="Party_Hat" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -550,12 +565,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Party_Hat"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Party_Hat"]
 position = Vector2(14, 14)
 texture = ExtResource("24_652rw")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row1/Party_Hat"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Party_Hat"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -569,7 +584,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("25_3o2om")
 
-[node name="Equip" type="Label" parent="Rows/Row1/Party_Hat/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row1/Party_Hat/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -583,7 +598,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row1/Party_Hat"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row1/Party_Hat"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -592,21 +607,21 @@ offset_left = -245.0
 offset_right = -205.0
 offset_bottom = 40.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row1/Party_Hat/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("24_652rw")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row1/Party_Hat/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Party_Hat/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Party_Hat/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row1/Party_Hat/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row1/Party_Hat/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -618,11 +633,11 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Row2" type="HBoxContainer" parent="Rows"]
+[node name="Row2" type="HBoxContainer" parent="Page_1"]
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="Slimy_Knight" type="TextureButton" parent="Rows/Row2"]
+[node name="Slimy_Knight" type="TextureButton" parent="Page_1/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -631,12 +646,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Slimy_Knight"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Slimy_Knight"]
 position = Vector2(14, 14)
 texture = ExtResource("26_7ufbh")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Slimy_Knight"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Slimy_Knight"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -650,7 +665,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("27_n2c2l")
 
-[node name="Equip" type="Label" parent="Rows/Row2/Slimy_Knight/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row2/Slimy_Knight/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -664,7 +679,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row2/Slimy_Knight"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Slimy_Knight"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -674,21 +689,21 @@ offset_top = -33.0
 offset_right = 41.0
 offset_bottom = 7.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Slimy_Knight/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("26_7ufbh")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Slimy_Knight/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Slimy_Knight/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row2/Slimy_Knight/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row2/Slimy_Knight/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -700,7 +715,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Fork" type="TextureButton" parent="Rows/Row2"]
+[node name="Fork" type="TextureButton" parent="Page_1/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -709,12 +724,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Fork"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Fork"]
 position = Vector2(14, 14)
 texture = ExtResource("28_w3is5")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Fork"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Fork"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -728,7 +743,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("29_q6ufc")
 
-[node name="Equip" type="Label" parent="Rows/Row2/Fork/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row2/Fork/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -742,7 +757,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row2/Fork"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Fork"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -751,21 +766,21 @@ offset_left = -40.0
 offset_top = -33.0
 offset_bottom = 7.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Fork/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("28_w3is5")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Fork/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Fork/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Fork/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row2/Fork/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row2/Fork/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -777,7 +792,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="PipSqueak_Ears" type="TextureButton" parent="Rows/Row2"]
+[node name="PipSqueak_Ears" type="TextureButton" parent="Page_1/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -786,12 +801,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/PipSqueak_Ears"]
 position = Vector2(14, 14)
 texture = ExtResource("30_roeh3")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/PipSqueak_Ears"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/PipSqueak_Ears"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -805,7 +820,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("31_sd31b")
 
-[node name="Equip" type="Label" parent="Rows/Row2/PipSqueak_Ears/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row2/PipSqueak_Ears/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -819,7 +834,7 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row2/PipSqueak_Ears"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/PipSqueak_Ears"]
 visible = false
 z_index = 1
 layout_mode = 2
@@ -829,21 +844,21 @@ offset_top = -33.0
 offset_right = -41.0
 offset_bottom = 7.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/PipSqueak_Ears/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("30_roeh3")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/PipSqueak_Ears/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/PipSqueak_Ears/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row2/PipSqueak_Ears/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row2/PipSqueak_Ears/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -855,7 +870,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Godot_Plushie" type="TextureButton" parent="Rows/Row2"]
+[node name="Godot_Plushie" type="TextureButton" parent="Page_1/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("13_pxlf7")
 texture_pressed = ExtResource("2_l1on5")
@@ -864,12 +879,12 @@ texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Godot_Plushie"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Godot_Plushie"]
 position = Vector2(14, 14)
 texture = ExtResource("32_hpefd")
 hframes = 2
 
-[node name="Equip_Button" type="TextureButton" parent="Rows/Row2/Godot_Plushie"]
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Godot_Plushie"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
 layout_mode = 0
 offset_left = -4.0
@@ -883,7 +898,7 @@ texture_hover = ExtResource("9_23mu7")
 script = ExtResource("10_8mbpr")
 hat_to_equip = ExtResource("33_ch38e")
 
-[node name="Equip" type="Label" parent="Rows/Row2/Godot_Plushie/Equip_Button"]
+[node name="Equip" type="Label" parent="Page_1/Row2/Godot_Plushie/Equip_Button"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -897,31 +912,31 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Hat_Description" type="Control" parent="Rows/Row2/Godot_Plushie"]
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Godot_Plushie"]
 visible = false
 z_index = 1
 layout_mode = 2
 anchors_preset = 0
-offset_left = -81.0
+offset_left = -122.0
 offset_top = -33.0
-offset_right = -41.0
+offset_right = -82.0
 offset_bottom = 7.0
 
-[node name="Hat" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Godot_Plushie/Hat_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("32_hpefd")
 hframes = 2
 
-[node name="Hat_Frame" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Godot_Plushie/Hat_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("1_14xav")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Godot_Plushie/Hat_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
-[node name="Description" type="Label" parent="Rows/Row2/Godot_Plushie/Hat_Description"]
+[node name="Description" type="Label" parent="Page_1/Row2/Godot_Plushie/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
@@ -933,10 +948,390 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
+[node name="Baby_Slime" type="TextureButton" parent="Page_1/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Baby_Slime"]
+position = Vector2(14, 14)
+texture = ExtResource("34_cyb8a")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Baby_Slime"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("35_e563a")
+
+[node name="Equip" type="Label" parent="Page_1/Row2/Baby_Slime/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Baby_Slime"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -163.0
+offset_top = -33.0
+offset_right = -123.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Baby_Slime/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("34_cyb8a")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Baby_Slime/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Baby_Slime/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Page_1/Row2/Baby_Slime/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A Baby Slime! You are a good parent... Or not that good, you're going to war with your kid! Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Magic_Healer_Headdress" type="TextureButton" parent="Page_1/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Magic_Healer_Headdress"]
+position = Vector2(14, 14)
+texture = ExtResource("36_1nxlc")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Magic_Healer_Headdress"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("37_7afq6")
+
+[node name="Equip" type="Label" parent="Page_1/Row2/Magic_Healer_Headdress/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Magic_Healer_Headdress"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -204.0
+offset_top = -33.0
+offset_right = -164.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Magic_Healer_Headdress/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("36_1nxlc")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Magic_Healer_Headdress/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Magic_Healer_Headdress/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Page_1/Row2/Magic_Healer_Headdress/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Magic Healer Headdress! You must love my Terraria mod... Ugh, fine, you don't even know about it. This hat is a helmet of my Terraria mod \"TJTTMN\"! Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Cat_Ears" type="TextureButton" parent="Page_1/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Cat_Ears"]
+position = Vector2(14, 14)
+texture = ExtResource("38_bsfab")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row2/Cat_Ears"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("39_4dl6x")
+
+[node name="Equip" type="Label" parent="Page_1/Row2/Cat_Ears/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Page_1/Row2/Cat_Ears"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -245.0
+offset_top = -33.0
+offset_right = -205.0
+offset_bottom = 7.0
+
+[node name="Hat" type="Sprite2D" parent="Page_1/Row2/Cat_Ears/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("38_bsfab")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Page_1/Row2/Cat_Ears/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row2/Cat_Ears/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Page_1/Row2/Cat_Ears/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Cat ears! You are Iromi. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Page_2" type="VBoxContainer" parent="."]
+visible = false
+offset_left = -137.0
+offset_top = -33.0
+offset_right = 137.0
+offset_bottom = 28.0
+theme_override_constants/separation = 5
+
+[node name="Row1" type="HBoxContainer" parent="Page_2"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="Elf_Ears" type="TextureButton" parent="Page_2/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Page_2/Row1/Elf_Ears"]
+position = Vector2(14, 14)
+texture = ExtResource("40_sxhim")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_2/Row1/Elf_Ears"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("41_uclwu")
+
+[node name="Equip" type="Label" parent="Page_2/Row1/Elf_Ears/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Page_2/Row1/Elf_Ears"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Page_2/Row1/Elf_Ears/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("40_sxhim")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Page_2/Row1/Elf_Ears/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Page_2/Row1/Elf_Ears/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Page_2/Row1/Elf_Ears/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Elf ears! You also like being magic and mysterious, but in another way! Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
 [node name="Equipped_Hat" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 position = Vector2(0, -55)
 texture = ExtResource("1_14xav")
+
+[node name="Pages_Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -130.0
+offset_top = 39.0
+offset_right = 390.0
+offset_bottom = 67.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Page_1" type="TextureButton" parent="Pages_Buttons" node_paths=PackedStringArray("page_to_enter")]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("42_qpt77")
+script = ExtResource("43_uvv82")
+page_to_enter = NodePath("../../Page_1")
+
+[node name="1" type="Label" parent="Pages_Buttons/Page_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_o162y")
+
+[node name="Page_2" type="TextureButton" parent="Pages_Buttons" node_paths=PackedStringArray("page_to_enter")]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("42_qpt77")
+script = ExtResource("43_uvv82")
+page_to_enter = NodePath("../../Page_2")
+
+[node name="2" type="Label" parent="Pages_Buttons/Page_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_o162y")
 
 [node name="Dark_Background_Description" type="ColorRect" parent="."]
 visible = false
