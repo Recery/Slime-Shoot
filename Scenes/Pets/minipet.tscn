@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://ncawyrmastof"]
+
+[ext_resource type="Script" path="res://Scripts/Pets/pet.gd" id="1_i366o"]
+[ext_resource type="Texture2D" uid="uid://dc8om1m0vmoph" path="res://Sprites/Passives/Mini_Bot.png" id="2_bablh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ec7a"]
+atlas = ExtResource("2_bablh")
+region = Rect2(0, 0, 9, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7y1a"]
+atlas = ExtResource("2_bablh")
+region = Rect2(9, 0, 9, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iaai"]
+atlas = ExtResource("2_bablh")
+region = Rect2(18, 0, 9, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkxje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ec7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7y1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ec7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iaai")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htnrd"]
+radius = 5.0
+height = 10.0
+
+[node name="Minipet" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["Pet"]]
+collision_layer = 0
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_i366o")
+sprite = NodePath("AnimatedSprite2D")
+inverted_flip = true
+idle_pos_offset = Vector2(30, 5)
+speed_weight = 0.7
+scan_enemies = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vkxje")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.00152098
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_htnrd")

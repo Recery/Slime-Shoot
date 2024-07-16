@@ -12,6 +12,7 @@ var equipment_weapons
 var equipment_abilities
 var equipment_passives
 var equipment_hats
+var equipment_pets
 var shop
 var settings
 var cinematics
@@ -32,6 +33,7 @@ func _ready():
 	equipment_abilities = get_node("Equipment_Abilities")
 	equipment_passives = get_node("Equipment_Passives")
 	equipment_hats = get_node("Equipment_Hats")
+	equipment_pets = get_node("Equipment_Pets")
 	shop = get_node("Shop")
 	settings = get_node("Settings")
 	cinematics = get_node("Replay_Cinematics")
@@ -147,6 +149,17 @@ func _on_hats_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón sombreros
 
+# Botón mascotas
+func _on_pets_pressed():
+	buttons.hide()
+	equipment_buttons.hide()
+	other_buttons.hide()
+	title.hide()
+	equipment_pets.show()
+	back_button.show()
+	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
+
+# Fin botón mascotas
 # Botón tienda
 func _on_shop_pressed():
 	buttons.hide()
@@ -201,6 +214,7 @@ func hide_all():
 	equipment_abilities.hide()
 	equipment_passives.hide()
 	equipment_hats.hide()
+	equipment_pets.hide()
 	shop.hide()
 	settings.hide()
 	cinematics.hide()

@@ -10,6 +10,8 @@ var path_slime_equipped := "user://Slime_Equipped.save"
 var path_slimes_unlocked := "user://Slimes_Unlocked.save"
 var path_hat_equipped := "user://Hat_Equipped.save"
 var path_hats_unlocked := "user://Hats_Unlocked.save"
+var path_pet_equipped := "user://Pet_Equipped.save"
+var path_pets_unlocked := "user://Pets_Unlocked.save"
 
 var path_points := "user://Points.save"
 var path_settings := "user://SettingData.tres"
@@ -26,6 +28,8 @@ func _init():
 	load_unlocked_slimes()
 	load_equipped_hat()
 	load_unlocked_hats()
+	load_equipped_pet()
+	load_unlocked_pets()
 	load_total_points()
 	load_settings()
 	load_played_cinematics()
@@ -208,6 +212,40 @@ func save_unlocked_hats():
 	for i in range(Vars.hats_unlocked.size()):
 		file.store_var(Vars.hats_unlocked[i].get_path())
 # Fin sombreros desbloqueados
+
+# Mascota equipada
+func load_equipped_pet():
+	if !FileAccess.file_exists(path_pet_equipped):
+		return
+	
+	var file = FileAccess.open(path_pet_equipped, FileAccess.READ)
+	var pet_path = file.get_var()
+	if pet_path != null:
+		Vars.pet_equipped = load(pet_path)
+	else: Vars.pet_equipped = null
+
+func save_equipped_pet():
+	var file = FileAccess.open(path_pet_equipped, FileAccess.WRITE)
+	if Vars.pet_equipped != null:
+		file.store_var(Vars.pet_equipped.get_path())
+	else: file.store_var(null)
+# Fin mascota equipada
+
+# Mascotas desbloqueadas
+func load_unlocked_pets():
+	if !FileAccess.file_exists(path_pets_unlocked): return
+	
+	var file = FileAccess.open(path_pets_unlocked, FileAccess.READ)
+	while file.get_position() < file.get_length():
+		var pet_path = file.get_var()
+		if pet_path != null:
+			Vars.pets_unlocked.append(load(pet_path))
+
+func save_unlocked_pets():
+	var file = FileAccess.open(path_pets_unlocked, FileAccess.WRITE)
+	for i in range(Vars.pets_unlocked.size()):
+		file.store_var(Vars.pets_unlocked[i].get_path())
+# Fin mascotas desbloqueadas
 
 # Puntos acumulados
 func load_total_points():

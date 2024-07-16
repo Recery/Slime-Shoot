@@ -1184,6 +1184,7 @@ max_lines_visible = 6
 
 [node name="Page_2" type="VBoxContainer" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -137.0
 offset_top = -33.0
 offset_right = 137.0

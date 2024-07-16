@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bqnkjpdhdu0t0"]
+[gd_scene load_steps=13 format=3 uid="uid://bqnkjpdhdu0t0"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/credits_button.gd" id="1_dfsal"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_jqwe6"]
@@ -22,6 +22,11 @@ outline_color = Color(0, 0, 0, 1)
 font = ExtResource("1_jqwe6")
 font_color = Color(0.309804, 0.192157, 0.972549, 1)
 outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_y3o85"]
+font = ExtResource("1_jqwe6")
+outline_size = 4
+outline_color = Color(1, 0.231373, 0.172549, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cu7il"]
 font = ExtResource("1_jqwe6")
@@ -48,7 +53,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_dfsal")
 
-[node name="Credits_Box" type="VBoxContainer" parent="."]
+[node name="Credits_Box1" type="VBoxContainer" parent="." groups=["Credits_Box"]]
 layout_mode = 0
 offset_left = -129.0
 offset_top = -73.0
@@ -58,18 +63,18 @@ pivot_offset = Vector2(110, 0)
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Text1" type="Label" parent="Credits_Box"]
+[node name="Text1" type="Label" parent="Credits_Box1"]
 layout_mode = 2
 text = "Special thanks to:"
 label_settings = SubResource("LabelSettings_qwq8k")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Box1" type="VBoxContainer" parent="Credits_Box"]
+[node name="Box1" type="VBoxContainer" parent="Credits_Box1"]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Link" type="LinkButton" parent="Credits_Box/Box1"]
+[node name="Link" type="LinkButton" parent="Credits_Box1/Box1"]
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 0
@@ -82,46 +87,46 @@ theme_override_fonts/font = ExtResource("1_jqwe6")
 text = "ansimuz"
 uri = "https://ansimuz.itch.io/"
 
-[node name="Text1" type="Label" parent="Credits_Box/Box1"]
+[node name="Text1" type="Label" parent="Credits_Box1/Box1"]
 layout_mode = 2
 text = "\"Battle Encounter\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text2" type="Label" parent="Credits_Box/Box1"]
+[node name="Text2" type="Label" parent="Credits_Box1/Box1"]
 layout_mode = 2
 text = "\"Magic 7\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text3" type="Label" parent="Credits_Box/Box1"]
+[node name="Text3" type="Label" parent="Credits_Box1/Box1"]
 layout_mode = 2
 text = "\"Going up\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text4" type="Label" parent="Credits_Box/Box1"]
+[node name="Text4" type="Label" parent="Credits_Box1/Box1"]
 layout_mode = 2
 text = "\"Dark ambient 2\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Text5" type="Label" parent="Credits_Box/Box1"]
+[node name="Text5" type="Label" parent="Credits_Box1/Box1"]
 layout_mode = 2
 text = "\"Cyberpunk city 2B\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Box2" type="VBoxContainer" parent="Credits_Box"]
+[node name="Box2" type="VBoxContainer" parent="Credits_Box1"]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="Link" type="LinkButton" parent="Credits_Box/Box2"]
+[node name="Link" type="LinkButton" parent="Credits_Box1/Box2"]
 layout_mode = 2
 size_flags_horizontal = 4
 mouse_default_cursor_shape = 0
@@ -134,14 +139,14 @@ theme_override_fonts/font = ExtResource("1_jqwe6")
 text = "ORU"
 uri = "https://www.youtube.com/@ORUMusic"
 
-[node name="Text1" type="Label" parent="Credits_Box/Box2"]
+[node name="Text1" type="Label" parent="Credits_Box1/Box2"]
 layout_mode = 2
 text = "\"Orange Dreamsicle\" music"
 label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Credits_Box2" type="VBoxContainer" parent="."]
+[node name="Credits_Box2" type="VBoxContainer" parent="." groups=["Credits_Box"]]
 visible = false
 layout_mode = 0
 offset_left = -129.0
@@ -224,6 +229,48 @@ label_settings = SubResource("LabelSettings_tim7q")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Credits_Box3" type="VBoxContainer" parent="." groups=["Credits_Box"]]
+visible = false
+layout_mode = 0
+offset_left = -129.0
+offset_top = -73.0
+offset_right = 129.0
+offset_bottom = 94.0
+pivot_offset = Vector2(110, 0)
+theme_override_constants/separation = 8
+
+[node name="Text1" type="Label" parent="Credits_Box3"]
+layout_mode = 2
+text = "Special thanks to:"
+label_settings = SubResource("LabelSettings_qwq8k")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Kofi" type="Label" parent="Credits_Box3"]
+layout_mode = 2
+text = "Ko-Fi supporters: "
+label_settings = SubResource("LabelSettings_y3o85")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fylphy" type="VBoxContainer" parent="Credits_Box3"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Link" type="LinkButton" parent="Credits_Box3/Fylphy"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_default_cursor_shape = 0
+theme_override_colors/font_color = Color(0.6, 1, 0.2, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.870588, 0.168627, 1)
+theme_override_colors/font_hover_color = Color(0, 0.870588, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(1, 0.152941, 0.109804, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("1_jqwe6")
+theme_override_font_sizes/font_size = 16
+text = "Fylphy"
+uri = "https://x.com/fylphiette"
+
 [node name="Textbox5" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -72.0
@@ -241,7 +288,7 @@ vertical_alignment = 1
 
 [node name="Text5" type="Label" parent="Textbox5"]
 layout_mode = 2
-text = "SenkoSan12543"
+text = "Recery"
 label_settings = SubResource("LabelSettings_cu7il")
 horizontal_alignment = 1
 vertical_alignment = 1

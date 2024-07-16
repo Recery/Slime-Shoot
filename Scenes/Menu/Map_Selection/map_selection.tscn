@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xcb3sy5rg4sn"]
+[gd_scene load_steps=19 format=3 uid="uid://xcb3sy5rg4sn"]
 
 [ext_resource type="PackedScene" uid="uid://cnh8ic5jmr58n" path="res://Scenes/Menu/Map_Selection/map_button.tscn" id="1_rdn44"]
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
@@ -13,6 +13,10 @@
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="10_e4mke"]
 [ext_resource type="PackedScene" uid="uid://c61mfsv2idn4c" path="res://Scenes/Cinematic/clown_dungeon_cinematic.tscn" id="12_mglki"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="12_q38p5"]
+[ext_resource type="Texture2D" uid="uid://daldv67yduw25" path="res://Sprites/Menu/MapsButtons/Snow.png" id="13_5qowy"]
+[ext_resource type="PackedScene" uid="uid://ovfk38tcf248" path="res://Scenes/Maps/snow_level.tscn" id="13_wxwak"]
+[ext_resource type="Texture2D" uid="uid://b1kkbh31ms072" path="res://Sprites/Menu/MapsButtons/SnowHover.png" id="14_mvmp5"]
+[ext_resource type="PackedScene" uid="uid://bn0sq63s811s5" path="res://Scenes/Cinematic/catacombs_cinematic.tscn" id="16_sfd4i"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8w5x"]
 font = ExtResource("12_q38p5")
@@ -30,6 +34,10 @@ zoom = Vector2(4, 4)
 
 [node name="Arrow" type="Sprite2D" parent="Arrows"]
 position = Vector2(71, -24)
+texture = ExtResource("5_5qald")
+
+[node name="Arrow2" type="Sprite2D" parent="Arrows"]
+position = Vector2(-9, -24)
 texture = ExtResource("5_5qald")
 
 [node name="Buttons" type="Control" parent="."]
@@ -71,6 +79,22 @@ texture_hover = ExtResource("8_4vrjy")
 map_to_enter = ExtResource("10_2mpju")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("12_mglki")
+
+[node name="Snow" parent="Buttons" instance=ExtResource("1_rdn44")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -120.0
+offset_top = -24.0
+offset_right = -75.0
+offset_bottom = 21.0
+texture_normal = ExtResource("13_5qowy")
+texture_pressed = ExtResource("14_mvmp5")
+texture_hover = ExtResource("14_mvmp5")
+map_to_enter = ExtResource("13_wxwak")
+unlocked_by_slime = ExtResource("10_e4mke")
+cinematic_to_play = ExtResource("16_sfd4i")
 
 [node name="Select_Map_Text" type="Label" parent="."]
 layout_mode = 0

@@ -17,6 +17,10 @@ func _physics_process(_delta):
 	elif global_position.distance_to(player.global_position) < min_distance:
 		speed = -base_speed
 	
+	if is_on_wall():
+		if global_position.y > player.global_position.y: # Abajo
+			pass
+	
 	Funcs.weapon_rotation(sandy_eagle,Vector2(10,0), self)
 
 func shoot():

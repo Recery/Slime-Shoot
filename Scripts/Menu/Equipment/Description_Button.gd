@@ -4,7 +4,7 @@ var back_button
 
 var activated
 
-@export_enum("Slime", "Weapon", "Ability", "Passive", "Hat") var type_of_object := 1
+@export_enum("Slime", "Weapon", "Ability", "Passive", "Hat", "Pet") var type_of_object := 1
 
 var obj_string : String
 var root : Node
@@ -26,6 +26,7 @@ func _ready():
 		2: obj_string = "Ability_Description"
 		3: obj_string = "Passive_Description"
 		4: obj_string = "Hat_Description"
+		5: obj_string = "Pet_Description"
 
 func _on_pressed():
 	activated = true

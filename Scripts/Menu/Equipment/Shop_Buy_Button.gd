@@ -4,7 +4,7 @@ extends TextureButton
 @export_group("Item info")
 @export var needed_points = 100
 ## Que tipo de objeto compra el jugador con este boton
-@export_enum("Slime", "Weapon", "Ability", "Passive", "Hat") var type_of_object = 1
+@export_enum("Slime", "Weapon", "Ability", "Passive", "Hat", "Pet") var type_of_object = 1
 @export var object_to_buy : PackedScene
 
 @export_group("Unlock info")
@@ -34,6 +34,7 @@ func _ready():
 		2: unlocked_array = Vars.abilities_unlocked
 		3: unlocked_array = Vars.passives_unlocked
 		4: unlocked_array = Vars.hats_unlocked
+		5: unlocked_array = Vars.pets_unlocked
 	
 	# Busca si el objeto que desbloquea este boton ya esta desbloqueado
 	# De ya estar desbloqueado, el boton de deshabilita
@@ -74,3 +75,4 @@ func _on_pressed():
 			2: Save_System.save_unlocked_abilities()
 			3: Save_System.save_unlocked_passives()
 			4: Save_System.save_unlocked_hats()
+			5: Save_System.save_unlocked_pets()

@@ -1,21 +1,43 @@
 extends Control
 
-@onready var box_1 := get_node("Credits_Box")
-@onready var box_2 := get_node("Credits_Box2")
-
 @onready var next_button := get_node("Next_Button")
 @onready var back_button := get_node("Back_Button")
 
+var current_page := 1
+
 func _on_next_button_pressed():
-	box_1.hide()
-	next_button.hide()
-	box_2.show()
-	back_button.show()
+	current_page += 1
+	
+	if current_page > 3: current_page = 3
+	
+	buttons_visibility()
+	
+	for child in get_children():
+		if not child.is_in_group("Credits_Box"): continue
+		child.visible = child.name == "Credits_Box" + str(current_page)
+	
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 
 func _on_back_button_pressed():
-	box_1.show()
-	next_button.show()
-	box_2.hide()
-	back_button.hide()
+	current_page -= 1
+	
+	if current_page < 1: current_page = 1
+	
+	buttons_visibility()
+	
+	for child in get_children():
+		if not child.is_in_group("Credits_Box"): continue
+		child.visible = child.name == "Credits_Box" + str(current_page)
+	
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
+
+func buttons_visibility():
+	if current_page != 1 and current_page != 3:
+		next_button.visible  = true
+		back_button.visible = true
+	elif current_page == 3:
+		next_button.visible  = false
+		back_button.visible = true
+	elif current_page == 1:
+		next_button.visible  = true
+		back_button.visible = false

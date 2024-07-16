@@ -18,6 +18,8 @@ class_name Summon_Minion
 @export var speed_weight = 0.5
 var speed
 
+@export var scan_enemies := true # Si es false no escanea enemigos
+
 var nav_agent
 ## La posición a la que apunta el pathfinding.
 ## No se mueve automaticamente a ese lugar, hay que moverlo con move_to_pos() despues de establecer esta variable
@@ -42,11 +44,12 @@ func _on_ready():
 	create_children()
 
 func create_children():
-	var scan_timer = Timer.new()
-	scan_timer.wait_time = 0.5
-	scan_timer.autostart = true
-	add_child(scan_timer)
-	scan_timer.connect("timeout", scan_enemy_timeout)
+	if scan_enemies:
+		var scan_timer = Timer.new()
+		scan_timer.wait_time = 0.5
+		scan_timer.autostart = true
+		add_child(scan_timer)
+		scan_timer.connect("timeout", scan_enemy_timeout)
 	
 	var pathfinding_timer = Timer.new()
 	pathfinding_timer.wait_time = 0.2

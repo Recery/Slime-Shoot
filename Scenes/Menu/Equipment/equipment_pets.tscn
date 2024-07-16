@@ -1,0 +1,316 @@
+[gd_scene load_steps=24 format=3 uid="uid://d4d0fselwe2cq"]
+
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_tekkh"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_fec7f"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_abf4x"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_7ifbt"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_kdkek"]
+[ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="6_a7enx"]
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="7_relit"]
+[ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="8_17vpv"]
+[ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="9_yx2ss"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equip_Button_Pet.gd" id="10_enm2f"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="11_oketu"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_5bfhn"]
+[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_mmqsb"]
+[ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="14_tosk3"]
+[ext_resource type="PackedScene" uid="uid://ncawyrmastof" path="res://Scenes/Pets/minipet.tscn" id="15_dn30o"]
+[ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="17_gb3lk"]
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="18_2tyiy"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="19_wgt10"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="20_fe3wp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
+font = ExtResource("11_oketu")
+font_color = Color(0.494118, 0.00392157, 0, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
+font = ExtResource("11_oketu")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o162y"]
+font = ExtResource("11_oketu")
+font_color = Color(1, 0.211765, 0.156863, 1)
+outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
+font = ExtResource("11_oketu")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Equipment_Pets" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Page_1" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -137.0
+offset_top = -33.0
+offset_right = 137.0
+offset_bottom = -5.0
+theme_override_constants/separation = 5
+
+[node name="Row1" type="HBoxContainer" parent="Page_1"]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="No_Pet" type="TextureButton" parent="Page_1/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_tekkh")
+texture_pressed = ExtResource("2_fec7f")
+texture_hover = ExtResource("3_abf4x")
+texture_disabled = ExtResource("4_7ifbt")
+script = ExtResource("5_kdkek")
+type_of_object = 5
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/No_Pet"]
+position = Vector2(14, 14)
+texture = ExtResource("6_a7enx")
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/No_Pet"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_relit")
+texture_pressed = ExtResource("8_17vpv")
+texture_hover = ExtResource("9_yx2ss")
+script = ExtResource("10_enm2f")
+
+[node name="Equip" type="Label" parent="Page_1/Row1/No_Pet/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Pet_Description" type="Control" parent="Page_1/Row1/No_Pet"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = 1.0
+offset_right = 41.0
+offset_bottom = 40.0
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("6_a7enx")
+
+[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_5bfhn")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_mmqsb")
+
+[node name="Description" type="Label" parent="Page_1/Row1/No_Pet/Pet_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "No hat? You're boring... Or you don't have enough points to buy one. Keep playing!"
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Pipsqueak" type="TextureButton" parent="Page_1/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_tekkh")
+texture_pressed = ExtResource("2_fec7f")
+texture_hover = ExtResource("3_abf4x")
+texture_disabled = ExtResource("4_7ifbt")
+script = ExtResource("5_kdkek")
+type_of_object = 5
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak"]
+position = Vector2(14, 14)
+texture = ExtResource("14_tosk3")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Pipsqueak"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_relit")
+texture_pressed = ExtResource("8_17vpv")
+texture_hover = ExtResource("9_yx2ss")
+script = ExtResource("10_enm2f")
+pet_to_equip = ExtResource("15_dn30o")
+
+[node name="Equip" type="Label" parent="Page_1/Row1/Pipsqueak/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Pet_Description" type="Control" parent="Page_1/Row1/Pipsqueak"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -40.0
+offset_bottom = 40.0
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("14_tosk3")
+hframes = 2
+
+[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_5bfhn")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_mmqsb")
+
+[node name="Description" type="Label" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A witch hat! I see, so you like being magic and misterious. Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Equipped_Pet" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(0, -55)
+texture = ExtResource("12_5bfhn")
+
+[node name="Pages_Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -130.0
+offset_top = 39.0
+offset_right = 390.0
+offset_bottom = 67.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Page_1" type="TextureButton" parent="Pages_Buttons" node_paths=PackedStringArray("page_to_enter")]
+visible = false
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("1_tekkh")
+texture_pressed = ExtResource("2_fec7f")
+texture_hover = ExtResource("3_abf4x")
+texture_disabled = ExtResource("17_gb3lk")
+script = ExtResource("18_2tyiy")
+page_to_enter = NodePath("../../Page_1")
+
+[node name="1" type="Label" parent="Pages_Buttons/Page_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_o162y")
+
+[node name="Page_2" type="TextureButton" parent="Pages_Buttons"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("1_tekkh")
+texture_pressed = ExtResource("2_fec7f")
+texture_hover = ExtResource("3_abf4x")
+texture_disabled = ExtResource("17_gb3lk")
+script = ExtResource("18_2tyiy")
+
+[node name="2" type="Label" parent="Pages_Buttons/Page_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_o162y")
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -137.0
+offset_right = 227.0
+offset_bottom = 147.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("12_5bfhn")
+texture_pressed = ExtResource("19_wgt10")
+texture_hover = ExtResource("20_fe3wp")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_8yh3g")

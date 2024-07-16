@@ -138,6 +138,10 @@ func create_children():
 	if Vars.hat_equipped != null:
 		add_child(Vars.hat_equipped.instantiate())
 	
+	if Vars.pet_equipped != null:
+		if Vars.main_scene.has_node("Summons"):
+			Vars.main_scene.get_node("Summons").add_child(Vars.pet_equipped.instantiate())
+	
 	add_child(load("res://Scenes/Player/life_bar.tscn").instantiate())
 	add_child(load("res://Scenes/Player/energy_bar.tscn").instantiate())
 	

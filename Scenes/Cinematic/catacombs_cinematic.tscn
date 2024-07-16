@@ -1,0 +1,50 @@
+[gd_scene load_steps=14 format=3 uid="uid://bn0sq63s811s5"]
+
+[ext_resource type="Script" path="res://Scripts/Cinematic/Cinematic.gd" id="1_n0mse"]
+[ext_resource type="Texture2D" uid="uid://cf3jtpicn8364" path="res://Sprites/Cinematics/Catacombs/Frame1Catacombs.png" id="2_aa2vy"]
+[ext_resource type="Script" path="res://Resources/Scripts/CinematicFrame.gd" id="3_y84yi"]
+[ext_resource type="Texture2D" uid="uid://b0hvfqlf48suy" path="res://Sprites/Cinematics/Catacombs/Frame2Catacombs.png" id="4_xm2n5"]
+[ext_resource type="Texture2D" uid="uid://ceas86dtdx7dg" path="res://Sprites/Cinematics/Catacombs/Frame3Catacombs.png" id="5_nsiiu"]
+[ext_resource type="Texture2D" uid="uid://cq1dkvcs2cfxq" path="res://Sprites/Cinematics/Catacombs/Frame4Catacombs.png" id="6_kjb7q"]
+[ext_resource type="Texture2D" uid="uid://bgmwvqs8c568s" path="res://Sprites/Cinematics/Catacombs/Frame5Catacombs.png" id="7_mavre"]
+[ext_resource type="AudioStream" uid="uid://b4spfkcbu7qh8" path="res://Sounds/Going-Up.ogg" id="8_jlj8v"]
+
+[sub_resource type="Resource" id="Resource_7a8q7"]
+script = ExtResource("3_y84yi")
+frame = ExtResource("2_aa2vy")
+text = "The Slimes choosed the left path in the catacombs."
+
+[sub_resource type="Resource" id="Resource_n6oh8"]
+script = ExtResource("3_y84yi")
+frame = ExtResource("4_xm2n5")
+text = "They found the tough Desert Mother and they need to defeat her!"
+
+[sub_resource type="Resource" id="Resource_vms1v"]
+script = ExtResource("3_y84yi")
+frame = ExtResource("5_nsiiu")
+text = "They managed to defeat her and her minions, and..."
+
+[sub_resource type="Resource" id="Resource_jdjyc"]
+script = ExtResource("3_y84yi")
+frame = ExtResource("6_kjb7q")
+text = "The White Slime is free now!"
+
+[sub_resource type="Resource" id="Resource_a5trx"]
+script = ExtResource("3_y84yi")
+frame = ExtResource("7_mavre")
+text = "The next location for the Slime Team is the snow!"
+
+[node name="Catacombs_Cinematic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_n0mse")
+cinematic_frames = Array[ExtResource("3_y84yi")]([SubResource("Resource_7a8q7"), SubResource("Resource_n6oh8"), SubResource("Resource_vms1v"), SubResource("Resource_jdjyc"), SubResource("Resource_a5trx")])
+id_cinematic = 3
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_jlj8v")
+volume_db = 5.0
+autoplay = true
+bus = &"Music"

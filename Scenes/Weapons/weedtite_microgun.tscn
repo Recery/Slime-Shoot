@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://n7ys1ftreph2"]
 
-[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="1_qkmha"]
+[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="1_kntt3"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Weedtite_Microgun.gd" id="2_wefgy"]
 [ext_resource type="AudioStream" uid="uid://cu5k7coib4glb" path="res://Sounds/PistolShoot.mp3" id="3_fy22e"]
 
-[node name="Weedtite_Microgun" type="Sprite2D"]
+[node name="Snowy_Uzi" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_qkmha")
+texture = ExtResource("1_kntt3")
 script = ExtResource("2_wefgy")
 shoot_cooldown = 0.42
 original_energy_use = 7.0
@@ -17,6 +17,6 @@ stream = ExtResource("3_fy22e")
 bus = &"Sounds"
 
 [node name="Cannon" type="Node2D" parent="."]
-position = Vector2(6.02784, -2.52671)
+position = Vector2(6.028, -2)
 
 [connection signal="shoot" from="." to="." method="_on_shoot"]

@@ -20,6 +20,8 @@ var slime_equipped : PackedScene
 var slimes_unlocked = [null]
 var hat_equipped : PackedScene
 var hats_unlocked = []
+var pet_equipped : PackedScene
+var pets_unlocked = []
 # Fin guardado
 
 var map_state_data : MapStateData

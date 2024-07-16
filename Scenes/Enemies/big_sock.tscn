@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://blukig7ugc1x0"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/big_sock.gd" id="1_achaf"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_wm0tu"]
+[ext_resource type="Texture2D" uid="uid://bk7w2tlh6m38d" path="res://Sprites/Enemies/BigSock.png" id="3_via5x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62a4o"]
+atlas = ExtResource("3_via5x")
+region = Rect2(0, 0, 14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ertnn"]
+atlas = ExtResource("3_via5x")
+region = Rect2(14, 0, 14, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_832ng"]
+atlas = ExtResource("3_via5x")
+region = Rect2(28, 0, 14, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jppyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62a4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ertnn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62a4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_832ng")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1imc"]
+radius = 7.0
+height = 18.0
+
+[node name="Big_Sock" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_achaf")
+score_to_add = 6
+original_damage = 12.0
+original_speed = 50.0
+original_max_life = 14.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(3.9375, 6.75)
+scale = Vector2(0.830882, 0.95)
+texture = ExtResource("2_wm0tu")
+hframes = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jppyl")
+animation = &"walk"
+autoplay = "walk"
+frame = 3
+frame_progress = 0.372535
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f1imc")
+
+[connection signal="die" from="." to="." method="_on_die"]

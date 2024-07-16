@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc8qstvwg1e3o"]
+
+[ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="1_xk3ia"]
+[ext_resource type="Script" path="res://Scripts/Weapons/snowy_uzi.gd" id="2_s3sha"]
+[ext_resource type="AudioStream" uid="uid://2rlyyg7w8f40" path="res://Sounds/SnowyUzi.mp3" id="3_mmv2t"]
+
+[node name="Snowy_Uzi" type="Sprite2D"]
+texture_filter = 1
+texture = ExtResource("1_xk3ia")
+script = ExtResource("2_s3sha")
+shoot_cooldown = 0.12
+original_energy_use = 4.0
+hold_offset = Vector2(10, 0)
+
+[node name="Shoot_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mmv2t")
+volume_db = 1.0
+bus = &"Sounds"
+
+[node name="Cannon" type="Node2D" parent="."]
+position = Vector2(7, -2)
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]

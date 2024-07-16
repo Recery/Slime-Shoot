@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0k2ycrixjlnp"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Sock.gd" id="1_sqqmi"]
+[ext_resource type="Texture2D" uid="uid://btxl5xbbrj7g" path="res://Sprites/Enemies/Sock.png" id="2_4kb3q"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="3_edmqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12k3n"]
+atlas = ExtResource("2_4kb3q")
+region = Rect2(0, 0, 10, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl0vg"]
+atlas = ExtResource("2_4kb3q")
+region = Rect2(10, 0, 10, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx3hd"]
+atlas = ExtResource("2_4kb3q")
+region = Rect2(20, 0, 10, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hosvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12k3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl0vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12k3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx3hd")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f1imc"]
+radius = 5.0
+height = 12.0
+
+[node name="Sock" type="CharacterBody2D" groups=["Sock"]]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_sqqmi")
+score_to_add = 3
+original_damage = 6.0
+original_speed = 55.0
+original_max_life = 7.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(2, 5)
+scale = Vector2(0.602941, 0.7)
+texture = ExtResource("3_edmqn")
+hframes = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hosvw")
+animation = &"walk"
+autoplay = "walk"
+frame_progress = 0.870112
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_f1imc")
+
+[node name="Merge_Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Merge_Timer" to="." method="merge"]

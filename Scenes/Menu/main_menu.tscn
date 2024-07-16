@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c21uxf1eyhw8k"]
+[gd_scene load_steps=39 format=3 uid="uid://c21uxf1eyhw8k"]
 
 [ext_resource type="PackedScene" uid="uid://dai0m2dapfwfo" path="res://Scenes/Tiles/tile_grass.tscn" id="1_nxj14"]
 [ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://bqnkjpdhdu0t0" path="res://Scenes/Menu/credits.tscn" id="24_fakuu"]
 [ext_resource type="PackedScene" uid="uid://chwjvfqwhjwen" path="res://Scenes/Menu/Equipment/equipment_hats.tscn" id="28_07o7c"]
 [ext_resource type="PackedScene" uid="uid://c3355p6xk1fnk" path="res://Scenes/Menu/settings.tscn" id="28_l8aei"]
+[ext_resource type="PackedScene" uid="uid://d4d0fselwe2cq" path="res://Scenes/Menu/Equipment/equipment_pets.tscn" id="31_13mkk"]
 [ext_resource type="PackedScene" uid="uid://71c34tsp0mwa" path="res://Scenes/Menu/replay_cinematics.tscn" id="31_cc2vw"]
 [ext_resource type="AudioStream" uid="uid://dne6un3kn5h2d" path="res://Sounds/ORU-Orange-Dreamsicle.ogg" id="34_sxt08"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="34_wr5eu"]
@@ -202,29 +203,41 @@ texture_hover = ExtResource("15_thdy0")
 position = Vector2(14, 14)
 texture = ExtResource("15_dwgj7")
 
-[node name="Weapons_Slime" type="HBoxContainer" parent="Equipment_Buttons"]
+[node name="Second_Row" type="HBoxContainer" parent="Equipment_Buttons"]
 layout_mode = 2
 
-[node name="Slimes" type="TextureButton" parent="Equipment_Buttons/Weapons_Slime"]
+[node name="Slimes" type="TextureButton" parent="Equipment_Buttons/Second_Row"]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 layout_mode = 2
 texture_normal = ExtResource("13_nwiw3")
 texture_pressed = ExtResource("14_57otj")
 texture_hover = ExtResource("15_thdy0")
 
-[node name="Slime" type="Sprite2D" parent="Equipment_Buttons/Weapons_Slime/Slimes"]
+[node name="Slime" type="Sprite2D" parent="Equipment_Buttons/Second_Row/Slimes"]
 position = Vector2(14, 14)
 texture = ExtResource("3_qls2q")
 hframes = 2
 
-[node name="Hats" type="TextureButton" parent="Equipment_Buttons/Weapons_Slime"]
+[node name="Hats" type="TextureButton" parent="Equipment_Buttons/Second_Row"]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 layout_mode = 2
 texture_normal = ExtResource("13_nwiw3")
 texture_pressed = ExtResource("14_57otj")
 texture_hover = ExtResource("15_thdy0")
 
-[node name="Hat" type="Sprite2D" parent="Equipment_Buttons/Weapons_Slime/Hats"]
+[node name="Hat" type="Sprite2D" parent="Equipment_Buttons/Second_Row/Hats"]
+position = Vector2(14, 14)
+texture = ExtResource("16_7gj2l")
+hframes = 2
+
+[node name="Pets" type="TextureButton" parent="Equipment_Buttons/Second_Row"]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+
+[node name="Pet" type="Sprite2D" parent="Equipment_Buttons/Second_Row/Pets"]
 position = Vector2(14, 14)
 texture = ExtResource("16_7gj2l")
 hframes = 2
@@ -236,10 +249,10 @@ offset_bottom = 40.0
 
 [node name="Shop_Button" type="TextureButton" parent="Other_Buttons"]
 layout_mode = 0
-offset_left = -73.0
-offset_top = 44.0
-offset_right = -45.0
-offset_bottom = 72.0
+offset_left = -137.0
+offset_top = -20.0
+offset_right = -109.0
+offset_bottom = 8.0
 texture_normal = ExtResource("10_efru8")
 texture_pressed = ExtResource("11_dw1q6")
 texture_hover = ExtResource("12_vnh5k")
@@ -263,11 +276,10 @@ position = Vector2(14, 14)
 texture = ExtResource("20_w0s2i")
 
 [node name="Cinematics_Button" type="TextureButton" parent="Other_Buttons"]
-self_modulate = Color(0, 0.972549, 0, 1)
 layout_mode = 0
-offset_left = -137.0
+offset_left = -105.0
 offset_top = -20.0
-offset_right = -109.0
+offset_right = -77.0
 offset_bottom = 8.0
 texture_normal = ExtResource("10_efru8")
 texture_pressed = ExtResource("11_dw1q6")
@@ -317,6 +329,12 @@ layout_mode = 1
 offset_right = -1.0
 offset_bottom = -1.0
 
+[node name="Equipment_Pets" parent="." instance=ExtResource("31_13mkk")]
+visible = false
+layout_mode = 1
+offset_right = -1.0
+offset_bottom = -1.0
+
 [node name="Shop" parent="." instance=ExtResource("15_tg6bh")]
 visible = false
 layout_mode = 1
@@ -361,8 +379,9 @@ bus = &"Music"
 [connection signal="pressed" from="Equipment_Buttons/First_Row/Weapons" to="." method="_on_weapons_pressed"]
 [connection signal="pressed" from="Equipment_Buttons/First_Row/Abilities" to="." method="_on_abilities_pressed"]
 [connection signal="pressed" from="Equipment_Buttons/First_Row/Passives" to="." method="_on_passives_pressed"]
-[connection signal="pressed" from="Equipment_Buttons/Weapons_Slime/Slimes" to="." method="_on_slimes_pressed"]
-[connection signal="pressed" from="Equipment_Buttons/Weapons_Slime/Hats" to="." method="_on_hats_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/Second_Row/Slimes" to="." method="_on_slimes_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/Second_Row/Hats" to="." method="_on_hats_pressed"]
+[connection signal="pressed" from="Equipment_Buttons/Second_Row/Pets" to="." method="_on_pets_pressed"]
 [connection signal="pressed" from="Other_Buttons/Shop_Button" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Other_Buttons/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Other_Buttons/Cinematics_Button" to="." method="_on_cinematics_button_pressed"]

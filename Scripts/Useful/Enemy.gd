@@ -121,6 +121,7 @@ func init_shadows() -> void:
 
 var custom_target_pos
 func cooldown_pathfinding_timeout() -> void:
+	cooldown_pathfinding.wait_time = max(global_position.distance_to(player.global_position) / 300, 0.5)
 	if nav_agent != null:
 		if custom_target_position_setted:
 			nav_agent.target_position = custom_target_pos
@@ -146,9 +147,11 @@ func set_custom_target_position(pos:Vector2, _force_movement = false) -> void:
 		custom_target_position_setted = true
 		force_moving = _force_movement
 
-func reset_custom_target_position() -> void:
+func reset_custom_target_position(unforce_movement = true) -> void:
 	custom_target_position_setted = false
-	force_moving = false
+	
+	if unforce_movement:
+		force_moving = false
 
 func force_movement(force : bool): force_moving = force
 

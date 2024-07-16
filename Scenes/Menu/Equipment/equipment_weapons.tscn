@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cq3m7ndadb2jt"]
+[gd_scene load_steps=47 format=3 uid="uid://cq3m7ndadb2jt"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_llrg5"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="2_m7hc0"]
@@ -40,6 +40,8 @@
 [ext_resource type="Texture2D" uid="uid://d2usm5lv207pf" path="res://Sprites/Weapons/ThingyOfTheThing/ThingyOfTheThing.png" id="36_w3s6x"]
 [ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="37_pnldy"]
 [ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="38_5ptlu"]
+[ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="39_fa5ke"]
+[ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="40_o66mx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("7_gyls4")
@@ -215,7 +217,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "The weedtite microgun shoots basic bullets to your enemies using low energy. The Green Slime's signature weapon."
+text = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -1529,7 +1531,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. The Yellow Slime's signature weapon."
+text = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. Yellow Slime signature weapon."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -2047,6 +2049,168 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_70lrc")
 
 [node name="Cooldown" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 2.0
+offset_bottom = 6.0
+text = "0"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Snowy_Uzi" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Snowy_Uzi"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("39_fa5ke")
+
+[node name="1" type="Label" parent="Rows/Row2/Snowy_Uzi/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Snowy_Uzi"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("39_fa5ke")
+
+[node name="2" type="Label" parent="Rows/Row2/Snowy_Uzi/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Snowy_Uzi"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("39_fa5ke")
+
+[node name="3" type="Label" parent="Rows/Row2/Snowy_Uzi/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi"]
+position = Vector2(14, 13)
+texture = ExtResource("40_o66mx")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Snowy_Uzi"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -32.0
+offset_right = -100.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("40_o66mx")
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 103.0
+text = "The snowy uzi rapidly shoots bullets to your enemies. White Slime signature weapon."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+position = Vector2(141, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_2duse")
+
+[node name="Use" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "1.5"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_70lrc")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Cooldown_Show"]
 modulate = Color(1, 1, 1, 0.698039)
 offset_left = -22.0
 offset_top = -4.0

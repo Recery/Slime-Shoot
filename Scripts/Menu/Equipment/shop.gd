@@ -15,9 +15,13 @@ func _on_slimes_button_pressed():
 func _on_hats_button_pressed():
 	activate("Hats")
 
+func _on_pets_button_pressed():
+	activate("Pets")
+
 func activate(activated : String):
-	get_node("Hats").hide()
 	get_node("Slimes").hide()
+	get_node("Hats").hide()
+	get_node("Pets").hide()
 	get_node("Passives").hide()
 	get_node("Abilities").hide()
 	get_node("Weapons").hide()
@@ -26,6 +30,7 @@ func activate(activated : String):
 	get_node("Passives_Button").disabled = false
 	get_node("Slimes_Button").disabled = false
 	get_node("Hats_Button").disabled = false
+	get_node("Pets_Button").disabled = false
 	
 	get_node(activated).show()
 	get_node(activated + "_Button").disabled = true
