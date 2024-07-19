@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_5bfhn"]
 [ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_mmqsb"]
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="14_20okn"]
-[ext_resource type="PackedScene" uid="uid://dnggqfvvydi0" path="res://Scenes/Pets/Pipsqueak.tscn" id="15_vxmkh"]
+[ext_resource type="PackedScene" path="res://Scenes/Pets/Pipsqueak.tscn" id="15_vxmkh"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="17_gb3lk"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="18_2tyiy"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="19_wgt10"]

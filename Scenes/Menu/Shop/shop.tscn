@@ -90,7 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="54_v6h1i"]
 [ext_resource type="PackedScene" uid="uid://kexy5pxqp74j" path="res://Scenes/Abilities/shock_attack_ability.tscn" id="55_c3cyo"]
 [ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="56_4bn5r"]
-[ext_resource type="PackedScene" uid="uid://dnggqfvvydi0" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
+[ext_resource type="PackedScene" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="57_ap3yb"]
 [ext_resource type="PackedScene" uid="uid://can76htfvmwca" path="res://Scenes/Abilities/slimy_rage_ability.tscn" id="57_ci6wl"]
 [ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="57_l0qky"]
