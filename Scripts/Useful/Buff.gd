@@ -69,13 +69,13 @@ func apply_debuff(node) -> void:
 		# El knockback no modifica el color, no hay que renovar el color
 		enemy.modulate = enemy_color
 	
-	enemy.force_pathfinding_update()
+	enemy.apply_new_speed()
 
 func remove_debuff():
 	match stat_to_modify:
 		"Speed":
 			enemy.speed = enemy.base_speed
-			enemy.force_pathfinding_update()
+			enemy.apply_new_speed()
 		"Damage":
 			enemy.damage = enemy.base_damage
 	
