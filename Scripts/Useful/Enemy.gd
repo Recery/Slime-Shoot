@@ -36,6 +36,7 @@ var waiting_player := true
 # Esta variable controla eso
 @onready var force_moving := false
 @export var use_pathfinding := true # Si es false, no usa el pathfinding
+var dir := Vector2.ZERO
 
 signal die
 signal switch_wait_player(wait : bool)
@@ -153,7 +154,10 @@ func reset_custom_target_position(unforce_movement = true) -> void:
 	if unforce_movement:
 		force_moving = false
 
-func force_movement(force : bool): force_moving = force
+func force_movement(force : bool) -> void: force_moving = force
 
-func _on_switch_wait_player(wait := false):
+func apply_new_speed() -> void:
+	velocity = dir * speed
+
+func _on_switch_wait_player(wait := false) -> void:
 	waiting_player = wait
