@@ -12,11 +12,11 @@ func _ready():
 	enemy = get_parent()
 	enemy.speed = -knockback_weight
 	enemy.force_movement(true)
-	enemy.force_pathfinding_update()
+	enemy.apply_new_speed()
 	enemy.move_and_slide()
 	queue_free()
 
 func _on_tree_exiting():
 	enemy.speed = enemy.base_speed
 	enemy.force_movement(false)
-	enemy.force_pathfinding_update()
+	enemy.apply_new_speed()

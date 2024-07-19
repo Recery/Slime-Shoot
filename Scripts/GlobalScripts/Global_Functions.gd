@@ -57,8 +57,8 @@ func pathfinding_movement(enemy : Enemy, nav_agent : NavigationAgent2D) -> void:
 	if nav_agent == null or enemy == null: return
 	
 	if not enemy.waiting_player:
-		var dir = (nav_agent.get_next_path_position() - enemy.global_position).normalized()
-		enemy.velocity = dir * enemy.speed
+		enemy.dir = (nav_agent.get_next_path_position() - enemy.global_position).normalized()
+		enemy.velocity = enemy.dir * enemy.speed
 		return
 	else: enemy.velocity = Vector2.ZERO
 	
