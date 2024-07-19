@@ -25,6 +25,8 @@ func _on_pressed():
 	Vars.pet_equipped = pet_to_equip
 	draw_pet()
 	
+	Events.draw_equipped_slime.emit()
+	
 	Save_System.save_equipped_pet()
 
 func draw_pet():

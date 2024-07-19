@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw2k7yk5vw7iq"]
+
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="1_bfqh0"]
+[ext_resource type="Script" path="res://Scripts/Useful/Dynamic_Shadow.gd" id="2_f3785"]
+
+[node name="Dynamic_Shadow" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.5, 5.25)
+scale = Vector2(0.764706, 0.65)
+texture = ExtResource("1_bfqh0")
+hframes = 2
+script = ExtResource("2_f3785")

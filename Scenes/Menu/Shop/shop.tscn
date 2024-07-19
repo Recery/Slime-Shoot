@@ -90,7 +90,8 @@
 [ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="54_v6h1i"]
 [ext_resource type="PackedScene" uid="uid://kexy5pxqp74j" path="res://Scenes/Abilities/shock_attack_ability.tscn" id="55_c3cyo"]
 [ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="56_4bn5r"]
-[ext_resource type="PackedScene" uid="uid://ncawyrmastof" path="res://Scenes/Pets/minipet.tscn" id="56_57bog"]
+[ext_resource type="PackedScene" uid="uid://dnggqfvvydi0" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
+[ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="57_ap3yb"]
 [ext_resource type="PackedScene" uid="uid://can76htfvmwca" path="res://Scenes/Abilities/slimy_rage_ability.tscn" id="57_ci6wl"]
 [ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="57_l0qky"]
 [ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="58_4kpmw"]
@@ -128,7 +129,6 @@
 [ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="90_4aa0y"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="101_57fgs"]
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="102_q4yxp"]
-[ext_resource type="Texture2D" uid="uid://dc8om1m0vmoph" path="res://Sprites/Passives/Mini_Bot.png" id="128_0teqa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5fu2"]
 font = ExtResource("3_6bn12")
@@ -480,9 +480,8 @@ theme_override_constants/separation = 7
 layout_mode = 2
 needed_points = 1000
 type_of_object = 5
-object_to_buy = ExtResource("56_57bog")
-sprite_to_display = ExtResource("68_3enjf")
-frames_display = 2
+object_to_buy = ExtResource("56_nt7ee")
+sprite_to_display = ExtResource("57_ap3yb")
 
 [node name="Weapons" type="Control" parent="."]
 anchors_preset = 0
@@ -843,8 +842,7 @@ texture_disabled = ExtResource("22_gayuj")
 
 [node name="Pet" type="Sprite2D" parent="Pets_Button"]
 position = Vector2(14, 14)
-texture = ExtResource("128_0teqa")
-hframes = 5
+texture = ExtResource("57_ap3yb")
 
 [node name="Slimes_Button" type="TextureButton" parent="."]
 layout_mode = 0

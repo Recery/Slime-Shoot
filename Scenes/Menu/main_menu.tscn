@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://c21uxf1eyhw8k"]
+[gd_scene load_steps=40 format=3 uid="uid://c21uxf1eyhw8k"]
 
 [ext_resource type="PackedScene" uid="uid://dai0m2dapfwfo" path="res://Scenes/Tiles/tile_grass.tscn" id="1_nxj14"]
 [ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cd4ht43jmcn7h" path="res://Scenes/Menu/Shop/shop.tscn" id="15_tg6bh"]
 [ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="15_thdy0"]
 [ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="16_7gj2l"]
+[ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="17_fyg1u"]
 [ext_resource type="PackedScene" uid="uid://xcb3sy5rg4sn" path="res://Scenes/Menu/Map_Selection/map_selection.tscn" id="20_1ko50"]
 [ext_resource type="Texture2D" uid="uid://deruwp6fuk5iw" path="res://Sprites/Menu/Settings/CogwheelIcon.png" id="20_w0s2i"]
 [ext_resource type="PackedScene" uid="uid://dl5qufxb6ccbr" path="res://Scenes/Menu/Equipment/equipment_slimes.tscn" id="21_epiw6"]
@@ -68,7 +69,10 @@ layer_0/tile_data = PackedInt32Array(-262153, 0, 3, -196617, 65536, 3, -131081, 
 layer_0/tile_data = PackedInt32Array(-262153, 65536, 0, -262152, 65536, 0, -262151, 65536, 0, -262150, 65536, 0, -262149, 65536, 0, -262148, 65536, 0, -262147, 65536, 0, -262146, 65536, 0, -262145, 65536, 0, -327680, 65536, 0, -327679, 65536, 0, -327678, 65536, 0, -327677, 65536, 0, -327676, 65536, 0, -327675, 65536, 0, -327674, 65536, 0, -327673, 65536, 0, -327672, 65536, 0, -8, 0, 0, 65528, 0, 1, 131064, 0, 2, -7, 65536, 0, 131065, 65536, 2, -6, 131072, 0, 65530, 131072, 1, 131066, 131072, 2, -196608, 0, 0, -131072, 0, 1, -65536, 0, 2, -196607, 65536, 0, -65535, 65536, 2, -196606, 131072, 0, -131070, 131072, 1, -65534, 131072, 2, -131066, 0, 0, -65530, 0, 1, 6, 0, 2, -131065, 65536, 0, 7, 65536, 2, -131064, 131072, 0, -65528, 131072, 1, 8, 131072, 2, 327671, 65536, 2, 327672, 65536, 2, 327673, 65536, 2, 327674, 65536, 2, 327675, 65536, 2, 327676, 65536, 2, 327677, 65536, 2, 327678, 65536, 2, 327679, 65536, 2, 262144, 65536, 2, 262145, 65536, 2, 262146, 65536, 2, 262147, 65536, 2, 262148, 65536, 2, 262149, 65536, 2, 262150, 65536, 2, 262151, 65536, 2, 262152, 65536, 2, -327671, 131072, 0, -262135, 131072, 1, -196599, 131072, 1, -131063, 131072, 1, -65527, 131072, 1, 9, 131072, 1, 65545, 131072, 1, 131081, 131072, 1, 196617, 131072, 1, 262153, 131072, 2, -262154, 0, 0, -196618, 0, 1, -131082, 0, 1, -65546, 0, 1, -10, 0, 1, 65526, 0, 1, 131062, 0, 1, 196598, 0, 1, 262134, 0, 1, 327670, 0, 2)
 
 [node name="Slime" type="Node2D" parent="."]
-position = Vector2(-8, 16)
+position = Vector2(0, 20)
+
+[node name="Pet" type="Node2D" parent="."]
+position = Vector2(-24, -4)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
@@ -239,8 +243,7 @@ texture_hover = ExtResource("15_thdy0")
 
 [node name="Pet" type="Sprite2D" parent="Equipment_Buttons/Second_Row/Pets"]
 position = Vector2(14, 14)
-texture = ExtResource("16_7gj2l")
-hframes = 2
+texture = ExtResource("17_fyg1u")
 
 [node name="Other_Buttons" type="Control" parent="."]
 anchors_preset = 0

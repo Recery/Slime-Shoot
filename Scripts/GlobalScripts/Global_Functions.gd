@@ -5,11 +5,6 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	damage_advice = load("res://Scenes/Useful/damage_advice.tscn").instantiate()
 	add_child(damage_advice)
-	
-	var damage_advice_timer := Timer.new() # Un timer para limitar la cantidad de mostrador de daño que aparece
-	add_child(damage_advice_timer)
-	damage_advice_timer.timeout.connect(damage_advice_timer_timeout)
-	damage_advice_timer.start(0.05)
 
 # Devuelve true o false dependiendo del número que se le envía. Por ejemplo, con un 30 tiene un 30% de devolver true.
 func probability(percentage: float, max_value := 100.0) -> bool:
@@ -211,18 +206,13 @@ func fade_effect(sprite, reversed = false, fast = false):
 			sprite.modulate.a += weight_to_add
 			await get_tree().create_timer(0.08).timeout
 
-var show_damage := true
 func deal_damage(enemy, damage) -> void:
-	if enemy == null or not show_damage: return
+	if enemy == null: return
 	
 	if enemy.has_node("Life_Module"):
 		if enemy.immune: return
 		enemy.get_node("Life_Module").take_damage(damage)
 		damage_advice._on_deal_damage(enemy, damage)
-		show_damage = false
-
-func damage_advice_timer_timeout():
-	show_damage = true
 
 func add_to_bullets(node : Node) -> bool:
 	if node == null or Vars.main_scene == null: return false

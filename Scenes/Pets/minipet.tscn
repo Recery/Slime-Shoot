@@ -1,62 +1,150 @@
-[gd_scene load_steps=8 format=3 uid="uid://ncawyrmastof"]
+[gd_scene load_steps=9 format=3 uid="uid://ncawyrmastof"]
 
 [ext_resource type="Script" path="res://Scripts/Pets/pet.gd" id="1_i366o"]
-[ext_resource type="Texture2D" uid="uid://dc8om1m0vmoph" path="res://Sprites/Passives/Mini_Bot.png" id="2_bablh"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_i15ep"]
+[ext_resource type="Texture2D" uid="uid://ctqea8r5wjap6" path="res://Sprites/Pets/Pipsqueak/PipsqueakWalk.png" id="2_tb474"]
+[ext_resource type="Texture2D" uid="uid://7rl6lr6ncev5" path="res://Sprites/Pets/Pipsqueak/PipsqueakTail.png" id="4_s27ws"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6ec7a"]
-atlas = ExtResource("2_bablh")
-region = Rect2(0, 0, 9, 14)
+[sub_resource type="Animation" id="Animation_xi8k7"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pipsqueak:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tail:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 0, 1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimationPlayer:speed_scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o7y1a"]
-atlas = ExtResource("2_bablh")
-region = Rect2(9, 0, 9, 14)
+[sub_resource type="Animation" id="Animation_ocec4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pipsqueak:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shadow:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Tail:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8iaai"]
-atlas = ExtResource("2_bablh")
-region = Rect2(18, 0, 9, 14)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vkxje"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ec7a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o7y1a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6ec7a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8iaai")
-}],
-"loop": true,
-"name": &"walk",
-"speed": 8.0
-}]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hmw4l"]
+_data = {
+"RESET": SubResource("Animation_ocec4"),
+"walk": SubResource("Animation_xi8k7")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htnrd"]
-radius = 5.0
-height = 10.0
+radius = 6.0
+height = 16.0
 
-[node name="Minipet" type="CharacterBody2D" node_paths=PackedStringArray("sprite") groups=["Pet"]]
+[node name="Pipsqueak" type="CharacterBody2D" node_paths=PackedStringArray("sprites") groups=["Pet"]]
 collision_layer = 0
 collision_mask = 128
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_i366o")
-sprite = NodePath("AnimatedSprite2D")
-inverted_flip = true
+sprites = [NodePath("Pipsqueak"), NodePath("Tail")]
 idle_pos_offset = Vector2(30, 5)
 speed_weight = 0.7
 scan_enemies = false
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_vkxje")
-animation = &"walk"
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.5, 5.25)
+scale = Vector2(0.764706, 0.65)
+texture = ExtResource("2_i15ep")
+hframes = 2
+frame = 1
+
+[node name="Pipsqueak" type="Sprite2D" parent="."]
+texture = ExtResource("2_tb474")
+hframes = 3
+frame = 1
+
+[node name="Tail" type="Sprite2D" parent="."]
+texture = ExtResource("4_s27ws")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hmw4l")
+}
 autoplay = "walk"
-frame_progress = 0.00152098
+speed_scale = 0.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_htnrd")

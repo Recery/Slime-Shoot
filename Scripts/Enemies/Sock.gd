@@ -9,16 +9,22 @@ var sock_to_merge : Node
 var big_sock := preload("res://Scenes/Enemies/big_sock.tscn")
 
 func _physics_process(_delta):
-	sprite.flip_h = global_position.x < player.global_position.x
-	
 	if sock_to_merge != null:
+		sprite.flip_h = global_position.x < sock_to_merge.global_position.x
 		if global_position.distance_to(sock_to_merge.global_position) < 5:
 			create_big_sock()
-			Funcs.particles(Vector2(1.5,1.5), global_position, Color.WHITE_SMOKE)
+			Funcs.particles(Vector2(1.6,1.6), global_position, Color.ORANGE_RED)
 			Funcs.sound_play_2d("res://Sounds/CheeseTransmutation.mp3", 6, 1.3)
 			sock_to_merge.queue_free()
 			queue_free()
-	else: reset_custom_target_position(false)
+	else:
+		sprite.flip_h = global_position.x < player.global_position.x
+		reset_custom_target_position(false)
+	
+	if velocity == Vector2.ZERO:
+		sprite.stop()
+	elif not sprite.is_playing():
+		sprite.play()
 
 func _on_die():
 	if sock_to_merge != null: # Esta media murio por lo que la media con la que se iba a fusionar debe reiniciar su estado de fusion

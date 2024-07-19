@@ -44,6 +44,7 @@ func _ready():
 	Events.draw_equipped_slime.emit()
 
 func draw_slime():
+	# Dibujar slime
 	Funcs.remove_direct_children(get_node("Slime"))
 	
 	var slime_draw := Vars.slime_equipped.instantiate()
@@ -54,6 +55,14 @@ func draw_slime():
 		var hat_draw := Vars.hat_equipped.instantiate()
 		hat_draw.set_script(null)
 		get_node("Slime").add_child(hat_draw)
+	
+	# Dibujar mascota
+	Funcs.remove_direct_children(get_node("Pet"))
+	
+	if Vars.pet_equipped != null:
+		var pet_draw := Vars.pet_equipped.instantiate()
+		pet_draw.set_script(null)
+		get_node("Pet").add_child(pet_draw)
 
 # Botón start
 func _on_start_pressed():

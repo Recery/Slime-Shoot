@@ -120,6 +120,7 @@ position = Vector2(1072, 416)
 [node name="Summons" type="Node2D" parent="."]
 
 [node name="Spawn_Position" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="Enemies" type="CanvasGroup" parent="."]
 position = Vector2(272, -208)

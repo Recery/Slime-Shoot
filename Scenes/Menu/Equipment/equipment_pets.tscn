@@ -13,8 +13,8 @@
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="11_oketu"]
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_5bfhn"]
 [ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_mmqsb"]
-[ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="14_tosk3"]
-[ext_resource type="PackedScene" uid="uid://ncawyrmastof" path="res://Scenes/Pets/minipet.tscn" id="15_dn30o"]
+[ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="14_20okn"]
+[ext_resource type="PackedScene" uid="uid://dnggqfvvydi0" path="res://Scenes/Pets/Pipsqueak.tscn" id="15_vxmkh"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="17_gb3lk"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="18_2tyiy"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="19_wgt10"]
@@ -140,7 +140,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "No hat? You're boring... Or you don't have enough points to buy one. Keep playing!"
+text = "No pet? I get it, they're expensive, and people say \"Don't buy, adopt\"... But this is Slime Shoot and here we don't adopt pets, we buy them! Come on, save points and buy one!"
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -157,8 +157,7 @@ type_of_object = 5
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak"]
 position = Vector2(14, 14)
-texture = ExtResource("14_tosk3")
-hframes = 2
+texture = ExtResource("14_20okn")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Pipsqueak"]
 self_modulate = Color(0.776471, 0.760784, 0, 1)
@@ -172,7 +171,7 @@ texture_normal = ExtResource("7_relit")
 texture_pressed = ExtResource("8_17vpv")
 texture_hover = ExtResource("9_yx2ss")
 script = ExtResource("10_enm2f")
-pet_to_equip = ExtResource("15_dn30o")
+pet_to_equip = ExtResource("15_vxmkh")
 
 [node name="Equip" type="Label" parent="Page_1/Row1/Pipsqueak/Equip_Button"]
 layout_mode = 1
@@ -199,8 +198,7 @@ offset_bottom = 40.0
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
 z_index = 1
 position = Vector2(136, 8)
-texture = ExtResource("14_tosk3")
-hframes = 2
+texture = ExtResource("14_20okn")
 
 [node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
 position = Vector2(136, 8)
@@ -216,7 +214,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "A witch hat! I see, so you like being magic and misterious. Cosmetic item, it has no effect."
+text = "Pipsqueak, the apple mouse! Slimes can only eat green apples, so Pipsqueak is safe from them and ready to enjoy Fylphy streams with you! Cosmetic item, it has no effect."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
