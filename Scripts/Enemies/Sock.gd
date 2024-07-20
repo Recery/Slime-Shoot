@@ -53,10 +53,16 @@ func merge():
 	sock_to_merge.merged = true
 	
 	sock_to_merge.moving = false
-	sock_to_merge.force_pathfinding_update()
+	set_custom_target_position(sock_to_merge.global_position)
+	update_merged_pos_timer.start()
+
+@onready var update_merged_pos_timer := get_node("Update_Merged_Pos")
+func set_merged_sock_pos() -> void:
+	if sock_to_merge == null: return
+	update_merged_pos_timer.start()
 	set_custom_target_position(sock_to_merge.global_position)
 
-func create_big_sock():
+func create_big_sock() -> void:
 	var big_sock_instance : Enemy = big_sock.instantiate()
 	
 	Vars.main_scene.get_node("Enemies").add_child(big_sock_instance)

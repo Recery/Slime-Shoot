@@ -72,5 +72,10 @@ shape = SubResource("CapsuleShape2D_f1imc")
 wait_time = 15.0
 autostart = true
 
+[node name="Update_Merged_Pos" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="die" from="." to="." method="_on_die"]
 [connection signal="timeout" from="Merge_Timer" to="." method="merge"]
+[connection signal="timeout" from="Update_Merged_Pos" to="." method="set_merged_sock_pos"]
