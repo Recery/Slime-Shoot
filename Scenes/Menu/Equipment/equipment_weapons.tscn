@@ -42,8 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="38_5ptlu"]
 [ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="39_fa5ke"]
 [ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="40_o66mx"]
-[ext_resource type="PackedScene" uid="uid://olm4bgcu84d3" path="res://Scenes/Weapons/green_apple_stick.tscn" id="41_ymqmo"]
-[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
+[ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="41_ymqmo"]
+[ext_resource type="Texture2D" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("7_gyls4")

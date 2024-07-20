@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://olm4bgcu84d3"]
+[gd_scene load_steps=3 format=3 uid="uid://bstcsdgr6hq2f"]
 
-[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="1_f3sms"]
+[ext_resource type="Texture2D" path="res://Sprites/Weapons/GreenAppleStick.png" id="1_f3sms"]
 [ext_resource type="Script" path="res://Scripts/Useful/Weapon.gd" id="2_p3j82"]
 
 [node name="Green_Apple_Stick" type="Sprite2D"]
