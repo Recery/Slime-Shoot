@@ -27,11 +27,13 @@ func _physics_process(_delta):
 		sprite.play()
 
 func _on_die():
+	Funcs.regular_explosion(0.6, 0.6, global_position, Funcs.get_bullets_node(), 2, true)
+
+# Se reinicia la media en _exit_tree y no cuando se emite die ya que no siempre los enemigos emiten die al desaparecer
+func _exit_tree():
 	if sock_to_merge != null: # Esta media murio por lo que la media con la que se iba a fusionar debe reiniciar su estado de fusion
 		sock_to_merge.merged = false
 		sock_to_merge.moving = true
-	
-	Funcs.regular_explosion(0.6, 0.6, global_position, Funcs.get_bullets_node(), 2, true)
 
 # Despues de unos segundos de aparecer, la media busca fusionarse con otra
 func merge():
