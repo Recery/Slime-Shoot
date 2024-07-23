@@ -2380,6 +2380,7 @@ layout_mode = 2
 texture = ExtResource("13_2duse")
 
 [node name="Cooldown" type="HBoxContainer" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
+layout_mode = 0
 offset_left = 122.0
 offset_top = -6.0
 offset_right = 178.0
