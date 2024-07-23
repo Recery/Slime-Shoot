@@ -19,3 +19,4 @@ func draw_weapons():
 				parent.queue_free()
 			pos.add_child(sprite)
 			sprite.position = Vector2.ZERO
+			sprite.visible = true

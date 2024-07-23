@@ -13,7 +13,7 @@ func _process(_delta):
 	for i in range(Vars.weapons_unlocked.size()):
 		if Vars.weapons_unlocked[i] == weapon_to_equip:
 			unlocked = true
-	if !unlocked: 
+	if !unlocked:
 		get_parent().disabled = true
 		get_parent().get_node("Weapon").hide()
 		hide()

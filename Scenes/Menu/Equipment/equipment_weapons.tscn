@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="39_fa5ke"]
 [ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="40_o66mx"]
 [ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="41_ymqmo"]
-[ext_resource type="Texture2D" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
+[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("7_gyls4")
@@ -2317,6 +2317,7 @@ label_settings = SubResource("LabelSettings_t6myi")
 [node name="Weapon" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick"]
 position = Vector2(14, 13)
 texture = ExtResource("42_2fiyd")
+hframes = 3
 
 [node name="Weapon_Description" type="Control" parent="Rows/Row2/Green_Apple_Stick"]
 visible = false
@@ -2332,6 +2333,7 @@ offset_bottom = 8.0
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("42_2fiyd")
+hframes = 3
 
 [node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
 position = Vector2(136, 8)
@@ -2344,46 +2346,59 @@ texture = ExtResource("12_ds6om")
 [node name="Description" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 103.0
-text = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple in front of it, sightly increasing your movement speed."
+offset_top = 30.0
+offset_right = 259.0
+offset_bottom = 107.0
+scale = Vector2(0.9, 0.9)
+text = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 7
 
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-position = Vector2(141, 19)
+[node name="Energy_Use" type="HBoxContainer" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 17.0
+offset_right = 178.0
+offset_bottom = 27.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
+theme_override_constants/separation = 4
+alignment = 1
 
 [node name="Use" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Energy_Use"]
 modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "1.5"
+layout_mode = 2
+text = "75"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-position = Vector2(139, -4)
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Energy_Use"]
+layout_mode = 2
+texture = ExtResource("13_2duse")
+
+[node name="Cooldown" type="HBoxContainer" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
+offset_left = 122.0
+offset_top = -6.0
+offset_right = 178.0
+offset_bottom = 4.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
+theme_override_constants/separation = 4
+alignment = 1
 
-[node name="Cooldown" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown_Show"]
+[node name="Amount" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown"]
 modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = 2.0
-offset_bottom = 6.0
-text = "0"
+layout_mode = 2
+text = "9"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown"]
+layout_mode = 2
+texture = ExtResource("14_70lrc")
 
 [node name="Equipped_Weapons" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)

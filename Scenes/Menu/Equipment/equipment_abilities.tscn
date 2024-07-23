@@ -2022,13 +2022,14 @@ texture = ExtResource("12_jk483")
 [node name="Description" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 30.0
+offset_top = 29.0
 offset_right = 236.0
-offset_bottom = 102.0
-text = "The green apple vomit is  a gross ability. Slimes love green apples because of their acidic flavor, but you ate more than normal, causing you to throw up in your enemies, damaging them and reducing their damage.
+offset_bottom = 99.0
+text = "The green apple vomit is a gross ability. Slimes love green apples, but this time your slime ate a rotten one, causing it to throw up in your enemies, damaging them and reducing their damage.
 "
 label_settings = SubResource("LabelSettings_j1phy")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 7
 
