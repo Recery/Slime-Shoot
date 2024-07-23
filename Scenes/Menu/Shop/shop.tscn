@@ -126,7 +126,7 @@
 [ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="82_0k2td"]
 [ext_resource type="Texture2D" uid="uid://cy615oucucj6k" path="res://Sprites/Passives/MeteorPassive.png" id="82_0rvdg"]
 [ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="84_hs512"]
-[ext_resource type="Texture2D" path="res://Sprites/Weapons/GreenAppleStick.png" id="85_wxutb"]
+[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="85_wxutb"]
 [ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="89_q2gcu"]
 [ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="90_4aa0y"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="101_57fgs"]

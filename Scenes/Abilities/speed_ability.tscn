@@ -57,9 +57,6 @@ label_settings = SubResource("LabelSettings_i1k18")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Duration_Timer" type="Timer" parent="."]
-wait_time = 8.0
-
 [node name="Use_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_78afm")
 volume_db = 3.0
@@ -67,4 +64,3 @@ pitch_scale = 1.25
 bus = &"Sounds"
 
 [connection signal="activate" from="." to="." method="_on_activate"]
-[connection signal="timeout" from="Duration_Timer" to="." method="_on_duration_timer_timeout"]

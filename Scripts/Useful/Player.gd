@@ -10,7 +10,6 @@ class_name Player
 
 @export var original_speed = 110
 var speed
-signal modify_speed(normal_speed)
 
 @export var max_life = 100
 var life
@@ -41,13 +40,10 @@ signal toggle_dark_mode(activate : bool)
 signal _extra_physics_process()
 
 func _init():
-	speed = original_speed
-	
 	immune = false
 	
 	can_use_energy = true
 	fill_energy = true
-	energy_recover_weight = original_energy_recover_weight
 	
 	score = 0
 	
@@ -58,6 +54,8 @@ func _init():
 func _ready():
 	life = max_life
 	energy = max_energy
+	speed = original_speed
+	energy_recover_weight = original_energy_recover_weight
 	damage_collision.add_to_group("Player_Slime")
 	
 	create_children()
@@ -119,7 +117,6 @@ func connect_signals():
 	get_node("Energy_Cooldown").connect("timeout", _when_energy_cooldown_timeout)
 	connect("add_score", _when_add_score)
 	connect("die", _when_die)
-	connect("modify_speed", _when_modify_speed)
 	connect("toggle_dark_mode", _toggle_dark_mode)
 	connect_damage_collision()
 
@@ -220,9 +217,6 @@ func _when_damage_collision_area_exited(area):
 	if area in enemies_attacking:
 		enemies_attacking.erase(area)
 		if len(enemies_attacking) == 0: damaging = false
-
-func _when_modify_speed(new_speed):
-	speed = new_speed
 
 func _when_immunity_cooldown_timeout():
 	immune = false

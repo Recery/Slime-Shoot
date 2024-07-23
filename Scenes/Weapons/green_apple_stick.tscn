@@ -1,8 +1,95 @@
-[gd_scene load_steps=3 format=3 uid="uid://bstcsdgr6hq2f"]
+[gd_scene load_steps=9 format=3 uid="uid://bstcsdgr6hq2f"]
 
-[ext_resource type="Texture2D" path="res://Sprites/Weapons/GreenAppleStick.png" id="1_f3sms"]
-[ext_resource type="Script" path="res://Scripts/Useful/Weapon.gd" id="2_p3j82"]
+[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="1_f3sms"]
+[ext_resource type="Script" path="res://Scripts/Weapons/green_apple_stick.gd" id="2_n58vk"]
+[ext_resource type="AudioStream" uid="uid://jxugpxp4i7j" path="res://Sounds/GreenAppleCrazy.mp3" id="3_q0ft6"]
+[ext_resource type="AudioStream" uid="uid://c6npmimo4u6ny" path="res://Sounds/GreenAppleBreak.mp3" id="4_382qm"]
+[ext_resource type="AudioStream" uid="uid://bi6t2k2ylw3a3" path="res://Sounds/VomitSizzle.mp3" id="5_qpjwd"]
+
+[sub_resource type="Animation" id="Animation_3rw5e"]
+resource_name = "break"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.3]
+}
+
+[sub_resource type="Animation" id="Animation_c0uy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wq5qg"]
+_data = {
+"RESET": SubResource("Animation_c0uy4"),
+"break": SubResource("Animation_3rw5e")
+}
 
 [node name="Green_Apple_Stick" type="Sprite2D"]
 texture = ExtResource("1_f3sms")
-script = ExtResource("2_p3j82")
+hframes = 3
+script = ExtResource("2_n58vk")
+shoot_cooldown = 9.0
+original_energy_use = 75.0
+energy_recover_cooldown = 1.2
+
+[node name="Frame_Sprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_f3sms")
+hframes = 3
+
+[node name="Crazy_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q0ft6")
+volume_db = 8.0
+pitch_scale = 7.0
+bus = &"Sounds"
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_382qm")
+volume_db = 16.0
+pitch_scale = 1.2
+bus = &"Sounds"
+
+[node name="Sizzle_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_qpjwd")
+volume_db = -4.0
+pitch_scale = 0.9
+bus = &"Sounds"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wq5qg")
+}
+speed_scale = 1.3
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]

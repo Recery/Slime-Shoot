@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bo14jg786kdgu"]
+[gd_scene load_steps=10 format=3 uid="uid://bo14jg786kdgu"]
 
 [ext_resource type="Texture2D" uid="uid://cq88g7br8yj1u" path="res://Sprites/Abilities/GreenApple.png" id="1_blalh"]
+[ext_resource type="Texture2D" uid="uid://bsre68nxhf1sn" path="res://Sprites/Abilities/RottenGreenApple.png" id="2_p1t1a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uluvg"]
 atlas = ExtResource("1_blalh")
@@ -12,6 +13,18 @@ region = Rect2(8, 0, 8, 12)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rf60t"]
 atlas = ExtResource("1_blalh")
+region = Rect2(16, 0, 8, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kijm"]
+atlas = ExtResource("2_p1t1a")
+region = Rect2(0, 0, 8, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ery2a"]
+atlas = ExtResource("2_p1t1a")
+region = Rect2(8, 0, 8, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpdtw"]
+atlas = ExtResource("2_p1t1a")
 region = Rect2(16, 0, 8, 12)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qxfhl"]
@@ -27,11 +40,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_rf60t")
 }],
 "loop": true,
-"name": &"default",
+"name": &"normal",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kijm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ery2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpdtw")
+}],
+"loop": true,
+"name": &"rotten",
 "speed": 2.0
 }]
 
 [node name="Green_Apple" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_qxfhl")
-autoplay = "default"
-frame_progress = 0.606625
+animation = &"rotten"

@@ -5,7 +5,6 @@ var current_projectile := 0
 
 func _ready():
 	current_projectile = randi_range(0,2)
-	get_node("Frame_Sprite").visible = false
 	switch_sprite()
 
 var bombucha = preload("res://Scenes/Weapons/Thingy_Of_The_Thing/bombucha.tscn")

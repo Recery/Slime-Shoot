@@ -1,11 +1,12 @@
 extends Node2D
 
-var player
-
 func _ready():
-	player = Vars.player
-	await player.ready
-	set_player_speed()
+	if Vars.player == null: return
+	if not Vars.player.is_node_ready():
+		await Vars.player.ready
+	Vars.player.add_child(get_speed_buff())
 
-func set_player_speed():
-	player.speed *= 1.16
+func get_speed_buff() -> Buff_Player:
+	var buff := Buff_Player.new()
+	buff.speed_weight_to_modify = 1.10
+	return buff

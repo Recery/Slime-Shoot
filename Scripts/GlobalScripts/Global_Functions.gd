@@ -182,6 +182,12 @@ func particles(scale, pos, color : Color, scene = get_bullets_node()):
 	scene.add_child(particles_instance)
 	particles_instance.global_position = pos
 
+func timed_particles(scale : Vector2, time : float, color : Color, parent : Node) -> void:
+	for i in range(int(time * 2)):
+		if parent == null: return
+		particles(scale, parent.global_position, color, parent)
+		await get_tree().create_timer(0.5).timeout
+
 func fade_effect(sprite, reversed = false, fast = false):
 	if sprite == null: return
 	
@@ -213,6 +219,30 @@ func deal_damage(enemy, damage) -> void:
 		if enemy.immune: return
 		enemy.get_node("Life_Module").take_damage(damage)
 		damage_advice._on_deal_damage(enemy, damage)
+
+func get_current_cooldown(weapon : Weapon) -> float:
+	if Vars.player == null or weapon == null: return -1
+	if not Vars.player.has_node("Weapon_Module"): return -1
+	
+	var weapons_module := Vars.player.get_node("Weapon_Module")
+	var slot := 0
+	
+	for i in range(weapons_module.weapons.size()):
+		if weapons_module.weapons[i] == weapon:
+			slot = i
+	return weapons_module.cooldowns[slot].wait_time
+
+func get_cooldown_timeleft(weapon : Weapon) -> float:
+	if Vars.player == null or weapon == null: return -1
+	if not Vars.player.has_node("Weapon_Module"): return -1
+	
+	var weapons_module := Vars.player.get_node("Weapon_Module")
+	var slot := 0
+	
+	for i in range(weapons_module.weapons.size()):
+		if weapons_module.weapons[i] == weapon:
+			slot = i
+	return weapons_module.cooldowns[slot].time_left
 
 func add_to_bullets(node : Node) -> bool:
 	if node == null or Vars.main_scene == null: return false

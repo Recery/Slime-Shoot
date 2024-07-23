@@ -66,7 +66,7 @@ func apply_debuff(node) -> void:
 				enemy.damage /= weight_to_modify
 	
 	if enemy_color != Color.BLACK and not node is Knockback:
-		# El knockback no modifica el color, no hay que renovar el color
+		# El knockback no modifica el color, no hay que renovar el color en ese caso
 		enemy.modulate = enemy_color
 	
 	enemy.apply_new_speed()
