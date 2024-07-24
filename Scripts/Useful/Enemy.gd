@@ -117,7 +117,7 @@ func init_pathfinding() -> void:
 	cooldown_pathfinding.start()
 
 func init_shadows() -> void:
-	if not Vars.settings_data.shadows && has_node("Shadow"):
+	if not Vars.settings_data.shadows and has_node("Shadow"):
 		get_node("Shadow").queue_free()
 
 var custom_target_pos
@@ -157,7 +157,8 @@ func reset_custom_target_position(unforce_movement = true) -> void:
 func force_movement(force : bool) -> void: force_moving = force
 
 func apply_new_speed() -> void:
-	velocity = dir * speed
+	if (moving and not is_in_group("Full_Freezed")) or force_moving: velocity = dir * speed
+	else: velocity = Vector2.ZERO
 
 func _on_switch_wait_player(wait := false) -> void:
 	waiting_player = wait

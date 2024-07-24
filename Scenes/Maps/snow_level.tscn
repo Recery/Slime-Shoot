@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ovfk38tcf248"]
+[gd_scene load_steps=13 format=3 uid="uid://ovfk38tcf248"]
 
 [ext_resource type="Script" path="res://Scripts/Useful/map.gd" id="1_kcrxk"]
 [ext_resource type="PackedScene" uid="uid://02ohgdqtu58j" path="res://Scenes/Tiles/tile_snow.tscn" id="2_ffvc3"]
@@ -8,17 +8,25 @@
 [ext_resource type="Script" path="res://Resources/Scripts/EnemySpawnerTable.gd" id="5_k8snj"]
 [ext_resource type="PackedScene" uid="uid://guih4rm1cjhf" path="res://Scenes/Useful/enemy_spawner.tscn" id="7_vq7jo"]
 [ext_resource type="AudioStream" uid="uid://cmq6h8nnmaet5" path="res://Sounds/TinyCryonos.ogg" id="8_3b8ob"]
+[ext_resource type="PackedScene" uid="uid://cfmpxigrj5blm" path="res://Scenes/Enemies/frozen_bomber.tscn" id="8_fvxdl"]
 
 [sub_resource type="Resource" id="Resource_rh8vq"]
 script = ExtResource("3_q6bmh")
 enemy = ExtResource("2_xy66g")
-probability = 40.0
+probability = 30.0
 level_to_spawn = 0
+max_level_to_spawn = 0
+
+[sub_resource type="Resource" id="Resource_dwgcg"]
+script = ExtResource("3_q6bmh")
+enemy = ExtResource("8_fvxdl")
+probability = 40.0
+level_to_spawn = 2
 max_level_to_spawn = 0
 
 [sub_resource type="Resource" id="Resource_ho4pg"]
 script = ExtResource("5_k8snj")
-enemies_to_spawn = Array[ExtResource("3_q6bmh")]([SubResource("Resource_rh8vq")])
+enemies_to_spawn = Array[ExtResource("3_q6bmh")]([SubResource("Resource_rh8vq"), SubResource("Resource_dwgcg")])
 starter_level = 0
 spawn_time = 14
 

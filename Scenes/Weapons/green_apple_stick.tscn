@@ -2,9 +2,24 @@
 
 [ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="1_f3sms"]
 [ext_resource type="Script" path="res://Scripts/Weapons/green_apple_stick.gd" id="2_n58vk"]
-[ext_resource type="AudioStream" path="res://Sounds/GreenAppleCrazy.mp3" id="3_q0ft6"]
-[ext_resource type="AudioStream" path="res://Sounds/GreenAppleBreak.mp3" id="4_382qm"]
+[ext_resource type="AudioStream" uid="uid://jxugpxp4i7j" path="res://Sounds/GreenAppleCrazy.mp3" id="3_q0ft6"]
+[ext_resource type="AudioStream" uid="uid://c6npmimo4u6ny" path="res://Sounds/GreenAppleBreak.mp3" id="4_382qm"]
 [ext_resource type="AudioStream" uid="uid://bi6t2k2ylw3a3" path="res://Sounds/VomitSizzle.mp3" id="5_qpjwd"]
+
+[sub_resource type="Animation" id="Animation_c0uy4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_3rw5e"]
 resource_name = "break"
@@ -32,21 +47,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.3]
-}
-
-[sub_resource type="Animation" id="Animation_c0uy4"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wq5qg"]

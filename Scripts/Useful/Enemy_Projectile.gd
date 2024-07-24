@@ -42,12 +42,12 @@ func _set_despawn():
 	die.emit()
 
 func _physics_process(delta):
-	if not stop_working && has_movement:
+	if not stop_working and has_movement:
 		global_position += direction * speed * delta
 
 func _when_die():
-	if die_wait_time > 0: await get_tree().create_timer(die_wait_time).timeout
 	stop_working = true
+	if die_wait_time > 0: await get_tree().create_timer(die_wait_time).timeout
 	queue_free()
 
 func _detect_tile_collision(body):

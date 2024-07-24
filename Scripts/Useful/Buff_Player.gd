@@ -42,14 +42,20 @@ func apply_buff(applied_buff : Node):
 	player.speed *= speed_weight_to_modify
 	
 	if player_color != Color.BLACK:
-		player.modulate = player_color
+		if player.has_node("Slime"):
+			player.get_node("Slime").self_modulate = player_color
+		if player.has_node("Hat"):
+			player.get_node("Hat").self_modulate = player_color
 	
 	print("Velocidad: ", player.speed)
 
 func remove_buff():
 	player.speed = player.original_speed
 	
-	player.modulate = Color(1,1,1)
+	if player.has_node("Slime"):
+		player.get_node("Slime").self_modulate = Color(1,1,1)
+	if player.has_node("Hat"):
+		player.get_node("Hat").self_modulate = Color(1,1,1)
 	
 	emit_signal("buff_removed")
 	queue_free()

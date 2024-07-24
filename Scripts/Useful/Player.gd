@@ -133,7 +133,9 @@ func create_children():
 		add_child(load("res://Scenes/Useful/fps_counter.tscn").instantiate())
 	
 	if Vars.hat_equipped != null:
-		add_child(Vars.hat_equipped.instantiate())
+		var hat = Vars.hat_equipped.instantiate()
+		hat.name = "Hat"
+		add_child(hat)
 	
 	if Vars.pet_equipped != null:
 		if Vars.main_scene.has_node("Spawn_Position"):
