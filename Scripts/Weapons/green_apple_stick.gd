@@ -73,7 +73,6 @@ func damage_conection():
 	if not get_tree().node_added.is_connected(add_damage):
 		get_tree().node_added.connect(add_damage)
 	
-	print(Funcs.get_cooldown_timeleft(self))
 	Funcs.timed_particles(Vector2(2,2), Funcs.get_cooldown_timeleft(self), Color.GREEN_YELLOW, player)
 	await get_tree().create_timer(Funcs.get_cooldown_timeleft(self)).timeout
 	

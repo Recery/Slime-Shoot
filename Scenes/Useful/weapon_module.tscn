@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b26xvn5trt68p"]
+[gd_scene load_steps=5 format=3 uid="uid://b26xvn5trt68p"]
 
 [ext_resource type="Script" path="res://Scripts/Useful/Weapon_Module.gd" id="1_d37oj"]
 [ext_resource type="Texture2D" uid="uid://dpjoofpoq73bp" path="res://Sprites/Weapons/WeaponModuleFrame.png" id="2_q62fo"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_f46bh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qbcjy"]
+font = ExtResource("3_f46bh")
+font_size = 8
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Weapon_Module" type="Node2D"]
 script = ExtResource("1_d37oj")
@@ -10,6 +17,18 @@ script = ExtResource("1_d37oj")
 z_index = 1
 position = Vector2(-12, 62)
 texture = ExtResource("2_q62fo")
+
+[node name="Slot" type="Label" parent="."]
+z_index = 1
+offset_left = -22.0
+offset_top = 68.0
+offset_right = 17.0
+offset_bottom = 75.0
+scale = Vector2(0.5, 0.5)
+text = "Slot: 1"
+label_settings = SubResource("LabelSettings_qbcjy")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Cooldown_1" type="Timer" parent="."]
 

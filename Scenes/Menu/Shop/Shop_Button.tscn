@@ -28,15 +28,11 @@ position = Vector2(14, 13)
 texture = ExtResource("7_o0wte")
 
 [node name="Price" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 4.0
-offset_top = 21.0
-offset_right = -3.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+offset_left = -6.0
+offset_top = 20.0
+offset_right = 35.0
+offset_bottom = 27.0
 text = "750"
 label_settings = SubResource("LabelSettings_s03np")
 horizontal_alignment = 1

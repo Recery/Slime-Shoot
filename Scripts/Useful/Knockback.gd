@@ -10,9 +10,11 @@ func _init(weight = 200):
 func _ready():
 	connect("tree_exiting", _on_tree_exiting)
 	enemy = get_parent()
-	enemy.speed = -knockback_weight
+	
+	# Calcular direccion y multiplicarla por el knockback para atras para empujarlo
+	enemy.velocity = (enemy.player.global_position - enemy.global_position).normalized() * (-knockback_weight)
+	
 	enemy.force_movement(true)
-	enemy.apply_new_speed()
 	enemy.move_and_slide()
 	queue_free()
 

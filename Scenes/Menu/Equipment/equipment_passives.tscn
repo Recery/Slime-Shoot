@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dp0eoiclataar"]
+[gd_scene load_steps=43 format=3 uid="uid://dp0eoiclataar"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="32_hh6om"]
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="33_uqbx4"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="34_0jyv0"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="37_443nq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("10_gysxj")
@@ -1550,6 +1551,17 @@ position = Vector2(-32, 0)
 
 [node name="Pos_3" type="Node2D" parent="Equipped_Passives"]
 position = Vector2(32, 0)
+
+[node name="Equipped" type="Label" parent="Equipped_Passives"]
+offset_left = -56.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 16.0
+text = "Equipped passives"
+label_settings = ExtResource("37_443nq")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="Dark_Background_Description" type="ColorRect" parent="."]
 visible = false

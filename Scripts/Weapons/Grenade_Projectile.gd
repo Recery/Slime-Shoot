@@ -6,7 +6,7 @@ var enemies_damaged
 func _ready():
 	exploding = false
 	enemies_damaged = 0
-	if direction.x < 0: get_node("Sprite2D").flip_v = true
+	get_node("Sprite2D").flip_v = direction.x < 0
 
 func _on_body_entered(body):
 	if !body.is_in_group("Player"):
@@ -24,4 +24,4 @@ func _on_body_entered(body):
 func _on_die():
 	get_node("CollisionShape2D").scale = Vector2(6,6)
 	exploding = true
-	Funcs.regular_explosion(2.5, 2.5, global_position, Funcs.get_bullets_node(), 12, true)
+	Funcs.regular_explosion(2.5, 2.5, global_position, Funcs.get_bullets_node(), 8, true)

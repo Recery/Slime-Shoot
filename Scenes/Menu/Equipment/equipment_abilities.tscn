@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://b6sxdtpty5qkn"]
+[gd_scene load_steps=48 format=3 uid="uid://b6sxdtpty5qkn"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_5ls3g"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="2_1sss3"]
@@ -42,6 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="35_m4rds"]
 [ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="37_sv7lf"]
 [ext_resource type="PackedScene" uid="uid://bhgh4u2fh214i" path="res://Scenes/Abilities/Green_Apple_Vomit_Ability.tscn" id="38_mm0ro"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="41_rvsp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("9_fxlry")
@@ -2079,6 +2080,17 @@ position = Vector2(-32, 0)
 
 [node name="Pos_3" type="Node2D" parent="Equipped_Abilities"]
 position = Vector2(32, 0)
+
+[node name="Equipped" type="Label" parent="Equipped_Abilities"]
+offset_left = -56.0
+offset_top = 9.0
+offset_right = 56.0
+offset_bottom = 16.0
+text = "Equipped abilities"
+label_settings = ExtResource("41_rvsp1")
+horizontal_alignment = 1
+vertical_alignment = 1
+max_lines_visible = 2
 
 [node name="Dark_Background_Description" type="ColorRect" parent="."]
 visible = false

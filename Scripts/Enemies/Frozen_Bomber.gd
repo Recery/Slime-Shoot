@@ -10,20 +10,18 @@ extends Enemy
 @onready var shoot_sound := get_node("Shoot_Sound")
 
 func _physics_process(_delta):
+	graphics()
+	
+	if can_shoot and not moving: shoot()
 	
 	if global_position.distance_to(player.global_position) > 110:
 		moving = true
 		# No avanzar inmediatamente ya que quedo con la posicion anterior y hace unos pocos pasos para esa direccion
 	elif global_position.distance_to(player.global_position) < 80:
-		moving = false
-		apply_new_speed() # Parar inmediatamente
-	
-	if can_shoot:
 		if shoot_ray.get_collider() == Vars.player:
-			if not moving: shoot()
+			moving = false
+			apply_new_speed() # Parar inmediatamente
 		else: moving = true
-	
-	graphics()
 
 func graphics() -> void:
 	var angle = Funcs.get_angle(player.global_position, global_position)

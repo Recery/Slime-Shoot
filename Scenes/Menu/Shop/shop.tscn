@@ -1,41 +1,44 @@
-[gd_scene load_steps=134 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=135 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_6bn12"]
+[ext_resource type="Texture2D" uid="uid://bfgsuwwcnqokj" path="res://Sprites/Menu/GreenAppleDisplay.png" id="3_xr4dg"]
 [ext_resource type="Script" path="res://Scripts/Useful/Points.gd" id="4_2uokv"]
 [ext_resource type="PackedScene" uid="uid://1v2mp2gdem60" path="res://Scenes/Menu/Shop/Shop_Button_Slime.tscn" id="5_rehuj"]
 [ext_resource type="PackedScene" uid="uid://gtnfverwcx6s" path="res://Scenes/Hats/witch_hat.tscn" id="6_frsjf"]
 [ext_resource type="PackedScene" uid="uid://db0fd7hpdki3j" path="res://Scenes/Hats/pink_bow.tscn" id="8_cdb3p"]
 [ext_resource type="Texture2D" uid="uid://bfug0uet136k6" path="res://Sprites/Hats/PinkBow.png" id="9_moh8q"]
 [ext_resource type="PackedScene" uid="uid://bqp74ycuolhku" path="res://Scenes/Hats/devilish_horns.tscn" id="10_ccfh0"]
+[ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="10_lp4ro"]
 [ext_resource type="Texture2D" uid="uid://brp7538ftbvf5" path="res://Sprites/Hats/DevilishHorns.png" id="11_gut8e"]
 [ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="11_hvk3j"]
 [ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="12_ya27u"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="13_27h4q"]
+[ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="13_52x5p"]
 [ext_resource type="Texture2D" uid="uid://vs2r4ttgsyrg" path="res://Sprites/Hats/ToyCrown.png" id="13_cidqb"]
 [ext_resource type="PackedScene" uid="uid://dl1ke2dvw5eg2" path="res://Scenes/Hats/sunglasses.tscn" id="14_5av70"]
 [ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/PlayerSlimeYellow.png" id="14_phj1f"]
-[ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="15_77b7y"]
 [ext_resource type="Texture2D" uid="uid://c5ar6ajgj25pa" path="res://Sprites/Hats/Sunglasses.png" id="15_tgxpi"]
+[ext_resource type="Texture2D" uid="uid://cblwq2tfc0r5g" path="res://Sprites/Player/CosmicSlime/StellarMarkPerk.png" id="16_btds1"]
 [ext_resource type="PackedScene" uid="uid://c3m4ge4m6dysv" path="res://Scenes/Hats/party_hat.tscn" id="16_p1fqv"]
 [ext_resource type="PackedScene" uid="uid://wdae0dm20e6b" path="res://Scenes/Player/Creamy_Slime/creamy_slime.tscn" id="16_ypkqm"]
 [ext_resource type="Texture2D" uid="uid://e1nk2c32jgx1" path="res://Sprites/Hats/PartyHat.png" id="17_jira4"]
 [ext_resource type="Texture2D" uid="uid://ci0eacecnl8qc" path="res://Sprites/Player/CreamySlime/CreamySlime.png" id="17_u7gxp"]
-[ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="18_5c3qe"]
 [ext_resource type="PackedScene" uid="uid://0ecwwwem6vt4" path="res://Scenes/Hats/slimy_knight.tscn" id="18_ywk3v"]
 [ext_resource type="Texture2D" uid="uid://dgjs6acdj11ot" path="res://Sprites/Hats/SlimyKnight.png" id="19_iw7ht"]
+[ext_resource type="Texture2D" uid="uid://knmiocqsvdad" path="res://Sprites/Player/WhiteSlime/GlacibotPerk.png" id="19_kgn6i"]
 [ext_resource type="PackedScene" uid="uid://jmqlowj1gi0e" path="res://Scenes/Hats/fork.tscn" id="20_uscnq"]
 [ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="21_552ih"]
 [ext_resource type="PackedScene" uid="uid://orhaho5ua2ql" path="res://Scenes/Player/Cosmic_Slime/cosmic_slime.tscn" id="22_6j260"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="22_gayuj"]
 [ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="22_horc1"]
+[ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="22_s0xbi"]
 [ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="23_kkqn6"]
 [ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="23_m46ku"]
 [ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="23_mdt8r"]
 [ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="24_d7oqs"]
 [ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="24_hqaic"]
-[ext_resource type="Texture2D" uid="uid://cblwq2tfc0r5g" path="res://Sprites/Player/CosmicSlime/StellarMarkPerk.png" id="24_ngcrq"]
 [ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="25_f0c83"]
 [ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="25_st6wr"]
 [ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="26_4gjfy"]
@@ -62,13 +65,11 @@
 [ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="36_f73yx"]
 [ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="36_x4npm"]
 [ext_resource type="PackedScene" uid="uid://hrendj7cy1wp" path="res://Scenes/Menu/Shop/Shop_Button.tscn" id="37_67iqe"]
-[ext_resource type="Texture2D" uid="uid://knmiocqsvdad" path="res://Sprites/Player/WhiteSlime/GlacibotPerk.png" id="37_y2bsv"]
 [ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="38_1smf3"]
 [ext_resource type="PackedScene" uid="uid://drstnvaxkms6w" path="res://Scenes/Weapons/sandy_eagle.tscn" id="38_ln5xm"]
 [ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="39_fst07"]
 [ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="39_hk5pj"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="40_qvax0"]
-[ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="40_t34ct"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="41_wfirl"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="42_yxwl3"]
 [ext_resource type="PackedScene" uid="uid://dru84amkg1deg" path="res://Scenes/Abilities/life_regen_ability.tscn" id="43_k15s7"]
@@ -167,16 +168,23 @@ position = Vector2(-106, -56)
 texture = ExtResource("2_1dh5a")
 
 [node name="Row" type="HBoxContainer" parent="Points_Panel"]
-offset_left = -142.0
-offset_top = -4.0
-offset_right = 143.0
-offset_bottom = 3.0
+offset_left = -31.0
+offset_top = -5.0
+offset_right = 31.0
+offset_bottom = 7.0
+theme_override_constants/separation = 3
 alignment = 1
+
+[node name="Green_Apple" type="TextureRect" parent="Points_Panel/Row"]
+layout_mode = 2
+texture = ExtResource("3_xr4dg")
+stretch_mode = 2
 
 [node name="Points" type="Label" parent="Points_Panel/Row"]
 layout_mode = 2
-text = "1"
+text = "111111"
 label_settings = SubResource("LabelSettings_e5fu2")
+vertical_alignment = 1
 script = ExtResource("4_2uokv")
 
 [node name="Slimes" type="Control" parent="."]
@@ -208,7 +216,7 @@ sprite_to_display = ExtResource("17_u7gxp")
 frames_display = 2
 
 [node name="Perk" parent="Slimes/Page_1/Creamy_Slime" index="1"]
-texture = ExtResource("18_5c3qe")
+texture = ExtResource("10_lp4ro")
 
 [node name="Yellow_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
@@ -220,7 +228,7 @@ frames_display = 2
 vframes = 2
 
 [node name="Perk" parent="Slimes/Page_1/Yellow_Slime" index="1"]
-texture = ExtResource("15_77b7y")
+texture = ExtResource("13_52x5p")
 
 [node name="Cosmic_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
@@ -234,7 +242,7 @@ frames_display = 2
 vframes = 2
 
 [node name="Perk" parent="Slimes/Page_1/Cosmic_Slime" index="1"]
-texture = ExtResource("24_ngcrq")
+texture = ExtResource("16_btds1")
 
 [node name="Page_2" type="HBoxContainer" parent="Slimes"]
 visible = false
@@ -255,7 +263,7 @@ frames_display = 2
 texture = ExtResource("36_f73yx")
 
 [node name="Perk" parent="Slimes/Page_2/White_Slime" index="1"]
-texture = ExtResource("37_y2bsv")
+texture = ExtResource("19_kgn6i")
 
 [node name="Goldfish_Slime" parent="Slimes/Page_2" instance=ExtResource("5_rehuj")]
 layout_mode = 2
@@ -267,7 +275,7 @@ frames_display = 2
 texture = ExtResource("39_fst07")
 
 [node name="Perk" parent="Slimes/Page_2/Goldfish_Slime" index="1"]
-texture = ExtResource("40_t34ct")
+texture = ExtResource("22_s0xbi")
 
 [node name="Pages_Buttons" type="HBoxContainer" parent="Slimes"]
 layout_mode = 1
@@ -603,6 +611,7 @@ object_to_buy = ExtResource("84_hs512")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("26_klcqa")
 sprite_to_display = ExtResource("85_wxutb")
+frames_display = 3
 
 [node name="Abilities" type="Control" parent="."]
 visible = false

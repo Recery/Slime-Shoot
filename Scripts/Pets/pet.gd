@@ -7,9 +7,14 @@ extends Summon_Minion
 func _ready():
 	animation.current_animation = "walk"
 
+var extra_idle_pos_y := 0
 func _physics_process(_delta):
 	idle_pos = Vars.player.global_position
-	idle_pos.y += 10
+	if player.velocity.y > 0:
+		extra_idle_pos_y = -10
+	elif player.velocity.y < 0:
+		extra_idle_pos_y = 10
+	idle_pos.y += extra_idle_pos_y
 	
 	idle_movement()
 	

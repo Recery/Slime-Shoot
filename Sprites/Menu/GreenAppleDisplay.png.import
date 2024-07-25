@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6a5k717iavvi"
-path="res://.godot/imported/Pipsqueak.png-53484aadf684066296462ad6f8a965ce.ctex"
+uid="uid://bfgsuwwcnqokj"
+path="res://.godot/imported/GreenAppleDisplay.png-ab02e0adb73af6a1eaf17a2aef7594c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Pets/Pipsqueak.png"
-dest_files=["res://.godot/imported/Pipsqueak.png-53484aadf684066296462ad6f8a965ce.ctex"]
+source_file="res://Sprites/Menu/GreenAppleDisplay.png"
+dest_files=["res://.godot/imported/GreenAppleDisplay.png-ab02e0adb73af6a1eaf17a2aef7594c5.ctex"]
 
 [params]
 

@@ -59,6 +59,7 @@ func _input(event):
 		
 		swap_cooldown.start()
 		can_swap = false
+		get_node("Slot").text = "Slot: " + str(current_weapon + 1)
 	elif event.is_action_pressed("swap_weapon_down") && can_swap:
 		current_weapon -= 1
 		if current_weapon < 0: current_weapon = size_equipped - 1
@@ -70,6 +71,7 @@ func _input(event):
 		
 		swap_cooldown.start()
 		can_swap = false
+		get_node("Slot").text = "Slot: " + str(current_weapon + 1)
 
 func _on_shoot():
 	weapon_frame.modulate = Color(0.5,0.5,0.5)
