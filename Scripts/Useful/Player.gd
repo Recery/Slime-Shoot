@@ -64,26 +64,28 @@ func _ready():
 	
 	connect_signals()
 
+var custom_velocity := false
+var forced_immunity := false
 func _physics_process(_delta):
 	_extra_physics_process.emit()
 	
 	var raw_velocity = Vector2(0,0)
 	
-	if Input.is_action_pressed("up"):
-		raw_velocity.y -= 1
-	if Input.is_action_pressed("down"):
-		raw_velocity.y += 1
-	if Input.is_action_pressed("left"):
-		raw_velocity.x -= 1
-	if Input.is_action_pressed("right"):
-		raw_velocity.x += 1
+	if not custom_velocity:
+		if Input.is_action_pressed("up"):
+			raw_velocity.y -= 1
+		if Input.is_action_pressed("down"):
+			raw_velocity.y += 1
+		if Input.is_action_pressed("left"):
+			raw_velocity.x -= 1
+		if Input.is_action_pressed("right"):
+			raw_velocity.x += 1
+		
+		velocity = raw_velocity.normalized() * speed
+		velocity.x = lerp(velocity.x, 0.0, 0.5)
+		velocity.y = lerp(velocity.y, 0.0, 0.5)
 	
 	shoot_pos = get_global_mouse_position()
-	
-	velocity = raw_velocity.normalized() * speed
-	
-	velocity.x = lerp(velocity.x, 0.0, 0.5)
-	velocity.y = lerp(velocity.y, 0.0, 0.5)
 	
 	## Todo lo que tenga que ver con energía ##
 	if energy < max_energy && fill_energy:
@@ -98,7 +100,7 @@ func _physics_process(_delta):
 	
 	if life > max_life: life = max_life
 	
-	if damaging && not immune:
+	if damaging and not immune and not forced_immunity:
 		deal_damage_enemies()
 	
 	manage_perk()
@@ -146,6 +148,7 @@ func create_children():
 	
 	immunity_cooldown = Timer.new()
 	immunity_cooldown.wait_time = 1.0
+	immunity_cooldown.one_shot = true
 	immunity_cooldown.name = "Immunity_Cooldown"
 	add_child(immunity_cooldown)
 	

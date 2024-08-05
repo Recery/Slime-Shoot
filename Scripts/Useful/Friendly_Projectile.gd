@@ -1,4 +1,3 @@
-@tool
 extends Area2D
 class_name Friendly_Projectile
 
@@ -37,10 +36,6 @@ signal die
 signal reset_persistent(proj)
 
 func _init():
-	if Engine.is_editor_hint():
-		deactivate_process()
-		return
-	
 	set_collision_layer_value(1, false)
 	for i in range(4):
 		if i == 0: set_collision_mask_value(i+1, false)
@@ -67,10 +62,6 @@ func _set_despawn():
 	await despawn_timer.timeout
 	die.emit()
 
-func deactivate_process():
-	await ready
-	set_physics_process(false)
-
 func _physics_process(delta):
 	if not stop_working && has_movement:
 		global_position += direction * speed * delta
@@ -86,7 +77,3 @@ func _when_die():
 	if die_wait_time > 0: await get_tree().create_timer(die_wait_time).timeout
 	stop_working = true
 	queue_free()
-
-func _ready():
-	if not has_node("Is_Original") && Engine.is_editor_hint(): 
-		set_script(null)

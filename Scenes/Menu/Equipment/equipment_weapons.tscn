@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cq3m7ndadb2jt"]
+[gd_scene load_steps=52 format=3 uid="uid://cq3m7ndadb2jt"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_llrg5"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="2_m7hc0"]
@@ -44,6 +44,8 @@
 [ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="40_o66mx"]
 [ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="41_ymqmo"]
 [ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
+[ext_resource type="PackedScene" uid="uid://ycrv083kmlcw" path="res://Scenes/Weapons/goldfish_trident.tscn" id="43_6lcci"]
+[ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="44_ipvu2"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="44_p5wm5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
@@ -2399,6 +2401,183 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Icon" type="TextureRect" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown"]
+layout_mode = 2
+texture = ExtResource("14_70lrc")
+
+[node name="Goldfish_Trident" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_llrg5")
+texture_pressed = ExtResource("15_k387t")
+texture_hover = ExtResource("16_141qd")
+texture_disabled = ExtResource("2_nav4d")
+script = ExtResource("3_7r6lc")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Goldfish_Trident"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+weapon_to_equip = ExtResource("43_6lcci")
+
+[node name="1" type="Label" parent="Rows/Row2/Goldfish_Trident/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Goldfish_Trident"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 2
+weapon_to_equip = ExtResource("43_6lcci")
+
+[node name="2" type="Label" parent="Rows/Row2/Goldfish_Trident/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Goldfish_Trident"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("2_m7hc0")
+texture_pressed = ExtResource("3_78yln")
+texture_hover = ExtResource("4_3y6fo")
+script = ExtResource("5_ewph1")
+slot = 3
+weapon_to_equip = ExtResource("43_6lcci")
+
+[node name="3" type="Label" parent="Rows/Row2/Goldfish_Trident/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident"]
+position = Vector2(14, 13)
+texture = ExtResource("44_ipvu2")
+
+[node name="Weapon_Description" type="Control" parent="Rows/Row2/Goldfish_Trident"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = -32.0
+offset_right = -135.0
+offset_bottom = 8.0
+
+[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("42_2fiyd")
+hframes = 3
+
+[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_amhss")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_ds6om")
+
+[node name="Description" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 30.0
+offset_right = 259.0
+offset_bottom = 107.0
+scale = Vector2(0.9, 0.9)
+text = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="HBoxContainer" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 17.0
+offset_right = 178.0
+offset_bottom = 27.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Use" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "75"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Energy_Use"]
+layout_mode = 2
+texture = ExtResource("13_2duse")
+
+[node name="Cooldown" type="HBoxContainer" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -6.0
+offset_right = 178.0
+offset_bottom = 4.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Cooldown"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "9"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Cooldown"]
 layout_mode = 2
 texture = ExtResource("14_70lrc")
 

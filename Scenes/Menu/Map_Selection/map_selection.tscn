@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xcb3sy5rg4sn"]
+[gd_scene load_steps=23 format=3 uid="uid://xcb3sy5rg4sn"]
 
 [ext_resource type="PackedScene" uid="uid://cnh8ic5jmr58n" path="res://Scenes/Menu/Map_Selection/map_button.tscn" id="1_rdn44"]
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cghidm4qs0u3q" path="res://Sprites/Menu/MapsButtons/Desert.png" id="7_6egdv"]
 [ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="7_6w4tq"]
 [ext_resource type="Texture2D" uid="uid://bynae8dkavjoa" path="res://Sprites/Menu/MapsButtons/DesertHover.png" id="8_4vrjy"]
-[ext_resource type="PackedScene" uid="uid://dy6d6jf0es7fo" path="res://Scenes/Maps/catacombs.tscn" id="10_2mpju"]
+[ext_resource type="PackedScene" uid="uid://bhh53gp4p80wi" path="res://Scenes/Maps/desert_level.tscn" id="10_64dmq"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="10_e4mke"]
 [ext_resource type="PackedScene" uid="uid://c61mfsv2idn4c" path="res://Scenes/Cinematic/clown_dungeon_cinematic.tscn" id="12_mglki"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="12_q38p5"]
@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://ovfk38tcf248" path="res://Scenes/Maps/snow_level.tscn" id="13_wxwak"]
 [ext_resource type="Texture2D" uid="uid://b1kkbh31ms072" path="res://Sprites/Menu/MapsButtons/SnowHover.png" id="14_mvmp5"]
 [ext_resource type="PackedScene" uid="uid://bn0sq63s811s5" path="res://Scenes/Cinematic/catacombs_cinematic.tscn" id="16_sfd4i"]
+[ext_resource type="Texture2D" uid="uid://cs43idgt3tggv" path="res://Sprites/Menu/MapsButtons/Cyberspace.png" id="17_d5tfd"]
+[ext_resource type="PackedScene" uid="uid://bvexm66yutw5w" path="res://Scenes/Maps/cyberspace_level.tscn" id="17_tck35"]
+[ext_resource type="Texture2D" uid="uid://4kcnxc0hqgog" path="res://Sprites/Menu/MapsButtons/CyberspaceHover.png" id="18_acgg8"]
+[ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="20_3ubtr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8w5x"]
 font = ExtResource("12_q38p5")
@@ -33,11 +37,16 @@ zoom = Vector2(4, 4)
 [node name="Arrows" type="Node2D" parent="."]
 
 [node name="Arrow" type="Sprite2D" parent="Arrows"]
-position = Vector2(71, -24)
+position = Vector2(86, -24)
 texture = ExtResource("5_5qald")
 
 [node name="Arrow2" type="Sprite2D" parent="Arrows"]
-position = Vector2(-9, -24)
+position = Vector2(29, -24)
+texture = ExtResource("5_5qald")
+
+[node name="Arrow3" type="Sprite2D" parent="Arrows"]
+position = Vector2(58, 3)
+rotation = 4.71239
 texture = ExtResource("5_5qald")
 
 [node name="Buttons" type="Control" parent="."]
@@ -53,9 +62,9 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 40.0
+offset_left = 44.0
 offset_top = -24.0
-offset_right = 85.0
+offset_right = 89.0
 offset_bottom = 21.0
 texture_normal = ExtResource("2_p60ma")
 texture_pressed = ExtResource("3_vm7vn")
@@ -69,14 +78,14 @@ layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -40.0
+offset_left = -13.0
 offset_top = -24.0
-offset_right = 5.0
+offset_right = 32.0
 offset_bottom = 21.0
 texture_normal = ExtResource("7_6egdv")
 texture_pressed = ExtResource("8_4vrjy")
 texture_hover = ExtResource("8_4vrjy")
-map_to_enter = ExtResource("10_2mpju")
+map_to_enter = ExtResource("10_64dmq")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("12_mglki")
 
@@ -85,15 +94,31 @@ layout_mode = 0
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -120.0
+offset_left = -70.0
 offset_top = -24.0
-offset_right = -75.0
+offset_right = -25.0
 offset_bottom = 21.0
 texture_normal = ExtResource("13_5qowy")
 texture_pressed = ExtResource("14_mvmp5")
 texture_hover = ExtResource("14_mvmp5")
 map_to_enter = ExtResource("13_wxwak")
 unlocked_by_slime = ExtResource("10_e4mke")
+cinematic_to_play = ExtResource("16_sfd4i")
+
+[node name="Cyberspace" parent="Buttons" instance=ExtResource("1_rdn44")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -13.0
+offset_top = 33.0
+offset_right = 32.0
+offset_bottom = 78.0
+texture_normal = ExtResource("17_d5tfd")
+texture_pressed = ExtResource("18_acgg8")
+texture_hover = ExtResource("18_acgg8")
+map_to_enter = ExtResource("17_tck35")
+unlocked_by_slime = ExtResource("20_3ubtr")
 cinematic_to_play = ExtResource("16_sfd4i")
 
 [node name="Select_Map_Text" type="Label" parent="."]

@@ -6,7 +6,6 @@ func _ready():
 	if Vars.main_scene.has_node("Music"):
 		Vars.main_scene.get_node("Music").stop()
 
-
 const min_distance = 50 # La distancia minima a la que el boss puede estar del jugador (si es menos que esto se aleja del jugador)
 const max_distance = 100 # La distancia maxima a la que el boss puede estar del jugador (si es mas que esto se acerca al jugador)
 func _physics_process(_delta):
@@ -14,12 +13,8 @@ func _physics_process(_delta):
 	
 	if global_position.distance_to(player.global_position) > max_distance:
 		speed = base_speed
-	elif global_position.distance_to(player.global_position) < min_distance:
+	elif global_position.distance_to(player.global_posi10tion) < min_distance:
 		speed = -base_speed
-	
-	if is_on_wall():
-		if global_position.y > player.global_position.y: # Abajo
-			pass
 	
 	Funcs.weapon_rotation(sandy_eagle,Vector2(10,0), self)
 

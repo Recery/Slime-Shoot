@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpjm80d2j0nms"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/boolean.gd" id="1_duyv7"]
+[ext_resource type="Texture2D" uid="uid://dae0bfspjhe1h" path="res://Sprites/Enemies/Boolean.png" id="2_ebtoi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c5ix"]
+atlas = ExtResource("2_ebtoi")
+region = Rect2(0, 13, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quidv"]
+atlas = ExtResource("2_ebtoi")
+region = Rect2(45, 13, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0llk"]
+atlas = ExtResource("2_ebtoi")
+region = Rect2(0, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebl84"]
+atlas = ExtResource("2_ebtoi")
+region = Rect2(15, 0, 15, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt75n"]
+atlas = ExtResource("2_ebtoi")
+region = Rect2(30, 0, 15, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u2nnk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c5ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quidv")
+}],
+"loop": true,
+"name": &"idle_not_active",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0llk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebl84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0llk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bt75n")
+}],
+"loop": true,
+"name": &"walk_active",
+"speed": 8.0
+}]
+
+[node name="Boolean" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_duyv7")
+score_to_add = 5
+original_damage = 8.0
+original_speed = 50.0
+original_max_life = 9.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u2nnk")
+animation = &"walk_active"
+autoplay = "walk_active"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-7, -3, -8, -2, -8, 2, -5, 6, -2, 2, 2, 2, 5, 6, 7, 2, 7, -5, 5, -7, 3, -4)
+
+[node name="Switch_State_Timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Switch_State_Timer" to="." method="_on_switch_state_timer_timeout"]

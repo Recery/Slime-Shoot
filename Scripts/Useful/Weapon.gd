@@ -16,6 +16,7 @@ class_name Weapon
 
 var can_shoot := true
 var active := false
+@export var rotation_activated := true
 @onready var player := Vars.player
 
 signal shoot
@@ -29,7 +30,8 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("shoot") && can_shoot:
 		if player.reduce_energy(energy_use, energy_recover_cooldown): shoot.emit()
 	
-	Funcs.weapon_rotation(self, hold_offset)
+	if rotation_activated:
+		Funcs.weapon_rotation(self, hold_offset)
 	_extra_process()
 
 func _extra_process(): pass
