@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://dl5qufxb6ccbr"]
+[gd_scene load_steps=51 format=3 uid="uid://dl5qufxb6ccbr"]
 
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="1_2p5bb"]
 [ext_resource type="Texture2D" uid="uid://wndohrfqfgps" path="res://Sprites/Menu/BigSquareButton.png" id="1_effe7"]
@@ -42,6 +42,9 @@
 [ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="34_d5vnq"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="34_ea7m1"]
 [ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="35_gymdr"]
+[ext_resource type="PackedScene" uid="uid://djhhdxr628rcc" path="res://Scenes/Player/Poo_Slime/poo_slime.tscn" id="36_b3bwh"]
+[ext_resource type="Texture2D" uid="uid://dhaj8lsbb5i7" path="res://Sprites/Player/PooSlime/PooSlime.png" id="37_m6bvc"]
+[ext_resource type="Texture2D" uid="uid://4ue6mog615ia" path="res://Sprites/Player/PooSlime/FartAttackPerk.png" id="38_687om"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("11_g2ecg")
@@ -1214,6 +1217,190 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("16_3rkrn")
 
 [node name="Cooldown" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -24.0
+offset_top = -4.0
+offset_bottom = 6.0
+text = "0"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Poo_Slime" type="TextureButton" parent="Page_2"]
+layout_mode = 2
+texture_normal = ExtResource("1_effe7")
+texture_pressed = ExtResource("2_rix6a")
+texture_hover = ExtResource("3_vf304")
+texture_disabled = ExtResource("4_q4utm")
+script = ExtResource("5_c7iad")
+type_of_object = 0
+
+[node name="Equip_Button" type="TextureButton" parent="Page_2/Poo_Slime"]
+self_modulate = Color(0, 0.968627, 0.00784314, 1)
+layout_mode = 0
+offset_left = 11.9999
+offset_top = 46.0
+offset_right = 117.0
+offset_bottom = 74.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("1_2p5bb")
+texture_pressed = ExtResource("7_r3oru")
+texture_hover = ExtResource("8_6yfho")
+script = ExtResource("8_4f1vp")
+slime_to_equip = ExtResource("36_b3bwh")
+
+[node name="Equip" type="Label" parent="Page_2/Poo_Slime/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_t6myi")
+
+[node name="Slime" type="Sprite2D" parent="Page_2/Poo_Slime"]
+position = Vector2(30, 13)
+texture = ExtResource("37_m6bvc")
+hframes = 2
+
+[node name="Perk" type="Sprite2D" parent="Page_2/Poo_Slime"]
+position = Vector2(30, 32)
+texture = ExtResource("38_687om")
+
+[node name="Slime_Description" type="Control" parent="Page_2/Poo_Slime"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -139.0
+offset_top = -8.0
+offset_right = -99.0
+offset_bottom = 32.0
+
+[node name="Description_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_sibpl")
+
+[node name="Description" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Description_Frame"]
+offset_left = -100.0
+offset_top = -35.0
+offset_right = 100.0
+offset_bottom = 35.0
+text = "This is the... the Poo Slime. It has the Fart Attack Perk. Hold your perk key and your Slime will fart, poisoning nearby enemies."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Slime_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
+position = Vector2(120, 10)
+texture = ExtResource("13_rec6h")
+
+[node name="Slime" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
+z_index = 1
+texture = ExtResource("37_m6bvc")
+hframes = 2
+
+[node name="Max_Energy" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
+position = Vector2(6, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_tpp8t")
+
+[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Max_Energy"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "210"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max_Life" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
+position = Vector2(5, -14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_8rnlm")
+
+[node name="Life" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Max_Life"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -30.0
+offset_top = -4.0
+offset_right = -6.0
+offset_bottom = 6.0
+text = "110"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Speed" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
+position = Vector2(6, 8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_b82aj")
+
+[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Speed"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.5
+offset_right = -7.0
+offset_bottom = 5.5
+text = "110
+"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resistance" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
+position = Vector2(2, 14)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("18_as2up")
+
+[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Resistance"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -20.0
+offset_top = -4.5
+offset_right = 1.0
+offset_bottom = 5.5
+text = "1"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Perk_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
+position = Vector2(152, 10)
+texture = ExtResource("13_rec6h")
+
+[node name="Perk" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
+z_index = 1
+texture = ExtResource("38_687om")
+
+[node name="Energy_Use" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
+position = Vector2(5, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_tpp8t")
+
+[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -5.0
+offset_bottom = 6.0
+text = "1"
+label_settings = SubResource("LabelSettings_nkm4v")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Use_Cooldown" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
+position = Vector2(3, -12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_3rkrn")
+
+[node name="Cooldown" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
 modulate = Color(1, 1, 1, 0.698039)
 offset_left = -24.0
 offset_top = -4.0

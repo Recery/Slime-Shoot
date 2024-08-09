@@ -265,6 +265,11 @@ func add_to_enemies(enemy : Enemy) -> bool:
 		return true
 	else: return false
 
+# Recibe una instancia de nodo y lo devuelve sin script
+func set_non_script(instance : Node):
+	instance.set_script(null)
+	return instance
+
 func has_node_in_group(node : Node, group : String) -> bool:
 	if node == null: return false
 	

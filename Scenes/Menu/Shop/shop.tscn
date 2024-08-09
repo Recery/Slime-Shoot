@@ -1,4 +1,4 @@
-[gd_scene load_steps=139 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=145 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -34,13 +34,16 @@
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="22_gayuj"]
 [ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="22_horc1"]
 [ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="22_s0xbi"]
+[ext_resource type="PackedScene" uid="uid://djhhdxr628rcc" path="res://Scenes/Player/Poo_Slime/poo_slime.tscn" id="23_1ol3p"]
 [ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="23_kkqn6"]
 [ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="23_m46ku"]
 [ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="23_mdt8r"]
+[ext_resource type="Texture2D" uid="uid://dhaj8lsbb5i7" path="res://Sprites/Player/PooSlime/PooSlime.png" id="24_5vbpe"]
 [ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="24_d7oqs"]
 [ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="24_hqaic"]
 [ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="25_f0c83"]
 [ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="25_st6wr"]
+[ext_resource type="Texture2D" uid="uid://4ue6mog615ia" path="res://Sprites/Player/PooSlime/FartAttackPerk.png" id="25_t3w8s"]
 [ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="26_4gjfy"]
 [ext_resource type="PackedScene" uid="uid://lphu8w311olc" path="res://Scenes/Weapons/fart_rifle.tscn" id="26_4oam8"]
 [ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="26_klcqa"]
@@ -99,7 +102,9 @@
 [ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="58_4kpmw"]
 [ext_resource type="Texture2D" uid="uid://csk1e6o8akylw" path="res://Sprites/Hats/MushroomCatEars.png" id="58_8jtoo"]
 [ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="58_hfg5k"]
+[ext_resource type="PackedScene" uid="uid://dt8uh1imijxp4" path="res://Scenes/Hats/andean_condor_headband.tscn" id="59_o8vua"]
 [ext_resource type="PackedScene" uid="uid://btekfbe0jpc7x" path="res://Scenes/Passives/energy_loot_passive.tscn" id="59_tes2d"]
+[ext_resource type="Texture2D" uid="uid://hmgdmpjkjv7j" path="res://Sprites/Hats/AndeanCondorHeadband.png" id="60_khfi6"]
 [ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="60_ta6rn"]
 [ext_resource type="PackedScene" uid="uid://cg6u0ffwolmut" path="res://Scenes/Passives/life_regen_passive.tscn" id="61_d4i0h"]
 [ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="62_efpyx"]
@@ -147,6 +152,11 @@ outline_size = 3
 font = ExtResource("3_6bn12")
 font_color = Color(1, 0.211765, 0.156863, 1)
 outline_size = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_lcg4j"]
+font = ExtResource("3_6bn12")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -281,6 +291,20 @@ texture = ExtResource("39_fst07")
 [node name="Perk" parent="Slimes/Page_2/Goldfish_Slime" index="1"]
 texture = ExtResource("22_s0xbi")
 
+[node name="Poo_Slime" parent="Slimes/Page_2" instance=ExtResource("5_rehuj")]
+layout_mode = 2
+needed_points = 3400
+object_to_buy = ExtResource("23_1ol3p")
+unlocked_in_adventure = false
+sprite_to_display = ExtResource("24_5vbpe")
+frames_display = 2
+
+[node name="Item" parent="Slimes/Page_2/Poo_Slime" index="0"]
+texture = ExtResource("24_5vbpe")
+
+[node name="Perk" parent="Slimes/Page_2/Poo_Slime" index="1"]
+texture = ExtResource("25_t3w8s")
+
 [node name="Pages_Buttons" type="HBoxContainer" parent="Slimes"]
 layout_mode = 1
 anchors_preset = -1
@@ -337,6 +361,17 @@ offset_right = 14.0027
 offset_bottom = 14.0027
 text = "2"
 label_settings = SubResource("LabelSettings_5kvfq")
+
+[node name="Slime_Shop_Text" type="Label" parent="Slimes"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 59.0
+offset_right = 89.0
+offset_bottom = 82.0
+text = "Slimes shop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hats" type="Control" parent="."]
 visible = false
@@ -480,6 +515,25 @@ object_to_buy = ExtResource("57_jwivb")
 sprite_to_display = ExtResource("58_8jtoo")
 frames_display = 2
 
+[node name="Andean_Condor_Headband" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 500
+type_of_object = 4
+object_to_buy = ExtResource("59_o8vua")
+sprite_to_display = ExtResource("60_khfi6")
+frames_display = 2
+
+[node name="Hats_Shop_Text" type="Label" parent="Hats"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 53.0
+offset_right = 89.0
+offset_bottom = 76.0
+text = "Hats shop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Pets" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -504,6 +558,17 @@ needed_points = 1000
 type_of_object = 5
 object_to_buy = ExtResource("56_nt7ee")
 sprite_to_display = ExtResource("57_ap3yb")
+
+[node name="Pets_Shop_Text" type="Label" parent="Pets"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 53.0
+offset_right = 89.0
+offset_bottom = 76.0
+text = "Petshop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Weapons" type="Control" parent="."]
 anchors_preset = 0
@@ -633,6 +698,17 @@ unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("38_1smf3")
 sprite_to_display = ExtResource("88_5d8dt")
 
+[node name="Weapon_Shop_Text" type="Label" parent="Weapons"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 53.0
+offset_right = 89.0
+offset_bottom = 76.0
+text = "Weapons shop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Abilities" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -747,6 +823,17 @@ unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("82_0k2td")
 
+[node name="Abilities_Shop_Text" type="Label" parent="Abilities"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 53.0
+offset_right = 89.0
+offset_bottom = 76.0
+text = "Abilities shop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Passives" type="Control" parent="."]
 visible = false
 layout_mode = 3
@@ -851,6 +938,17 @@ object_to_buy = ExtResource("101_57fgs")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("102_q4yxp")
+
+[node name="Passives_Shop_Text" type="Label" parent="Passives"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 53.0
+offset_right = 89.0
+offset_bottom = 76.0
+text = "Passives shop"
+label_settings = SubResource("LabelSettings_lcg4j")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Hats_Button" type="TextureButton" parent="."]
 layout_mode = 0
@@ -958,3 +1056,4 @@ texture = ExtResource("60_ta6rn")
 [editable path="Slimes/Page_1/Cosmic_Slime"]
 [editable path="Slimes/Page_2/White_Slime"]
 [editable path="Slimes/Page_2/Goldfish_Slime"]
+[editable path="Slimes/Page_2/Poo_Slime"]

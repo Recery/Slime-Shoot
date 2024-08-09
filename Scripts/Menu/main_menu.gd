@@ -16,6 +16,7 @@ var equipment_pets
 var shop
 var settings
 var cinematics
+var enemy_almanac
 var back_button
 
 func _ready():
@@ -37,6 +38,7 @@ func _ready():
 	shop = get_node("Shop")
 	settings = get_node("Settings")
 	cinematics = get_node("Replay_Cinematics")
+	enemy_almanac = get_node("Enemy_Almanac")
 	
 	back_button = get_node("BackButton")
 	
@@ -202,7 +204,14 @@ func _on_cinematics_button_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón cinemáticas
 
-
+func _on_enemy_almanac_button_pressed():
+	buttons.hide()
+	equipment_buttons.hide()
+	other_buttons.hide()
+	title.hide()
+	enemy_almanac.show()
+	back_button.show()
+	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 
 # Botón atrás
 func _on_back_button_pressed():
@@ -227,4 +236,5 @@ func hide_all():
 	shop.hide()
 	settings.hide()
 	cinematics.hide()
+	enemy_almanac.hide()
 	back_button.hide()

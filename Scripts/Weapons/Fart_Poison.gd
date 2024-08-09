@@ -25,5 +25,5 @@ func _on_despawn_timer_timeout():
 	queue_free()
 
 func renew_color(node):
-	if node.is_in_group("Color_Debuff") && not exiting:
+	if node.is_in_group("Color_Debuff") and not exiting:
 		enemy.modulate = Color(0, 0.973, 0)

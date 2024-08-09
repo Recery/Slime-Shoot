@@ -9,8 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cghidm4qs0u3q" path="res://Sprites/Menu/MapsButtons/Desert.png" id="7_6egdv"]
 [ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="7_6w4tq"]
 [ext_resource type="Texture2D" uid="uid://bynae8dkavjoa" path="res://Sprites/Menu/MapsButtons/DesertHover.png" id="8_4vrjy"]
-[ext_resource type="PackedScene" uid="uid://bhh53gp4p80wi" path="res://Scenes/Maps/desert_level.tscn" id="10_64dmq"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="10_e4mke"]
+[ext_resource type="PackedScene" uid="uid://dy6d6jf0es7fo" path="res://Scenes/Maps/catacombs.tscn" id="10_kycx1"]
 [ext_resource type="PackedScene" uid="uid://c61mfsv2idn4c" path="res://Scenes/Cinematic/clown_dungeon_cinematic.tscn" id="12_mglki"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="12_q38p5"]
 [ext_resource type="Texture2D" uid="uid://daldv67yduw25" path="res://Sprites/Menu/MapsButtons/Snow.png" id="13_5qowy"]
@@ -85,7 +85,7 @@ offset_bottom = 21.0
 texture_normal = ExtResource("7_6egdv")
 texture_pressed = ExtResource("8_4vrjy")
 texture_hover = ExtResource("8_4vrjy")
-map_to_enter = ExtResource("10_64dmq")
+map_to_enter = ExtResource("10_kycx1")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("12_mglki")
 

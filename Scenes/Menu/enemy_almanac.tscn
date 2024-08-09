@@ -1,0 +1,2637 @@
+[gd_scene load_steps=39 format=3 uid="uid://dbqer4780q8t6"]
+
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_3c7uw"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_41nn2"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="3_yor4p"]
+[ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_4vtwx"]
+[ext_resource type="Texture2D" uid="uid://bsjsa55lsjlwl" path="res://Sprites/Enemies/SmallEvilBall.png" id="5_3yedt"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="7_m531n"]
+[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="8_1wb5a"]
+[ext_resource type="Texture2D" uid="uid://dxl4ykknrp0au" path="res://Sprites/Menu/NameFrame.png" id="8_nfrck"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_xj05r"]
+[ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="10_7gr21"]
+[ext_resource type="Texture2D" uid="uid://bc3pf3arpqi6e" path="res://Sprites/Menu/LifeIcon.png" id="11_r6ynt"]
+[ext_resource type="Script" path="res://Scripts/Menu/Enemy_Almanac/enemy_description_button.gd" id="12_fyxue"]
+[ext_resource type="LabelSettings" uid="uid://dfkffwrdyxuu8" path="res://Resources/Setted_Resources/regular_text.tres" id="12_mur4l"]
+[ext_resource type="Texture2D" uid="uid://b3rag0vuxyn2q" path="res://Sprites/Enemies/Balloon.png" id="14_74p2r"]
+[ext_resource type="Texture2D" uid="uid://bcn06ifm80see" path="res://Sprites/Enemies/EvilBall.png" id="15_iaxu6"]
+[ext_resource type="Texture2D" uid="uid://cq50ji1owpmci" path="res://Sprites/Enemies/Bomb.png" id="16_mfjkb"]
+[ext_resource type="Texture2D" uid="uid://o0gosrjd202o" path="res://Sprites/Enemies/Cannon/Cannon_Cannon.png" id="17_j3lrg"]
+[ext_resource type="Texture2D" uid="uid://cktyjq0axsf7s" path="res://Sprites/Enemies/Cannon/Cannon_Wheels.png" id="17_ti3g1"]
+[ext_resource type="Texture2D" uid="uid://3dmqivjrn2i1" path="res://Sprites/Enemies/ClownBombBoss.png" id="18_cl3qb"]
+[ext_resource type="Texture2D" uid="uid://cqoanbqn3rq1f" path="res://Sprites/Enemies/Cannon/Cannon_Centerl.png" id="18_w8kpx"]
+[ext_resource type="Texture2D" uid="uid://cpvymkcx3yxq7" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterMoth.png" id="19_kh4c6"]
+[ext_resource type="Texture2D" uid="uid://bo0gktl1nds1d" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterLarva.png" id="20_j2gbf"]
+[ext_resource type="Texture2D" uid="uid://dlb53rkge3v4e" path="res://Sprites/Enemies/Chameleon.png" id="21_347ep"]
+[ext_resource type="Texture2D" uid="uid://cguvtr01i3s5" path="res://Sprites/Enemies/Scorpion.png" id="22_0ey1m"]
+[ext_resource type="Texture2D" uid="uid://ky1gd24xi3kf" path="res://Sprites/Enemies/RollingCactus.png" id="23_ujjyb"]
+[ext_resource type="Texture2D" uid="uid://dslidq1kjojo2" path="res://Sprites/Enemies/SandstoneGolem/SandstoneGolem.png" id="24_i5h3e"]
+[ext_resource type="Texture2D" uid="uid://dklp5olq6wawb" path="res://Sprites/Enemies/SandstoneGolem/Stoddler.png" id="25_hvvhv"]
+[ext_resource type="Texture2D" uid="uid://dmqpp2ut1vi7" path="res://Sprites/Enemies/DesertMother.png" id="28_nqqqg"]
+[ext_resource type="Texture2D" uid="uid://qxu51fwtok0y" path="res://Sprites/Enemies/MummifiedSlime/MummifiedSlime.png" id="29_p5pa8"]
+[ext_resource type="Texture2D" uid="uid://btxl5xbbrj7g" path="res://Sprites/Enemies/Sock.png" id="30_rbann"]
+[ext_resource type="Texture2D" uid="uid://e2uye471smfc" path="res://Sprites/Enemies/FrozenBomber/FrozenBomberWheel.png" id="31_b7fmd"]
+[ext_resource type="Texture2D" uid="uid://brjkyge4jcbfs" path="res://Sprites/Enemies/FrozenBomber/FrozenBomber.png" id="32_tamh3"]
+[ext_resource type="Texture2D" uid="uid://b38o2emtbf356" path="res://Sprites/Enemies/FrozenBomber/FrozenBomberCannon.png" id="33_054l4"]
+[ext_resource type="Texture2D" uid="uid://dae0bfspjhe1h" path="res://Sprites/Enemies/Boolean.png" id="34_gahen"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ugike"]
+font = ExtResource("9_xj05r")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="LabelSettings" id="LabelSettings_cj3s3"]
+font = ExtResource("9_xj05r")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sx6yn"]
+font = ExtResource("9_xj05r")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4dkv"]
+font = ExtResource("9_xj05r")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Enemy_Almanac" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -227.0
+offset_top = -143.0
+offset_right = 229.0
+offset_bottom = 141.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -136.0
+offset_top = -52.0
+offset_right = 137.0
+offset_bottom = 8.0
+
+[node name="Row1" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Evil_Ball" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Evil_Ball"]
+position = Vector2(14, 14)
+
+[node name="Inside" type="Sprite2D" parent="Rows/Row1/Evil_Ball/Enemy_Sprite"]
+texture = ExtResource("5_3yedt")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Border" type="Sprite2D" parent="Rows/Row1/Evil_Ball/Enemy_Sprite"]
+texture = ExtResource("5_3yedt")
+hframes = 6
+vframes = 2
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Evil_Ball"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Inside" type="Sprite2D" parent="Rows/Row1/Evil_Ball/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("5_3yedt")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Border" type="Sprite2D" parent="Rows/Row1/Evil_Ball/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("5_3yedt")
+hframes = 6
+vframes = 2
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -23.0
+offset_right = 153.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Evil_Ball/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "4
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Evil_Ball/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 153.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Evil_Ball/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "3
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Evil_Ball/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Evil Ball
+"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Evil Ball is the basic grasslands enemy. It just chases you. Comes in 6 colors. Truly an evil guy!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Balloon" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Balloon"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Balloon/Enemy_Sprite"]
+texture = ExtResource("14_74p2r")
+hframes = 12
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Balloon"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = 20.0
+offset_right = 5.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Balloon/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Balloon/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("14_74p2r")
+hframes = 12
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -23.0
+offset_right = 153.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Balloon/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "1
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Balloon/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 153.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Balloon/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "1
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Balloon/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Balloon
+"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Balloon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Balloon is the second grasslands enemy. It's weak, but pretty fast! Keep an eye on your energy to take down one if it comes. Comes in 6 colors!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Big_Evil_Ball" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Big_Evil_Ball"]
+position = Vector2(14, 14)
+
+[node name="Inside" type="Sprite2D" parent="Rows/Row1/Big_Evil_Ball/Enemy_Sprite"]
+texture = ExtResource("15_iaxu6")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Border" type="Sprite2D" parent="Rows/Row1/Big_Evil_Ball/Enemy_Sprite"]
+texture = ExtResource("15_iaxu6")
+hframes = 6
+vframes = 2
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Big_Evil_Ball"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = 20.0
+offset_right = -30.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Inside" type="Sprite2D" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("15_iaxu6")
+hframes = 6
+vframes = 2
+frame = 6
+
+[node name="Border" type="Sprite2D" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("15_iaxu6")
+hframes = 6
+vframes = 2
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = -23.0
+offset_right = 153.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "6
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 131.0
+offset_right = 153.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Big Evil Ball
+"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Big_Evil_Ball/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A bigger version of the Evil Ball. This one is stronger, and also from time to time summons an illusion to distract you! Comes in 6 colors. Evilest guy ever!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Bomb" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Bomb"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Bomb/Enemy_Sprite"]
+position = Vector2(0, -1)
+texture = ExtResource("16_mfjkb")
+hframes = 10
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Bomb"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 20.0
+offset_right = -65.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Bomb/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Bomb/Enemy_Description/Enemy_Sprite"]
+position = Vector2(0, -1)
+texture = ExtResource("16_mfjkb")
+hframes = 10
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Bomb/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Bomb/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Bomb/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Bomb/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Bomb/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "10
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Bomb/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Bomb"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Bomb chases you, and whenever is near you (Or after dealing enough damage to it) it light its fuse and explodes in few seconds! "
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Cannon" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Cannon"]
+position = Vector2(9, 13)
+scale = Vector2(0.45, 0.45)
+
+[node name="Wheel1" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Sprite"]
+show_behind_parent = true
+position = Vector2(5.25, 1.75)
+texture = ExtResource("17_ti3g1")
+hframes = 3
+
+[node name="Center" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Sprite"]
+position = Vector2(0.249996, -0.25)
+texture = ExtResource("18_w8kpx")
+hframes = 2
+
+[node name="Cannon" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Sprite"]
+position = Vector2(2.25, 0.75)
+texture = ExtResource("17_j3lrg")
+hframes = 2
+
+[node name="Wheel2" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Sprite"]
+position = Vector2(-1.75, 4.75)
+texture = ExtResource("17_ti3g1")
+hframes = 3
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Cannon"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = 20.0
+offset_right = -100.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Cannon/Enemy_Description"]
+z_index = 1
+position = Vector2(131, -9)
+scale = Vector2(0.45, 0.45)
+
+[node name="Wheel1" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Description/Enemy_Sprite"]
+show_behind_parent = true
+position = Vector2(5.25, 1.75)
+texture = ExtResource("17_ti3g1")
+hframes = 3
+
+[node name="Center" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Description/Enemy_Sprite"]
+position = Vector2(0.249996, -0.25)
+texture = ExtResource("18_w8kpx")
+hframes = 2
+
+[node name="Cannon" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Description/Enemy_Sprite"]
+position = Vector2(2.25, 0.75)
+texture = ExtResource("17_j3lrg")
+hframes = 2
+
+[node name="Wheel2" type="Sprite2D" parent="Rows/Row1/Cannon/Enemy_Description/Enemy_Sprite"]
+position = Vector2(-1.75, 4.75)
+texture = ExtResource("17_ti3g1")
+hframes = 3
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Cannon/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Cannon/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Cannon/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "11
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Cannon/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Cannon/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Cannon/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "25
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Cannon/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Cannon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Cannon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Cannon"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Cannon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Cannon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Cannon is a powerful and imposing guy. He has his cute side, though. Really slow, but hard to take down. You better dodge those cannonballs!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Clown_Bomb" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Clown_Bomb"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Clown_Bomb/Enemy_Sprite"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_cl3qb")
+hframes = 5
+region_rect = Rect2(11, 21, 37, 36)
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Clown_Bomb"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = 20.0
+offset_right = -135.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Clown_Bomb/Enemy_Description/Enemy_Sprite"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("18_cl3qb")
+hframes = 5
+region_rect = Rect2(11, 21, 37, 36)
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Clown_Bomb/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "15
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Clown_Bomb/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Clown_Bomb/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "250
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Clown_Bomb/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Clown Bomb"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Clown_Bomb/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "A Clown Bomb or a Bomb Clown? Whatever it is, the master of the grasslands circus will completely destroy and explode you in the dungeons if you aren't careful."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Slime_Eater_Moth" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Moth"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Sprite"]
+texture = ExtResource("19_kh4c6")
+hframes = 2
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Slime_Eater_Moth"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -210.0
+offset_top = 20.0
+offset_right = -170.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("19_kh4c6")
+hframes = 2
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "5
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 7.0
+offset_right = 187.0
+offset_bottom = 27.0
+text = "Slime Eater Moth"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Slime_Eater_Moth/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Slime Eater Moth is the basic desert enemy. It chases you, and after some time it lays and egg that hatchs in an Slime Eater Larva!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Slime_Eater_Larva" type="TextureButton" parent="Rows/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Larva"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Sprite"]
+texture = ExtResource("20_j2gbf")
+hframes = 2
+frame = 1
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row1/Slime_Eater_Larva"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = 20.0
+offset_right = -205.0
+offset_bottom = 60.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("20_j2gbf")
+hframes = 2
+frame = 1
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "1
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 7.0
+offset_right = 190.0
+offset_bottom = 27.0
+text = "Slime Eater Larva"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row1/Slime_Eater_Larva/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+text = "A young version of the Slime Eater Moth! After some time, it grows into a Slime Eater Moth, which lays an egg, and hatchs into a Slime Eater Larva... And the cycle repeats! Unless you kill the larva..."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Row2" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Chameleon" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Chameleon"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Chameleon/Enemy_Sprite"]
+texture = ExtResource("21_347ep")
+hframes = 4
+vframes = 3
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Chameleon"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Chameleon/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Chameleon/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("21_347ep")
+hframes = 4
+vframes = 3
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Chameleon/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Chameleon/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Chameleon/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "12
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Chameleon/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Chameleon/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Chameleon/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "9
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Chameleon/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Chameleon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Chameleon/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Chameleon"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Chameleon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Chameleon/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Chamaleon is an elusive enemy. It's going to lurk you in the nearby distance, being almost invisible, and whenever you aproach to him it'll chase you! Comes in 3 colors!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Scorpion" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Scorpion"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Scorpion/Enemy_Sprite"]
+texture = ExtResource("22_0ey1m")
+flip_h = true
+hframes = 4
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Scorpion"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -12.0
+offset_right = 5.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Scorpion/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Scorpion/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("22_0ey1m")
+flip_h = true
+hframes = 4
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Scorpion/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Scorpion/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Scorpion/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "12
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Scorpion/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Scorpion/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Scorpion/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Scorpion/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Scorpion/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Scorpion/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Scorpion"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Scorpion/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Scorpion/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Scorpion will keep its distance from you, while shooting dangerous stingers! What a coward guy, it has sharp claws but prefers to shoot you from far away."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Rolling_Cactus" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Rolling_Cactus"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Rolling_Cactus/Enemy_Sprite"]
+texture = ExtResource("23_ujjyb")
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Rolling_Cactus"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = -12.0
+offset_right = -30.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Rolling_Cactus/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("23_ujjyb")
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Rolling_Cactus/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Rolling_Cactus/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Rolling_Cactus/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Rolling_Cactus/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Rolling Cactus"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Rolling_Cactus/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Rolling Cactus chases you and, when it dies, it releases dangerous spikes that stay for while, and deal damage if you touch them!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Sandstone_Golem" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sandstone_Golem"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Sandstone_Golem/Enemy_Sprite"]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("24_i5h3e")
+hframes = 5
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Sandstone_Golem"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = -12.0
+offset_right = -65.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Sandstone_Golem/Enemy_Description/Enemy_Sprite"]
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("24_i5h3e")
+hframes = 5
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Sandstone_Golem/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "20
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Sandstone_Golem/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Sandstone_Golem/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "60"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Sandstone_Golem/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 7.0
+offset_right = 187.0
+offset_bottom = 27.0
+text = "Sandstone Golem"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Sandstone_Golem/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Sandstone Golem is the toughest desert enemy. It's slow and has lot of life. It has 2 attacks: Hit the floor sending an expansive wave, or summon a Stoddler."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Stoddler" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Stoddler"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Stoddler/Enemy_Sprite"]
+texture = ExtResource("25_hvvhv")
+hframes = 3
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Stoddler"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -12.0
+offset_right = -100.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Stoddler/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Stoddler/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("25_hvvhv")
+hframes = 3
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Stoddler/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Stoddler/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Stoddler/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Stoddler/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Stoddler/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Stoddler/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Stoddler/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Stoddler/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Stoddler/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Stoddler"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Stoddler/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Stoddler/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Stoddler is a rock that broke off from the Sandstone Golem. It's basic enemy that chases you... It's just a summoned enemy, did you expected something else?"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Desert_Mother" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Desert_Mother"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Desert_Mother/Enemy_Sprite"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("28_nqqqg")
+flip_h = true
+hframes = 3
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Desert_Mother"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -175.0
+offset_top = -12.0
+offset_right = -135.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Desert_Mother/Enemy_Description/Enemy_Sprite"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("28_nqqqg")
+flip_h = true
+hframes = 3
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Desert_Mother/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "18
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Desert_Mother/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Desert_Mother/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "400"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Desert_Mother/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Desert Mother"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Desert_Mother/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "This thing is the source of most desert enemies. A moth and scorpion hydrid. She summons powerful eggs, can teleport behind you, and shoots stingers."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Mummified_Slime" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Mummified_Slime"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Mummified_Slime/Enemy_Sprite"]
+texture = ExtResource("29_p5pa8")
+hframes = 2
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Mummified_Slime"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -210.0
+offset_top = -12.0
+offset_right = -170.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Mummified_Slime/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("29_p5pa8")
+hframes = 2
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Mummified_Slime/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "10"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Mummified_Slime/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Mummified_Slime/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "200"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Mummified_Slime/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 7.0
+offset_right = 188.0
+offset_bottom = 27.0
+text = "Mummified Slime"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "This creature once has been a powerful goldfish god, but got teleported to Slime Shoot world as a Slime corrupted by desert forces! Please defeat her to purify her!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Sock" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sock"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Sock/Enemy_Sprite"]
+texture = ExtResource("30_rbann")
+flip_h = true
+hframes = 3
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row2/Sock"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -245.0
+offset_top = -12.0
+offset_right = -205.0
+offset_bottom = 28.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sock/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row2/Sock/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("30_rbann")
+flip_h = true
+hframes = 3
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row2/Sock/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row2/Sock/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Sock/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "6
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Sock/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row2/Sock/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row2/Sock/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row2/Sock/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row2/Sock/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row2/Sock/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Sock"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row2/Sock/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row2/Sock/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Sock is the basic snow enemy. It chases you, and from time to time it'll try fusing with another nearby Sock to make a stronger and powerful Big Sock!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Row3" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Frozen_Bomber" type="TextureButton" parent="Rows/Row3"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Frozen_Bomber"]
+position = Vector2(12, 14)
+
+[node name="Wheel_1" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Sprite"]
+position = Vector2(2, 2)
+texture = ExtResource("31_b7fmd")
+
+[node name="Center" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Sprite"]
+texture = ExtResource("32_tamh3")
+
+[node name="Cannon" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Sprite"]
+position = Vector2(7, 0)
+texture = ExtResource("33_054l4")
+
+[node name="Wheel_2" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Sprite"]
+position = Vector2(-3, 3)
+texture = ExtResource("31_b7fmd")
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row3/Frozen_Bomber"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = -44.0
+offset_right = 42.0
+offset_bottom = -4.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+z_index = 1
+position = Vector2(134, -9)
+
+[node name="Wheel_1" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Enemy_Sprite"]
+position = Vector2(2, 2)
+texture = ExtResource("31_b7fmd")
+
+[node name="Center" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("32_tamh3")
+
+[node name="Cannon" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Enemy_Sprite"]
+position = Vector2(7, 0)
+texture = ExtResource("33_054l4")
+
+[node name="Wheel_2" type="Sprite2D" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Enemy_Sprite"]
+position = Vector2(-3, 3)
+texture = ExtResource("31_b7fmd")
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "4
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "12"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Frozen_Bomber/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Frozen Bomber"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row3/Frozen_Bomber/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+text = "The Frozen Bomber is Cannon's little brother. As cute as he is, he is also a pretty dangerous guy. He will keep distance from you shooting snowballs that deals low damage but slow you down."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Boolean" type="TextureButton" parent="Rows/Row3"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Boolean"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row3/Boolean/Enemy_Sprite"]
+texture = ExtResource("34_gahen")
+hframes = 4
+vframes = 2
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row3/Boolean"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -35.0
+offset_top = -44.0
+offset_right = 5.0
+offset_bottom = -4.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Boolean/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row3/Boolean/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("34_gahen")
+hframes = 4
+vframes = 2
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row3/Boolean/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row3/Boolean/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Boolean/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Boolean/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row3/Boolean/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Boolean/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "9"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Boolean/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row3/Boolean/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row3/Boolean/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Boolean"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row3/Boolean/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row3/Boolean/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Boolean is the basic Cyberspace enemy. When it's in true state, it'll chase you, and when in false state, it'll stand still and heal all damage that you deal to it!"
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Enemy_Almanac_Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = -89.0
+offset_top = -76.0
+offset_right = 89.0
+offset_bottom = -53.0
+text = "Enemy Almanac"
+label_settings = SubResource("LabelSettings_sx6yn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -229.0
+offset_top = -141.0
+offset_right = 227.0
+offset_bottom = 143.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Back_Button" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 108.0
+offset_top = -72.0
+offset_right = 136.0
+offset_bottom = -44.0
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_o4dkv")
+
+[connection signal="pressed" from="Rows/Row1/Evil_Ball" to="Rows/Row1/Evil_Ball" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Balloon" to="Rows/Row1/Balloon" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Big_Evil_Ball" to="Rows/Row1/Big_Evil_Ball" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Bomb" to="Rows/Row1/Bomb" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Cannon" to="Rows/Row1/Cannon" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Clown_Bomb" to="Rows/Row1/Clown_Bomb" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Slime_Eater_Moth" to="Rows/Row1/Slime_Eater_Moth" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row1/Slime_Eater_Larva" to="Rows/Row1/Slime_Eater_Larva" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Chameleon" to="Rows/Row2/Chameleon" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Scorpion" to="Rows/Row2/Scorpion" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Rolling_Cactus" to="Rows/Row2/Rolling_Cactus" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Sandstone_Golem" to="Rows/Row2/Sandstone_Golem" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Stoddler" to="Rows/Row2/Stoddler" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Desert_Mother" to="Rows/Row2/Desert_Mother" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Mummified_Slime" to="Rows/Row2/Mummified_Slime" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row2/Sock" to="Rows/Row2/Sock" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row3/Frozen_Bomber" to="Rows/Row3/Frozen_Bomber" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row3/Boolean" to="Rows/Row3/Boolean" method="_on_pressed"]

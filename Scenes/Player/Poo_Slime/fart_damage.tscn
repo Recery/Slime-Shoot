@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyorabc4sj2bg"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Poo_Slime/Fart_Damage.gd" id="1_4io1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r2us"]
+radius = 40.0
+
+[node name="Fart_Damage" type="Area2D"]
+script = ExtResource("1_4io1o")
+original_damage = 1.0
+despawn_time = 0.1
+has_movement = false
+generated_by = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3r2us")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

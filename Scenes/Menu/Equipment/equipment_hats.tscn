@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://chwjvfqwhjwen"]
+[gd_scene load_steps=54 format=3 uid="uid://chwjvfqwhjwen"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_14xav"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_kv48w"]
@@ -47,6 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="42_qpt77"]
 [ext_resource type="PackedScene" uid="uid://rc7r8jw4e2a2" path="res://Scenes/Hats/mushroom_cat_ears.tscn" id="43_kmkp4"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="43_uvv82"]
+[ext_resource type="Texture2D" uid="uid://hmgdmpjkjv7j" path="res://Sprites/Hats/AndeanCondorHeadband.png" id="44_e25ve"]
+[ext_resource type="PackedScene" uid="uid://dt8uh1imijxp4" path="res://Scenes/Hats/andean_condor_headband.tscn" id="45_l0cqp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
 font = ExtResource("11_dyh7t")
@@ -1339,6 +1341,82 @@ position = Vector2(136, 64)
 texture = ExtResource("14_fex1y")
 
 [node name="Description" type="Label" parent="Page_2/Row1/Mushroom_Cat_Ears/Hat_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "Mushroom Cat Ears! You are a true Mycelite! Or maybe you are Ruby Muscaria herself? Cosmetic item, it has no effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Andean_Condor_Headband" type="TextureButton" parent="Page_2/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("13_pxlf7")
+texture_pressed = ExtResource("2_l1on5")
+texture_hover = ExtResource("3_fwbb0")
+texture_disabled = ExtResource("4_sp7jc")
+script = ExtResource("5_xjfgt")
+type_of_object = 4
+
+[node name="Hat" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband"]
+position = Vector2(14, 14)
+texture = ExtResource("44_e25ve")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_2/Row1/Andean_Condor_Headband"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_c84an")
+texture_pressed = ExtResource("8_oewtk")
+texture_hover = ExtResource("9_23mu7")
+script = ExtResource("10_8mbpr")
+hat_to_equip = ExtResource("45_l0cqp")
+
+[node name="Equip" type="Label" parent="Page_2/Row1/Andean_Condor_Headband/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Hat_Description" type="Control" parent="Page_2/Row1/Andean_Condor_Headband"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -40.0
+offset_bottom = 40.0
+
+[node name="Hat" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband/Hat_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("44_e25ve")
+hframes = 2
+
+[node name="Hat_Frame" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband/Hat_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("1_14xav")
+
+[node name="Frame" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband/Hat_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("14_fex1y")
+
+[node name="Description" type="Label" parent="Page_2/Row1/Andean_Condor_Headband/Hat_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0

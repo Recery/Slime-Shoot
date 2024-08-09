@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://c21uxf1eyhw8k"]
+[gd_scene load_steps=42 format=3 uid="uid://c21uxf1eyhw8k"]
 
 [ext_resource type="PackedScene" uid="uid://dai0m2dapfwfo" path="res://Scenes/Tiles/tile_grass.tscn" id="1_nxj14"]
 [ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
@@ -30,12 +30,14 @@
 [ext_resource type="PackedScene" uid="uid://dl5qufxb6ccbr" path="res://Scenes/Menu/Equipment/equipment_slimes.tscn" id="21_epiw6"]
 [ext_resource type="Texture2D" uid="uid://cxj80b627drbr" path="res://Sprites/Menu/PlayCinematicIcon.png" id="21_sdcjo"]
 [ext_resource type="PackedScene" uid="uid://bqnkjpdhdu0t0" path="res://Scenes/Menu/credits.tscn" id="24_fakuu"]
+[ext_resource type="Texture2D" uid="uid://bp3w6pel2ji5h" path="res://Sprites/Menu/EnemyAlmanacIcon.png" id="24_yq22v"]
 [ext_resource type="PackedScene" uid="uid://chwjvfqwhjwen" path="res://Scenes/Menu/Equipment/equipment_hats.tscn" id="28_07o7c"]
 [ext_resource type="PackedScene" uid="uid://c3355p6xk1fnk" path="res://Scenes/Menu/settings.tscn" id="28_l8aei"]
 [ext_resource type="PackedScene" uid="uid://d4d0fselwe2cq" path="res://Scenes/Menu/Equipment/equipment_pets.tscn" id="31_13mkk"]
 [ext_resource type="PackedScene" uid="uid://71c34tsp0mwa" path="res://Scenes/Menu/replay_cinematics.tscn" id="31_cc2vw"]
 [ext_resource type="AudioStream" uid="uid://dne6un3kn5h2d" path="res://Sounds/ORU-Orange-Dreamsicle.ogg" id="34_sxt08"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="34_wr5eu"]
+[ext_resource type="PackedScene" uid="uid://dbqer4780q8t6" path="res://Scenes/Menu/enemy_almanac.tscn" id="36_qt7qq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iwvpy"]
 font = ExtResource("3_cnaou")
@@ -261,7 +263,7 @@ texture_pressed = ExtResource("11_dw1q6")
 texture_hover = ExtResource("12_vnh5k")
 
 [node name="Cart" type="Sprite2D" parent="Other_Buttons/Shop_Button"]
-position = Vector2(14, 15)
+position = Vector2(14, 14)
 texture = ExtResource("13_mrqpo")
 
 [node name="Settings_Button" type="TextureButton" parent="Other_Buttons"]
@@ -291,6 +293,20 @@ texture_hover = ExtResource("12_vnh5k")
 [node name="Play_Icon" type="Sprite2D" parent="Other_Buttons/Cinematics_Button"]
 position = Vector2(14, 14)
 texture = ExtResource("21_sdcjo")
+
+[node name="Enemy_Almanac_Button" type="TextureButton" parent="Other_Buttons"]
+layout_mode = 0
+offset_left = -73.0
+offset_top = -20.0
+offset_right = -45.0
+offset_bottom = 8.0
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Icon" type="Sprite2D" parent="Other_Buttons/Enemy_Almanac_Button"]
+position = Vector2(14, 14)
+texture = ExtResource("24_yq22v")
 
 [node name="Map_Selection" parent="." instance=ExtResource("20_1ko50")]
 visible = false
@@ -349,6 +365,9 @@ layout_mode = 1
 [node name="Replay_Cinematics" parent="." instance=ExtResource("31_cc2vw")]
 visible = false
 
+[node name="Enemy_Almanac" parent="." instance=ExtResource("36_qt7qq")]
+visible = false
+
 [node name="BackButton" type="TextureButton" parent="."]
 visible = false
 layout_mode = 0
@@ -388,4 +407,5 @@ bus = &"Music"
 [connection signal="pressed" from="Other_Buttons/Shop_Button" to="." method="_on_shop_pressed"]
 [connection signal="pressed" from="Other_Buttons/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Other_Buttons/Cinematics_Button" to="." method="_on_cinematics_button_pressed"]
+[connection signal="pressed" from="Other_Buttons/Enemy_Almanac_Button" to="." method="_on_enemy_almanac_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
