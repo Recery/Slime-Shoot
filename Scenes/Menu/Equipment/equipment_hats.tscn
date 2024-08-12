@@ -1399,7 +1399,8 @@ visible = false
 z_index = 1
 layout_mode = 2
 anchors_preset = 0
-offset_left = -40.0
+offset_left = -81.0
+offset_right = -41.0
 offset_bottom = 40.0
 
 [node name="Hat" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband/Hat_Description"]
@@ -1422,7 +1423,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "Mushroom Cat Ears! You are a true Mycelite! Or maybe you are Ruby Muscaria herself? Cosmetic item, it has no effect."
+text = "Andean Condor Headband! Do you like andean condors? Or do you like watching Mashichu Kunrin streams? Cosmetic item, it has no effect."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
