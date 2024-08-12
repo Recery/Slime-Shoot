@@ -21,7 +21,7 @@ func spawn_enemies() -> void:
 		enemy_instance.wait_player_mode = dungeon_mode # Se pone el wait_player_mode para subir estadisticas si asi se desea
 		enemy.init_parent(self)
 		enemy.parent.call_deferred("add_child", enemy_instance)
-		if not enemy_instance.is_node_ready(): await enemy_instance.tree_entered
+		if not enemy_instance.is_node_ready(): await enemy_instance.ready
 		enemy_instance.global_position = enemy.position_to_spawn
 		enemy_instance.waiting_player = false # waiting_player se pone en false ya que no se busca que el enemy espere al jugador
 		enemy_instance.connect("tree_exited", _on_enemy_killed)
