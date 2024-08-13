@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqsqyk1nfxqiy"]
+
+[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="1_i1d7b"]
+[ext_resource type="Script" path="res://Scripts/Useful/enemy_weapon.gd" id="2_qxajq"]
+
+[node name="Boss_Paint_Bomb" type="Sprite2D"]
+editor_description = "Paint bomb used for mummified slime boss"
+texture = ExtResource("1_i1d7b")
+hframes = 2
+script = ExtResource("2_qxajq")

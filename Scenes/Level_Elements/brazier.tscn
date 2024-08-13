@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm3ja5bu7mr66"]
+
+[ext_resource type="Texture2D" uid="uid://coy4l75wht0b7" path="res://Sprites/Level_Elements/Brazier.png" id="1_kgxbt"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_aqcop"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cusoa"]
+atlas = ExtResource("1_kgxbt")
+region = Rect2(0, 0, 22, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvl6s"]
+atlas = ExtResource("1_kgxbt")
+region = Rect2(22, 0, 22, 23)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_da2th"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cusoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvl6s")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 5.0
+}]
+
+[node name="Brazier" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_da2th")
+animation = &"fire"
+autoplay = "fire"
+frame_progress = 0.0153329
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(2, 10)
+scale = Vector2(1.14706, 1)
+texture = ExtResource("2_aqcop")
+hframes = 2

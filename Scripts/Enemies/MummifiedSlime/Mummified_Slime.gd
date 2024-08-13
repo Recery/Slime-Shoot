@@ -8,10 +8,14 @@ var shoot_pos := Vector2.ZERO
 func _ready():
 	if Vars.main_scene.has_node("Music"):
 		Vars.main_scene.get_node("Music").stop()
+	
+	create_life_bar()
 
 const min_distance = 50 # La distancia minima a la que el boss puede estar del jugador (si es menos que esto se aleja del jugador)
 const max_distance = 100 # La distancia maxima a la que el boss puede estar del jugador (si es mas que esto se acerca al jugador)
 func _physics_process(_delta):
+	life_bar.set_current_value(life)
+	
 	shoot_pos = Vars.player.global_position
 	
 	
@@ -26,6 +30,7 @@ func _physics_process(_delta):
 	
 	
 	Funcs.weapon_rotation(goldfish_trident,Vector2(10,0), self)
+	move_and_slide()
 
 func shoot():
 	pass
@@ -50,3 +55,14 @@ func get_speed_buff() -> Buff:
 
 func regen():
 	pass
+
+var life_bar
+func create_life_bar():
+	await ready
+	life_bar = load("res://Scenes/Useful/progress_bar.tscn").instantiate()
+	player.add_child(life_bar)
+	life_bar.position = Vector2(-48.5, -53)
+	life_bar.set_color(Color.RED)
+	life_bar.max_value = max_life
+	life_bar.min_value = 0
+	life_bar.set_current_value(max_life)

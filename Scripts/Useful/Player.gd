@@ -247,7 +247,7 @@ func _when_die():
 	Funcs.regular_explosion(0.9, 0.9, global_position, Funcs.get_bullets_node(), 10, true)
 	Vars.main_scene.get_node("Music").stop()
 	await get_tree().create_timer(2.5).timeout
-	Events.change_scene.emit("res://Scenes/Useful/dead_screen.tscn")
+	Events.change_scene.emit("res://Scenes/Useful/dead_screen.tscn", false)
 
 func _toggle_dark_mode(activate : bool):
 	if activate:

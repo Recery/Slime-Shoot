@@ -24,6 +24,8 @@ func _when_ready() -> void:
 	
 	if has_node("Summons"):
 		get_node("Summons").y_sort_enabled = true
+	if has_node("Spawn_Position"):
+		get_node("Spawn_Position").y_sort_enabled = true
 	
 	despawn_timer()
 	speed_timer()
