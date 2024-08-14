@@ -314,6 +314,37 @@ func remove_array_elements(array : Array, element):
 		else:
 			i += 1
 
+## Solo crea una instancia del slime equipado junto al sombrero, y le saca el script para usarlo como dibujo
+func draw_equipped_slime(with_shadow := true, scale := Vector2(1,1)) -> Node:
+	var slime_draw := Vars.slime_equipped.instantiate()
+	slime_draw.set_script(null)
+	if slime_draw.has_node("Shadow") and not with_shadow:
+		slime_draw.get_node("Shadow").modulate.a = 0
+	
+	if Vars.hat_equipped != null:
+		var hat_draw := Vars.hat_equipped.instantiate()
+		hat_draw.set_script(null)
+		slime_draw.add_child(hat_draw)
+	
+	slime_draw.scale = scale
+	return slime_draw
+
+## Solo crea una instancia de la mascota equipada, y le saca el script para usarlo como dibujo
+func draw_pet(with_shadow := true, scale := Vector2(1,1)) -> Node:
+	if Vars.pet_equipped == null: return null
+	
+	var pet_draw = Vars.pet_equipped.instantiate()
+	pet_draw.set_script(null)
+	
+	if pet_draw.has_node("Shadow") and not with_shadow:
+		pet_draw.get_node("Shadow").modulate.a = 0
+	elif pet_draw.has_node("Dynamic_Shadow") and not with_shadow:
+		pet_draw.get_node("Dynamic_Shadow").modulate.a = 0
+	
+	pet_draw.scale = scale
+	
+	return pet_draw
+
 # Pantalla completa
 func _input(event):
 	if event.is_action_pressed("fullscreen"):

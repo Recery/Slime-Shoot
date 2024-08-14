@@ -2,6 +2,7 @@ extends Control
 
 var buttons
 var equipment_buttons
+var support_buttons
 var other_buttons
 var title
 var map_selection
@@ -22,13 +23,13 @@ var back_button
 func _ready():
 	buttons = get_node("Main_Buttons")
 	equipment_buttons = get_node("Equipment_Buttons")
+	support_buttons = get_node("Support_Buttons")
 	other_buttons = get_node("Other_Buttons")
 	title = get_node("Title")
 	map_selection = get_node("Map_Selection")
 	controls = get_node("Controls")
 	credits = get_node("Credits")
 	
-	equipment_buttons = get_node("Equipment_Buttons")
 	equipment_slimes = get_node("Equipment_Slimes")
 	equipment_weapons = get_node("Equipment_Weapons")
 	equipment_abilities = get_node("Equipment_Abilities")
@@ -70,6 +71,7 @@ func draw_slime():
 func _on_start_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	map_selection.show()
@@ -81,6 +83,7 @@ func _on_start_pressed():
 func _on_controls_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	controls.show()
@@ -92,6 +95,7 @@ func _on_controls_pressed():
 func _on_credits_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	credits.show()
@@ -109,6 +113,7 @@ func _on_quit_pressed():
 func _on_slimes_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_slimes.show()
@@ -120,6 +125,7 @@ func _on_slimes_pressed():
 func _on_weapons_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_weapons.show()
@@ -131,6 +137,7 @@ func _on_weapons_pressed():
 func _on_abilities_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_abilities.show()
@@ -142,6 +149,7 @@ func _on_abilities_pressed():
 func _on_passives_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_passives.show()
@@ -153,6 +161,7 @@ func _on_passives_pressed():
 func _on_hats_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_hats.show()
@@ -164,6 +173,7 @@ func _on_hats_pressed():
 func _on_pets_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	equipment_pets.show()
@@ -175,6 +185,7 @@ func _on_pets_pressed():
 func _on_shop_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	shop.show()
@@ -186,6 +197,7 @@ func _on_shop_pressed():
 func _on_settings_button_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	settings.show()
@@ -197,6 +209,7 @@ func _on_settings_button_pressed():
 func _on_cinematics_button_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	cinematics.show()
@@ -207,6 +220,7 @@ func _on_cinematics_button_pressed():
 func _on_enemy_almanac_button_pressed():
 	buttons.hide()
 	equipment_buttons.hide()
+	support_buttons.hide()
 	other_buttons.hide()
 	title.hide()
 	enemy_almanac.show()
@@ -222,6 +236,7 @@ func _on_back_button_pressed():
 func hide_all():
 	buttons.show()
 	equipment_buttons.show()
+	support_buttons.show()
 	other_buttons.show()
 	title.show()
 	map_selection.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://c21uxf1eyhw8k"]
+[gd_scene load_steps=46 format=3 uid="uid://c21uxf1eyhw8k"]
 
 [ext_resource type="PackedScene" uid="uid://dai0m2dapfwfo" path="res://Scenes/Tiles/tile_grass.tscn" id="1_nxj14"]
 [ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
@@ -27,8 +27,12 @@
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="17_fyg1u"]
 [ext_resource type="PackedScene" uid="uid://xcb3sy5rg4sn" path="res://Scenes/Menu/Map_Selection/map_selection.tscn" id="20_1ko50"]
 [ext_resource type="Texture2D" uid="uid://deruwp6fuk5iw" path="res://Sprites/Menu/Settings/CogwheelIcon.png" id="20_w0s2i"]
+[ext_resource type="Script" path="res://Scripts/Menu/Link_Button.gd" id="21_2xm1p"]
+[ext_resource type="Texture2D" uid="uid://3fsr7b1jy2y7" path="res://Sprites/Menu/SupportIcons/Kofi.png" id="21_8p51f"]
 [ext_resource type="PackedScene" uid="uid://dl5qufxb6ccbr" path="res://Scenes/Menu/Equipment/equipment_slimes.tscn" id="21_epiw6"]
 [ext_resource type="Texture2D" uid="uid://cxj80b627drbr" path="res://Sprites/Menu/PlayCinematicIcon.png" id="21_sdcjo"]
+[ext_resource type="Texture2D" uid="uid://xy5ygedvfnw2" path="res://Sprites/Menu/SupportIcons/itchio.png" id="22_ebjew"]
+[ext_resource type="Texture2D" uid="uid://72q0qohj6j7r" path="res://Sprites/Menu/SupportIcons/Youtube.png" id="23_a4uw6"]
 [ext_resource type="PackedScene" uid="uid://bqnkjpdhdu0t0" path="res://Scenes/Menu/credits.tscn" id="24_fakuu"]
 [ext_resource type="Texture2D" uid="uid://bp3w6pel2ji5h" path="res://Sprites/Menu/EnemyAlmanacIcon.png" id="24_yq22v"]
 [ext_resource type="PackedScene" uid="uid://chwjvfqwhjwen" path="res://Scenes/Menu/Equipment/equipment_hats.tscn" id="28_07o7c"]
@@ -96,7 +100,7 @@ offset_left = 234.0
 offset_top = -6.0
 offset_right = 278.0
 offset_bottom = 1.0
-text = "v1.1.2.0"
+text = "v1.2.0.0"
 label_settings = ExtResource("34_wr5eu")
 
 [node name="Main_Buttons" type="VBoxContainer" parent="."]
@@ -246,6 +250,63 @@ texture_hover = ExtResource("15_thdy0")
 [node name="Pet" type="Sprite2D" parent="Equipment_Buttons/Second_Row/Pets"]
 position = Vector2(14, 14)
 texture = ExtResource("17_fyg1u")
+
+[node name="Support_Buttons" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -75.0
+offset_right = 69.0
+offset_bottom = -47.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Kofi" type="TextureButton" parent="Support_Buttons"]
+self_modulate = Color(0.239216, 1, 0.356863, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+script = ExtResource("21_2xm1p")
+link = "https://ko-fi.com/recery"
+
+[node name="Icon" type="TextureRect" parent="Support_Buttons/Kofi"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("21_8p51f")
+stretch_mode = 3
+
+[node name="Itchio" type="TextureButton" parent="Support_Buttons"]
+self_modulate = Color(0.239216, 1, 0.356863, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+script = ExtResource("21_2xm1p")
+link = "https://recery.itch.io/"
+
+[node name="Icon" type="TextureRect" parent="Support_Buttons/Itchio"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("22_ebjew")
+stretch_mode = 3
+
+[node name="Youtube" type="TextureButton" parent="Support_Buttons"]
+self_modulate = Color(0.239216, 1, 0.356863, 1)
+layout_mode = 2
+texture_normal = ExtResource("13_nwiw3")
+texture_pressed = ExtResource("14_57otj")
+texture_hover = ExtResource("15_thdy0")
+script = ExtResource("21_2xm1p")
+link = "https://www.youtube.com/@Recery"
+
+[node name="Icon" type="TextureRect" parent="Support_Buttons/Youtube"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("23_a4uw6")
+stretch_mode = 3
 
 [node name="Other_Buttons" type="Control" parent="."]
 anchors_preset = 0

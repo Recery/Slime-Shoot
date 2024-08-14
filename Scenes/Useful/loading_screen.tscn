@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://clsqmpp8a8w76"]
+[gd_scene load_steps=5 format=3 uid="uid://clsqmpp8a8w76"]
 
 [ext_resource type="Script" path="res://Scripts/Useful/loading_screen.gd" id="1_hjd75"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="2_rs8rw"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="3_gwkf3"]
-[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="3_y1sw1"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="5_534et"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_glgtc"]
@@ -28,19 +26,14 @@ color = Color(0.105882, 0.105882, 0.105882, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 
-[node name="Slime_Sprite" type="Node2D" parent="."]
-position = Vector2(-8, -6)
+[node name="Slime_Draw" type="Node2D" parent="."]
+position = Vector2(0, 24)
 
-[node name="Slime" type="Sprite2D" parent="Slime_Sprite"]
-position = Vector2(0, 21)
-scale = Vector2(3, 3)
-texture = ExtResource("3_gwkf3")
-hframes = 2
+[node name="Slime_With_Pet_Draw" type="Node2D" parent="."]
+position = Vector2(-48, 24)
 
-[node name="Gun" type="Sprite2D" parent="Slime_Sprite"]
-position = Vector2(24, 24)
-scale = Vector2(3, 3)
-texture = ExtResource("3_y1sw1")
+[node name="Pet_Draw" type="Node2D" parent="."]
+position = Vector2(48, 24)
 
 [node name="Loading_Text" type="Label" parent="."]
 layout_mode = 0

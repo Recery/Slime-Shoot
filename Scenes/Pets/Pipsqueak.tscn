@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dnggqfvvydi0"]
+[gd_scene load_steps=10 format=3 uid="uid://chd77oucrvwn"]
 
 [ext_resource type="Script" path="res://Scripts/Pets/pet.gd" id="1_tlqwo"]
-[ext_resource type="PackedScene" uid="uid://cw2k7yk5vw7iq" path="res://Scenes/Useful/dynamic_shadow.tscn" id="2_3jeae"]
+[ext_resource type="PackedScene" path="res://Scenes/Useful/dynamic_shadow.tscn" id="2_3jeae"]
 [ext_resource type="Texture2D" uid="uid://ctqea8r5wjap6" path="res://Sprites/Pets/Pipsqueak/PipsqueakWalk.png" id="3_ayfyu"]
 [ext_resource type="Texture2D" uid="uid://7rl6lr6ncev5" path="res://Sprites/Pets/Pipsqueak/PipsqueakTail.png" id="4_s6qr6"]
 

@@ -18,11 +18,17 @@ var tips = [
 "What the hell can I say to surprise the player this time... Oh! You're here...",
 "You can go fullscreen with F11!",
 "Please support indie devs! By just playing our games you make us really happy.",
-"Tired of grinding points? I don't care. Keep grinding."
+"Tired of grinding points? Not my problem. Keep grinding."
 ]
 
 func _ready():
 	get_node("Tip").text = tips.pick_random()
+	
+	if Vars.pet_equipped != null:
+		get_node("Slime_With_Pet_Draw").add_child(Funcs.draw_equipped_slime(false, Vector2(2,2)))
+		get_node("Pet_Draw").add_child(Funcs.draw_pet(false, Vector2(2,2)))
+	else:
+		get_node("Slime_Draw").add_child(Funcs.draw_equipped_slime(false, Vector2(2,2)))
 
 var exiting := false
 func _process(_delta):
