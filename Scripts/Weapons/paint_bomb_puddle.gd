@@ -4,7 +4,7 @@ extends Friendly_Projectile
 var debuffs : Array
 
 func _ready():
-	Funcs.sound_play_2d("res://Sounds/Cake.mp3", 12, 1.4)
+	Funcs.sound_play_2d("res://Sounds/Cake.mp3", global_position, 12, 1.4)
 	
 	match randi_range(0,3):
 		0: modulate = Color.YELLOW

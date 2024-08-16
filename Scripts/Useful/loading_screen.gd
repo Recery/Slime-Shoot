@@ -17,7 +17,7 @@ var tips = [
 "Hold space to activate your slime perk!",
 "What the hell can I say to surprise the player this time... Oh! You're here...",
 "You can go fullscreen with F11!",
-"Please support indie devs! By just playing our games you make us really happy.",
+"Please support indie devs!",
 "Tired of grinding points? Not my problem. Keep grinding."
 ]
 

@@ -7,7 +7,7 @@ func _ready():
 	take_damage.connect(_on_take_damage)
 
 func _on_take_damage(damage):
-	if enemy.immune: return
+	if enemy.immune or not is_instance_valid(enemy): return
 	
 	enemy.life -= damage
 	Funcs.damage_advice._on_deal_damage(enemy, damage)

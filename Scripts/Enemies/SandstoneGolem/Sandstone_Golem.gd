@@ -69,7 +69,7 @@ func summon_stoddler():
 	attack_cooldown.start()
 
 func crush_anim():
-	Funcs.sound_play_2d("res://Sounds/Crush.mp3", 12, 0.9)
+	Funcs.sound_play_2d("res://Sounds/Crush.mp3", global_position, 12, 0.9)
 	for i in 9:
 		var pos := Vector2(global_position.x + ((i-4)*5), global_position.y + 15)
 		Funcs.particles(Vector2(2,2), pos, Color.WHITE_SMOKE)

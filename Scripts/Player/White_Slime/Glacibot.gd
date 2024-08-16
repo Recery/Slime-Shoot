@@ -52,7 +52,7 @@ var shot := preload("res://Scenes/Player/White_Slime/glacibot_shot.tscn")
 func shoot() -> void:
 	can_shoot = false
 	shoot_timer.start()
-	Funcs.sound_play_2d("res://Sounds/IceAttack.mp3", 8, 1.5)
+	Funcs.sound_play_2d("res://Sounds/IceAttack.mp3", global_position, 8, 1.5)
 	
 	var shot_instance := shot.instantiate()
 	if Funcs.add_to_bullets(shot_instance):

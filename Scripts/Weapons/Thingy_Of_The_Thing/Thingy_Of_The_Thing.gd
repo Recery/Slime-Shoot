@@ -25,7 +25,7 @@ func _on_shoot():
 			var vampiric_instance = vampiric_knife.instantiate()
 			add_to_bullets_node(vampiric_instance)
 	
-	Funcs.sound_play_2d("res://Sounds/Throw.mp3", 8, 1)
+	Funcs.sound_play_2d("res://Sounds/Throw.mp3", global_position, 8, 1)
 	current_projectile = randi_range(0,2)
 	recharge_visual.start(shoot_cooldown)
 	

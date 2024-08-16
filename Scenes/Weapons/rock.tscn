@@ -10,7 +10,6 @@ script = ExtResource("2_cl5pf")
 shoot_cooldown = 0.9
 original_energy_use = 15.0
 energy_recover_cooldown = 1.5
-hold_offset = Vector2(7, 0)
 
 [node name="Throw_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_i72oh")

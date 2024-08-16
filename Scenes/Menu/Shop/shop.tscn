@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=147 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -94,7 +94,7 @@
 [ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="54_v6h1i"]
 [ext_resource type="PackedScene" uid="uid://kexy5pxqp74j" path="res://Scenes/Abilities/shock_attack_ability.tscn" id="55_c3cyo"]
 [ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="56_4bn5r"]
-[ext_resource type="PackedScene" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
+[ext_resource type="PackedScene" uid="uid://chd77oucrvwn" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="57_ap3yb"]
 [ext_resource type="PackedScene" uid="uid://can76htfvmwca" path="res://Scenes/Abilities/slimy_rage_ability.tscn" id="57_ci6wl"]
 [ext_resource type="PackedScene" uid="uid://rc7r8jw4e2a2" path="res://Scenes/Hats/mushroom_cat_ears.tscn" id="57_jwivb"]
@@ -114,6 +114,8 @@
 [ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="64_nj35v"]
 [ext_resource type="PackedScene" uid="uid://crj0pwayi1t0i" path="res://Scenes/Passives/extra_speed_passive.tscn" id="65_q18nq"]
 [ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="66_qmgyt"]
+[ext_resource type="PackedScene" uid="uid://d1dx8m514nydv" path="res://Scenes/Pets/Cat.tscn" id="66_tn71e"]
+[ext_resource type="Texture2D" uid="uid://bumdqdehn2iv7" path="res://Sprites/Pets/Cat/CatDisplay.png" id="67_kmi50"]
 [ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="67_lhii2"]
 [ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="68_3enjf"]
 [ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="68_3wq0o"]
@@ -558,6 +560,13 @@ needed_points = 1000
 type_of_object = 5
 object_to_buy = ExtResource("56_nt7ee")
 sprite_to_display = ExtResource("57_ap3yb")
+
+[node name="Cat" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1000
+type_of_object = 5
+object_to_buy = ExtResource("66_tn71e")
+sprite_to_display = ExtResource("67_kmi50")
 
 [node name="Pets_Shop_Text" type="Label" parent="Pets"]
 layout_mode = 0

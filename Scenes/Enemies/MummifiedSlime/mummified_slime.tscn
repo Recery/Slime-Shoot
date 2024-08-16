@@ -1,11 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://2842omy5l8bq"]
+[gd_scene load_steps=13 format=3 uid="uid://2842omy5l8bq"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/MummifiedSlime/Mummified_Slime.gd" id="1_3v5e0"]
 [ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_jdsy3"]
 [ext_resource type="Texture2D" uid="uid://qxu51fwtok0y" path="res://Sprites/Enemies/MummifiedSlime/MummifiedSlime.png" id="2_kdvyf"]
 [ext_resource type="AudioStream" uid="uid://bb6t1g1xbxpce" path="res://Sounds/TheFallenImmortal.ogg" id="3_6tuql"]
-[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="4_jk38n"]
 [ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="5_ini2p"]
+[ext_resource type="Script" path="res://Scripts/Useful/enemy_weapon.gd" id="5_nwrvo"]
+[ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="6_b5ee8"]
+[ext_resource type="AudioStream" uid="uid://br61mrhe0ixlj" path="res://Sounds/Throw.mp3" id="7_kwy5y"]
+[ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="7_mqsyd"]
 
 [sub_resource type="Animation" id="Animation_0axbv"]
 resource_name = "bounce_shadow"
@@ -51,6 +54,7 @@ collision_mask = 16
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_3v5e0")
+score_to_add = 1200
 original_damage = 10.0
 original_speed = 90.0
 original_max_life = 200.0
@@ -72,17 +76,49 @@ libraries = {
 }
 autoplay = "bounce_shadow"
 
-[node name="Sandy_Eagle" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("4_jk38n")
-
-[node name="Goldfish_Trident" type="Sprite2D" parent="."]
-texture = ExtResource("5_ini2p")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_shs5i")
+
+[node name="Goldfish_Trident" type="Sprite2D" parent="." node_paths=PackedStringArray("parent")]
+visible = false
+texture = ExtResource("5_ini2p")
+script = ExtResource("5_nwrvo")
+hold_offset = Vector2(7, 0)
+cooldown = 6.1
+parent = NodePath("..")
+
+[node name="Rock" type="Sprite2D" parent="." node_paths=PackedStringArray("parent")]
+texture = ExtResource("6_b5ee8")
+script = ExtResource("5_nwrvo")
+hold_offset = Vector2(7, 0)
+cooldown = 0.7
+parent = NodePath("..")
+
+[node name="Regen_Cooldown" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="Meteor_Cooldown" type="Timer" parent="."]
+wait_time = 8.0
+autostart = true
+
+[node name="Turret_Cooldown" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="Throw_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_kwy5y")
+volume_db = 7.0
+pitch_scale = 0.7
+bus = &"Sounds"
+
+[node name="Regen_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_mqsyd")
+volume_db = 12.0
+pitch_scale = 1.1
+bus = &"Sounds"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6tuql")
@@ -90,5 +126,7 @@ volume_db = 8.0
 autoplay = true
 bus = &"Music"
 
-[node name="WallRay" type="RayCast2D" parent="."]
-target_position = Vector2(0, 16)
+[connection signal="die" from="." to="." method="_on_die"]
+[connection signal="timeout" from="Regen_Cooldown" to="." method="regen"]
+[connection signal="timeout" from="Meteor_Cooldown" to="." method="spawn_meteor"]
+[connection signal="timeout" from="Turret_Cooldown" to="." method="spawn_turret"]

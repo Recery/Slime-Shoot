@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv3cq8tbn54of"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/MummifiedSlime/Enemy_Meteor.gd" id="1_bsfpv"]
+[ext_resource type="Texture2D" uid="uid://b5vkq8ix820o1" path="res://Sprites/Passives/Meteor.png" id="2_rptvj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a27pa"]
+atlas = ExtResource("2_rptvj")
+region = Rect2(0, 0, 14, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucf37"]
+atlas = ExtResource("2_rptvj")
+region = Rect2(14, 0, 14, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_au36n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a27pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucf37")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n4iwl"]
+radius = 34.0
+
+[node name="Enemy_Meteor" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+script = ExtResource("1_bsfpv")
+speed = 200
+damage = 8.0
+despawn_time = 5.0
+die_wait_time = 0.1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_au36n")
+autoplay = "default"
+frame_progress = 0.940899
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_n4iwl")
+disabled = true
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Particles_Timer" to="." method="_on_particles_timer_timeout"]

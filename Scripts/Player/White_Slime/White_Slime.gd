@@ -15,7 +15,7 @@ func _on_extra_physics_process():
 			if summon_progress % 5 == 0: particles()
 		if summon_progress >= 80:
 			if Vars.main_scene.has_node("Summons"):
-				Funcs.sound_play_2d("res://Sounds/Life_Regen.mp3", 14, 1.4)
+				Funcs.sound_play_2d("res://Sounds/Life_Regen.mp3", global_position, 14, 1.4)
 				var glacibot_instance := glacibot.instantiate()
 				Vars.main_scene.get_node("Summons").add_child(glacibot_instance)
 				glacibot_instance.global_position = global_position

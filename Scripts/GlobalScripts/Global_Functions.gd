@@ -27,7 +27,7 @@ func sound_play(path: String, volume: float = 0, pitch: float = 0):
 	if Vars.main_scene != null:
 		Vars.main_scene.add_child.call_deferred(new_sound)
 
-func sound_play_2d(path: String, volume: float = 0, pitch: float = 0):
+func sound_play_2d(path: String, pos : Vector2, volume: float = 0, pitch: float = 0):
 	var new_sound = AudioStreamPlayer2D.new()
 	new_sound.volume_db += volume
 	if pitch != 0: new_sound.pitch_scale = pitch
@@ -37,6 +37,7 @@ func sound_play_2d(path: String, volume: float = 0, pitch: float = 0):
 	var audio_finished = func():
 		new_sound.queue_free()
 	var entered = func():
+		new_sound.global_position = pos
 		new_sound.play()
 	
 	new_sound.connect("finished", audio_finished)
@@ -58,7 +59,10 @@ func pathfinding_movement(enemy : Enemy, nav_agent : NavigationAgent2D) -> void:
 	
 	if not enemy.waiting_player:
 		enemy.dir = (nav_agent.get_next_path_position() - enemy.global_position).normalized()
-		enemy.velocity = enemy.dir * enemy.speed
+		if enemy.go_backwards:
+			enemy.velocity = -enemy.dir * enemy.speed
+		else:
+			enemy.velocity = enemy.dir * enemy.speed
 		return
 	else: enemy.velocity = Vector2.ZERO
 	
@@ -109,7 +113,7 @@ func scan_farthest_enemy(scan_range:int, current_target, caller:Node, exceptions
 	
 	return farthest_enemy
 
-func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player):
+func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player, extra_angle := 0):
 	var angle = rad_to_deg(get_angle(player.shoot_pos, weapon.global_position))
 	
 	weapon.rotation_degrees = angle
@@ -124,6 +128,8 @@ func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player):
 		weapon.global_position.x = player.global_position.x + offset.x
 	
 	weapon.flip_v = angle > 90 or angle < -90
+	if weapon.flip_v: weapon.rotation_degrees -= extra_angle
+	else: weapon.rotation_degrees += extra_angle
 	
 	weapon.global_position.y = player.global_position.y + offset.y
 
@@ -187,6 +193,18 @@ func timed_particles(scale : Vector2, time : float, color : Color, parent : Node
 		if parent == null: return
 		particles(scale, parent.global_position, color, parent)
 		await get_tree().create_timer(0.5).timeout
+
+func explosion_warning(scale : Vector2, pos : Vector2) -> Sprite2D:
+	var warning_instance := Sprite2D.new()
+	if Funcs.add_to_bullets(warning_instance):
+		warning_instance.texture = load("res://Sprites/Useful/Explosion.png")
+		warning_instance.hframes = 4
+		warning_instance.frame = 3
+		warning_instance.global_position = pos
+		warning_instance.scale = scale
+		warning_instance.modulate = Color.html("#ff5b4a4a")
+	
+	return warning_instance
 
 func fade_effect(sprite, reversed = false, fast = false):
 	if sprite == null: return
@@ -262,6 +280,14 @@ func add_to_enemies(enemy : Enemy) -> bool:
 	
 	if Vars.main_scene.has_node("Enemies"):
 		Vars.main_scene.get_node("Enemies").add_child(enemy)
+		return true
+	else: return false
+
+func add_to_summons(node : Node) -> bool:
+	if node == null or Vars.main_scene == null: return false
+	
+	if Vars.main_scene.has_node("Summons"):
+		Vars.main_scene.get_node("Summons").add_child(node)
 		return true
 	else: return false
 

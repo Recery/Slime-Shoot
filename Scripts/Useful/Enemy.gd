@@ -37,6 +37,7 @@ var waiting_player := true
 @onready var force_moving := false
 @export var use_pathfinding := true # Si es false, no usa el pathfinding
 var dir := Vector2.ZERO
+var go_backwards := false # SI esta en true, hace que vaya en sentido contrario al que indica la direccion
 
 signal die
 signal switch_wait_player(wait : bool)
@@ -156,8 +157,16 @@ func reset_custom_target_position(unforce_movement = true) -> void:
 
 func force_movement(force : bool) -> void: force_moving = force
 
+func switch_pathfinding_cooldown(activate = true):
+	if activate:
+		cooldown_pathfinding.start()
+	elif not activate:
+		cooldown_pathfinding.stop()
+
 func apply_new_speed() -> void:
-	if (moving and not is_in_group("Full_Freezed")) or force_moving: velocity = dir * speed
+	if (moving and not is_in_group("Full_Freezed")) or force_moving:
+		if go_backwards: velocity = -dir * speed
+		else: velocity = dir * speed
 	else: velocity = Vector2.ZERO
 
 func _on_switch_wait_player(wait := false) -> void:

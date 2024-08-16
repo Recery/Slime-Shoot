@@ -18,5 +18,5 @@ func _on_body_entered(body) -> void:
 	die.emit()
 
 func _on_die():
-	Funcs.sound_play_2d("res://Sounds/Balloon_Pop.mp3", 7, 1.2)
+	Funcs.sound_play_2d("res://Sounds/Balloon_Pop.mp3", global_position, 7, 1.2)
 	Funcs.color_explosion(0.55, 0.55, global_position, Funcs.get_bullets_node(), 0, false, Color.LIGHT_BLUE)

@@ -14,7 +14,7 @@ func _physics_process(_delta):
 		if global_position.distance_to(sock_to_merge.global_position) < 5:
 			create_big_sock()
 			Funcs.particles(Vector2(1.6,1.6), global_position, Color.ORANGE_RED)
-			Funcs.sound_play_2d("res://Sounds/CheeseTransmutation.mp3", 6, 1.3)
+			Funcs.sound_play_2d("res://Sounds/CheeseTransmutation.mp3", global_position, 6, 1.3)
 			sock_to_merge.queue_free()
 			queue_free()
 	else:

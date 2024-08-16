@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://duiow10awqj4t"]
+
+[node name="Circle_Explosion" type="Sprite2D"]
+editor_description = "Un sprite que representa una futura explosion en un lugar para advertir al jugador"

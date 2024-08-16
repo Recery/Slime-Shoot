@@ -203,6 +203,7 @@ func deal_damage_special(damage, make_immune := true):
 
 func _when_damage_collision_body_entered(body):
 	# Cuando un enemigo toca al jugador esta función se ejecuta
+	
 	if body.is_in_group("Enemies"):
 		enemies_attacking.append(body)
 		damaging = true
@@ -214,6 +215,7 @@ func _when_damage_collision_body_exited(body):
 
 func _when_damage_collision_area_entered(area):
 	# Para proyectiles
+	
 	if area.is_in_group("Enemies") or area.is_in_group("Enemies_Projectiles"):
 		enemies_attacking.append(area)
 		damaging = true
