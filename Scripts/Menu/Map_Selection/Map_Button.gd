@@ -7,9 +7,13 @@ extends TextureButton
 ## La cinemática que se reproduce al iniciar el nivel.
 ## Si ya fue vista, no se vuelve a reproducir.
 @export var cinematic_to_play : PackedScene
+## El nombre del mapa, se muestra en un cuadro abajo al hacer hover sobre el boton. Solo es estetico
+@export var map_name : String
 
 func _ready() -> void:
-	connect("pressed", _on_pressed)
+	pressed.connect(_on_pressed)
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
 	
 	if not Vars.slimes_unlocked.has(unlocked_by_slime):
 		disabled = true
@@ -29,3 +33,11 @@ func _on_pressed() -> void:
 	else:
 		cinematic_instance.queue_free()
 		Events.change_scene_packed.emit(map_to_enter)
+
+func _on_mouse_entered():
+	if get_parent().get_parent().has_node("Map_Name_Label"):
+		get_parent().get_parent().get_node("Map_Name_Label").text = map_name
+
+func _on_mouse_exited():
+	if get_parent().get_parent().has_node("Map_Name_Label"):
+		get_parent().get_parent().get_node("Map_Name_Label").text = "Choose a map!"

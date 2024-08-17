@@ -145,7 +145,7 @@ func save_unlocked_passives():
 # Slime equipado
 func load_equipped_slime():
 	if !FileAccess.file_exists(path_slime_equipped): 
-		Vars.slime_equipped = load("res://Scenes/Player/White_Slime/white_slime.tscn")
+		Vars.slime_equipped = load("res://Scenes/Player/Green_Slime/green_slime.tscn")
 		return
 	
 	var file = FileAccess.open(path_slime_equipped, FileAccess.READ)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8r5va2affgyr"
-path="res://.godot/imported/Bootstrapper.png-42a8c3dcfc1721109f78f923b56a2da5.ctex"
+uid="uid://dv3lpp3fssrmd"
+path="res://.godot/imported/EnergyDrainTrap.png-ec55de6991aa735200b572017afa4444.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Enemies/Bootstrapper.png"
-dest_files=["res://.godot/imported/Bootstrapper.png-42a8c3dcfc1721109f78f923b56a2da5.ctex"]
+source_file="res://Sprites/Enemies/Bootstrapper/EnergyDrainTrap.png"
+dest_files=["res://.godot/imported/EnergyDrainTrap.png-ec55de6991aa735200b572017afa4444.ctex"]
 
 [params]
 

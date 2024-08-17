@@ -189,10 +189,11 @@ func reduce_energy(energy_to_reduce, fill_cooldown := 1.0) -> bool:
 var immunity_cooldown : Timer
 func deal_damage_enemies():
 	for enemy in enemies_attacking:
+		if enemy.damage <= 0: continue
 		life -= max(enemy.damage - resistance, 1)
-		Funcs.sound_play("res://Sounds/SlimeHit.mp3", 0, 16)
-		immunity_cooldown.start()
-		immune = true
+	Funcs.sound_play("res://Sounds/SlimeHit.mp3", 0, 16)
+	immunity_cooldown.start()
+	immune = true
 	if life <= 0: die.emit()
 
 func deal_damage_special(damage, make_immune := true):

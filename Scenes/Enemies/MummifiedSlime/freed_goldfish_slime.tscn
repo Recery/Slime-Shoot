@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://caeytuh5w1pwy"]
+
+[ext_resource type="Script" path="res://Scripts/Level_Elements/cagged_slime.gd" id="1_c0ons"]
+[ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="1_hme3t"]
+[ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="2_5uqh5"]
+
+[sub_resource type="Animation" id="Animation_58d68"]
+resource_name = "bounce_free"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_uxptm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j78yy"]
+_data = {
+"RESET": SubResource("Animation_uxptm"),
+"bounce_free": SubResource("Animation_58d68")
+}
+
+[node name="Freed_Goldfish_Slime" type="Area2D"]
+script = ExtResource("1_c0ons")
+slime_to_unlock = ExtResource("2_5uqh5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hme3t")
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_j78yy")
+}
+autoplay = "bounce_free"
+
+[connection signal="activated" from="." to="." method="_on_activated"]

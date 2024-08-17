@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bry6o025ci0lk"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Bootstrapper/energy_drain_trap.gd" id="1_0j8l1"]
+[ext_resource type="Texture2D" uid="uid://dv3lpp3fssrmd" path="res://Sprites/Enemies/Bootstrapper/EnergyDrainTrap.png" id="2_bglqk"]
+[ext_resource type="AudioStream" uid="uid://c6npmimo4u6ny" path="res://Sounds/GreenAppleBreak.mp3" id="3_cb0uw"]
+[ext_resource type="AudioStream" uid="uid://bdnehq33s15j3" path="res://Sounds/Spark.mp3" id="3_lpw0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2lua7"]
+radius = 6.0
+
+[node name="Energy_Drain_Trap" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_0j8l1")
+damage = 12.0
+despawn_time = 30.0
+has_movement = false
+die_wait_time = 0.1
+
+[node name="Trap" type="Sprite2D" parent="."]
+texture = ExtResource("2_bglqk")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2lua7")
+
+[node name="Use_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_cb0uw")
+volume_db = 14.0
+bus = &"Sounds"
+
+[node name="Activated_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lpw0p")
+volume_db = 12.0
+pitch_scale = 2.0
+bus = &"Sounds"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

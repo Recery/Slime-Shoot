@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://xcb3sy5rg4sn"]
+[gd_scene load_steps=25 format=3 uid="uid://xcb3sy5rg4sn"]
 
 [ext_resource type="PackedScene" uid="uid://cnh8ic5jmr58n" path="res://Scenes/Menu/Map_Selection/map_button.tscn" id="1_rdn44"]
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://bvexm66yutw5w" path="res://Scenes/Maps/cyberspace_level.tscn" id="17_tck35"]
 [ext_resource type="Texture2D" uid="uid://4kcnxc0hqgog" path="res://Sprites/Menu/MapsButtons/CyberspaceHover.png" id="18_acgg8"]
 [ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="20_3ubtr"]
+[ext_resource type="Texture2D" uid="uid://dxl4ykknrp0au" path="res://Sprites/Menu/NameFrame.png" id="22_wepo3"]
+[ext_resource type="LabelSettings" uid="uid://dfkffwrdyxuu8" path="res://Resources/Setted_Resources/regular_text.tres" id="23_p1bwj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_a8w5x"]
 font = ExtResource("12_q38p5")
@@ -37,15 +39,15 @@ zoom = Vector2(4, 4)
 [node name="Arrows" type="Node2D" parent="."]
 
 [node name="Arrow" type="Sprite2D" parent="Arrows"]
-position = Vector2(86, -24)
+position = Vector2(86, -27)
 texture = ExtResource("5_5qald")
 
 [node name="Arrow2" type="Sprite2D" parent="Arrows"]
-position = Vector2(29, -24)
+position = Vector2(29, -27)
 texture = ExtResource("5_5qald")
 
 [node name="Arrow3" type="Sprite2D" parent="Arrows"]
-position = Vector2(58, 3)
+position = Vector2(58, 0)
 rotation = 4.71239
 texture = ExtResource("5_5qald")
 
@@ -53,9 +55,9 @@ texture = ExtResource("5_5qald")
 layout_mode = 3
 anchors_preset = 0
 offset_left = 48.0
-offset_top = -24.0
+offset_top = -27.0
 offset_right = 88.0
-offset_bottom = 16.0
+offset_bottom = 13.0
 
 [node name="Grasslands" parent="Buttons" instance=ExtResource("1_rdn44")]
 layout_mode = 1
@@ -72,6 +74,7 @@ texture_hover = ExtResource("3_vm7vn")
 map_to_enter = ExtResource("5_xac7s")
 unlocked_by_slime = ExtResource("6_l5pek")
 cinematic_to_play = ExtResource("7_6w4tq")
+map_name = "Grasslands"
 
 [node name="Desert" parent="Buttons" instance=ExtResource("1_rdn44")]
 layout_mode = 1
@@ -88,6 +91,7 @@ texture_hover = ExtResource("8_4vrjy")
 map_to_enter = ExtResource("10_kycx1")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("12_mglki")
+map_name = "Desert"
 
 [node name="Snow" parent="Buttons" instance=ExtResource("1_rdn44")]
 layout_mode = 0
@@ -104,6 +108,7 @@ texture_hover = ExtResource("14_mvmp5")
 map_to_enter = ExtResource("13_wxwak")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("16_sfd4i")
+map_name = "Snow"
 
 [node name="Cyberspace" parent="Buttons" instance=ExtResource("1_rdn44")]
 layout_mode = 0
@@ -120,14 +125,36 @@ texture_hover = ExtResource("18_acgg8")
 map_to_enter = ExtResource("17_tck35")
 unlocked_by_slime = ExtResource("20_3ubtr")
 cinematic_to_play = ExtResource("16_sfd4i")
+map_name = "Cyberspace"
 
 [node name="Select_Map_Text" type="Label" parent="."]
 layout_mode = 0
-offset_left = -66.0
+offset_left = -103.0
 offset_top = -76.0
-offset_right = 66.0
+offset_right = 104.0
 offset_bottom = -53.0
-text = "Select map"
+text = "Map selection"
 label_settings = SubResource("LabelSettings_a8w5x")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Map_Name_Frame" type="TextureRect" parent="."]
+offset_left = -50.0
+offset_top = 58.0
+offset_right = 50.0
+offset_bottom = 78.0
+texture = ExtResource("22_wepo3")
+stretch_mode = 3
+
+[node name="Map_Name_Label" type="Label" parent="."]
+offset_left = -50.0
+offset_top = 58.0
+offset_right = 50.0
+offset_bottom = 78.0
+text = "Choose a map!
+"
+label_settings = ExtResource("23_p1bwj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6

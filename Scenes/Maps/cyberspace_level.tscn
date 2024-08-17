@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Useful/map.gd" id="1_nwfgm"]
 [ext_resource type="PackedScene" uid="uid://cpjm80d2j0nms" path="res://Scenes/Enemies/boolean.tscn" id="2_07aq0"]
+[ext_resource type="PackedScene" uid="uid://fj544jl0a4go" path="res://Scenes/Enemies/Bootstrapper/bootstrapper.tscn" id="2_tn6sk"]
 [ext_resource type="PackedScene" uid="uid://cnsm02heqm0bv" path="res://Scenes/Tiles/tile_cyber.tscn" id="3_6rpde"]
 [ext_resource type="Script" path="res://Resources/Scripts/EnemyToSpawn.gd" id="3_vpaqv"]
 [ext_resource type="Script" path="res://Resources/Scripts/EnemySpawnerTable.gd" id="4_373c3"]
 [ext_resource type="Script" path="res://Scripts/Useful/Enemies_Movement.gd" id="4_nc3qy"]
-[ext_resource type="PackedScene" uid="uid://fj544jl0a4go" path="res://Scenes/Enemies/bootstrapper.tscn" id="4_pkh0v"]
 [ext_resource type="AudioStream" uid="uid://cmq6h8nnmaet5" path="res://Sounds/TinyCryonos.ogg" id="5_lyppy"]
 [ext_resource type="PackedScene" uid="uid://guih4rm1cjhf" path="res://Scenes/Useful/enemy_spawner.tscn" id="6_iqbcs"]
 
@@ -19,7 +19,7 @@ max_level_to_spawn = 0
 
 [sub_resource type="Resource" id="Resource_1jie4"]
 script = ExtResource("3_vpaqv")
-enemy = ExtResource("4_pkh0v")
+enemy = ExtResource("2_tn6sk")
 probability = 50.0
 level_to_spawn = 2
 max_level_to_spawn = 0
@@ -28,7 +28,7 @@ max_level_to_spawn = 0
 script = ExtResource("4_373c3")
 enemies_to_spawn = Array[ExtResource("3_vpaqv")]([SubResource("Resource_7sykm"), SubResource("Resource_1jie4")])
 starter_level = 0
-spawn_time = 15
+spawn_time = 200
 
 [node name="Cyberspace_Level" type="Node2D"]
 script = ExtResource("1_nwfgm")
@@ -141,6 +141,9 @@ position = Vector2(320, -208)
 fit_margin = 0.0
 clear_margin = 0.0
 script = ExtResource("4_nc3qy")
+
+[node name="Bootstrapper" parent="Enemies" instance=ExtResource("2_tn6sk")]
+position = Vector2(-192, 192)
 
 [node name="Big_Enemies" type="CanvasGroup" parent="."]
 position = Vector2(320, -208)

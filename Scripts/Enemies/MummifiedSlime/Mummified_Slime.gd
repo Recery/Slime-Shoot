@@ -149,6 +149,8 @@ func spawn_meteor():
 	
 	# Crear un sprite para advertir al jugador del meteorito
 	var explosion_warning : Sprite2D = Funcs.explosion_warning(Vector2(3,3), meteor_pos)
+	# Guarda el sprite de advertencia en esta variable para matarlo cuando sea necesario (Muerte del boss o del meteorito)
+	current_warning = explosion_warning
 	await get_tree().create_timer(1).timeout # Esperar un poco para dar tiempo de esquivar al jugador
 	
 	var meteor_instance := meteor.instantiate()
@@ -165,8 +167,6 @@ func spawn_meteor():
 		meteor_instance.direction = (meteor_pos - spawn_pos).normalized()
 		meteor_instance.rotation = Funcs.get_angle(meteor_pos, spawn_pos) - 1.5
 		
-		# Guarda el sprite de advertencia en esta variable para matarlo cuando sea necesario (Muerte del boss o del meteorito)
-		current_warning = explosion_warning
 		meteor_instance.die.connect(kill_warning)
 		
 	else: meteor_instance.queue_free()
@@ -227,12 +227,22 @@ func _on_take_damage(_damage):
 
 func _on_die():
 	life_bar.queue_free()
-	Funcs.regular_explosion(0.9, 0.9, global_position, Funcs.get_bullets_node(), 10, true)
+	
+	purify_animation()
+	
+	# Libera torretas y advertencias de explosion si quedo alguna despues de morir el jefe
+	if current_warning != null: current_warning.queue_free()
+	if current_turret != null: current_turret.queue_free()
 	
 	if Vars.main_scene.has_node("Music"):
 		Vars.main_scene.get_node("Music").play()
 
-# Libera torretas y advertencias de explosion si quedo alguna despues de morir el jefe
-func _exit_tree():
-	if current_warning != null: current_warning.queue_free()
-	if current_turret != null: current_turret.queue_free()
+func purify_animation():
+	# "Animacion" de purificar al slime al derrotarlo
+	var goldfish_slime_animation = load("res://Scenes/Enemies/MummifiedSlime/freed_goldfish_slime.tscn").instantiate()
+	
+	if Vars.main_scene.has_node("Spawn_Position"):
+		Vars.main_scene.get_node("Spawn_Position").add_child(goldfish_slime_animation)
+		goldfish_slime_animation.global_position = global_position
+		goldfish_slime_animation.activated.emit(goldfish_slime_animation)
+	else: goldfish_slime_animation.queue_free()
