@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh1shx76b2t3v"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Bootstrapper/Fake_Green_Apple_Trap.gd" id="1_s4poe"]
+[ext_resource type="Texture2D" uid="uid://d16sysmtsei14" path="res://Sprites/Enemies/Bootstrapper/FakeGreenAppleTrap.png" id="2_x5dgv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gbe6p"]
+radius = 5.0
+
+[node name="Fake_Green_Apple_Trap" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_s4poe")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x5dgv")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gbe6p")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

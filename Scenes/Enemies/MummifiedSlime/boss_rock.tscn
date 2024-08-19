@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw6q6rltrgpqg"]
-
-[ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="1_vs3ck"]
-
-[node name="Boss_Rock" type="Sprite2D"]
-editor_description = "Rock used for mummified slime boss"
-texture = ExtResource("1_vs3ck")

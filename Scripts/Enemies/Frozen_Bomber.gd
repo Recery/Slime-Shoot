@@ -69,6 +69,5 @@ var can_shoot := false
 func _on_shoot_timer_timeout():
 	can_shoot = true
 
-
 func _on_die():
 	Funcs.color_explosion(0.8, 0.8, global_position, Funcs.get_bullets_node(), 5, true, Color.SKY_BLUE)

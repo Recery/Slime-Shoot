@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://fj544jl0a4go"]
+[gd_scene load_steps=11 format=3 uid="uid://fj544jl0a4go"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Bootstrapper/Bootstrapper.gd" id="1_uwlib"]
 [ext_resource type="Texture2D" uid="uid://b8r5va2affgyr" path="res://Sprites/Enemies/Bootstrapper/Bootstrapper.png" id="2_8si0m"]
+[ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="3_h8n0p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h3ve8"]
 atlas = ExtResource("2_8si0m")
@@ -63,8 +64,8 @@ collision_mask = 16
 script = ExtResource("1_uwlib")
 score_to_add = 7
 original_damage = 6.0
-original_speed = 60.0
-original_max_life = 8.0
+original_speed = 50.0
+original_max_life = 10000.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i151s")
@@ -78,5 +79,10 @@ shape = SubResource("CircleShape2D_sd8sf")
 [node name="Energy_Drain_Trap_Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
+
+[node name="Trap_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_h8n0p")
+volume_db = 10.0
+bus = &"Sounds"
 
 [connection signal="timeout" from="Energy_Drain_Trap_Timer" to="." method="create_energy_drain_trap"]

@@ -139,6 +139,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Map_Name_Frame" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = -50.0
 offset_top = 58.0
 offset_right = 50.0
@@ -147,6 +148,7 @@ texture = ExtResource("22_wepo3")
 stretch_mode = 3
 
 [node name="Map_Name_Label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -50.0
 offset_top = 58.0
 offset_right = 50.0

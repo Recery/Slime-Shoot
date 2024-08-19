@@ -234,7 +234,13 @@ func deal_damage(enemy, damage) -> void:
 	if enemy == null: return
 	
 	if enemy.has_node("Life_Module"):
-		enemy.get_node("Life_Module").take_damage.emit(damage)
+		enemy.get_node("Life_Module").take_damage(damage)
+
+func heal_enemy(enemy, life) -> void:
+	if enemy == null: return
+	
+	if enemy.has_node("Life_Module"):
+		enemy.get_node("Life_Module").heal(life)
 
 func get_current_cooldown(weapon : Weapon) -> float:
 	if Vars.player == null or weapon == null: return -1

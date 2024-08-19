@@ -41,6 +41,7 @@ func apply_buff(applied_buff : Node):
 	
 	player.speed *= speed_weight_to_modify
 	
+	
 	if player_color != Color.BLACK:
 		if player.has_node("Slime"):
 			player.get_node("Slime").self_modulate = player_color

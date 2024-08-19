@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://e15muogr2tij"]
-
-[ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="1_fplgw"]
-
-[node name="Boss_Goldfish_Trident" type="Sprite2D"]
-editor_description = "Goldfish trident used for mummified slime boss"
-texture = ExtResource("1_fplgw")

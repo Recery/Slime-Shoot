@@ -16,10 +16,10 @@ func _on_body_entered(body):
 			Funcs.deal_damage(body, damage)
 			Funcs.dash_smoke(1, 1, global_position)
 			enemies_damaged += 1
-			if not body.has_node("Chill_Debuff"):
+			if not body.has_node("Frost_Staff_Debuff"):
 				body.add_child(get_chill_debuff())
 			else:
-				body.get_node("Chill_Debuff").reset_duration()
+				body.get_node("Frost_Staff_Debuff").reset_duration()
 		
 		if enemies_damaged >= 3: die.emit()
 
@@ -31,11 +31,10 @@ func _on_die():
 	if not already_exploded: Funcs.color_explosion(0.6, 0.6, global_position, Funcs.get_bullets_node(), 2, true, Color(0.737, 0.824, 1))
 	already_exploded = true
 
-func get_chill_debuff() -> Buff:
-	var chill_debuff := Buff.new()
+func get_chill_debuff() -> Buff_Speed_Enemy:
+	var chill_debuff := Buff_Speed_Enemy.new()
 	chill_debuff.duration = 2
-	chill_debuff.enemy_color = Color(0.639, 0.757, 1)
-	chill_debuff.stat_to_modify = "Speed"
-	chill_debuff.weight_to_modify = 1.75
-	chill_debuff.name = "Chill_Debuff"
+	chill_debuff.color = Color(0.639, 0.757, 1)
+	chill_debuff.weight_to_modify = 0.75
+	chill_debuff.name = "Frost_Staff_Debuff"
 	return chill_debuff

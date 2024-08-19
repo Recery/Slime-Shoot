@@ -37,7 +37,7 @@ func normal_damage() -> void:
 				# pero mejor hacerlo acá adentro para ahorrar recursos al llamarlo menos veces
 				weapon.get_node("Extra_Damage_Request").queue_free()
 		else: weapon.damage = weapon.original_damage
-		
+			
 	weapons_affected.resize(0)
 
 func can_be_activated() -> bool:

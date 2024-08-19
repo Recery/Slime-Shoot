@@ -18,7 +18,7 @@ func _physics_process(_delta) -> void:
 	if Vars.player == null: return
 	if Vars.player.get_viewport() == null or get_viewport() == null: return
 	
-	var local_mouse_pos := to_local(Vars.player.shoot_pos)
+	var local_mouse_pos := Vars.player.to_local(Vars.player.shoot_pos)
 	flip_h = local_mouse_pos.x < 0
 	
 	if flip_offset != Vector2.ZERO and local_mouse_pos.x < 0:
