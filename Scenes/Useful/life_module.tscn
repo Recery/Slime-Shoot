@@ -5,3 +5,6 @@
 [node name="Life_Module" type="Node2D"]
 process_mode = 3
 script = ExtResource("1_rcn81")
+
+[connection signal="heal" from="." to="." method="_on_heal"]
+[connection signal="take_damage" from="." to="." method="_on_take_damage"]

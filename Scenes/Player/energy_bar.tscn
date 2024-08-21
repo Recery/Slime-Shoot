@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cci8ndx8nbc6n"]
+[gd_scene load_steps=4 format=3 uid="uid://cci8ndx8nbc6n"]
 
 [ext_resource type="Texture2D" uid="uid://brbeuljnr4icy" path="res://Sprites/Player/EnergyBar.png" id="1_bkfoa"]
 [ext_resource type="Script" path="res://Scripts/Player/Energy_Bar.gd" id="2_ytc8d"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="3_c00bx"]
 
 [node name="Energy_Bar" type="Sprite2D"]
 light_mask = 512
@@ -27,5 +28,16 @@ grow_vertical = 2
 rotation = 3.14159
 scale = Vector2(0.8, 0.8)
 color = Color(0.921569, 0.905882, 0.137255, 1)
+
+[node name="Energy_Display" type="Label" parent="."]
+offset_left = -63.0
+offset_top = -5.0
+offset_right = 84.0
+offset_bottom = 8.0
+scale = Vector2(0.75, 0.75)
+text = "200/200"
+label_settings = ExtResource("3_c00bx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Energy_Cooldown" type="Timer" parent="."]

@@ -167,16 +167,44 @@ func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, colo
 	explosion_instance.scale = Vector2(scale_x, scale_y)
 	explosion_instance.modulate = color
 
-var smoke = preload("res://Scenes/Useful/smoke_dash.tscn")
-func dash_smoke(scale_x, scale_y, pos, modulate = 0.75, scene = get_bullets_node(), insta_vanish = false):
+var strike_texture := preload("res://Sprites/Useful/Strike.png")
+func strike_effect(scale : Vector2, pos : Vector2, modulate := 1.0, scene := get_bullets_node()):
 	if scene == null: return
 	
-	var smoke_instance = smoke.instantiate()
-	smoke_instance.scale = Vector2(scale_x, scale_y)
+	var strike_instance := Sprite2D.new()
+	strike_instance.texture = strike_texture
+	strike_instance.scale = scale
+	strike_instance.modulate.a = modulate
+	strike_instance.add_to_group("Visual_Effect")
+	scene.add_child(strike_instance)
+	strike_instance.global_position = pos
+	
+	
+	await get_tree().create_timer(0.2).timeout
+	strike_instance.queue_free()
+
+var smoke_texture := preload("res://Sprites/Useful/Smoke.png")
+func smoke_effect(scale : Vector2, pos : Vector2, modulate := 0.75, scene := get_bullets_node()):
+	if scene == null: return
+	
+	var smoke_instance := Sprite2D.new()
+	smoke_instance.texture = smoke_texture
+	smoke_instance.hframes = 2
 	smoke_instance.modulate.a = modulate
-	smoke_instance.insta_vanish = insta_vanish
+	smoke_instance.scale = scale
+	smoke_instance.add_to_group("Visual_Effect")
 	scene.add_child(smoke_instance)
 	smoke_instance.global_position = pos
+	fade_effect(smoke_instance)
+	
+	
+	for i in range(15):
+		if smoke_instance == null: return
+		if i % 2 == 0: smoke_instance.frame = 0
+		else: smoke_instance.frame = 1
+		await get_tree().create_timer(0.2).timeout
+	
+	if smoke_instance != null: smoke_instance.queue_free()
 
 var _particles = preload("res://Scenes/Useful/particles.tscn")
 func particles(scale, pos, color : Color, scene = get_bullets_node()):
@@ -185,6 +213,7 @@ func particles(scale, pos, color : Color, scene = get_bullets_node()):
 	var particles_instance = _particles.instantiate()
 	particles_instance.scale = scale
 	particles_instance.modulate = color
+	particles_instance.add_to_group("Visual_Effect")
 	scene.add_child(particles_instance)
 	particles_instance.global_position = pos
 
@@ -234,13 +263,13 @@ func deal_damage(enemy, damage) -> void:
 	if enemy == null: return
 	
 	if enemy.has_node("Life_Module"):
-		enemy.get_node("Life_Module").take_damage(damage)
+		enemy.get_node("Life_Module").take_damage.emit(damage)
 
 func heal_enemy(enemy, life) -> void:
 	if enemy == null: return
 	
 	if enemy.has_node("Life_Module"):
-		enemy.get_node("Life_Module").heal(life)
+		enemy.get_node("Life_Module").heal.emit(life)
 
 func get_current_cooldown(weapon : Weapon) -> float:
 	if Vars.player == null or weapon == null: return -1

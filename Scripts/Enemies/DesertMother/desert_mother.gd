@@ -126,7 +126,7 @@ func summon_eggs():
 	particles_timer.stop() # Apagar particulas
 
 func _on_particles_timer_timeout():
-	Funcs.dash_smoke(2, 2, global_position)
+	Funcs.smoke_effect(Vector2(2,2), global_position)
 
 # Se teletransporta justo detras del jugador en diagonal a la direccion a la que se dirige
 func teleport():

@@ -1,22 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://kexy5pxqp74j"]
+[gd_scene load_steps=4 format=3 uid="uid://kexy5pxqp74j"]
 
 [ext_resource type="Script" path="res://Scripts/Abilities/shock_attack_ability.gd" id="1_sr0de"]
 [ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="2_mvyp3"]
-[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_mvaor"]
-[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="4_s2xwj"]
 [ext_resource type="AudioStream" uid="uid://bcihod4qib4t" path="res://Sounds/ElectricZap.mp3" id="5_mjsmo"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cjira"]
-font = ExtResource("3_mvaor")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
-
-[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
-font = ExtResource("3_mvaor")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
 
 [node name="Shock_Attack_Ability" type="Node2D"]
 script = ExtResource("1_sr0de")
@@ -27,36 +13,6 @@ energy_recover_time = 1.8
 
 [node name="Ability_Frame" type="Sprite2D" parent="."]
 texture = ExtResource("2_mvyp3")
-
-[node name="Cooldown_Left" type="Label" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -10.0
-offset_top = -4.0
-offset_right = 11.0
-offset_bottom = 3.0
-text = "100"
-label_settings = SubResource("LabelSettings_cjira")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Energy_Use" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(4, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_s2xwj")
-
-[node name="Use" type="Label" parent="Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "90
-"
-label_settings = SubResource("LabelSettings_s5yo5")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Use_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_mjsmo")

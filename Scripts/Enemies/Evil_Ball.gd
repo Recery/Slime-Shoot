@@ -15,4 +15,4 @@ func _physics_process(_delta) -> void:
 			sprite.rotation += float("0.0" + str(speed))
 
 func _on_die() -> void:
-	Funcs.regular_explosion(0.8, 0.8, global_position, Vars.main_scene, 2, true)
+	Funcs.regular_explosion(0.8, 0.8, global_position, Funcs.get_bullets_node(), 2, true)

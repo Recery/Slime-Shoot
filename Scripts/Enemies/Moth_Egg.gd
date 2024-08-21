@@ -12,6 +12,7 @@ func _on_hatch_timeout():
 	var larva_instance : Node = load("res://Scenes/Enemies/slime_eater_larva.tscn").instantiate()
 	Vars.main_scene.get_node("Enemies").add_child(larva_instance)
 	larva_instance.global_position = global_position
+	if is_in_group("Dungeon_Enemy"): larva_instance.add_to_group("Dungeon_Enemy")
 	
 	Funcs.particles(Vector2(1,1), global_position, Color.BEIGE)
 	queue_free()

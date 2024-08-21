@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cudyr83n3jsr3"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/soul_collector_ability.gd" id="1_8r6lp"]
+[ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="2_yh1ld"]
+[ext_resource type="AudioStream" uid="uid://cwjrkjtgrkrwi" path="res://Sounds/DarkMagic1.mp3" id="3_5v786"]
+[ext_resource type="AudioStream" uid="uid://b411nd0fkxmda" path="res://Sounds/Laser.mp3" id="4_n73mq"]
+
+[node name="Soul_Collector_Ability" type="Node2D"]
+script = ExtResource("1_8r6lp")
+starter_cooldown = 30
+energy_use = 120
+energy_recover_time = 2.2
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_yh1ld")
+
+[node name="Use_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5v786")
+volume_db = 11.0
+pitch_scale = 1.2
+bus = &"Sounds"
+
+[node name="Collect_Soul_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n73mq")
+volume_db = 3.0
+pitch_scale = 2.2
+bus = &"Sounds"
+
+[node name="Particles_Timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="activate" from="." to="." method="_on_activate"]
+[connection signal="timeout" from="Particles_Timer" to="." method="create_particles"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=147 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=149 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -143,6 +143,8 @@
 [ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="90_4aa0y"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="101_57fgs"]
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="102_q4yxp"]
+[ext_resource type="PackedScene" uid="uid://cudyr83n3jsr3" path="res://Scenes/Abilities/soul_collector_ability.tscn" id="122_d8jow"]
+[ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="123_wxccl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5fu2"]
 font = ExtResource("3_6bn12")
@@ -831,6 +833,15 @@ object_to_buy = ExtResource("81_5lbgm")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("82_0k2td")
+
+[node name="Soul_Collector" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1750
+type_of_object = 2
+object_to_buy = ExtResource("122_d8jow")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("26_klcqa")
+sprite_to_display = ExtResource("123_wxccl")
 
 [node name="Abilities_Shop_Text" type="Label" parent="Abilities"]
 layout_mode = 0

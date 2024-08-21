@@ -10,6 +10,7 @@ var second_phase := false
 func _ready():
 	if Vars.main_scene.has_node("Music"):
 		Vars.main_scene.get_node("Music").stop()
+	Funcs.smoke_effect(Vector2(2,2), global_position)
 	
 	goldfish_trident.shoot.connect(charge)
 	
@@ -59,7 +60,7 @@ func weapons_visual():
 	## Tridente goldfish
 	if charging:
 		goldfish_trident.manage_rotation(45)
-		Funcs.dash_smoke(1, 1, global_position)
+		Funcs.smoke_effect(Vector2(1,1), global_position)
 	else:
 		goldfish_trident.manage_rotation()
 	goldfish_trident.can_rotate = not charging
@@ -87,7 +88,7 @@ func rock_shoot(_alt_cooldown):
 
 func rock_recovered():
 	rock.self_modulate.a = 1
-	Funcs.dash_smoke(0.8, 0.8, rock.global_position, 0.8, rock)
+	Funcs.smoke_effect(Vector2(0.8,0.8), rock.global_position, 0.8, rock)
 
 var charging := false
 func charge(_alt_cooldown):
@@ -97,27 +98,24 @@ func charge(_alt_cooldown):
 	go_backwards = false
 	add_child(get_speed_buff())
 	add_child(get_damage_buff())
-	force_pathfinding_update()
 	switch_pathfinding_cooldown(false)
+	dir = (player.global_position - global_position).normalized()
+	apply_new_speed()
 	await get_tree().create_timer(0.6).timeout
 	charging = false
 	current_weapon = rock
 	switch_pathfinding_cooldown(true)
 
-func get_speed_buff() -> Buff:
-	var buff := Buff.new()
+func get_speed_buff() -> Buff_Speed_Enemy:
+	var buff := Buff_Speed_Enemy.new()
 	buff.duration = 0.6
-	buff.stat_to_modify = "Speed"
-	buff.type = "Buff"
 	buff.weight_to_modify = 1.75
 	buff.name = "Mummified_Dash"
 	return buff
 
-func get_damage_buff() -> Buff:
-	var buff := Buff.new()
+func get_damage_buff() -> Buff_Damage_Enemy:
+	var buff := Buff_Damage_Enemy.new()
 	buff.duration = 0.6
-	buff.stat_to_modify = "Damage"
-	buff.type = "Buff"
 	buff.weight_to_modify = 2
 	buff.name = "Mummified_Damage"
 	return buff
@@ -133,7 +131,7 @@ func regen():
 	regen_sound.pitch_scale = 1.1
 	regen_sound.play()
 	for i in range(20):
-		life_module.heal(1)
+		life_module.heal.emit(1)
 		if i % 2 == 0: # Comprobación para que no se generen tantas particulas, solo cuando resultado par
 			Funcs.particles(Vector2(2.2,1.8), global_position, Color(1, 0.337, 0.271), self)
 		await get_tree().create_timer(0.25).timeout

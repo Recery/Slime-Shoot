@@ -1,5 +1,5 @@
 @icon("res://Sprites/Buffs/BuffNodeIcon.png")
-extends General_Buff
+extends Buff
 class_name Buff_Speed_Enemy
 
 @export var weight_to_modify := 1.0
@@ -18,9 +18,9 @@ func buff_application(node):
 	
 	affected_object.speed *= weight_to_modify
 	affected_object.apply_new_speed()
-	print("Nueva velocidad aplicada por ", name, ": ", affected_object.speed)
+	print("Nueva ", name, ": ", affected_object.speed)
 
 func remove_buff():
 	affected_object.speed = affected_object.base_speed
 	affected_object.apply_new_speed()
-	print("Velocidad reestablecida por ", name, ": ", affected_object.speed)
+	print("Reestablecida ", name, ": ", affected_object.speed)

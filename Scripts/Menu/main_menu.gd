@@ -45,6 +45,8 @@ func _ready():
 	
 	Events.connect("draw_equipped_slime", draw_slime)
 	Events.draw_equipped_slime.emit()
+	
+	get_node("Title/Version").text = "v" + ProjectSettings.get_setting("application/config/version")
 
 func draw_slime():
 	# Dibujar slime

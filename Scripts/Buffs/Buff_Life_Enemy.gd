@@ -1,4 +1,5 @@
-extends General_Buff
+@icon("res://Sprites/Buffs/BuffNodeIcon.png")
+extends Buff
 class_name Buff_Life_Enemy
 
 ## La vida total que añade (o elimina) del enemigo

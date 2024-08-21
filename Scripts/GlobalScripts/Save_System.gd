@@ -294,9 +294,6 @@ func save_map_state(map:Node):
 		if child.is_in_group("Enemy_Spawner"):
 			map_state_data.spawners_level.append(child.spawner_level)
 	
-	if Vars.player != null:
-		map_state_data.player_score = Vars.player.score
-	
 	map_state_data.has_progress_bar = map.has_progress_bar
 	
 	Vars.map_state_data = map_state_data
@@ -308,12 +305,11 @@ func load_map_state(map:Node):
 			children[i].level_loaded_by_state = true
 			children[i].spawner_level = Vars.map_state_data.assign_spawner_level(i)
 	
-	if Vars.player != null:
-		Vars.player.score = Vars.map_state_data.player_score
-		Vars.player.add_score.emit(0)
+	Vars.player.add_score.emit(0, null) # Emitir esta señal unicamente para actualizar la label de puntaje
 	
 	if "has_progress_bar" in map:
 		map.has_progress_bar = Vars.map_state_data.has_progress_bar
 
 func reset_map_state():
+	Vars.current_score = 0
 	Vars.map_state_data = MapStateData.new()

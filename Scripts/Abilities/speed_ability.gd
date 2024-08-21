@@ -16,9 +16,9 @@ func disable_particles() -> void:
 	if is_physics_processing():
 		set_physics_process(false) # Desactivar physics_process para dejar de generar particulas
 
-func get_speed_buff() -> Buff_Player:
-	var buff := Buff_Player.new()
-	buff.speed_weight_to_modify = 1.35
+func get_speed_buff() -> Buff_Speed_Player:
+	var buff := Buff_Speed_Player.new()
+	buff.weight_to_modify = 1.35
 	buff.duration = 8
-	buff.buff_removed.connect(disable_particles)
+	buff.tree_exited.connect(disable_particles)
 	return buff

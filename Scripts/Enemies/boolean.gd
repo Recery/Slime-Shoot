@@ -28,7 +28,7 @@ func _on_take_damage(damage_dealt):
 	if active: return
 	
 	# Cuando no esta activo el daño hecho se cura
-	life_module.heal(damage_dealt)
+	life_module.heal.emit(damage_dealt)
 
 func _on_die():
 	Funcs.regular_explosion(0.7, 0.7, global_position, Funcs.get_bullets_node(), 2, true)

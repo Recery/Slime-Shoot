@@ -1,7 +1,9 @@
 extends Sprite2D
 
-var newSize
+@onready var rect := get_node("ColorRect")
+@onready var life_display_label := get_node("Life_Display")
 
 func _process(_delta):
-	newSize = (float(get_parent().life) / float(get_parent().max_life)) * 141
-	get_node("ColorRect").size.x = lerp(get_node("ColorRect").size.x , newSize, 0.5)
+	var new_size = (float(get_parent().life) / float(get_parent().max_life)) * 141
+	rect.size.x = lerp(rect.size.x , new_size, 0.5)
+	life_display_label.text = str(int(get_parent().life)) + "/" + str(int(get_parent().max_life))

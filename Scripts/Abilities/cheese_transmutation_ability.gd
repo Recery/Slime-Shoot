@@ -23,5 +23,5 @@ func _on_activate():
 	cheese_instance.global_position = enemy.global_position
 	
 	Funcs.particles(Vector2(2,2), enemy.global_position, Color.html("#ffd860"))
-	player.add_score.emit(enemy.score_to_add)
+	player.add_score.emit(enemy.score_to_add, enemy)
 	enemy.queue_free()

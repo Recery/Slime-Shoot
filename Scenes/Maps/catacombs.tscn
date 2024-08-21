@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://dy6d6jf0es7fo"]
+[gd_scene load_steps=111 format=3 uid="uid://dy6d6jf0es7fo"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/catacombs.gd" id="1_ilscc"]
 [ext_resource type="PackedScene" uid="uid://b52igxfs6cw8o" path="res://Scenes/Tiles/tile_catacombs.tscn" id="2_1nsx4"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cfef272qpmr5e" path="res://Scenes/Enemies/SandstoneGolem/sandstone_golem.tscn" id="8_t28u2"]
 [ext_resource type="PackedScene" uid="uid://dlfamecjad3hu" path="res://Scenes/Enemies/rolling_cactus.tscn" id="9_4plbo"]
 [ext_resource type="PackedScene" uid="uid://8pv7juduknvh" path="res://Scenes/Level_Elements/cagged_white_slime.tscn" id="9_yra6b"]
-[ext_resource type="PackedScene" uid="uid://bhh53gp4p80wi" path="res://Scenes/Maps/desert_level.tscn" id="12_bw2rb"]
 [ext_resource type="PackedScene" uid="uid://bey4qkun5q53l" path="res://Scenes/Useful/enemy_fight_event.tscn" id="14_g2ccy"]
 [ext_resource type="PackedScene" uid="uid://c2p2ky358g68k" path="res://Scenes/Useful/event.tscn" id="14_kxoqf"]
 [ext_resource type="Script" path="res://Resources/Scripts/EventInstanceSpawner.gd" id="15_n7vwt"]
@@ -925,7 +924,7 @@ up = true
 
 [node name="Ladder_To_Desert_Mummified_Slime" parent="Ladders" instance=ExtResource("21_7mh28")]
 position = Vector2(2416, -880)
-map_to_enter = ExtResource("12_bw2rb")
+map_to_enter = "res://Scenes/Maps/desert_level.tscn"
 up = true
 
 [node name="Spawners" type="Node2D" parent="."]
@@ -935,6 +934,7 @@ position = Vector2(-336, -48)
 
 [node name="Spawn_Position" type="Node2D" parent="."]
 y_sort_enabled = true
+position = Vector2(2352, -864)
 
 [node name="Goldfish_Statue" type="StaticBody2D" parent="Spawn_Position"]
 position = Vector2(944, -896)

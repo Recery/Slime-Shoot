@@ -14,15 +14,14 @@ func _on_die():
 			else:
 				# Tiene el debuff. No aplicarlo, sino reiniciarlo
 				var debuff = area.get_parent().get_node("Frozen_Bomber_Slowness")
-				if debuff.duration_timer != null:
-					debuff.duration_timer.start()
+				debuff.reset_duration()
 			break
 	Funcs.color_explosion(1.1, 1.1, global_position, Funcs.get_bullets_node(), 3, true, Color.SKY_BLUE)
 
-func get_speed_debuff() -> Buff_Player:
-	var debuff := Buff_Player.new()
+func get_speed_debuff() -> Buff_Speed_Player:
+	var debuff := Buff_Speed_Player.new()
 	debuff.name = "Frozen_Bomber_Slowness"
-	debuff.speed_weight_to_modify = 0.9
-	debuff.player_color = Color.SKY_BLUE
+	debuff.weight_to_modify = 0.9
+	debuff.color = Color.SKY_BLUE
 	debuff.duration = 2
 	return debuff

@@ -35,7 +35,7 @@ func attack():
 			
 			if i < enemies_to_attack.size() - 1: 
 				create_shock_visual(start_pos, end_pos)
-			Funcs.dash_smoke(0.7, 0.7, enemies_to_attack[i].global_position, 1, Funcs.get_bullets_node(), true)
+			Funcs.strike_effect(Vector2(0.7,0.7), enemies_to_attack[i].global_position)
 			Funcs.deal_damage(enemies_to_attack[i], damage)
 	
 	await get_tree().create_timer(0.1).timeout

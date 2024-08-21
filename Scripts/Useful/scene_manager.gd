@@ -15,7 +15,7 @@ var has_loading_screen := false
 func _change_scene(path_to_scene, show_loading_screen := true):
 	for child in get_children():
 		if child != null: child.queue_free()
-	 
+	
 	if show_loading_screen:
 		add_child(loading_screen.instantiate())
 		has_loading_screen = true

@@ -40,7 +40,7 @@ func _init():
 
 func _on_ready():
 	player = Vars.player
-	speed = min(speed_weight * player.speed, player.speed * 0.65)
+	speed = min(speed_weight * abs(player.speed), abs(player.speed) * 0.65)
 	create_children()
 
 func create_children():
@@ -64,7 +64,7 @@ var acumulated_speed = 0
 var move = true
 var move_to_idle_pos = true
 func idle_movement():
-	speed = min(speed_weight * player.speed, player.speed * 0.65)
+	speed = min(speed_weight * abs(player.speed), abs(player.speed) * 0.65)
 	if global_position.distance_to(idle_pos) > idle_pos_offset.x: move_to_idle_pos = true
 	elif global_position.distance_to(idle_pos) < idle_pos_offset.y: move_to_idle_pos = false
 	

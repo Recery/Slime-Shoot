@@ -18,4 +18,4 @@ func _on_shoot():
 
 func _on_recharge_visual_timeout():
 	modulate.a = 1
-	Funcs.dash_smoke(0.8, 0.8, global_position, 0.8, self)
+	Funcs.smoke_effect(Vector2.ONE, global_position, 0.8, self)

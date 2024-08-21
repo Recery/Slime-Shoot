@@ -26,8 +26,7 @@ var energy_recover_weight
 var can_use_energy
 var fill_energy : bool
 
-signal add_score(new_score)
-var score
+signal add_score(new_score, enemy)
 
 var perk_activated
 
@@ -44,8 +43,6 @@ func _init():
 	
 	can_use_energy = true
 	fill_energy = true
-	
-	score = 0
 	
 	perk_activated = false
 	
@@ -165,7 +162,7 @@ func create_children():
 	
 	score_text = load("res://Scenes/Player/score.tscn").instantiate()
 	add_child(score_text)
-	score_text.text = str(score)
+	score_text.text = str(Vars.current_score)
 	
 	add_child(load("res://Scenes/Player/pause.tscn").instantiate())
 
@@ -233,16 +230,12 @@ func _when_energy_cooldown_timeout():
 	fill_energy = true
 
 var score_text : Label
-func _when_add_score(new_score):
-	score += new_score
-	score_text.text = str(score)
+func _when_add_score(new_score, _enemy):
+	Vars.current_score += new_score
+	score_text.text = str(Vars.current_score)
 
 func _when_die():
 	set_physics_process(false)
-	Vars.last_score = score
-	if Vars.map_state_data != null:
-		if Vars.map_state_data.add_points_on_death:
-			Vars.last_score += Vars.map_state_data.player_score
 	
 	preserve_dark_mode()
 	

@@ -17,6 +17,7 @@ func _on_growth_timeout():
 	var moth_instance : Node = load("res://Scenes/Enemies/slime_eater_moth.tscn").instantiate()
 	Vars.main_scene.get_node("Flying_Enemies").add_child(moth_instance)
 	moth_instance.global_position = global_position
+	if is_in_group("Dungeon_Enemy"): moth_instance.add_to_group("Dungeon_Enemy")
 	
 	Funcs.particles(Vector2(2,1.5), global_position, Color.LIGHT_SALMON)
 	queue_free()

@@ -15,5 +15,17 @@ class_name Ability
 signal activate
 signal modify_cooldown(emitter, amount)
 
+func _init():
+	ready.connect(_on_ready)
+
+var energy_use_ui := preload("res://Scenes/Abilities/ability_energy_use.tscn")
+var ability_cooldown_left := preload("res://Scenes/Abilities/ability_cooldown_left.tscn")
+func _on_ready():
+	var energy_use_ui_instance := energy_use_ui.instantiate()
+	energy_use_ui_instance.get_node("Use").text = str(energy_use)
+	add_child(energy_use_ui_instance)
+	
+	add_child(ability_cooldown_left.instantiate())
+
 func can_be_activated() -> bool:
 	return player.reduce_energy(energy_use, energy_recover_time)

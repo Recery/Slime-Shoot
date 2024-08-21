@@ -28,6 +28,7 @@ func summon_illusion() -> void:
 	var illusion_instance : Enemy = illusion.instantiate()
 	get_parent().add_child(illusion_instance)
 	illusion_instance.global_position = global_position
+	if is_in_group("Dungeon_Enemy"): illusion_instance.add_to_group("Dungeon_Enemy")
 	Funcs.particles(Vector2(2.5,2.5), global_position, Color.MEDIUM_PURPLE)
 	
 	if not illusion_instance.is_node_ready(): await illusion_instance.ready

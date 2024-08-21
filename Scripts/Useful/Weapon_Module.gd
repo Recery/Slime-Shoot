@@ -109,7 +109,7 @@ func draw_current_weapon():
 	else: draw_weapon = weapons[current_weapon].duplicate()
 	
 	for child in draw_weapon.get_children():
-		if child is PointLight2D: child.queue_free()
+		if child is PointLight2D or child.is_in_group("Visual_Effect"): child.queue_free()
 	draw_weapon.set_script(null)
 	add_child(draw_weapon)
 	draw_weapon.visible = true

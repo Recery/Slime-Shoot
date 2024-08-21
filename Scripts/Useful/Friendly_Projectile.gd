@@ -63,7 +63,7 @@ func _set_despawn():
 	die.emit()
 
 func _physics_process(delta):
-	if not stop_working && has_movement:
+	if not stop_working and has_movement:
 		global_position += direction * speed * delta
 	if add_extra_physics_process: _extra_physics_process()
 

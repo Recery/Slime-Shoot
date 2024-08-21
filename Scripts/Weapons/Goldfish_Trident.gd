@@ -29,7 +29,7 @@ func _on_shoot():
 func _extra_process():
 	if damage_area.monitoring:
 		player.forced_immunity = true
-		Funcs.dash_smoke(1, 1, player.global_position)
+		Funcs.smoke_effect(Vector2.ONE, player.global_position)
 
 func _on_goldfish_trident_damage_body_entered(body):
 	if not body.is_in_group("Enemies"): return

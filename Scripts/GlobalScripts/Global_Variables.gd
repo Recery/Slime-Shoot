@@ -3,7 +3,7 @@ extends Node
 signal change_main_scene(scene)
 
 var main_scene : Node
-var last_score
+var current_score : int # El puntaje no se reinicia a cero hasta que se entre nuevamente a un mapa desde el menu
 var total_points
 var player : Player
 
@@ -46,6 +46,6 @@ func get_main_scene(scene : Node):
 	
 	if not main_scene.is_node_ready(): await main_scene.ready
 	for child in Funcs.get_all_children(main_scene):
-		if child.name == "Shadow" && not settings_data.shadows:
+		if child.name == "Shadow" and not settings_data.shadows:
 			if not child.get_parent().is_in_group("Player_Slime"):
 				child.queue_free()

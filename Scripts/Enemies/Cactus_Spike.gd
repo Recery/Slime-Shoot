@@ -9,4 +9,4 @@ func _on_area_entered(area):
 
 func _on_die():
 	if dead_by_player:
-		Funcs.dash_smoke(1,1,global_position,0.75,Vars.main_scene.get_node_or_null("Bullets"),true)
+		Funcs.strike_effect(Vector2(1,1),global_position)

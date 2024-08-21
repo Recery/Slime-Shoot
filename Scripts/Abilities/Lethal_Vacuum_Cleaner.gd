@@ -63,16 +63,16 @@ func _on_enemy_detecter_body_entered(body) -> void:
 			if enemy != null:
 				enemy.reset_custom_target_position()
 				if enemy.has_node("Vacuum_Buff"):
-					enemy.get_node("Vacuum_Buff").remove_debuff()
+					enemy.get_node("Vacuum_Buff").free_buff()
 		
 		Funcs.regular_explosion(1.2, 1.2, global_position, Funcs.get_bullets_node(), 6, true)
 		queue_free()
 
-func get_vacuum_debuff(enemy : Enemy) -> Buff:
-	var vacuum_buff := Buff.new()
-	vacuum_buff.type = "Buff"
-	vacuum_buff.stat_to_modify = "Speed"
-	vacuum_buff.weight_to_modify = min(12 / enemy.original_max_life, 3)
+func get_vacuum_debuff(enemy : Enemy) -> Buff_Speed_Enemy:
+	var vacuum_buff := Buff_Speed_Enemy.new()
+	if enemy.is_in_group("Big_Enemies"):
+		vacuum_buff.weight_to_modify = 1.5
+	else: vacuum_buff.weight_to_modify = 2.5
 	vacuum_buff.duration = 0
 	vacuum_buff.name = "Vacuum_Buff"
 	return vacuum_buff

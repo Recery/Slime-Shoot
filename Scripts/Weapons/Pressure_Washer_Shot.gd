@@ -25,17 +25,8 @@ func _on_body_exited(body) -> void:
 func _on_effects_timer_timeout() -> void:
 	if not monitoring: return
 	
-	# Emitir esta señal para que otras habilidades
-	# reinicien el proyectil cuando sea necesario
-	reset_persistent.emit(self)
-	
-	# Este proyectil siempre es el mismo, se reutiliza
-	# Por ese motivo es que se llama manualmente a la señal node_added
-	get_tree().node_added.emit(self)
-	
-	# IMPORTANTE emitir primero reset_persistent y despues node_added
-	# para que primero se reinicie y despues lo modifique ya reiniciado
 	for enemy in enemies_inside:
+		if enemy == null: continue
 		Funcs.deal_damage(enemy, damage)
 		if not enemy.is_in_group("Big_Enemies") and not enemy.is_in_group("Boss"):
 			enemy.add_child(Knockback.new(400))

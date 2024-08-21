@@ -19,7 +19,6 @@ func _physics_process(_delta):
 			queue_free()
 	else:
 		sprite.flip_h = global_position.x < player.global_position.x
-		reset_custom_target_position(false)
 	
 	if velocity == Vector2.ZERO:
 		sprite.stop()
@@ -37,7 +36,8 @@ func _exit_tree():
 
 # Despues de unos segundos de aparecer, la media busca fusionarse con otra
 func merge():
-	if merged: return # Si esta media esta siendo buscada por otra para fusionarse, no hacer nada
+	# Si esta media esta siendo buscada por otra para fusionarse, o ya esta buscando una media para fusionarse, no hacer nada
+	if merged or sock_to_merge != null: return
 	
 	var exceptions := [self] # Excepciones al escanear enemigos
 	for i in 5:
@@ -54,7 +54,12 @@ func merge():
 	
 	sock_to_merge.moving = false
 	set_custom_target_position(sock_to_merge.global_position)
+	# Si la media a fusionar ya no existe, reiniciar la posicion destino
+	sock_to_merge.tree_exited.connect(_on_sock_to_merge_exited)
 	update_merged_pos_timer.start()
+
+func _on_sock_to_merge_exited():
+	reset_custom_target_position(false)
 
 @onready var update_merged_pos_timer := get_node("Update_Merged_Pos")
 func set_merged_sock_pos() -> void:

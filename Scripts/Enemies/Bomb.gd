@@ -43,6 +43,6 @@ func _on_die():
 	Funcs.regular_explosion(3.2, 3.2, global_position, Funcs.get_bullets_node(), 15, true)
 	damage *= 2
 	get_node("CollisionShape2D").scale = Vector2(3.75, 3.75)
-	player.add_score.emit(int((max_life - life)*0.2))
+	player.add_score.emit(int((max_life - life)*0.2), self)
 	await get_tree().create_timer(0.1).timeout
 	queue_free()

@@ -15,6 +15,7 @@ func _ready():
 	
 	enemy.force_movement(true)
 	enemy.move_and_slide()
+	
 	queue_free()
 
 func _exit_tree():

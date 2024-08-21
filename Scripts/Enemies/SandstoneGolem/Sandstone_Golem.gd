@@ -55,6 +55,7 @@ func summon_stoddler():
 	stoddler_instance.base_damage += base_damage - original_damage
 	stoddler_instance.base_speed += base_speed - original_speed
 	stoddler_instance.base_max_life += base_max_life - original_max_life
+	if is_in_group("Dungeon_Enemy"): stoddler_instance.add_to_group("Dungeon_Enemy")
 	
 	if Funcs.add_to_enemies(stoddler_instance):
 		stoddler_instance.global_position = spawn_pos.global_position

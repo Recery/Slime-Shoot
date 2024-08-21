@@ -58,6 +58,7 @@ func _init() -> void:
 
 func _when_ready() -> void:
 	waiting_player = wait_player_mode
+	if waiting_player: add_to_group("Dungeon_Enemy")
 	
 	init_speed_values()
 	init_damage_values()
@@ -103,7 +104,7 @@ func _when_die() -> void:
 	## En algunos casos, como la bomba, los enemigos pueden morir aún teniendo vida
 	## En esos casos unicamente se añade puntaje si la vida es menor o igual a cero
 	if life <= 0:
-		player.add_score.emit(score_to_add)
+		player.add_score.emit(score_to_add, self)
 		
 	queue_free()
 

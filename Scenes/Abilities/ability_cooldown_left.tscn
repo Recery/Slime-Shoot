@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://h8fheegdkoox"]
+
+[ext_resource type="LabelSettings" uid="uid://2aoojhlcfbm8" path="res://Resources/Setted_Resources/ability_cooldown_text.tres" id="1_ckrn8"]
+
+[node name="Cooldown_Left" type="Label"]
+visible = false
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 11.0
+offset_bottom = 3.0
+text = "100"
+label_settings = ExtResource("1_ckrn8")
+horizontal_alignment = 1
+vertical_alignment = 1

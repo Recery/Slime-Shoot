@@ -12,7 +12,7 @@ func _on_create_wave_timeout():
 		var pos := global_position
 		pos.y += 2
 		pos.x += (i - 2) * 6
-		Funcs.dash_smoke(1.2, 1.2, pos)
+		Funcs.smoke_effect(Vector2(1.2,1.2), pos)
 	
 	await Funcs.fade_effect(sprite)
 	sprite.queue_free()

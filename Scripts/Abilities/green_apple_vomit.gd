@@ -30,13 +30,11 @@ func _on_effects_timer_timeout():
 		if not enemy.has_node("Green_Apple_Debuff"):
 			enemy.add_child(get_damage_debuff())
 
-func get_damage_debuff() -> Buff:
-	var damage_debuff := Buff.new()
+func get_damage_debuff() -> Buff_Damage_Enemy:
+	var damage_debuff := Buff_Damage_Enemy.new()
 	damage_debuff.duration = 8
-	damage_debuff.weight_to_modify = 2
-	damage_debuff.enemy_color = Color.YELLOW_GREEN
-	damage_debuff.type = "Debuff"
-	damage_debuff.stat_to_modify = "Damage"
+	damage_debuff.weight_to_modify = 0.5
+	damage_debuff.color = Color.YELLOW_GREEN
 	damage_debuff.name = "Green_Apple_Debuff"
 	return damage_debuff
 

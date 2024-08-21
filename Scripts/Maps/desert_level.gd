@@ -22,8 +22,8 @@ func _ready() -> void:
 	catacombs_progress_bar.set_current_value(0)
 
 ## Spawneo de ladder para las catacumbas
-func _on_score_added_catacombs(amount) -> void:
-	if player.score + amount >= 900: # Si tiene 900 puntos o mas, invocar escaleras a las catacumbas
+func _on_score_added_catacombs(amount, _enemy) -> void:
+	if Vars.current_score + amount >= 900: # Si tiene 900 puntos o mas, invocar escaleras a las catacumbas
 		player.add_score.disconnect(_on_score_added_catacombs)
 		has_progress_bar = false
 		if catacombs_progress_bar != null: catacombs_progress_bar.queue_free()
@@ -34,7 +34,7 @@ func _on_score_added_catacombs(amount) -> void:
 func spawn_ladder() -> void:
 	var ladder_instance : Activable
 	ladder_instance = load("res://Scenes/Level_Elements/ladder.tscn").instantiate()
-	ladder_instance.map_to_enter = load("res://Scenes/Maps/catacombs.tscn")
+	ladder_instance.map_to_enter = "res://Scenes/Maps/catacombs.tscn"
 	ladder_instance.up = false
 	ladder_instance.activated.connect(_on_ladder_used)
 	ladder_instance.global_position = player.global_position
@@ -45,8 +45,8 @@ func _on_ladder_used(_ladder : Activable) -> void:
 
 ## Inicio de las tormentas de arena
 var sandstorm_timer : Timer
-func _on_score_added_sandstorm(amount) -> void:
-	if player.score + amount >= 900:
+func _on_score_added_sandstorm(amount, _enemy) -> void:
+	if Vars.current_score + amount >= 900:
 		player.add_score.disconnect(_on_score_added_sandstorm)
 		sandstorm_timer = Timer.new()
 		sandstorm_timer.wait_time = 5

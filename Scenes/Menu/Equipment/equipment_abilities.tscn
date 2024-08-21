@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://b6sxdtpty5qkn"]
+[gd_scene load_steps=50 format=3 uid="uid://b6sxdtpty5qkn"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_5ls3g"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="2_1sss3"]
@@ -42,6 +42,8 @@
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="35_m4rds"]
 [ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="37_sv7lf"]
 [ext_resource type="PackedScene" uid="uid://bhgh4u2fh214i" path="res://Scenes/Abilities/Green_Apple_Vomit_Ability.tscn" id="38_mm0ro"]
+[ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="39_lw28w"]
+[ext_resource type="PackedScene" uid="uid://cudyr83n3jsr3" path="res://Scenes/Abilities/soul_collector_ability.tscn" id="40_ocf3w"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="41_rvsp1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
@@ -2062,6 +2064,171 @@ offset_top = -4.0
 offset_right = -2.0
 offset_bottom = 6.0
 text = "14
+"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Soul_Collector" type="TextureButton" parent="Rows/Row2"]
+layout_mode = 2
+texture_normal = ExtResource("1_5ls3g")
+texture_pressed = ExtResource("2_uu6gs")
+texture_hover = ExtResource("3_4ifih")
+texture_disabled = ExtResource("2_1sss3")
+script = ExtResource("5_g6k8v")
+type_of_object = 2
+
+[node name="Ability" type="Sprite2D" parent="Rows/Row2/Soul_Collector"]
+position = Vector2(14, 13)
+texture = ExtResource("39_lw28w")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Soul_Collector"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+ability_to_equip = ExtResource("40_ocf3w")
+
+[node name="1" type="Label" parent="Rows/Row2/Soul_Collector/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Soul_Collector"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 2
+ability_to_equip = ExtResource("40_ocf3w")
+
+[node name="2" type="Label" parent="Rows/Row2/Soul_Collector/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Soul_Collector"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("4_6slvp")
+texture_pressed = ExtResource("5_i7x2o")
+texture_hover = ExtResource("6_4ukln")
+script = ExtResource("7_e20du")
+slot = 3
+ability_to_equip = ExtResource("40_ocf3w")
+
+[node name="3" type="Label" parent="Rows/Row2/Soul_Collector/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Ability_Description" type="Control" parent="Rows/Row2/Soul_Collector"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -31.0
+offset_right = -100.0
+offset_bottom = 9.0
+
+[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("39_lw28w")
+
+[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("11_jc1er")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("12_jk483")
+
+[node name="Description" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+text = "The soul collector ability can be useful. After activating it, for a short period of time, for each enemy you defeat you collect their soul and PERMANENTLY (for this run) get +1 max life point."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 7
+
+[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+position = Vector2(141, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_0al25")
+
+[node name="Use" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description/Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -28.0
+offset_top = -4.0
+offset_right = -7.0
+offset_bottom = 6.0
+text = "120"
+label_settings = SubResource("LabelSettings_i6m7b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
+position = Vector2(139, -4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_wfp74")
+
+[node name="Cooldown" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description/Cooldown_Show"]
+modulate = Color(1, 1, 1, 0.698039)
+offset_left = -26.0
+offset_top = -4.0
+offset_right = -2.0
+offset_bottom = 6.0
+text = "55
 "
 label_settings = SubResource("LabelSettings_i6m7b")
 horizontal_alignment = 1

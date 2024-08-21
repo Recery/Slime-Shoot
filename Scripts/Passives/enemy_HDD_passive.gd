@@ -14,7 +14,7 @@ func _ready():
 	player.add_score.connect(store_energy)
 	stored_advice.visible = true
 
-func store_energy(score_received):
+func store_energy(score_received, _enemy):
 	# La energia del disco no debe superar la energia maxima
 	if energy_stored + score_received > max_energy: return
 	energy_stored += score_received

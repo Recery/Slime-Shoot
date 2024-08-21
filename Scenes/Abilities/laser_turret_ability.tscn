@@ -1,22 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cewbdmkelepyc"]
+[gd_scene load_steps=4 format=3 uid="uid://cewbdmkelepyc"]
 
 [ext_resource type="Script" path="res://Scripts/Abilities/laser_turret_ability.gd" id="1_et35c"]
 [ext_resource type="Texture2D" uid="uid://dm3qoo4ay3xtb" path="res://Sprites/Abilities/LaserTurretAbility.png" id="2_m64tr"]
-[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_a73st"]
-[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="4_xev00"]
 [ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="5_ytlwq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_cjira"]
-font = ExtResource("3_a73st")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
-
-[sub_resource type="LabelSettings" id="LabelSettings_s5yo5"]
-font = ExtResource("3_a73st")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
 
 [node name="Laser_Turret_Ability" type="Node2D"]
 script = ExtResource("1_et35c")
@@ -26,36 +12,6 @@ energy_recover_time = 2.5
 
 [node name="Ability_Frame" type="Sprite2D" parent="."]
 texture = ExtResource("2_m64tr")
-
-[node name="Cooldown_Left" type="Label" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -10.0
-offset_top = -4.0
-offset_right = 11.0
-offset_bottom = 3.0
-text = "100"
-label_settings = SubResource("LabelSettings_cjira")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Energy_Use" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_xev00")
-
-[node name="Use" type="Label" parent="Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "140
-"
-label_settings = SubResource("LabelSettings_s5yo5")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Use_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_ytlwq")

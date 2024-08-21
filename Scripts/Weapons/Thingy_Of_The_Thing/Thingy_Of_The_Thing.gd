@@ -56,5 +56,5 @@ func switch_sprite():
 			hframes = 1
 
 func _on_recharge_visual_timeout():
-	Funcs.dash_smoke(1,1, global_position, 1, self)
+	Funcs.smoke_effect(Vector2.ONE, global_position, 1, self)
 	modulate.a = 1

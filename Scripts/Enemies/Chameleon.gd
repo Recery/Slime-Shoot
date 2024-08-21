@@ -4,11 +4,10 @@ extends Enemy
 @onready var sprite := get_node("AnimatedSprite2D")
 
 var animation : String
-var previous_life
 
 func _ready():
 	set_anim_color()
-	previous_life = max_life
+	life_module.take_damage.connect(_on_deal_damage)
 
 func set_anim_color() -> void:
 	match randi_range(0,2):
@@ -30,12 +29,12 @@ func _physics_process(_delta):
 	else:
 		chase_player()
 	
-	if previous_life != life:
+	sprite.flip_h = player.global_position.x < global_position.x
+
+# Cuando recibe daño, perseguir al jugador
+func _on_deal_damage(_damage):
 		force_pathfinding_update()
 		chase_timer.start()
-		previous_life = life
-	
-	sprite.flip_h = player.global_position.x < global_position.x
 
 func chase_player():
 	if not is_in_group("Full_Freezed"): moving = true

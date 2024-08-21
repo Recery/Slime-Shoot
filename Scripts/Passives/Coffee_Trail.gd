@@ -1,6 +1,5 @@
 extends Friendly_Projectile
 
-var coffee_debuff = preload("res://Scenes/Passives/coffee_debuff.tscn")
 @onready var sprite = get_node("Sprite2D")
 
 func _ready():
@@ -15,10 +14,23 @@ func _on_body_entered(body):
 	if not body.is_in_group("Enemies") or stop_working: return
 	
 	if not body.is_in_group("Big_Enemies") and not body.is_in_group("Boss"):
-		if not Funcs.has_node_in_group(body, "coffee_debuff"):
+		if not body.has_node("Coffee_Debuff"):
 			stop_working = true
-			body.add_child(coffee_debuff.instantiate())
+			var buff := get_speed_buff()
+			body.add_child(buff)
+			buff.tree_exited.connect(func():
+				if body != null:
+					body.life = 0
+					body.die.emit())
 			die.emit()
+
+func get_speed_buff() -> Buff_Speed_Enemy:
+	var buff := Buff_Speed_Enemy.new()
+	buff.weight_to_modify = 1.8
+	buff.duration = 4
+	buff.color = Color(0.6, 0.455, 0.361)
+	buff.name = "Coffee_Debuff"
+	return buff
 
 func _on_die():
 	Funcs.fade_effect(sprite)

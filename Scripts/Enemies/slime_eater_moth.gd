@@ -32,6 +32,7 @@ func _on_laying_timeout():
 	var egg_instance : Node2D = load("res://Scenes/Enemies/moth_egg.tscn").instantiate()
 	Vars.main_scene.get_node("Enemies").add_child(egg_instance)
 	egg_instance.global_position = global_position
+	if is_in_group("Dungeon_Enemy"): egg_instance.add_to_group("Dungeon_Enemy")
 	
 	moving = true
 	
