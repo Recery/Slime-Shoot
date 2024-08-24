@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cf2dae7nvk408"
-path="res://.godot/imported/KillerGuppy.png-e8f0c853349740704827aca4af8a5e10.ctex"
+uid="uid://bxf3yqhjd5fqa"
+path="res://.godot/imported/HipnoticTrap.png-9aceb28e60479e04c77c968d30aa16b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Passives/KillerGuppy.png"
-dest_files=["res://.godot/imported/KillerGuppy.png-e8f0c853349740704827aca4af8a5e10.ctex"]
+source_file="res://Sprites/Enemies/Bootstrapper/HipnoticTrap.png"
+dest_files=["res://.godot/imported/HipnoticTrap.png-9aceb28e60479e04c77c968d30aa16b2.ctex"]
 
 [params]
 

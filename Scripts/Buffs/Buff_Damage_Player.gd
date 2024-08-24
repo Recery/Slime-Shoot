@@ -29,16 +29,14 @@ func buff_application(buff):
 			if buff.affected_projs.has(proj): add_damage(proj)
 
 func add_damage(proj):
-	if proj == null: return
-	if not proj.is_in_group("Friendly_Damage"): return
-	if "damage" not in proj or "original_damage" not in proj: return
-	if proj.original_damage == 0: return
+	if not Funcs.is_safe_damage(proj): return
 	
 	# Esperar a ready para ajustar correctamente el daño
 	if not proj.is_node_ready(): await proj.ready
 	
-	proj.damage += get_damage(proj)
-	if not affected_projs.has(proj): affected_projs.append(proj)
+	if not affected_projs.has(proj):
+		proj.damage += get_damage(proj)
+		affected_projs.append(proj)
 
 func get_damage(proj) -> float:
 	var total_extra_damage := amount_to_add

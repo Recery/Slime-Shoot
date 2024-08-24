@@ -15,7 +15,7 @@ func _on_shoot():
 		damage_area.rotation_degrees = 0
 	
 	var dir = (player.shoot_pos - player.global_position).normalized()
-	player.velocity = dir * (player.speed * 1.1)
+	player.velocity = dir * (abs(player.speed) * 1.1)
 	if Funcs.get_current_cooldown(self) <= 0.8:
 		await get_tree().create_timer(Funcs.get_current_cooldown(self) * 0.9).timeout
 	else: await get_tree().create_timer(0.8).timeout

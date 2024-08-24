@@ -20,7 +20,7 @@ func _physics_process(_delta):
 
 var move_to_enemy = true
 func _move_to_enemy():
-	speed = speed_weight * player.speed
+	speed = speed_weight * abs(player.speed)
 	if global_position.distance_to(player.global_position) > 200:
 		global_position = player.global_position 
 		targeted_enemy = null

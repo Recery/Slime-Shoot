@@ -18,7 +18,7 @@ script = ExtResource("3_uigo6")
 original_damage = 2.0
 despawn_time = 0.0
 has_movement = false
-persistent = true
+collide_with_tiles = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Goldfish_Trident_Damage"]
 polygon = PackedVector2Array(0, -9, -11, 2, -2, 11, 9, 0)

@@ -16,6 +16,7 @@ var path_pets_unlocked := "user://Pets_Unlocked.save"
 var path_points := "user://Points.save"
 var path_settings := "user://SettingData.tres"
 var path_cinematics := "user://Cinematics.save"
+var path_almanac := "user://Almanac.save"
 
 func _init():
 	load_equipped_weapons()
@@ -33,6 +34,7 @@ func _init():
 	load_total_points()
 	load_settings()
 	load_played_cinematics()
+	load_almanac()
 
 # Armas equipadas
 func load_equipped_weapons():
@@ -285,6 +287,22 @@ func save_played_cinematics():
 	for id in Vars.cinematics_played:
 		file.store_var(id)
 # Fin cinemáticas
+
+# Almanaque
+func load_almanac():
+	if not FileAccess.file_exists(path_almanac): return
+	
+	var file = FileAccess.open(path_almanac, FileAccess.READ)
+	while file.get_position() < file.get_length():
+		var enemy_path = file.get_var()
+		if enemy_path != null:
+			Vars.almanac_unlocked.append(enemy_path)
+
+func save_almanac():
+	var file = FileAccess.open(path_almanac, FileAccess.WRITE)
+	for i in range(Vars.almanac_unlocked.size()):
+		file.store_var(Vars.almanac_unlocked[i])
+# Fin almanaque
 
 # Para guardar el estado de un mapa
 func save_map_state(map:Node):

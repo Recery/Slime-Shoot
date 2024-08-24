@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyt5sbavxaib"]
+
+[ext_resource type="Texture2D" uid="uid://ot2odl6m7f3x" path="res://Sprites/Passives/Spirit.png" id="1_2sxqk"]
+[ext_resource type="Script" path="res://Scripts/Passives/traitor_spirit.gd" id="1_y5rwo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m62no"]
+radius = 3.0
+
+[node name="Traitor_Spirit_Collision" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+script = ExtResource("1_y5rwo")
+speed = 120
+original_damage = 2.0
+despawn_time = 15.0
+collide_with_tiles = false
+generated_by = 2
+add_extra_physics_process = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture = ExtResource("1_2sxqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m62no")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="die" from="." to="." method="_on_die"]

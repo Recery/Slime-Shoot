@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://coclfnr3b0qaw"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/traitor_spirit_passive.gd" id="1_4wgoa"]
+[ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="2_fn0ut"]
+
+[node name="Traitor_Spirit_Passive" type="Node2D"]
+script = ExtResource("1_4wgoa")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_fn0ut")

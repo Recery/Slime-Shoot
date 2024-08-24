@@ -40,7 +40,6 @@ func _init():
 
 func _on_ready():
 	player = Vars.player
-	speed = min(speed_weight * abs(player.speed), abs(player.speed) * 0.65)
 	create_children()
 
 func create_children():

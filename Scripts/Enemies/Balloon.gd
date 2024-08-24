@@ -26,4 +26,4 @@ func _physics_process(_delta) -> void:
 
 func _on_die():
 	Funcs.regular_explosion(0.8, 0.8, global_position, Vars.main_scene, 0, false)
-	Funcs.sound_play("res://Sounds/Balloon_Pop.mp3", 5)
+	Funcs.sound_play_2d("res://Sounds/Balloon_Pop.mp3", global_position, 9, randf_range(0.85,1.1))

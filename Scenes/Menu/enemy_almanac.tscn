@@ -1,10 +1,11 @@
-[gd_scene load_steps=39 format=3 uid="uid://dbqer4780q8t6"]
+[gd_scene load_steps=58 format=3 uid="uid://dbqer4780q8t6"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_3c7uw"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_41nn2"]
 [ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="3_yor4p"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_4vtwx"]
 [ext_resource type="Texture2D" uid="uid://bsjsa55lsjlwl" path="res://Sprites/Enemies/SmallEvilBall.png" id="5_3yedt"]
+[ext_resource type="PackedScene" uid="uid://ckkwfo2au50gy" path="res://Scenes/Enemies/evil_ball.tscn" id="6_camqs"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="7_m531n"]
 [ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="8_1wb5a"]
 [ext_resource type="Texture2D" uid="uid://dxl4ykknrp0au" path="res://Sprites/Menu/NameFrame.png" id="8_nfrck"]
@@ -15,25 +16,43 @@
 [ext_resource type="LabelSettings" uid="uid://dfkffwrdyxuu8" path="res://Resources/Setted_Resources/regular_text.tres" id="12_mur4l"]
 [ext_resource type="Texture2D" uid="uid://b3rag0vuxyn2q" path="res://Sprites/Enemies/Balloon.png" id="14_74p2r"]
 [ext_resource type="Texture2D" uid="uid://bcn06ifm80see" path="res://Sprites/Enemies/EvilBall.png" id="15_iaxu6"]
+[ext_resource type="PackedScene" uid="uid://bvre6bsj3pgvu" path="res://Scenes/Enemies/balloon.tscn" id="15_s34lb"]
 [ext_resource type="Texture2D" uid="uid://cq50ji1owpmci" path="res://Sprites/Enemies/Bomb.png" id="16_mfjkb"]
+[ext_resource type="PackedScene" uid="uid://dkfs4hqdocdeg" path="res://Scenes/Enemies/big_evil_ball.tscn" id="17_garfr"]
 [ext_resource type="Texture2D" uid="uid://o0gosrjd202o" path="res://Sprites/Enemies/Cannon/Cannon_Cannon.png" id="17_j3lrg"]
 [ext_resource type="Texture2D" uid="uid://cktyjq0axsf7s" path="res://Sprites/Enemies/Cannon/Cannon_Wheels.png" id="17_ti3g1"]
 [ext_resource type="Texture2D" uid="uid://3dmqivjrn2i1" path="res://Sprites/Enemies/ClownBombBoss.png" id="18_cl3qb"]
 [ext_resource type="Texture2D" uid="uid://cqoanbqn3rq1f" path="res://Sprites/Enemies/Cannon/Cannon_Centerl.png" id="18_w8kpx"]
+[ext_resource type="PackedScene" uid="uid://bdh478kowhcgf" path="res://Scenes/Enemies/bomb.tscn" id="19_jo6bv"]
 [ext_resource type="Texture2D" uid="uid://cpvymkcx3yxq7" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterMoth.png" id="19_kh4c6"]
 [ext_resource type="Texture2D" uid="uid://bo0gktl1nds1d" path="res://Sprites/Enemies/SlimeEaterMoth/SlimeEaterLarva.png" id="20_j2gbf"]
 [ext_resource type="Texture2D" uid="uid://dlb53rkge3v4e" path="res://Sprites/Enemies/Chameleon.png" id="21_347ep"]
+[ext_resource type="PackedScene" uid="uid://smhai5cdfmej" path="res://Scenes/Enemies/Cannon.tscn" id="21_d2h7m"]
 [ext_resource type="Texture2D" uid="uid://cguvtr01i3s5" path="res://Sprites/Enemies/Scorpion.png" id="22_0ey1m"]
 [ext_resource type="Texture2D" uid="uid://ky1gd24xi3kf" path="res://Sprites/Enemies/RollingCactus.png" id="23_ujjyb"]
 [ext_resource type="Texture2D" uid="uid://dslidq1kjojo2" path="res://Sprites/Enemies/SandstoneGolem/SandstoneGolem.png" id="24_i5h3e"]
+[ext_resource type="PackedScene" uid="uid://c83mo5hvldter" path="res://Scenes/Enemies/clown_bomb.tscn" id="25_ebxpn"]
 [ext_resource type="Texture2D" uid="uid://dklp5olq6wawb" path="res://Sprites/Enemies/SandstoneGolem/Stoddler.png" id="25_hvvhv"]
+[ext_resource type="PackedScene" uid="uid://c33q7ot2vsf0w" path="res://Scenes/Enemies/slime_eater_moth.tscn" id="27_xuahp"]
 [ext_resource type="Texture2D" uid="uid://dmqpp2ut1vi7" path="res://Sprites/Enemies/DesertMother.png" id="28_nqqqg"]
 [ext_resource type="Texture2D" uid="uid://qxu51fwtok0y" path="res://Sprites/Enemies/MummifiedSlime/MummifiedSlime.png" id="29_p5pa8"]
+[ext_resource type="PackedScene" uid="uid://djvly0tpgg8xn" path="res://Scenes/Enemies/slime_eater_larva.tscn" id="29_tos4p"]
 [ext_resource type="Texture2D" uid="uid://btxl5xbbrj7g" path="res://Sprites/Enemies/Sock.png" id="30_rbann"]
+[ext_resource type="PackedScene" uid="uid://ejxv6880jcol" path="res://Scenes/Enemies/chameleon.tscn" id="31_4m12f"]
 [ext_resource type="Texture2D" uid="uid://e2uye471smfc" path="res://Sprites/Enemies/FrozenBomber/FrozenBomberWheel.png" id="31_b7fmd"]
 [ext_resource type="Texture2D" uid="uid://brjkyge4jcbfs" path="res://Sprites/Enemies/FrozenBomber/FrozenBomber.png" id="32_tamh3"]
+[ext_resource type="PackedScene" uid="uid://csfmo746ivmxj" path="res://Scenes/Enemies/scorpion.tscn" id="33_2uku2"]
 [ext_resource type="Texture2D" uid="uid://b38o2emtbf356" path="res://Sprites/Enemies/FrozenBomber/FrozenBomberCannon.png" id="33_054l4"]
 [ext_resource type="Texture2D" uid="uid://dae0bfspjhe1h" path="res://Sprites/Enemies/Boolean.png" id="34_gahen"]
+[ext_resource type="PackedScene" uid="uid://dlfamecjad3hu" path="res://Scenes/Enemies/rolling_cactus.tscn" id="35_jno4t"]
+[ext_resource type="PackedScene" uid="uid://cfef272qpmr5e" path="res://Scenes/Enemies/SandstoneGolem/sandstone_golem.tscn" id="37_wbccs"]
+[ext_resource type="PackedScene" uid="uid://ufx63ptfprh1" path="res://Scenes/Enemies/SandstoneGolem/stoddler.tscn" id="39_hrrsq"]
+[ext_resource type="PackedScene" uid="uid://7veidvpb05ld" path="res://Scenes/Enemies/DesertMother/desert_mother.tscn" id="41_2bk11"]
+[ext_resource type="PackedScene" uid="uid://2842omy5l8bq" path="res://Scenes/Enemies/MummifiedSlime/mummified_slime.tscn" id="43_utdfr"]
+[ext_resource type="PackedScene" uid="uid://c0k2ycrixjlnp" path="res://Scenes/Enemies/sock.tscn" id="45_7adpm"]
+[ext_resource type="PackedScene" uid="uid://cfmpxigrj5blm" path="res://Scenes/Enemies/frozen_bomber.tscn" id="47_57cjl"]
+[ext_resource type="PackedScene" uid="uid://cpjm80d2j0nms" path="res://Scenes/Enemies/boolean.tscn" id="51_ogh12"]
+[ext_resource type="Texture2D" uid="uid://b8r5va2affgyr" path="res://Sprites/Enemies/Bootstrapper/Bootstrapper.png" id="53_72g3h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ugike"]
 font = ExtResource("9_xj05r")
@@ -91,6 +110,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("6_camqs")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Evil_Ball"]
 position = Vector2(14, 14)
@@ -236,6 +256,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("15_s34lb")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Balloon"]
 position = Vector2(14, 14)
@@ -368,6 +389,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("17_garfr")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Big_Evil_Ball"]
 position = Vector2(14, 14)
@@ -513,6 +535,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("19_jo6bv")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Bomb"]
 position = Vector2(14, 14)
@@ -648,6 +671,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("21_d2h7m")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Cannon"]
 position = Vector2(9, 13)
@@ -817,6 +841,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("25_ebxpn")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Clown_Bomb"]
 position = Vector2(14, 14)
@@ -954,6 +979,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("27_xuahp")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Moth"]
 position = Vector2(14, 14)
@@ -1087,6 +1113,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("29_tos4p")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row1/Slime_Eater_Larva"]
 position = Vector2(14, 14)
@@ -1225,6 +1252,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("31_4m12f")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Chameleon"]
 position = Vector2(14, 14)
@@ -1359,6 +1387,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("33_2uku2")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Scorpion"]
 position = Vector2(14, 14)
@@ -1494,6 +1523,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("35_jno4t")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Rolling_Cactus"]
 position = Vector2(14, 14)
@@ -1624,6 +1654,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("37_wbccs")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sandstone_Golem"]
 position = Vector2(14, 14)
@@ -1758,6 +1789,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("39_hrrsq")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Stoddler"]
 position = Vector2(14, 14)
@@ -1890,6 +1922,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("41_2bk11")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Desert_Mother"]
 position = Vector2(14, 14)
@@ -2026,6 +2059,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("43_utdfr")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Mummified_Slime"]
 position = Vector2(14, 14)
@@ -2144,7 +2178,7 @@ offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
-text = "This creature once has been a powerful goldfish god, but got teleported to Slime Shoot world as a Slime corrupted by desert forces! Please defeat her to purify her!"
+text = "This creature was summoned by product of an unfinished ritual. She was supposed to be a perfect goddess... But she turned out to be a failure! However, she is still very powerful... but she is a corrupt slime and she is against you! Defeat and purify her!"
 label_settings = SubResource("LabelSettings_cj3s3")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -2157,6 +2191,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("45_7adpm")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row2/Sock"]
 position = Vector2(14, 14)
@@ -2295,6 +2330,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("47_57cjl")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Frozen_Bomber"]
 position = Vector2(12, 14)
@@ -2449,6 +2485,7 @@ texture_pressed = ExtResource("2_41nn2")
 texture_hover = ExtResource("3_yor4p")
 texture_disabled = ExtResource("4_4vtwx")
 script = ExtResource("12_fyxue")
+enemy = ExtResource("51_ogh12")
 
 [node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Boolean"]
 position = Vector2(14, 14)
@@ -2576,6 +2613,139 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
+[node name="Bootstrapper" type="TextureButton" parent="Rows/Row3"]
+layout_mode = 2
+texture_normal = ExtResource("1_3c7uw")
+texture_pressed = ExtResource("2_41nn2")
+texture_hover = ExtResource("3_yor4p")
+texture_disabled = ExtResource("4_4vtwx")
+script = ExtResource("12_fyxue")
+enemy = ExtResource("51_ogh12")
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Bootstrapper"]
+position = Vector2(14, 14)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row3/Bootstrapper/Enemy_Sprite"]
+texture = ExtResource("53_72g3h")
+hframes = 6
+
+[node name="Enemy_Description" type="Control" parent="Rows/Row3/Bootstrapper"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -70.0
+offset_top = -44.0
+offset_right = -30.0
+offset_bottom = -4.0
+
+[node name="Enemy_Sprite" type="Node2D" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+z_index = 1
+position = Vector2(136, -9)
+
+[node name="Sprite" type="Sprite2D" parent="Rows/Row3/Bootstrapper/Enemy_Description/Enemy_Sprite"]
+texture = ExtResource("53_72g3h")
+hframes = 6
+
+[node name="Enemy_Frame" type="TextureRect" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 150.0
+offset_bottom = 5.0
+texture = ExtResource("7_m531n")
+stretch_mode = 3
+
+[node name="Damage" type="HBoxContainer" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_top = -23.0
+offset_right = 178.0
+offset_bottom = -13.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Bootstrapper/Enemy_Description/Damage"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "6
+"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Bootstrapper/Enemy_Description/Damage"]
+layout_mode = 2
+texture = ExtResource("10_7gr21")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+z_index = 1
+layout_mode = 0
+offset_left = 122.0
+offset_right = 178.0
+offset_bottom = 10.0
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Amount" type="Label" parent="Rows/Row3/Bootstrapper/Enemy_Description/Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "8"
+label_settings = SubResource("LabelSettings_ugike")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Rows/Row3/Bootstrapper/Enemy_Description/Life"]
+layout_mode = 2
+texture = ExtResource("11_r6ynt")
+stretch_mode = 3
+
+[node name="Name_Frame" type="TextureRect" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+texture = ExtResource("8_nfrck")
+stretch_mode = 3
+
+[node name="Name" type="Label" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 7.0
+offset_right = 186.0
+offset_bottom = 27.0
+text = "Bootstrapper"
+label_settings = ExtResource("12_mur4l")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Frame" type="TextureRect" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 29.0
+offset_right = 236.0
+offset_bottom = 99.0
+texture = ExtResource("8_1wb5a")
+
+[node name="Description" type="Label" parent="Rows/Row3/Bootstrapper/Enemy_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Bootstrapper can be an annoying enemy. From time to time, he is going to set up a variety of dangerous traps. He can also heal other enemies."
+label_settings = SubResource("LabelSettings_cj3s3")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
 [node name="Enemy_Almanac_Text" type="Label" parent="."]
 layout_mode = 0
 offset_left = -89.0
@@ -2635,3 +2805,4 @@ label_settings = SubResource("LabelSettings_o4dkv")
 [connection signal="pressed" from="Rows/Row2/Sock" to="Rows/Row2/Sock" method="_on_pressed"]
 [connection signal="pressed" from="Rows/Row3/Frozen_Bomber" to="Rows/Row3/Frozen_Bomber" method="_on_pressed"]
 [connection signal="pressed" from="Rows/Row3/Boolean" to="Rows/Row3/Boolean" method="_on_pressed"]
+[connection signal="pressed" from="Rows/Row3/Bootstrapper" to="Rows/Row3/Bootstrapper" method="_on_pressed"]

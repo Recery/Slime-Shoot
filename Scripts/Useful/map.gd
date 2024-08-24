@@ -68,7 +68,7 @@ func despawn_enemies():
 
 func add_speed_to_enemies():
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
-		if "speed" in enemy && "base_speed" in enemy:
-			if not enemy.is_in_group("Boss") && not enemy.wait_player_mode:
+		if "speed" in enemy and "base_speed" in enemy:
+			if not enemy.is_in_group("Boss") and not enemy.wait_player_mode:
 				enemy.base_speed += 2
 				enemy.speed += 2

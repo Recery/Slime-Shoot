@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	get_node("Score/Total_Score").text = str(Vars.current_score)
+	get_node("Score/Score/Total_Score").text = str(Vars.current_score)
 	Vars.total_points += Vars.current_score
 	Save_System.save_total_points()
 

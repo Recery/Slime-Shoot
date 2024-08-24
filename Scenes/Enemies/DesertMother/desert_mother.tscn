@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemies/DesertMother/desert_mother.gd" id="1_dl04x"]
 [ext_resource type="Texture2D" uid="uid://dmqpp2ut1vi7" path="res://Sprites/Enemies/DesertMother.png" id="2_8oplu"]
-[ext_resource type="AudioStream" uid="uid://c7atsk1525oyf" path="res://Sounds/BigBugOfTheSands.ogg" id="3_8xmup"]
+[ext_resource type="AudioStream" uid="uid://c107ltvkai5b0" path="res://Sounds/DesertNursery.ogg" id="3_ns3dq"]
 [ext_resource type="AudioStream" uid="uid://xonmsnadlakc" path="res://Sounds/DesertMotherFly.mp3" id="4_urke8"]
 
 [sub_resource type="Animation" id="Animation_lqeno"]
@@ -86,7 +86,7 @@ one_shot = true
 autostart = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_8xmup")
+stream = ExtResource("3_ns3dq")
 volume_db = 8.0
 autoplay = true
 bus = &"Music"

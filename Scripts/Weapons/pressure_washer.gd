@@ -39,7 +39,7 @@ func _physics_process(_delta) -> void:
 			sound_init_mode = false
 		show()
 	
-	if Input.is_action_pressed("shoot") && can_shoot:
+	if Input.is_action_pressed("shoot") and can_shoot:
 		if player.reduce_energy(energy_use, energy_recover_cooldown): shoot.emit()
 	
 	Funcs.weapon_rotation(self, hold_offset)

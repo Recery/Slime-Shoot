@@ -303,6 +303,19 @@ func add_to_bullets(node : Node) -> bool:
 		return true
 	else: return false
 
+func add_to_bullets_deferred(node : Node, pos : Vector2) -> bool:
+	if node == null or Vars.main_scene == null: return false
+	
+	if Vars.main_scene.has_node("Bullets"):
+		Vars.main_scene.get_node("Bullets").call_deferred("add_child", node)
+		if pos == null: return true
+		elif not node.is_inside_tree():
+			await node.tree_entered
+			node.global_position = pos
+			return true
+	
+	return false
+
 func get_bullets_node() -> Node:
 	if Vars.main_scene == null: return Node2D.new()
 	
@@ -330,6 +343,14 @@ func add_to_summons(node : Node) -> bool:
 func set_non_script(instance : Node):
 	instance.set_script(null)
 	return instance
+
+func is_safe_damage(proj : Node) -> bool:
+	if proj == null: return false
+	if not proj.is_in_group("Friendly_Damage"): return false
+	if "damage" not in proj or "original_damage" not in proj: return false
+	if proj.original_damage == 0: return false
+	
+	return true
 
 func has_node_in_group(node : Node, group : String) -> bool:
 	if node == null: return false

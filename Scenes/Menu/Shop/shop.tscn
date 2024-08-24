@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=153 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -119,8 +119,10 @@
 [ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="67_lhii2"]
 [ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="68_3enjf"]
 [ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="68_3wq0o"]
+[ext_resource type="PackedScene" uid="uid://dxpyupc3rydpw" path="res://Scenes/Pets/GreatGuppy.tscn" id="68_oef7s"]
 [ext_resource type="PackedScene" uid="uid://b1r5mv3opfofm" path="res://Scenes/Passives/critical_damage_passive.tscn" id="69_8aj8j"]
 [ext_resource type="PackedScene" uid="uid://b2i1l32mu6f6n" path="res://Scenes/Abilities/cheese_transmutation_ability.tscn" id="69_rbdai"]
+[ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="69_yssrl"]
 [ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="70_6lfp1"]
 [ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="70_ikb10"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="71_kowf4"]
@@ -145,6 +147,8 @@
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="102_q4yxp"]
 [ext_resource type="PackedScene" uid="uid://cudyr83n3jsr3" path="res://Scenes/Abilities/soul_collector_ability.tscn" id="122_d8jow"]
 [ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="123_wxccl"]
+[ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="146_67ux6"]
+[ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="147_74odq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5fu2"]
 font = ExtResource("3_6bn12")
@@ -570,6 +574,14 @@ type_of_object = 5
 object_to_buy = ExtResource("66_tn71e")
 sprite_to_display = ExtResource("67_kmi50")
 
+[node name="Great_Guppy" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1000
+type_of_object = 5
+object_to_buy = ExtResource("68_oef7s")
+sprite_to_display = ExtResource("69_yssrl")
+frames_display = 2
+
 [node name="Pets_Shop_Text" type="Label" parent="Pets"]
 layout_mode = 0
 offset_left = -89.0
@@ -950,7 +962,7 @@ unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("90_4aa0y")
 
-[node name="Enemy_SSD" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
+[node name="Enemy_HDD" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1350
 type_of_object = 3
@@ -958,6 +970,15 @@ object_to_buy = ExtResource("101_57fgs")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("102_q4yxp")
+
+[node name="Traitor_Spirit" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1500
+type_of_object = 3
+object_to_buy = ExtResource("146_67ux6")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("13_27h4q")
+sprite_to_display = ExtResource("147_74odq")
 
 [node name="Passives_Shop_Text" type="Label" parent="Passives"]
 layout_mode = 0

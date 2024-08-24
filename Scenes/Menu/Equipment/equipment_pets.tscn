@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://d4d0fselwe2cq"]
+[gd_scene load_steps=28 format=3 uid="uid://d4d0fselwe2cq"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_tekkh"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_fec7f"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="17_gb3lk"]
 [ext_resource type="PackedScene" uid="uid://d1dx8m514nydv" path="res://Scenes/Pets/Cat.tscn" id="17_v2nau"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="18_2tyiy"]
+[ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="18_v7qec"]
+[ext_resource type="PackedScene" uid="uid://dxpyupc3rydpw" path="res://Scenes/Pets/GreatGuppy.tscn" id="19_g6ire"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="19_wgt10"]
 [ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="20_fe3wp"]
 
@@ -293,6 +295,83 @@ offset_right = 236.0
 offset_bottom = 94.0
 text = "Cat! Meow meow nyah. MEOOWWWWWW!!!!!!! Purr...
 Cosmeowtic item, it has nyoh effect."
+label_settings = SubResource("LabelSettings_cdgr1")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Great_Guppy" type="TextureButton" parent="Page_1/Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_tekkh")
+texture_pressed = ExtResource("2_fec7f")
+texture_hover = ExtResource("3_abf4x")
+texture_disabled = ExtResource("4_7ifbt")
+script = ExtResource("5_kdkek")
+type_of_object = 5
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Great_Guppy"]
+position = Vector2(14, 14)
+texture = ExtResource("18_v7qec")
+hframes = 2
+
+[node name="Equip_Button" type="TextureButton" parent="Page_1/Row1/Great_Guppy"]
+self_modulate = Color(0.776471, 0.760784, 0, 1)
+layout_mode = 0
+offset_left = -4.0
+offset_top = 21.0
+offset_right = 101.0
+offset_bottom = 49.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_relit")
+texture_pressed = ExtResource("8_17vpv")
+texture_hover = ExtResource("9_yx2ss")
+script = ExtResource("10_enm2f")
+pet_to_equip = ExtResource("19_g6ire")
+
+[node name="Equip" type="Label" parent="Page_1/Row1/Great_Guppy/Equip_Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = -5.71163
+offset_top = 0.002666
+offset_right = 60.2884
+offset_bottom = 14.0027
+text = "Equip"
+label_settings = SubResource("LabelSettings_ymge6")
+
+[node name="Pet_Description" type="Control" parent="Page_1/Row1/Great_Guppy"]
+visible = false
+z_index = 1
+layout_mode = 2
+anchors_preset = 0
+offset_left = -122.0
+offset_right = -82.0
+offset_bottom = 40.0
+
+[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("18_v7qec")
+hframes = 2
+
+[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_5bfhn")
+
+[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_mmqsb")
+
+[node name="Description" type="Label" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Great Guppy! He looks imposing and all, but he's such a coward just like King Slime... At least no one depends on this guppy. Cosmetic item, it has no effect."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3

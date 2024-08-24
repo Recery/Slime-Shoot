@@ -1,26 +1,27 @@
-[gd_scene load_steps=11 format=3 uid="uid://fj544jl0a4go"]
+[gd_scene load_steps=12 format=3 uid="uid://fj544jl0a4go"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Bootstrapper/Bootstrapper.gd" id="1_uwlib"]
 [ext_resource type="Texture2D" uid="uid://b8r5va2affgyr" path="res://Sprites/Enemies/Bootstrapper/Bootstrapper.png" id="2_8si0m"]
 [ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="3_h8n0p"]
+[ext_resource type="AudioStream" uid="uid://cwjrkjtgrkrwi" path="res://Sounds/DarkMagic1.mp3" id="4_ymhhr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3ve8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0sw0"]
+atlas = ExtResource("2_8si0m")
+region = Rect2(60, 0, 15, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1dg3"]
+atlas = ExtResource("2_8si0m")
+region = Rect2(75, 0, 15, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8g13"]
 atlas = ExtResource("2_8si0m")
 region = Rect2(0, 0, 15, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ianw"]
-atlas = ExtResource("2_8si0m")
-region = Rect2(45, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xssca"]
-atlas = ExtResource("2_8si0m")
-region = Rect2(0, 0, 15, 12)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v5k6f"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_aada2"]
 atlas = ExtResource("2_8si0m")
 region = Rect2(15, 0, 15, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkp6o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcejg"]
 atlas = ExtResource("2_8si0m")
 region = Rect2(30, 0, 15, 12)
 
@@ -28,27 +29,27 @@ region = Rect2(30, 0, 15, 12)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h3ve8")
+"texture": SubResource("AtlasTexture_g0sw0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7ianw")
+"texture": SubResource("AtlasTexture_d1dg3")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"attack",
 "speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xssca")
+"texture": SubResource("AtlasTexture_l8g13")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v5k6f")
+"texture": SubResource("AtlasTexture_aada2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xssca")
+"texture": SubResource("AtlasTexture_l8g13")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rkp6o")
+"texture": SubResource("AtlasTexture_vcejg")
 }],
 "loop": true,
 "name": &"walk",
@@ -58,25 +59,27 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_sd8sf"]
 radius = 6.5
 
-[node name="Bootstrapper" type="CharacterBody2D"]
+[node name="Bootstrapper" type="CharacterBody2D" groups=["Bootstrapper"]]
 collision_layer = 2
 collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_uwlib")
 score_to_add = 7
 original_damage = 6.0
-original_speed = 50.0
-original_max_life = 10000.0
+original_speed = 40.0
+original_max_life = 8.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_i151s")
 animation = &"walk"
 autoplay = "walk"
-frame_progress = 0.618162
+frame_progress = 0.190338
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_sd8sf")
 
-[node name="Energy_Drain_Trap_Timer" type="Timer" parent="."]
+[node name="Action_Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
 
@@ -85,4 +88,10 @@ stream = ExtResource("3_h8n0p")
 volume_db = 10.0
 bus = &"Sounds"
 
-[connection signal="timeout" from="Energy_Drain_Trap_Timer" to="." method="create_energy_drain_trap"]
+[node name="Heal_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ymhhr")
+volume_db = 12.0
+pitch_scale = 1.5
+bus = &"Sounds"
+
+[connection signal="timeout" from="Action_Timer" to="." method="attack"]

@@ -22,7 +22,7 @@ func _on_switch_state_timer_timeout():
 		switch_state_timer.start(10)
 	else:
 		sprite.animation = "idle_not_active"
-		switch_state_timer.start(6)
+		switch_state_timer.start(4)
 
 func _on_take_damage(damage_dealt):
 	if active: return

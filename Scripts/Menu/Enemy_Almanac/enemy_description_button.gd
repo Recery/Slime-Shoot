@@ -3,7 +3,13 @@ extends TextureButton
 @onready var back_button = get_parent().get_parent().get_parent().get_node("Back_Button")
 @onready var dark_bg_description = get_parent().get_parent().get_parent().get_node("Dark_Background_Description")
 
+@export var enemy : PackedScene
+
 func _ready():
+	if not Vars.almanac_unlocked.has(enemy.get_path()):
+		disabled = true
+		if has_node("Enemy_Sprite"): get_node("Enemy_Sprite").visible = false
+	
 	back_button.pressed.connect(_on_back_button_pressed)
 
 func _on_pressed():

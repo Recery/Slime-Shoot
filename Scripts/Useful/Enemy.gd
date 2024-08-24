@@ -105,7 +105,10 @@ func _when_die() -> void:
 	## En esos casos unicamente se añade puntaje si la vida es menor o igual a cero
 	if life <= 0:
 		player.add_score.emit(score_to_add, self)
-		
+	
+	if not Vars.almanac_unlocked.has(scene_file_path) and scene_file_path != "":
+		Vars.almanac_unlocked.append(scene_file_path)
+		Save_System.save_almanac()
 	queue_free()
 
 func init_pathfinding() -> void:

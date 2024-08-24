@@ -9,7 +9,10 @@ radius = 5.0
 [node name="Fake_Green_Apple_Trap" type="Area2D"]
 collision_layer = 2
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_s4poe")
+despawn_time = 30.0
+has_movement = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_x5dgv")

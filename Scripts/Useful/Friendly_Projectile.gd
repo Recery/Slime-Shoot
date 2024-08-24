@@ -10,9 +10,8 @@ class_name Friendly_Projectile
 ## Si el despawn_time es 0, nunca despawnea (por tiempo)
 @export var despawn_time = 1.0
 @export var has_movement := true
-## Si el proyectil es persistente, es decir que se usa siempre el mismo sin generar nuevos
-## Hay una señal "reset_persistent" que sirve para reiniciar efectos del proyectil persistente
-@export var persistent := false
+## Si el proyectil muere al colisionar con tiles
+@export var collide_with_tiles := true
 
 ## Añade un tiempo extra de vida antes de morir el proyectil
 ## El proyectil deja de funcionar luego de que pasa este tiempo
@@ -33,7 +32,6 @@ var damage : float
 ## No hace falta añadir queue_free() ni poner en false stop_moving cuando se emite esta señal, ya lo hace en la clase original.
 ## Se debe emitir cuando se quiere eliminar el proyectil luego de cumplir su función.
 signal die
-signal reset_persistent(proj)
 
 func _init():
 	set_collision_layer_value(1, false)
@@ -70,7 +68,8 @@ func _physics_process(delta):
 func _extra_physics_process(): pass
 
 func _detect_tile_collision(body):
-	if not body.is_in_group("Enemies") && has_movement: 
+	if not collide_with_tiles: return
+	if not body.is_in_group("Enemies") and has_movement: 
 		die.emit()
 
 func _when_die():

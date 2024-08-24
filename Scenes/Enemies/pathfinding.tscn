@@ -4,3 +4,6 @@
 path_max_distance = 20.0
 navigation_layers = 2
 path_postprocessing = 1
+path_metadata_flags = 0
+avoidance_layers = 0
+avoidance_mask = 0

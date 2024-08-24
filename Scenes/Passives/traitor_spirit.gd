@@ -1,0 +1,1 @@
+extends Friendly_Projectile

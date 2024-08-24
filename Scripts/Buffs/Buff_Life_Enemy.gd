@@ -5,7 +5,7 @@ class_name Buff_Life_Enemy
 ## La vida total que añade (o elimina) del enemigo
 @export var life_to_add := 0.0
 
-## La cantidad de iteraciones por la que añade una parte de la vida. Si es 0 añade todo inmediatamente
+## La cantidad de iteraciones por la que añade una parte de la vida. Si es 1 añade todo inmediatamente
 @export var iterations : int = 0
 
 

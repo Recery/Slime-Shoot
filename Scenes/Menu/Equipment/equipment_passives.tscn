@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dp0eoiclataar"]
+[gd_scene load_steps=45 format=3 uid="uid://dp0eoiclataar"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
@@ -38,6 +38,8 @@
 [ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="32_hh6om"]
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="33_uqbx4"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="34_0jyv0"]
+[ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="35_jmvm4"]
+[ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="36_edytl"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="37_443nq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
@@ -1406,7 +1408,7 @@ horizontal_alignment = 1
 autowrap_mode = 3
 max_lines_visible = 6
 
-[node name="Enemy_SSD" type="TextureButton" parent="Rows/Row2"]
+[node name="Enemy_HDD" type="TextureButton" parent="Rows/Row2"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
 texture_normal = ExtResource("1_qx2i8")
@@ -1416,11 +1418,11 @@ texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
 
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_SSD"]
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_HDD"]
 position = Vector2(14, 13)
 texture = ExtResource("33_uqbx4")
 
-[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Enemy_HDD"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = 20.0
@@ -1433,7 +1435,7 @@ texture_hover = ExtResource("9_cen6v")
 script = ExtResource("10_4yeco")
 passive_to_equip = ExtResource("34_0jyv0")
 
-[node name="1" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_1"]
+[node name="1" type="Label" parent="Rows/Row2/Enemy_HDD/Slot_1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1447,7 +1449,7 @@ offset_bottom = 14.0027
 text = "1"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Enemy_HDD"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 20.0
@@ -1461,7 +1463,7 @@ script = ExtResource("10_4yeco")
 slot = 2
 passive_to_equip = ExtResource("34_0jyv0")
 
-[node name="2" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_2"]
+[node name="2" type="Label" parent="Rows/Row2/Enemy_HDD/Slot_2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1475,7 +1477,7 @@ offset_bottom = 14.0027
 text = "2"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Enemy_SSD"]
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Enemy_HDD"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -1489,7 +1491,7 @@ script = ExtResource("10_4yeco")
 slot = 3
 passive_to_equip = ExtResource("34_0jyv0")
 
-[node name="3" type="Label" parent="Rows/Row2/Enemy_SSD/Slot_3"]
+[node name="3" type="Label" parent="Rows/Row2/Enemy_HDD/Slot_3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1503,7 +1505,7 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Enemy_SSD"]
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Enemy_HDD"]
 visible = false
 z_index = 1
 layout_mode = 3
@@ -1513,26 +1515,158 @@ offset_top = -31.0
 offset_right = -30.0
 offset_bottom = 9.0
 
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
 z_index = 1
 position = Vector2(136, 8)
 texture = ExtResource("33_uqbx4")
 
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
 position = Vector2(136, 8)
 texture = ExtResource("12_q4wu3")
 
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
 position = Vector2(136, 64)
 texture = ExtResource("13_k78go")
 
-[node name="Description" type="Label" parent="Rows/Row2/Enemy_SSD/Passive_Description"]
+[node name="Description" type="Label" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
 text = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Traitor_Spirit" type="TextureButton" parent="Rows/Row2"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit"]
+position = Vector2(14, 13)
+texture = ExtResource("35_jmvm4")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Traitor_Spirit"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("36_edytl")
+
+[node name="1" type="Label" parent="Rows/Row2/Traitor_Spirit/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Traitor_Spirit"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("36_edytl")
+
+[node name="2" type="Label" parent="Rows/Row2/Traitor_Spirit/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Traitor_Spirit"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("36_edytl")
+
+[node name="3" type="Label" parent="Rows/Row2/Traitor_Spirit/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Traitor_Spirit"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -105.0
+offset_top = -31.0
+offset_right = -65.0
+offset_bottom = 9.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("35_jmvm4")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."
 label_settings = SubResource("LabelSettings_j1phy")
 horizontal_alignment = 1
 autowrap_mode = 3
