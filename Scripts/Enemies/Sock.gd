@@ -69,13 +69,14 @@ var big_sock := preload("res://Scenes/Enemies/big_sock.tscn")
 func create_big_sock() -> void:
 	var big_sock_instance : Enemy = big_sock.instantiate()
 	
-	Vars.main_scene.get_node("Enemies").add_child(big_sock_instance)
-	big_sock_instance.global_position = global_position
-	
-	big_sock_instance.base_max_life = int((base_max_life + sock_to_merge.base_max_life) * 1.5)
-	big_sock_instance.max_life = big_sock_instance.base_max_life
-	big_sock_instance.life = big_sock_instance.base_max_life
-	big_sock_instance.base_damage = int((base_damage + sock_to_merge.base_damage) * 1.2)
-	big_sock_instance.damage = big_sock_instance.base_damage
-	big_sock_instance.base_speed = int(max(base_speed, sock_to_merge.base_speed) * 0.8)
-	big_sock_instance.speed = big_sock_instance.base_speed
+	if Funcs.add_to_enemies(big_sock_instance):
+		big_sock_instance.global_position = global_position
+		
+		big_sock_instance.base_max_life = int((base_max_life + sock_to_merge.base_max_life) * 1.25)
+		big_sock_instance.max_life = big_sock_instance.base_max_life
+		big_sock_instance.life = big_sock_instance.base_max_life
+		big_sock_instance.base_damage = int((base_damage + sock_to_merge.base_damage) * 1.2)
+		big_sock_instance.damage = big_sock_instance.base_damage
+		big_sock_instance.base_speed = int(max(base_speed, sock_to_merge.base_speed) * 0.8)
+		big_sock_instance.speed = big_sock_instance.base_speed
+	else: big_sock_instance.queue_free()
