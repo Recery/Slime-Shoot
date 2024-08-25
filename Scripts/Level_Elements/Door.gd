@@ -64,7 +64,7 @@ func on_open_and_close(first_time := false) -> void:
 func set_shadows_tiles():
 	# Dependiendo de si está abierta o cerrada, coloca tiles de sombra o los elimina
 	
-	var tiles_pos : Array
+	var tiles_pos : Array[Vector2i]
 	if horizontal:
 		tiles_pos = [
 		main_tilemap.local_to_map(Vector2i(int(position.x) + 8, int(position.y) + 16)),
@@ -82,19 +82,19 @@ func set_shadows_tiles():
 		main_tilemap.erase_cell(1, tiles_pos[1])
 		main_tilemap.set_cell(0, tiles_pos[0], 0, atlas_coords_original[0])
 		main_tilemap.set_cell(0, tiles_pos[1], 0, atlas_coords_original[1])
-	if not open && horizontal:
+	if not open and horizontal:
 		main_tilemap.erase_cell(0, tiles_pos[0])
 		main_tilemap.erase_cell(0, tiles_pos[1])
 		main_tilemap.set_cell(1, tiles_pos[0], 0, main_tilemap.tiles_shadows_door.h_close_shadows_1)
 		main_tilemap.set_cell(1, tiles_pos[1], 0, main_tilemap.tiles_shadows_door.h_close_shadows_2)
-	elif not open && not horizontal:
+	elif not open and not horizontal:
 		main_tilemap.erase_cell(0, tiles_pos[0])
 		main_tilemap.erase_cell(0, tiles_pos[1])
 		main_tilemap.set_cell(1, tiles_pos[0], 0, main_tilemap.tiles_shadows_door.v_close_shadows_1)
 		main_tilemap.set_cell(1, tiles_pos[1], 0, main_tilemap.tiles_shadows_door.v_close_shadows_2)
 
-var atlas_coords_original := []
-func get_atlas_original_tiles(pos_tiles : Array) -> void:
+var atlas_coords_original : Array[Vector2i]
+func get_atlas_original_tiles(pos_tiles : Array[Vector2i]) -> void:
 	if atlas_coords_original.size() > 0: return
 	atlas_coords_original.append(main_tilemap.get_cell_atlas_coords(0, pos_tiles[0]))
 	atlas_coords_original.append(main_tilemap.get_cell_atlas_coords(0, pos_tiles[1]))
