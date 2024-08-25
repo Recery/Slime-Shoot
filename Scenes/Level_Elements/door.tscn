@@ -5,7 +5,7 @@
 [ext_resource type="Shape2D" uid="uid://xeblkxt084n2" path="res://Scenes/Level_Elements/collision_door_vertical.tres" id="3_0sby3"]
 [ext_resource type="AudioStream" uid="uid://cxrijp53jd080" path="res://Sounds/Door.mp3" id="3_vxrbb"]
 
-[node name="Door" type="StaticBody2D"]
+[node name="Door" type="StaticBody2D" groups=["nav"]]
 collision_layer = 127
 collision_mask = 0
 collision_priority = 10.0
@@ -15,7 +15,9 @@ script = ExtResource("1_je7xc")
 texture = ExtResource("2_v7dpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = ExtResource("3_0sby3")
+disabled = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vxrbb")

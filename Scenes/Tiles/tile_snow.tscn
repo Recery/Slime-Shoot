@@ -2,35 +2,35 @@
 
 [ext_resource type="Texture2D" uid="uid://kddfr2lsyv6" path="res://Sprites/Tiles/TileSnow.png" id="1_647ij"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_i245h"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_qq2wh"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_83d8w"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_povjy"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_1anmu"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_s0ng2"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_akf65"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_rt6oa"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_tl875"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ry6i4"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -54,11 +54,11 @@ texture = ExtResource("1_647ij")
 3:0/0 = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
-3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_83d8w")
+3:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_povjy")
 4:0/0 = 0
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
-4:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_akf65")
+4:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_rt6oa")
 0:1/0 = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:1/0/physics_layer_0/angular_velocity = 0.0
@@ -66,7 +66,7 @@ texture = ExtResource("1_647ij")
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
-1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_i245h")
+1:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_qq2wh")
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
@@ -74,11 +74,11 @@ texture = ExtResource("1_647ij")
 3:1/0 = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
-3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_1anmu")
+3:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_s0ng2")
 4:1/0 = 0
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
-4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_tl875")
+4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_ry6i4")
 0:2/0 = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:2/0/physics_layer_0/angular_velocity = 0.0
@@ -107,7 +107,7 @@ texture = ExtResource("1_647ij")
 [sub_resource type="TileSet" id="TileSet_k04rx"]
 physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 255
-navigation_layer_0/layers = 255
+navigation_layer_0/layers = 2
 sources/1 = SubResource("TileSetAtlasSource_relqf")
 
 [node name="TileMap" type="TileMap"]

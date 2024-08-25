@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://da5ao3mmap8dp"]
+[gd_scene load_steps=9 format=3 uid="uid://da5ao3mmap8dp"]
 
 [ext_resource type="Texture2D" uid="uid://bjx3j1605sugt" path="res://Sprites/Tiles/TileSand.png" id="1_vxurq"]
 
@@ -24,6 +24,13 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4f1hy"]
+vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+agent_radius = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_7rkhv"]
 vertices = PackedVector2Array(8, 8, -8, 8, -8, -8, 8, -8)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)])
@@ -95,6 +102,7 @@ texture = ExtResource("1_vxurq")
 4:1/0 = 0
 4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7rkhv")
 
 [sub_resource type="TileSet" id="TileSet_gbnad"]
 physics_layer_0/collision_layer = 255
