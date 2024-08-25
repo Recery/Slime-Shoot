@@ -143,7 +143,6 @@ func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
 	if play_sound:
 		sound_instance.volume_db += extra_sound
 		sound_instance.pitch_scale = randf_range(0.75,1.3)
-		sound_instance.global_position = pos
 	else:
 		sound_instance.volume_db = -10000
 	
@@ -161,7 +160,6 @@ func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, colo
 	if play_sound:
 		sound_instance.volume_db += extra_sound
 		sound_instance.pitch_scale = randf_range(0.75,1.3)
-		sound_instance.global_position = pos
 	else:
 		sound_instance.volume_db = -10000
 	
