@@ -133,6 +133,13 @@ func cooldown_pathfinding_timeout() -> void:
 			nav_agent.target_position = custom_target_pos
 		else:
 			nav_agent.target_position = player.global_position
+		
+		if global_position.distance_to(player.global_position) < 250:
+			nav_agent.set_navigation_layer_value(1, false)
+			nav_agent.set_navigation_layer_value(2, true)
+		else:
+			nav_agent.set_navigation_layer_value(1, true)
+			nav_agent.set_navigation_layer_value(2, false)
 	
 	if (moving and not is_in_group("Full_Freezed")) or force_moving:
 		Funcs.pathfinding_movement(self, nav_agent)

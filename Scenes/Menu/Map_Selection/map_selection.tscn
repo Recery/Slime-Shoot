@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
 [ext_resource type="Texture2D" uid="uid://b4yrmjylnrsr4" path="res://Sprites/Menu/MapsButtons/GrasslandsHover.png" id="3_vm7vn"]
 [ext_resource type="Texture2D" uid="uid://c2ywsxqb03dlp" path="res://Sprites/Menu/MapsButtons/Arrow.png" id="5_5qald"]
-[ext_resource type="PackedScene" uid="uid://cfc8fu5xdeo55" path="res://Scenes/Maps/Grasslands_Level.tscn" id="5_xac7s"]
+[ext_resource type="PackedScene" uid="uid://bptlmnkijqcr4" path="res://Scenes/Maps/clown_dungeon.tscn" id="5_gewus"]
 [ext_resource type="PackedScene" uid="uid://dwmfsbcjcol8y" path="res://Scenes/Player/Green_Slime/green_slime.tscn" id="6_l5pek"]
 [ext_resource type="Texture2D" uid="uid://cghidm4qs0u3q" path="res://Sprites/Menu/MapsButtons/Desert.png" id="7_6egdv"]
 [ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="7_6w4tq"]
@@ -71,7 +71,7 @@ offset_bottom = 21.0
 texture_normal = ExtResource("2_p60ma")
 texture_pressed = ExtResource("3_vm7vn")
 texture_hover = ExtResource("3_vm7vn")
-map_to_enter = ExtResource("5_xac7s")
+map_to_enter = ExtResource("5_gewus")
 unlocked_by_slime = ExtResource("6_l5pek")
 cinematic_to_play = ExtResource("7_6w4tq")
 map_name = "Grasslands"

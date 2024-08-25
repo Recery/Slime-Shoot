@@ -6,8 +6,6 @@ var merger := false
 var merged := false
 var sock_to_merge : Node
 
-var big_sock := preload("res://Scenes/Enemies/big_sock.tscn")
-
 func _physics_process(_delta):
 	if sock_to_merge != null:
 		sprite.flip_h = global_position.x < sock_to_merge.global_position.x
@@ -67,6 +65,7 @@ func set_merged_sock_pos() -> void:
 	update_merged_pos_timer.start()
 	set_custom_target_position(sock_to_merge.global_position)
 
+var big_sock := preload("res://Scenes/Enemies/big_sock.tscn")
 func create_big_sock() -> void:
 	var big_sock_instance : Enemy = big_sock.instantiate()
 	

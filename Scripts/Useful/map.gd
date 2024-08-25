@@ -17,6 +17,9 @@ func _init() -> void:
 	connect("ready", _when_ready)
 
 func _when_ready() -> void:
+	set_children_navigation_group()
+	set_navigation_region()
+	
 	Vars.current_spawner_table = spawn_table
 	
 	get_node("Spawn_Position").add_child(player)
@@ -27,16 +30,28 @@ func _when_ready() -> void:
 	if has_node("Spawn_Position"):
 		get_node("Spawn_Position").y_sort_enabled = true
 	
-	despawn_timer()
-	speed_timer()
+	set_despawn_timer()
+	set_speed_timer()
 
-func despawn_timer():
+func set_children_navigation_group() -> void:
+	for child in get_children():
+		if child is TileMap and not child.is_in_group("navigation"):
+			child.add_to_group("navigation")
+
+func set_navigation_region() -> void:
+	var nav_reg := NavigationRegion2D.new()
+	add_child(nav_reg)
+	nav_reg.set_navigation_layer_value(1,true)
+	nav_reg.navigation_polygon = load("res://Resources/Setted_Resources/default_navigation_polygon.tres")
+	nav_reg.bake_navigation_polygon()
+
+func set_despawn_timer():
 	var timer := Timer.new()
 	add_child(timer)
 	timer.connect("timeout", despawn_enemies)
 	timer.start(20)
 
-func speed_timer():
+func set_speed_timer():
 	var timer := Timer.new()
 	add_child(timer)
 	timer.connect("timeout", add_speed_to_enemies)

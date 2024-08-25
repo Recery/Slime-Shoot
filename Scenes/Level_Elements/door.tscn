@@ -1,11 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cotlhw1iud31k"]
+[gd_scene load_steps=6 format=3 uid="uid://cotlhw1iud31k"]
 
 [ext_resource type="Script" path="res://Scripts/Level_Elements/Door.gd" id="1_je7xc"]
 [ext_resource type="Texture2D" uid="uid://dkcr3dhtefqlo" path="res://Sprites/Level_Elements/Door.png" id="2_v7dpr"]
 [ext_resource type="Shape2D" uid="uid://xeblkxt084n2" path="res://Scenes/Level_Elements/collision_door_vertical.tres" id="3_0sby3"]
 [ext_resource type="AudioStream" uid="uid://cxrijp53jd080" path="res://Sounds/Door.mp3" id="3_vxrbb"]
 
-[node name="Door" type="StaticBody2D"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_y86h1"]
+vertices = PackedVector2Array(7, 23, -7, 23, -7, -23, 7, -23)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -24, 8, -24, 8, 24, -8, 24)])
+parsed_geometry_type = 1
+source_geometry_mode = 2
+source_geometry_group_name = &"nav"
+agent_radius = 1.0
+
+[node name="Door" type="StaticBody2D" groups=["nav"]]
 collision_layer = 127
 collision_mask = 0
 collision_priority = 10.0
@@ -15,11 +24,17 @@ script = ExtResource("1_je7xc")
 texture = ExtResource("2_v7dpr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = ExtResource("3_0sby3")
+disabled = true
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_vxrbb")
 volume_db = 1.0
 bus = &"Sounds"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_y86h1")
+navigation_layers = 3
 
 [connection signal="open_and_close" from="." to="." method="on_open_and_close"]

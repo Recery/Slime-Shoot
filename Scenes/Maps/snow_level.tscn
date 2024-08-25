@@ -156,5 +156,3 @@ stream = ExtResource("8_3b8ob")
 volume_db = 4.0
 autoplay = true
 bus = &"Music"
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
