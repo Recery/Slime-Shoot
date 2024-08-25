@@ -58,7 +58,7 @@ func raycast_collider_is_player():
 	return false
 
 func _on_die():
-	Funcs.regular_explosion(1.9, 1.9, global_position, Vars.main_scene, 15, true)
+	Funcs.regular_explosion(1.9, 1.9, global_position, Vars.main_scene, 6, true)
 	queue_free()
 
 func graphics():

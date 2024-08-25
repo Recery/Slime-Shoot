@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=155 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -149,6 +149,8 @@
 [ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="123_wxccl"]
 [ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="146_67ux6"]
 [ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="147_74odq"]
+[ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="150_thvog"]
+[ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="151_tcv2c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5fu2"]
 font = ExtResource("3_6bn12")
@@ -979,6 +981,15 @@ object_to_buy = ExtResource("146_67ux6")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("147_74odq")
+
+[node name="Electric_Vine" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1500
+type_of_object = 3
+object_to_buy = ExtResource("150_thvog")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("38_1smf3")
+sprite_to_display = ExtResource("151_tcv2c")
 
 [node name="Passives_Shop_Text" type="Label" parent="Passives"]
 layout_mode = 0

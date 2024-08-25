@@ -134,7 +134,7 @@ func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player, extra_
 	weapon.global_position.y = player.global_position.y + offset.y
 
 # Para reproducir una explosión normal
-var explosion = preload("res://Scenes/Useful/explosion.tscn")
+var explosion := preload("res://Scenes/Useful/explosion.tscn")
 func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
 	if scene == null: return
 	
@@ -142,6 +142,8 @@ func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
 	var sound_instance = explosion_instance.get_node("Sound")
 	if play_sound:
 		sound_instance.volume_db += extra_sound
+		sound_instance.pitch_scale = randf_range(0.75,1.3)
+		sound_instance.global_position = pos
 	else:
 		sound_instance.volume_db = -10000
 	
@@ -150,7 +152,7 @@ func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
 	explosion_instance.scale = Vector2(scale_x, scale_y)
 
 # Para reproducir una explosión con color
-var col_explosion = preload("res://Scenes/Useful/color_explosion.tscn")
+var col_explosion := preload("res://Scenes/Useful/color_explosion.tscn")
 func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, color : Color):
 	if scene == null: return
 	
@@ -158,6 +160,7 @@ func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, colo
 	var sound_instance = explosion_instance.get_node("Sound")
 	if play_sound:
 		sound_instance.volume_db += extra_sound
+		sound_instance.pitch_scale = randf_range(0.75,1.3)
 		sound_instance.global_position = pos
 	else:
 		sound_instance.volume_db = -10000
@@ -222,6 +225,19 @@ func timed_particles(scale : Vector2, time : float, color : Color, parent : Node
 		if parent == null: return
 		particles(scale, parent.global_position, color, parent)
 		await get_tree().create_timer(0.5).timeout
+
+var shock := preload("res://Scenes/Abilities/shock_sprite.tscn")
+func shock_visual(start_pos : Vector2, end_pos : Vector2) -> void:
+	var shock_instance := shock.instantiate()
+	if not Funcs.add_to_bullets(shock_instance):
+		shock_instance.queue_free()
+		return
+	
+	shock_instance.scale.y = start_pos.distance_to(end_pos) / shock_instance.texture.get_height()
+	shock_instance.rotation = atan2(end_pos.y - start_pos.y, end_pos.x - start_pos.x) - 180
+	shock_instance.global_position = (start_pos + end_pos) / 2
+	await get_tree().create_timer(0.1).timeout
+	if shock_instance != null: shock_instance.queue_free()
 
 func explosion_warning(scale : Vector2, pos : Vector2) -> Sprite2D:
 	var warning_instance := Sprite2D.new()

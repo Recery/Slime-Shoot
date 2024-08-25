@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cac1cadcxq0ad"]
+
+[ext_resource type="Script" path="res://Scripts/Passives/electric_vine_passive.gd" id="1_gdm3t"]
+[ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="2_ikvgr"]
+
+[node name="Electric_Vine_Passive" type="Node2D"]
+script = ExtResource("1_gdm3t")
+
+[node name="Passive" type="Sprite2D" parent="."]
+texture = ExtResource("2_ikvgr")
+
+[node name="Summon_Vine_Timer" type="Timer" parent="."]
+wait_time = 7.0
+autostart = true
+
+[connection signal="timeout" from="Summon_Vine_Timer" to="." method="_on_summon_vine_timer_timeout"]

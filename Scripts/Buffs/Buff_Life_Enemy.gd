@@ -29,6 +29,8 @@ func buff_application(buff):
 		add_life(duration / iterations)
 
 func reduce_life(time_to_reduce):
+	if time_to_reduce < 0.05: pass
+	
 	for i in range(iterations):
 		await get_tree().create_timer(time_to_reduce).timeout
 		Funcs.deal_damage(affected_object, -life_per_iteration)

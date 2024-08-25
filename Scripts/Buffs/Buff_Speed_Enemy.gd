@@ -16,11 +16,17 @@ func _ready():
 func buff_application(node):
 	if not (node is Buff_Speed_Enemy or node is Knockback): return
 	
+	if weight_to_modify == 0 and not affected_object.is_in_group("Full_Freezed"): 
+		affected_object.add_to_group("Full_Freezed")
+	
 	affected_object.speed *= weight_to_modify
 	affected_object.apply_new_speed()
 	print("Nueva ", name, ": ", affected_object.speed)
 
 func remove_buff():
+	if weight_to_modify == 0 and affected_object.is_in_group("Full_Freezed"): 
+		affected_object.remove_from_group("Full_Freezed")
+	
 	affected_object.speed = affected_object.base_speed
 	affected_object.apply_new_speed()
 	print("Reestablecida ", name, ": ", affected_object.speed)

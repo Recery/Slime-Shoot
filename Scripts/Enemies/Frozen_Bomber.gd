@@ -10,9 +10,9 @@ extends Enemy
 @onready var shoot_sound := get_node("Shoot_Sound")
 
 func _physics_process(_delta):
-	graphics()
+	if not is_in_group("Full_Freezed"): graphics()
 	
-	if can_shoot and not moving: shoot()
+	if can_shoot and not moving and not is_in_group("Full_Freezed"): shoot()
 	
 	if global_position.distance_to(player.global_position) > 110:
 		moving = true

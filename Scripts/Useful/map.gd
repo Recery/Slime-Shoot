@@ -71,4 +71,4 @@ func add_speed_to_enemies():
 		if "speed" in enemy and "base_speed" in enemy:
 			if not enemy.is_in_group("Boss") and not enemy.wait_player_mode:
 				enemy.base_speed += 2
-				enemy.speed += 2
+				if enemy.speed != 0: enemy.speed += 2

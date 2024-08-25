@@ -1,14 +1,17 @@
 extends Friendly_Projectile
 
-var freeze_debuff = preload("res://Scenes/Weapons/freeze_debuff.tscn")
-
 func _on_body_entered(body):
 	if not body.is_in_group("Enemies") or body == null: return
-	var freeze_instance = freeze_debuff.instantiate()
-	freeze_instance.duration = 1.5
-	body.add_child(freeze_instance)
+	body.add_child(get_freeze_debuff())
 	
 	if not stop_working: die.emit()
+
+func get_freeze_debuff() -> Buff_Speed_Enemy:
+	var debuff := Buff_Speed_Enemy.new()
+	debuff.weight_to_modify = 0
+	debuff.duration = 1.5
+	debuff.color = Color(0.639, 0.757, 1)
+	return debuff
 
 func _on_die():
 	stop_working = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dp0eoiclataar"]
+[gd_scene load_steps=47 format=3 uid="uid://dp0eoiclataar"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
@@ -41,6 +41,8 @@
 [ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="35_jmvm4"]
 [ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="36_edytl"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="37_443nq"]
+[ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="37_ujqlb"]
+[ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="38_r8882"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("10_gysxj")
@@ -1667,6 +1669,138 @@ offset_top = 34.0
 offset_right = 236.0
 offset_bottom = 94.0
 text = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."
+label_settings = SubResource("LabelSettings_j1phy")
+horizontal_alignment = 1
+autowrap_mode = 3
+max_lines_visible = 6
+
+[node name="Electric_Vine" type="TextureButton" parent="Rows/Row2"]
+self_modulate = Color(0, 0.988235, 0, 1)
+layout_mode = 2
+texture_normal = ExtResource("1_qx2i8")
+texture_pressed = ExtResource("2_k7hyb")
+texture_hover = ExtResource("3_ksbbk")
+texture_disabled = ExtResource("4_ufowc")
+script = ExtResource("5_ywpcj")
+type_of_object = 3
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Electric_Vine"]
+position = Vector2(14, 13)
+texture = ExtResource("37_ujqlb")
+
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Electric_Vine"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 20.0
+offset_right = 26.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+passive_to_equip = ExtResource("38_r8882")
+
+[node name="1" type="Label" parent="Rows/Row2/Electric_Vine/Slot_1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "1"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Electric_Vine"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 20.0
+offset_right = 37.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 2
+passive_to_equip = ExtResource("38_r8882")
+
+[node name="2" type="Label" parent="Rows/Row2/Electric_Vine/Slot_2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "2"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Electric_Vine"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.35, 0.35)
+texture_normal = ExtResource("7_iy4b2")
+texture_pressed = ExtResource("8_vcpna")
+texture_hover = ExtResource("9_cen6v")
+script = ExtResource("10_4yeco")
+slot = 3
+passive_to_equip = ExtResource("38_r8882")
+
+[node name="3" type="Label" parent="Rows/Row2/Electric_Vine/Slot_3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.238
+anchor_right = 0.238
+anchor_bottom = 0.238
+offset_left = 0.00266647
+offset_top = 0.00266647
+offset_right = 14.0027
+offset_bottom = 14.0027
+text = "3"
+label_settings = SubResource("LabelSettings_non8x")
+
+[node name="Passive_Description" type="Control" parent="Rows/Row2/Electric_Vine"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = -140.0
+offset_top = -31.0
+offset_right = -100.0
+offset_bottom = 9.0
+
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
+z_index = 1
+position = Vector2(136, 8)
+texture = ExtResource("37_ujqlb")
+
+[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
+position = Vector2(136, 8)
+texture = ExtResource("12_q4wu3")
+
+[node name="Frame" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
+position = Vector2(136, 64)
+texture = ExtResource("13_k78go")
+
+[node name="Description" type="Label" parent="Rows/Row2/Electric_Vine/Passive_Description"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 34.0
+offset_right = 236.0
+offset_bottom = 94.0
+text = "With the Electric Vine passive, from time to time some electric vines are going to trap a nearby enemy and damage it to death. Also, enemies near to electric vines will receive some damage."
 label_settings = SubResource("LabelSettings_j1phy")
 horizontal_alignment = 1
 autowrap_mode = 3

@@ -17,12 +17,18 @@ func _on_body_exited(body):
 			enemies_affected.erase(body)
 			break
 
-var freeze_debuff = preload("res://Scenes/Weapons/freeze_debuff.tscn")
 func _on_despawn_timer_timeout():
 	for enemy in enemies_affected:
-		enemy.add_child(freeze_debuff.instantiate())
+		enemy.add_child(get_freeze_debuff())
 	create_particles()
 	queue_free()
+
+func get_freeze_debuff():
+	var debuff := Buff_Speed_Enemy.new()
+	debuff.weight_to_modify = 0
+	debuff.duration = 4
+	debuff.color = Color(0.639, 0.757, 1)
+	return debuff
 
 func create_particles():
 	for i in range(9):

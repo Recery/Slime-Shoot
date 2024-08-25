@@ -80,7 +80,7 @@ frame_progress = 0.190338
 shape = SubResource("CircleShape2D_sd8sf")
 
 [node name="Action_Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 7.0
 autostart = true
 
 [node name="Trap_Sound" type="AudioStreamPlayer2D" parent="."]
@@ -94,4 +94,5 @@ volume_db = 12.0
 pitch_scale = 1.5
 bus = &"Sounds"
 
+[connection signal="die" from="." to="." method="_on_die"]
 [connection signal="timeout" from="Action_Timer" to="." method="attack"]
