@@ -238,7 +238,7 @@ texture = ExtResource("1_m2cv4")
 
 [sub_resource type="TileSet" id="TileSet_b2jtk"]
 physics_layer_0/collision_layer = 1
-navigation_layer_0/layers = 255
+navigation_layer_0/layers = 2
 sources/0 = SubResource("TileSetAtlasSource_7d3ol")
 
 [node name="TileGrass" type="TileMap"]

@@ -934,7 +934,7 @@ position = Vector2(-336, -48)
 
 [node name="Spawn_Position" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(-736, -928)
+position = Vector2(1861, -881)
 
 [node name="Goldfish_Statue" type="StaticBody2D" parent="Spawn_Position"]
 position = Vector2(944, -896)

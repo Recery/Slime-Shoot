@@ -127,7 +127,7 @@ func init_shadows() -> void:
 
 var custom_target_pos
 func cooldown_pathfinding_timeout() -> void:
-	cooldown_pathfinding.wait_time = max(global_position.distance_to(player.global_position) / 300, 0.5)
+	cooldown_pathfinding.wait_time = max(global_position.distance_to(player.global_position) / 200, 0.5)
 	if nav_agent != null:
 		if custom_target_position_setted:
 			nav_agent.target_position = custom_target_pos

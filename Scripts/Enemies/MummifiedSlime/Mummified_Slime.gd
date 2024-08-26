@@ -201,7 +201,11 @@ func create_life_bar():
 	life_bar.set_current_value(max_life)
 
 # Se usa para verificar si se debe activar la segunda fase
+@onready var damage_sound := get_node("Damage_Sound")
 func _on_take_damage(_damage):
+	if not damage_sound.is_playing():
+		damage_sound.play()
+	
 	if life < max_life / 2 and not second_phase:
 		life_bar.set_color(Color.ORANGE)
 		second_phase = true
@@ -219,9 +223,6 @@ func _on_take_damage(_damage):
 		particles_timer.timeout.connect(func(): Funcs.particles(Vector2(1.5,1.5), global_position, Color.YELLOW))
 		
 		Funcs.sound_play_2d("res://Sounds/Infinite_Energy.mp3", global_position, 9, 1.1)
-		
-		if life_module.take_damage.is_connected(_on_take_damage):
-			life_module.take_damage.disconnect(_on_take_damage)
 
 func _on_die():
 	life_bar.queue_free()

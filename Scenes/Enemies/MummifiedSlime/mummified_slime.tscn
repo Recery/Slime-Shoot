@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://2842omy5l8bq"]
+[gd_scene load_steps=14 format=3 uid="uid://2842omy5l8bq"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/MummifiedSlime/Mummified_Slime.gd" id="1_3v5e0"]
 [ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_jdsy3"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="6_b5ee8"]
 [ext_resource type="AudioStream" uid="uid://br61mrhe0ixlj" path="res://Sounds/Throw.mp3" id="7_kwy5y"]
 [ext_resource type="AudioStream" uid="uid://8afomfgdem78" path="res://Sounds/Life_Regen.mp3" id="7_mqsyd"]
+[ext_resource type="AudioStream" uid="uid://bsm7y48f1t5e1" path="res://Sounds/SlimeHit.mp3" id="9_1ybmb"]
 
 [sub_resource type="Animation" id="Animation_0axbv"]
 resource_name = "bounce_shadow"
@@ -118,6 +119,12 @@ bus = &"Sounds"
 stream = ExtResource("7_mqsyd")
 volume_db = 12.0
 pitch_scale = 1.1
+bus = &"Sounds"
+
+[node name="Damage_Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_1ybmb")
+volume_db = 2.0
+pitch_scale = 14.0
 bus = &"Sounds"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
