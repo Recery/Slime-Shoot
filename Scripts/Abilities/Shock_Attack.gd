@@ -34,7 +34,7 @@ func attack():
 				end_pos = enemies_to_attack[i].global_position
 			
 			if i < enemies_to_attack.size() - 1: 
-				create_shock_visual(start_pos, end_pos)
+				Funcs.shock_visual(start_pos, end_pos)
 			Funcs.strike_effect(Vector2(0.7,0.7), enemies_to_attack[i].global_position)
 			Funcs.deal_damage(enemies_to_attack[i], damage)
 	
@@ -70,12 +70,3 @@ func scan_nearest_enemy(object):
 			nearest_enemy = in_range_enemies[i]
 	
 	return nearest_enemy
-
-func create_shock_visual(start_pos, end_pos) -> void:
-	var shock_instance = load("res://Scenes/Abilities/shock_sprite.tscn").instantiate()
-	shock_instance.scale.y = start_pos.distance_to(end_pos) / shock_instance.texture.get_height()
-	shock_instance.rotation = atan2(end_pos.y - start_pos.y, end_pos.x - start_pos.x) - 180
-	if not Funcs.add_to_bullets(shock_instance): return
-	shock_instance.global_position = (start_pos + end_pos) / 2
-	await get_tree().create_timer(0.1).timeout
-	shock_instance.queue_free()

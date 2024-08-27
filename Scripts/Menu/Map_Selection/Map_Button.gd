@@ -36,7 +36,10 @@ func _on_pressed() -> void:
 
 func _on_mouse_entered():
 	if get_parent().get_parent().has_node("Map_Name_Label"):
-		get_parent().get_parent().get_node("Map_Name_Label").text = map_name
+		if disabled:
+			get_parent().get_parent().get_node("Map_Name_Label").text = "Locked map!"
+		else:
+			get_parent().get_parent().get_node("Map_Name_Label").text = map_name
 
 func _on_mouse_exited():
 	if get_parent().get_parent().has_node("Map_Name_Label"):

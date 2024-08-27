@@ -32,6 +32,8 @@ var perk_activated
 
 var shoot_pos := Vector2(0,0)
 
+var summons_module : SummonsModule
+
 signal toggle_dark_mode(activate : bool)
 
 ## Se usa para crear una funcion de physics process en la instancia
@@ -54,6 +56,8 @@ func _ready():
 	speed = original_speed
 	energy_recover_weight = original_energy_recover_weight
 	damage_collision.add_to_group("Player_Slime")
+	
+	summons_module = SummonsModule.new()
 	
 	create_children()
 	
@@ -84,6 +88,9 @@ func _physics_process(_delta):
 	
 	shoot_pos = get_global_mouse_position()
 	
+	# Calcular la posicion idle de los minions
+	summons_module.set_idle_positions(global_position)
+	
 	## Todo lo que tenga que ver con energía ##
 	if energy < max_energy && fill_energy:
 		energy += energy_recover_weight
@@ -99,6 +106,9 @@ func _physics_process(_delta):
 	
 	if damaging and not immune and not forced_immunity:
 		deal_damage_enemies()
+	
+	if (immune or forced_immunity) and can_play_immune_animation:
+		immune_animation()
 	
 	manage_perk()
 	
@@ -138,7 +148,9 @@ func create_children():
 	
 	if Vars.pet_equipped != null:
 		if Vars.main_scene.has_node("Spawn_Position"):
-			Vars.main_scene.get_node("Spawn_Position").add_child(Vars.pet_equipped.instantiate())
+			var pet := Vars.pet_equipped.instantiate()
+			Vars.main_scene.get_node("Spawn_Position").add_child(pet)
+			summons_module.add_minion(pet)
 	
 	add_child(load("res://Scenes/Player/life_bar.tscn").instantiate())
 	add_child(load("res://Scenes/Player/energy_bar.tscn").instantiate())
@@ -244,6 +256,25 @@ func _when_die():
 	Vars.main_scene.get_node("Music").stop()
 	await get_tree().create_timer(2.5).timeout
 	Events.change_scene.emit("res://Scenes/Useful/dead_screen.tscn", false)
+
+var can_play_immune_animation := true
+func immune_animation() -> void:
+	var slime : Sprite2D
+	var hat : Sprite2D
+	if has_node("Slime"): slime = get_node("Slime")
+	if has_node("Hat"): hat = get_node("Hat")
+	can_play_immune_animation = false
+	
+	if slime != null:
+		
+		var anim_tween_slime := get_tree().create_tween()
+		anim_tween_slime.finished.connect(func(): can_play_immune_animation = true)
+		anim_tween_slime.tween_property(slime, "modulate:a", 0.25, 0.2)
+		anim_tween_slime.tween_property(slime, "modulate:a", 1, 0.2)
+	if hat != null:
+		var anim_tween_hat := get_tree().create_tween()
+		anim_tween_hat.tween_property(hat, "modulate:a", 0.25, 0.2)
+		anim_tween_hat.tween_property(hat, "modulate:a", 1, 0.2)
 
 func _toggle_dark_mode(activate : bool):
 	if activate:

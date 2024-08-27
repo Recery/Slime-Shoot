@@ -88,7 +88,7 @@ func _physics_process(_delta):
 	if player.life <= 0: get_node("Music").stop()
 
 # Al disminuir la distancia entre el destino y la posicion, la velocidad se va reduciendo
-func manage_movement():
+func manage_movement() -> void:
 	velocity = (dash_target_pos - global_position) * (speed / 50)
 
 var can_attack := false

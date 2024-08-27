@@ -89,6 +89,8 @@ size = Vector2(8, 8)
 [node name="Glacibot" type="CharacterBody2D"]
 collision_layer = 0
 collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_pjnqx")
 scan_range = 130
 idle_pos_offset = Vector2(25, 3)
@@ -101,8 +103,8 @@ autoplay = "walk"
 frame_progress = 0.000897447
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 shape = SubResource("RectangleShape2D_70044")
+disabled = true
 
 [node name="Shoot_Cooldown" type="Timer" parent="."]
 wait_time = 4.0

@@ -112,7 +112,7 @@ func _when_die() -> void:
 	queue_free()
 
 func init_pathfinding() -> void:
-	nav_agent = load("res://Scenes/Enemies/pathfinding.tscn").instantiate()
+	nav_agent = Funcs.get_nav_agent()
 	add_child(nav_agent)
 	
 	cooldown_pathfinding = Timer.new()

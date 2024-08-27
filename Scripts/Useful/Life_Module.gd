@@ -16,4 +16,6 @@ func _on_heal(heal_regen):
 	if enemy.life + heal_regen < enemy.max_life:
 		enemy.life += heal_regen
 		Funcs.damage_advice._on_heal(enemy, heal_regen)
-	else: enemy.life = enemy.max_life
+	else:
+		Funcs.damage_advice._on_heal(enemy, enemy.max_life - enemy.life)
+		enemy.life = enemy.max_life

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhusp4kkxd54v"
-path="res://.godot/imported/CeresWrathAbility.png-ad1d015bed2149f207502fb0ee1b19f9.ctex"
+uid="uid://eetwhl6xp3tu"
+path="res://.godot/imported/PowerUpRay.png-d94afbedb9f8ae9d7731c859f50bc3c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Abilities/CeresWrathAbility.png"
-dest_files=["res://.godot/imported/CeresWrathAbility.png-ad1d015bed2149f207502fb0ee1b19f9.ctex"]
+source_file="res://Sprites/Abilities/PowerUpRay.png"
+dest_files=["res://.godot/imported/PowerUpRay.png-d94afbedb9f8ae9d7731c859f50bc3c8.ctex"]
 
 [params]
 

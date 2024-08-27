@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy1xwikuqypg3"]
+
+[ext_resource type="Script" path="res://Scripts/Abilities/slime_army_wrath_ability.gd" id="1_2suph"]
+[ext_resource type="Texture2D" uid="uid://cphatfhm3iqp5" path="res://Sprites/Abilities/SlimeArmyWrathAbility.png" id="2_un72g"]
+[ext_resource type="AudioStream" uid="uid://b2d26q513hxql" path="res://Sounds/LaserTurretShot.mp3" id="3_ysoes"]
+
+[node name="Slime_Army_Wrath_Ability" type="Node2D"]
+script = ExtResource("1_2suph")
+cooldown = 24
+starter_cooldown = 5
+energy_use = 70
+energy_recover_time = 1.5
+
+[node name="Ability_Frame" type="Sprite2D" parent="."]
+texture = ExtResource("2_un72g")
+
+[node name="Ray_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ysoes")
+volume_db = 1.0
+pitch_scale = 4.0
+bus = &"Sounds"
+
+[connection signal="activate" from="." to="." method="_on_activate"]

@@ -35,3 +35,5 @@ func _on_goldfish_trident_damage_body_entered(body):
 	if not body.is_in_group("Enemies"): return
 	
 	Funcs.deal_damage(body, damage_area.damage)
+	if player.life < player.max_life: player.life += damage_area.damage
+	else: player.life = player.max_life

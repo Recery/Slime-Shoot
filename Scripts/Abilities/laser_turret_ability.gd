@@ -5,5 +5,7 @@ var turret = preload("res://Scenes/Abilities/laser_turret.tscn")
 func _on_activate() -> void:
 	use_sound.play()
 	var turret_instance = turret.instantiate()
-	Vars.main_scene.get_node("Summons").add_child(turret_instance)
-	turret_instance.global_position = player.global_position
+	if Funcs.add_to_summons(turret_instance):
+		turret_instance.global_position = player.global_position
+		player.summons_module.add_turret(turret_instance)
+	else: turret_instance.queue_free()

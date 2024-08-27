@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 class_name Summon_Minion
 
 ## La distancia hasta la que puede escanear enemigos este minion
@@ -16,14 +15,12 @@ class_name Summon_Minion
 ## Se ajusta automaticamente en idle_movement() y en ready.
 ## Debe ajustarse manualmente cuando se persigue un enemigo o en otras ocasiones que se desee.
 @export var speed_weight = 0.5
-var speed
+var speed := 0
 
 @export var scan_enemies := true # Si es false no escanea enemigos
 
-var nav_agent
-## La posición a la que apunta el pathfinding.
-## No se mueve automaticamente a ese lugar, hay que moverlo con move_to_pos() despues de establecer esta variable
-var target_position : Vector2
+var nav_agent : NavigationAgent2D
+var dir := Vector2.ZERO
 
 var targeted_enemy
 var can_shoot
@@ -33,35 +30,34 @@ var idle_pos
 var player
 
 func _init():
-	idle_pos = Vector2.ZERO
-	target_position = Vector2.ZERO
 	targeted_enemy = null
-	connect("ready", _on_ready)
+	ready.connect(_on_ready)
 
 func _on_ready():
 	player = Vars.player
+	idle_pos = player.global_position
 	create_children()
 
 func create_children():
 	if scan_enemies:
-		var scan_timer = Timer.new()
+		var scan_timer := Timer.new()
 		scan_timer.wait_time = 0.5
 		scan_timer.autostart = true
 		add_child(scan_timer)
-		scan_timer.connect("timeout", scan_enemy_timeout)
+		scan_timer.timeout.connect(scan_enemy_timeout)
 	
 	var pathfinding_timer = Timer.new()
-	pathfinding_timer.wait_time = 0.2
+	pathfinding_timer.wait_time = 0.4
 	pathfinding_timer.autostart = true
 	add_child(pathfinding_timer)
-	pathfinding_timer.connect("timeout", pathfinding_timer_timeout)
+	pathfinding_timer.timeout.connect(pathfinding_timer_timeout)
 	
-	nav_agent = load("res://Scenes/Enemies/pathfinding.tscn").instantiate()
+	nav_agent = Funcs.get_nav_agent()
 	add_child(nav_agent)
 
-var acumulated_speed = 0
-var move = true
-var move_to_idle_pos = true
+var acumulated_speed := 0
+var move := true
+var move_to_idle_pos := true
 func idle_movement():
 	speed = min(speed_weight * abs(player.speed), abs(player.speed) * 0.65)
 	if global_position.distance_to(idle_pos) > idle_pos_offset.x: move_to_idle_pos = true
@@ -73,7 +69,7 @@ func idle_movement():
 	
 	if targeted_enemy == null:
 		if move_to_idle_pos:
-			target_position = idle_pos
+			nav_agent.target_position = idle_pos
 			move_to_pos(30)
 		else:
 			acumulated_speed += 1
@@ -89,8 +85,9 @@ func scan_enemy_timeout():
 	targeted_enemy = Funcs.scan_for_enemy(scan_range, targeted_enemy, self)
 
 func pathfinding_timer_timeout():
-	nav_agent.target_position = target_position
+	dir = (nav_agent.get_next_path_position() - global_position).normalized()
 
-func move_to_pos(speed_to_min : int):
-	velocity = -((global_position - nav_agent.get_next_path_position()).normalized() * (speed - speed_to_min))
+func move_to_pos(speed_to_min : int) -> void:
+	if dir != null:
+		velocity = dir * (speed - speed_to_min)
 

@@ -4,6 +4,14 @@ class_name Buff_Damage_Player
 var weight_to_add := 1.0
 var amount_to_add := 0.0
 
+enum damage_types{
+	WEAPON,
+	SUMMON,
+	ABILITY,
+	ALL
+}
+var affected_damage_type := damage_types.ALL
+
 func _ready():
 	affected_object = get_parent()
 	if not affected_object is Player:
@@ -31,6 +39,8 @@ func buff_application(buff):
 func add_damage(proj):
 	if not Funcs.is_safe_damage(proj): return
 	
+	if not check_damage_type(proj): return
+	
 	# Esperar a ready para ajustar correctamente el daño
 	if not proj.is_node_ready(): await proj.ready
 	
@@ -45,6 +55,9 @@ func get_damage(proj) -> float:
 		total_extra_damage += (proj.original_damage * weight_to_add) - proj.original_damage
 	
 	return total_extra_damage
+
+func check_damage_type(proj) -> bool:
+	return proj.generated_by == affected_damage_type or affected_damage_type == damage_types.ALL
 
 func remove_buff():
 	get_tree().node_added.disconnect(add_damage)

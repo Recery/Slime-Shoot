@@ -10,6 +10,7 @@ func _on_body_entered(body) -> void:
 	if body == Vars.player:
 		set_deferred("monitoring", false)
 		add_boss()
+		Vars.player.summons_module.teleport_minions_to_player()
 
 func add_boss() -> void:
 	var boss_instance = boss_spawn.scene_to_instance.instantiate()

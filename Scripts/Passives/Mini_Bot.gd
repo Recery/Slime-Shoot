@@ -32,7 +32,7 @@ func _move_to_enemy():
 		move_to_enemy = false
 	
 	if move_to_enemy:
-		target_position = targeted_enemy.global_position
+		nav_agent.target_position = targeted_enemy.global_position
 		move_to_pos(15)
 		flip_sprite_while_moving()
 	else:

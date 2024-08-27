@@ -3,7 +3,9 @@ extends Friendly_Projectile
 func _on_body_entered(body):
 	if not body.is_in_group("Enemies") or stop_working: return
 	
-	body.add_child(get_chill_debuff())
+	if not body.has_node("Glacibot_Chill_Debuff"):
+		body.add_child(get_chill_debuff())
+	else: body.get_node("Glacibot_Chill_Debuff").reset_duration()
 	Funcs.deal_damage(body, damage)
 	die.emit()
 

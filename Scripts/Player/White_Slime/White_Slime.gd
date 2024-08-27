@@ -14,12 +14,13 @@ func _on_extra_physics_process():
 			summon_progress += 1
 			if summon_progress % 5 == 0: particles()
 		if summon_progress >= 80:
-			if Vars.main_scene.has_node("Summons"):
-				Funcs.sound_play_2d("res://Sounds/Life_Regen.mp3", global_position, 14, 1.4)
-				var glacibot_instance := glacibot.instantiate()
-				Vars.main_scene.get_node("Summons").add_child(glacibot_instance)
+			Funcs.sound_play_2d("res://Sounds/Life_Regen.mp3", global_position, 14, 1.4)
+			var glacibot_instance := glacibot.instantiate()
+			if Funcs.add_to_summons(glacibot_instance):
 				glacibot_instance.global_position = global_position
-				summon_progress = 0
+				summons_module.add_minion(glacibot_instance)
+			else: glacibot_instance.queue_free()
+			summon_progress = 0
 	else:
 		summon_progress = 0 # Si la tecla no esta apretada, reiniciar progreso
 

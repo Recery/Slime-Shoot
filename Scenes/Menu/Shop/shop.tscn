@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=157 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -147,6 +147,8 @@
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="102_q4yxp"]
 [ext_resource type="PackedScene" uid="uid://cudyr83n3jsr3" path="res://Scenes/Abilities/soul_collector_ability.tscn" id="122_d8jow"]
 [ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="123_wxccl"]
+[ext_resource type="PackedScene" uid="uid://cy1xwikuqypg3" path="res://Scenes/Abilities/slime_army_wrath_ability.tscn" id="124_d3t4p"]
+[ext_resource type="Texture2D" uid="uid://cphatfhm3iqp5" path="res://Sprites/Abilities/SlimeArmyWrathAbility.png" id="125_6mp6o"]
 [ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="146_67ux6"]
 [ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="147_74odq"]
 [ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="150_thvog"]
@@ -848,13 +850,22 @@ unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
 sprite_to_display = ExtResource("82_0k2td")
 
+[node name="Slime_Army_Wrath" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1650
+type_of_object = 2
+object_to_buy = ExtResource("124_d3t4p")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("26_klcqa")
+sprite_to_display = ExtResource("125_6mp6o")
+
 [node name="Soul_Collector" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1750
 type_of_object = 2
 object_to_buy = ExtResource("122_d8jow")
 unlocked_in_adventure = true
-unlocked_by_slime = ExtResource("26_klcqa")
+unlocked_by_slime = ExtResource("38_1smf3")
 sprite_to_display = ExtResource("123_wxccl")
 
 [node name="Abilities_Shop_Text" type="Label" parent="Abilities"]

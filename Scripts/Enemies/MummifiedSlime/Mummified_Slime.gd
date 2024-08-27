@@ -46,7 +46,6 @@ func _physics_process(_delta):
 			goldfish_trident.timed_shoot.emit(0.8)
 		elif rock.can_shoot: # Si puede usar la piedra...
 			rock.timed_shoot.emit(1.1)
-	
 	immune = charging
 	
 	if player.life <= 0: get_node("Music").stop()
@@ -105,6 +104,12 @@ func charge(_alt_cooldown):
 	charging = false
 	current_weapon = rock
 	switch_pathfinding_cooldown(true)
+
+# Para que detecte si le pego al jugador mientras carga, y curarse en consecuencia
+func _on_body_entered(body):
+	if body == player and charging:
+		if not (player.immune or player.forced_immunity):
+			life_module.heal.emit(damage / 2)
 
 func get_speed_buff() -> Buff_Speed_Enemy:
 	var buff := Buff_Speed_Enemy.new()

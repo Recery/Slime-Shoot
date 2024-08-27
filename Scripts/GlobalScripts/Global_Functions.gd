@@ -48,6 +48,15 @@ func sound_play_2d(path: String, pos : Vector2, volume: float = 0, pitch: float 
 func get_angle(dest_pos, source_pos):
 	return atan2(dest_pos.y - source_pos.y, dest_pos.x - source_pos.x)
 
+func get_nav_agent() -> NavigationAgent2D:
+	var nav_agent := NavigationAgent2D.new()
+	nav_agent.path_max_distance = 10
+	nav_agent.path_postprocessing = NavigationPathQueryParameters2D.PATH_POSTPROCESSING_EDGECENTERED
+	nav_agent.path_metadata_flags = NavigationPathQueryParameters2D.PATH_METADATA_INCLUDE_NONE
+	nav_agent.set_navigation_layer_value(1,false)
+	nav_agent.set_navigation_layer_value(2,true)
+	return nav_agent
+
 func basic_movement(enemy, player):
 	if enemy == null or player == null: return
 	var dir_to_player = (enemy.global_position - player.global_position).normalized()
@@ -232,7 +241,7 @@ func shock_visual(start_pos : Vector2, end_pos : Vector2) -> void:
 		return
 	
 	shock_instance.scale.y = start_pos.distance_to(end_pos) / shock_instance.texture.get_height()
-	shock_instance.rotation = atan2(end_pos.y - start_pos.y, end_pos.x - start_pos.x) - 180
+	shock_instance.rotation = atan2(end_pos.y - start_pos.y, end_pos.x - start_pos.x) - deg_to_rad(90)
 	shock_instance.global_position = (start_pos + end_pos) / 2
 	await get_tree().create_timer(0.1).timeout
 	if shock_instance != null: shock_instance.queue_free()
@@ -317,11 +326,11 @@ func add_to_bullets(node : Node) -> bool:
 		return true
 	else: return false
 
-func add_to_bullets_deferred(node : Node, pos : Vector2) -> bool:
+func add_to_bullets_deferred(node : Node2D, pos : Vector2) -> bool:
 	if node == null or Vars.main_scene == null: return false
 	
 	if Vars.main_scene.has_node("Bullets"):
-		Vars.main_scene.get_node("Bullets").call_deferred("add_child", node)
+		Vars.main_scene.get_node("Bullets").add_child.call_deferred(node)
 		if pos == null: return true
 		elif not node.is_inside_tree():
 			await node.tree_entered
@@ -352,6 +361,19 @@ func add_to_summons(node : Node) -> bool:
 		Vars.main_scene.get_node("Summons").add_child(node)
 		return true
 	else: return false
+
+func add_to_summons_deferred(node : Node2D, pos : Vector2) -> bool:
+	if node == null or Vars.main_scene == null: return false
+	
+	if Vars.main_scene.has_node("Summons"):
+		Vars.main_scene.get_node("Summons").add_child.call_deferred(node)
+		if pos == null: return true
+		elif not node.is_inside_tree():
+			await node.tree_entered
+			node.global_position = pos
+			return true
+	
+	return false
 
 # Recibe una instancia de nodo y lo devuelve sin script
 func set_non_script(instance : Node):

@@ -5,6 +5,7 @@ extends Summon_Minion
 @export var animation : AnimationPlayer
 
 func _ready():
+	add_to_group("Pet")
 	animation.current_animation = "walk"
 
 var extra_idle_pos_y := 0

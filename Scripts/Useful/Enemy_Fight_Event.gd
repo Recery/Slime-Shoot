@@ -13,6 +13,7 @@ func _on_body_entered(body) -> void:
 	if body == Vars.player:
 		set_deferred("monitoring", false)
 		spawn_enemies()
+		Vars.player.summons_module.teleport_minions_to_player()
 
 func spawn_enemies() -> void:
 	for enemy in enemies_to_spawn:

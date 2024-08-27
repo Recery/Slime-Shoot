@@ -5,6 +5,10 @@ extends Summon_Minion
 func _ready():
 	can_shoot = false
 	
+	# La colision empieza desactivada y luego se activa ya que si el minion aparece en muchas colisiones produce un bajon de fps
+	await get_tree().create_timer(0.05).timeout
+	get_node("CollisionShape2D").disabled = false
+	
 	# Esperar 30 segundos para luego desaparecer el bot
 	await get_tree().create_timer(30).timeout
 	Funcs.particles(Vector2(1.5,1.5), global_position, Color.WHITE_SMOKE)
@@ -12,7 +16,6 @@ func _ready():
 
 func _physics_process(_delta) -> void:
 	animation_management()
-	idle_pos = player.global_position
 	
 	if targeted_enemy == null:
 		idle_movement()
@@ -40,7 +43,7 @@ func _move_to_enemy() -> void:
 		move_to_enemy = false
 	
 	if move_to_enemy:
-		target_position = targeted_enemy.global_position
+		nav_agent.target_position = targeted_enemy.global_position
 		move_to_pos(10)
 	else:
 		velocity = Vector2.ZERO

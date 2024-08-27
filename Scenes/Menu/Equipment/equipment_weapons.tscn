@@ -2195,33 +2195,33 @@ autowrap_mode = 3
 max_lines_visible = 7
 
 [node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(141, 19)
+position = Vector2(139, 19)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("13_2duse")
 
 [node name="Use" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Energy_Use"]
 modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
+offset_left = -22.0
 offset_top = -4.0
-offset_right = -7.0
+offset_right = -5.0
 offset_bottom = 6.0
-text = "1.5"
+text = "4"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(139, -4)
+position = Vector2(142, -4)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("14_70lrc")
 
 [node name="Cooldown" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Cooldown_Show"]
 modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
+offset_left = -32.0
 offset_top = -4.0
-offset_right = 2.0
+offset_right = -8.0
 offset_bottom = 6.0
-text = "0"
+text = "0.12"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2528,7 +2528,7 @@ offset_left = 36.0
 offset_top = 30.0
 offset_right = 238.0
 offset_bottom = 98.0
-text = "When you use the Goldfish Trident, you'll charge at your mouse position, dealing damage to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."
+text = "Use the Goldfish Trident and you'll charge at your mouse position, dealing damage and stealing life to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."
 label_settings = SubResource("LabelSettings_cdgr1")
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -2547,7 +2547,7 @@ alignment = 1
 [node name="Use" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Energy_Use"]
 modulate = Color(1, 1, 1, 0.698039)
 layout_mode = 2
-text = "75"
+text = "95"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -2569,7 +2569,7 @@ alignment = 1
 [node name="Amount" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Cooldown"]
 modulate = Color(1, 1, 1, 0.698039)
 layout_mode = 2
-text = "9"
+text = "2.5"
 label_settings = SubResource("LabelSettings_nkm4v")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -9,5 +9,6 @@ func _ready():
 
 func _physics_process(_delta):
 	for child in get_children():
-		if child is CharacterBody2D:
-			child.move_and_slide()
+		if child is Enemy:
+			if not child.waiting_player:
+				child.move_and_slide()
