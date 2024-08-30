@@ -92,7 +92,7 @@ func _physics_process(_delta):
 	summons_module.set_idle_positions(global_position)
 	
 	## Todo lo que tenga que ver con energía ##
-	if energy < max_energy && fill_energy:
+	if energy < max_energy and fill_energy:
 		energy += energy_recover_weight
 	
 	if int(energy) <= 0:

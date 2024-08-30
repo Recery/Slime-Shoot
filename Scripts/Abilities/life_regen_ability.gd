@@ -7,7 +7,7 @@ func _on_activate():
 	get_node("Regen_Timer").start()
 	get_node("Use_Sound").play()
 	for i in 5:
-		await get_tree().create_timer(0.08).timeout
+		await get_tree().create_timer(0.08, false).timeout
 		Funcs.particles(Vector2(1.5,1.5), Vector2(player.global_position.x, player.global_position.y-(i*3)), Color(1, 0.337, 0.271), player)
 
 func _on_regen_timer_timeout():

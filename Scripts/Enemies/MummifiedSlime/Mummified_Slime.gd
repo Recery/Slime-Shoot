@@ -39,7 +39,7 @@ func _physics_process(_delta):
 			go_backwards = false
 			force_pathfinding_update()
 			switch_pathfinding_cooldown(false)
-			get_tree().create_timer(0.6).timeout.connect(func():
+			get_tree().create_timer(0.6, false).timeout.connect(func():
 				if not charging: switch_pathfinding_cooldown(true))
 		elif goldfish_trident.can_shoot: # Si puede usar el tridente...
 			current_weapon = goldfish_trident
@@ -100,7 +100,7 @@ func charge(_alt_cooldown):
 	switch_pathfinding_cooldown(false)
 	dir = (player.global_position - global_position).normalized()
 	apply_new_speed()
-	await get_tree().create_timer(0.6).timeout
+	await get_tree().create_timer(0.6, false).timeout
 	charging = false
 	current_weapon = rock
 	switch_pathfinding_cooldown(true)
@@ -130,7 +130,7 @@ func regen():
 	if life > max_life * 0.75: return # Mucha vida, todavia no curar
 	
 	for i in 5:
-		await get_tree().create_timer(0.08).timeout
+		await get_tree().create_timer(0.08, false).timeout
 		Funcs.particles(Vector2(1.5,1.5), Vector2(global_position.x, global_position.y-(i*3)), Color(1, 0.337, 0.271), self)
 	
 	regen_sound.pitch_scale = 1.1

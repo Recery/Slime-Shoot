@@ -48,7 +48,7 @@ func spawn_effect():
 	smoke_instance.scale = Vector2(1.25,1.25)
 	
 	await Funcs.fade_effect(smoke_instance, true)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.5, false).timeout
 	
 	sprite.show()
 	collision.disabled = false
@@ -103,7 +103,7 @@ var egg := preload("res://Scenes/Enemies/DesertMother/desert_mother_egg.tscn")
 func summon_eggs():
 	moving = false
 	velocity = Vector2.ZERO # Para frenar; que se quede quieta al invocar el huevo
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false).timeout
 	
 	moving = true
 	dash_target_pos = dash_target.global_position # Reiniciar la posicion del dash por si el dash anterior estaba incompleto
@@ -120,7 +120,7 @@ func summon_eggs():
 			Vars.main_scene.get_node("Enemies").add_child(egg_instance)
 			egg_instance.global_position = global_position
 		else: egg_instance.queue_free()
-		await get_tree().create_timer(0.25).timeout
+		await get_tree().create_timer(0.25, false).timeout
 	
 	speed /= 1.5 # Devolver velocidad
 	particles_timer.stop() # Apagar particulas
@@ -154,7 +154,7 @@ func shoot():
 			stinger_instance.direction = (player.global_position - shoot_pos.global_position).normalized()
 			stinger_instance.rotation = Funcs.get_angle(player.global_position, shoot_pos.global_position)
 		else: stinger_instance.queue_free()
-		await get_tree().create_timer(0.15).timeout
+		await get_tree().create_timer(0.15, false).timeout
 
 
 func _on_die():

@@ -17,7 +17,7 @@ func _on_area_entered(area):
 		get_node("Use_Sound").play()
 		get_node("Activated_Sound").play()
 		
-		await get_tree().create_timer(3).timeout
+		await get_tree().create_timer(3, false).timeout
 		die.emit()
 
 func _on_die():

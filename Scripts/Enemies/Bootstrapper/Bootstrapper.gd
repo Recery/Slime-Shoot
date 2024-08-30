@@ -56,7 +56,7 @@ func attack():
 	
 	moving = false
 	apply_new_speed()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	
 	if not setting_traps:
 		get_target_enemy()

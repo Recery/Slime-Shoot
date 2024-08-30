@@ -40,7 +40,7 @@ func shoot():
 	if not Funcs.add_to_bullets(shot_instance): return
 	
 	head.frame = 1
-	await get_tree().create_timer(0.9).timeout
+	await get_tree().create_timer(0.9, false).timeout
 	head.frame = 0
 
 func _on_scan_timer_timeout():

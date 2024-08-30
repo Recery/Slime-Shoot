@@ -8,7 +8,7 @@ func _on_activate() -> void:
 	Funcs.color_explosion(1, 1, player.global_position, player, 0, false, Color.WHITE_SMOKE)
 	
 	player.add_score.connect(enemy_killed)
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(3, false).timeout
 	player.add_score.disconnect(enemy_killed)
 	
 	particles_timer.stop()

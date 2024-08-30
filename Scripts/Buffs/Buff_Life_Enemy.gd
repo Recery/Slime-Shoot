@@ -32,10 +32,10 @@ func reduce_life(time_to_reduce):
 	if time_to_reduce < 0.05: pass
 	
 	for i in range(iterations):
-		await get_tree().create_timer(time_to_reduce).timeout
+		await get_tree().create_timer(time_to_reduce, false).timeout
 		Funcs.deal_damage(affected_object, -life_per_iteration)
 
 func add_life(time_to_add):
 	for i in range(iterations):
-		await get_tree().create_timer(time_to_add).timeout
+		await get_tree().create_timer(time_to_add, false).timeout
 		Funcs.heal_enemy(affected_object, life_per_iteration)
