@@ -51,6 +51,8 @@ func _init():
 	add_to_group("Player_Slime")
 
 func _ready():
+	Input.set_custom_mouse_cursor(load("res://Sprites/Player/JoystickPosition.png"))
+	
 	life = max_life
 	energy = max_energy
 	speed = original_speed
@@ -72,6 +74,7 @@ func _physics_process(_delta):
 	
 	var raw_velocity = Vector2(0,0)
 	
+	
 	if not custom_velocity:
 		if Input.is_action_pressed("up"):
 			raw_velocity.y -= 1
@@ -86,13 +89,24 @@ func _physics_process(_delta):
 		velocity.x = lerp(velocity.x, 0.0, 0.5)
 		velocity.y = lerp(velocity.y, 0.0, 0.5)
 	
+	var sum_pos := Vector2.ZERO
+	if Input.is_action_pressed("controller_position_up"):
+		sum_pos.y -= 1
+	if Input.is_action_pressed("controller_position_down"):
+		sum_pos.y += 1
+	if Input.is_action_pressed("controller_position_left"):
+		sum_pos.x -= 1
+	if Input.is_action_pressed("controller_position_right"):
+		sum_pos.x += 1
+	if sum_pos != Vector2.ZERO:
+		get_viewport().warp_mouse(get_viewport().get_window().get_mouse_position() + sum_pos.normalized() * 20)
 	shoot_pos = get_global_mouse_position()
 	
 	# Calcular la posicion idle de los minions
 	summons_module.set_idle_positions(global_position)
 	
 	## Todo lo que tenga que ver con energía ##
-	if energy < max_energy && fill_energy:
+	if energy < max_energy and fill_energy:
 		energy += energy_recover_weight
 	
 	if int(energy) <= 0:
