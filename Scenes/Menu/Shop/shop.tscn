@@ -669,7 +669,7 @@ theme_override_constants/separation = 7
 
 [node name="Sandy_Eagle" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
-needed_points = 900
+needed_points = 1300
 object_to_buy = ExtResource("38_ln5xm")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
@@ -677,7 +677,7 @@ sprite_to_display = ExtResource("39_hk5pj")
 
 [node name="Paint_Bomb" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
-needed_points = 1150
+needed_points = 1300
 object_to_buy = ExtResource("49_oxrop")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
@@ -686,7 +686,7 @@ frames_display = 2
 
 [node name="Thingy_Of_The_Thing" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
-needed_points = 1300
+needed_points = 1150
 object_to_buy = ExtResource("51_jakk2")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")

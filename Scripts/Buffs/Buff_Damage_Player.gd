@@ -52,7 +52,7 @@ func get_damage(proj) -> float:
 	var total_extra_damage := amount_to_add
 	if weight_to_add > 0:
 		# Fórmula para añadir daño de modo que al añadirlo al daño del arma sea igual que multiplicarlo por el peso
-		total_extra_damage += (proj.original_damage * weight_to_add) - proj.original_damage
+		total_extra_damage += (proj.damage * weight_to_add) - proj.damage
 	
 	return total_extra_damage
 

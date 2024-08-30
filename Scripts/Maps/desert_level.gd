@@ -5,6 +5,8 @@ var sandstorm_active := false
 var catacombs_progress_bar : Node
 var has_progress_bar := true
 
+const points_for_ladder := 700
+
 func _ready() -> void:
 	player.add_score.connect(_on_score_added_sandstorm) # Conecta el add_score para la tormenta de arena
 	
@@ -17,36 +19,26 @@ func _ready() -> void:
 	player.add_child(catacombs_progress_bar)
 	await catacombs_progress_bar.ready
 	catacombs_progress_bar.position = Vector2(-48.5, -53)
-	catacombs_progress_bar.max_value = 900
+	catacombs_progress_bar.max_value = points_for_ladder
 	catacombs_progress_bar.min_value = 0
 	catacombs_progress_bar.set_current_value(0)
+	
+	Vars.menu_map_photo = Vars.menu_maps.DESERT
 
 ## Spawneo de ladder para las catacumbas
 func _on_score_added_catacombs(amount, _enemy) -> void:
-	if Vars.current_score + amount >= 900: # Si tiene 900 puntos o mas, invocar escaleras a las catacumbas
+	if Vars.current_score + amount >= points_for_ladder: # Si tiene los puntos necesarios o mas, invocar escaleras a las catacumbas
 		player.add_score.disconnect(_on_score_added_catacombs)
 		has_progress_bar = false
 		if catacombs_progress_bar != null: catacombs_progress_bar.queue_free()
-		spawn_ladder()
+		spawn_ladder("res://Scenes/Maps/catacombs.tscn")
 	elif catacombs_progress_bar != null: # Sino, actualizar el valor de la barra
 		catacombs_progress_bar.update_value.emit(amount)
-
-func spawn_ladder() -> void:
-	var ladder_instance : Activable
-	ladder_instance = load("res://Scenes/Level_Elements/ladder.tscn").instantiate()
-	ladder_instance.map_to_enter = "res://Scenes/Maps/catacombs.tscn"
-	ladder_instance.up = false
-	ladder_instance.activated.connect(_on_ladder_used)
-	ladder_instance.global_position = player.global_position
-	get_node("Spawners").call_deferred("add_child", ladder_instance)
-
-func _on_ladder_used(_ladder : Activable) -> void:
-	Save_System.save_map_state(self)
 
 ## Inicio de las tormentas de arena
 var sandstorm_timer : Timer
 func _on_score_added_sandstorm(amount, _enemy) -> void:
-	if Vars.current_score + amount >= 900:
+	if Vars.current_score + amount >= points_for_ladder:
 		player.add_score.disconnect(_on_score_added_sandstorm)
 		sandstorm_timer = Timer.new()
 		sandstorm_timer.wait_time = 5

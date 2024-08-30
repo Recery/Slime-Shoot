@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bvexm66yutw5w"]
 
-[ext_resource type="Script" path="res://Scripts/Useful/map.gd" id="1_nwfgm"]
+[ext_resource type="Script" path="res://Scripts/Maps/cyberspace_level.gd" id="1_bisqc"]
 [ext_resource type="PackedScene" uid="uid://cpjm80d2j0nms" path="res://Scenes/Enemies/boolean.tscn" id="2_07aq0"]
 [ext_resource type="PackedScene" uid="uid://fj544jl0a4go" path="res://Scenes/Enemies/Bootstrapper/bootstrapper.tscn" id="2_tn6sk"]
 [ext_resource type="PackedScene" uid="uid://cnsm02heqm0bv" path="res://Scenes/Tiles/tile_cyber.tscn" id="3_6rpde"]
@@ -31,7 +31,7 @@ starter_level = 0
 spawn_time = 13
 
 [node name="Cyberspace_Level" type="Node2D"]
-script = ExtResource("1_nwfgm")
+script = ExtResource("1_bisqc")
 spawn_table = SubResource("Resource_8gbw4")
 
 [node name="TileMap" parent="." instance=ExtResource("3_6rpde")]

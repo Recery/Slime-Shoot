@@ -32,6 +32,15 @@ var settings_data : SettingsData
 
 signal draw_equipped_slime
 
+# Segun el ultimo mapa que se jugo, muestra una foto de ese mapa en el menu
+enum menu_maps {
+	GRASSLANDS,
+	DESERT,
+	SNOW,
+	CYBERSPACE
+	}
+var menu_map_photo := menu_maps.GRASSLANDS
+
 func _init(): 
 	total_points = 500
 

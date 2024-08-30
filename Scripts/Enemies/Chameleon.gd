@@ -29,6 +29,9 @@ func _physics_process(_delta):
 	else:
 		chase_player()
 	
+	if velocity == Vector2.ZERO: sprite.stop()
+	elif not sprite.is_playing(): sprite.play()
+	
 	sprite.flip_h = player.global_position.x < global_position.x
 
 # Cuando recibe daño, perseguir al jugador

@@ -1,6 +1,6 @@
 extends Control
 
-var tips = [
+var tips := [
 "Remember to eat green apples daily!",
 "Follow Ruby Muscaria on Twitch!",
 "Pray for the Immortal Goldfish Goddess, or go to Slime Hell.",
@@ -17,8 +17,17 @@ var tips = [
 "Hold space to activate your slime perk!",
 "What the hell can I say to surprise the player this time... Oh! You're here...",
 "You can go fullscreen with F11!",
-"Please support indie devs!",
-"Tired of grinding points? Not my problem. Keep grinding."
+"Support indie devs!",
+"Tired of grinding points? Not my problem. Keep grinding.",
+"Recery is watching you...",
+"I'm making you wait an extra 0.5 seconds with this loading screen.",
+"For each time you die in Slime Shoot, drink a glass of water.",
+"Congratulations! You found another generic loading screen tip!",
+"Trust me, the Rock is the best weapon in the game.",
+"You don't understand what your enemies do? Check the enemy almanac!",
+"Pluto is not a planet, stop living in the past and accept it.",
+"Fun fact: Recery likes saying fun fact.",
+"Alt+F4 to get infinite green apples... Wait, it's a joke, don't close Slime Shoot!"
 ]
 
 func _ready():

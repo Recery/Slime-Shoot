@@ -32,6 +32,7 @@ var damage : float
 ## No hace falta añadir queue_free() ni poner en false stop_moving cuando se emite esta señal, ya lo hace en la clase original.
 ## Se debe emitir cuando se quiere eliminar el proyectil luego de cumplir su función.
 signal die
+signal reset_persistent(proj)
 
 func _init():
 	set_collision_layer_value(1, false)

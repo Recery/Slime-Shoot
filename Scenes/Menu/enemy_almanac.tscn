@@ -2175,14 +2175,16 @@ texture = ExtResource("8_1wb5a")
 [node name="Description" type="Label" parent="Rows/Row2/Mummified_Slime/Enemy_Description"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "This creature was summoned by product of an unfinished ritual. She was supposed to be a perfect goddess... But she turned out to be a failure! However, she is still very powerful... but she is a corrupt slime and she is against you! Defeat and purify her!"
+offset_top = 29.0
+offset_right = 258.0
+offset_bottom = 107.0
+scale = Vector2(0.9, 0.9)
+text = "This creature was summoned by product of an unfinished ritual. She was supposed to be a perfect goddess... But she turned out to be a failure! However, she is still very powerful... but she is a corrupt slime and she is against you!"
 label_settings = SubResource("LabelSettings_cj3s3")
 horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3
-max_lines_visible = 6
+max_lines_visible = 7
 
 [node name="Sock" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2

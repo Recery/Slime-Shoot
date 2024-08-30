@@ -16,6 +16,9 @@ func _physics_process(_delta) -> void:
 	var raycast_angle = Funcs.get_angle(explode_detecter.global_position, player.global_position) + 1.5708
 	explode_detecter.rotation = raycast_angle
 	
+	if velocity == Vector2.ZERO and not already_emitted: anim_player.stop()
+	elif not anim_player.is_playing(): anim_player.play()
+	
 	if is_instance_valid(explode_detecter.get_collider()):
 		if explode_detecter.get_collider().is_in_group("Player_Slime"):
 			die.emit()

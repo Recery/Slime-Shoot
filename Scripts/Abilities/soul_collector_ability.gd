@@ -2,7 +2,7 @@ extends Ability
 # 30 starter
 @onready var use_sound := get_node("Use_Sound")
 @onready var particles_timer := get_node("Particles_Timer")
-func _on_activate():
+func _on_activate() -> void:
 	use_sound.play()
 	particles_timer.start()
 	Funcs.color_explosion(1, 1, player.global_position, player, 0, false, Color.WHITE_SMOKE)
@@ -13,13 +13,12 @@ func _on_activate():
 	
 	particles_timer.stop()
 
-func enemy_killed(points, enemy):
+func enemy_killed(points, enemy) -> void:
 	if points <= 0 or enemy.is_in_group("Dungeon_Enemy"): return
 	create_soul_orb(enemy.global_position)
 
-func create_particles():
+func create_particles() -> void:
 	Funcs.particles(Vector2(2.2,1.8), player.global_position, Color.WHITE_SMOKE, player)
-
 
 @onready var collect_soul_sound = get_node("Collect_Soul_Sound")
 var soul_orbs : Array[Sprite2D]
@@ -33,7 +32,7 @@ func create_soul_orb(pos : Vector2) -> void:
 		soul_orbs.append(soul_orb)
 	else: soul_orb.queue_free()
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	if soul_orbs.size() < 1: return
 	
 	for orb in soul_orbs:

@@ -266,13 +266,12 @@ func immune_animation() -> void:
 	can_play_immune_animation = false
 	
 	if slime != null:
-		
-		var anim_tween_slime := get_tree().create_tween()
+		var anim_tween_slime := create_tween()
 		anim_tween_slime.finished.connect(func(): can_play_immune_animation = true)
 		anim_tween_slime.tween_property(slime, "modulate:a", 0.25, 0.2)
 		anim_tween_slime.tween_property(slime, "modulate:a", 1, 0.2)
 	if hat != null:
-		var anim_tween_hat := get_tree().create_tween()
+		var anim_tween_hat := create_tween()
 		anim_tween_hat.tween_property(hat, "modulate:a", 0.25, 0.2)
 		anim_tween_hat.tween_property(hat, "modulate:a", 1, 0.2)
 

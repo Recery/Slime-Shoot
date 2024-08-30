@@ -47,6 +47,7 @@ func _ready():
 	Events.draw_equipped_slime.emit()
 	
 	get_node("Title/Version").text = "v" + ProjectSettings.get_setting("application/config/version")
+	set_menu_theme()
 
 func draw_slime():
 	# Dibujar slime
@@ -68,6 +69,15 @@ func draw_slime():
 		var pet_draw := Vars.pet_equipped.instantiate()
 		pet_draw.set_script(null)
 		get_node("Pet").add_child(pet_draw)
+
+func set_menu_theme() -> void:
+	var background_pos := get_node("Background")
+	match Vars.menu_map_photo:
+		Vars.menu_maps.GRASSLANDS: background_pos.add_child(load("res://Scenes/Menu/Map_Images/grasslands_menu.tscn").instantiate())
+		Vars.menu_maps.DESERT: background_pos.add_child(load("res://Scenes/Menu/Map_Images/desert.tscn").instantiate())
+		Vars.menu_maps.SNOW: background_pos.add_child(load("res://Scenes/Menu/Map_Images/snow_menu.tscn").instantiate())
+		Vars.menu_maps.CYBERSPACE: background_pos.add_child(load("res://Scenes/Menu/Map_Images/cyber_menu.tscn").instantiate())
+		_: background_pos.add_child(load("res://Scenes/Menu/Map_Images/grasslands_menu.tscn").instantiate())
 
 # Botón start
 func _on_start_pressed():

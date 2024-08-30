@@ -1,0 +1,43 @@
+[gd_scene load_steps=13 format=3 uid="uid://cxlat02qj74qa"]
+
+[ext_resource type="Script" path="res://Scripts/Cinematic/Cinematic.gd" id="1_s7nav"]
+[ext_resource type="Texture2D" uid="uid://8tseb6hpstdl" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame1CatacombsMummifiedSlime.png" id="2_mjwj7"]
+[ext_resource type="Script" path="res://Resources/Scripts/CinematicFrame.gd" id="3_pmg07"]
+[ext_resource type="Texture2D" uid="uid://c6m2ntt1aumgq" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame2CatacombsMummifiedSlime.png" id="4_jf0k4"]
+[ext_resource type="Texture2D" uid="uid://dy44e5im5e856" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame3CatacombsMummifiedSlime.png" id="5_jo0r7"]
+[ext_resource type="Texture2D" uid="uid://dkcvb6jf06q38" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame4CatacombsMummifiedSlime.png" id="6_fe1tt"]
+[ext_resource type="Texture2D" uid="uid://ca1vwvgj3rbf4" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame5CatacombsMummifiedSlime.png" id="7_jj5br"]
+
+[sub_resource type="Resource" id="Resource_hb0n3"]
+script = ExtResource("3_pmg07")
+frame = ExtResource("2_mjwj7")
+text = "The slimes choosed the right path in the catacombs..."
+
+[sub_resource type="Resource" id="Resource_ovli1"]
+script = ExtResource("3_pmg07")
+frame = ExtResource("4_jf0k4")
+text = "And they found another slime... But for some reason she was extremely aggresive with them, and she was ready for a fight!"
+
+[sub_resource type="Resource" id="Resource_cu5p5"]
+script = ExtResource("3_pmg07")
+frame = ExtResource("5_jo0r7")
+text = "The slimes managed to defeat the Mummified Slime after an equal fight... And she became the Goldfish Slime!"
+
+[sub_resource type="Resource" id="Resource_uq6rg"]
+script = ExtResource("3_pmg07")
+frame = ExtResource("6_fe1tt")
+text = "Then, the slimes found a strange machine at the end of the catacombs. They used it, and..."
+
+[sub_resource type="Resource" id="Resource_y3f20"]
+script = ExtResource("3_pmg07")
+frame = ExtResource("7_jj5br")
+text = "They ended up in a weird place very far away from Slime Kingdom! Maybe even in another universe!"
+
+[node name="Cinematic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_s7nav")
+cinematic_frames = Array[ExtResource("3_pmg07")]([SubResource("Resource_hb0n3"), SubResource("Resource_ovli1"), SubResource("Resource_cu5p5"), SubResource("Resource_uq6rg"), SubResource("Resource_y3f20")])
+id_cinematic = 4

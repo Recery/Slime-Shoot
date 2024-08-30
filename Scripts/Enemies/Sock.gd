@@ -20,6 +20,7 @@ func _physics_process(_delta):
 	
 	if velocity == Vector2.ZERO:
 		sprite.stop()
+		if merger: reset_fusion_state()
 	elif not sprite.is_playing():
 		sprite.play()
 
@@ -28,7 +29,11 @@ func _on_die():
 
 # Se reinicia la media en _exit_tree y no cuando se emite die ya que no siempre los enemigos emiten die al desaparecer
 func _exit_tree():
-	if sock_to_merge != null: # Esta media murio por lo que la media con la que se iba a fusionar debe reiniciar su estado de fusion
+	reset_fusion_state() # Esta media murio por lo que la media con la que se iba a fusionar debe reiniciar su estado de fusion
+
+func reset_fusion_state() -> void:
+	if sock_to_merge != null:
+		merger = false
 		sock_to_merge.merged = false
 		sock_to_merge.moving = true
 

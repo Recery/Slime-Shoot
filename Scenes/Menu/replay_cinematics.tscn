@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://71c34tsp0mwa"]
+[gd_scene load_steps=17 format=3 uid="uid://71c34tsp0mwa"]
 
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_d5ecy"]
 [ext_resource type="Texture2D" uid="uid://oo7n7e5pk7gj" path="res://Sprites/Cinematics/Intro/ReplayIcon.png" id="2_1mr2q"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bl04lfxrvkjf3" path="res://Sprites/Cinematics/Catacombs/ReplayIcon.png" id="10_nflp5"]
 [ext_resource type="Texture2D" uid="uid://e5jqqev5mqxx" path="res://Sprites/Cinematics/Catacombs/ReplayIconHover.png" id="11_mb81g"]
 [ext_resource type="PackedScene" uid="uid://bn0sq63s811s5" path="res://Scenes/Cinematic/catacombs_cinematic.tscn" id="12_5y4id"]
+[ext_resource type="Texture2D" uid="uid://bxqq2kktcatf0" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/ReplayIcon.png" id="13_oeo4f"]
+[ext_resource type="PackedScene" uid="uid://cxlat02qj74qa" path="res://Scenes/Cinematic/catacombs_mummified_cinematic.tscn" id="13_xftjs"]
+[ext_resource type="Texture2D" uid="uid://djkvtf0aa2qha" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/ReplayIconHover.png" id="14_o3vh3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ugia"]
 font = ExtResource("1_d5ecy")
@@ -78,6 +81,17 @@ texture_disabled = ExtResource("4_71j4k")
 script = ExtResource("5_kmlu1")
 cinematic_to_play = ExtResource("12_5y4id")
 
+[node name="Replay_Button_4" type="TextureButton" parent="Row1"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("13_oeo4f")
+texture_pressed = ExtResource("14_o3vh3")
+texture_hover = ExtResource("14_o3vh3")
+texture_disabled = ExtResource("4_71j4k")
+script = ExtResource("5_kmlu1")
+cinematic_to_play = ExtResource("13_xftjs")
+
 [connection signal="pressed" from="Row1/Replay_Button" to="Row1/Replay_Button" method="_on_pressed"]
 [connection signal="pressed" from="Row1/Replay_Button_2" to="Row1/Replay_Button_2" method="_on_pressed"]
 [connection signal="pressed" from="Row1/Replay_Button_3" to="Row1/Replay_Button_3" method="_on_pressed"]
+[connection signal="pressed" from="Row1/Replay_Button_4" to="Row1/Replay_Button_4" method="_on_pressed"]

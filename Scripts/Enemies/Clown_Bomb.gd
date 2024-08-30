@@ -24,7 +24,7 @@ func _ready() -> void:
 func _physics_process(_delta) -> void:
 	life_bar.set_current_value(life)
 	
-	if global_position.distance_to(player.global_position) < 150 and can_attack && not is_in_group("Full_Freezed"):
+	if global_position.distance_to(player.global_position) < 150 and can_attack and not is_in_group("Full_Freezed"):
 		# Atacar
 		can_attack = false
 		animation.current_animation = "attack"
@@ -35,7 +35,7 @@ func _physics_process(_delta) -> void:
 			1: explosion()
 		attack_phase += 1
 		if attack_phase >= 2: attack_phase = 0
-	elif animation.current_animation == "walk" && not is_in_group("Full_Freezed"):
+	elif animation.current_animation == "walk" and not is_in_group("Full_Freezed"):
 		moving = true
 		if player.global_position.x < global_position.x: sprite.flip_h = true
 		else: sprite.flip_h = false
@@ -85,7 +85,8 @@ func explosion():
 	get_node("AnimationPlayer").current_animation = "walk"
 
 func _on_explosion_area_body_entered(body) -> void:
-	if body.is_in_group("Player_Slime"): body.life -= damage * 3
+	if body.is_in_group("Player_Slime"):
+		body.deal_damage_special(damage * 3, true)
 	get_node("Explosion_Area").set_deferred("monitoring", false)
 
 func play_sound():

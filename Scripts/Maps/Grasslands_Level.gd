@@ -17,6 +17,8 @@ func _ready() -> void:
 	dungeon_progress_bar.max_value = 300
 	dungeon_progress_bar.min_value = 0
 	dungeon_progress_bar.set_current_value(0)
+	
+	Vars.menu_map_photo = Vars.menu_maps.GRASSLANDS
 
 func _on_add_score(score_added, _enemy) -> void:
 	if not has_progress_bar:
@@ -28,17 +30,5 @@ func _on_add_score(score_added, _enemy) -> void:
 	
 	if dungeon_progress_bar != null:
 		has_progress_bar = false
-		spawn_ladder()
+		spawn_ladder("res://Scenes/Maps/clown_dungeon.tscn")
 		dungeon_progress_bar.queue_free()
-
-func spawn_ladder() -> void:
-	var ladder_instance : Activable
-	ladder_instance = load("res://Scenes/Level_Elements/ladder.tscn").instantiate()
-	ladder_instance.up = false
-	ladder_instance.map_to_enter = "res://Scenes/Maps/clown_dungeon.tscn"
-	ladder_instance.activated.connect(_on_ladder_used)
-	ladder_instance.global_position = player.global_position
-	get_node("Spawners").call_deferred("add_child", ladder_instance)
-
-func _on_ladder_used(_ladder : Activable) -> void:
-	Save_System.save_map_state(self)

@@ -87,3 +87,16 @@ func add_speed_to_enemies():
 			if not enemy.is_in_group("Boss") and not enemy.wait_player_mode:
 				enemy.base_speed += 2
 				if enemy.speed != 0: enemy.speed += 2
+
+func spawn_ladder(map_to_enter : String) -> void:
+	var ladder_instance : Activable = load("res://Scenes/Level_Elements/ladder.tscn").instantiate()
+	ladder_instance.up = false
+	ladder_instance.map_to_enter = map_to_enter
+	ladder_instance.activated.connect(_save_map_state)
+	get_node("Spawners").call_deferred("add_child", ladder_instance)
+	if not ladder_instance.is_inside_tree():
+		await ladder_instance.tree_entered
+	ladder_instance.global_position = player.global_position
+
+func _save_map_state(_ladder : Activable) -> void:
+	Save_System.save_map_state(self)
