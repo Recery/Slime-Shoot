@@ -2336,9 +2336,9 @@ visible = false
 z_index = 1
 layout_mode = 3
 anchors_preset = 0
-offset_left = -140.0
+offset_left = -175.0
 offset_top = -31.0
-offset_right = -100.0
+offset_right = -135.0
 offset_bottom = 9.0
 
 [node name="Abillity" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
