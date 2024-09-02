@@ -84,7 +84,7 @@ func idle_movement():
 func scan_enemy_timeout():
 	targeted_enemy = Funcs.scan_for_enemy(scan_range, targeted_enemy, self)
 
-func pathfinding_timer_timeout():
+func pathfinding_timer_timeout() -> void:
 	dir = (nav_agent.get_next_path_position() - global_position).normalized()
 
 func move_to_pos(speed_to_min : int) -> void:

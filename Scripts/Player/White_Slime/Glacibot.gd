@@ -9,8 +9,8 @@ func _ready():
 	await get_tree().create_timer(0.05).timeout
 	get_node("CollisionShape2D").disabled = false
 	
-	# Esperar 30 segundos para luego desaparecer el bot
-	await get_tree().create_timer(30).timeout
+	# Esperar 24 segundos para luego desaparecer el bot
+	await get_tree().create_timer(24, false).timeout
 	Funcs.particles(Vector2(1.5,1.5), global_position, Color.WHITE_SMOKE)
 	queue_free()
 

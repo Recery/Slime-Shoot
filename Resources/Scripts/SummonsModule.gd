@@ -25,9 +25,29 @@ func set_idle_positions(source_pos : Vector2) -> void:
 	var circle_points := minions.size()
 	for i in range(circle_points):
 		var angle := i * (2 * PI / circle_points)
+		var idle_pos := find_valid_pos(source_pos, radius, angle)
+		
+		minions[i].idle_pos = idle_pos
+
+func find_valid_pos(source_pos : Vector2, radius : float, angle : float) -> Vector2:
+	var space_state := Vars.player.get_world_2d().direct_space_state
+	for i in range(10):
 		var x := source_pos.x + radius * cos(angle)
 		var y := source_pos.y + radius * sin(angle)
-		minions[i].idle_pos = Vector2(x,y)
+		var new_pos := Vector2(x,y)
+		
+		var params := PhysicsRayQueryParameters2D.create(Vars.player.global_position, new_pos, 8)
+		var result := space_state.intersect_ray(params)
+		if not result or not (result.collider is TileMap):
+			# Es una posicion valida, devolver esta posicion
+			return new_pos
+		
+		# Posicion invalida, achicar el radio para generar nueva posicion
+		radius *= 0.8
+	
+	# No se encontro ninguna posicion valida, devolver la source_pos (que deberia ser la posicion del jugador)
+	return source_pos
+	
 
 func teleport_minions_to_player() -> void:
 	for minion in minions:

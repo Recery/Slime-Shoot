@@ -12,10 +12,10 @@ func _on_body_entered(body):
 			die.emit()
 
 var puddle_generated := false
+var puddle := preload("res://Scenes/Weapons/paint_bomb_puddle.tscn")
 func _on_die():
 	if puddle_generated: return
 	puddle_generated = true
-	var puddle : Node = load("res://Scenes/Weapons/paint_bomb_puddle.tscn").instantiate()
-	Vars.main_scene.get_node("Summons").call_deferred("add_child", puddle)
-	if not puddle.is_inside_tree(): await puddle.tree_entered
-	puddle.global_position = global_position
+	var puddle_instance := puddle.instantiate()
+	if not await Funcs.add_to_summons_deferred(puddle_instance, global_position):
+		puddle_instance.queue_free()
