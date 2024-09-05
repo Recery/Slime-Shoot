@@ -1,4 +1,4 @@
-[gd_scene load_steps=157 format=3 uid="uid://cd4ht43jmcn7h"]
+[gd_scene load_steps=159 format=3 uid="uid://cd4ht43jmcn7h"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/shop.gd" id="1_rijbk"]
 [ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_1dh5a"]
@@ -125,8 +125,10 @@
 [ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="69_yssrl"]
 [ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="70_6lfp1"]
 [ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="70_ikb10"]
+[ext_resource type="PackedScene" uid="uid://51lcfqt4842s" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="71_kowf4"]
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="71_lft1i"]
+[ext_resource type="Texture2D" uid="uid://b27rbgvhlf0ex" path="res://Sprites/Pets/BabyCannon/BabyCannonDisplay.png" id="71_yq0eh"]
 [ext_resource type="Texture2D" uid="uid://1q4vbol77sj2" path="res://Sprites/Abilities/LethalVacuumCleanerAbility.png" id="72_7tjov"]
 [ext_resource type="Texture2D" uid="uid://cy6imfwi0wuqn" path="res://Sprites/Passives/ExtraEnergyPassive.png" id="72_rpcs1"]
 [ext_resource type="PackedScene" uid="uid://camfigffwx7ea" path="res://Scenes/Passives/sharper_weapons_passive.tscn" id="73_mxrur"]
@@ -585,6 +587,13 @@ type_of_object = 5
 object_to_buy = ExtResource("68_oef7s")
 sprite_to_display = ExtResource("69_yssrl")
 frames_display = 2
+
+[node name="Baby_Cannon" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
+layout_mode = 2
+needed_points = 1000
+type_of_object = 5
+object_to_buy = ExtResource("70_s47oh")
+sprite_to_display = ExtResource("71_yq0eh")
 
 [node name="Pets_Shop_Text" type="Label" parent="Pets"]
 layout_mode = 0

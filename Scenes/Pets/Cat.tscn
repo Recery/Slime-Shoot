@@ -122,7 +122,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htnrd"]
 radius = 5.0
-height = 16.0
+height = 15.0
 
 [node name="Cat" type="CharacterBody2D" node_paths=PackedStringArray("sprites", "animation") groups=["Pet"]]
 collision_layer = 0

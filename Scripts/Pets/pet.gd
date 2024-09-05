@@ -1,4 +1,5 @@
 extends Summon_Minion
+class_name Pet
 
 @export var sprites : Array[Node]
 @export var inverted_flip := false
@@ -6,7 +7,10 @@ extends Summon_Minion
 
 func _ready():
 	add_to_group("Pet")
-	animation.current_animation = "walk"
+	
+	if animation == null: return
+	if animation.has_animation("walk"):
+		animation.current_animation = "walk"
 
 var extra_idle_pos_y := 0
 func _physics_process(_delta):
@@ -26,4 +30,5 @@ func _physics_process(_delta):
 		for sprite in sprites:
 			sprite.flip_h = velocity.x < 0
 	
-	animation.speed_scale = max((velocity.length() + 10) / speed, 0.6)
+	if animation != null:
+		animation.speed_scale = max((velocity.length() + 10) / speed, 0.6)

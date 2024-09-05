@@ -32,14 +32,14 @@ func graphics() -> void:
 		if velocity != Vector2.ZERO:
 			wheel_1.rotation_degrees += speed * 0.08
 			wheel_2.rotation_degrees += speed * 0.08
-		wheel_1.position.x = 2
+		wheel_1.position.x = 1
 		wheel_2.position.x = -3
 	else:
 		cannon.flip_v = true
 		if velocity != Vector2.ZERO:
 			wheel_1.rotation_degrees -= speed * 0.08
 			wheel_2.rotation_degrees -= speed * 0.08
-		wheel_1.position.x = -2
+		wheel_1.position.x = -1
 		wheel_2.position.x = 3
 
 @onready var fire := get_node("Center/Pivot/Fire")

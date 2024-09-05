@@ -17,8 +17,6 @@ func buff_application(node):
 	if not node is Buff_Speed_Player: return
 	
 	affected_object.speed *= weight_to_modify
-	
-	print("Velocidad: ", affected_object.speed)
 
 func remove_buff():
 	affected_object.speed = affected_object.original_speed

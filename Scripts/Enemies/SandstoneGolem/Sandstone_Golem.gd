@@ -14,7 +14,7 @@ func _physics_process(_delta):
 	player_detecter.rotation_degrees -= 90
 	
 	if global_position.distance_to(player.global_position) < 140:
-		if can_attack:
+		if can_attack and not is_in_group("Full_Freezed"):
 			can_attack = false
 			if Funcs.probability(70) and not player_detecter.get_collider() is TileMap:
 				expansive_wave_attack()

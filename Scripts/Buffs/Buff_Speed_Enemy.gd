@@ -21,7 +21,6 @@ func buff_application(node):
 	
 	affected_object.speed *= weight_to_modify
 	affected_object.apply_new_speed()
-	print("Nueva ", name, ": ", affected_object.speed)
 
 func remove_buff():
 	if weight_to_modify == 0 and affected_object.is_in_group("Full_Freezed"): 
@@ -29,4 +28,3 @@ func remove_buff():
 	
 	affected_object.speed = affected_object.base_speed
 	affected_object.apply_new_speed()
-	print("Reestablecida ", name, ": ", affected_object.speed)

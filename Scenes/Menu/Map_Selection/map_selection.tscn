@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://xcb3sy5rg4sn"]
+[gd_scene load_steps=27 format=3 uid="uid://xcb3sy5rg4sn"]
 
 [ext_resource type="PackedScene" uid="uid://cnh8ic5jmr58n" path="res://Scenes/Menu/Map_Selection/map_button.tscn" id="1_rdn44"]
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
@@ -9,13 +9,14 @@
 [ext_resource type="Texture2D" uid="uid://cghidm4qs0u3q" path="res://Sprites/Menu/MapsButtons/Desert.png" id="7_6egdv"]
 [ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="7_6w4tq"]
 [ext_resource type="Texture2D" uid="uid://bynae8dkavjoa" path="res://Sprites/Menu/MapsButtons/DesertHover.png" id="8_4vrjy"]
+[ext_resource type="PackedScene" uid="uid://bhh53gp4p80wi" path="res://Scenes/Maps/desert_level.tscn" id="10_cbe2u"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="10_e4mke"]
-[ext_resource type="PackedScene" uid="uid://bhh53gp4p80wi" path="res://Scenes/Maps/desert_level.tscn" id="10_ldk0s"]
 [ext_resource type="PackedScene" uid="uid://c61mfsv2idn4c" path="res://Scenes/Cinematic/clown_dungeon_cinematic.tscn" id="12_mglki"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="12_q38p5"]
 [ext_resource type="Texture2D" uid="uid://daldv67yduw25" path="res://Sprites/Menu/MapsButtons/Snow.png" id="13_5qowy"]
 [ext_resource type="PackedScene" uid="uid://ovfk38tcf248" path="res://Scenes/Maps/snow_level.tscn" id="13_wxwak"]
 [ext_resource type="Texture2D" uid="uid://b1kkbh31ms072" path="res://Sprites/Menu/MapsButtons/SnowHover.png" id="14_mvmp5"]
+[ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="16_rdua1"]
 [ext_resource type="PackedScene" uid="uid://bn0sq63s811s5" path="res://Scenes/Cinematic/catacombs_cinematic.tscn" id="16_sfd4i"]
 [ext_resource type="Texture2D" uid="uid://cs43idgt3tggv" path="res://Sprites/Menu/MapsButtons/Cyberspace.png" id="17_d5tfd"]
 [ext_resource type="PackedScene" uid="uid://bvexm66yutw5w" path="res://Scenes/Maps/cyberspace_level.tscn" id="17_tck35"]
@@ -89,7 +90,7 @@ offset_bottom = 21.0
 texture_normal = ExtResource("7_6egdv")
 texture_pressed = ExtResource("8_4vrjy")
 texture_hover = ExtResource("8_4vrjy")
-map_to_enter = ExtResource("10_ldk0s")
+map_to_enter = ExtResource("10_cbe2u")
 unlocked_by_slime = ExtResource("10_e4mke")
 cinematic_to_play = ExtResource("12_mglki")
 map_name = "Desert"
@@ -107,7 +108,7 @@ texture_normal = ExtResource("13_5qowy")
 texture_pressed = ExtResource("14_mvmp5")
 texture_hover = ExtResource("14_mvmp5")
 map_to_enter = ExtResource("13_wxwak")
-unlocked_by_slime = ExtResource("10_e4mke")
+unlocked_by_slime = ExtResource("16_rdua1")
 cinematic_to_play = ExtResource("16_sfd4i")
 map_name = "Snow"
 

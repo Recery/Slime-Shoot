@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://51lcfqt4842s"]
+
+[ext_resource type="Texture2D" uid="uid://cwvqe4x0ics80" path="res://Sprites/Pets/BabyCannon/BabyCannonWheel.png" id="1_414y0"]
+[ext_resource type="Script" path="res://Scripts/Pets/baby_cannon.gd" id="1_n0qqq"]
+[ext_resource type="Texture2D" uid="uid://58g0px5mjdha" path="res://Sprites/Pets/BabyCannon/BabyCannon.png" id="2_ewhlb"]
+[ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_q2e5k"]
+[ext_resource type="Texture2D" uid="uid://62fg3a5vx2w3" path="res://Sprites/Pets/BabyCannon/BabyCannonCannon.png" id="3_2pwd3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k54xu"]
+radius = 5.0
+
+[node name="BabyCannon" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 128
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_n0qqq")
+idle_pos_offset = Vector2(30, 5)
+speed_weight = 0.7
+scan_enemies = false
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.266667)
+texture_filter = 1
+position = Vector2(1.625, 3)
+scale = Vector2(0.514706, 0.8)
+texture = ExtResource("2_q2e5k")
+hframes = 2
+frame = 1
+
+[node name="Wheel_1" type="Sprite2D" parent="."]
+position = Vector2(1, 2)
+texture = ExtResource("1_414y0")
+
+[node name="Center" type="Sprite2D" parent="."]
+texture = ExtResource("2_ewhlb")
+
+[node name="Pivot" type="Node2D" parent="Center"]
+position = Vector2(0, 1)
+
+[node name="Cannon" type="Sprite2D" parent="Center/Pivot"]
+position = Vector2(5.5, 0)
+texture = ExtResource("3_2pwd3")
+
+[node name="Wheel_2" type="Sprite2D" parent="."]
+position = Vector2(-2, 3)
+texture = ExtResource("1_414y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_k54xu")

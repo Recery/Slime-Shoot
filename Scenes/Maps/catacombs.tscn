@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://dy6d6jf0es7fo"]
+[gd_scene load_steps=105 format=3 uid="uid://dy6d6jf0es7fo"]
 
 [ext_resource type="Script" path="res://Scripts/Maps/catacombs.gd" id="1_ilscc"]
 [ext_resource type="PackedScene" uid="uid://b52igxfs6cw8o" path="res://Scenes/Tiles/tile_catacombs.tscn" id="2_1nsx4"]
@@ -197,21 +197,6 @@ script = ExtResource("6_ekko4")
 emitter_node_path = NodePath("../../Doors/Desert_Mother_Path")
 signal_name = "open_and_close"
 
-[sub_resource type="Resource" id="Resource_3wmhi"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-64, -576)
-parent_path = null
-
-[sub_resource type="Resource" id="Resource_j0y55"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-64, -576)
-parent_path = null
-
-[sub_resource type="Resource" id="Resource_vvtcm"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-64, -576)
-parent_path = null
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yccnk"]
 size = Vector2(29.5, 10)
 
@@ -316,21 +301,6 @@ size = Vector2(30, 3)
 script = ExtResource("6_ekko4")
 emitter_node_path = NodePath("../../Doors/Door15")
 signal_name = "open_and_close"
-
-[sub_resource type="Resource" id="Resource_vhqvu"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-208, -814)
-parent_path = null
-
-[sub_resource type="Resource" id="Resource_4mqbp"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-208, -814)
-parent_path = null
-
-[sub_resource type="Resource" id="Resource_oxaql"]
-script = ExtResource("15_n7vwt")
-position_to_spawn = Vector2(-208, -814)
-parent_path = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2oitq"]
 size = Vector2(30, 3)
@@ -934,7 +904,6 @@ position = Vector2(-336, -48)
 
 [node name="Spawn_Position" type="Node2D" parent="."]
 y_sort_enabled = true
-position = Vector2(1350, -881)
 
 [node name="Goldfish_Statue" type="StaticBody2D" parent="Spawn_Position"]
 position = Vector2(944, -896)
@@ -1428,7 +1397,6 @@ volume_db = 2.0
 [node name="Close_Desert_Mother_Path" parent="Events" instance=ExtResource("14_kxoqf")]
 position = Vector2(272, -400)
 nodes_to_connect = Array[ExtResource("6_ekko4")]([SubResource("Resource_c5ju2")])
-scene_instancer = Array[ExtResource("15_n7vwt")]([SubResource("Resource_3wmhi"), SubResource("Resource_j0y55"), SubResource("Resource_vvtcm")])
 
 [node name="CollisionShape2D" parent="Events/Close_Desert_Mother_Path" index="0"]
 position = Vector2(0.25, 0)
@@ -1447,7 +1415,6 @@ shape = SubResource("RectangleShape2D_jix2y")
 [node name="Various_Enemies_Close" parent="Events" instance=ExtResource("14_kxoqf")]
 position = Vector2(128, -638)
 nodes_to_connect = Array[ExtResource("6_ekko4")]([SubResource("Resource_8mfdg")])
-scene_instancer = Array[ExtResource("15_n7vwt")]([SubResource("Resource_vhqvu"), SubResource("Resource_4mqbp"), SubResource("Resource_oxaql")])
 
 [node name="CollisionShape2D" parent="Events/Various_Enemies_Close" index="0"]
 position = Vector2(0, 0.5)

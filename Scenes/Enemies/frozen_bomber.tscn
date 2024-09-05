@@ -78,7 +78,7 @@ texture = ExtResource("2_bgcme")
 hframes = 2
 
 [node name="Wheel_1" type="Sprite2D" parent="."]
-position = Vector2(2, 2)
+position = Vector2(1, 2)
 texture = ExtResource("2_nyc6u")
 
 [node name="Center" type="Sprite2D" parent="."]

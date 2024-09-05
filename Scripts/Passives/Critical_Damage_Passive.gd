@@ -14,7 +14,7 @@ var has_buff := false
 func get_damage_buff() -> Buff_Damage_Player:
 	var buff := Buff_Damage_Player.new()
 	buff.weight_to_add = 2
-	buff.duration = 0.5
+	buff.duration = 1
 	has_buff = true
 	buff.tree_exited.connect(func(): has_buff = false)
 	return buff

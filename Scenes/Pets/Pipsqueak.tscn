@@ -5,10 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://ctqea8r5wjap6" path="res://Sprites/Pets/Pipsqueak/PipsqueakWalk.png" id="3_ayfyu"]
 [ext_resource type="Texture2D" uid="uid://7rl6lr6ncev5" path="res://Sprites/Pets/Pipsqueak/PipsqueakTail.png" id="4_s6qr6"]
 
-[sub_resource type="Animation" id="Animation_2mxb8"]
-resource_name = "walk"
-length = 0.4
-loop_mode = 1
+[sub_resource type="Animation" id="Animation_0uow2"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,10 +14,10 @@ tracks/0/path = NodePath("Pipsqueak:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 0, 2]
+"values": [3]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -28,10 +26,10 @@ tracks/1/path = NodePath("Tail:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 0, 1]
+"values": [1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -40,10 +38,10 @@ tracks/2/path = NodePath("Dynamic_Shadow:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1, 0, 1]
+"values": [1]
 }
 
 [sub_resource type="Animation" id="Animation_4rtka"]
@@ -87,8 +85,10 @@ tracks/2/keys = {
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_0uow2"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_2mxb8"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -96,10 +96,10 @@ tracks/0/path = NodePath("Pipsqueak:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [3]
+"values": [0, 1, 0, 2]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -108,10 +108,10 @@ tracks/1/path = NodePath("Tail:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [1]
+"values": [0, 1, 0, 1]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -120,10 +120,10 @@ tracks/2/path = NodePath("Dynamic_Shadow:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [1]
+"values": [0, 1, 0, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x7k31"]
@@ -135,7 +135,7 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htnrd"]
 radius = 5.0
-height = 18.0
+height = 15.0
 
 [node name="Pipsqueak" type="CharacterBody2D" node_paths=PackedStringArray("sprites", "animation") groups=["Pet"]]
 collision_layer = 0
