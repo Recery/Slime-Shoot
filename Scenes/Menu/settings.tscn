@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3355p6xk1fnk"]
+[gd_scene load_steps=12 format=3 uid="uid://c3355p6xk1fnk"]
 
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_cbrrn"]
 [ext_resource type="PackedScene" uid="uid://dc00nddmmp4kv" path="res://Scenes/Menu/check_button.tscn" id="2_1165m"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Menu/Settings/Volume_Slider.gd" id="4_bbpo2"]
 [ext_resource type="Texture2D" uid="uid://8jjilnqrmr34" path="res://Sprites/Menu/Settings/EvilBallGrabberHover.png" id="5_04a44"]
 [ext_resource type="Texture2D" uid="uid://didh6qqvthalc" path="res://Sprites/Useful/BossProgressBar.png" id="7_ebxqs"]
+[ext_resource type="Script" path="res://Scripts/Menu/Settings/Max_FPS_Slider.gd" id="9_8405w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jv6kl"]
 font = ExtResource("1_cbrrn")
@@ -44,7 +45,7 @@ offset_left = -0.119991
 offset_top = 0.0639982
 offset_right = -0.104004
 offset_bottom = -0.026001
-theme_override_constants/separation = 8
+theme_override_constants/separation = 4
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -126,5 +127,38 @@ max_value = 0.0
 script = ExtResource("4_bbpo2")
 bus_index = 2
 
+[node name="Max_FPS" type="HBoxContainer" parent="Column"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="Column/Max_FPS"]
+layout_mode = 2
+text = "Max FPS: "
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max_FPS_Amount" type="Label" parent="Column/Max_FPS"]
+layout_mode = 2
+text = "60"
+label_settings = SubResource("LabelSettings_jv6kl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Max_FPS_Slider" type="HSlider" parent="Column/Max_FPS"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 0.0
+theme_override_icons/grabber = ExtResource("2_je51q")
+theme_override_icons/grabber_highlight = ExtResource("5_04a44")
+theme_override_icons/grabber_disabled = ExtResource("5_04a44")
+theme_override_styles/slider = SubResource("StyleBoxTexture_g8r5i")
+min_value = 1.0
+max_value = 60.0
+value = 60.0
+script = ExtResource("9_8405w")
+
 [connection signal="value_changed" from="Column/Sound_Volume/Volume_Slider" to="Column/Sound_Volume/Volume_Slider" method="_on_value_changed"]
 [connection signal="value_changed" from="Column/Music_Volume/Volume_Slider" to="Column/Music_Volume/Volume_Slider" method="_on_value_changed"]
+[connection signal="value_changed" from="Column/Max_FPS/Max_FPS_Slider" to="Column/Max_FPS/Max_FPS_Slider" method="_on_value_changed"]

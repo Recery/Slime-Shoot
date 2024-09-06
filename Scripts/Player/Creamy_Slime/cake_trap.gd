@@ -5,15 +5,12 @@ var attracted_enemies = []
 
 func _ready():
 	enemies_damaged = 0
-	Funcs.sound_play("res://Sounds/Cake.mp3", 8, 2)
-	Funcs.particles(Vector2(2, 2), global_position, Color.GHOST_WHITE)
-	
 	check_other_cakes()
 
 func _on_scan_enemies_timeout():
 	var detected_enemy = null
 	detected_enemy = Funcs.scan_for_enemy(85, detected_enemy, self, attracted_enemies)
-	if detected_enemy != null && attracted_enemies.size() < 3 && not detected_enemy.custom_target_position_setted && not detected_enemy.is_in_group("Big_Enemies"):
+	if detected_enemy != null and attracted_enemies.size() < 3 and not detected_enemy.custom_target_position_setted and not detected_enemy.is_in_group("Big_Enemies"):
 		attracted_enemies.append(detected_enemy)
 		detected_enemy.set_custom_target_position(global_position)
 		
@@ -45,7 +42,7 @@ func _on_explode_timer_timeout():
 
 func _on_body_entered(body):
 	if not body.is_in_group("Player"):
-		if body.is_in_group("Enemies") && not stop_working && enemies_damaged < 5:
+		if body.is_in_group("Enemies") and not stop_working and enemies_damaged < 5:
 			Funcs.deal_damage(body, damage)
 			enemies_damaged += 1
 

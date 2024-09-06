@@ -50,10 +50,10 @@ func fireball_hell() -> void:
 	var bullets_node = Funcs.get_bullets_node()
 	
 	play_sound()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(1, false).timeout
 	shot_center.rotation_degrees = 0
 	while shot_center.rotation_degrees <= 180:
-		await get_tree().create_timer(0.2).timeout
+		await get_tree().create_timer(0.2, false).timeout
 		for i in range(4):
 			var fireball_instance = fireball.instantiate()
 			var shot_pos = get_node("Shot_Center/Shot_Pos_" + str(i+1))
@@ -71,7 +71,7 @@ func fireball_hell() -> void:
 func explosion():
 	play_sound()
 	get_node("Circle_Explosion").show()
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false).timeout
 	
 	get_node("Explosion_Area").set_deferred("monitoring", true)
 	

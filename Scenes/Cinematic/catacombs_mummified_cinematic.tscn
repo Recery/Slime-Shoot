@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cxlat02qj74qa"]
+[gd_scene load_steps=14 format=3 uid="uid://cxlat02qj74qa"]
 
 [ext_resource type="Script" path="res://Scripts/Cinematic/Cinematic.gd" id="1_s7nav"]
 [ext_resource type="Texture2D" uid="uid://8tseb6hpstdl" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame1CatacombsMummifiedSlime.png" id="2_mjwj7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dy44e5im5e856" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame3CatacombsMummifiedSlime.png" id="5_jo0r7"]
 [ext_resource type="Texture2D" uid="uid://dkcvb6jf06q38" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame4CatacombsMummifiedSlime.png" id="6_fe1tt"]
 [ext_resource type="Texture2D" uid="uid://ca1vwvgj3rbf4" path="res://Sprites/Cinematics/CatacombsMummifiedSlime/Frame5CatacombsMummifiedSlime.png" id="7_jj5br"]
+[ext_resource type="AudioStream" uid="uid://b4spfkcbu7qh8" path="res://Sounds/Going-Up.ogg" id="8_pefuy"]
 
 [sub_resource type="Resource" id="Resource_hb0n3"]
 script = ExtResource("3_pmg07")
@@ -41,3 +42,9 @@ offset_bottom = 40.0
 script = ExtResource("1_s7nav")
 cinematic_frames = Array[ExtResource("3_pmg07")]([SubResource("Resource_hb0n3"), SubResource("Resource_ovli1"), SubResource("Resource_cu5p5"), SubResource("Resource_uq6rg"), SubResource("Resource_y3f20")])
 id_cinematic = 4
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_pefuy")
+volume_db = 5.0
+autoplay = true
+bus = &"Music"

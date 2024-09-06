@@ -96,6 +96,8 @@ func create_hipnotic_trap():
 		hipnotic_trap_instance.global_position = global_position
 	else: hipnotic_trap_instance.queue_free()
 
-func _on_die():
+func _exit_tree():
 	for orb in life_orbs: if orb != null: orb.queue_free()
+
+func _on_die():
 	Funcs.regular_explosion(0.7, 0.7, global_position, Funcs.get_bullets_node(), 2, true)

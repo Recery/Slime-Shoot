@@ -17,9 +17,6 @@ func buff_application(node):
 	if not node is Buff_Damage_Enemy: return
 	
 	affected_object.damage *= weight_to_modify
-	print("Nuevo daño: ", affected_object.damage)
 
 func remove_buff():
 	affected_object.damage = affected_object.base_damage
-	
-	print("Reestablecido daño: ", affected_object.damage)

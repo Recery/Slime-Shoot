@@ -306,9 +306,9 @@ stretch_mode = 3
 [node name="MadeBy" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = -72.0
-offset_top = 69.0
+offset_top = 67.0
 offset_right = 72.0
-offset_bottom = 76.0
+offset_bottom = 78.0
 alignment = 1
 
 [node name="MadeBy" type="Label" parent="MadeBy"]
