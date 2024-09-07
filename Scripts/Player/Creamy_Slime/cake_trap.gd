@@ -10,7 +10,7 @@ func _ready():
 func _on_scan_enemies_timeout():
 	var detected_enemy = null
 	detected_enemy = Funcs.scan_for_enemy(85, detected_enemy, self, attracted_enemies)
-	if detected_enemy != null and attracted_enemies.size() < 3 and not detected_enemy.custom_target_position_setted and not detected_enemy.is_in_group("Big_Enemies"):
+	if detected_enemy != null and attracted_enemies.size() < 3 and not detected_enemy.custom_target_position_setted and not detected_enemy.is_in_group("Big_Enemies") and not detected_enemy.is_in_group("Boss"):
 		attracted_enemies.append(detected_enemy)
 		detected_enemy.set_custom_target_position(global_position)
 		
