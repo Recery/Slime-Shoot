@@ -10,7 +10,7 @@ func _ready():
 func probability(percentage: float, max_value := 100.0) -> bool:
 	return randf_range(0.0, max_value) < percentage
 
-func sound_play(path: String, volume: float = 0, pitch: float = 0):
+func sound_play(path: String, volume: float = 0, pitch: float = 0) -> void:
 	var new_sound = AudioStreamPlayer.new()
 	new_sound.volume_db += volume
 	if pitch != 0: new_sound.pitch_scale = pitch
@@ -22,12 +22,12 @@ func sound_play(path: String, volume: float = 0, pitch: float = 0):
 	var entered = func():
 		new_sound.play()
 	
-	new_sound.connect("finished", audio_finished)
-	new_sound.connect("tree_entered", entered)
+	new_sound.finished.connect(audio_finished)
+	new_sound.tree_entered.connect(entered)
 	if Vars.main_scene != null:
 		Vars.main_scene.add_child.call_deferred(new_sound)
 
-func sound_play_2d(path: String, pos : Vector2, volume: float = 0, pitch: float = 0):
+func sound_play_2d(path: String, pos : Vector2, volume: float = 0, pitch: float = 0) -> void:
 	var new_sound = AudioStreamPlayer2D.new()
 	new_sound.volume_db += volume
 	if pitch != 0: new_sound.pitch_scale = pitch
@@ -40,12 +40,12 @@ func sound_play_2d(path: String, pos : Vector2, volume: float = 0, pitch: float 
 		new_sound.global_position = pos
 		new_sound.play()
 	
-	new_sound.connect("finished", audio_finished)
-	new_sound.connect("tree_entered", entered)
+	new_sound.finished.connect(audio_finished)
+	new_sound.tree_entered.connect(entered)
 	if Vars.main_scene != null:
 		Vars.main_scene.add_child.call_deferred(new_sound)
 
-func get_angle(dest_pos, source_pos):
+func get_angle(dest_pos : Vector2, source_pos : Vector2) -> float:
 	return atan2(dest_pos.y - source_pos.y, dest_pos.x - source_pos.x)
 
 func get_nav_agent() -> NavigationAgent2D:
@@ -57,7 +57,7 @@ func get_nav_agent() -> NavigationAgent2D:
 	nav_agent.set_navigation_layer_value(2,true)
 	return nav_agent
 
-func basic_movement(enemy, player):
+func basic_movement(enemy, player) -> void:
 	if enemy == null or player == null: return
 	var dir_to_player = (enemy.global_position - player.global_position).normalized()
 	enemy.velocity = -(dir_to_player * enemy.speed)
@@ -122,8 +122,8 @@ func scan_farthest_enemy(scan_range:int, current_target, caller:Node, exceptions
 	
 	return farthest_enemy
 
-func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player, extra_angle := 0):
-	var angle = rad_to_deg(get_angle(player.shoot_pos, weapon.global_position))
+func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player, extra_angle := 0) -> void:
+	var angle := rad_to_deg(get_angle(player.shoot_pos, weapon.global_position))
 	
 	weapon.rotation_degrees = angle
 	
@@ -144,11 +144,11 @@ func weapon_rotation(weapon, offset = Vector2(7,0), player = Vars.player, extra_
 
 # Para reproducir una explosión normal
 var explosion := preload("res://Scenes/Useful/explosion.tscn")
-func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
+func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound) -> void:
 	if scene == null: return
 	
-	var explosion_instance = explosion.instantiate()
-	var sound_instance = explosion_instance.get_node("Sound")
+	var explosion_instance := explosion.instantiate()
+	var sound_instance := explosion_instance.get_node("Sound")
 	if play_sound:
 		sound_instance.volume_db += extra_sound
 		sound_instance.pitch_scale = randf_range(0.75,1.3)
@@ -161,11 +161,11 @@ func regular_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound):
 
 # Para reproducir una explosión con color
 var col_explosion := preload("res://Scenes/Useful/color_explosion.tscn")
-func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, color : Color):
+func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, color : Color) -> void:
 	if scene == null: return
 	
-	var explosion_instance = col_explosion.instantiate()
-	var sound_instance = explosion_instance.get_node("Sound")
+	var explosion_instance := col_explosion.instantiate()
+	var sound_instance := explosion_instance.get_node("Sound")
 	if play_sound:
 		sound_instance.volume_db += extra_sound
 		sound_instance.pitch_scale = randf_range(0.75,1.3)
@@ -178,7 +178,7 @@ func color_explosion(scale_x, scale_y, pos, scene, extra_sound, play_sound, colo
 	explosion_instance.modulate = color
 
 var strike_texture := preload("res://Sprites/Useful/Strike.png")
-func strike_effect(scale : Vector2, pos : Vector2, modulate := 1.0, scene := get_bullets_node()):
+func strike_effect(scale : Vector2, pos : Vector2, modulate := 1.0, scene := get_bullets_node()) -> void:
 	if scene == null: return
 	
 	var strike_instance := Sprite2D.new()
@@ -194,7 +194,7 @@ func strike_effect(scale : Vector2, pos : Vector2, modulate := 1.0, scene := get
 	strike_instance.queue_free()
 
 var smoke_texture := preload("res://Sprites/Useful/Smoke.png")
-func smoke_effect(scale : Vector2, pos : Vector2, modulate := 0.75, scene := get_bullets_node()):
+func smoke_effect(scale : Vector2, pos : Vector2, modulate := 0.75, scene := get_bullets_node()) -> void:
 	if scene == null: return
 	
 	var smoke_instance := Sprite2D.new()
@@ -217,7 +217,7 @@ func smoke_effect(scale : Vector2, pos : Vector2, modulate := 0.75, scene := get
 	if smoke_instance != null: smoke_instance.queue_free()
 
 var _particles = preload("res://Scenes/Useful/particles.tscn")
-func particles(scale, pos, color : Color, scene = get_bullets_node()):
+func particles(scale, pos, color : Color, scene = get_bullets_node()) -> void:
 	if scene == null: return
 	
 	var particles_instance = _particles.instantiate()
@@ -258,7 +258,7 @@ func explosion_warning(scale : Vector2, pos : Vector2) -> Sprite2D:
 	
 	return warning_instance
 
-func fade_effect(sprite, reversed = false, fast = false):
+func fade_effect(sprite, reversed = false, fast = false) -> void:
 	if sprite == null: return
 	
 	var weight_to_add : float
@@ -376,7 +376,7 @@ func add_to_summons_deferred(node : Node2D, pos : Vector2) -> bool:
 	return false
 
 # Recibe una instancia de nodo y lo devuelve sin script
-func set_non_script(instance : Node):
+func set_non_script(instance : Node) -> Node:
 	instance.set_script(null)
 	return instance
 
@@ -407,7 +407,7 @@ func get_all_children(node) -> Array:
 	
 	return children
 
-func remove_children(parent:Node):
+func remove_children(parent:Node) -> void:
 	if parent == null: return
 	for child in parent.get_children():
 		if child.get_parent() == parent:
@@ -420,11 +420,11 @@ func remove_direct_children(parent:Node) -> void:
 		child.queue_free()
 
 func get_safe_index(array : Array, index : int, default_value = null):
-	if index >= 0 && index < array.size():
+	if index >= 0 and index < array.size():
 		return array[index]
 	else: return default_value
 
-func remove_array_elements(array : Array, element):
+func remove_array_elements(array : Array, element) -> void:
 	var i := 0
 	while i < array.size():
 		if array[i] == element:
@@ -464,9 +464,9 @@ func draw_pet(with_shadow := true, scale := Vector2(1,1)) -> Node:
 	return pet_draw
 
 # Pantalla completa
-func _input(event):
+func _input(event : InputEvent) -> void:
 	if event.is_action_pressed("fullscreen"):
-		if DisplayServer.window_get_mode() != 3:
+		if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		else:
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

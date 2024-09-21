@@ -11,18 +11,18 @@ var player : Player
 var cinematics_played : Array[int]
 var almanac_unlocked : Array[String] # Guarda los paths de las escenas de los enemigos, no la escene directamente
 
-var weapons_equipped = [null, null, null]
-var weapons_unlocked = [null]
-var abilities_equipped = [null, null, null]
-var abilities_unlocked = []
-var passives_equipped = [null, null, null]
-var passives_unlocked = []
+var weapons_equipped := [null, null, null]
+var weapons_unlocked := [null]
+var abilities_equipped := [null, null, null]
+var abilities_unlocked := []
+var passives_equipped := [null, null, null]
+var passives_unlocked := []
 var slime_equipped : PackedScene
 var slimes_unlocked = [null]
 var hat_equipped : PackedScene
-var hats_unlocked = []
+var hats_unlocked := []
 var pet_equipped : PackedScene
-var pets_unlocked = []
+var pets_unlocked := []
 # Fin guardado
 
 var map_state_data : MapStateData
@@ -41,17 +41,17 @@ enum menu_maps {
 	}
 var menu_map_photo := menu_maps.GRASSLANDS
 
-func _init(): 
+func _init() -> void:
 	total_points = 500
 
-func _ready():
+func _ready() -> void:
 	main_scene = get_tree().root.get_child(4).get_child(0)
 	
-	connect("change_main_scene", get_main_scene)
+	change_main_scene.connect(set_main_scene)
 	
 	current_spawner_table = load("res://Resources/Setted_Resources/SpawnerTables/GrasslandsSpawnTable.tres")
 
-func get_main_scene(scene : Node):
+func set_main_scene(scene : Node) -> void:
 	main_scene = scene
 	
 	if not main_scene.is_node_ready(): await main_scene.ready
