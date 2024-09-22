@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://b6sxdtpty5qkn"]
+[gd_scene load_steps=58 format=3 uid="uid://b6sxdtpty5qkn"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_5ls3g"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="2_1sss3"]
@@ -9,21 +9,16 @@
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_g6k8v"]
 [ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="5_i7x2o"]
 [ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="6_4ukln"]
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="6_peljm"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection_Abilities.gd" id="7_e20du"]
 [ext_resource type="PackedScene" uid="uid://dru84amkg1deg" path="res://Scenes/Abilities/life_regen_ability.tscn" id="8_3vl7v"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_fxlry"]
 [ext_resource type="Texture2D" uid="uid://b6xujapa755a7" path="res://Sprites/Abilities/SpeedAbility.png" id="10_67vol"]
 [ext_resource type="PackedScene" uid="uid://qc03hauqrywh" path="res://Scenes/Abilities/speed_ability.tscn" id="11_1ssax"]
-[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="11_jc1er"]
-[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="12_jk483"]
 [ext_resource type="Texture2D" uid="uid://c2eeg5k2qo3oj" path="res://Sprites/Abilities/InfiniteEnergyAbility.png" id="12_rei65"]
-[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="13_0al25"]
 [ext_resource type="PackedScene" uid="uid://dghms8su3plri" path="res://Scenes/Abilities/infinite_energy_ability.tscn" id="13_obqpa"]
-[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="14_wfp74"]
 [ext_resource type="Texture2D" uid="uid://bawd6rldpsrh3" path="res://Sprites/Abilities/ExtraDamageAbility.png" id="14_y15fr"]
 [ext_resource type="PackedScene" uid="uid://c7g880o7ku8ot" path="res://Scenes/Abilities/Extra_Damage_Ability.tscn" id="15_b4dmn"]
-[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="15_uvuj7"]
-[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="16_cu37g"]
 [ext_resource type="Texture2D" uid="uid://dcgxa3j3npnnm" path="res://Sprites/Abilities/WeedtiteTurretAbility.png" id="16_dk18t"]
 [ext_resource type="PackedScene" uid="uid://ctr73444uo286" path="res://Scenes/Abilities/weedtite_turret_ability.tscn" id="17_b30jm"]
 [ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="18_t8jkq"]
@@ -48,27 +43,110 @@
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="41_rvsp1"]
 [ext_resource type="PackedScene" uid="uid://cy1xwikuqypg3" path="res://Scenes/Abilities/slime_army_wrath_ability.tscn" id="42_5768y"]
 
+[sub_resource type="Resource" id="Resource_f0ggd"]
+script = ExtResource("6_peljm")
+cooldown = "20"
+energy_use = "75"
+texture = ExtResource("3_2cbv0")
+description = "The Life Regen ability heals you in a timespan when you activate it. "
+
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("9_fxlry")
 font_color = Color(1, 0.313726, 0.247059, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_j1phy"]
-font = ExtResource("9_fxlry")
-font_size = 8
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_50kj5"]
+script = ExtResource("6_peljm")
+cooldown = "35"
+energy_use = "90"
+texture = ExtResource("10_67vol")
+description = "The speed ability boosts your speed for a few seconds. "
 
-[sub_resource type="LabelSettings" id="LabelSettings_i6m7b"]
-font = ExtResource("9_fxlry")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
+[sub_resource type="Resource" id="Resource_krfq8"]
+script = ExtResource("6_peljm")
+cooldown = "55"
+energy_use = "140"
+texture = ExtResource("12_rei65")
+description = "With the infinite energy ability you get infinite energy for a few seconds. Really useful for high energy use weapons."
 
-[sub_resource type="LabelSettings" id="LabelSettings_jf68m"]
-font = ExtResource("9_fxlry")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_kaow1"]
+script = ExtResource("6_peljm")
+cooldown = "35"
+energy_use = "85"
+texture = ExtResource("14_y15fr")
+description = "The Extra Damage ability will give you a little extra damage buff to all your attacks, including summons."
+
+[sub_resource type="Resource" id="Resource_qnei2"]
+script = ExtResource("6_peljm")
+cooldown = "48"
+energy_use = "110"
+texture = ExtResource("16_dk18t")
+description = "The weedtite turret ability summons a turret that will fight for you. Every time it shoots it will add little extra life time to itself."
+
+[sub_resource type="Resource" id="Resource_3u6c5"]
+script = ExtResource("6_peljm")
+cooldown = "12"
+energy_use = "55"
+texture = ExtResource("18_t8jkq")
+description = "The freeze ability will freeze your nearby enemies and they will be unable to move for 4 seconds."
+
+[sub_resource type="Resource" id="Resource_jrjgx"]
+script = ExtResource("6_peljm")
+cooldown = "18"
+energy_use = "90"
+texture = ExtResource("27_bsd6e")
+description = "The shock attack ability deals moderate damage to up to 8 enemies with an electricity chain."
+
+[sub_resource type="Resource" id="Resource_65r0j"]
+script = ExtResource("6_peljm")
+cooldown = "40"
+energy_use = "85"
+texture = ExtResource("29_mhboq")
+description = "The Slimy Rage ability will reduce, for a limited time, all your weapons cooldown and energy use by half."
+
+[sub_resource type="Resource" id="Resource_e7wdj"]
+script = ExtResource("6_peljm")
+cooldown = "55"
+energy_use = "140"
+texture = ExtResource("32_xpips")
+description = "The laser turret ability summons a powerful laser turret that will attack your enemies, piercing them."
+
+[sub_resource type="Resource" id="Resource_4kmlw"]
+script = ExtResource("6_peljm")
+cooldown = "16"
+energy_use = "80"
+texture = ExtResource("33_kko80")
+description = "The cheese transmutation ability converts your nearest enemy into a piece of cheese. You can eat the cheese to recover 25% of your life and energy."
+
+[sub_resource type="Resource" id="Resource_rj5es"]
+script = ExtResource("6_peljm")
+cooldown = "40"
+energy_use = "120"
+texture = ExtResource("35_7qgsm")
+description = "The lethal vacuum cleaner ability summons a lethal vacuum cleaner that aspires (destroys) up to 5 enemies until being destroyed. The heavier the enemy, the slower the vacuum cleaner will attract it.
+"
+
+[sub_resource type="Resource" id="Resource_shwj7"]
+script = ExtResource("6_peljm")
+cooldown = "14"
+energy_use = "80"
+texture = ExtResource("37_sv7lf")
+description = "The green apple vomit is a gross ability. Slimes love green apples, but this time your slime ate a rotten one, causing it to throw up in your enemies, damaging them and reducing their damage.
+"
+
+[sub_resource type="Resource" id="Resource_e0hx5"]
+script = ExtResource("6_peljm")
+cooldown = "24"
+energy_use = "70"
+texture = ExtResource("41_3snsl")
+description = "The Slime Army Wrath ability gives all your summons (turrets and minions) a x3 damage buff for a limited time."
+
+[sub_resource type="Resource" id="Resource_7ggr0"]
+script = ExtResource("6_peljm")
+cooldown = "55"
+energy_use = "120"
+texture = ExtResource("39_lw28w")
+description = "The soul collector ability can be useful. After activating it, for a short period of time, for each enemy you defeat you collect their soul and PERMANENTLY (for this run) get +1 max life point."
 
 [node name="Equipment_Abilities" type="Control"]
 layout_mode = 3
@@ -106,6 +184,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_f0ggd")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Life_Regen"]
 position = Vector2(14, 13)
@@ -194,73 +273,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Life_Regen"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_top = 1.0
-offset_right = 40.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("3_2cbv0")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The Life Regen ability heals you in a timespan when you activate it. "
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "75"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Life_Regen/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Life_Regen/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "20
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Speed" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -269,6 +281,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_50kj5")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Speed"]
 position = Vector2(14, 13)
@@ -357,74 +370,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Speed"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -35.0
-offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("10_67vol")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Speed/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The speed ability boosts your speed for a few seconds. "
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Speed/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "90"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Speed/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Speed/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "35
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Infinite_Energy" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -433,6 +378,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_krfq8")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Infinite_Energy"]
 position = Vector2(14, 13)
@@ -521,74 +467,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Infinite_Energy"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = 1.0
-offset_right = -30.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("12_rei65")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the infinite energy ability you get infinite energy for a few seconds. Really useful for high energy use weapons."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-position = Vector2(142, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "140"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Infinite_Energy/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Infinite_Energy/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "55
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Extra_Damage" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -597,6 +475,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_kaow1")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Extra_Damage"]
 position = Vector2(14, 13)
@@ -685,74 +564,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Extra_Damage"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -105.0
-offset_top = 1.0
-offset_right = -65.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("14_y15fr")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The Extra Damage ability will give you a little extra damage buff to all your attacks, including summons."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "85"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Extra_Damage/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Extra_Damage/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "35
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Weedtite_Turret" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -761,6 +572,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_qnei2")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret"]
 position = Vector2(14, 13)
@@ -849,74 +661,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Weedtite_Turret"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = 1.0
-offset_right = -100.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("16_dk18t")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The weedtite turret ability summons a turret that will fight for you. Every time it shoots it will add little extra life time to itself."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-position = Vector2(142, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "110"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Weedtite_Turret/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Weedtite_Turret/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "48
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Freeze" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -925,6 +669,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_3u6c5")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Freeze"]
 position = Vector2(14, 13)
@@ -1013,74 +758,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Freeze"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -175.0
-offset_top = 1.0
-offset_right = -135.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("18_t8jkq")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Freeze/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The freeze ability will freeze your nearby enemies and they will be unable to move for 4 seconds."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Freeze/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "55"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Freeze/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Freeze/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "12
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Shock_Attack" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -1089,6 +766,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_jrjgx")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Shock_Attack"]
 position = Vector2(14, 13)
@@ -1177,74 +855,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Shock_Attack"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -210.0
-offset_top = 1.0
-offset_right = -170.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("27_bsd6e")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The shock attack ability deals moderate damage to up to 8 enemies with an electricity chain."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "90"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Shock_Attack/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Shock_Attack/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "18
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Slimy_Rage" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -1253,6 +863,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_65r0j")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row1/Slimy_Rage"]
 position = Vector2(14, 13)
@@ -1341,74 +952,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row1/Slimy_Rage"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -245.0
-offset_top = 1.0
-offset_right = -205.0
-offset_bottom = 41.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("29_mhboq")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 236.0
-offset_bottom = 102.0
-text = "The Slimy Rage ability will reduce, for a limited time, all your weapons cooldown and energy use by half."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "85"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Slimy_Rage/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Slimy_Rage/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "40
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Row2" type="HBoxContainer" parent="Rows"]
 layout_mode = 2
 theme_override_constants/separation = 7
@@ -1421,6 +964,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_e7wdj")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Laser_Turret"]
 position = Vector2(14, 13)
@@ -1509,73 +1053,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Laser_Turret"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_top = -31.0
-offset_right = 40.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("32_xpips")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 106.0
-text = "The laser turret ability summons a powerful laser turret that will attack your enemies, piercing them."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-position = Vector2(142, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "140"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Laser_Turret/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Laser_Turret/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "55
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Cheese_Transmutation" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -1584,6 +1061,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_4kmlw")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation"]
 position = Vector2(14, 13)
@@ -1672,74 +1150,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Cheese_Transmutation"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -32.0
-offset_top = -31.0
-offset_right = 8.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("33_kko80")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 106.0
-text = "The cheese transmutation ability converts your nearest enemy into a piece of cheese. You can eat the cheese to recover 25% of your life and energy."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_right = -3.0
-offset_bottom = 6.0
-text = "80"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Cheese_Transmutation/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Cheese_Transmutation/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "16
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Lethal_Vacuum_Cleaner" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -1748,6 +1158,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_rj5es")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
 position = Vector2(14, 13)
@@ -1836,75 +1247,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Lethal_Vacuum_Cleaner"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -67.0
-offset_top = -31.0
-offset_right = -27.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("35_7qgsm")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 31.0
-offset_right = 236.0
-offset_bottom = 103.0
-text = "The lethal vacuum cleaner ability summons a lethal vacuum cleaner that aspires (destroys) up to 5 enemies until being destroyed. The heavier the enemy, the slower the vacuum cleaner will attract it.
-"
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-position = Vector2(141, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "120"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Lethal_Vacuum_Cleaner/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "40
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Green_Apple_Vomit" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -1913,6 +1255,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_shwj7")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit"]
 position = Vector2(14, 13)
@@ -2001,76 +1344,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Green_Apple_Vomit"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -102.0
-offset_top = -31.0
-offset_right = -62.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("37_sv7lf")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 29.0
-offset_right = 236.0
-offset_bottom = 99.0
-text = "The green apple vomit is a gross ability. Slimes love green apples, but this time your slime ate a rotten one, causing it to throw up in your enemies, damaging them and reducing their damage.
-"
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_right = -3.0
-offset_bottom = 6.0
-text = "80"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Green_Apple_Vomit/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "14
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Slime_Army_Wrath" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -2079,6 +1352,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_e0hx5")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath"]
 position = Vector2(14, 13)
@@ -2167,74 +1441,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Slime_Army_Wrath"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = -31.0
-offset_right = -100.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("41_3snsl")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The Slime Army Wrath ability gives all your summons (turrets and minions) a x3 damage buff for a limited time."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_right = -3.0
-offset_bottom = 6.0
-text = "70"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Slime_Army_Wrath/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "24
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Soul_Collector" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_5ls3g")
@@ -2243,6 +1449,7 @@ texture_hover = ExtResource("3_4ifih")
 texture_disabled = ExtResource("2_1sss3")
 script = ExtResource("5_g6k8v")
 type_of_object = 2
+info = SubResource("Resource_7ggr0")
 
 [node name="Ability" type="Sprite2D" parent="Rows/Row2/Soul_Collector"]
 position = Vector2(14, 13)
@@ -2331,75 +1538,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Ability_Description" type="Control" parent="Rows/Row2/Soul_Collector"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = -31.0
-offset_right = -100.0
-offset_bottom = 9.0
-
-[node name="Abillity" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("39_lw28w")
-
-[node name="Abillity_Frame" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_jc1er")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_jk483")
-
-[node name="Description" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 29.0
-offset_right = 236.0
-offset_bottom = 99.0
-text = "The soul collector ability can be useful. After activating it, for a short period of time, for each enemy you defeat you collect their soul and PERMANENTLY (for this run) get +1 max life point."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-position = Vector2(141, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_0al25")
-
-[node name="Use" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "120"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Soul_Collector/Ability_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_wfp74")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Soul_Collector/Ability_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -2.0
-offset_bottom = 6.0
-text = "55
-"
-label_settings = SubResource("LabelSettings_i6m7b")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Equipped_Abilities" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 position = Vector2(0, -56)
@@ -2424,33 +1562,3 @@ label_settings = ExtResource("41_rvsp1")
 horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
-
-[node name="Dark_Background_Description" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 0
-offset_left = -229.0
-offset_top = -137.0
-offset_right = 227.0
-offset_bottom = 147.0
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Back_Button" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 108.0
-offset_top = -72.0
-offset_right = 136.0
-offset_bottom = -44.0
-texture_normal = ExtResource("11_jc1er")
-texture_pressed = ExtResource("15_uvuj7")
-texture_hover = ExtResource("16_cu37g")
-
-[node name="Back_Text" type="Label" parent="Back_Button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 18.0
-offset_bottom = 21.0
-text = "<"
-label_settings = SubResource("LabelSettings_jf68m")

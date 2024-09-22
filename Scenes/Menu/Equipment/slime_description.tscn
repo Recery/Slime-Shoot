@@ -1,0 +1,295 @@
+[gd_scene load_steps=26 format=3 uid="uid://c7sueehpvm3qf"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/slime_description.gd" id="1_5eipv"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_rcotk"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="3_dtx2m"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="4_dymyw"]
+[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="5_ikfdl"]
+[ext_resource type="Texture2D" uid="uid://bc3pf3arpqi6e" path="res://Sprites/Menu/LifeIcon.png" id="5_sg10k"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="6_86mha"]
+[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="7_448tx"]
+[ext_resource type="Texture2D" uid="uid://npcy4vfa7k83" path="res://Sprites/Menu/SpeedIcon.png" id="7_onvpp"]
+[ext_resource type="Texture2D" uid="uid://d1clirh22wkr" path="res://Sprites/Menu/ResistanceIcon.png" id="8_ik8j4"]
+[ext_resource type="Texture2D" uid="uid://bwt2k77qwnucv" path="res://Sprites/Menu/ScrollBar.png" id="8_j8rf7"]
+[ext_resource type="Texture2D" uid="uid://bu0lewemjr7iv" path="res://Sprites/Menu/ScrollBarHover.png" id="9_aocxb"]
+[ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="9_qc2hv"]
+[ext_resource type="Texture2D" uid="uid://cjc23fxtnxyrk" path="res://Sprites/Menu/ScrollBarPress.png" id="10_lmeep"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="11_577lv"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="12_too2m"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="13_w0nor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpc6f"]
+atlas = ExtResource("3_dtx2m")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="LabelSettings" id="LabelSettings_iiy12"]
+font = ExtResource("4_dymyw")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iid0c"]
+texture = ExtResource("8_j8rf7")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx54w"]
+texture = ExtResource("9_aocxb")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwjh2"]
+texture = ExtResource("10_lmeep")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="Theme" id="Theme_643p6"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_iid0c")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rx54w")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_wwjh2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uynh0"]
+font = ExtResource("4_dymyw")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmin2"]
+font = ExtResource("4_dymyw")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Description" type="Control"]
+layout_mode = 3
+anchor_right = 0.226
+anchor_bottom = 0.199
+offset_right = -0.35202
+offset_bottom = 0.0479889
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5eipv")
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -106.0
+offset_top = -63.0
+offset_right = 350.0
+offset_bottom = 221.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Slime_Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 24.0
+offset_right = 114.0
+offset_bottom = 52.0
+texture = ExtResource("2_rcotk")
+stretch_mode = 3
+
+[node name="Slime" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 24.0
+offset_right = 114.0
+offset_bottom = 52.0
+texture = SubResource("AtlasTexture_kpc6f")
+stretch_mode = 3
+
+[node name="Life" type="HBoxContainer" parent="."]
+offset_left = 86.0
+offset_top = 23.0
+offset_right = 142.0
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Life"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "100"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Life"]
+layout_mode = 2
+texture = ExtResource("5_sg10k")
+stretch_mode = 3
+
+[node name="Max_Energy" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 28.0
+offset_right = 142.0
+offset_bottom = 38.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Max_Energy"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "200"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Max_Energy"]
+layout_mode = 2
+texture = ExtResource("6_86mha")
+stretch_mode = 3
+
+[node name="Speed" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 43.0
+offset_right = 142.0
+offset_bottom = 53.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Speed"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "110"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Speed"]
+layout_mode = 2
+texture = ExtResource("7_onvpp")
+stretch_mode = 3
+
+[node name="Resistance" type="HBoxContainer" parent="."]
+offset_left = 86.0
+offset_top = 48.0
+offset_right = 142.0
+offset_bottom = 58.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Resistance"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Resistance"]
+layout_mode = 2
+texture = ExtResource("8_ik8j4")
+stretch_mode = 3
+
+[node name="Perk_Frame" type="TextureRect" parent="."]
+offset_left = 118.0
+offset_top = 24.0
+offset_right = 146.0
+offset_bottom = 52.0
+texture = ExtResource("2_rcotk")
+stretch_mode = 3
+
+[node name="Perk" type="TextureRect" parent="."]
+offset_left = 118.0
+offset_top = 24.0
+offset_right = 146.0
+offset_bottom = 52.0
+texture = ExtResource("9_qc2hv")
+stretch_mode = 3
+
+[node name="Cooldown" type="HBoxContainer" parent="."]
+offset_left = 118.0
+offset_top = 24.0
+offset_right = 174.0
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Cooldown"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Cooldown"]
+layout_mode = 2
+texture = ExtResource("5_ikfdl")
+stretch_mode = 3
+
+[node name="Energy_Use" type="HBoxContainer" parent="."]
+offset_left = 118.0
+offset_top = 47.0
+offset_right = 174.0
+offset_bottom = 57.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "1"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Energy_Use"]
+layout_mode = 2
+texture = ExtResource("6_86mha")
+stretch_mode = 3
+
+[node name="Description_Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 59.0
+offset_right = 216.0
+offset_bottom = 129.0
+texture = ExtResource("7_448tx")
+
+[node name="Description_Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 226.0
+offset_bottom = 123.0
+theme = SubResource("Theme_643p6")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Description" type="Label" parent="Description_Scroll"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "The green slime has the sprint perk, that boosts your movement speed while holding your perk key."
+label_settings = SubResource("LabelSettings_uynh0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Back_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 1.0
+offset_right = 248.0
+offset_bottom = 29.0
+texture_normal = ExtResource("11_577lv")
+texture_pressed = ExtResource("12_too2m")
+texture_hover = ExtResource("13_w0nor")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_rmin2")
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

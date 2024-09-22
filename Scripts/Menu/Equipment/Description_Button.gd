@@ -1,10 +1,7 @@
 extends TextureButton
 
-var back_button
-
-var activated
-
 @export_enum("Slime", "Weapon", "Ability", "Passive", "Hat", "Pet") var type_of_object := 1
+@export var info : ItemInfo
 
 var obj_string : String
 var root : Node
@@ -15,10 +12,7 @@ func _ready():
 	else:
 		root = get_parent().get_parent().get_parent()
 	
-	back_button = root.get_node("Back_Button")
-	activated = false
-	connect("pressed", _on_pressed)
-	back_button.connect("pressed", _on_back_button_pressed)
+	pressed.connect(_on_pressed)
 	
 	match type_of_object:
 		0: obj_string = "Slime_Description"
@@ -28,19 +22,15 @@ func _ready():
 		4: obj_string = "Hat_Description"
 		5: obj_string = "Pet_Description"
 
+var description := preload("res://Scenes/Menu/Equipment/description.tscn")
+var slime_description := preload("res://Scenes/Menu/Equipment/slime_description.tscn")
 func _on_pressed():
-	activated = true
-	get_node(obj_string).show()
+	var desc_instance : Control
+	if type_of_object == 0: desc_instance = slime_description.instantiate()
+	else: desc_instance = description.instantiate()
+	
+	Vars.main_scene.add_child(desc_instance)
+	desc_instance.set_info(info)
+	desc_instance.global_position = Vector2(-116,-72)
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
-	root.get_node("Dark_Background_Description").show()
-	Vars.main_scene.get_node("BackButton").hide()
-	back_button.show()
 
-func _on_back_button_pressed():
-	if activated:
-		activated = false
-		get_node(obj_string).hide()
-		root.get_node("Dark_Background_Description").hide()
-		Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
-		Vars.main_scene.get_node("BackButton").show()
-		back_button.hide()

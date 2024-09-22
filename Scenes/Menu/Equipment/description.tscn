@@ -1,0 +1,187 @@
+[gd_scene load_steps=21 format=3 uid="uid://0qohai24vibx"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/Equipment/description.gd" id="1_is8ot"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_jh1go"]
+[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="3_yj175"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="4_wx27r"]
+[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="5_8ts47"]
+[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="6_2q7o3"]
+[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="7_1hgkv"]
+[ext_resource type="Texture2D" uid="uid://bwt2k77qwnucv" path="res://Sprites/Menu/ScrollBar.png" id="8_6xdj5"]
+[ext_resource type="Texture2D" uid="uid://bu0lewemjr7iv" path="res://Sprites/Menu/ScrollBarHover.png" id="9_v82yu"]
+[ext_resource type="Texture2D" uid="uid://cjc23fxtnxyrk" path="res://Sprites/Menu/ScrollBarPress.png" id="10_u2y3a"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="11_4aqtj"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="12_fdriw"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="13_71l63"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_iiy12"]
+font = ExtResource("4_wx27r")
+font_size = 8
+font_color = Color(0, 0, 0, 1)
+outline_size = 4
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iid0c"]
+texture = ExtResource("8_6xdj5")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rx54w"]
+texture = ExtResource("9_v82yu")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwjh2"]
+texture = ExtResource("10_u2y3a")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+
+[sub_resource type="Theme" id="Theme_643p6"]
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_iid0c")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rx54w")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_wwjh2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_uynh0"]
+font = ExtResource("4_wx27r")
+font_size = 8
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_rmin2"]
+font = ExtResource("4_wx27r")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Description" type="Control"]
+layout_mode = 3
+anchor_right = 0.226
+anchor_bottom = 0.199
+offset_right = -0.35202
+offset_bottom = 0.0479889
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_is8ot")
+
+[node name="Dark_Background_Description" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -106.0
+offset_top = -63.0
+offset_right = 350.0
+offset_bottom = 221.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Item_Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 24.0
+offset_right = 130.0
+offset_bottom = 52.0
+texture = ExtResource("2_jh1go")
+stretch_mode = 3
+
+[node name="Item" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 24.0
+offset_right = 130.0
+offset_bottom = 52.0
+texture = ExtResource("3_yj175")
+stretch_mode = 3
+
+[node name="Cooldown" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 24.0
+offset_right = 158.0
+offset_bottom = 34.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Cooldown"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "0.42"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Cooldown"]
+layout_mode = 2
+texture = ExtResource("5_8ts47")
+stretch_mode = 3
+
+[node name="Energy_Use" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 47.0
+offset_right = 158.0
+offset_bottom = 57.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+
+[node name="Amount" type="Label" parent="Energy_Use"]
+modulate = Color(1, 1, 1, 0.698039)
+layout_mode = 2
+text = "7"
+label_settings = SubResource("LabelSettings_iiy12")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Energy_Use"]
+layout_mode = 2
+texture = ExtResource("6_2q7o3")
+stretch_mode = 3
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 59.0
+offset_right = 216.0
+offset_bottom = 129.0
+texture = ExtResource("7_1hgkv")
+
+[node name="Description_Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 64.0
+offset_right = 226.0
+offset_bottom = 123.0
+theme = SubResource("Theme_643p6")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="Description" type="Label" parent="Description_Scroll"]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+text = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."
+label_settings = SubResource("LabelSettings_uynh0")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Back_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 1.0
+offset_right = 248.0
+offset_bottom = 29.0
+texture_normal = ExtResource("11_4aqtj")
+texture_pressed = ExtResource("12_fdriw")
+texture_hover = ExtResource("13_71l63")
+
+[node name="Back_Text" type="Label" parent="Back_Button"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_rmin2")
+
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
