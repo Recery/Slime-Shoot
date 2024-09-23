@@ -1,10 +1,10 @@
 extends Node
 
-func _init():
+func _init() -> void:
 	AudioServer.set_bus_volume_db(1, -60)
 	AudioServer.set_bus_volume_db(2, -60)
 
-func _ready():
+func _ready() -> void:
 	Events.change_scene.connect(_change_scene)
 	Events.change_scene_packed.connect(_change_scene_packed)
 	Events.change_scene_instance.connect(_change_scene_instance)
@@ -12,7 +12,7 @@ func _ready():
 var loading_screen := preload("res://Scenes/Useful/loading_screen.tscn")
 var has_loading_screen := false
 
-func _change_scene(path_to_scene, show_loading_screen := true):
+func _change_scene(path_to_scene, show_loading_screen := true) -> void:
 	for child in get_children():
 		if child != null: child.queue_free()
 	
@@ -30,7 +30,7 @@ func _change_scene(path_to_scene, show_loading_screen := true):
 		await new_scene.ready
 	has_loading_screen = false
 
-func _change_scene_packed(scene : PackedScene, show_loading_screen := true):
+func _change_scene_packed(scene : PackedScene, show_loading_screen := true) -> void:
 	for child in get_children():
 		if child != null: child.queue_free()
 	
@@ -48,7 +48,7 @@ func _change_scene_packed(scene : PackedScene, show_loading_screen := true):
 		await new_scene.ready
 	has_loading_screen = false
 
-func _change_scene_instance(scene : Node, show_loading_screen := true):
+func _change_scene_instance(scene : Node, show_loading_screen := true) -> void:
 	for child in get_children():
 		if child != null: child.queue_free()
 	
