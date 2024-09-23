@@ -125,7 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="69_yssrl"]
 [ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="70_6lfp1"]
 [ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="70_ikb10"]
-[ext_resource type="PackedScene" uid="uid://51lcfqt4842s" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
+[ext_resource type="PackedScene" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="71_kowf4"]
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="71_lft1i"]
 [ext_resource type="Texture2D" uid="uid://b27rbgvhlf0ex" path="res://Sprites/Pets/BabyCannon/BabyCannonDisplay.png" id="71_yq0eh"]
