@@ -19,6 +19,8 @@ var path_cinematics := "user://Cinematics.save"
 var path_almanac := "user://Almanac.save"
 
 func _init():
+	load_file(1)
+	return
 	load_equipped_weapons()
 	load_unlocked_weapons()
 	load_equipped_abilities()
@@ -35,6 +37,11 @@ func _init():
 	load_settings()
 	load_played_cinematics()
 	load_almanac()
+
+func load_file(slot : int) -> void:
+	if ResourceLoader.exists("user://save_data/save_" + str(slot) + ".res"):
+		Vars.save_file = ResourceLoader.load("user://save_data/save_" + str(slot) + ".res")
+	else: Vars.save_file = SaveFile.new()
 
 # Armas equipadas
 func load_equipped_weapons():

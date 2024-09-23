@@ -8,8 +8,10 @@ var total_points
 var player : Player
 
 # Guardado
+var save_file : SaveFile
+
 var cinematics_played : Array[int]
-var almanac_unlocked : Array[String] # Guarda los paths de las escenas de los enemigos, no la escene directamente
+var almanac_unlocked : Array[String] # Guarda los paths de las escenas de los enemigos, no la escena directamente
 
 var weapons_equipped := [null, null, null]
 var weapons_unlocked := [null]
