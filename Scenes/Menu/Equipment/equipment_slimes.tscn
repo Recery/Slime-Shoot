@@ -1,13 +1,12 @@
-[gd_scene load_steps=51 format=3 uid="uid://dl5qufxb6ccbr"]
+[gd_scene load_steps=55 format=3 uid="uid://dl5qufxb6ccbr"]
 
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="1_2p5bb"]
 [ext_resource type="Texture2D" uid="uid://wndohrfqfgps" path="res://Sprites/Menu/BigSquareButton.png" id="1_effe7"]
-[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="2_qm74u"]
 [ext_resource type="Texture2D" uid="uid://5rm1ilivfryp" path="res://Sprites/Menu/BigSquareButtonPress.png" id="2_rix6a"]
-[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="3_kgrpw"]
 [ext_resource type="Texture2D" uid="uid://btbyybmf11qhp" path="res://Sprites/Menu/BigSquareButtonHover.png" id="3_vf304"]
 [ext_resource type="Texture2D" uid="uid://c6quj2tp30e11" path="res://Sprites/Menu/BigSquareButtonLocked.png" id="4_q4utm"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_c7iad"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="7_eq28f"]
 [ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="7_r3oru"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equip_Button_Slime.gd" id="8_4f1vp"]
 [ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="8_6yfho"]
@@ -16,14 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="12_hfvdf"]
 [ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="13_hjphn"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="13_rec6h"]
-[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="14_sibpl"]
-[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="15_tpp8t"]
-[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="16_3rkrn"]
-[ext_resource type="Texture2D" uid="uid://bc3pf3arpqi6e" path="res://Sprites/Menu/LifeIcon.png" id="16_8rnlm"]
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="17_44xo5"]
-[ext_resource type="Texture2D" uid="uid://npcy4vfa7k83" path="res://Sprites/Menu/SpeedIcon.png" id="17_b82aj"]
 [ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="17_t21qu"]
-[ext_resource type="Texture2D" uid="uid://d1clirh22wkr" path="res://Sprites/Menu/ResistanceIcon.png" id="18_as2up"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="21_xwjku"]
 [ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/PlayerSlimeYellow.png" id="22_21ydp"]
 [ext_resource type="PackedScene" uid="uid://wdae0dm20e6b" path="res://Scenes/Player/Creamy_Slime/creamy_slime.tscn" id="24_shm6n"]
@@ -46,42 +39,131 @@
 [ext_resource type="Texture2D" uid="uid://dhaj8lsbb5i7" path="res://Sprites/Player/PooSlime/PooSlime.png" id="37_m6bvc"]
 [ext_resource type="Texture2D" uid="uid://4ue6mog615ia" path="res://Sprites/Player/PooSlime/FartAttackPerk.png" id="38_687om"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq72e"]
+atlas = ExtResource("12_hfvdf")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_f6bpx"]
+script = ExtResource("7_eq28f")
+life = "100"
+max_energy = "200"
+speed = "110"
+resistance = "0"
+perk_texture = ExtResource("13_hjphn")
+perk_cooldown = "0"
+perk_energy_use = "1"
+texture = SubResource("AtlasTexture_eq72e")
+description = "The green slime has the sprint perk, that boosts your movement speed while holding your perk key."
+
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("11_g2ecg")
 font_color = Color(0.494118, 0.00392157, 0, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
-font = ExtResource("11_g2ecg")
-font_size = 8
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4m2n"]
+atlas = ExtResource("25_261bj")
+region = Rect2(1, 0, 15, 10)
 
-[sub_resource type="LabelSettings" id="LabelSettings_nkm4v"]
-font = ExtResource("11_g2ecg")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
+[sub_resource type="Resource" id="Resource_rtpvt"]
+script = ExtResource("7_eq28f")
+life = "70"
+max_energy = "230"
+speed = "115"
+resistance = "0"
+perk_texture = ExtResource("27_hxen7")
+perk_cooldown = "2"
+perk_energy_use = "60"
+texture = SubResource("AtlasTexture_g4m2n")
+description = "The creamy slime has the cake trap perk, which summons a cake that attracts some enemies and explode in a time after detecting an enemy. The cake is a lie. This slime also recover energy sightly faster."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ji8"]
+atlas = ExtResource("22_21ydp")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_ti174"]
+script = ExtResource("7_eq28f")
+life = "120"
+max_energy = "170"
+speed = "100"
+resistance = "2"
+perk_texture = ExtResource("17_t21qu")
+perk_cooldown = "0"
+perk_energy_use = "1.2"
+texture = SubResource("AtlasTexture_04ji8")
+description = "The yellow slime has the shock defense perk. While holding your perk key, you will damage all the enemies that are touching you."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfo5t"]
+atlas = ExtResource("28_i7h66")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_4swl2"]
+script = ExtResource("7_eq28f")
+life = "60"
+max_energy = "320"
+speed = "115"
+resistance = "0"
+perk_texture = ExtResource("29_7dio5")
+perk_cooldown = "0"
+perk_energy_use = "1.3"
+texture = SubResource("AtlasTexture_bfo5t")
+description = "The cosmic slime has the stellar mark perk. Hold your perk key to mark a nearby enemy with cosmic power, when you kill that marked enemy you'll recover 50% of your energy. Also, when you mark an enemy, it's damage and life will be reduced by half. Recovers energy faster."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujye2"]
+atlas = ExtResource("31_6bily")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_rb36a"]
+script = ExtResource("7_eq28f")
+life = "70"
+max_energy = "260"
+speed = "105"
+resistance = "0"
+perk_texture = ExtResource("32_jcjqk")
+perk_cooldown = "0"
+perk_energy_use = "1.2"
+texture = SubResource("AtlasTexture_ujye2")
+description = "The White Slime has the Glacibot perk. With this perk, holding your perk key will summon a temporal Glacibot that will fight for you. Recovers energy sightly faster."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v65de"]
+atlas = ExtResource("34_d5vnq")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_qeypo"]
+script = ExtResource("7_eq28f")
+life = "160"
+max_energy = "140"
+speed = "90"
+resistance = "5"
+perk_texture = ExtResource("35_gymdr")
+perk_cooldown = "0"
+perk_energy_use = "1"
+texture = SubResource("AtlasTexture_v65de")
+description = "The Goldfish Slime has the Goldfish Bless Perk. While holding your perk key, you will recover life and your resistance will be upgraded, but your speed will be reduced. Recovers energy sightly slower."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f35wi"]
+atlas = ExtResource("37_m6bvc")
+region = Rect2(1, 0, 15, 10)
+
+[sub_resource type="Resource" id="Resource_a1p8q"]
+script = ExtResource("7_eq28f")
+life = "110"
+max_energy = "210"
+speed = "110"
+resistance = "1"
+perk_texture = ExtResource("38_687om")
+perk_cooldown = "0"
+perk_energy_use = "1"
+texture = SubResource("AtlasTexture_f35wi")
+description = "This is the... the Poo Slime. It has the Fart Attack Perk. Hold your perk key and your Slime will fart, poisoning nearby enemies."
 
 [sub_resource type="LabelSettings" id="LabelSettings_kaxso"]
 font = ExtResource("11_g2ecg")
 font_color = Color(1, 0.211765, 0.156863, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
-font = ExtResource("11_g2ecg")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
-
 [node name="Equipment_Slimes" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Dark_Background" type="ColorRect" parent="."]
 modulate = Color(1, 1, 1, 0.705882)
@@ -108,6 +190,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_f6bpx")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Green_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -146,147 +229,6 @@ hframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("13_hjphn")
 
-[node name="Slime_Description" type="Control" parent="Page_1/Green_Slime"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -5.0
-offset_top = -8.0
-offset_right = 35.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_1/Green_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -30.0
-offset_right = 100.0
-offset_bottom = 30.0
-text = "The green slime has the sprint perk, that boosts your movement speed while holding your perk key."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("12_hfvdf")
-hframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "200"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "100
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "110
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_1/Green_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("13_hjphn")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Green_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = -1.0
-offset_bottom = 6.0
-text = "1"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_1/Green_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_1/Green_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Creamy_Slime" type="TextureButton" parent="Page_1"]
 layout_mode = 2
 texture_normal = ExtResource("1_effe7")
@@ -295,6 +237,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_rtpvt")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Creamy_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -333,145 +276,6 @@ hframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("27_hxen7")
 
-[node name="Slime_Description" type="Control" parent="Page_1/Creamy_Slime"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -72.0
-offset_top = -8.0
-offset_right = -32.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -35.0
-offset_right = 100.0
-offset_bottom = 35.0
-text = "The creamy slime has the cake trap perk, which summons a cake that attracts some enemies and explode in a time after detecting an enemy. The cake is a lie. This slime also recover energy sightly faster."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("25_261bj")
-hframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "230"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(5, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "70"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "115
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "0"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("27_hxen7")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(5, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "60"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_1/Creamy_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_1/Creamy_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "2
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Yellow_Slime" type="TextureButton" parent="Page_1"]
 layout_mode = 2
 texture_normal = ExtResource("1_effe7")
@@ -480,6 +284,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_ti174")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Yellow_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -519,147 +324,6 @@ vframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("17_t21qu")
 
-[node name="Slime_Description" type="Control" parent="Page_1/Yellow_Slime"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -139.0
-offset_top = -8.0
-offset_right = -99.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -30.0
-offset_right = 100.0
-offset_bottom = 30.0
-text = "The yellow slime has the shock defense perk. While holding your perk key, you will damage all the enemies that are touching you."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("22_21ydp")
-hframes = 2
-vframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "170"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "120
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "100
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "2"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("17_t21qu")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(5, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "1.2"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_1/Yellow_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_1/Yellow_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Cosmic_Slime" type="TextureButton" parent="Page_1"]
 layout_mode = 2
 texture_normal = ExtResource("1_effe7")
@@ -668,6 +332,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_4swl2")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Cosmic_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -707,147 +372,6 @@ vframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("29_7dio5")
 
-[node name="Slime_Description" type="Control" parent="Page_1/Cosmic_Slime"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -206.0
-offset_top = -8.0
-offset_right = -166.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -33.0
-offset_right = 136.0
-offset_bottom = 48.0
-scale = Vector2(0.85, 0.85)
-text = "The cosmic slime has the stellar mark perk. Hold your perk key to mark a nearby enemy with cosmic power, when you kill that marked enemy you'll recover 50% of your energy. Also, when you mark an enemy, it's damage and life will be reduced by half. Recovers energy faster."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 10
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("28_i7h66")
-hframes = 2
-vframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "320 "
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(5, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "60"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "115
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "0"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("29_7dio5")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(6, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "1.3"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_1/Cosmic_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_1/Cosmic_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Page_2" type="HBoxContainer" parent="."]
 visible = false
 layout_mode = 0
@@ -865,6 +389,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_rb36a")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/White_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -903,145 +428,6 @@ hframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("32_jcjqk")
 
-[node name="Slime_Description" type="Control" parent="Page_2/White_Slime"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -5.0
-offset_top = -8.0
-offset_right = 35.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_2/White_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -30.0
-offset_right = 100.0
-offset_bottom = 30.0
-text = "The White Slime has the Glacibot perk. With this perk, holding your perk key will summon a temporal Glacibot that will fight for you. Recovers energy sightly faster."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("31_6bily")
-hframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/White_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "260"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_2/White_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "70"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_2/White_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "105"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_2/White_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("32_jcjqk")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/White_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = -1.0
-offset_bottom = 6.0
-text = "1.2"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_2/White_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_2/White_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Goldfish_Slime" type="TextureButton" parent="Page_2"]
 layout_mode = 2
 texture_normal = ExtResource("1_effe7")
@@ -1050,6 +436,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_qeypo")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/Goldfish_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -1088,144 +475,6 @@ hframes = 2
 position = Vector2(30, 32)
 texture = ExtResource("35_gymdr")
 
-[node name="Slime_Description" type="Control" parent="Page_2/Goldfish_Slime"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -72.0
-offset_top = -8.0
-offset_right = -32.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -35.0
-offset_right = 100.0
-offset_bottom = 35.0
-text = "The Goldfish Slime has the Goldfish Bless Perk. While holding your perk key, you will recover life and your resistance will be upgraded, but your speed will be reduced. Recovers energy sightly slower."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("34_d5vnq")
-hframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "140"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(5, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "160"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "90
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "5"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("35_gymdr")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(5, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "1"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_2/Goldfish_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Poo_Slime" type="TextureButton" parent="Page_2"]
 layout_mode = 2
 texture_normal = ExtResource("1_effe7")
@@ -1234,6 +483,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
+info = SubResource("Resource_a1p8q")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/Poo_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -1271,144 +521,6 @@ hframes = 2
 [node name="Perk" type="Sprite2D" parent="Page_2/Poo_Slime"]
 position = Vector2(30, 32)
 texture = ExtResource("38_687om")
-
-[node name="Slime_Description" type="Control" parent="Page_2/Poo_Slime"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -139.0
-offset_top = -8.0
-offset_right = -99.0
-offset_bottom = 32.0
-
-[node name="Description_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("14_sibpl")
-
-[node name="Description" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Description_Frame"]
-offset_left = -100.0
-offset_top = -35.0
-offset_right = 100.0
-offset_bottom = 35.0
-text = "This is the... the Poo Slime. It has the Fart Attack Perk. Hold your perk key and your Slime will fart, poisoning nearby enemies."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Slime_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
-position = Vector2(120, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Slime" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
-z_index = 1
-texture = ExtResource("37_m6bvc")
-hframes = 2
-
-[node name="Max_Energy" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, -8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Max_Energy"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "210"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Max_Life" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(5, -14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_8rnlm")
-
-[node name="Life" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Max_Life"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "110"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Speed" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(6, 8)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_b82aj")
-
-[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Speed"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -28.0
-offset_top = -4.5
-offset_right = -7.0
-offset_bottom = 5.5
-text = "110
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Resistance" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame"]
-position = Vector2(2, 14)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_as2up")
-
-[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Slime_Frame/Resistance"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.5
-offset_right = 1.0
-offset_bottom = 5.5
-text = "1"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Perk_Frame" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description"]
-position = Vector2(152, 10)
-texture = ExtResource("13_rec6h")
-
-[node name="Perk" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
-z_index = 1
-texture = ExtResource("38_687om")
-
-[node name="Energy_Use" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(5, 12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("15_tpp8t")
-
-[node name="Use" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -26.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "1"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Use_Cooldown" type="Sprite2D" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame"]
-position = Vector2(3, -12)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_3rkrn")
-
-[node name="Cooldown" type="Label" parent="Page_2/Poo_Slime/Slime_Description/Perk_Frame/Use_Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_bottom = 6.0
-text = "0"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Equipped_Slime" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
@@ -1471,36 +583,3 @@ offset_right = 14.0027
 offset_bottom = 14.0027
 text = "2"
 label_settings = SubResource("LabelSettings_kaxso")
-
-[node name="Dark_Background_Description" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 0
-offset_left = -229.0
-offset_top = -137.0
-offset_right = 227.0
-offset_bottom = 147.0
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Back_Button" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 108.0
-offset_top = -72.0
-offset_right = 136.0
-offset_bottom = -44.0
-texture_normal = ExtResource("17_44xo5")
-texture_pressed = ExtResource("2_qm74u")
-texture_hover = ExtResource("3_kgrpw")
-
-[node name="Back_Text" type="Label" parent="Back_Button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 18.0
-offset_bottom = 21.0
-text = "<"
-label_settings = SubResource("LabelSettings_8yh3g")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)

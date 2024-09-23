@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cq3m7ndadb2jt"]
+[gd_scene load_steps=66 format=3 uid="uid://cq3m7ndadb2jt"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_llrg5"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="2_m7hc0"]
@@ -8,18 +8,15 @@
 [ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="4_3y6fo"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection.gd" id="5_ewph1"]
 [ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="6_oxw48"]
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="6_ricsb"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="7_gyls4"]
 [ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="8_21d7m"]
 [ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="9_romfm"]
 [ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="10_6jd5v"]
 [ext_resource type="PackedScene" uid="uid://cd1txb43a6bug" path="res://Scenes/Weapons/mini_knife.tscn" id="11_10ija"]
-[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="11_amhss"]
-[ext_resource type="Texture2D" uid="uid://g2s751j6bkym" path="res://Sprites/Menu/WeaponDescriptionFrame.png" id="12_ds6om"]
 [ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="12_mf6fi"]
-[ext_resource type="Texture2D" uid="uid://4m7e4hljxhd3" path="res://Sprites/Player/EnergyIcon.png" id="13_2duse"]
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="13_o68sw"]
 [ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="13_u3wbb"]
-[ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="14_70lrc"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Weapons_Sprites.gd" id="14_d2xdu"]
 [ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="14_xedje"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="15_k387t"]
@@ -48,27 +45,135 @@
 [ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="44_ipvu2"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="44_p5wm5"]
 
+[sub_resource type="Resource" id="Resource_2inrk"]
+script = ExtResource("6_ricsb")
+cooldown = "0.42"
+energy_use = "7"
+texture = ExtResource("8_21d7m")
+description = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."
+
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("7_gyls4")
 font_color = Color(1, 0.211765, 0.156863, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
-font = ExtResource("7_gyls4")
-font_size = 8
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jnkp"]
+atlas = ExtResource("10_6jd5v")
+region = Rect2(0, 0, 8, 10)
 
-[sub_resource type="LabelSettings" id="LabelSettings_nkm4v"]
-font = ExtResource("7_gyls4")
-font_size = 8
-font_color = Color(0, 0, 0, 1)
-outline_size = 4
+[sub_resource type="Resource" id="Resource_dt4wl"]
+script = ExtResource("6_ricsb")
+cooldown = "3"
+energy_use = "70"
+texture = SubResource("AtlasTexture_7jnkp")
+description = "The grenade is a slow and strong weapon. Uses lots of energy, but deals heavy damage to the first enemy and low damage to some nearby enemies."
 
-[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
-font = ExtResource("7_gyls4")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_l1s8v"]
+script = ExtResource("6_ricsb")
+cooldown = "0.3"
+energy_use = "4"
+texture = ExtResource("12_mf6fi")
+description = "The mini knife deals low damage at fast speed. Uses low energy and it's a melee weapon."
+
+[sub_resource type="Resource" id="Resource_d2u3v"]
+script = ExtResource("6_ricsb")
+cooldown = "0.9"
+energy_use = "15"
+texture = ExtResource("14_xedje")
+description = "The rock can be thrown, dealing moderate damage with a moderate energy use."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd37q"]
+atlas = ExtResource("17_lpb8w")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="Resource" id="Resource_wg8l0"]
+script = ExtResource("6_ricsb")
+cooldown = "1.2"
+energy_use = "30"
+texture = SubResource("AtlasTexture_gd37q")
+description = "The frost staff pierces up to 3 enemies, dealing low damage to each one. It also freezes them, reducing their move speed. Moderate energy use."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vcik"]
+atlas = ExtResource("26_gjgv7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Resource" id="Resource_yq2pd"]
+script = ExtResource("6_ricsb")
+cooldown = "5.5"
+energy_use = "10"
+texture = SubResource("AtlasTexture_1vcik")
+description = "While holding the energy lantern, you'll recover energy faster and you'll always be able to use energy even after running out of it. Use it and you'll recover all  your energy at the cost of 25% of your life."
+
+[sub_resource type="Resource" id="Resource_m8xku"]
+script = ExtResource("6_ricsb")
+cooldown = "1.1"
+energy_use = "26"
+texture = ExtResource("28_p7b6w")
+description = "The baby log is a melee weapon that deals low damage to all enemies that it hits, and also knockbacks them. The first enemy will receive more damage."
+
+[sub_resource type="Resource" id="Resource_od5oc"]
+script = ExtResource("6_ricsb")
+cooldown = "1.9"
+energy_use = "42"
+texture = ExtResource("30_jeik0")
+description = "The fart rifle is very disgusting. But it also is a powerful weapon. It doesn't deal any damage, but it will pierces enemies and intoxicate them with fart poison."
+
+[sub_resource type="Resource" id="Resource_6lujb"]
+script = ExtResource("6_ricsb")
+cooldown = "1.8"
+energy_use = "42"
+texture = ExtResource("19_0500m")
+description = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. Yellow Slime signature weapon."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oegwg"]
+atlas = ExtResource("34_j3gs2")
+region = Rect2(0, 0, 7, 10)
+
+[sub_resource type="Resource" id="Resource_daaj4"]
+script = ExtResource("6_ricsb")
+cooldown = "2.1"
+energy_use = "70"
+texture = SubResource("AtlasTexture_oegwg")
+description = "The paint bomb deals low damage to the first enemy it hits. After that, it creates a paint puddle that will constantly damage and slow down enemies inside it."
+
+[sub_resource type="Resource" id="Resource_duyw4"]
+script = ExtResource("6_ricsb")
+cooldown = "1.1"
+energy_use = "22"
+texture = ExtResource("36_w3s6x")
+description = "The... thingy of the thing? Whatever is this thing, using it you will throw multiple types of projectiles with different effects."
+
+[sub_resource type="Resource" id="Resource_luuvd"]
+script = ExtResource("6_ricsb")
+cooldown = "0"
+energy_use = "1.5"
+texture = ExtResource("38_5ptlu")
+description = "The pressure washer is a powerful weapon that constantly shoots a strong water jet, piercing through every enemy and knocking back them... It has a high energy use per second."
+
+[sub_resource type="Resource" id="Resource_gwibg"]
+script = ExtResource("6_ricsb")
+cooldown = "0.12"
+energy_use = "4"
+texture = ExtResource("40_o66mx")
+description = "The snowy uzi rapidly shoots bullets to your enemies. White Slime signature weapon."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gbmq"]
+atlas = ExtResource("42_2fiyd")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="Resource" id="Resource_7ab8f"]
+script = ExtResource("6_ricsb")
+cooldown = "9"
+energy_use = "75"
+texture = SubResource("AtlasTexture_5gbmq")
+description = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."
+
+[sub_resource type="Resource" id="Resource_y1tmp"]
+script = ExtResource("6_ricsb")
+cooldown = "2.5"
+energy_use = "95"
+texture = ExtResource("44_ipvu2")
+description = "Use the Goldfish Trident and you'll charge at your mouse position, dealing damage and stealing life to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."
 
 [node name="Equipment_Weapons" type="Control"]
 layout_mode = 3
@@ -107,6 +212,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_2inrk")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Weedtite_Microgun"]
 layout_mode = 0
@@ -195,72 +301,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("8_21d7m")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Weedtite_Microgun"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("8_21d7m")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "7"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description"]
-position = Vector2(144, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Weedtite_Microgun/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -36.0
-offset_top = -4.0
-offset_right = -12.0
-offset_bottom = 6.0
-text = "0.42
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Grenade" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -268,6 +308,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_dt4wl")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Grenade"]
 layout_mode = 0
@@ -357,75 +398,6 @@ position = Vector2(14, 13)
 texture = ExtResource("10_6jd5v")
 hframes = 2
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Grenade"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -35.0
-offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("10_6jd5v")
-hframes = 2
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Grenade/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The grenade is a slow and strong weapon. Uses lots of energy, but deals heavy damage to the first enemy and low damage to some nearby enemies."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Grenade/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "70
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Grenade/Weapon_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Grenade/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = 2.0
-offset_bottom = 6.0
-text = "3"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Mini_Knife" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -433,6 +405,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_l1s8v")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Mini_Knife"]
 layout_mode = 0
@@ -521,75 +494,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("12_mf6fi")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Mini_Knife"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = 1.0
-offset_right = -30.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("12_mf6fi")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The mini knife deals low damage at fast speed. Uses low energy and it's a melee weapon."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "4
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Mini_Knife/Weapon_Description"]
-position = Vector2(140, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Mini_Knife/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "0.3
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Rock" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -597,6 +501,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_d2u3v")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Rock"]
 layout_mode = 0
@@ -685,74 +590,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("14_xedje")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Rock"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -105.0
-offset_top = 1.0
-offset_right = -65.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("14_xedje")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Rock/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The rock can be thrown, dealing moderate damage with a moderate energy use."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Rock/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "15"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Rock/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Rock/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "0.9
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Frost_Staff" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -760,6 +597,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_wg8l0")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Frost_Staff"]
 layout_mode = 0
@@ -849,75 +687,6 @@ position = Vector2(14, 13)
 texture = ExtResource("17_lpb8w")
 hframes = 3
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Frost_Staff"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = 1.0
-offset_right = -100.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("17_lpb8w")
-hframes = 3
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The frost staff pierces up to 3 enemies, dealing low damage to each one. It also freezes them, reducing their move speed. Moderate energy use."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "30"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Frost_Staff/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Frost_Staff/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "1.2
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Energy_Lantern" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -925,6 +694,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_yq2pd")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Energy_Lantern"]
 layout_mode = 0
@@ -1014,75 +784,6 @@ position = Vector2(14, 13)
 texture = ExtResource("26_gjgv7")
 hframes = 2
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Energy_Lantern"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -175.0
-offset_top = 1.0
-offset_right = -135.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("26_gjgv7")
-hframes = 2
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 235.0
-offset_bottom = 97.0
-text = "While holding the energy lantern, you'll recover energy faster and you'll always be able to use energy even after running out of it. Use it and you'll recover all  your energy at the cost of 25% of your life."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "10"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Energy_Lantern/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Energy_Lantern/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "5.5
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Baby_Log" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -1090,6 +791,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_m8xku")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Baby_Log"]
 layout_mode = 0
@@ -1178,74 +880,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("28_p7b6w")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Baby_Log"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -210.0
-offset_top = 1.0
-offset_right = -170.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("28_p7b6w")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The baby log is a melee weapon that deals low damage to all enemies that it hits, and also knockbacks them. The first enemy will receive more damage."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "26"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Baby_Log/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Baby_Log/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "1.1
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Fart_Rifle" type="TextureButton" parent="Rows/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -1253,6 +887,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_od5oc")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Fart_Rifle"]
 layout_mode = 0
@@ -1341,74 +976,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("30_jeik0")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row1/Fart_Rifle"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -245.0
-offset_top = 1.0
-offset_right = -205.0
-offset_bottom = 41.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("30_jeik0")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The fart rifle is very disgusting. But it also is a powerful weapon. It doesn't deal any damage, but it will pierces enemies and intoxicate them with fart poison."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "42"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row1/Fart_Rifle/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row1/Fart_Rifle/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "1.9
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Row2" type="HBoxContainer" parent="Rows"]
 layout_mode = 2
 theme_override_constants/separation = 7
@@ -1420,6 +987,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_6lujb")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Sandy_Eagle"]
 layout_mode = 0
@@ -1508,73 +1076,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("19_0500m")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Sandy_Eagle"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_top = -32.0
-offset_right = 40.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("19_0500m")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. Yellow Slime signature weapon."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "42"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Sandy_Eagle/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Sandy_Eagle/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "1.8
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Paint_Bomb" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -1582,6 +1083,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_daaj4")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Paint_Bomb"]
 layout_mode = 0
@@ -1671,75 +1173,6 @@ position = Vector2(14, 13)
 texture = ExtResource("34_j3gs2")
 hframes = 2
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Paint_Bomb"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -35.0
-offset_top = -32.0
-offset_right = 5.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("34_j3gs2")
-hframes = 2
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The paint bomb deals low damage to the first enemy it hits. After that, it creates a paint puddle that will constantly damage and slow down enemies inside it."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "70"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Paint_Bomb/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Paint_Bomb/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "2.1
-"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Thingy_Of_The_Thing" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -1747,6 +1180,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_duyw4")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Thingy_Of_The_Thing"]
 layout_mode = 0
@@ -1835,73 +1269,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("36_w3s6x")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Thingy_Of_The_Thing"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = -32.0
-offset_right = -30.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("36_w3s6x")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The... thingy of the thing? Whatever is this thing, using it you will throw multiple types of projectiles with different effects."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -20.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "22"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description"]
-position = Vector2(141, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Thingy_Of_The_Thing/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -30.0
-offset_top = -4.0
-offset_right = -6.0
-offset_bottom = 6.0
-text = "1.1"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Pressure_Washer" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -1909,6 +1276,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_luuvd")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Pressure_Washer"]
 layout_mode = 0
@@ -1997,73 +1365,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("38_5ptlu")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Pressure_Washer"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -105.0
-offset_top = -32.0
-offset_right = -65.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("38_5ptlu")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 236.0
-offset_bottom = 99.0
-text = "The pressure washer is a powerful weapon that constantly shoots a strong water jet, piercing through every enemy and knocking back them... It has a high energy use per second."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-position = Vector2(141, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -24.0
-offset_top = -4.0
-offset_right = -7.0
-offset_bottom = 6.0
-text = "1.5"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Pressure_Washer/Weapon_Description"]
-position = Vector2(139, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Pressure_Washer/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = 2.0
-offset_bottom = 6.0
-text = "0"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Snowy_Uzi" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -2071,6 +1372,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_gwibg")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Snowy_Uzi"]
 layout_mode = 0
@@ -2159,73 +1461,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("40_o66mx")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Snowy_Uzi"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = -32.0
-offset_right = -100.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("40_o66mx")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 103.0
-text = "The snowy uzi rapidly shoots bullets to your enemies. White Slime signature weapon."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(139, 19)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_2duse")
-
-[node name="Use" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -22.0
-offset_top = -4.0
-offset_right = -5.0
-offset_bottom = 6.0
-text = "4"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Cooldown_Show" type="Sprite2D" parent="Rows/Row2/Snowy_Uzi/Weapon_Description"]
-position = Vector2(142, -4)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("14_70lrc")
-
-[node name="Cooldown" type="Label" parent="Rows/Row2/Snowy_Uzi/Weapon_Description/Cooldown_Show"]
-modulate = Color(1, 1, 1, 0.698039)
-offset_left = -32.0
-offset_top = -4.0
-offset_right = -8.0
-offset_bottom = 6.0
-text = "0.12"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Green_Apple_Stick" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -2233,6 +1468,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_7ab8f")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Green_Apple_Stick"]
 layout_mode = 0
@@ -2322,88 +1558,6 @@ position = Vector2(14, 13)
 texture = ExtResource("42_2fiyd")
 hframes = 3
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Green_Apple_Stick"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -175.0
-offset_top = -32.0
-offset_right = -135.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("42_2fiyd")
-hframes = 3
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 259.0
-offset_bottom = 107.0
-scale = Vector2(0.9, 0.9)
-text = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="HBoxContainer" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 17.0
-offset_right = 178.0
-offset_bottom = 27.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="Use" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-layout_mode = 2
-text = "75"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Energy_Use"]
-layout_mode = 2
-texture = ExtResource("13_2duse")
-
-[node name="Cooldown" type="HBoxContainer" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = -6.0
-offset_right = 178.0
-offset_bottom = 4.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="Amount" type="Label" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-layout_mode = 2
-text = "9"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Rows/Row2/Green_Apple_Stick/Weapon_Description/Cooldown"]
-layout_mode = 2
-texture = ExtResource("14_70lrc")
-
 [node name="Goldfish_Trident" type="TextureButton" parent="Rows/Row2"]
 layout_mode = 2
 texture_normal = ExtResource("1_llrg5")
@@ -2411,6 +1565,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
+info = SubResource("Resource_y1tmp")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Goldfish_Trident"]
 layout_mode = 0
@@ -2499,85 +1654,6 @@ label_settings = SubResource("LabelSettings_t6myi")
 position = Vector2(14, 13)
 texture = ExtResource("44_ipvu2")
 
-[node name="Weapon_Description" type="Control" parent="Rows/Row2/Goldfish_Trident"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -210.0
-offset_top = -32.0
-offset_right = -170.0
-offset_bottom = 8.0
-
-[node name="Weapon" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("44_ipvu2")
-
-[node name="Weapon_Frame" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("11_amhss")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("12_ds6om")
-
-[node name="Description" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 30.0
-offset_right = 238.0
-offset_bottom = 98.0
-text = "Use the Goldfish Trident and you'll charge at your mouse position, dealing damage and stealing life to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 7
-
-[node name="Energy_Use" type="HBoxContainer" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = 17.0
-offset_right = 178.0
-offset_bottom = 27.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="Use" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Energy_Use"]
-modulate = Color(1, 1, 1, 0.698039)
-layout_mode = 2
-text = "95"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Energy_Use"]
-layout_mode = 2
-texture = ExtResource("13_2duse")
-
-[node name="Cooldown" type="HBoxContainer" parent="Rows/Row2/Goldfish_Trident/Weapon_Description"]
-layout_mode = 0
-offset_left = 122.0
-offset_top = -6.0
-offset_right = 178.0
-offset_bottom = 4.0
-scale = Vector2(0.5, 0.5)
-theme_override_constants/separation = 4
-alignment = 1
-
-[node name="Amount" type="Label" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Cooldown"]
-modulate = Color(1, 1, 1, 0.698039)
-layout_mode = 2
-text = "2.5"
-label_settings = SubResource("LabelSettings_nkm4v")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Icon" type="TextureRect" parent="Rows/Row2/Goldfish_Trident/Weapon_Description/Cooldown"]
-layout_mode = 2
-texture = ExtResource("14_70lrc")
-
 [node name="Equipped_Weapons" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 position = Vector2(0, -56)
@@ -2602,33 +1678,3 @@ label_settings = ExtResource("44_p5wm5")
 horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
-
-[node name="Dark_Background_Description" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 0
-offset_left = -229.0
-offset_top = -137.0
-offset_right = 227.0
-offset_bottom = 147.0
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Back_Button" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 108.0
-offset_top = -72.0
-offset_right = 136.0
-offset_bottom = -44.0
-texture_normal = ExtResource("1_llrg5")
-texture_pressed = ExtResource("15_k387t")
-texture_hover = ExtResource("16_141qd")
-
-[node name="Back_Text" type="Label" parent="Back_Button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 18.0
-offset_bottom = 21.0
-text = "<"
-label_settings = SubResource("LabelSettings_8yh3g")

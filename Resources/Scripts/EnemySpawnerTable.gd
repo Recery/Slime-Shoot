@@ -47,7 +47,7 @@ func load_probs(spawner_level : int) -> Array[EnemyToSpawn]:
 	
 	return spawneable_enemies
 
-func request_spawn(enemy : EnemyInQueue):
+func request_spawn(enemy : EnemyInQueue) -> void:
 	var spawned_enemy = enemy.enemy.instantiate()
 	
 	if spawned_enemy.is_in_group("Big_Enemies"): 

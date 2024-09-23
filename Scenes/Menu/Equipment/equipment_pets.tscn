@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d4d0fselwe2cq"]
+[gd_scene load_steps=32 format=3 uid="uid://d4d0fselwe2cq"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_tekkh"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_fec7f"]
@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_7ifbt"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_kdkek"]
 [ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="6_a7enx"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="6_xnudm"]
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="7_relit"]
 [ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="8_17vpv"]
 [ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="9_yx2ss"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equip_Button_Pet.gd" id="10_enm2f"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="11_oketu"]
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_5bfhn"]
-[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_mmqsb"]
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="14_20okn"]
 [ext_resource type="PackedScene" uid="uid://chd77oucrvwn" path="res://Scenes/Pets/Pipsqueak.tscn" id="15_vxmkh"]
 [ext_resource type="Texture2D" uid="uid://bumdqdehn2iv7" path="res://Sprites/Pets/Cat/CatDisplay.png" id="16_27jrn"]
@@ -21,31 +21,48 @@
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="18_2tyiy"]
 [ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="18_v7qec"]
 [ext_resource type="PackedScene" uid="uid://dxpyupc3rydpw" path="res://Scenes/Pets/GreatGuppy.tscn" id="19_g6ire"]
-[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="19_wgt10"]
 [ext_resource type="Texture2D" uid="uid://b27rbgvhlf0ex" path="res://Sprites/Pets/BabyCannon/BabyCannonDisplay.png" id="20_7wt78"]
-[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="20_fe3wp"]
 [ext_resource type="PackedScene" uid="uid://51lcfqt4842s" path="res://Scenes/Pets/baby_cannon.tscn" id="21_manbw"]
+
+[sub_resource type="Resource" id="Resource_07d4o"]
+script = ExtResource("6_xnudm")
+texture = ExtResource("6_a7enx")
+description = "No pet? I get it, they're expensive, and people say \"Don't buy, adopt\"... But this is Slime Shoot and here we don't adopt pets, we buy them! Come on, save points and buy one!"
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
 font = ExtResource("11_oketu")
 font_color = Color(0.494118, 0.00392157, 0, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_cdgr1"]
-font = ExtResource("11_oketu")
-font_size = 8
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_qk3xw"]
+script = ExtResource("6_xnudm")
+texture = ExtResource("14_20okn")
+description = "Pipsqueak, the apple mouse! Slimes can only eat green apples, so Pipsqueak is safe from them and ready to enjoy Fylphy streams with you! Cosmetic item, it has no effect."
+
+[sub_resource type="Resource" id="Resource_7mm1r"]
+script = ExtResource("6_xnudm")
+texture = ExtResource("16_27jrn")
+description = "Cat! Meow meow nyah. MEOOWWWWWW!!!!!!! Purr...
+Cosmeowtic item, it has nyoh effect."
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbr44"]
+atlas = ExtResource("18_v7qec")
+region = Rect2(0, 0, 14, 8)
+
+[sub_resource type="Resource" id="Resource_ux6dx"]
+script = ExtResource("6_xnudm")
+texture = SubResource("AtlasTexture_lbr44")
+description = "The Great Guppy! He looks imposing and all, but he's such a coward just like King Slime... At least no one depends on this guppy. Cosmetic item, it has no effect."
+
+[sub_resource type="Resource" id="Resource_nnqu6"]
+script = ExtResource("6_xnudm")
+texture = ExtResource("20_7wt78")
+description = "Baby Cannon! A cannon has never looked so cute before. I want to pet him so bad, and I'm sure you want it too. Cosmetic item, it has no effect."
 
 [sub_resource type="LabelSettings" id="LabelSettings_o162y"]
 font = ExtResource("11_oketu")
 font_color = Color(1, 0.211765, 0.156863, 1)
 outline_size = 3
-
-[sub_resource type="LabelSettings" id="LabelSettings_8yh3g"]
-font = ExtResource("11_oketu")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
 
 [node name="Equipment_Pets" type="Control"]
 layout_mode = 3
@@ -86,6 +103,7 @@ texture_hover = ExtResource("3_abf4x")
 texture_disabled = ExtResource("4_7ifbt")
 script = ExtResource("5_kdkek")
 type_of_object = 5
+info = SubResource("Resource_07d4o")
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/No_Pet"]
 position = Vector2(14, 14)
@@ -118,40 +136,6 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Pet_Description" type="Control" parent="Page_1/Row1/No_Pet"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = 1.0
-offset_right = 41.0
-offset_bottom = 40.0
-
-[node name="Pet" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("6_a7enx")
-
-[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_5bfhn")
-
-[node name="Frame" type="Sprite2D" parent="Page_1/Row1/No_Pet/Pet_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_mmqsb")
-
-[node name="Description" type="Label" parent="Page_1/Row1/No_Pet/Pet_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "No pet? I get it, they're expensive, and people say \"Don't buy, adopt\"... But this is Slime Shoot and here we don't adopt pets, we buy them! Come on, save points and buy one!"
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Pipsqueak" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_tekkh")
@@ -160,6 +144,7 @@ texture_hover = ExtResource("3_abf4x")
 texture_disabled = ExtResource("4_7ifbt")
 script = ExtResource("5_kdkek")
 type_of_object = 5
+info = SubResource("Resource_qk3xw")
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak"]
 position = Vector2(14, 14)
@@ -193,39 +178,6 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Pet_Description" type="Control" parent="Page_1/Row1/Pipsqueak"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -40.0
-offset_bottom = 40.0
-
-[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("14_20okn")
-
-[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_5bfhn")
-
-[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_mmqsb")
-
-[node name="Description" type="Label" parent="Page_1/Row1/Pipsqueak/Pet_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "Pipsqueak, the apple mouse! Slimes can only eat green apples, so Pipsqueak is safe from them and ready to enjoy Fylphy streams with you! Cosmetic item, it has no effect."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Cat" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_tekkh")
@@ -234,6 +186,7 @@ texture_hover = ExtResource("3_abf4x")
 texture_disabled = ExtResource("4_7ifbt")
 script = ExtResource("5_kdkek")
 type_of_object = 5
+info = SubResource("Resource_7mm1r")
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Cat"]
 position = Vector2(14, 14)
@@ -267,41 +220,6 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Pet_Description" type="Control" parent="Page_1/Row1/Cat"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -81.0
-offset_right = -41.0
-offset_bottom = 40.0
-
-[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Cat/Pet_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("16_27jrn")
-
-[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Cat/Pet_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_5bfhn")
-
-[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Cat/Pet_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_mmqsb")
-
-[node name="Description" type="Label" parent="Page_1/Row1/Cat/Pet_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "Cat! Meow meow nyah. MEOOWWWWWW!!!!!!! Purr...
-Cosmeowtic item, it has nyoh effect."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Great_Guppy" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_tekkh")
@@ -310,6 +228,7 @@ texture_hover = ExtResource("3_abf4x")
 texture_disabled = ExtResource("4_7ifbt")
 script = ExtResource("5_kdkek")
 type_of_object = 5
+info = SubResource("Resource_ux6dx")
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Great_Guppy"]
 position = Vector2(14, 14)
@@ -344,41 +263,6 @@ offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
 
-[node name="Pet_Description" type="Control" parent="Page_1/Row1/Great_Guppy"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -122.0
-offset_right = -82.0
-offset_bottom = 40.0
-
-[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("18_v7qec")
-hframes = 2
-
-[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_5bfhn")
-
-[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_mmqsb")
-
-[node name="Description" type="Label" parent="Page_1/Row1/Great_Guppy/Pet_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The Great Guppy! He looks imposing and all, but he's such a coward just like King Slime... At least no one depends on this guppy. Cosmetic item, it has no effect."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Baby_Cannon" type="TextureButton" parent="Page_1/Row1"]
 layout_mode = 2
 texture_normal = ExtResource("1_tekkh")
@@ -387,6 +271,7 @@ texture_hover = ExtResource("3_abf4x")
 texture_disabled = ExtResource("4_7ifbt")
 script = ExtResource("5_kdkek")
 type_of_object = 5
+info = SubResource("Resource_nnqu6")
 
 [node name="Pet" type="Sprite2D" parent="Page_1/Row1/Baby_Cannon"]
 position = Vector2(14, 14)
@@ -419,40 +304,6 @@ offset_right = 60.2884
 offset_bottom = 14.0027
 text = "Equip"
 label_settings = SubResource("LabelSettings_ymge6")
-
-[node name="Pet_Description" type="Control" parent="Page_1/Row1/Baby_Cannon"]
-visible = false
-z_index = 1
-layout_mode = 2
-anchors_preset = 0
-offset_left = -163.0
-offset_right = -123.0
-offset_bottom = 40.0
-
-[node name="Pet" type="Sprite2D" parent="Page_1/Row1/Baby_Cannon/Pet_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("20_7wt78")
-
-[node name="Pet_Frame" type="Sprite2D" parent="Page_1/Row1/Baby_Cannon/Pet_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_5bfhn")
-
-[node name="Frame" type="Sprite2D" parent="Page_1/Row1/Baby_Cannon/Pet_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_mmqsb")
-
-[node name="Description" type="Label" parent="Page_1/Row1/Baby_Cannon/Pet_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "Baby Cannon! A cannon has never looked so cute before. I want to pet him so bad, and I'm sure you want it too. Cosmetic item, it has no effect."
-label_settings = SubResource("LabelSettings_cdgr1")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
 
 [node name="Equipped_Pet" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
@@ -516,33 +367,3 @@ offset_right = 14.0027
 offset_bottom = 14.0027
 text = "2"
 label_settings = SubResource("LabelSettings_o162y")
-
-[node name="Dark_Background_Description" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 0
-offset_left = -229.0
-offset_top = -137.0
-offset_right = 227.0
-offset_bottom = 147.0
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Back_Button" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 108.0
-offset_top = -72.0
-offset_right = 136.0
-offset_bottom = -44.0
-texture_normal = ExtResource("12_5bfhn")
-texture_pressed = ExtResource("19_wgt10")
-texture_hover = ExtResource("20_fe3wp")
-
-[node name="Back_Text" type="Label" parent="Back_Button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 18.0
-offset_bottom = 21.0
-text = "<"
-label_settings = SubResource("LabelSettings_8yh3g")

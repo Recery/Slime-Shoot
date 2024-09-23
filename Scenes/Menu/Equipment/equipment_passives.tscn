@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dp0eoiclataar"]
+[gd_scene load_steps=55 format=3 uid="uid://dp0eoiclataar"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
@@ -6,23 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_ufowc"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_ywpcj"]
 [ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="6_lphj4"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="6_xp7r1"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="7_iy4b2"]
 [ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="8_vcpna"]
 [ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="9_cen6v"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection_Passives.gd" id="10_4yeco"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="10_gysxj"]
 [ext_resource type="PackedScene" uid="uid://cg6u0ffwolmut" path="res://Scenes/Passives/life_regen_passive.tscn" id="11_8ilpw"]
-[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="12_q4wu3"]
-[ext_resource type="Texture2D" uid="uid://dwg4d2hsrmr6h" path="res://Sprites/Menu/AbilityDescriptionFrame.png" id="13_k78go"]
 [ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="15_q4wss"]
 [ext_resource type="PackedScene" uid="uid://btekfbe0jpc7x" path="res://Scenes/Passives/energy_loot_passive.tscn" id="16_fvnnu"]
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="16_svsdt"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Passives_Sprite.gd" id="17_lkvr6"]
 [ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="17_xdo0y"]
-[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="18_cj420"]
 [ext_resource type="PackedScene" uid="uid://dsvtj72ccpu5e" path="res://Scenes/Passives/resistance_passive.tscn" id="18_gotk5"]
 [ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="19_nighk"]
-[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="19_t5bww"]
 [ext_resource type="PackedScene" uid="uid://crj0pwayi1t0i" path="res://Scenes/Passives/extra_speed_passive.tscn" id="20_71gix"]
 [ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="21_ctbsa"]
 [ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="22_e1s0c"]
@@ -44,21 +41,75 @@
 [ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="37_ujqlb"]
 [ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="38_r8882"]
 
+[sub_resource type="Resource" id="Resource_58qy0"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("15_q4wss")
+description = "The energy loot passive will make you recover energy when you kill an enemy. The energy recovered is based on the score given by the enemy."
+
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("10_gysxj")
 font_color = Color(1, 0.313726, 0.247059, 1)
 outline_size = 3
 
-[sub_resource type="LabelSettings" id="LabelSettings_j1phy"]
-font = ExtResource("10_gysxj")
-font_size = 8
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_6bg8y"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("6_lphj4")
+description = "The life regen passive heals you 3HP every 6 seconds."
 
-[sub_resource type="LabelSettings" id="LabelSettings_jf68m"]
-font = ExtResource("10_gysxj")
-outline_size = 3
-outline_color = Color(0, 0, 0, 1)
+[sub_resource type="Resource" id="Resource_uylvx"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("17_xdo0y")
+description = "With the resistance passive you will receive less damage from enemy attacks."
+
+[sub_resource type="Resource" id="Resource_vcox2"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("19_nighk")
+description = "The extra speed passive gives you a small speed buff."
+
+[sub_resource type="Resource" id="Resource_136c5"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("21_ctbsa")
+description = "The mini bot passive summons 2 mini bots that will help you fighting enemies."
+
+[sub_resource type="Resource" id="Resource_73twc"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("23_k05s4")
+description = "With the Critical Damage passive, when you attack you have a 5% chance of getting a short x2 damage buff."
+
+[sub_resource type="Resource" id="Resource_f3n7r"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("25_6fsua")
+description = "The extra energy passive boosts your max energy by 75 points."
+
+[sub_resource type="Resource" id="Resource_bgma5"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("27_fwe5e")
+description = "With the sharper weapons passive, all your limited piercing attacks will pierce an extra enemy."
+
+[sub_resource type="Resource" id="Resource_45346"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("29_i4xvq")
+description = "With the meteor passive, every 8 seconds a powerful meteor will fall at your mouse position, dealing area damage to nearby enemies."
+
+[sub_resource type="Resource" id="Resource_i4nsi"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("31_htjx6")
+description = "With the coffee trail passive, you constantly create coffee puddles in your path. Enemies that touch it will massively increase their speed, but die after a few seconds."
+
+[sub_resource type="Resource" id="Resource_odqkw"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("33_uqbx4")
+description = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."
+
+[sub_resource type="Resource" id="Resource_hlxj0"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("35_jmvm4")
+description = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."
+
+[sub_resource type="Resource" id="Resource_l82y2"]
+script = ExtResource("6_xp7r1")
+texture = ExtResource("37_ujqlb")
+description = "With the Electric Vine passive, from time to time some electric vines are going to trap a nearby enemy and damage it to death. Also, enemies near to electric vines will receive some damage."
 
 [node name="Equipment_Passives" type="Control"]
 layout_mode = 3
@@ -97,6 +148,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_58qy0")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Energy_Loot"]
 position = Vector2(14, 13)
@@ -185,40 +237,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Energy_Loot"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_top = 1.0
-offset_right = 40.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("15_q4wss")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Energy_Loot/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Energy_Loot/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The energy loot passive will make you recover energy when you kill an enemy. The energy recovered is based on the score given by the enemy."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Life_Regen" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -228,6 +246,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_6bg8y")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Life_Regen"]
 position = Vector2(14, 13)
@@ -316,41 +335,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Life_Regen"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -35.0
-offset_top = 1.0
-offset_right = 5.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("6_lphj4")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Life_Regen/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Life_Regen/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The life regen passive heals you 3HP every 6 seconds."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Resistance" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -360,6 +344,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_uylvx")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Resistance"]
 position = Vector2(14, 13)
@@ -448,41 +433,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Resistance"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = 1.0
-offset_right = -30.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("17_xdo0y")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Resistance/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Resistance/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the resistance passive you will receive less damage from enemy attacks."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Extra_Speed" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -492,6 +442,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_vcox2")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Speed"]
 position = Vector2(14, 13)
@@ -580,41 +531,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Extra_Speed"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -105.0
-offset_top = 1.0
-offset_right = -65.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("19_nighk")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Speed/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Extra_Speed/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The extra speed passive gives you a small speed buff."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Mini_Bot" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -624,6 +540,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_136c5")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Mini_Bot"]
 position = Vector2(14, 13)
@@ -712,41 +629,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Mini_Bot"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = 1.0
-offset_right = -100.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("21_ctbsa")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Mini_Bot/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Mini_Bot/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The mini bot passive summons 2 mini bots that will help you fighting enemies."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Critical_Damage" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -756,6 +638,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_73twc")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Critical_Damage"]
 position = Vector2(14, 13)
@@ -844,41 +727,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Critical_Damage"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -175.0
-offset_top = 1.0
-offset_right = -135.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("23_k05s4")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Critical_Damage/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Critical_Damage/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the Critical Damage passive, when you attack you have a 5% chance of getting a short x2 damage buff."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Extra_Energy" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -888,6 +736,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_f3n7r")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Energy"]
 position = Vector2(14, 13)
@@ -976,41 +825,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Extra_Energy"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -210.0
-offset_top = 1.0
-offset_right = -170.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("25_6fsua")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Extra_Energy/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Extra_Energy/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The extra energy passive boosts your max energy by 75 points."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Sharper_Weapons" type="TextureButton" parent="Rows/Row1"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -1020,6 +834,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_bgma5")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons"]
 position = Vector2(14, 13)
@@ -1108,41 +923,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row1/Sharper_Weapons"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -245.0
-offset_top = 1.0
-offset_right = -205.0
-offset_bottom = 41.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("27_fwe5e")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row1/Sharper_Weapons/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the sharper weapons passive, all your limited piercing attacks will pierce an extra enemy."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Row2" type="HBoxContainer" parent="Rows"]
 layout_mode = 2
 theme_override_constants/separation = 7
@@ -1156,6 +936,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_45346")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Meteor"]
 position = Vector2(14, 13)
@@ -1244,41 +1025,7 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Meteor"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_top = -31.0
-offset_right = 40.0
-offset_bottom = 9.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("29_i4xvq")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Meteor/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row2/Meteor/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the meteor passive, every 8 seconds a powerful meteor will fall at your mouse position, dealing area damage to nearby enemies."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
-[node name="Coffee" type="TextureButton" parent="Rows/Row2"]
+[node name="Coffee_Trail" type="TextureButton" parent="Rows/Row2"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
 texture_normal = ExtResource("1_qx2i8")
@@ -1287,12 +1034,13 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_i4nsi")
 
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee"]
+[node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee_Trail"]
 position = Vector2(14, 13)
 texture = ExtResource("31_htjx6")
 
-[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Coffee"]
+[node name="Slot_1" type="TextureButton" parent="Rows/Row2/Coffee_Trail"]
 layout_mode = 0
 offset_left = -2.0
 offset_top = 20.0
@@ -1305,7 +1053,7 @@ texture_hover = ExtResource("9_cen6v")
 script = ExtResource("10_4yeco")
 passive_to_equip = ExtResource("32_hh6om")
 
-[node name="1" type="Label" parent="Rows/Row2/Coffee/Slot_1"]
+[node name="1" type="Label" parent="Rows/Row2/Coffee_Trail/Slot_1"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1319,7 +1067,7 @@ offset_bottom = 14.0027
 text = "1"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Coffee"]
+[node name="Slot_2" type="TextureButton" parent="Rows/Row2/Coffee_Trail"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 20.0
@@ -1333,7 +1081,7 @@ script = ExtResource("10_4yeco")
 slot = 2
 passive_to_equip = ExtResource("32_hh6om")
 
-[node name="2" type="Label" parent="Rows/Row2/Coffee/Slot_2"]
+[node name="2" type="Label" parent="Rows/Row2/Coffee_Trail/Slot_2"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1347,7 +1095,7 @@ offset_bottom = 14.0027
 text = "2"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Coffee"]
+[node name="Slot_3" type="TextureButton" parent="Rows/Row2/Coffee_Trail"]
 layout_mode = 0
 offset_left = 20.0
 offset_top = 20.0
@@ -1361,7 +1109,7 @@ script = ExtResource("10_4yeco")
 slot = 3
 passive_to_equip = ExtResource("32_hh6om")
 
-[node name="3" type="Label" parent="Rows/Row2/Coffee/Slot_3"]
+[node name="3" type="Label" parent="Rows/Row2/Coffee_Trail/Slot_3"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.238
@@ -1375,41 +1123,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Coffee"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -35.0
-offset_top = -31.0
-offset_right = 5.0
-offset_bottom = 9.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("31_htjx6")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Coffee/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row2/Coffee/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the coffee trail passive, you constantly create coffee puddles in your path. Enemies that touch it will massively increase their speed, but die after a few seconds."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Enemy_HDD" type="TextureButton" parent="Rows/Row2"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -1419,6 +1132,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_odqkw")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_HDD"]
 position = Vector2(14, 13)
@@ -1507,41 +1221,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Enemy_HDD"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -70.0
-offset_top = -31.0
-offset_right = -30.0
-offset_bottom = 9.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("33_uqbx4")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row2/Enemy_HDD/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Traitor_Spirit" type="TextureButton" parent="Rows/Row2"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -1551,6 +1230,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_hlxj0")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit"]
 position = Vector2(14, 13)
@@ -1639,41 +1319,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Traitor_Spirit"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -105.0
-offset_top = -31.0
-offset_right = -65.0
-offset_bottom = 9.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("35_jmvm4")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row2/Traitor_Spirit/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Electric_Vine" type="TextureButton" parent="Rows/Row2"]
 self_modulate = Color(0, 0.988235, 0, 1)
 layout_mode = 2
@@ -1683,6 +1328,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
+info = SubResource("Resource_l82y2")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Electric_Vine"]
 position = Vector2(14, 13)
@@ -1771,41 +1417,6 @@ offset_bottom = 14.0027
 text = "3"
 label_settings = SubResource("LabelSettings_non8x")
 
-[node name="Passive_Description" type="Control" parent="Rows/Row2/Electric_Vine"]
-visible = false
-z_index = 1
-layout_mode = 3
-anchors_preset = 0
-offset_left = -140.0
-offset_top = -31.0
-offset_right = -100.0
-offset_bottom = 9.0
-
-[node name="Passive" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
-z_index = 1
-position = Vector2(136, 8)
-texture = ExtResource("37_ujqlb")
-
-[node name="Passive_Frame" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
-position = Vector2(136, 8)
-texture = ExtResource("12_q4wu3")
-
-[node name="Frame" type="Sprite2D" parent="Rows/Row2/Electric_Vine/Passive_Description"]
-position = Vector2(136, 64)
-texture = ExtResource("13_k78go")
-
-[node name="Description" type="Label" parent="Rows/Row2/Electric_Vine/Passive_Description"]
-layout_mode = 0
-offset_left = 36.0
-offset_top = 34.0
-offset_right = 236.0
-offset_bottom = 94.0
-text = "With the Electric Vine passive, from time to time some electric vines are going to trap a nearby enemy and damage it to death. Also, enemies near to electric vines will receive some damage."
-label_settings = SubResource("LabelSettings_j1phy")
-horizontal_alignment = 1
-autowrap_mode = 3
-max_lines_visible = 6
-
 [node name="Equipped_Passives" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.231373, 0.172549, 1)
 position = Vector2(0, -56)
@@ -1830,33 +1441,3 @@ label_settings = ExtResource("37_443nq")
 horizontal_alignment = 1
 vertical_alignment = 1
 max_lines_visible = 2
-
-[node name="Dark_Background_Description" type="ColorRect" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 0
-offset_left = -229.0
-offset_top = -137.0
-offset_right = 227.0
-offset_bottom = 147.0
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Back_Button" type="TextureButton" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 108.0
-offset_top = -72.0
-offset_right = 136.0
-offset_bottom = -44.0
-texture_normal = ExtResource("12_q4wu3")
-texture_pressed = ExtResource("18_cj420")
-texture_hover = ExtResource("19_t5bww")
-
-[node name="Back_Text" type="Label" parent="Back_Button"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 18.0
-offset_bottom = 21.0
-text = "<"
-label_settings = SubResource("LabelSettings_jf68m")
