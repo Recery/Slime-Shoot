@@ -17,8 +17,8 @@ func _ready():
 	# Luego carga cuántas posiciones tiene el array dependiendo de lo equipado
 	# El máximo es 3, pero puede llegar a tener 2 o 1
 	size_equipped = 0
-	for i in range(Vars.weapons_equipped.size()):
-		if Vars.weapons_equipped[i] != null: size_equipped += 1
+	for weapon in SaveSystem.get_curr_file().save_equipment.equipped_weapons:
+		if weapon != null: size_equipped += 1
 	weapons.resize(size_equipped)
 	cooldowns.resize(size_equipped)
 	
@@ -30,9 +30,9 @@ func _ready():
 	# Esta variable determina cuantas armas se equiparon y sirve para acceder
 	# a la posición del próximo arma a cargar
 	var total_equipped = 0
-	for i in range(Vars.weapons_equipped.size()):
-		if Vars.weapons_equipped[i] != null && total_equipped < weapons.size():
-			weapons[total_equipped] = Vars.weapons_equipped[i].instantiate()
+	for weapon in SaveSystem.get_curr_file().save_equipment.equipped_weapons:
+		if weapon != null and total_equipped < weapons.size():
+			weapons[total_equipped] = weapon.instantiate()
 			weapons[total_equipped].position = position
 			add_child(weapons[total_equipped])
 			cooldowns[total_equipped] = get_node("Cooldown_" + str(total_equipped+1))
@@ -47,8 +47,8 @@ func _ready():
 	can_swap = true
 	draw_current_weapon()
 
-func _input(event):
-	if event.is_action_pressed("swap_weapon_up") && can_swap:
+func _input(event) -> void:
+	if event.is_action_pressed("swap_weapon_up") and can_swap:
 		current_weapon += 1
 		if current_weapon >= size_equipped: current_weapon = 0
 		
@@ -60,7 +60,7 @@ func _input(event):
 		swap_cooldown.start()
 		can_swap = false
 		get_node("Slot").text = "Slot: " + str(current_weapon + 1)
-	elif event.is_action_pressed("swap_weapon_down") && can_swap:
+	elif event.is_action_pressed("swap_weapon_down") and can_swap:
 		current_weapon -= 1
 		if current_weapon < 0: current_weapon = size_equipped - 1
 		

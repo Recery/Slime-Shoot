@@ -7,7 +7,7 @@ var has_progress_bar := true
 func _ready() -> void:
 	player.add_score.connect(_on_add_score)
 	
-	Save_System.load_map_state(self)
+	MapStates.load_map_state(self)
 	
 	if not has_progress_bar: return
 	dungeon_progress_bar = load("res://Scenes/Useful/progress_bar.tscn").instantiate()

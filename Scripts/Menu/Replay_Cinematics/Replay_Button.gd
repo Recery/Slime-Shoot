@@ -4,7 +4,7 @@ extends TextureButton
 
 func _ready():
 	var temp_instance := cinematic_to_play.instantiate()
-	if Vars.cinematics_played.has(temp_instance.id_cinematic):
+	if SaveSystem.get_curr_file().cinematics_played.has(temp_instance.id_cinematic):
 		disabled = false
 	temp_instance.queue_free()
 

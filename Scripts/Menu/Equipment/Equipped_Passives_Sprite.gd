@@ -1,16 +1,17 @@
 extends Sprite2D
 
-func _ready():
+func _ready() -> void:
 	draw_passives()
 
-func _process(_delta):
+func _process(_delta) -> void:
 	draw_passives()
 
-func draw_passives():
-	for i in range(Vars.passives_equipped.size()):
+func draw_passives() -> void:
+	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_passives
+	for i in range(equipped_array.size()):
 		var pos = get_node("Pos_" + str(i+1))
 		if pos.get_child_count() != 0: Funcs.remove_children(pos)
-		if Vars.passives_equipped[i] != null:
-			var sprite = Vars.passives_equipped[i].instantiate()
+		if equipped_array[i] != null:
+			var sprite = equipped_array[i].instantiate()
 			sprite.set_script(false)
 			pos.add_child(sprite)

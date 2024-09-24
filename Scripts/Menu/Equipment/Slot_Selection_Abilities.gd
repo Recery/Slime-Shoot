@@ -5,35 +5,32 @@ extends TextureButton
 
 @export var ability_to_equip : PackedScene
 
-func _ready():
-	connect("pressed", on_pressed)
+@onready var ability_sprite := get_parent().get_node("Ability")
 
-func _process(_delta):
-	var unlocked = false
-	for i in range(Vars.abilities_unlocked.size()):
-		if Vars.abilities_unlocked[i] == ability_to_equip:
+func _process(_delta) -> void:
+	var unlocked := false
+	for ability in SaveSystem.get_curr_file().save_equipment.unlocked_abilities:
+		if ability == ability_to_equip:
 			unlocked = true
-	if !unlocked: 
-		get_parent().disabled = true
-		get_parent().get_node("Ability").hide()
-		hide()
-	else:
-		get_parent().disabled = false
-		get_parent().get_node("Ability").show()
-		show()
+			break
+	
+	get_parent().disabled = not unlocked
+	ability_sprite.visible = unlocked
+	visible = unlocked
 
-func on_pressed():
+func _pressed() -> void:
+	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_abilities
 	var already_equipped_slot = -1
-	for i in range(Vars.abilities_equipped.size()):
-		if Vars.abilities_equipped[i] == ability_to_equip:
+	for i in range(equipped_array.size()):
+		if equipped_array[i] == ability_to_equip:
 			already_equipped_slot = i
 			break
 	
 	if already_equipped_slot != -1:
-		var ability_to_swap = Vars.abilities_equipped[slot-1]
-		Vars.abilities_equipped[slot-1] = ability_to_equip
-		Vars.abilities_equipped[already_equipped_slot] = ability_to_swap
+		var ability_to_swap = equipped_array[slot-1]
+		equipped_array[slot-1] = ability_to_equip
+		equipped_array[already_equipped_slot] = ability_to_swap
 	else: 
-		Vars.abilities_equipped[slot-1] = ability_to_equip
+		equipped_array[slot-1] = ability_to_equip
 	
-	Save_System.save_equipped_abilities()
+	SaveSystem.save_file()

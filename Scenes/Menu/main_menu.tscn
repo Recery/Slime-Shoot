@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://c21uxf1eyhw8k"]
+[gd_scene load_steps=46 format=3 uid="uid://c21uxf1eyhw8k"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/main_menu.gd" id="1_xhcat"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_cnaou"]
@@ -31,6 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cxj80b627drbr" path="res://Sprites/Menu/PlayCinematicIcon.png" id="21_sdcjo"]
 [ext_resource type="Texture2D" uid="uid://xy5ygedvfnw2" path="res://Sprites/Menu/SupportIcons/itchio.png" id="22_ebjew"]
 [ext_resource type="Texture2D" uid="uid://72q0qohj6j7r" path="res://Sprites/Menu/SupportIcons/Youtube.png" id="23_a4uw6"]
+[ext_resource type="Texture2D" uid="uid://c51sbw1kqud4u" path="res://Sprites/Menu/Saves/SavelIcon.png" id="23_w1lrm"]
 [ext_resource type="PackedScene" uid="uid://bqnkjpdhdu0t0" path="res://Scenes/Menu/credits.tscn" id="24_fakuu"]
 [ext_resource type="Texture2D" uid="uid://bp3w6pel2ji5h" path="res://Sprites/Menu/EnemyAlmanacIcon.png" id="24_yq22v"]
 [ext_resource type="PackedScene" uid="uid://chwjvfqwhjwen" path="res://Scenes/Menu/Equipment/equipment_hats.tscn" id="28_07o7c"]
@@ -40,6 +41,7 @@
 [ext_resource type="AudioStream" uid="uid://dne6un3kn5h2d" path="res://Sounds/ORU-Orange-Dreamsicle.ogg" id="34_sxt08"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="34_wr5eu"]
 [ext_resource type="PackedScene" uid="uid://dbqer4780q8t6" path="res://Scenes/Menu/enemy_almanac.tscn" id="36_qt7qq"]
+[ext_resource type="PackedScene" uid="uid://d0r1rui2hyf7r" path="res://Scenes/Menu/save_selector.tscn" id="39_y7ecv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_iwvpy"]
 font = ExtResource("3_cnaou")
@@ -309,6 +311,35 @@ anchors_preset = 0
 offset_right = 22.0
 offset_bottom = 40.0
 
+[node name="Config_Buttons" type="HBoxContainer" parent="Other_Buttons"]
+layout_mode = 0
+offset_left = -15.0
+offset_top = 58.0
+offset_right = 45.0
+offset_bottom = 87.0
+scale = Vector2(0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="Save_Button" type="TextureButton" parent="Other_Buttons/Config_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Save_Icon" type="Sprite2D" parent="Other_Buttons/Config_Buttons/Save_Button"]
+position = Vector2(14, 14)
+texture = ExtResource("23_w1lrm")
+
+[node name="Settings_Button" type="TextureButton" parent="Other_Buttons/Config_Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("10_efru8")
+texture_pressed = ExtResource("11_dw1q6")
+texture_hover = ExtResource("12_vnh5k")
+
+[node name="Cogwheel" type="Sprite2D" parent="Other_Buttons/Config_Buttons/Settings_Button"]
+position = Vector2(14, 14)
+texture = ExtResource("20_w0s2i")
+
 [node name="Shop_Button" type="TextureButton" parent="Other_Buttons"]
 layout_mode = 0
 offset_left = -137.0
@@ -322,20 +353,6 @@ texture_hover = ExtResource("12_vnh5k")
 [node name="Cart" type="Sprite2D" parent="Other_Buttons/Shop_Button"]
 position = Vector2(14, 14)
 texture = ExtResource("13_mrqpo")
-
-[node name="Settings_Button" type="TextureButton" parent="Other_Buttons"]
-layout_mode = 0
-offset_left = -14.0
-offset_top = 44.0
-offset_right = 14.0
-offset_bottom = 72.0
-texture_normal = ExtResource("10_efru8")
-texture_pressed = ExtResource("11_dw1q6")
-texture_hover = ExtResource("12_vnh5k")
-
-[node name="Cogwheel" type="Sprite2D" parent="Other_Buttons/Settings_Button"]
-position = Vector2(14, 14)
-texture = ExtResource("20_w0s2i")
 
 [node name="Cinematics_Button" type="TextureButton" parent="Other_Buttons"]
 layout_mode = 0
@@ -419,6 +436,14 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="Save_Selector" parent="." instance=ExtResource("39_y7ecv")]
+visible = false
+layout_mode = 1
+offset_left = -144.0
+offset_top = -80.0
+offset_right = -144.0
+offset_bottom = -80.0
+
 [node name="Replay_Cinematics" parent="." instance=ExtResource("31_cc2vw")]
 visible = false
 
@@ -461,8 +486,9 @@ bus = &"Music"
 [connection signal="pressed" from="Equipment_Buttons/Second_Row/Slimes" to="." method="_on_slimes_pressed"]
 [connection signal="pressed" from="Equipment_Buttons/Second_Row/Hats" to="." method="_on_hats_pressed"]
 [connection signal="pressed" from="Equipment_Buttons/Second_Row/Pets" to="." method="_on_pets_pressed"]
+[connection signal="pressed" from="Other_Buttons/Config_Buttons/Save_Button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Other_Buttons/Config_Buttons/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Other_Buttons/Shop_Button" to="." method="_on_shop_pressed"]
-[connection signal="pressed" from="Other_Buttons/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Other_Buttons/Cinematics_Button" to="." method="_on_cinematics_button_pressed"]
 [connection signal="pressed" from="Other_Buttons/Enemy_Almanac_Button" to="." method="_on_enemy_almanac_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

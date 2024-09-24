@@ -2,45 +2,32 @@ extends TextureButton
 
 @export var slime_to_equip : PackedScene
 
-var root : Node
+@onready var slime_sprite := get_parent().get_node("Slime")
+@onready var perk_sprite := get_parent().get_node("Perk")
+@onready var equipped_slime_pos := get_parent().get_parent().get_parent().get_node("Equipped_Slime")
 
-func _ready():
-	root = get_parent().get_parent().get_parent()
-	
-	connect("pressed", _on_pressed)
-	Events.connect("draw_equipped_slime", draw_slime)
+func _ready() -> void:
+	Events.draw_equipped_slime.connect(draw_slime)
 
-func _process(_delta):
-	var unlocked = false
-	for i in range(Vars.slimes_unlocked.size()):
-		if Vars.slimes_unlocked[i] == slime_to_equip:
+func _process(_delta) -> void:
+	var unlocked := false
+	for slime in SaveSystem.get_curr_file().save_equipment.unlocked_slimes:
+		if slime == slime_to_equip:
 			unlocked = true
+			break
 	
-	if !unlocked: 
-		get_parent().disabled = true
-		get_parent().get_node("Slime").hide()
-		get_parent().get_node("Perk").hide()
-		hide()
-	else:
-		get_parent().disabled = false
-		get_parent().get_node("Slime").show()
-		get_parent().get_node("Perk").show()
-		show()
+	get_parent().disabled = not unlocked
+	slime_sprite.visible = unlocked
+	perk_sprite.visible = unlocked
+	visible = unlocked
 
-func _on_pressed():
-	Vars.slime_equipped = slime_to_equip
-	Save_System.save_equipped_slime()
+func _pressed() -> void:
+	SaveSystem.get_curr_file().save_equipment.equipped_slime = slime_to_equip
+	SaveSystem.save_file()
 	
 	Events.draw_equipped_slime.emit()
 
-func draw_slime():
-	Funcs.remove_direct_children(root.get_node("Equipped_Slime"))
+func draw_slime() -> void:
+	Funcs.remove_direct_children(equipped_slime_pos)
 	
-	var slime_draw := Vars.slime_equipped.instantiate()
-	slime_draw.set_script(null)
-	root.get_node("Equipped_Slime").add_child(slime_draw)
-	
-	if Vars.hat_equipped != null:
-		var hat_draw := Vars.hat_equipped.instantiate()
-		hat_draw.set_script(null)
-		root.get_node("Equipped_Slime").add_child(hat_draw)
+	equipped_slime_pos.add_child(Funcs.draw_equipped_slime())

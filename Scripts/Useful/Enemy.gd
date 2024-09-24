@@ -106,9 +106,9 @@ func _when_die() -> void:
 	if life <= 0:
 		player.add_score.emit(score_to_add, self)
 	
-	if not Vars.almanac_unlocked.has(scene_file_path) and scene_file_path != "":
-		Vars.almanac_unlocked.append(scene_file_path)
-		Save_System.save_almanac()
+	if not SaveSystem.get_curr_file().almanac_unlocked.has(scene_file_path) and scene_file_path != "":
+		SaveSystem.get_curr_file().almanac_unlocked.append(scene_file_path)
+		SaveSystem.save_file()
 	queue_free()
 
 func init_pathfinding() -> void:
@@ -122,7 +122,7 @@ func init_pathfinding() -> void:
 	cooldown_pathfinding.start()
 
 func init_shadows() -> void:
-	if not Vars.settings_data.shadows and has_node("Shadow"):
+	if not SaveSystem.get_curr_file().save_settings.shadows and has_node("Shadow"):
 		get_node("Shadow").queue_free()
 
 var custom_target_pos

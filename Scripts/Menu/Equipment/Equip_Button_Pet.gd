@@ -2,36 +2,31 @@ extends TextureButton
 
 @export var pet_to_equip : PackedScene
 
-var root
+@onready var pet_sprite := get_parent().get_node("Pet")
+@onready var pet_pos := get_parent().get_parent().get_parent().get_parent().get_node("Equipped_Pet")
 
-func _ready():
-	root = get_parent().get_parent().get_parent().get_parent()
-	
-	Events.connect("draw_equipped_slime", draw_pet)
-	connect("pressed", _on_pressed)
+func _ready() -> void: Events.draw_equipped_slime.connect(draw_pet)
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if pet_to_equip == null: return
-	var unlocked = false
-	for i in range(Vars.pets_unlocked.size()):
-		if Vars.pets_unlocked[i] == pet_to_equip:
+	var unlocked := false
+	for pet in SaveSystem.get_curr_file().save_equipment.unlocked_pets:
+		if pet == pet_to_equip:
 			unlocked = true
+			break
 	
-	get_parent().get_node("Pet").visible = unlocked
 	get_parent().disabled = not unlocked
+	pet_sprite.visible = unlocked
 	visible = unlocked
 
-func _on_pressed():
-	Vars.pet_equipped = pet_to_equip
-	draw_pet()
+func _pressed() -> void:
+	SaveSystem.get_curr_file().save_equipment.equipped_pet = pet_to_equip
+	SaveSystem.save_file()
 	
 	Events.draw_equipped_slime.emit()
-	
-	Save_System.save_equipped_pet()
 
-func draw_pet():
-	Funcs.remove_direct_children(root.get_node("Equipped_Pet"))
-	if Vars.pet_equipped != null:
-		var pet_draw = Vars.pet_equipped.instantiate()
-		pet_draw.set_script(null)
-		root.get_node("Equipped_Pet").add_child(pet_draw)
+func draw_pet() -> void:
+	Funcs.remove_direct_children(pet_pos)
+	var pet_draw := Funcs.draw_pet()
+	if pet_draw != null:
+		pet_pos.add_child(pet_draw)

@@ -48,9 +48,9 @@ func _on_die():
 	get_node("CollisionShape2D").scale = Vector2(3.75, 3.75)
 	player.add_score.emit(int((max_life - life)*0.2), self)
 	
-	if not Vars.almanac_unlocked.has(scene_file_path) and scene_file_path != "":
-		Vars.almanac_unlocked.append(scene_file_path)
-		Save_System.save_almanac()
+	if not SaveSystem.get_curr_file().almanac_unlocked.has(scene_file_path) and scene_file_path != "":
+		SaveSystem.get_curr_file().almanac_unlocked.append(scene_file_path)
+		SaveSystem.save_file()
 	
 	await get_tree().create_timer(0.1).timeout
 	

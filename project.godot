@@ -13,6 +13,8 @@ config_version=5
 config/name="Slime Shoot"
 config/version="1.2.0.1"
 run/main_scene="res://Scenes/Useful/scene_manager.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Slime_Shoot"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/max_fps=60
 boot_splash/image="res://SplashScreen.png"
@@ -24,7 +26,8 @@ config/windows_native_icon="res://icon.ico"
 Funcs="*res://Scripts/GlobalScripts/Global_Functions.gd"
 Vars="*res://Scripts/GlobalScripts/Global_Variables.gd"
 Events="*res://Scripts/GlobalScripts/Events.gd"
-Save_System="*res://Scripts/GlobalScripts/Save_System.gd"
+SaveSystem="*res://Scripts/SaveObjects/SaveSystem.gd"
+MapStates="*res://Scripts/GlobalScripts/MapStates.gd"
 
 [display]
 

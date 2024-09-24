@@ -11,7 +11,7 @@ var player : Player
 @export var dark_mode := false
 
 func _init() -> void:
-	player = Vars.slime_equipped.instantiate()
+	player = SaveSystem.get_curr_file().save_equipment.equipped_slime.instantiate()
 	Vars.player = player
 	
 	connect("ready", _when_ready)
@@ -99,4 +99,4 @@ func spawn_ladder(map_to_enter : String) -> void:
 	ladder_instance.global_position = player.global_position
 
 func _save_map_state(_ladder : Activable) -> void:
-	Save_System.save_map_state(self)
+	MapStates.save_map_state(self)

@@ -30,17 +30,17 @@ var tips := [
 "Alt+F4 to get infinite green apples... Wait, it's a joke, don't close Slime Shoot!"
 ]
 
-func _ready():
+func _ready() -> void:
 	get_node("Tip").text = tips.pick_random()
 	
-	if Vars.pet_equipped != null:
+	if SaveSystem.get_curr_file().save_equipment.equipped_pet != null:
 		get_node("Slime_With_Pet_Draw").add_child(Funcs.draw_equipped_slime(false, Vector2(2,2)))
 		get_node("Pet_Draw").add_child(Funcs.draw_pet(false, Vector2(2,2)))
 	else:
 		get_node("Slime_Draw").add_child(Funcs.draw_equipped_slime(false, Vector2(2,2)))
 
 var exiting := false
-func _process(_delta):
+func _process(_delta) -> void:
 	if exiting: return
 	
 	if get_parent().name == "Scene_Manager":

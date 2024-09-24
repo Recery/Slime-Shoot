@@ -5,38 +5,35 @@ extends TextureButton
 
 @export var passive_to_equip : PackedScene
 
-func _ready():
-	connect("pressed", on_pressed)
+@onready var passive_sprite := get_parent().get_node("Passive")
 
-func _process(_delta):
-	var unlocked = false
-	for i in range(Vars.passives_unlocked.size()):
-		if Vars.passives_unlocked[i] == passive_to_equip:
+func _process(_delta) -> void:
+	var unlocked := false
+	for passive in SaveSystem.get_curr_file().save_equipment.unlocked_passives:
+		if passive == passive_to_equip:
 			unlocked = true
+			break
 	
-	if !unlocked: 
-		get_parent().disabled = true
-		get_parent().get_node("Passive").hide()
-		get_parent().self_modulate = Color(1,1,1)
-		hide()
-	else:
-		get_parent().disabled = false
-		get_parent().get_node("Passive").show()
-		get_parent().self_modulate = Color(Color(0, 0.988, 0))
-		show()
+	get_parent().disabled = not unlocked
+	passive_sprite.visible = unlocked
+	visible = unlocked
+	
+	if unlocked: get_parent().self_modulate = Color(0, 0.988, 0)
+	else: get_parent().self_modulate = Color(Color(1,1,1))
 
-func on_pressed():
+func _pressed() -> void:
+	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_passives
 	var already_equipped_slot = -1
-	for i in range(Vars.passives_equipped.size()):
-		if Vars.passives_equipped[i] == passive_to_equip:
+	for i in range(equipped_array.size()):
+		if equipped_array[i] == passive_to_equip:
 			already_equipped_slot = i
 			break
 	
 	if already_equipped_slot != -1:
-		var passive_to_swap = Vars.passives_equipped[slot-1]
-		Vars.passives_equipped[slot-1] = passive_to_equip
-		Vars.passives_equipped[already_equipped_slot] = passive_to_swap
+		var passive_to_swap = equipped_array[slot-1]
+		equipped_array[slot-1] = passive_to_equip
+		equipped_array[already_equipped_slot] = passive_to_swap
 	else: 
-		Vars.passives_equipped[slot-1] = passive_to_equip
+		equipped_array[slot-1] = passive_to_equip
 	
-	Save_System.save_equipped_passives()
+	SaveSystem.save_file()

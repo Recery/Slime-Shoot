@@ -10,7 +10,7 @@ const points_for_ladder := 700
 func _ready() -> void:
 	player.add_score.connect(_on_score_added_sandstorm) # Conecta el add_score para la tormenta de arena
 	
-	Save_System.load_map_state(self)
+	MapStates.load_map_state(self)
 	if not has_progress_bar: return # Si no tiene la barra de progreso (se genero la escalera), no hacer todo el procedimiento para eso
 	
 	# Todo lo de añadir las escaleras a las catacumbas

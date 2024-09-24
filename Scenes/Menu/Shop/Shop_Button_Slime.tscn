@@ -23,14 +23,12 @@ texture_pressed = ExtResource("2_x7p02")
 texture_hover = ExtResource("3_0ppif")
 texture_disabled = ExtResource("4_mblct")
 script = ExtResource("5_7c1cf")
-type_of_object = 0
 object_to_buy = ExtResource("6_33m07")
 unlocked_in_adventure = true
 
 [node name="Item" type="Sprite2D" parent="."]
 position = Vector2(30, 13)
 texture = ExtResource("7_uy546")
-hframes = 2
 
 [node name="Perk" type="Sprite2D" parent="."]
 position = Vector2(30, 32)

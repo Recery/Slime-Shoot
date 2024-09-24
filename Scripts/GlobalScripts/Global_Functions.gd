@@ -433,14 +433,14 @@ func remove_array_elements(array : Array, element) -> void:
 			i += 1
 
 ## Solo crea una instancia del slime equipado junto al sombrero, y le saca el script para usarlo como dibujo
-func draw_equipped_slime(with_shadow := true, scale := Vector2(1,1)) -> Node:
-	var slime_draw := Vars.slime_equipped.instantiate()
+func draw_equipped_slime(with_shadow := true, scale := Vector2(1,1), save_file := SaveSystem.get_curr_file()) -> Node:
+	var slime_draw : Node = save_file.save_equipment.equipped_slime.instantiate()
 	slime_draw.set_script(null)
 	if slime_draw.has_node("Shadow") and not with_shadow:
 		slime_draw.get_node("Shadow").modulate.a = 0
 	
-	if Vars.hat_equipped != null:
-		var hat_draw := Vars.hat_equipped.instantiate()
+	if save_file.save_equipment.equipped_hat != null:
+		var hat_draw : Node = save_file.save_equipment.equipped_hat.instantiate()
 		hat_draw.set_script(null)
 		slime_draw.add_child(hat_draw)
 	
@@ -449,9 +449,9 @@ func draw_equipped_slime(with_shadow := true, scale := Vector2(1,1)) -> Node:
 
 ## Solo crea una instancia de la mascota equipada, y le saca el script para usarlo como dibujo
 func draw_pet(with_shadow := true, scale := Vector2(1,1)) -> Node:
-	if Vars.pet_equipped == null: return null
+	if SaveSystem.get_curr_file().save_equipment.equipped_pet == null: return null
 	
-	var pet_draw = Vars.pet_equipped.instantiate()
+	var pet_draw : Node = SaveSystem.get_curr_file().save_equipment.equipped_pet.instantiate()
 	pet_draw.set_script(null)
 	
 	if pet_draw.has_node("Shadow") and not with_shadow:

@@ -1,74 +1,45 @@
 extends Control
 
-var buttons
-var equipment_buttons
-var support_buttons
-var other_buttons
-var title
-var map_selection
-var controls
-var credits
-var equipment_slimes
-var equipment_weapons
-var equipment_abilities
-var equipment_passives
-var equipment_hats
-var equipment_pets
-var shop
-var settings
-var cinematics
-var enemy_almanac
-var back_button
+@onready var buttons = get_node("Main_Buttons")
+@onready var equipment_buttons = get_node("Equipment_Buttons")
+@onready var support_buttons = get_node("Support_Buttons")
+@onready var other_buttons = get_node("Other_Buttons")
+@onready var title = get_node("Title")
+@onready var map_selection = get_node("Map_Selection")
+@onready var controls = get_node("Controls")
+@onready var credits = get_node("Credits")
+@onready var equipment_slimes = get_node("Equipment_Slimes")
+@onready var equipment_weapons = get_node("Equipment_Weapons")
+@onready var equipment_abilities = get_node("Equipment_Abilities")
+@onready var equipment_passives = get_node("Equipment_Passives")
+@onready var equipment_hats = get_node("Equipment_Hats")
+@onready var equipment_pets = get_node("Equipment_Pets")
+@onready var shop = get_node("Shop")
+@onready var settings = get_node("Settings")
+@onready var save_selector := get_node("Save_Selector")
+@onready var cinematics = get_node("Replay_Cinematics")
+@onready var enemy_almanac = get_node("Enemy_Almanac")
+@onready var back_button = get_node("BackButton")
 
-func _ready():
-	buttons = get_node("Main_Buttons")
-	equipment_buttons = get_node("Equipment_Buttons")
-	support_buttons = get_node("Support_Buttons")
-	other_buttons = get_node("Other_Buttons")
-	title = get_node("Title")
-	map_selection = get_node("Map_Selection")
-	controls = get_node("Controls")
-	credits = get_node("Credits")
-	
-	equipment_slimes = get_node("Equipment_Slimes")
-	equipment_weapons = get_node("Equipment_Weapons")
-	equipment_abilities = get_node("Equipment_Abilities")
-	equipment_passives = get_node("Equipment_Passives")
-	equipment_hats = get_node("Equipment_Hats")
-	equipment_pets = get_node("Equipment_Pets")
-	shop = get_node("Shop")
-	settings = get_node("Settings")
-	cinematics = get_node("Replay_Cinematics")
-	enemy_almanac = get_node("Enemy_Almanac")
-	
-	back_button = get_node("BackButton")
-	
-	Events.connect("draw_equipped_slime", draw_slime)
+func _ready() -> void:
+	Events.draw_equipped_slime.connect(draw_slime)
 	Events.draw_equipped_slime.emit()
 	
 	get_node("Title/Version").text = "v" + ProjectSettings.get_setting("application/config/version")
 	set_menu_theme()
 
-func draw_slime():
+@onready var slime_pos := get_node("Slime")
+@onready var pet_pos := get_node("Pet")
+func draw_slime() -> void:
 	# Dibujar slime
-	Funcs.remove_direct_children(get_node("Slime"))
-	
-	var slime_draw := Vars.slime_equipped.instantiate()
-	slime_draw.set_script(null)
-	get_node("Slime").add_child(slime_draw)
-	
-	if Vars.hat_equipped != null:
-		var hat_draw := Vars.hat_equipped.instantiate()
-		hat_draw.set_script(null)
-		get_node("Slime").add_child(hat_draw)
+	Funcs.remove_direct_children(slime_pos)
+	slime_pos.add_child(Funcs.draw_equipped_slime())
 	
 	# Dibujar mascota
-	Funcs.remove_direct_children(get_node("Pet"))
-	
-	if Vars.pet_equipped != null:
-		var pet_draw := Vars.pet_equipped.instantiate()
-		pet_draw.set_script(null)
-		get_node("Pet").add_child(pet_draw)
+	Funcs.remove_direct_children(pet_pos)
+	var pet_draw := Funcs.draw_pet()
+	if pet_draw != null:
+		pet_pos.add_child(pet_draw)
 
 func set_menu_theme() -> void:
 	var background_pos := get_node("Background")
@@ -80,7 +51,7 @@ func set_menu_theme() -> void:
 		_: background_pos.add_child(load("res://Scenes/Menu/Map_Images/grasslands_menu.tscn").instantiate())
 
 # Botón start
-func _on_start_pressed():
+func _on_start_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -92,7 +63,7 @@ func _on_start_pressed():
 # Fin botón start
 
 # Botón controles
-func _on_controls_pressed():
+func _on_controls_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -104,7 +75,7 @@ func _on_controls_pressed():
 # Fin botón controles
 
 # Botón créditos
-func _on_credits_pressed():
+func _on_credits_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -116,13 +87,13 @@ func _on_credits_pressed():
 # Fin botón créditos
 
 # Botón salir
-func _on_quit_pressed():
+func _on_quit_pressed() -> void:
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 	get_tree().quit()
 # Fin botón salir
 
 # Botón slimes
-func _on_slimes_pressed():
+func _on_slimes_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -134,7 +105,7 @@ func _on_slimes_pressed():
 # Fin botón slimes
 
 # Botón armas
-func _on_weapons_pressed():
+func _on_weapons_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -146,7 +117,7 @@ func _on_weapons_pressed():
 # Fin botón armas
 
 # Botón habilidades
-func _on_abilities_pressed():
+func _on_abilities_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -158,7 +129,7 @@ func _on_abilities_pressed():
 # Fin botón habilidades
 
 # Botón pasivas
-func _on_passives_pressed():
+func _on_passives_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -170,7 +141,7 @@ func _on_passives_pressed():
 # Fin botón pasivas
 
 # Botón sombreros
-func _on_hats_pressed():
+func _on_hats_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -182,7 +153,7 @@ func _on_hats_pressed():
 # Fin botón sombreros
 
 # Botón mascotas
-func _on_pets_pressed():
+func _on_pets_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -194,7 +165,7 @@ func _on_pets_pressed():
 
 # Fin botón mascotas
 # Botón tienda
-func _on_shop_pressed():
+func _on_shop_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -206,7 +177,7 @@ func _on_shop_pressed():
 # Fin botón tienda
 
 # Botón ajustes
-func _on_settings_button_pressed():
+func _on_settings_button_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -217,8 +188,20 @@ func _on_settings_button_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón ajustes
 
+# Botón guardado
+func _on_save_button_pressed() -> void:
+	buttons.hide()
+	equipment_buttons.hide()
+	support_buttons.hide()
+	other_buttons.hide()
+	title.hide()
+	save_selector.show()
+	back_button.show()
+	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
+# Fin botón guardado
+
 # Botón cinemáticas
-func _on_cinematics_button_pressed():
+func _on_cinematics_button_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -229,7 +212,7 @@ func _on_cinematics_button_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón cinemáticas
 
-func _on_enemy_almanac_button_pressed():
+func _on_enemy_almanac_button_pressed() -> void:
 	buttons.hide()
 	equipment_buttons.hide()
 	support_buttons.hide()
@@ -240,12 +223,12 @@ func _on_enemy_almanac_button_pressed():
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 
 # Botón atrás
-func _on_back_button_pressed():
+func _on_back_button_pressed() -> void:
 	hide_all()
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 # Fin botón atrás
 
-func hide_all():
+func hide_all() -> void:
 	buttons.show()
 	equipment_buttons.show()
 	support_buttons.show()
@@ -262,6 +245,7 @@ func hide_all():
 	equipment_pets.hide()
 	shop.hide()
 	settings.hide()
+	save_selector.hide()
 	cinematics.hide()
 	enemy_almanac.hide()
 	back_button.hide()
