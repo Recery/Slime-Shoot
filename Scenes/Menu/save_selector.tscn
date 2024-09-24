@@ -166,6 +166,7 @@ alignment = 1
 custom_minimum_size = Vector2(78, 30)
 layout_mode = 2
 script = ExtResource("2_1yr2a")
+slot = null
 
 [node name="Frame" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1"]
 layout_mode = 2
@@ -736,6 +737,7 @@ texture_hover = ExtResource("4_6i858")
 stretch_mode = 3
 
 [node name="Advice" type="Label" parent="Delete_Confirmation/Yes_Button"]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 11.0
 offset_right = 25.0
@@ -744,6 +746,7 @@ text = "Yes"
 label_settings = ExtResource("3_lxoc5")
 
 [node name="No_Button" type="TextureButton" parent="Delete_Confirmation"]
+layout_mode = 0
 offset_left = 152.0
 offset_top = 76.0
 offset_right = 180.0
@@ -754,6 +757,7 @@ texture_hover = ExtResource("4_6i858")
 stretch_mode = 3
 
 [node name="Advice" type="Label" parent="Delete_Confirmation/No_Button"]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 11.0
 offset_right = 21.0

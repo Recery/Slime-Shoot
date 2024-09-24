@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Player/Green_Slime/Green_Slime.gd" id="1_ql6id"]
 [ext_resource type="Texture2D" uid="uid://c5885l3myek37" path="res://Sprites/Player/Shadow.png" id="2_gbsb3"]
 [ext_resource type="PackedScene" uid="uid://dh33nayoc8jhp" path="res://Scenes/Player/Green_Slime/Sprint_Perk.tscn" id="2_rdq5c"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="3_uil2k"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="3_uil2k"]
 
 [sub_resource type="Animation" id="Animation_0axbv"]
 resource_name = "bounce_shadow"

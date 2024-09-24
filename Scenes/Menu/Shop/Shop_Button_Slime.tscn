@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://q0ofxegypcqb" path="res://Sprites/Menu/BigSquareButtonGray.png" id="4_mblct"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Shop_Buy_Button.gd" id="5_7c1cf"]
 [ext_resource type="PackedScene" uid="uid://dwmfsbcjcol8y" path="res://Scenes/Player/Green_Slime/green_slime.tscn" id="6_33m07"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="7_uy546"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="7_uy546"]
 [ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="8_5fqrk"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_q85oe"]
 

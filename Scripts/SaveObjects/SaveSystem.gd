@@ -38,12 +38,12 @@ func load_saves() -> void:
 				save_files[slot] = file
 				save_files[slot].saved = true
 
-func save_file() -> bool:
-	if save_files.size() < curr_slot or curr_slot < 0: return false
-	if save_files[curr_slot] == null: return false
+func save_file(slot := curr_slot) -> bool:
+	if save_files.size() < slot or slot < 0: return false
+	if save_files[slot] == null: return false
 	
-	save_files[curr_slot].saved = true
-	return ResourceSaver.save(save_files[curr_slot], dir_path + "/save_" + str(curr_slot+1) + ".res")
+	save_files[slot].saved = true
+	return ResourceSaver.save(save_files[slot], dir_path + "/save_" + str(slot+1) + ".res")
 
 func set_curr_file(new_slot : int) -> void:
 	curr_slot = new_slot
@@ -70,4 +70,4 @@ func delete_save_file(slot : int) -> void:
 	var file := dir_path + "/save_" + str(slot+1) + ".res"
 	if FileAccess.file_exists(file):
 		DirAccess.remove_absolute(file)
-	save_files[slot-1] = SaveFile.new()
+	save_files[slot] = SaveFile.new()

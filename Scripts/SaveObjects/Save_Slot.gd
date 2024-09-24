@@ -51,11 +51,13 @@ func draw_slime() -> void:
 	slime_pos.add_child(slime_draw)
 
 func _on_load_pressed() -> void:
-	SaveSystem.set_curr_file(slot)
-	SaveSystem.save_file()
-	
 	if disabled:
 		enable_file()
+	else:
+		# Solo seleccionar como slot actual si el archivo no acaba de ser creado
+		SaveSystem.set_curr_file(slot)
+	
+	SaveSystem.save_file(slot)
 
 @onready var delete_confirmation := get_parent().get_parent().get_parent().get_node("Delete_Confirmation")
 func _on_delete_pressed() -> void:
