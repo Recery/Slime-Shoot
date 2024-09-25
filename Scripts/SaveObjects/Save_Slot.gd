@@ -64,7 +64,6 @@ var curr_delete_confirmation : Control
 func _on_delete_pressed() -> void:
 	curr_delete_confirmation = delete_confirmation.instantiate()
 	Vars.main_scene.add_child(curr_delete_confirmation)
-	curr_delete_confirmation.position = Vector2(-144, -80)
 	
 	curr_delete_confirmation.get_node("Yes_Button").pressed.connect(delete, CONNECT_ONE_SHOT)
 	curr_delete_confirmation.get_node("No_Button").pressed.connect(delete_regret, CONNECT_ONE_SHOT)
