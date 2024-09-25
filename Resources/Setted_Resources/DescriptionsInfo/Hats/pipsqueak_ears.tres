@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://b7pvnxjj8rt1x"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_skp70"]
+[ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="2_8fr7r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7o6j"]
+atlas = ExtResource("2_8fr7r")
+region = Rect2(0, 0, 15, 8)
+
+[resource]
+script = ExtResource("1_skp70")
+texture = SubResource("AtlasTexture_b7o6j")
+description = "Pipsqueak ears! You must like watching Fylphiette streams... Or maybe you just think that this ears are cool! Cosmetic item, it has no effect."

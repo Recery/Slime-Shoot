@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://dn7fuijvhn137"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_4u5kw"]
+[ext_resource type="Texture2D" uid="uid://hmgdmpjkjv7j" path="res://Sprites/Hats/AndeanCondorHeadband.png" id="2_o260n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oltah"]
+atlas = ExtResource("2_o260n")
+region = Rect2(1, 0, 13, 9)
+
+[resource]
+script = ExtResource("1_4u5kw")
+texture = SubResource("AtlasTexture_oltah")
+description = "Andean Condor Headband! Do you like andean condors? Or do you like watching Mashichu Kunrin streams? Cosmetic item, it has no effect."

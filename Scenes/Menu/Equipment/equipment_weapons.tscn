@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cq3m7ndadb2jt"]
+[gd_scene load_steps=60 format=3 uid="uid://cq3m7ndadb2jt"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_llrg5"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="2_m7hc0"]
@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="3_78yln"]
 [ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="4_3y6fo"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection.gd" id="5_ewph1"]
+[ext_resource type="Resource" uid="uid://d0en6fd5lkmqw" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/weedtite_microgun.tres" id="6_egv66"]
 [ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="6_oxw48"]
-[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="6_ricsb"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="7_gyls4"]
 [ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="8_21d7m"]
 [ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="9_romfm"]
@@ -18,162 +18,51 @@
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="13_o68sw"]
 [ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="13_u3wbb"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Weapons_Sprites.gd" id="14_d2xdu"]
+[ext_resource type="Resource" uid="uid://c0yr6ffhat72u" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/grenade.tres" id="14_wprmy"]
 [ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="14_xedje"]
 [ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="15_k387t"]
 [ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="16_141qd"]
 [ext_resource type="PackedScene" uid="uid://0fax33b8yau" path="res://Scenes/Weapons/frost_staff.tscn" id="16_y0bah"]
+[ext_resource type="Resource" uid="uid://bm3w815s37y05" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/mini_knife.tres" id="17_hhrkc"]
 [ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="17_lpb8w"]
 [ext_resource type="PackedScene" uid="uid://drstnvaxkms6w" path="res://Scenes/Weapons/sandy_eagle.tscn" id="18_xrxwi"]
 [ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="19_0500m"]
+[ext_resource type="Resource" uid="uid://b3vx20t3vh6hg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/rock.tres" id="20_h23hw"]
+[ext_resource type="Resource" uid="uid://dprxo51li7dwl" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/energy_lantern.tres" id="23_iq0l6"]
+[ext_resource type="Resource" uid="uid://dpxf2rhu40e3n" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/frost_staff.tres" id="23_y14p7"]
 [ext_resource type="PackedScene" uid="uid://xfg1addbh7i3" path="res://Scenes/Weapons/energy_lantern.tscn" id="25_sr4l0"]
 [ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="26_gjgv7"]
 [ext_resource type="PackedScene" uid="uid://k8ownvc83oig" path="res://Scenes/Weapons/baby_log.tscn" id="27_smutd"]
 [ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="28_p7b6w"]
+[ext_resource type="Resource" uid="uid://1j5be2omqqck" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/baby_log.tres" id="29_i05d5"]
 [ext_resource type="PackedScene" uid="uid://lphu8w311olc" path="res://Scenes/Weapons/fart_rifle.tscn" id="29_m4d42"]
 [ext_resource type="Texture2D" uid="uid://didqrrgjyaa8" path="res://Sprites/Weapons/FartRifle.png" id="30_jeik0"]
+[ext_resource type="Resource" uid="uid://we4k8e3gonnf" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/fart_rifle.tres" id="32_daerq"]
 [ext_resource type="PackedScene" uid="uid://bodvguqwnpkwj" path="res://Scenes/Weapons/paint_bomb.tscn" id="33_6govg"]
 [ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="34_j3gs2"]
 [ext_resource type="PackedScene" uid="uid://bxkmog2pchtmw" path="res://Scenes/Weapons/Thingy_Of_The_Thing/thingy_of_the_thing.tscn" id="35_0dovu"]
+[ext_resource type="Resource" uid="uid://cnfmabu4p5wlg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/sandy_eagle.tres" id="35_0ukim"]
 [ext_resource type="Texture2D" uid="uid://d2usm5lv207pf" path="res://Sprites/Weapons/ThingyOfTheThing/ThingyOfTheThing.png" id="36_w3s6x"]
 [ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="37_pnldy"]
+[ext_resource type="Resource" uid="uid://dlpbrc3mkyght" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/paint_bomb.tres" id="38_2tvdi"]
 [ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="38_5ptlu"]
 [ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="39_fa5ke"]
 [ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="40_o66mx"]
+[ext_resource type="Resource" uid="uid://crjt0qpm266ae" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/thingy_of_the_thing.tres" id="41_y1u85"]
 [ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="41_ymqmo"]
 [ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="42_2fiyd"]
 [ext_resource type="PackedScene" uid="uid://ycrv083kmlcw" path="res://Scenes/Weapons/goldfish_trident.tscn" id="43_6lcci"]
 [ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="44_ipvu2"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="44_p5wm5"]
-
-[sub_resource type="Resource" id="Resource_2inrk"]
-script = ExtResource("6_ricsb")
-cooldown = "0.42"
-energy_use = "7"
-texture = ExtResource("8_21d7m")
-description = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."
+[ext_resource type="Resource" uid="uid://c8kqfa8iw5fit" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/pressure_washer.tres" id="44_wtyfd"]
+[ext_resource type="Resource" uid="uid://dcrcb1ipdcxg0" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/snowy_uzi.tres" id="47_jx5xj"]
+[ext_resource type="Resource" uid="uid://yl82i4tvahcr" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/green_apple_stick.tres" id="50_gmlfl"]
+[ext_resource type="Resource" uid="uid://cve8xom6627ud" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/goldfish_trident.tres" id="53_6awsu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("7_gyls4")
 font_color = Color(1, 0.211765, 0.156863, 1)
 outline_size = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7jnkp"]
-atlas = ExtResource("10_6jd5v")
-region = Rect2(0, 0, 8, 10)
-
-[sub_resource type="Resource" id="Resource_dt4wl"]
-script = ExtResource("6_ricsb")
-cooldown = "3"
-energy_use = "70"
-texture = SubResource("AtlasTexture_7jnkp")
-description = "The grenade is a slow and strong weapon. Uses lots of energy, but deals heavy damage to the first enemy and low damage to some nearby enemies."
-
-[sub_resource type="Resource" id="Resource_l1s8v"]
-script = ExtResource("6_ricsb")
-cooldown = "0.3"
-energy_use = "4"
-texture = ExtResource("12_mf6fi")
-description = "The mini knife deals low damage at fast speed. Uses low energy and it's a melee weapon."
-
-[sub_resource type="Resource" id="Resource_d2u3v"]
-script = ExtResource("6_ricsb")
-cooldown = "0.9"
-energy_use = "15"
-texture = ExtResource("14_xedje")
-description = "The rock can be thrown, dealing moderate damage with a moderate energy use."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gd37q"]
-atlas = ExtResource("17_lpb8w")
-region = Rect2(0, 0, 12, 12)
-
-[sub_resource type="Resource" id="Resource_wg8l0"]
-script = ExtResource("6_ricsb")
-cooldown = "1.2"
-energy_use = "30"
-texture = SubResource("AtlasTexture_gd37q")
-description = "The frost staff pierces up to 3 enemies, dealing low damage to each one. It also freezes them, reducing their move speed. Moderate energy use."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1vcik"]
-atlas = ExtResource("26_gjgv7")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Resource" id="Resource_yq2pd"]
-script = ExtResource("6_ricsb")
-cooldown = "5.5"
-energy_use = "10"
-texture = SubResource("AtlasTexture_1vcik")
-description = "While holding the energy lantern, you'll recover energy faster and you'll always be able to use energy even after running out of it. Use it and you'll recover all  your energy at the cost of 25% of your life."
-
-[sub_resource type="Resource" id="Resource_m8xku"]
-script = ExtResource("6_ricsb")
-cooldown = "1.1"
-energy_use = "26"
-texture = ExtResource("28_p7b6w")
-description = "The baby log is a melee weapon that deals low damage to all enemies that it hits, and also knockbacks them. The first enemy will receive more damage."
-
-[sub_resource type="Resource" id="Resource_od5oc"]
-script = ExtResource("6_ricsb")
-cooldown = "1.9"
-energy_use = "42"
-texture = ExtResource("30_jeik0")
-description = "The fart rifle is very disgusting. But it also is a powerful weapon. It doesn't deal any damage, but it will pierces enemies and intoxicate them with fart poison."
-
-[sub_resource type="Resource" id="Resource_6lujb"]
-script = ExtResource("6_ricsb")
-cooldown = "1.8"
-energy_use = "42"
-texture = ExtResource("19_0500m")
-description = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. Yellow Slime signature weapon."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oegwg"]
-atlas = ExtResource("34_j3gs2")
-region = Rect2(0, 0, 7, 10)
-
-[sub_resource type="Resource" id="Resource_daaj4"]
-script = ExtResource("6_ricsb")
-cooldown = "2.1"
-energy_use = "70"
-texture = SubResource("AtlasTexture_oegwg")
-description = "The paint bomb deals low damage to the first enemy it hits. After that, it creates a paint puddle that will constantly damage and slow down enemies inside it."
-
-[sub_resource type="Resource" id="Resource_duyw4"]
-script = ExtResource("6_ricsb")
-cooldown = "1.1"
-energy_use = "22"
-texture = ExtResource("36_w3s6x")
-description = "The... thingy of the thing? Whatever is this thing, using it you will throw multiple types of projectiles with different effects."
-
-[sub_resource type="Resource" id="Resource_luuvd"]
-script = ExtResource("6_ricsb")
-cooldown = "0"
-energy_use = "1.5"
-texture = ExtResource("38_5ptlu")
-description = "The pressure washer is a powerful weapon that constantly shoots a strong water jet, piercing through every enemy and knocking back them... It has a high energy use per second."
-
-[sub_resource type="Resource" id="Resource_gwibg"]
-script = ExtResource("6_ricsb")
-cooldown = "0.12"
-energy_use = "4"
-texture = ExtResource("40_o66mx")
-description = "The snowy uzi rapidly shoots bullets to your enemies. White Slime signature weapon."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5gbmq"]
-atlas = ExtResource("42_2fiyd")
-region = Rect2(0, 0, 17, 16)
-
-[sub_resource type="Resource" id="Resource_7ab8f"]
-script = ExtResource("6_ricsb")
-cooldown = "9"
-energy_use = "75"
-texture = SubResource("AtlasTexture_5gbmq")
-description = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."
-
-[sub_resource type="Resource" id="Resource_y1tmp"]
-script = ExtResource("6_ricsb")
-cooldown = "2.5"
-energy_use = "95"
-texture = ExtResource("44_ipvu2")
-description = "Use the Goldfish Trident and you'll charge at your mouse position, dealing damage and stealing life to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."
 
 [node name="Equipment_Weapons" type="Control"]
 layout_mode = 3
@@ -212,7 +101,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_2inrk")
+info = ExtResource("6_egv66")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Weedtite_Microgun"]
 layout_mode = 0
@@ -308,7 +197,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_dt4wl")
+info = ExtResource("14_wprmy")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Grenade"]
 layout_mode = 0
@@ -405,7 +294,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_l1s8v")
+info = ExtResource("17_hhrkc")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Mini_Knife"]
 layout_mode = 0
@@ -501,7 +390,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_d2u3v")
+info = ExtResource("20_h23hw")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Rock"]
 layout_mode = 0
@@ -597,7 +486,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_wg8l0")
+info = ExtResource("23_y14p7")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Frost_Staff"]
 layout_mode = 0
@@ -694,7 +583,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_yq2pd")
+info = ExtResource("23_iq0l6")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Energy_Lantern"]
 layout_mode = 0
@@ -791,7 +680,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_m8xku")
+info = ExtResource("29_i05d5")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Baby_Log"]
 layout_mode = 0
@@ -887,7 +776,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_od5oc")
+info = ExtResource("32_daerq")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row1/Fart_Rifle"]
 layout_mode = 0
@@ -987,7 +876,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_6lujb")
+info = ExtResource("35_0ukim")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Sandy_Eagle"]
 layout_mode = 0
@@ -1083,7 +972,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_daaj4")
+info = ExtResource("38_2tvdi")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Paint_Bomb"]
 layout_mode = 0
@@ -1180,7 +1069,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_duyw4")
+info = ExtResource("41_y1u85")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Thingy_Of_The_Thing"]
 layout_mode = 0
@@ -1276,7 +1165,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_luuvd")
+info = ExtResource("44_wtyfd")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Pressure_Washer"]
 layout_mode = 0
@@ -1372,7 +1261,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_gwibg")
+info = ExtResource("47_jx5xj")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Snowy_Uzi"]
 layout_mode = 0
@@ -1468,7 +1357,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_7ab8f")
+info = ExtResource("50_gmlfl")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Green_Apple_Stick"]
 layout_mode = 0
@@ -1565,7 +1454,7 @@ texture_pressed = ExtResource("15_k387t")
 texture_hover = ExtResource("16_141qd")
 texture_disabled = ExtResource("2_nav4d")
 script = ExtResource("3_7r6lc")
-info = SubResource("Resource_y1tmp")
+info = ExtResource("53_6awsu")
 
 [node name="Slot_1" type="TextureButton" parent="Rows/Row2/Goldfish_Trident"]
 layout_mode = 0

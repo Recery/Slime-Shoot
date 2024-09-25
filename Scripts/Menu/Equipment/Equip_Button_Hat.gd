@@ -2,40 +2,31 @@ extends TextureButton
 
 @export var hat_to_equip : PackedScene
 
-var root
+@onready var hat_sprite := get_parent().get_node("Hat")
+@onready var equipped_hat_pos := get_parent().get_parent().get_parent().get_parent().get_node("Equipped_Hat")
 
-func _ready():
-	root = get_parent().get_parent().get_parent().get_parent()
-	
-	Events.connect("draw_equipped_slime", draw_hat)
-	connect("pressed", _on_pressed)
+func _ready() -> void:
+	Events.draw_equipped_slime.connect(draw_hat)
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if hat_to_equip == null: return
-	var unlocked = false
-	for i in range(Vars.hats_unlocked.size()):
-		if Vars.hats_unlocked[i] == hat_to_equip:
+	var unlocked := false
+	for hat in SaveSystem.get_curr_file().save_equipment.unlocked_hats:
+		if hat == hat_to_equip:
 			unlocked = true
+			break
 	
-	get_parent().get_node("Hat").visible = unlocked
 	get_parent().disabled = not unlocked
+	hat_sprite.visible = unlocked
 	visible = unlocked
 
-func _on_pressed():
-	Vars.hat_equipped = hat_to_equip
-	
-	Save_System.save_equipped_hat()
-	
+func _pressed() -> void:
+	SaveSystem.get_curr_file().save_equipment.equipped_hat = hat_to_equip
+	SaveSystem.save_file()
+	Events.equipped_changed.emit()
 	Events.draw_equipped_slime.emit()
 
-func draw_hat():
-	Funcs.remove_direct_children(root.get_node("Equipped_Hat"))
+func draw_hat() -> void:
+	Funcs.remove_direct_children(equipped_hat_pos)
 	
-	var slime_draw := Vars.slime_equipped.instantiate()
-	slime_draw.set_script(null)
-	root.get_node("Equipped_Hat").add_child(slime_draw)
-	
-	if Vars.hat_equipped != null:
-		var hat_draw := Vars.hat_equipped.instantiate()
-		hat_draw.set_script(null)
-		root.get_node("Equipped_Hat").add_child(hat_draw)
+	equipped_hat_pos.add_child(Funcs.draw_equipped_slime())

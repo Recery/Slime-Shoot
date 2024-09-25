@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://dfstvyj5kp8c8"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_cder1"]
+[ext_resource type="Texture2D" uid="uid://b6xujapa755a7" path="res://Sprites/Abilities/SpeedAbility.png" id="2_7msux"]
+
+[resource]
+script = ExtResource("1_cder1")
+cooldown = "35"
+energy_use = "90"
+texture = ExtResource("2_7msux")
+description = "The speed ability boosts your speed for a few seconds. "

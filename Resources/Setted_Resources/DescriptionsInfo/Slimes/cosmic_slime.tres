@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://dkf6q0x882113"]
+
+[ext_resource type="Texture2D" uid="uid://cblwq2tfc0r5g" path="res://Sprites/Player/CosmicSlime/StellarMarkPerk.png" id="1_e5stk"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_14oao"]
+[ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="3_2vau6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfo5t"]
+atlas = ExtResource("3_2vau6")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_14oao")
+life = "60"
+max_energy = "320"
+speed = "115"
+resistance = "0"
+perk_texture = ExtResource("1_e5stk")
+perk_cooldown = "0"
+perk_energy_use = "1.3"
+texture = SubResource("AtlasTexture_bfo5t")
+description = "The cosmic slime has the stellar mark perk. Hold your perk key to mark a nearby enemy with cosmic power, when you kill that marked enemy you'll recover 50% of your energy. Also, when you mark an enemy, it's damage and life will be reduced by half. Recovers energy faster."

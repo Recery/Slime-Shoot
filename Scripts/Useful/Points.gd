@@ -1,4 +1,4 @@
 extends Label
 
 func _process(_delta):
-	text = str(Vars.total_points)
+	text = str(SaveSystem.get_curr_file().points)

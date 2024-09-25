@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://we4k8e3gonnf"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_y7rmv"]
+[ext_resource type="Texture2D" uid="uid://didqrrgjyaa8" path="res://Sprites/Weapons/FartRifle.png" id="2_evxcq"]
+
+[resource]
+script = ExtResource("1_y7rmv")
+cooldown = "1.9"
+energy_use = "42"
+texture = ExtResource("2_evxcq")
+description = "The fart rifle is very disgusting. But it also is a powerful weapon. It doesn't deal any damage, but it will pierces enemies and intoxicate them with fart poison."

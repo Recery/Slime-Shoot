@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://bm3w815s37y05"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_xgbum"]
+[ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="2_ob82d"]
+
+[resource]
+script = ExtResource("1_xgbum")
+cooldown = "0.3"
+energy_use = "4"
+texture = ExtResource("2_ob82d")
+description = "The mini knife deals low damage at fast speed. Uses low energy and it's a melee weapon."

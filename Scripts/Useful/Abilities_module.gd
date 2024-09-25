@@ -12,16 +12,16 @@ func _ready():
 	
 	# Ver "weapons_module", ya que funciona de manera muy parecida a este
 	size_equipped = 0
-	for i in range(Vars.abilities_equipped.size()):
-		if Vars.abilities_equipped[i] != null: size_equipped += 1
+	for ability in SaveSystem.get_curr_file().save_equipment.equipped_abilities:
+		if ability != null: size_equipped += 1
 	abilities.resize(size_equipped)
 	cooldowns.resize(size_equipped)
 	first_cooldown.resize(size_equipped)
 	
 	var total_equipped = 0
-	for i in range(Vars.abilities_equipped.size()):
-		if Vars.abilities_equipped[i] != null && total_equipped < abilities.size():
-			abilities[total_equipped] = Vars.abilities_equipped[i].instantiate()
+	for ability in SaveSystem.get_curr_file().save_equipment.equipped_abilities:
+		if ability != null and total_equipped < abilities.size():
+			abilities[total_equipped] = ability.instantiate()
 			abilities[total_equipped].position = get_node("Pos_" + str(total_equipped+1)).position
 			add_child(abilities[total_equipped])
 			abilities[total_equipped].get_node("Cooldown_Left").show()
@@ -32,20 +32,20 @@ func _ready():
 			first_cooldown[total_equipped] = true
 			total_equipped += 1
 
-func _process(_delta):
+func _process(_delta) -> void:
 	for i in range(abilities.size()):
 		if cooldowns[i].time_left != 0:
 			abilities[i].get_node("Cooldown_Left").text = str(int(cooldowns[i].time_left)+1)
 			abilities[i].get_node("Ability_Frame").self_modulate = Color(0.5, 0.5, 0.5)
 			abilities[i].get_node("Energy_Use").hide()
 
-func _input(event):
+func _input(event) -> void:
 	if abilities.size() == 0: return
 	for i in range(abilities.size()):
 		if event.is_action_pressed("ability_" + str(i+1)):
 			try_to_activate(i)
 
-func try_to_activate(slot):
+func try_to_activate(slot) -> void:
 	if slot < 0 or slot >= abilities.size(): return
 	# La variable can_use verifica si la habilidad está en cooldown o no
 	# El método can_be_activated devuelve true si el jugador tiene suficiente

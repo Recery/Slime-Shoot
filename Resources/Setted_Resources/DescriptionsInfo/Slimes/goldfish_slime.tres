@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://cpl58uheuuilp"]
+
+[ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="1_pcqi1"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_77xq0"]
+[ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="3_glkm2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v65de"]
+atlas = ExtResource("3_glkm2")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_77xq0")
+life = "160"
+max_energy = "140"
+speed = "90"
+resistance = "5"
+perk_texture = ExtResource("1_pcqi1")
+perk_cooldown = "0"
+perk_energy_use = "1"
+texture = SubResource("AtlasTexture_v65de")
+description = "The Goldfish Slime has the Goldfish Bless Perk. While holding your perk key, you will recover life and your resistance will be upgraded, but your speed will be reduced. Recovers energy sightly slower."

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://bsnokv5asricu"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_fihig"]
+[ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="2_tn1iq"]
+
+[resource]
+script = ExtResource("1_fihig")
+texture = ExtResource("2_tn1iq")
+description = "The extra speed passive gives you a small speed buff."

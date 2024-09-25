@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://crjt0qpm266ae"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_eill7"]
+[ext_resource type="Texture2D" uid="uid://d2usm5lv207pf" path="res://Sprites/Weapons/ThingyOfTheThing/ThingyOfTheThing.png" id="2_jrl7t"]
+
+[resource]
+script = ExtResource("1_eill7")
+cooldown = "1.1"
+energy_use = "22"
+texture = ExtResource("2_jrl7t")
+description = "The... thingy of the thing? Whatever is this thing, using it you will throw multiple types of projectiles with different effects."

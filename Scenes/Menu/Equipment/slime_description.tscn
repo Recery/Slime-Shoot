@@ -1,8 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://c7sueehpvm3qf"]
+[gd_scene load_steps=26 format=3 uid="uid://rg6lr3ucdmrj"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/slime_description.gd" id="1_5eipv"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_rcotk"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="3_dtx2m"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="3_dtx2m"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="4_dymyw"]
 [ext_resource type="Texture2D" uid="uid://wf48bmbftmet" path="res://Sprites/Menu/ClockIcon.png" id="5_ikfdl"]
 [ext_resource type="Texture2D" uid="uid://bc3pf3arpqi6e" path="res://Sprites/Menu/LifeIcon.png" id="5_sg10k"]
@@ -67,10 +67,10 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Description" type="Control"]
 layout_mode = 3
-anchor_right = 0.226
+anchor_right = 0.221
 anchor_bottom = 0.199
-offset_right = -0.35202
-offset_bottom = 0.0479889
+offset_right = 0.40799
+offset_bottom = 0.0480042
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5eipv")
@@ -103,6 +103,7 @@ texture = SubResource("AtlasTexture_kpc6f")
 stretch_mode = 3
 
 [node name="Life" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 86.0
 offset_top = 23.0
 offset_right = 142.0
@@ -168,6 +169,7 @@ texture = ExtResource("7_onvpp")
 stretch_mode = 3
 
 [node name="Resistance" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 86.0
 offset_top = 48.0
 offset_right = 142.0
@@ -189,6 +191,7 @@ texture = ExtResource("8_ik8j4")
 stretch_mode = 3
 
 [node name="Perk_Frame" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 24.0
 offset_right = 146.0
@@ -197,6 +200,7 @@ texture = ExtResource("2_rcotk")
 stretch_mode = 3
 
 [node name="Perk" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 24.0
 offset_right = 146.0
@@ -205,6 +209,7 @@ texture = ExtResource("9_qc2hv")
 stretch_mode = 3
 
 [node name="Cooldown" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 24.0
 offset_right = 174.0
@@ -226,6 +231,7 @@ texture = ExtResource("5_ikfdl")
 stretch_mode = 3
 
 [node name="Energy_Use" type="HBoxContainer" parent="."]
+layout_mode = 0
 offset_left = 118.0
 offset_top = 47.0
 offset_right = 174.0
@@ -275,10 +281,9 @@ autowrap_mode = 3
 
 [node name="Back_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 1.0
-offset_right = 248.0
-offset_bottom = 29.0
+offset_left = 227.0
+offset_right = 255.0
+offset_bottom = 28.0
 texture_normal = ExtResource("11_577lv")
 texture_pressed = ExtResource("12_too2m")
 texture_hover = ExtResource("13_w0nor")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g1xdeps4pcd5"
-path="res://.godot/imported/PlayerSlime.png-e3b38651cb17e9cec2f4b6b50197393e.ctex"
+uid="uid://djo6fpj6f1sc8"
+path="res://.godot/imported/BigBlueButtonHover.png-e0ca8cd44922152cde6b27e8267405f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/GreenSlime/PlayerSlime.png"
-dest_files=["res://.godot/imported/PlayerSlime.png-e3b38651cb17e9cec2f4b6b50197393e.ctex"]
+source_file="res://Sprites/Menu/BigBlueButtonHover.png"
+dest_files=["res://.godot/imported/BigBlueButtonHover.png-e0ca8cd44922152cde6b27e8267405f3.ctex"]
 
 [params]
 

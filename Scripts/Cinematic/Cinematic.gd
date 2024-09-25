@@ -48,7 +48,7 @@ func create_children():
 	text_frame.text = cinematic_frames[0].text
 
 func _input(event):
-	if event is InputEventKey && event.is_released() && not playing_fade_effect:
+	if event is InputEventKey and event.is_released() and not playing_fade_effect:
 		next_frame()
 
 func next_frame():
@@ -60,9 +60,9 @@ func next_frame():
 		sprite.texture = cinematic_frames[current_frame].frame
 		text_frame.text = cinematic_frames[current_frame].text
 	else:
-		if not Vars.cinematics_played.has(id_cinematic):
-			Vars.cinematics_played.append(id_cinematic)
-			Save_System.save_played_cinematics()
+		if not SaveSystem.get_curr_file().cinematics_played.has(id_cinematic):
+			SaveSystem.get_curr_file().cinematics_played.append(id_cinematic)
+			SaveSystem.save_file()
 		Events.change_scene_packed.emit(scene_to_enter)
 	
 	await Funcs.fade_effect(self, true)

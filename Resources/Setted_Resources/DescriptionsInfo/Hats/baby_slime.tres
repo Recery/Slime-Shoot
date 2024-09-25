@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://dhxxgycn16rsj"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_vywso"]
+[ext_resource type="Texture2D" uid="uid://dnx43yklbjlh3" path="res://Sprites/Hats/BabySlime.png" id="2_32wum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6p3f"]
+atlas = ExtResource("2_32wum")
+region = Rect2(1, 0, 8, 6)
+
+[resource]
+script = ExtResource("1_vywso")
+texture = SubResource("AtlasTexture_k6p3f")
+description = "A Baby Slime! You are a good parent... Or not that good, you're going to war with your kid! Cosmetic item, it has no effect."

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://gm57kj5ibxqb"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_qakyc"]
+[ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="2_x5sq7"]
+
+[resource]
+script = ExtResource("1_qakyc")
+texture = ExtResource("2_x5sq7")
+description = "No hat? You're boring... Or you don't have enough points to buy one. Keep playing!"

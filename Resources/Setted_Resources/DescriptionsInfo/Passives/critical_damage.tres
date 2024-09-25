@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://ct0v3uq0fxu76"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_03pio"]
+[ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="2_8meer"]
+
+[resource]
+script = ExtResource("1_03pio")
+texture = ExtResource("2_8meer")
+description = "With the Critical Damage passive, when you attack you have a 5% chance of getting a short x2 damage buff."

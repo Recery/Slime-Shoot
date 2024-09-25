@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://d0iv5qv6ge64i"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_8hsv0"]
+[ext_resource type="Texture2D" uid="uid://bfug0uet136k6" path="res://Sprites/Hats/PinkBow.png" id="2_3j54h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8hw2n"]
+atlas = ExtResource("2_3j54h")
+region = Rect2(1, 0, 7, 7)
+
+[resource]
+script = ExtResource("1_8hsv0")
+texture = SubResource("AtlasTexture_8hw2n")
+description = "A pink bow! So you like being cute and adorable. Cosmetic item, it has no effect."

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://1j5be2omqqck"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_3mpb0"]
+[ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="2_bhply"]
+
+[resource]
+script = ExtResource("1_3mpb0")
+cooldown = "1.1"
+energy_use = "26"
+texture = ExtResource("2_bhply")
+description = "The baby log is a melee weapon that deals low damage to all enemies that it hits, and also knockbacks them. The first enemy will receive more damage."

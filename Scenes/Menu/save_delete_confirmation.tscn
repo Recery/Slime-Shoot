@@ -1,0 +1,88 @@
+[gd_scene load_steps=6 format=3 uid="uid://by5s1hmishh0g"]
+
+[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="1_agnhk"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="2_6kws1"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="3_tlcgu"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="4_gwa12"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="5_nlpp0"]
+
+[node name="Delete_Confirmation" type="Control"]
+layout_mode = 3
+anchor_top = 0.001
+anchor_bottom = 0.001
+offset_left = -144.0
+offset_top = -80.648
+offset_right = 144.0
+offset_bottom = 80.352
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = -0.012
+anchor_right = 0.003
+anchor_bottom = -0.012
+offset_left = -83.864
+offset_top = -58.056
+offset_right = 372.136
+offset_bottom = 225.944
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Frame" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 43.0
+offset_right = 196.0
+offset_bottom = 71.0
+texture = ExtResource("1_agnhk")
+stretch_mode = 3
+
+[node name="Advice" type="Label" parent="Frame"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 91.0
+offset_bottom = 17.0
+text = "Delete file?"
+label_settings = ExtResource("2_6kws1")
+
+[node name="Yes_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 76.0
+offset_right = 136.0
+offset_bottom = 104.0
+texture_normal = ExtResource("3_tlcgu")
+texture_pressed = ExtResource("4_gwa12")
+texture_hover = ExtResource("5_nlpp0")
+stretch_mode = 3
+
+[node name="Advice" type="Label" parent="Yes_Button"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 11.0
+offset_right = 25.0
+offset_bottom = 18.0
+text = "Yes"
+label_settings = ExtResource("2_6kws1")
+
+[node name="No_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 76.0
+offset_right = 180.0
+offset_bottom = 104.0
+texture_normal = ExtResource("3_tlcgu")
+texture_pressed = ExtResource("4_gwa12")
+texture_hover = ExtResource("5_nlpp0")
+stretch_mode = 3
+
+[node name="Advice" type="Label" parent="No_Button"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 21.0
+offset_bottom = 18.0
+text = "No"
+label_settings = ExtResource("2_6kws1")

@@ -7,154 +7,154 @@
 [ext_resource type="Script" path="res://Scripts/Useful/Points.gd" id="4_2uokv"]
 [ext_resource type="PackedScene" uid="uid://1v2mp2gdem60" path="res://Scenes/Menu/Shop/Shop_Button_Slime.tscn" id="5_rehuj"]
 [ext_resource type="PackedScene" uid="uid://gtnfverwcx6s" path="res://Scenes/Hats/witch_hat.tscn" id="6_frsjf"]
+[ext_resource type="Resource" uid="uid://ww2uutnntteg" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/green_slime.tres" id="8_45ial"]
 [ext_resource type="PackedScene" uid="uid://db0fd7hpdki3j" path="res://Scenes/Hats/pink_bow.tscn" id="8_cdb3p"]
-[ext_resource type="Texture2D" uid="uid://bfug0uet136k6" path="res://Sprites/Hats/PinkBow.png" id="9_moh8q"]
 [ext_resource type="PackedScene" uid="uid://bqp74ycuolhku" path="res://Scenes/Hats/devilish_horns.tscn" id="10_ccfh0"]
-[ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="10_lp4ro"]
-[ext_resource type="Texture2D" uid="uid://brp7538ftbvf5" path="res://Sprites/Hats/DevilishHorns.png" id="11_gut8e"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="11_hvk3j"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="11_hvk3j"]
+[ext_resource type="Resource" uid="uid://bxpuwkom51mug" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/creamy_slime.tres" id="11_j0maq"]
 [ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="12_ya27u"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="13_27h4q"]
-[ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="13_52x5p"]
-[ext_resource type="Texture2D" uid="uid://vs2r4ttgsyrg" path="res://Sprites/Hats/ToyCrown.png" id="13_cidqb"]
 [ext_resource type="PackedScene" uid="uid://dl1ke2dvw5eg2" path="res://Scenes/Hats/sunglasses.tscn" id="14_5av70"]
-[ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/PlayerSlimeYellow.png" id="14_phj1f"]
-[ext_resource type="Texture2D" uid="uid://c5ar6ajgj25pa" path="res://Sprites/Hats/Sunglasses.png" id="15_tgxpi"]
-[ext_resource type="Texture2D" uid="uid://cblwq2tfc0r5g" path="res://Sprites/Player/CosmicSlime/StellarMarkPerk.png" id="16_btds1"]
+[ext_resource type="Resource" uid="uid://dlvqgng5lcri7" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/yellow_slime.tres" id="14_qywcq"]
 [ext_resource type="PackedScene" uid="uid://c3m4ge4m6dysv" path="res://Scenes/Hats/party_hat.tscn" id="16_p1fqv"]
 [ext_resource type="PackedScene" uid="uid://wdae0dm20e6b" path="res://Scenes/Player/Creamy_Slime/creamy_slime.tscn" id="16_ypkqm"]
-[ext_resource type="Texture2D" uid="uid://e1nk2c32jgx1" path="res://Sprites/Hats/PartyHat.png" id="17_jira4"]
-[ext_resource type="Texture2D" uid="uid://ci0eacecnl8qc" path="res://Sprites/Player/CreamySlime/CreamySlime.png" id="17_u7gxp"]
+[ext_resource type="Resource" uid="uid://dkf6q0x882113" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/cosmic_slime.tres" id="17_pk2kp"]
 [ext_resource type="PackedScene" uid="uid://0ecwwwem6vt4" path="res://Scenes/Hats/slimy_knight.tscn" id="18_ywk3v"]
-[ext_resource type="Texture2D" uid="uid://dgjs6acdj11ot" path="res://Sprites/Hats/SlimyKnight.png" id="19_iw7ht"]
-[ext_resource type="Texture2D" uid="uid://knmiocqsvdad" path="res://Sprites/Player/WhiteSlime/GlacibotPerk.png" id="19_kgn6i"]
+[ext_resource type="Resource" uid="uid://bcta52d775vpu" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/white_slime.tres" id="20_ta8de"]
 [ext_resource type="PackedScene" uid="uid://jmqlowj1gi0e" path="res://Scenes/Hats/fork.tscn" id="20_uscnq"]
-[ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="21_552ih"]
 [ext_resource type="PackedScene" uid="uid://orhaho5ua2ql" path="res://Scenes/Player/Cosmic_Slime/cosmic_slime.tscn" id="22_6j260"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="22_gayuj"]
 [ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="22_horc1"]
-[ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="22_s0xbi"]
 [ext_resource type="PackedScene" uid="uid://djhhdxr628rcc" path="res://Scenes/Player/Poo_Slime/poo_slime.tscn" id="23_1ol3p"]
-[ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="23_kkqn6"]
-[ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="23_m46ku"]
+[ext_resource type="Resource" uid="uid://cpl58uheuuilp" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/goldfish_slime.tres" id="23_fjhwe"]
 [ext_resource type="PackedScene" uid="uid://n7ys1ftreph2" path="res://Scenes/Weapons/weedtite_microgun.tscn" id="23_mdt8r"]
-[ext_resource type="Texture2D" uid="uid://dhaj8lsbb5i7" path="res://Sprites/Player/PooSlime/PooSlime.png" id="24_5vbpe"]
 [ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="24_d7oqs"]
 [ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="24_hqaic"]
-[ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="25_f0c83"]
 [ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="25_st6wr"]
-[ext_resource type="Texture2D" uid="uid://4ue6mog615ia" path="res://Sprites/Player/PooSlime/FartAttackPerk.png" id="25_t3w8s"]
-[ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="26_4gjfy"]
 [ext_resource type="PackedScene" uid="uid://lphu8w311olc" path="res://Scenes/Weapons/fart_rifle.tscn" id="26_4oam8"]
+[ext_resource type="Resource" uid="uid://nnr5icqnvvln" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/poo_slime.tres" id="26_5d14s"]
 [ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="26_klcqa"]
 [ext_resource type="PackedScene" uid="uid://csiujam0l4v7q" path="res://Scenes/Hats/baby_slime.tscn" id="26_m36t6"]
-[ext_resource type="Texture2D" uid="uid://didqrrgjyaa8" path="res://Sprites/Weapons/FartRifle.png" id="27_5hpak"]
 [ext_resource type="PackedScene" uid="uid://cd1txb43a6bug" path="res://Scenes/Weapons/mini_knife.tscn" id="27_8au4h"]
-[ext_resource type="Texture2D" uid="uid://dnx43yklbjlh3" path="res://Sprites/Hats/BabySlime.png" id="27_pm31i"]
-[ext_resource type="Texture2D" uid="uid://cl5dxrny8dee3" path="res://Sprites/Weapons/MiniKnife.png" id="28_f1i1d"]
 [ext_resource type="PackedScene" uid="uid://bhnxht1njk536" path="res://Scenes/Hats/magic_healer_headdress.tscn" id="28_s8qm4"]
-[ext_resource type="Texture2D" uid="uid://8gjy1kt4ahi" path="res://Sprites/Hats/MagicHealerHeadress.png" id="29_5xoir"]
 [ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="29_6puqw"]
-[ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="30_dldv3"]
 [ext_resource type="PackedScene" uid="uid://cwvoxibebfyh" path="res://Scenes/Hats/cat_ears.tscn" id="30_hh2ot"]
-[ext_resource type="Texture2D" uid="uid://byuk7y5f2gtas" path="res://Sprites/Hats/CatEars.png" id="31_kmgj5"]
 [ext_resource type="PackedScene" uid="uid://0fax33b8yau" path="res://Scenes/Weapons/frost_staff.tscn" id="31_s0rhk"]
-[ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="32_wubb2"]
 [ext_resource type="PackedScene" uid="uid://6iwpe1dk5grn" path="res://Scenes/Hats/elf_ears.tscn" id="32_xo8id"]
 [ext_resource type="PackedScene" uid="uid://xfg1addbh7i3" path="res://Scenes/Weapons/energy_lantern.tscn" id="33_tj61o"]
-[ext_resource type="Texture2D" uid="uid://b45w3cgnelq77" path="res://Sprites/Hats/ElfEars.png" id="33_tyliq"]
-[ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="34_mlixs"]
+[ext_resource type="Resource" uid="uid://djvn6s0ufwhfu" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/witch_hat.tres" id="35_dfbw5"]
 [ext_resource type="PackedScene" uid="uid://k8ownvc83oig" path="res://Scenes/Weapons/baby_log.tscn" id="35_gketx"]
-[ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="36_f73yx"]
-[ext_resource type="Texture2D" uid="uid://dd84a68dkr2pu" path="res://Sprites/Weapons/BabyLog.png" id="36_x4npm"]
 [ext_resource type="PackedScene" uid="uid://hrendj7cy1wp" path="res://Scenes/Menu/Shop/Shop_Button.tscn" id="37_67iqe"]
+[ext_resource type="Resource" uid="uid://d0iv5qv6ge64i" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/pink_bow.tres" id="38_1flex"]
 [ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="38_1smf3"]
 [ext_resource type="PackedScene" uid="uid://drstnvaxkms6w" path="res://Scenes/Weapons/sandy_eagle.tscn" id="38_ln5xm"]
-[ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="39_fst07"]
-[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="39_hk5pj"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="40_qvax0"]
+[ext_resource type="Resource" uid="uid://d32x7m5o3d0f5" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/devilish_horns.tres" id="41_16waw"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="41_wfirl"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="42_yxwl3"]
 [ext_resource type="PackedScene" uid="uid://dru84amkg1deg" path="res://Scenes/Abilities/life_regen_ability.tscn" id="43_k15s7"]
+[ext_resource type="Resource" uid="uid://buh8v23n6sakl" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/toy_crown.tres" id="44_0qsfs"]
 [ext_resource type="Texture2D" uid="uid://c74f6wajvedd8" path="res://Sprites/Abilities/LifeRegenAbility.png" id="44_8hm07"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="45_1ub83"]
 [ext_resource type="PackedScene" uid="uid://qc03hauqrywh" path="res://Scenes/Abilities/speed_ability.tscn" id="45_qrlxy"]
-[ext_resource type="Texture2D" uid="uid://b6xujapa755a7" path="res://Sprites/Abilities/SpeedAbility.png" id="46_851d0"]
 [ext_resource type="PackedScene" uid="uid://dghms8su3plri" path="res://Scenes/Abilities/infinite_energy_ability.tscn" id="47_mi1j1"]
-[ext_resource type="Texture2D" uid="uid://c2eeg5k2qo3oj" path="res://Sprites/Abilities/InfiniteEnergyAbility.png" id="48_pbn3w"]
+[ext_resource type="Resource" uid="uid://v32mtjdmtg78" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/sunglasses.tres" id="47_oarrh"]
 [ext_resource type="PackedScene" uid="uid://c7g880o7ku8ot" path="res://Scenes/Abilities/Extra_Damage_Ability.tscn" id="49_75fos"]
 [ext_resource type="PackedScene" uid="uid://bodvguqwnpkwj" path="res://Scenes/Weapons/paint_bomb.tscn" id="49_oxrop"]
-[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="50_660sk"]
-[ext_resource type="Texture2D" uid="uid://bawd6rldpsrh3" path="res://Sprites/Abilities/ExtraDamageAbility.png" id="50_ysxgf"]
+[ext_resource type="Resource" uid="uid://cyotgdqc70eyc" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/party_hat.tres" id="50_wr3c7"]
 [ext_resource type="PackedScene" uid="uid://ctr73444uo286" path="res://Scenes/Abilities/weedtite_turret_ability.tscn" id="51_cdw2e"]
 [ext_resource type="PackedScene" uid="uid://bxkmog2pchtmw" path="res://Scenes/Weapons/Thingy_Of_The_Thing/thingy_of_the_thing.tscn" id="51_jakk2"]
-[ext_resource type="Texture2D" uid="uid://dcgxa3j3npnnm" path="res://Sprites/Abilities/WeedtiteTurretAbility.png" id="52_1khfo"]
-[ext_resource type="Texture2D" uid="uid://d2usm5lv207pf" path="res://Sprites/Weapons/ThingyOfTheThing/ThingyOfTheThing.png" id="52_b1b1t"]
+[ext_resource type="Resource" uid="uid://mra4ju6ykag6" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/slimy_knight.tres" id="53_ehrrl"]
 [ext_resource type="PackedScene" uid="uid://b7cp3t5l5cmig" path="res://Scenes/Abilities/freeze_ability.tscn" id="53_n303q"]
-[ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="54_v6h1i"]
 [ext_resource type="PackedScene" uid="uid://kexy5pxqp74j" path="res://Scenes/Abilities/shock_attack_ability.tscn" id="55_c3cyo"]
-[ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="56_4bn5r"]
+[ext_resource type="Resource" uid="uid://djvixvrvkth85" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/fork.tres" id="56_aprwd"]
 [ext_resource type="PackedScene" uid="uid://chd77oucrvwn" path="res://Scenes/Pets/Pipsqueak.tscn" id="56_nt7ee"]
 [ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="57_ap3yb"]
 [ext_resource type="PackedScene" uid="uid://can76htfvmwca" path="res://Scenes/Abilities/slimy_rage_ability.tscn" id="57_ci6wl"]
 [ext_resource type="PackedScene" uid="uid://rc7r8jw4e2a2" path="res://Scenes/Hats/mushroom_cat_ears.tscn" id="57_jwivb"]
 [ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="57_l0qky"]
-[ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="58_4kpmw"]
-[ext_resource type="Texture2D" uid="uid://csk1e6o8akylw" path="res://Sprites/Hats/MushroomCatEars.png" id="58_8jtoo"]
-[ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="58_hfg5k"]
 [ext_resource type="PackedScene" uid="uid://dt8uh1imijxp4" path="res://Scenes/Hats/andean_condor_headband.tscn" id="59_o8vua"]
+[ext_resource type="Resource" uid="uid://b7pvnxjj8rt1x" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/pipsqueak_ears.tres" id="59_rb3m4"]
 [ext_resource type="PackedScene" uid="uid://btekfbe0jpc7x" path="res://Scenes/Passives/energy_loot_passive.tscn" id="59_tes2d"]
-[ext_resource type="Texture2D" uid="uid://hmgdmpjkjv7j" path="res://Sprites/Hats/AndeanCondorHeadband.png" id="60_khfi6"]
 [ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="60_ta6rn"]
 [ext_resource type="PackedScene" uid="uid://cg6u0ffwolmut" path="res://Scenes/Passives/life_regen_passive.tscn" id="61_d4i0h"]
-[ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="62_efpyx"]
+[ext_resource type="Resource" uid="uid://c6ooh44378ojq" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/godot_plushie.tres" id="62_s75ee"]
 [ext_resource type="PackedScene" uid="uid://cewbdmkelepyc" path="res://Scenes/Abilities/laser_turret_ability.tscn" id="63_qlxlb"]
 [ext_resource type="PackedScene" uid="uid://dsvtj72ccpu5e" path="res://Scenes/Passives/resistance_passive.tscn" id="63_vk817"]
-[ext_resource type="Texture2D" uid="uid://dm3qoo4ay3xtb" path="res://Sprites/Abilities/LaserTurretAbility.png" id="64_kb4ds"]
-[ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="64_nj35v"]
+[ext_resource type="Resource" uid="uid://dhxxgycn16rsj" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/baby_slime.tres" id="65_ckhk2"]
 [ext_resource type="PackedScene" uid="uid://crj0pwayi1t0i" path="res://Scenes/Passives/extra_speed_passive.tscn" id="65_q18nq"]
-[ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="66_qmgyt"]
 [ext_resource type="PackedScene" uid="uid://d1dx8m514nydv" path="res://Scenes/Pets/Cat.tscn" id="66_tn71e"]
-[ext_resource type="Texture2D" uid="uid://bumdqdehn2iv7" path="res://Sprites/Pets/Cat/CatDisplay.png" id="67_kmi50"]
 [ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="67_lhii2"]
 [ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="68_3enjf"]
-[ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="68_3wq0o"]
+[ext_resource type="Resource" uid="uid://bj64hei2tbp1u" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/magic_healer_headress.tres" id="68_8xx1k"]
+[ext_resource type="Resource" uid="uid://d0en6fd5lkmqw" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/weedtite_microgun.tres" id="68_cspoe"]
 [ext_resource type="PackedScene" uid="uid://dxpyupc3rydpw" path="res://Scenes/Pets/GreatGuppy.tscn" id="68_oef7s"]
 [ext_resource type="PackedScene" uid="uid://b1r5mv3opfofm" path="res://Scenes/Passives/critical_damage_passive.tscn" id="69_8aj8j"]
 [ext_resource type="PackedScene" uid="uid://b2i1l32mu6f6n" path="res://Scenes/Abilities/cheese_transmutation_ability.tscn" id="69_rbdai"]
-[ext_resource type="Texture2D" uid="uid://cf2dae7nvk408" path="res://Sprites/Pets/GreatGuppy.png" id="69_yssrl"]
-[ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="70_6lfp1"]
-[ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="70_ikb10"]
+[ext_resource type="Resource" uid="uid://c0yr6ffhat72u" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/grenade.tres" id="70_au7rw"]
 [ext_resource type="PackedScene" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="71_kowf4"]
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="71_lft1i"]
-[ext_resource type="Texture2D" uid="uid://b27rbgvhlf0ex" path="res://Sprites/Pets/BabyCannon/BabyCannonDisplay.png" id="71_yq0eh"]
-[ext_resource type="Texture2D" uid="uid://1q4vbol77sj2" path="res://Sprites/Abilities/LethalVacuumCleanerAbility.png" id="72_7tjov"]
-[ext_resource type="Texture2D" uid="uid://cy6imfwi0wuqn" path="res://Sprites/Passives/ExtraEnergyPassive.png" id="72_rpcs1"]
+[ext_resource type="Resource" uid="uid://dyrgrqju25xgf" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/cat_ears.tres" id="71_pah4n"]
 [ext_resource type="PackedScene" uid="uid://camfigffwx7ea" path="res://Scenes/Passives/sharper_weapons_passive.tscn" id="73_mxrur"]
-[ext_resource type="Texture2D" uid="uid://cvdtt6fqwvwsu" path="res://Sprites/Passives/SharperWeaponsPassive.png" id="74_ug0na"]
+[ext_resource type="Resource" uid="uid://bm3w815s37y05" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/mini_knife.tres" id="74_qav5s"]
+[ext_resource type="Resource" uid="uid://cg7vihm66grpy" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/elf_ears.tres" id="74_y7oyt"]
+[ext_resource type="Resource" uid="uid://b3vx20t3vh6hg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/rock.tres" id="77_7q88c"]
+[ext_resource type="Resource" uid="uid://4s0sprcm84xw" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/mushroom_cat_ears.tres" id="77_eicjm"]
+[ext_resource type="Resource" uid="uid://dprxo51li7dwl" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/energy_lantern.tres" id="79_rt86g"]
+[ext_resource type="Resource" uid="uid://dpxf2rhu40e3n" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/frost_staff.tres" id="80_0tdrc"]
+[ext_resource type="Resource" uid="uid://dn7fuijvhn137" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/andean_condor_headband.tres" id="80_ayv8j"]
 [ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="80_ojrch"]
 [ext_resource type="PackedScene" uid="uid://bhgh4u2fh214i" path="res://Scenes/Abilities/Green_Apple_Vomit_Ability.tscn" id="81_5lbgm"]
 [ext_resource type="PackedScene" uid="uid://bdjxtrv6jpkxd" path="res://Scenes/Passives/meteor_passive.tscn" id="81_aspqh"]
-[ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="81_ieoxy"]
-[ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="82_0k2td"]
-[ext_resource type="Texture2D" uid="uid://cy615oucucj6k" path="res://Sprites/Passives/MeteorPassive.png" id="82_0rvdg"]
+[ext_resource type="Resource" uid="uid://dqqbmjxyql8ck" path="res://Resources/Setted_Resources/DescriptionsInfo/Pets/pipsqueak.tres" id="83_xty5n"]
 [ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="84_hs512"]
-[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="85_wxutb"]
+[ext_resource type="Resource" uid="uid://1j5be2omqqck" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/baby_log.tres" id="86_8gpkb"]
+[ext_resource type="Resource" uid="uid://dk8g54rnscx7v" path="res://Resources/Setted_Resources/DescriptionsInfo/Pets/cat.tres" id="86_yqblm"]
 [ext_resource type="PackedScene" uid="uid://ycrv083kmlcw" path="res://Scenes/Weapons/goldfish_trident.tscn" id="87_ks8ms"]
-[ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="88_5d8dt"]
+[ext_resource type="Resource" uid="uid://we4k8e3gonnf" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/fart_rifle.tres" id="89_oc3x0"]
 [ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="89_q2gcu"]
-[ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="90_4aa0y"]
+[ext_resource type="Resource" uid="uid://pgql1juattuv" path="res://Resources/Setted_Resources/DescriptionsInfo/Pets/great_guppy.tres" id="89_vjdbl"]
+[ext_resource type="Resource" uid="uid://cnfmabu4p5wlg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/sandy_eagle.tres" id="92_hv6io"]
+[ext_resource type="Resource" uid="uid://cdnxnqhabikj4" path="res://Resources/Setted_Resources/DescriptionsInfo/Pets/baby_cannon.tres" id="92_k2dox"]
+[ext_resource type="Resource" uid="uid://dlpbrc3mkyght" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/paint_bomb.tres" id="95_ia6uu"]
+[ext_resource type="Resource" uid="uid://crjt0qpm266ae" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/thingy_of_the_thing.tres" id="98_ig3we"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="101_57fgs"]
-[ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="102_q4yxp"]
+[ext_resource type="Resource" uid="uid://c8kqfa8iw5fit" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/pressure_washer.tres" id="101_ff626"]
+[ext_resource type="Resource" uid="uid://dcrcb1ipdcxg0" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/snowy_uzi.tres" id="104_ghxl3"]
+[ext_resource type="Resource" uid="uid://yl82i4tvahcr" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/green_apple_stick.tres" id="107_hrk72"]
+[ext_resource type="Resource" uid="uid://cve8xom6627ud" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/goldfish_trident.tres" id="110_bdy17"]
 [ext_resource type="PackedScene" uid="uid://cudyr83n3jsr3" path="res://Scenes/Abilities/soul_collector_ability.tscn" id="122_d8jow"]
-[ext_resource type="Texture2D" uid="uid://cr1h4lgrnx3s1" path="res://Sprites/Abilities/SoulCollectorAbility.png" id="123_wxccl"]
 [ext_resource type="PackedScene" uid="uid://cy1xwikuqypg3" path="res://Scenes/Abilities/slime_army_wrath_ability.tscn" id="124_d3t4p"]
-[ext_resource type="Texture2D" uid="uid://cphatfhm3iqp5" path="res://Sprites/Abilities/SlimeArmyWrathAbility.png" id="125_6mp6o"]
+[ext_resource type="Resource" uid="uid://cc6l17mtodjqa" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/life_regen.tres" id="140_eeqwl"]
+[ext_resource type="Resource" uid="uid://dfstvyj5kp8c8" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/speed.tres" id="143_y6w1c"]
 [ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="146_67ux6"]
-[ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="147_74odq"]
+[ext_resource type="Resource" uid="uid://lobuo5eiccyd" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/infinite_energy.tres" id="146_y2e0p"]
+[ext_resource type="Resource" uid="uid://dfs312ogjaj42" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/extra_damage.tres" id="149_ahc7p"]
 [ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="150_thvog"]
-[ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="151_tcv2c"]
+[ext_resource type="Resource" uid="uid://dsgadm5pj4nip" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/weedtite_turret.tres" id="152_wyj0t"]
+[ext_resource type="Resource" uid="uid://bfrvjvytgupsv" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/freeze.tres" id="155_stfs6"]
+[ext_resource type="Resource" uid="uid://77plr4o0uqbc" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/shock_attack.tres" id="158_husgf"]
+[ext_resource type="Resource" uid="uid://brahqphon5eoc" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/slimy_rage.tres" id="161_8hcgg"]
+[ext_resource type="Resource" uid="uid://d6i3kxmbq5jk" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/laser_turret.tres" id="164_34wc6"]
+[ext_resource type="Resource" uid="uid://c0bdtyoqvrbcn" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/cheese_transmutation.tres" id="167_xkxuf"]
+[ext_resource type="Resource" uid="uid://cbb6dccd8rmhh" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/lethal_vacuum_cleaner.tres" id="170_y4uv3"]
+[ext_resource type="Resource" uid="uid://dip3i717d54xy" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/green_apple_vomit.tres" id="173_w5ucj"]
+[ext_resource type="Resource" uid="uid://d3k1aovc1n7ft" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/slime_army_wrath.tres" id="176_0sv2g"]
+[ext_resource type="Resource" uid="uid://nyuqraytl87m" path="res://Resources/Setted_Resources/DescriptionsInfo/Abilities/soul_collector.tres" id="179_4me5w"]
+[ext_resource type="Resource" uid="uid://csjpfnhok7kay" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/energy_loot.tres" id="182_43pm7"]
+[ext_resource type="Resource" uid="uid://dy0smxsupxrm6" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/life_regen.tres" id="185_cy2jq"]
+[ext_resource type="Resource" uid="uid://bifblietin6b0" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/resistance.tres" id="188_0tfnt"]
+[ext_resource type="Resource" uid="uid://bsnokv5asricu" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/extra_speed.tres" id="191_here4"]
+[ext_resource type="Resource" uid="uid://fxt7enhtjkk" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/minibot.tres" id="194_m3efs"]
+[ext_resource type="Resource" uid="uid://ct0v3uq0fxu76" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/critical_damage.tres" id="197_ggaag"]
+[ext_resource type="Resource" uid="uid://5p8srlckpn72" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/extra_energy.tres" id="200_i1qi3"]
+[ext_resource type="Resource" uid="uid://hopfkk4ssx5n" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/sharper_weapons.tres" id="203_vhik0"]
+[ext_resource type="Resource" uid="uid://cpbcoepmx35ky" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/meteor.tres" id="206_gatj7"]
+[ext_resource type="Resource" uid="uid://du5nj27duy8cp" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/coffee_trail.tres" id="209_ni5fy"]
+[ext_resource type="Resource" uid="uid://b7i3nm40xytts" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/enemy_HDD.tres" id="212_lg2fb"]
+[ext_resource type="Resource" uid="uid://bd3rvntucn0j" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/traitor_spirit.tres" id="215_2xk8i"]
+[ext_resource type="Resource" uid="uid://cgc6887tsey7c" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/electric_vine.tres" id="218_rrrld"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5fu2"]
 font = ExtResource("3_6bn12")
@@ -232,45 +232,30 @@ theme_override_constants/separation = 7
 
 [node name="Green_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
-sprite_to_display = ExtResource("11_hvk3j")
-frames_display = 2
+object_type = 0
+description_info = ExtResource("8_45ial")
 
 [node name="Creamy_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
 needed_points = 1100
+object_type = 0
 object_to_buy = ExtResource("16_ypkqm")
 unlocked_in_adventure = false
-sprite_to_display = ExtResource("17_u7gxp")
-frames_display = 2
-
-[node name="Perk" parent="Slimes/Page_1/Creamy_Slime" index="1"]
-texture = ExtResource("10_lp4ro")
+description_info = ExtResource("11_j0maq")
 
 [node name="Yellow_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
+object_type = 0
 object_to_buy = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("14_phj1f")
-frames_display = 2
-
-[node name="Item" parent="Slimes/Page_1/Yellow_Slime" index="0"]
-vframes = 2
-
-[node name="Perk" parent="Slimes/Page_1/Yellow_Slime" index="1"]
-texture = ExtResource("13_52x5p")
+description_info = ExtResource("14_qywcq")
 
 [node name="Cosmic_Slime" parent="Slimes/Page_1" instance=ExtResource("5_rehuj")]
 layout_mode = 2
 needed_points = 2200
+object_type = 0
 object_to_buy = ExtResource("22_6j260")
 unlocked_in_adventure = false
-sprite_to_display = ExtResource("23_m46ku")
-frames_display = 2
-
-[node name="Item" parent="Slimes/Page_1/Cosmic_Slime" index="0"]
-vframes = 2
-
-[node name="Perk" parent="Slimes/Page_1/Cosmic_Slime" index="1"]
-texture = ExtResource("16_btds1")
+description_info = ExtResource("17_pk2kp")
 
 [node name="Page_2" type="HBoxContainer" parent="Slimes"]
 visible = false
@@ -283,41 +268,23 @@ theme_override_constants/separation = 7
 
 [node name="White_Slime" parent="Slimes/Page_2" instance=ExtResource("5_rehuj")]
 layout_mode = 2
+object_type = 0
 object_to_buy = ExtResource("26_klcqa")
-sprite_to_display = ExtResource("36_f73yx")
-frames_display = 2
-
-[node name="Item" parent="Slimes/Page_2/White_Slime" index="0"]
-texture = ExtResource("36_f73yx")
-
-[node name="Perk" parent="Slimes/Page_2/White_Slime" index="1"]
-texture = ExtResource("19_kgn6i")
+description_info = ExtResource("20_ta8de")
 
 [node name="Goldfish_Slime" parent="Slimes/Page_2" instance=ExtResource("5_rehuj")]
 layout_mode = 2
+object_type = 0
 object_to_buy = ExtResource("38_1smf3")
-sprite_to_display = ExtResource("39_fst07")
-frames_display = 2
-
-[node name="Item" parent="Slimes/Page_2/Goldfish_Slime" index="0"]
-texture = ExtResource("39_fst07")
-
-[node name="Perk" parent="Slimes/Page_2/Goldfish_Slime" index="1"]
-texture = ExtResource("22_s0xbi")
+description_info = ExtResource("23_fjhwe")
 
 [node name="Poo_Slime" parent="Slimes/Page_2" instance=ExtResource("5_rehuj")]
 layout_mode = 2
 needed_points = 3400
+object_type = 0
 object_to_buy = ExtResource("23_1ol3p")
 unlocked_in_adventure = false
-sprite_to_display = ExtResource("24_5vbpe")
-frames_display = 2
-
-[node name="Item" parent="Slimes/Page_2/Poo_Slime" index="0"]
-texture = ExtResource("24_5vbpe")
-
-[node name="Perk" parent="Slimes/Page_2/Poo_Slime" index="1"]
-texture = ExtResource("25_t3w8s")
+description_info = ExtResource("26_5d14s")
 
 [node name="Pages_Buttons" type="HBoxContainer" parent="Slimes"]
 layout_mode = 1
@@ -408,66 +375,58 @@ theme_override_constants/separation = 7
 [node name="Witch_Hat" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("6_frsjf")
-sprite_to_display = ExtResource("68_3enjf")
-frames_display = 2
+description_info = ExtResource("35_dfbw5")
 
 [node name="Pink_Bow" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("8_cdb3p")
-sprite_to_display = ExtResource("9_moh8q")
-frames_display = 2
+description_info = ExtResource("38_1flex")
 
 [node name="Devilish_Horns" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("10_ccfh0")
-sprite_to_display = ExtResource("11_gut8e")
-frames_display = 2
+description_info = ExtResource("41_16waw")
 
 [node name="Toy_Crown" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("12_ya27u")
-sprite_to_display = ExtResource("13_cidqb")
-frames_display = 2
+description_info = ExtResource("44_0qsfs")
 
 [node name="Sunglasses" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("14_5av70")
-sprite_to_display = ExtResource("15_tgxpi")
-frames_display = 2
+description_info = ExtResource("47_oarrh")
 
 [node name="Party_Hat" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("16_p1fqv")
-sprite_to_display = ExtResource("17_jira4")
-frames_display = 2
+description_info = ExtResource("50_wr3c7")
 
 [node name="Slimy_Knight" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("18_ywk3v")
-sprite_to_display = ExtResource("19_iw7ht")
-frames_display = 2
+description_info = ExtResource("53_ehrrl")
 
 [node name="Fork" parent="Hats/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("20_uscnq")
-sprite_to_display = ExtResource("21_552ih")
-frames_display = 2
+description_info = ExtResource("56_aprwd")
 
 [node name="Row2" type="HBoxContainer" parent="Hats/Rows"]
 layout_mode = 2
@@ -476,66 +435,58 @@ theme_override_constants/separation = 7
 [node name="PipSqueak_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("22_horc1")
-sprite_to_display = ExtResource("23_kkqn6")
-frames_display = 2
+description_info = ExtResource("59_rb3m4")
 
 [node name="Godot_Plushie" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("24_hqaic")
-sprite_to_display = ExtResource("25_f0c83")
-frames_display = 2
+description_info = ExtResource("62_s75ee")
 
 [node name="Baby_Slime" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("26_m36t6")
-sprite_to_display = ExtResource("27_pm31i")
-frames_display = 2
+description_info = ExtResource("65_ckhk2")
 
 [node name="Magic_Healer_Headdress" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("28_s8qm4")
-sprite_to_display = ExtResource("29_5xoir")
-frames_display = 2
+description_info = ExtResource("68_8xx1k")
 
 [node name="Cat_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("30_hh2ot")
-sprite_to_display = ExtResource("31_kmgj5")
-frames_display = 2
+description_info = ExtResource("71_pah4n")
 
 [node name="Elf_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("32_xo8id")
-sprite_to_display = ExtResource("33_tyliq")
-frames_display = 2
+description_info = ExtResource("74_y7oyt")
 
 [node name="Mushroom_Cat_Ears" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("57_jwivb")
-sprite_to_display = ExtResource("58_8jtoo")
-frames_display = 2
+description_info = ExtResource("77_eicjm")
 
 [node name="Andean_Condor_Headband" parent="Hats/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 500
-type_of_object = 4
+object_type = 4
 object_to_buy = ExtResource("59_o8vua")
-sprite_to_display = ExtResource("60_khfi6")
-frames_display = 2
+description_info = ExtResource("80_ayv8j")
 
 [node name="Hats_Shop_Text" type="Label" parent="Hats"]
 layout_mode = 0
@@ -569,31 +520,30 @@ theme_override_constants/separation = 7
 [node name="Pipsqueak" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1000
-type_of_object = 5
+object_type = 5
 object_to_buy = ExtResource("56_nt7ee")
-sprite_to_display = ExtResource("57_ap3yb")
+description_info = ExtResource("83_xty5n")
 
 [node name="Cat" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1000
-type_of_object = 5
+object_type = 5
 object_to_buy = ExtResource("66_tn71e")
-sprite_to_display = ExtResource("67_kmi50")
+description_info = ExtResource("86_yqblm")
 
 [node name="Great_Guppy" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1000
-type_of_object = 5
+object_type = 5
 object_to_buy = ExtResource("68_oef7s")
-sprite_to_display = ExtResource("69_yssrl")
-frames_display = 2
+description_info = ExtResource("89_vjdbl")
 
 [node name="Baby_Cannon" parent="Pets/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1000
-type_of_object = 5
+object_type = 5
 object_to_buy = ExtResource("70_s47oh")
-sprite_to_display = ExtResource("71_yq0eh")
+description_info = ExtResource("92_k2dox")
 
 [node name="Pets_Shop_Text" type="Label" parent="Pets"]
 layout_mode = 0
@@ -626,51 +576,48 @@ theme_override_constants/separation = 7
 layout_mode = 2
 needed_points = 100
 object_to_buy = ExtResource("23_mdt8r")
-sprite_to_display = ExtResource("24_d7oqs")
+description_info = ExtResource("68_cspoe")
 
 [node name="Grenade" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 400
 object_to_buy = ExtResource("25_st6wr")
-sprite_to_display = ExtResource("26_4gjfy")
-frames_display = 2
+description_info = ExtResource("70_au7rw")
 
 [node name="Mini_Knife" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 250
 object_to_buy = ExtResource("27_8au4h")
-sprite_to_display = ExtResource("28_f1i1d")
+description_info = ExtResource("74_qav5s")
 
 [node name="Rock" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 200
 object_to_buy = ExtResource("29_6puqw")
-sprite_to_display = ExtResource("30_dldv3")
+description_info = ExtResource("77_7q88c")
 
 [node name="Frost_Staff" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 600
 object_to_buy = ExtResource("31_s0rhk")
-sprite_to_display = ExtResource("32_wubb2")
-frames_display = 3
+description_info = ExtResource("80_0tdrc")
 
 [node name="Energy_Lantern" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 550
 object_to_buy = ExtResource("33_tj61o")
-sprite_to_display = ExtResource("34_mlixs")
-frames_display = 2
+description_info = ExtResource("79_rt86g")
 
 [node name="Baby_Log" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 450
 object_to_buy = ExtResource("35_gketx")
-sprite_to_display = ExtResource("36_x4npm")
+description_info = ExtResource("86_8gpkb")
 
 [node name="Fart_Rifle" parent="Weapons/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 object_to_buy = ExtResource("26_4oam8")
-sprite_to_display = ExtResource("27_5hpak")
+description_info = ExtResource("89_oc3x0")
 
 [node name="Row2" type="HBoxContainer" parent="Weapons/Rows"]
 layout_mode = 2
@@ -682,7 +629,7 @@ needed_points = 1300
 object_to_buy = ExtResource("38_ln5xm")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("39_hk5pj")
+description_info = ExtResource("92_hv6io")
 
 [node name="Paint_Bomb" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -690,8 +637,7 @@ needed_points = 1300
 object_to_buy = ExtResource("49_oxrop")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("50_660sk")
-frames_display = 2
+description_info = ExtResource("95_ia6uu")
 
 [node name="Thingy_Of_The_Thing" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -699,7 +645,7 @@ needed_points = 1150
 object_to_buy = ExtResource("51_jakk2")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("52_b1b1t")
+description_info = ExtResource("98_ig3we")
 
 [node name="Pressure_Washer" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -707,7 +653,7 @@ needed_points = 1750
 object_to_buy = ExtResource("57_l0qky")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("58_hfg5k")
+description_info = ExtResource("101_ff626")
 
 [node name="Snowy_Uzi" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -715,7 +661,7 @@ needed_points = 2100
 object_to_buy = ExtResource("80_ojrch")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("26_klcqa")
-sprite_to_display = ExtResource("81_ieoxy")
+description_info = ExtResource("104_ghxl3")
 
 [node name="Green_Apple_Stick" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -723,8 +669,7 @@ needed_points = 2400
 object_to_buy = ExtResource("84_hs512")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("26_klcqa")
-sprite_to_display = ExtResource("85_wxutb")
-frames_display = 3
+description_info = ExtResource("107_hrk72")
 
 [node name="Goldfish_Trident" parent="Weapons/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
@@ -732,7 +677,7 @@ needed_points = 2500
 object_to_buy = ExtResource("87_ks8ms")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("38_1smf3")
-sprite_to_display = ExtResource("88_5d8dt")
+description_info = ExtResource("110_bdy17")
 
 [node name="Weapon_Shop_Text" type="Label" parent="Weapons"]
 layout_mode = 0
@@ -766,58 +711,58 @@ theme_override_constants/separation = 7
 [node name="Life_Regen" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 350
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("43_k15s7")
-sprite_to_display = ExtResource("44_8hm07")
+description_info = ExtResource("140_eeqwl")
 
 [node name="Speed" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 400
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("45_qrlxy")
-sprite_to_display = ExtResource("46_851d0")
+description_info = ExtResource("143_y6w1c")
 
 [node name="Infinite_Energy" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 950
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("47_mi1j1")
-sprite_to_display = ExtResource("48_pbn3w")
+description_info = ExtResource("146_y2e0p")
 
 [node name="Extra_Damage" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 700
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("49_75fos")
-sprite_to_display = ExtResource("50_ysxgf")
+description_info = ExtResource("149_ahc7p")
 
 [node name="Weedtite_Turret" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 800
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("51_cdw2e")
-sprite_to_display = ExtResource("52_1khfo")
+description_info = ExtResource("152_wyj0t")
 
 [node name="Freeze" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 550
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("53_n303q")
-sprite_to_display = ExtResource("54_v6h1i")
+description_info = ExtResource("155_stfs6")
 
 [node name="Shock_Attack" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 875
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("55_c3cyo")
-sprite_to_display = ExtResource("56_4bn5r")
+description_info = ExtResource("158_husgf")
 
 [node name="Slimy_Rage" parent="Abilities/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 925
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("57_ci6wl")
-sprite_to_display = ExtResource("58_4kpmw")
+description_info = ExtResource("161_8hcgg")
 
 [node name="Row2" type="HBoxContainer" parent="Abilities/Rows"]
 layout_mode = 2
@@ -826,56 +771,56 @@ theme_override_constants/separation = 7
 [node name="Laser_Turret" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1550
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("63_qlxlb")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("64_kb4ds")
+description_info = ExtResource("164_34wc6")
 
 [node name="Cheese_Transmutation" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1400
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("69_rbdai")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("70_ikb10")
+description_info = ExtResource("167_xkxuf")
 
 [node name="Vacuum_Cleaner" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1700
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("71_lft1i")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("72_7tjov")
+description_info = ExtResource("170_y4uv3")
 
 [node name="Green_Apple_Vomit" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1600
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("81_5lbgm")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("82_0k2td")
+description_info = ExtResource("173_w5ucj")
 
 [node name="Slime_Army_Wrath" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1650
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("124_d3t4p")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("26_klcqa")
-sprite_to_display = ExtResource("125_6mp6o")
+description_info = ExtResource("176_0sv2g")
 
 [node name="Soul_Collector" parent="Abilities/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1750
-type_of_object = 2
+object_type = 2
 object_to_buy = ExtResource("122_d8jow")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("38_1smf3")
-sprite_to_display = ExtResource("123_wxccl")
+description_info = ExtResource("179_4me5w")
 
 [node name="Abilities_Shop_Text" type="Label" parent="Abilities"]
 layout_mode = 0
@@ -910,57 +855,57 @@ theme_override_constants/separation = 7
 [node name="Energy_Loot" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 600
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("59_tes2d")
-sprite_to_display = ExtResource("60_ta6rn")
+description_info = ExtResource("182_43pm7")
 
 [node name="Life_Regen" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 450
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("61_d4i0h")
-sprite_to_display = ExtResource("62_efpyx")
+description_info = ExtResource("185_cy2jq")
 
 [node name="Resistance" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 700
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("63_vk817")
-sprite_to_display = ExtResource("64_nj35v")
+description_info = ExtResource("188_0tfnt")
 
 [node name="Extra_Speed" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 650
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("65_q18nq")
-sprite_to_display = ExtResource("66_qmgyt")
+description_info = ExtResource("191_here4")
 
-[node name="Mini_Bot" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
+[node name="MiniBot" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 900
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("67_lhii2")
-sprite_to_display = ExtResource("68_3wq0o")
+description_info = ExtResource("194_m3efs")
 
 [node name="Critical_Damage" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 800
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("69_8aj8j")
-sprite_to_display = ExtResource("70_6lfp1")
+description_info = ExtResource("197_ggaag")
 
 [node name="Extra_Energy" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("71_kowf4")
-sprite_to_display = ExtResource("72_rpcs1")
+description_info = ExtResource("200_i1qi3")
 
 [node name="Sharper_Weapons" parent="Passives/Rows/Row1" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 550
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("73_mxrur")
-sprite_to_display = ExtResource("74_ug0na")
+description_info = ExtResource("203_vhik0")
 
 [node name="Row2" type="HBoxContainer" parent="Passives/Rows"]
 layout_mode = 2
@@ -969,47 +914,47 @@ theme_override_constants/separation = 7
 [node name="Meteor" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1200
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("81_aspqh")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("82_0rvdg")
+description_info = ExtResource("206_gatj7")
 
 [node name="Coffee_Trail" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1100
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("89_q2gcu")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("90_4aa0y")
+description_info = ExtResource("209_ni5fy")
 
 [node name="Enemy_HDD" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1350
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("101_57fgs")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("102_q4yxp")
+description_info = ExtResource("212_lg2fb")
 
 [node name="Traitor_Spirit" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1500
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("146_67ux6")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("13_27h4q")
-sprite_to_display = ExtResource("147_74odq")
+description_info = ExtResource("215_2xk8i")
 
 [node name="Electric_Vine" parent="Passives/Rows/Row2" instance=ExtResource("37_67iqe")]
 layout_mode = 2
 needed_points = 1500
-type_of_object = 3
+object_type = 3
 object_to_buy = ExtResource("150_thvog")
 unlocked_in_adventure = true
 unlocked_by_slime = ExtResource("38_1smf3")
-sprite_to_display = ExtResource("151_tcv2c")
+description_info = ExtResource("218_rrrld")
 
 [node name="Passives_Shop_Text" type="Label" parent="Passives"]
 layout_mode = 0
@@ -1121,11 +1066,3 @@ texture = ExtResource("60_ta6rn")
 [connection signal="pressed" from="Weapons_Button" to="." method="_on_weapons_button_pressed"]
 [connection signal="pressed" from="Abilities_Button" to="." method="_on_abilities_button_pressed"]
 [connection signal="pressed" from="Passives_Button" to="." method="_on_passives_button_pressed"]
-
-[editable path="Slimes/Page_1/Green_Slime"]
-[editable path="Slimes/Page_1/Creamy_Slime"]
-[editable path="Slimes/Page_1/Yellow_Slime"]
-[editable path="Slimes/Page_1/Cosmic_Slime"]
-[editable path="Slimes/Page_2/White_Slime"]
-[editable path="Slimes/Page_2/Goldfish_Slime"]
-[editable path="Slimes/Page_2/Poo_Slime"]

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=4 format=3 uid="uid://dprxo51li7dwl"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_u5wlq"]
+[ext_resource type="Texture2D" uid="uid://d66u5xn4pe2i" path="res://Sprites/Weapons/EnergyLamp.png" id="2_5ogqn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1vcik"]
+atlas = ExtResource("2_5ogqn")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_u5wlq")
+cooldown = "5.5"
+energy_use = "10"
+texture = SubResource("AtlasTexture_1vcik")
+description = "While holding the energy lantern, you'll recover energy faster and you'll always be able to use energy even after running out of it. Use it and you'll recover all  your energy at the cost of 25% of your life."

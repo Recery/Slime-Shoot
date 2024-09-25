@@ -5,35 +5,33 @@ extends TextureButton
 
 @export var weapon_to_equip : PackedScene
 
-func _ready():
-	connect("pressed", on_pressed)
+@onready var weapon_sprite := get_parent().get_node("Weapon")
 
-func _process(_delta):
-	var unlocked = false
-	for i in range(Vars.weapons_unlocked.size()):
-		if Vars.weapons_unlocked[i] == weapon_to_equip:
+func _process(_delta) -> void:
+	var unlocked := false
+	for weapon in SaveSystem.get_curr_file().save_equipment.unlocked_weapons:
+		if weapon == weapon_to_equip:
 			unlocked = true
-	if !unlocked:
-		get_parent().disabled = true
-		get_parent().get_node("Weapon").hide()
-		hide()
-	else:
-		get_parent().disabled = false
-		get_parent().get_node("Weapon").show()
-		show()
+			break
+	
+	get_parent().disabled = not unlocked
+	weapon_sprite.visible = unlocked
+	visible = unlocked
 
-func on_pressed():
+func _pressed() -> void:
+	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_weapons
 	var already_equipped_slot = -1
-	for i in range(Vars.weapons_equipped.size()):
-		if Vars.weapons_equipped[i] == weapon_to_equip:
+	for i in range(equipped_array.size()):
+		if equipped_array[i] == weapon_to_equip:
 			already_equipped_slot = i
 			break
 	
 	if already_equipped_slot != -1:
-		var weapon_to_swap = Vars.weapons_equipped[slot-1]
-		Vars.weapons_equipped[slot-1] = weapon_to_equip
-		Vars.weapons_equipped[already_equipped_slot] = weapon_to_swap
+		var weapon_to_swap = equipped_array[slot-1]
+		equipped_array[slot-1] = weapon_to_equip
+		equipped_array[already_equipped_slot] = weapon_to_swap
 	else: 
-		Vars.weapons_equipped[slot-1] = weapon_to_equip
+		equipped_array[slot-1] = weapon_to_equip
 	
-	Save_System.save_equipped_weapons()
+	SaveSystem.save_file()
+	Events.equipped_changed.emit()

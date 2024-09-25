@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://cnfmabu4p5wlg"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_3cp7c"]
+[ext_resource type="Texture2D" uid="uid://soaq4fotfemw" path="res://Sprites/Weapons/SandyEagle.png" id="2_6ndbb"]
+
+[resource]
+script = ExtResource("1_3cp7c")
+cooldown = "1.8"
+energy_use = "42"
+texture = ExtResource("2_6ndbb")
+description = "The sandy eagle shoots a sandy bullet that deals heavy damage to a single enemy. Yellow Slime signature weapon."

@@ -7,24 +7,6 @@ var current_score : int # El puntaje no se reinicia a cero hasta que se entre nu
 var total_points
 var player : Player
 
-# Guardado
-var cinematics_played : Array[int]
-var almanac_unlocked : Array[String] # Guarda los paths de las escenas de los enemigos, no la escene directamente
-
-var weapons_equipped := [null, null, null]
-var weapons_unlocked := [null]
-var abilities_equipped := [null, null, null]
-var abilities_unlocked := []
-var passives_equipped := [null, null, null]
-var passives_unlocked := []
-var slime_equipped : PackedScene
-var slimes_unlocked = [null]
-var hat_equipped : PackedScene
-var hats_unlocked := []
-var pet_equipped : PackedScene
-var pets_unlocked := []
-# Fin guardado
-
 var map_state_data : MapStateData
 var current_spawner_table : EnemySpawnerTable
 
@@ -45,7 +27,7 @@ func _init() -> void:
 	total_points = 500
 
 func _ready() -> void:
-	main_scene = get_tree().root.get_child(4).get_child(0)
+	main_scene = get_tree().root.get_child(5).get_child(0)
 	
 	change_main_scene.connect(set_main_scene)
 	
@@ -56,6 +38,6 @@ func set_main_scene(scene : Node) -> void:
 	
 	if not main_scene.is_node_ready(): await main_scene.ready
 	for child in Funcs.get_all_children(main_scene):
-		if child.name == "Shadow" and not settings_data.shadows:
+		if child.name == "Shadow" and not SaveSystem.get_curr_file().save_settings.shadows:
 			if not child.get_parent().is_in_group("Player_Slime"):
 				child.queue_free()

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://dcrcb1ipdcxg0"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_w0ixx"]
+[ext_resource type="Texture2D" uid="uid://doex7xrqrlqq8" path="res://Sprites/Weapons/SnowyUzi.png" id="2_qe7kw"]
+
+[resource]
+script = ExtResource("1_w0ixx")
+cooldown = "0.12"
+energy_use = "4"
+texture = ExtResource("2_qe7kw")
+description = "The snowy uzi rapidly shoots bullets to your enemies. White Slime signature weapon."

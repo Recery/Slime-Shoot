@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://4s0sprcm84xw"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_bnj1p"]
+[ext_resource type="Texture2D" uid="uid://csk1e6o8akylw" path="res://Sprites/Hats/MushroomCatEars.png" id="2_30j8o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1rs0"]
+atlas = ExtResource("2_30j8o")
+region = Rect2(1, 0, 19, 6)
+
+[resource]
+script = ExtResource("1_bnj1p")
+texture = SubResource("AtlasTexture_f1rs0")
+description = "Mushroom Cat Ears! You are a true Mycelite! Or maybe you are Ruby Muscaria herself? Cosmetic item, it has no effect."

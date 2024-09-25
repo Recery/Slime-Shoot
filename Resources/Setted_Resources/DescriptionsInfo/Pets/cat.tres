@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://dk8g54rnscx7v"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_opqr4"]
+[ext_resource type="Texture2D" uid="uid://bumdqdehn2iv7" path="res://Sprites/Pets/Cat/CatDisplay.png" id="2_451qn"]
+
+[resource]
+script = ExtResource("1_opqr4")
+texture = ExtResource("2_451qn")
+description = "Cat! Meow meow nyah. MEOOWWWWWW!!!!!!! Purr...
+Cosmeowtic item, it has nyoh effect."

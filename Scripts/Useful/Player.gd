@@ -138,17 +138,17 @@ func connect_damage_collision():
 func create_children():
 	add_child(load("res://Scenes/Player/dark_mode_rect.tscn").instantiate())
 	
-	if Vars.settings_data.show_FPS_counter:
+	if SaveSystem.get_curr_file().save_settings.show_FPS_counter:
 		add_child(load("res://Scenes/Useful/fps_counter.tscn").instantiate())
 	
-	if Vars.hat_equipped != null:
-		var hat = Vars.hat_equipped.instantiate()
+	if SaveSystem.get_curr_file().save_equipment.equipped_hat != null:
+		var hat = SaveSystem.get_curr_file().save_equipment.equipped_hat.instantiate()
 		hat.name = "Hat"
 		add_child(hat)
 	
-	if Vars.pet_equipped != null:
+	if SaveSystem.get_curr_file().save_equipment.equipped_pet != null:
 		if Vars.main_scene.has_node("Spawn_Position"):
-			var pet := Vars.pet_equipped.instantiate()
+			var pet := SaveSystem.get_curr_file().save_equipment.equipped_pet.instantiate()
 			Vars.main_scene.get_node("Spawn_Position").add_child(pet)
 			summons_module.add_minion(pet)
 	

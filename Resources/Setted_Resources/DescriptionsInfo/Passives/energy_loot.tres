@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://csjpfnhok7kay"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_jc80p"]
+[ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="2_ol7fc"]
+
+[resource]
+script = ExtResource("1_jc80p")
+texture = ExtResource("2_ol7fc")
+description = "The energy loot passive will make you recover energy when you kill an enemy. The energy recovered is based on the score given by the enemy."

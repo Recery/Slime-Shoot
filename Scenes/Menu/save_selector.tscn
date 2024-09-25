@@ -1,0 +1,697 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0r1rui2hyf7r"]
+
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_l2qq1"]
+[ext_resource type="Script" path="res://Scripts/SaveObjects/Save_Slot.gd" id="2_1yr2a"]
+[ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="2_miebr"]
+[ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_plfs0"]
+[ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="3_i0hu4"]
+[ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="3_lxoc5"]
+[ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="4_6i858"]
+[ext_resource type="Texture2D" uid="uid://bfgsuwwcnqokj" path="res://Sprites/Menu/GreenAppleDisplay.png" id="4_humji"]
+[ext_resource type="Texture2D" uid="uid://5sn6kswudfga" path="res://Sprites/Menu/Saves/LoadSavelIcon.png" id="5_s8lmm"]
+[ext_resource type="Texture2D" uid="uid://bo82svdbiq3w3" path="res://Sprites/Menu/Saves/TrashIcon.png" id="6_ntjwa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kx406"]
+font = ExtResource("1_l2qq1")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0qcog"]
+font = ExtResource("1_l2qq1")
+font_size = 8
+font_color = Color(0.341176, 0.541176, 1, 1)
+outline_size = 3
+
+[node name="Save_Selector" type="Control"]
+layout_mode = 3
+anchor_left = -0.125
+anchor_top = -0.125
+anchor_right = 0.125
+anchor_bottom = 0.125
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_top = -0.012
+anchor_right = 0.003
+anchor_bottom = -0.012
+offset_left = -83.864
+offset_top = -58.056
+offset_right = 372.136
+offset_bottom = 225.944
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Save_Selector_Text" type="Label" parent="."]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 2.0
+offset_right = 255.0
+offset_bottom = 25.0
+text = "Save files"
+label_settings = SubResource("LabelSettings_kx406")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save_Slot" type="Control" parent="."]
+visible = false
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 80.0
+offset_right = 170.0
+offset_bottom = 110.0
+
+[node name="Frame" type="TextureRect" parent="Save_Slot"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Save_Slot"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Save_Slot"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Save_Slot/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Save_Slot/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Save_Slot"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Save_Slot"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Save_Slot/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Save_Slot/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Save_Slot/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Save_Slot/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Saves_Container" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 32.0
+offset_right = 279.0
+offset_bottom = 130.0
+theme_override_constants/separation = 28
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Column_1" type="VBoxContainer" parent="Saves_Container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Save_Slot1" type="Control" parent="Saves_Container/Column_1"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_1/Save_Slot1"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_1/Save_Slot1"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_1/Save_Slot1/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_1/Save_Slot1"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_1/Save_Slot1"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot1/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot1/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Save_Slot2" type="Control" parent="Saves_Container/Column_1"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+slot = 1
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot2"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_1/Save_Slot2"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_1/Save_Slot2"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot2/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_1/Save_Slot2/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_1/Save_Slot2"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_1/Save_Slot2"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot2/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot2/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot2/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot2/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Save_Slot3" type="Control" parent="Saves_Container/Column_1"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+slot = 2
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot3"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_1/Save_Slot3"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_1/Save_Slot3"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot3/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_1/Save_Slot3/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_1/Save_Slot3"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_1/Save_Slot3"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot3/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot3/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_1/Save_Slot3/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot3/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Column_2" type="VBoxContainer" parent="Saves_Container"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Save_Slot4" type="Control" parent="Saves_Container/Column_2"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+slot = 3
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot4"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_2/Save_Slot4"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_2/Save_Slot4"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot4/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_2/Save_Slot4/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_2/Save_Slot4"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_2/Save_Slot4"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot4/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot4/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot4/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot4/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Save_Slot5" type="Control" parent="Saves_Container/Column_2"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+slot = 4
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot5"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_2/Save_Slot5"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_2/Save_Slot5"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot5/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_2/Save_Slot5/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_2/Save_Slot5"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_2/Save_Slot5"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot5/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot5/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot5/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot5/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[node name="Save_Slot6" type="Control" parent="Saves_Container/Column_2"]
+custom_minimum_size = Vector2(78, 30)
+layout_mode = 2
+script = ExtResource("2_1yr2a")
+slot = 5
+
+[node name="Frame" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot6"]
+layout_mode = 2
+offset_top = 1.0
+offset_right = 62.0
+offset_bottom = 29.0
+texture = ExtResource("2_miebr")
+stretch_mode = 3
+
+[node name="Slot" type="Label" parent="Saves_Container/Column_2/Save_Slot6"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 14.0
+offset_bottom = 8.0
+text = "S1"
+label_settings = ExtResource("3_lxoc5")
+
+[node name="Points" type="HBoxContainer" parent="Saves_Container/Column_2/Save_Slot6"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 60.0
+offset_bottom = 27.0
+theme_override_constants/separation = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Green_Apple" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot6/Points"]
+layout_mode = 2
+texture = ExtResource("4_humji")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Saves_Container/Column_2/Save_Slot6/Points"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_0qcog")
+vertical_alignment = 1
+
+[node name="Slime" type="Node2D" parent="Saves_Container/Column_2/Save_Slot6"]
+position = Vector2(31, 10)
+metadata/_edit_group_ = true
+
+[node name="Buttons" type="VBoxContainer" parent="Saves_Container/Column_2/Save_Slot6"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 92.0
+offset_bottom = 60.0
+scale = Vector2(0.5, 0.5)
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Load" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot6/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot6/Buttons/Load"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_s8lmm")
+stretch_mode = 3
+
+[node name="Delete" type="TextureButton" parent="Saves_Container/Column_2/Save_Slot6/Buttons"]
+layout_mode = 2
+texture_normal = ExtResource("2_plfs0")
+texture_pressed = ExtResource("3_i0hu4")
+texture_hover = ExtResource("4_6i858")
+stretch_mode = 3
+metadata/_edit_group_ = true
+
+[node name="Icon" type="TextureRect" parent="Saves_Container/Column_2/Save_Slot6/Buttons/Delete"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("6_ntjwa")
+stretch_mode = 3
+
+[connection signal="pressed" from="Save_Slot/Buttons/Load" to="Save_Slot" method="_on_load_pressed"]
+[connection signal="pressed" from="Save_Slot/Buttons/Delete" to="Save_Slot" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot1/Buttons/Load" to="Saves_Container/Column_1/Save_Slot1" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot1/Buttons/Delete" to="Saves_Container/Column_1/Save_Slot1" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot2/Buttons/Load" to="Saves_Container/Column_1/Save_Slot2" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot2/Buttons/Delete" to="Saves_Container/Column_1/Save_Slot2" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot3/Buttons/Load" to="Saves_Container/Column_1/Save_Slot3" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_1/Save_Slot3/Buttons/Delete" to="Saves_Container/Column_1/Save_Slot3" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot4/Buttons/Load" to="Saves_Container/Column_2/Save_Slot4" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot4/Buttons/Delete" to="Saves_Container/Column_2/Save_Slot4" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot5/Buttons/Load" to="Saves_Container/Column_2/Save_Slot5" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot5/Buttons/Delete" to="Saves_Container/Column_2/Save_Slot5" method="_on_delete_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot6/Buttons/Load" to="Saves_Container/Column_2/Save_Slot6" method="_on_load_pressed"]
+[connection signal="pressed" from="Saves_Container/Column_2/Save_Slot6/Buttons/Delete" to="Saves_Container/Column_2/Save_Slot6" method="_on_delete_pressed"]

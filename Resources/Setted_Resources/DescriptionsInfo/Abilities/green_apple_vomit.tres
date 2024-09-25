@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://dip3i717d54xy"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_3frdr"]
+[ext_resource type="Texture2D" uid="uid://v2ao8orttc8v" path="res://Sprites/Abilities/GreenAppleVomitAbility.png" id="2_vfgll"]
+
+[resource]
+script = ExtResource("1_3frdr")
+cooldown = "14"
+energy_use = "80"
+texture = ExtResource("2_vfgll")
+description = "The green apple vomit is a gross ability. Slimes love green apples, but this time your slime ate a rotten one, causing it to throw up in your enemies, damaging them and reducing their damage.
+"

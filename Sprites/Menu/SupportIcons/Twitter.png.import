@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://pjwkiwsctmu3"
-path="res://.godot/imported/PlayerSlimeYellow.png-d784c1bb065c308e70528959e0f66228.ctex"
+uid="uid://kl5e2n7eyojq"
+path="res://.godot/imported/Twitter.png-4c464ccf065d1f52d432bd61eb0b2fd5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/YellowSlime/PlayerSlimeYellow.png"
-dest_files=["res://.godot/imported/PlayerSlimeYellow.png-d784c1bb065c308e70528959e0f66228.ctex"]
+source_file="res://Sprites/Menu/SupportIcons/Twitter.png"
+dest_files=["res://.godot/imported/Twitter.png-4c464ccf065d1f52d432bd61eb0b2fd5.ctex"]
 
 [params]
 

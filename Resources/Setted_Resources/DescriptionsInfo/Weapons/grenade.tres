@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=4 format=3 uid="uid://c0yr6ffhat72u"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_h4ohx"]
+[ext_resource type="Texture2D" uid="uid://ncybbr47s66a" path="res://Sprites/Weapons/Grenade.png" id="2_eh2sm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jnkp"]
+atlas = ExtResource("2_eh2sm")
+region = Rect2(0, 0, 8, 10)
+
+[resource]
+script = ExtResource("1_h4ohx")
+cooldown = "3"
+energy_use = "70"
+texture = SubResource("AtlasTexture_7jnkp")
+description = "The grenade is a slow and strong weapon. Uses lots of energy, but deals heavy damage to the first enemy and low damage to some nearby enemies."

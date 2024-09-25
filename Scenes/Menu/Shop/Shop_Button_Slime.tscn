@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://q0ofxegypcqb" path="res://Sprites/Menu/BigSquareButtonGray.png" id="4_mblct"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Shop_Buy_Button.gd" id="5_7c1cf"]
 [ext_resource type="PackedScene" uid="uid://dwmfsbcjcol8y" path="res://Scenes/Player/Green_Slime/green_slime.tscn" id="6_33m07"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/PlayerSlime.png" id="7_uy546"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="7_uy546"]
 [ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="8_5fqrk"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="9_q85oe"]
 
@@ -23,14 +23,12 @@ texture_pressed = ExtResource("2_x7p02")
 texture_hover = ExtResource("3_0ppif")
 texture_disabled = ExtResource("4_mblct")
 script = ExtResource("5_7c1cf")
-type_of_object = 0
 object_to_buy = ExtResource("6_33m07")
 unlocked_in_adventure = true
 
 [node name="Item" type="Sprite2D" parent="."]
 position = Vector2(30, 13)
 texture = ExtResource("7_uy546")
-hframes = 2
 
 [node name="Perk" type="Sprite2D" parent="."]
 position = Vector2(30, 32)

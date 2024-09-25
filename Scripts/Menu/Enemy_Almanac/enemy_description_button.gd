@@ -5,8 +5,8 @@ extends TextureButton
 
 @export var enemy : PackedScene
 
-func _ready():
-	if not Vars.almanac_unlocked.has(enemy.get_path()):
+func _ready() -> void:
+	if not SaveSystem.get_curr_file().almanac_unlocked.has(enemy.get_path()):
 		disabled = true
 		if has_node("Enemy_Sprite"): get_node("Enemy_Sprite").visible = false
 	

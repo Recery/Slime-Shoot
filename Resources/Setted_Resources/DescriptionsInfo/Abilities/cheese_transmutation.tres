@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://c0bdtyoqvrbcn"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_sd6s5"]
+[ext_resource type="Texture2D" uid="uid://7omq6ao6xxl3" path="res://Sprites/Abilities/CheeseTransmutationAbility.png" id="2_1ndtt"]
+
+[resource]
+script = ExtResource("1_sd6s5")
+cooldown = "16"
+energy_use = "80"
+texture = ExtResource("2_1ndtt")
+description = "The cheese transmutation ability converts your nearest enemy into a piece of cheese. You can eat the cheese to recover 25% of your life and energy."

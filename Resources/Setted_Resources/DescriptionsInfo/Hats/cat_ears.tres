@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://dyrgrqju25xgf"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_o3vyu"]
+[ext_resource type="Texture2D" uid="uid://byuk7y5f2gtas" path="res://Sprites/Hats/CatEars.png" id="2_rnesa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lub5j"]
+atlas = ExtResource("2_rnesa")
+region = Rect2(1, 0, 15, 6)
+
+[resource]
+script = ExtResource("1_o3vyu")
+texture = SubResource("AtlasTexture_lub5j")
+description = "Cat ears! You are Iromi. Cosmetic item, it has no effect."

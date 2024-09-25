@@ -15,19 +15,22 @@ func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	
-	if not Vars.slimes_unlocked.has(unlocked_by_slime):
-		disabled = true
+	Events.save_file_changed.connect(check_enabled)
+	check_enabled()
+
+func check_enabled() -> void:
+	disabled = not SaveSystem.get_curr_file().save_equipment.unlocked_slimes.has(unlocked_by_slime)
 
 func _on_pressed() -> void:
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
-	Save_System.reset_map_state()
+	MapStates.reset_map_state()
 	
 	if cinematic_to_play == null:
 		Events.change_scene_packed.emit(map_to_enter)
 		return
 	
 	var cinematic_instance := cinematic_to_play.instantiate()
-	if not Vars.cinematics_played.has(cinematic_instance.id_cinematic):
+	if not SaveSystem.get_curr_file().cinematics_played.has(cinematic_instance.id_cinematic):
 		cinematic_instance.scene_to_enter = map_to_enter
 		Events.change_scene_instance.emit(cinematic_instance)
 	else:

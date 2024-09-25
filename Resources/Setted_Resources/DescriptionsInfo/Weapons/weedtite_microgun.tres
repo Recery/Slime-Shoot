@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://d0en6fd5lkmqw"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_lnpd0"]
+[ext_resource type="Texture2D" uid="uid://e4a14gb6nb1y" path="res://Sprites/Weapons/WeedtiteMicrogun.png" id="2_5xcgh"]
+
+[resource]
+script = ExtResource("1_lnpd0")
+cooldown = "0.42"
+energy_use = "7"
+texture = ExtResource("2_5xcgh")
+description = "The weedtite microgun shoots basic bullets to your enemies using low energy. Green Slime signature weapon."

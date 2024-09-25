@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://bcta52d775vpu"]
+
+[ext_resource type="Texture2D" uid="uid://knmiocqsvdad" path="res://Sprites/Player/WhiteSlime/GlacibotPerk.png" id="1_hia32"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_8v5sm"]
+[ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="3_t5dbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujye2"]
+atlas = ExtResource("3_t5dbt")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_8v5sm")
+life = "70"
+max_energy = "260"
+speed = "105"
+resistance = "0"
+perk_texture = ExtResource("1_hia32")
+perk_cooldown = "0"
+perk_energy_use = "1.2"
+texture = SubResource("AtlasTexture_ujye2")
+description = "The White Slime has the Glacibot perk. With this perk, holding your perk key will summon a temporal Glacibot that will fight for you. Recovers energy sightly faster."

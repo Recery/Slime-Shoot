@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://5p8srlckpn72"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_afg7k"]
+[ext_resource type="Texture2D" uid="uid://cy6imfwi0wuqn" path="res://Sprites/Passives/ExtraEnergyPassive.png" id="2_lqj2m"]
+
+[resource]
+script = ExtResource("1_afg7k")
+texture = ExtResource("2_lqj2m")
+description = "The extra energy passive boosts your max energy by 75 points."

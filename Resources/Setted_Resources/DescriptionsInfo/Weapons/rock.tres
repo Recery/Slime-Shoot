@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://b3vx20t3vh6hg"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_07qmw"]
+[ext_resource type="Texture2D" uid="uid://b312g63ioaaet" path="res://Sprites/Weapons/Rock.png" id="2_8ymsv"]
+
+[resource]
+script = ExtResource("1_07qmw")
+cooldown = "0.9"
+energy_use = "15"
+texture = ExtResource("2_8ymsv")
+description = "The rock can be thrown, dealing moderate damage with a moderate energy use."
