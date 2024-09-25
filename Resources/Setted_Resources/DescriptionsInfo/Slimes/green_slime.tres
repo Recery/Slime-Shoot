@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="1_ylt2m"]
 [ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_5ug2f"]
-[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="3_7mms4"]
+[ext_resource type="Texture2D" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="3_7mms4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eq72e"]
 atlas = ExtResource("3_7mms4")

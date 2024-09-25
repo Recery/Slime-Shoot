@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d0r1rui2hyf7r"]
+[gd_scene load_steps=13 format=3 uid="uid://b7bg388i1shyy"]
 
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_l2qq1"]
 [ext_resource type="Script" path="res://Scripts/SaveObjects/Save_Slot.gd" id="2_1yr2a"]
@@ -8,8 +8,8 @@
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="3_lxoc5"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="4_6i858"]
 [ext_resource type="Texture2D" uid="uid://bfgsuwwcnqokj" path="res://Sprites/Menu/GreenAppleDisplay.png" id="4_humji"]
-[ext_resource type="Texture2D" uid="uid://5sn6kswudfga" path="res://Sprites/Menu/Saves/LoadSavelIcon.png" id="5_s8lmm"]
-[ext_resource type="Texture2D" uid="uid://bo82svdbiq3w3" path="res://Sprites/Menu/Saves/TrashIcon.png" id="6_ntjwa"]
+[ext_resource type="Texture2D" path="res://Sprites/Menu/Saves/LoadSavelIcon.png" id="5_s8lmm"]
+[ext_resource type="Texture2D" path="res://Sprites/Menu/Saves/TrashIcon.png" id="6_ntjwa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kx406"]
 font = ExtResource("1_l2qq1")
