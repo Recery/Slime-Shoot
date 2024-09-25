@@ -34,3 +34,4 @@ func _pressed() -> void:
 		equipped_array[slot-1] = ability_to_equip
 	
 	SaveSystem.save_file()
+	Events.equipped_changed.emit()

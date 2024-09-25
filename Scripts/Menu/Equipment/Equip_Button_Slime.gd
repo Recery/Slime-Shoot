@@ -24,7 +24,7 @@ func _process(_delta) -> void:
 func _pressed() -> void:
 	SaveSystem.get_curr_file().save_equipment.equipped_slime = slime_to_equip
 	SaveSystem.save_file()
-	
+	Events.equipped_changed.emit()
 	Events.draw_equipped_slime.emit()
 
 func draw_slime() -> void:

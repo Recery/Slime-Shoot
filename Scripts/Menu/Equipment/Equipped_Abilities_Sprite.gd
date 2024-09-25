@@ -2,9 +2,8 @@ extends Sprite2D
 
 func _ready() -> void:
 	draw_abilities()
-
-func _process(_delta) -> void:
-	draw_abilities()
+	Events.equipped_changed.connect(draw_abilities)
+	Events.save_file_changed.connect(draw_abilities)
 
 func draw_abilities() -> void:
 	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_abilities

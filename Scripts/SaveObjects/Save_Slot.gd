@@ -59,23 +59,25 @@ func _on_load_pressed() -> void:
 	
 	SaveSystem.save_file(slot)
 
-@onready var delete_confirmation := get_parent().get_parent().get_parent().get_node("Delete_Confirmation")
+var delete_confirmation := preload("res://Scenes/Menu/save_delete_confirmation.tscn")
+var curr_delete_confirmation : Control
 func _on_delete_pressed() -> void:
-	delete_confirmation.visible = true
-	delete_confirmation.get_node("Yes_Button").pressed.connect(delete, CONNECT_ONE_SHOT)
-	delete_confirmation.get_node("No_Button").pressed.connect(delete_regret, CONNECT_ONE_SHOT)
+	curr_delete_confirmation = delete_confirmation.instantiate()
+	Vars.main_scene.add_child(curr_delete_confirmation)
+	curr_delete_confirmation.position = Vector2(-144, -80)
+	
+	curr_delete_confirmation.get_node("Yes_Button").pressed.connect(delete, CONNECT_ONE_SHOT)
+	curr_delete_confirmation.get_node("No_Button").pressed.connect(delete_regret, CONNECT_ONE_SHOT)
 
 func delete() -> void:
-	if delete_confirmation.get_node("No_Button").pressed.is_connected(delete_regret):
-		delete_confirmation.get_node("No_Button").pressed.disconnect(delete_regret)
+	if curr_delete_confirmation == null: return
 	
 	SaveSystem.delete_save_file(slot)
 	disable_file()
 	
-	delete_confirmation.visible = false
+	curr_delete_confirmation.queue_free()
 
 func delete_regret() -> void:
-	if delete_confirmation.get_node("Yes_Button").pressed.is_connected(delete):
-		delete_confirmation.get_node("Yes_Button").pressed.disconnect(delete)
+	if curr_delete_confirmation == null: return
 	
-	delete_confirmation.visible = false
+	curr_delete_confirmation.queue_free()

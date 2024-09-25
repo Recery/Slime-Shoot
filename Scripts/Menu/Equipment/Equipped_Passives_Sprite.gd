@@ -2,9 +2,8 @@ extends Sprite2D
 
 func _ready() -> void:
 	draw_passives()
-
-func _process(_delta) -> void:
-	draw_passives()
+	Events.equipped_changed.connect(draw_passives)
+	Events.save_file_changed.connect(draw_passives)
 
 func draw_passives() -> void:
 	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_passives

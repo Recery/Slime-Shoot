@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0r1rui2hyf7r"]
+[gd_scene load_steps=13 format=3 uid="uid://d0r1rui2hyf7r"]
 
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="1_l2qq1"]
 [ext_resource type="Script" path="res://Scripts/SaveObjects/Save_Slot.gd" id="2_1yr2a"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://bfgsuwwcnqokj" path="res://Sprites/Menu/GreenAppleDisplay.png" id="4_humji"]
 [ext_resource type="Texture2D" uid="uid://5sn6kswudfga" path="res://Sprites/Menu/Saves/LoadSavelIcon.png" id="5_s8lmm"]
 [ext_resource type="Texture2D" uid="uid://bo82svdbiq3w3" path="res://Sprites/Menu/Saves/TrashIcon.png" id="6_ntjwa"]
-[ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="11_3fda2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kx406"]
 font = ExtResource("1_l2qq1")
@@ -166,7 +165,6 @@ alignment = 1
 custom_minimum_size = Vector2(78, 30)
 layout_mode = 2
 script = ExtResource("2_1yr2a")
-slot = null
 
 [node name="Frame" type="TextureRect" parent="Saves_Container/Column_1/Save_Slot1"]
 layout_mode = 2
@@ -682,88 +680,6 @@ offset_right = 28.0
 offset_bottom = 28.0
 texture = ExtResource("6_ntjwa")
 stretch_mode = 3
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(144, 80)
-zoom = Vector2(4, 4)
-
-[node name="Delete_Confirmation" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 288.0
-offset_bottom = 161.0
-
-[node name="Dark_Background" type="ColorRect" parent="Delete_Confirmation"]
-modulate = Color(1, 1, 1, 0.705882)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.003
-anchor_top = -0.012
-anchor_right = 0.003
-anchor_bottom = -0.012
-offset_left = -83.864
-offset_top = -58.056
-offset_right = 372.136
-offset_bottom = 225.944
-color = Color(0.196078, 0.196078, 0.196078, 1)
-
-[node name="Frame" type="TextureRect" parent="Delete_Confirmation"]
-layout_mode = 0
-offset_left = 91.0
-offset_top = 43.0
-offset_right = 196.0
-offset_bottom = 71.0
-texture = ExtResource("11_3fda2")
-stretch_mode = 3
-
-[node name="Advice" type="Label" parent="Delete_Confirmation/Frame"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 10.0
-offset_right = 91.0
-offset_bottom = 17.0
-text = "Delete file?"
-label_settings = ExtResource("3_lxoc5")
-
-[node name="Yes_Button" type="TextureButton" parent="Delete_Confirmation"]
-layout_mode = 0
-offset_left = 108.0
-offset_top = 76.0
-offset_right = 136.0
-offset_bottom = 104.0
-texture_normal = ExtResource("2_plfs0")
-texture_pressed = ExtResource("3_i0hu4")
-texture_hover = ExtResource("4_6i858")
-stretch_mode = 3
-
-[node name="Advice" type="Label" parent="Delete_Confirmation/Yes_Button"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 11.0
-offset_right = 25.0
-offset_bottom = 18.0
-text = "Yes"
-label_settings = ExtResource("3_lxoc5")
-
-[node name="No_Button" type="TextureButton" parent="Delete_Confirmation"]
-layout_mode = 0
-offset_left = 152.0
-offset_top = 76.0
-offset_right = 180.0
-offset_bottom = 104.0
-texture_normal = ExtResource("2_plfs0")
-texture_pressed = ExtResource("3_i0hu4")
-texture_hover = ExtResource("4_6i858")
-stretch_mode = 3
-
-[node name="Advice" type="Label" parent="Delete_Confirmation/No_Button"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 11.0
-offset_right = 21.0
-offset_bottom = 18.0
-text = "No"
-label_settings = ExtResource("3_lxoc5")
 
 [connection signal="pressed" from="Save_Slot/Buttons/Load" to="Save_Slot" method="_on_load_pressed"]
 [connection signal="pressed" from="Save_Slot/Buttons/Delete" to="Save_Slot" method="_on_delete_pressed"]

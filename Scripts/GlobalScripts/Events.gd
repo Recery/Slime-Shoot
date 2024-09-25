@@ -7,3 +7,4 @@ signal change_scene_instance(scene, show_loading_screen)
 signal draw_equipped_slime
 
 signal save_file_changed
+signal equipped_changed

@@ -2,9 +2,8 @@ extends Node2D
 
 func _ready() -> void:
 	draw_weapons()
-
-func _process(_delta) -> void:
-	draw_weapons()
+	Events.equipped_changed.connect(draw_weapons)
+	Events.save_file_changed.connect(draw_weapons)
 
 func draw_weapons() -> void:
 	var equipped_array := SaveSystem.get_curr_file().save_equipment.equipped_weapons
