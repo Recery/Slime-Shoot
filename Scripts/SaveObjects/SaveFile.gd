@@ -1,7 +1,7 @@
 extends Resource
 class_name SaveFile
 
-@export var points := 500
+@export var points := 500000
 
 @export var save_equipment := SaveEquipment.new()
 

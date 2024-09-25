@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://c8kqfa8iw5fit"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_n0eo0"]
+[ext_resource type="Texture2D" uid="uid://78y3hjtsq3m2" path="res://Sprites/Weapons/PressureWasherPistol.png" id="2_1e1ui"]
+
+[resource]
+script = ExtResource("1_n0eo0")
+cooldown = "0"
+energy_use = "1.5"
+texture = ExtResource("2_1e1ui")
+description = "The pressure washer is a powerful weapon that constantly shoots a strong water jet, piercing through every enemy and knocking back them... It has a high energy use per second."

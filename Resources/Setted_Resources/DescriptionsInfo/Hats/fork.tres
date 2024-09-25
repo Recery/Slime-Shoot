@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://djvixvrvkth85"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_3eckf"]
+[ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="2_tvb6l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4jmg"]
+atlas = ExtResource("2_tvb6l")
+region = Rect2(0, 0, 5, 8)
+
+[resource]
+script = ExtResource("1_3eckf")
+texture = SubResource("AtlasTexture_j4jmg")
+description = "A fork? You're... strange. Why would you wear a fork? Cosmetic item, it has no effect."

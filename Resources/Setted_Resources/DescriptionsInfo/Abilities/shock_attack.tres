@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://77plr4o0uqbc"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_arilp"]
+[ext_resource type="Texture2D" uid="uid://drahywj37nfq6" path="res://Sprites/Abilities/ShockAttackAbility.png" id="2_yi1ol"]
+
+[resource]
+script = ExtResource("1_arilp")
+cooldown = "18"
+energy_use = "90"
+texture = ExtResource("2_yi1ol")
+description = "The shock attack ability deals moderate damage to up to 8 enemies with an electricity chain."

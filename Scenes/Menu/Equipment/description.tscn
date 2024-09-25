@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://0qohai24vibx"]
+[gd_scene load_steps=21 format=3 uid="uid://dflcc4sd53cuw"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/description.gd" id="1_is8ot"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_jh1go"]
@@ -59,9 +59,9 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Description" type="Control"]
 layout_mode = 3
-anchor_right = 0.226
+anchor_right = 0.221
 anchor_bottom = 0.199
-offset_right = -0.35202
+offset_right = 0.40799
 offset_bottom = 0.0479889
 grow_horizontal = 2
 grow_vertical = 2
@@ -167,9 +167,9 @@ autowrap_mode = 3
 
 [node name="Back_Button" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 220.0
+offset_left = 227.0
 offset_top = 1.0
-offset_right = 248.0
+offset_right = 255.0
 offset_bottom = 29.0
 texture_normal = ExtResource("11_4aqtj")
 texture_pressed = ExtResource("12_fdriw")

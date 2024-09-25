@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://lobuo5eiccyd"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_h1wuo"]
+[ext_resource type="Texture2D" uid="uid://c2eeg5k2qo3oj" path="res://Sprites/Abilities/InfiniteEnergyAbility.png" id="2_g31vm"]
+
+[resource]
+script = ExtResource("1_h1wuo")
+cooldown = "55"
+energy_use = "140"
+texture = ExtResource("2_g31vm")
+description = "With the infinite energy ability you get infinite energy for a few seconds. Really useful for high energy use weapons."

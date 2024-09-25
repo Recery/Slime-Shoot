@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://cyotgdqc70eyc"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_00vq6"]
+[ext_resource type="Texture2D" uid="uid://e1nk2c32jgx1" path="res://Sprites/Hats/PartyHat.png" id="2_ck64c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1imv"]
+atlas = ExtResource("2_ck64c")
+region = Rect2(0, 0, 7, 9)
+
+[resource]
+script = ExtResource("1_00vq6")
+texture = SubResource("AtlasTexture_v1imv")
+description = "A party hat! You must be funny and the soul of the party. Cosmetic item, it has no effect."

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://buh8v23n6sakl"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_1fyh5"]
+[ext_resource type="Texture2D" uid="uid://vs2r4ttgsyrg" path="res://Sprites/Hats/ToyCrown.png" id="2_e7i7s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3p5t"]
+atlas = ExtResource("2_e7i7s")
+region = Rect2(0, 0, 11, 7)
+
+[resource]
+script = ExtResource("1_1fyh5")
+texture = SubResource("AtlasTexture_t3p5t")
+description = "A toy crown! Maybe you can replace the king slime with this one... Cosmetic item, it has no effect."

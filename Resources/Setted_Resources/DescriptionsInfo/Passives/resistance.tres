@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://bifblietin6b0"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_wqflm"]
+[ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="2_mfws6"]
+
+[resource]
+script = ExtResource("1_wqflm")
+texture = ExtResource("2_mfws6")
+description = "With the resistance passive you will receive less damage from enemy attacks."

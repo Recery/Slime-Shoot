@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=4 format=3 uid="uid://yl82i4tvahcr"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_ljj0r"]
+[ext_resource type="Texture2D" uid="uid://ciaqli08obi8e" path="res://Sprites/Weapons/GreenAppleStick.png" id="2_rdrda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gbmq"]
+atlas = ExtResource("2_rdrda")
+region = Rect2(0, 0, 17, 16)
+
+[resource]
+script = ExtResource("1_ljj0r")
+cooldown = "9"
+energy_use = "75"
+texture = SubResource("AtlasTexture_5gbmq")
+description = "While holding the Green Apple On A Stick, your slime will go insane by seeing a delicious green apple, increasing your movement speed. When you use it, your slime eats the green apple and gets a small damage boost for a limited time."

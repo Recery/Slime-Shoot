@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://cgc6887tsey7c"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_ilfc5"]
+[ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="2_b2hgw"]
+
+[resource]
+script = ExtResource("1_ilfc5")
+texture = ExtResource("2_b2hgw")
+description = "With the Electric Vine passive, from time to time some electric vines are going to trap a nearby enemy and damage it to death. Also, enemies near to electric vines will receive some damage."

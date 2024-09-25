@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://cpbcoepmx35ky"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_iui7d"]
+[ext_resource type="Texture2D" uid="uid://cy615oucucj6k" path="res://Sprites/Passives/MeteorPassive.png" id="2_ba42p"]
+
+[resource]
+script = ExtResource("1_iui7d")
+texture = ExtResource("2_ba42p")
+description = "With the meteor passive, every 8 seconds a powerful meteor will fall at your mouse position, dealing area damage to nearby enemies."

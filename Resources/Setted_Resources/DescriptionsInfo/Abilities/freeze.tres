@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://bfrvjvytgupsv"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_mpku7"]
+[ext_resource type="Texture2D" uid="uid://dwqe40tbi3166" path="res://Sprites/Abilities/FreezeAbility.png" id="2_8cvyj"]
+
+[resource]
+script = ExtResource("1_mpku7")
+cooldown = "12"
+energy_use = "55"
+texture = ExtResource("2_8cvyj")
+description = "The freeze ability will freeze your nearby enemies and they will be unable to move for 4 seconds."

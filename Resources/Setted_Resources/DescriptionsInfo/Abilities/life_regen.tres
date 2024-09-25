@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://cc6l17mtodjqa"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_2vbrd"]
+[ext_resource type="Texture2D" uid="uid://c74f6wajvedd8" path="res://Sprites/Abilities/LifeRegenAbility.png" id="2_avmty"]
+
+[resource]
+script = ExtResource("1_2vbrd")
+cooldown = "20"
+energy_use = "75"
+texture = ExtResource("2_avmty")
+description = "The Life Regen ability heals you in a timespan when you activate it. "

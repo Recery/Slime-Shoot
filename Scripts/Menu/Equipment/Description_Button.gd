@@ -31,6 +31,6 @@ func _on_pressed():
 	
 	Vars.main_scene.add_child(desc_instance)
 	desc_instance.set_info(info)
-	desc_instance.global_position = Vector2(-116,-72)
+	desc_instance.global_position = Vector2(-116,-76)
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 

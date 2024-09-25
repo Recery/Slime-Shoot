@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://du5nj27duy8cp"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_ev7qb"]
+[ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="2_8k4f5"]
+
+[resource]
+script = ExtResource("1_ev7qb")
+texture = ExtResource("2_8k4f5")
+description = "With the coffee trail passive, you constantly create coffee puddles in your path. Enemies that touch it will massively increase their speed, but die after a few seconds."

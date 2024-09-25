@@ -1,12 +1,12 @@
-[gd_scene load_steps=83 format=3 uid="uid://chwjvfqwhjwen"]
+[gd_scene load_steps=66 format=3 uid="uid://chwjvfqwhjwen"]
 
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="1_14xav"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_l1on5"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_fwbb0"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_sp7jc"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_xjfgt"]
+[ext_resource type="Resource" uid="uid://gm57kj5ibxqb" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/no_hat.tres" id="6_6yrgq"]
 [ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="6_auqfm"]
-[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="6_iuoky"]
 [ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="6_qdbm0"]
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="7_c84an"]
 [ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="8_oewtk"]
@@ -15,192 +15,59 @@
 [ext_resource type="PackedScene" uid="uid://gtnfverwcx6s" path="res://Scenes/Hats/witch_hat.tscn" id="11_d7wnc"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="11_dyh7t"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="13_pxlf7"]
+[ext_resource type="Resource" uid="uid://djvn6s0ufwhfu" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/witch_hat.tres" id="13_xw2sn"]
 [ext_resource type="Texture2D" uid="uid://bfug0uet136k6" path="res://Sprites/Hats/PinkBow.png" id="15_3t8f0"]
+[ext_resource type="Resource" uid="uid://d0iv5qv6ge64i" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/pink_bow.tres" id="16_mc0n3"]
 [ext_resource type="PackedScene" uid="uid://db0fd7hpdki3j" path="res://Scenes/Hats/pink_bow.tscn" id="16_pvmyc"]
 [ext_resource type="Texture2D" uid="uid://brp7538ftbvf5" path="res://Sprites/Hats/DevilishHorns.png" id="18_3tfvu"]
+[ext_resource type="Resource" uid="uid://d32x7m5o3d0f5" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/devilish_horns.tres" id="19_trglf"]
 [ext_resource type="PackedScene" uid="uid://bqp74ycuolhku" path="res://Scenes/Hats/devilish_horns.tscn" id="19_v1l5g"]
 [ext_resource type="Texture2D" uid="uid://vs2r4ttgsyrg" path="res://Sprites/Hats/ToyCrown.png" id="20_fy2i2"]
 [ext_resource type="PackedScene" uid="uid://cuf88geefnsg8" path="res://Scenes/Hats/toy_crown.tscn" id="21_5vpsv"]
+[ext_resource type="Resource" uid="uid://buh8v23n6sakl" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/toy_crown.tres" id="22_uqnx8"]
 [ext_resource type="Texture2D" uid="uid://c5ar6ajgj25pa" path="res://Sprites/Hats/Sunglasses.png" id="22_xglfr"]
 [ext_resource type="PackedScene" uid="uid://dl1ke2dvw5eg2" path="res://Scenes/Hats/sunglasses.tscn" id="23_vkb1b"]
 [ext_resource type="Texture2D" uid="uid://e1nk2c32jgx1" path="res://Sprites/Hats/PartyHat.png" id="24_652rw"]
 [ext_resource type="PackedScene" uid="uid://c3m4ge4m6dysv" path="res://Scenes/Hats/party_hat.tscn" id="25_3o2om"]
+[ext_resource type="Resource" uid="uid://v32mtjdmtg78" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/sunglasses.tres" id="25_e2h5g"]
 [ext_resource type="Texture2D" uid="uid://dgjs6acdj11ot" path="res://Sprites/Hats/SlimyKnight.png" id="26_7ufbh"]
 [ext_resource type="PackedScene" uid="uid://0ecwwwem6vt4" path="res://Scenes/Hats/slimy_knight.tscn" id="27_n2c2l"]
+[ext_resource type="Resource" uid="uid://cyotgdqc70eyc" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/party_hat.tres" id="28_1t4vf"]
 [ext_resource type="Texture2D" uid="uid://bqlr3e8mn0q00" path="res://Sprites/Hats/Fork.png" id="28_w3is5"]
 [ext_resource type="PackedScene" uid="uid://jmqlowj1gi0e" path="res://Scenes/Hats/fork.tscn" id="29_q6ufc"]
 [ext_resource type="Texture2D" uid="uid://dioycm1auj27w" path="res://Sprites/Hats/PipSqueakEars.png" id="30_roeh3"]
 [ext_resource type="PackedScene" uid="uid://dkcixf7m5s757" path="res://Scenes/Hats/PipSqueak_Ears.tscn" id="31_sd31b"]
+[ext_resource type="Resource" uid="uid://mra4ju6ykag6" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/slimy_knight.tres" id="31_xop70"]
 [ext_resource type="Texture2D" uid="uid://cgwvqooywu3pc" path="res://Sprites/Hats/GodotPlushie.png" id="32_hpefd"]
 [ext_resource type="PackedScene" uid="uid://d23giorgosdt4" path="res://Scenes/Hats/godot_pushie.tscn" id="33_ch38e"]
 [ext_resource type="Texture2D" uid="uid://dnx43yklbjlh3" path="res://Sprites/Hats/BabySlime.png" id="34_cyb8a"]
+[ext_resource type="Resource" uid="uid://djvixvrvkth85" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/fork.tres" id="34_p1c2d"]
 [ext_resource type="PackedScene" uid="uid://csiujam0l4v7q" path="res://Scenes/Hats/baby_slime.tscn" id="35_e563a"]
 [ext_resource type="Texture2D" uid="uid://8gjy1kt4ahi" path="res://Sprites/Hats/MagicHealerHeadress.png" id="36_1nxlc"]
+[ext_resource type="Resource" uid="uid://b7pvnxjj8rt1x" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/pipsqueak_ears.tres" id="37_2de71"]
 [ext_resource type="PackedScene" uid="uid://bhnxht1njk536" path="res://Scenes/Hats/magic_healer_headdress.tscn" id="37_7afq6"]
 [ext_resource type="Texture2D" uid="uid://byuk7y5f2gtas" path="res://Sprites/Hats/CatEars.png" id="38_bsfab"]
 [ext_resource type="PackedScene" uid="uid://cwvoxibebfyh" path="res://Scenes/Hats/cat_ears.tscn" id="39_4dl6x"]
+[ext_resource type="Resource" uid="uid://c6ooh44378ojq" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/godot_plushie.tres" id="40_7xfrf"]
 [ext_resource type="Texture2D" uid="uid://b45w3cgnelq77" path="res://Sprites/Hats/ElfEars.png" id="40_sxhim"]
 [ext_resource type="PackedScene" uid="uid://6iwpe1dk5grn" path="res://Scenes/Hats/elf_ears.tscn" id="41_uclwu"]
 [ext_resource type="Texture2D" uid="uid://csk1e6o8akylw" path="res://Sprites/Hats/MushroomCatEars.png" id="42_ccrqh"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="42_qpt77"]
+[ext_resource type="Resource" uid="uid://dhxxgycn16rsj" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/baby_slime.tres" id="43_5p7id"]
 [ext_resource type="PackedScene" uid="uid://rc7r8jw4e2a2" path="res://Scenes/Hats/mushroom_cat_ears.tscn" id="43_kmkp4"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="43_uvv82"]
 [ext_resource type="Texture2D" uid="uid://hmgdmpjkjv7j" path="res://Sprites/Hats/AndeanCondorHeadband.png" id="44_e25ve"]
 [ext_resource type="PackedScene" uid="uid://dt8uh1imijxp4" path="res://Scenes/Hats/andean_condor_headband.tscn" id="45_l0cqp"]
-
-[sub_resource type="Resource" id="Resource_8w2q1"]
-script = ExtResource("6_iuoky")
-texture = ExtResource("6_auqfm")
-description = "No hat? You're boring... Or you don't have enough points to buy one. Keep playing!"
+[ext_resource type="Resource" uid="uid://bj64hei2tbp1u" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/magic_healer_headress.tres" id="46_f54lw"]
+[ext_resource type="Resource" uid="uid://dyrgrqju25xgf" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/cat_ears.tres" id="49_r8x82"]
+[ext_resource type="Resource" uid="uid://cg7vihm66grpy" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/elf_ears.tres" id="52_xk74k"]
+[ext_resource type="Resource" uid="uid://4s0sprcm84xw" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/mushroom_cat_ears.tres" id="55_1bx12"]
+[ext_resource type="Resource" uid="uid://dn7fuijvhn137" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/andean_condor_headband.tres" id="58_ekk2f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ymge6"]
 font = ExtResource("11_dyh7t")
 font_color = Color(0.494118, 0.00392157, 0, 1)
 outline_size = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mqn6i"]
-atlas = ExtResource("6_qdbm0")
-region = Rect2(0, 0, 15, 13)
-
-[sub_resource type="Resource" id="Resource_86ayt"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_mqn6i")
-description = "A witch hat! I see, so you like being magic and misterious. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8hw2n"]
-atlas = ExtResource("15_3t8f0")
-region = Rect2(1, 0, 7, 7)
-
-[sub_resource type="Resource" id="Resource_kbfd2"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_8hw2n")
-description = "A pink bow! So you like being cute and adorable. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mql35"]
-atlas = ExtResource("18_3tfvu")
-region = Rect2(0, 0, 15, 7)
-
-[sub_resource type="Resource" id="Resource_e2okk"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_mql35")
-description = "Devilish horns? That's kind of evil and cool... And another thing that I don't want to mention. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t3p5t"]
-atlas = ExtResource("20_fy2i2")
-region = Rect2(0, 0, 11, 7)
-
-[sub_resource type="Resource" id="Resource_sdq5c"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_t3p5t")
-description = "A toy crown! Maybe you can replace the king slime with this one... Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_us7ax"]
-atlas = ExtResource("22_xglfr")
-region = Rect2(0, 0, 9, 3)
-
-[sub_resource type="Resource" id="Resource_763yv"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_us7ax")
-description = "Sunglasses? So you like summer, and you like feeling cool. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v1imv"]
-atlas = ExtResource("24_652rw")
-region = Rect2(0, 0, 7, 9)
-
-[sub_resource type="Resource" id="Resource_qflgu"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_v1imv")
-description = "A party hat! You must be funny and the soul of the party. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hp80e"]
-atlas = ExtResource("26_7ufbh")
-region = Rect2(1, 0, 15, 9)
-
-[sub_resource type="Resource" id="Resource_ts8tm"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_hp80e")
-description = "Slimy Knight! You should be a fan of that funny game of that bug that says \"Garama!\", \"Shaw!\". I'm, too. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4jmg"]
-atlas = ExtResource("28_w3is5")
-region = Rect2(0, 0, 5, 8)
-
-[sub_resource type="Resource" id="Resource_jq30j"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_j4jmg")
-description = "A fork? You're... strange. Why would you wear a fork? Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b7o6j"]
-atlas = ExtResource("30_roeh3")
-region = Rect2(0, 0, 15, 8)
-
-[sub_resource type="Resource" id="Resource_5nguc"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_b7o6j")
-description = "Pipsqueak ears! You must like watching Fylphiette streams... Or maybe you just think that this ears are cool! Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsu7e"]
-atlas = ExtResource("32_hpefd")
-region = Rect2(0, 0, 25, 16)
-
-[sub_resource type="Resource" id="Resource_w86m2"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_gsu7e")
-description = "Godot Plushie! You like making games in godot, don't you? Or you like it's cuteness. In my case it's both of them. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k6p3f"]
-atlas = ExtResource("34_cyb8a")
-region = Rect2(1, 0, 8, 6)
-
-[sub_resource type="Resource" id="Resource_hsmtm"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_k6p3f")
-description = "A Baby Slime! You are a good parent... Or not that good, you're going to war with your kid! Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qgbjr"]
-atlas = ExtResource("36_1nxlc")
-region = Rect2(0, 0, 10, 7)
-
-[sub_resource type="Resource" id="Resource_n7jrg"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_qgbjr")
-description = "The Magic Healer Headdress! You must love my Terraria mod... Ugh, fine, you don't even know about it. This hat is a helmet of my Terraria mod \"TJTTMN\"! Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lub5j"]
-atlas = ExtResource("38_bsfab")
-region = Rect2(1, 0, 15, 6)
-
-[sub_resource type="Resource" id="Resource_pb4rn"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_lub5j")
-description = "Cat ears! You are Iromi. Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qmvdq"]
-atlas = ExtResource("40_sxhim")
-region = Rect2(1, 3, 19, 4)
-
-[sub_resource type="Resource" id="Resource_ar20k"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_qmvdq")
-description = "Elf ears! You also like being magic and mysterious, but in another way! Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f1rs0"]
-atlas = ExtResource("42_ccrqh")
-region = Rect2(1, 0, 19, 6)
-
-[sub_resource type="Resource" id="Resource_bsjjy"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_f1rs0")
-description = "Mushroom Cat Ears! You are a true Mycelite! Or maybe you are Ruby Muscaria herself? Cosmetic item, it has no effect."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_oltah"]
-atlas = ExtResource("44_e25ve")
-region = Rect2(1, 0, 13, 9)
-
-[sub_resource type="Resource" id="Resource_ag2xa"]
-script = ExtResource("6_iuoky")
-texture = SubResource("AtlasTexture_oltah")
-description = "Andean Condor Headband! Do you like andean condors? Or do you like watching Mashichu Kunrin streams? Cosmetic item, it has no effect."
 
 [sub_resource type="LabelSettings" id="LabelSettings_o162y"]
 font = ExtResource("11_dyh7t")
@@ -246,7 +113,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_8w2q1")
+info = ExtResource("6_6yrgq")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/No_Hat"]
 position = Vector2(14, 14)
@@ -287,7 +154,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_86ayt")
+info = ExtResource("13_xw2sn")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Witch_Hat"]
 position = Vector2(14, 14)
@@ -330,7 +197,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_kbfd2")
+info = ExtResource("16_mc0n3")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Pink_Bow"]
 position = Vector2(14, 14)
@@ -373,7 +240,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_e2okk")
+info = ExtResource("19_trglf")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Devilish_Horns"]
 position = Vector2(14, 14)
@@ -416,7 +283,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_sdq5c")
+info = ExtResource("22_uqnx8")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Toy_Crown"]
 position = Vector2(14, 14)
@@ -459,7 +326,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_763yv")
+info = ExtResource("25_e2h5g")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Sunglasses"]
 position = Vector2(14, 14)
@@ -502,7 +369,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_qflgu")
+info = ExtResource("28_1t4vf")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row1/Party_Hat"]
 position = Vector2(14, 14)
@@ -549,7 +416,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_ts8tm")
+info = ExtResource("31_xop70")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Slimy_Knight"]
 position = Vector2(14, 14)
@@ -592,7 +459,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_jq30j")
+info = ExtResource("34_p1c2d")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Fork"]
 position = Vector2(14, 14)
@@ -635,7 +502,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_5nguc")
+info = ExtResource("37_2de71")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/PipSqueak_Ears"]
 position = Vector2(14, 14)
@@ -678,7 +545,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_w86m2")
+info = ExtResource("40_7xfrf")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Godot_Plushie"]
 position = Vector2(14, 14)
@@ -721,7 +588,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_hsmtm")
+info = ExtResource("43_5p7id")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Baby_Slime"]
 position = Vector2(14, 14)
@@ -764,7 +631,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_n7jrg")
+info = ExtResource("46_f54lw")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Magic_Healer_Headdress"]
 position = Vector2(14, 14)
@@ -807,7 +674,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_pb4rn")
+info = ExtResource("49_r8x82")
 
 [node name="Hat" type="Sprite2D" parent="Page_1/Row2/Cat_Ears"]
 position = Vector2(14, 14)
@@ -863,7 +730,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_ar20k")
+info = ExtResource("52_xk74k")
 
 [node name="Hat" type="Sprite2D" parent="Page_2/Row1/Elf_Ears"]
 position = Vector2(14, 14)
@@ -906,7 +773,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_bsjjy")
+info = ExtResource("55_1bx12")
 
 [node name="Hat" type="Sprite2D" parent="Page_2/Row1/Mushroom_Cat_Ears"]
 position = Vector2(14, 14)
@@ -949,7 +816,7 @@ texture_hover = ExtResource("3_fwbb0")
 texture_disabled = ExtResource("4_sp7jc")
 script = ExtResource("5_xjfgt")
 type_of_object = 4
-info = SubResource("Resource_ag2xa")
+info = ExtResource("58_ekk2f")
 
 [node name="Hat" type="Sprite2D" parent="Page_2/Row1/Andean_Condor_Headband"]
 position = Vector2(14, 14)

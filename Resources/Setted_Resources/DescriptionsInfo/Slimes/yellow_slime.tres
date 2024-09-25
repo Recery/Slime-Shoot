@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://dlvqgng5lcri7"]
+
+[ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="1_jeib0"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_ejk7y"]
+[ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/YellowSlime.png" id="3_voi0n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04ji8"]
+atlas = ExtResource("3_voi0n")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_ejk7y")
+life = "120"
+max_energy = "170"
+speed = "100"
+resistance = "2"
+perk_texture = ExtResource("1_jeib0")
+perk_cooldown = "0"
+perk_energy_use = "1.2"
+texture = SubResource("AtlasTexture_04ji8")
+description = "The yellow slime has the shock defense perk. While holding your perk key, you will damage all the enemies that are touching you."

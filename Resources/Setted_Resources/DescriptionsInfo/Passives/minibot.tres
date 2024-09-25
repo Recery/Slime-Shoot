@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://fxt7enhtjkk"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_60s0g"]
+[ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="2_bg408"]
+
+[resource]
+script = ExtResource("1_60s0g")
+texture = ExtResource("2_bg408")
+description = "The mini bot passive summons 2 mini bots that will help you fighting enemies."

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://bxpuwkom51mug"]
+
+[ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="1_vs4vd"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_hswxp"]
+[ext_resource type="Texture2D" uid="uid://ci0eacecnl8qc" path="res://Sprites/Player/CreamySlime/CreamySlime.png" id="3_fbnbt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4m2n"]
+atlas = ExtResource("3_fbnbt")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_hswxp")
+life = "70"
+max_energy = "230"
+speed = "115"
+resistance = "0"
+perk_texture = ExtResource("1_vs4vd")
+perk_cooldown = "2"
+perk_energy_use = "60"
+texture = SubResource("AtlasTexture_g4m2n")
+description = "The creamy slime has the cake trap perk, which summons a cake that attracts some enemies and explode in a time after detecting an enemy. The cake is a lie. This slime also recover energy sightly faster."

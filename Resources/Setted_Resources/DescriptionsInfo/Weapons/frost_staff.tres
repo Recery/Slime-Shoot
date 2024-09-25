@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=4 format=3 uid="uid://dpxf2rhu40e3n"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_j58p3"]
+[ext_resource type="Texture2D" uid="uid://vtjl7ccg7hkj" path="res://Sprites/Weapons/FrostStaff.png" id="2_0f51h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd37q"]
+atlas = ExtResource("2_0f51h")
+region = Rect2(0, 0, 12, 12)
+
+[resource]
+script = ExtResource("1_j58p3")
+cooldown = "1.2"
+energy_use = "30"
+texture = SubResource("AtlasTexture_gd37q")
+description = "The frost staff pierces up to 3 enemies, dealing low damage to each one. It also freezes them, reducing their move speed. Moderate energy use."

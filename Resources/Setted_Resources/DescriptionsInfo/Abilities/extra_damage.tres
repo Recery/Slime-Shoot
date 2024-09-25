@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://dfs312ogjaj42"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_xslb0"]
+[ext_resource type="Texture2D" uid="uid://bawd6rldpsrh3" path="res://Sprites/Abilities/ExtraDamageAbility.png" id="2_jkndm"]
+
+[resource]
+script = ExtResource("1_xslb0")
+cooldown = "35"
+energy_use = "85"
+texture = ExtResource("2_jkndm")
+description = "The Extra Damage ability will give you a little extra damage buff to all your attacks, including summons."

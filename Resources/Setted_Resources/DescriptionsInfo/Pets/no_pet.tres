@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://b5vafrret3oby"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_mchl3"]
+[ext_resource type="Texture2D" uid="uid://2g6wukwmyb2q" path="res://Sprites/Menu/NoHat.png" id="2_pcm53"]
+
+[resource]
+script = ExtResource("1_mchl3")
+texture = ExtResource("2_pcm53")
+description = "No pet? I get it, they're expensive, and people say \"Don't buy, adopt\"... But this is Slime Shoot and here we don't adopt pets, we buy them! Come on, save points and buy one!"

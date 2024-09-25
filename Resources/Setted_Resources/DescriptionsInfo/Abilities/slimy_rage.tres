@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://brahqphon5eoc"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_b6dog"]
+[ext_resource type="Texture2D" uid="uid://bhs741e3ehtqa" path="res://Sprites/Abilities/SlimyRageAbility.png" id="2_gp10j"]
+
+[resource]
+script = ExtResource("1_b6dog")
+cooldown = "40"
+energy_use = "85"
+texture = ExtResource("2_gp10j")
+description = "The Slimy Rage ability will reduce, for a limited time, all your weapons cooldown and energy use by half."

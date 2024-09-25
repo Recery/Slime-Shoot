@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://dsgadm5pj4nip"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_p51pc"]
+[ext_resource type="Texture2D" uid="uid://dcgxa3j3npnnm" path="res://Sprites/Abilities/WeedtiteTurretAbility.png" id="2_quymq"]
+
+[resource]
+script = ExtResource("1_p51pc")
+cooldown = "48"
+energy_use = "110"
+texture = ExtResource("2_quymq")
+description = "The weedtite turret ability summons a turret that will fight for you. Every time it shoots it will add little extra life time to itself."

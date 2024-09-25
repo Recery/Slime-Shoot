@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://dqqbmjxyql8ck"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_n2t24"]
+[ext_resource type="Texture2D" uid="uid://dg0vbhcjt3pdw" path="res://Sprites/Pets/Pipsqueak/PipsqueakDisplay.png" id="2_p4il8"]
+
+[resource]
+script = ExtResource("1_n2t24")
+texture = ExtResource("2_p4il8")
+description = "Pipsqueak, the apple mouse! Slimes can only eat green apples, so Pipsqueak is safe from them and ready to enjoy Fylphy streams with you! Cosmetic item, it has no effect."

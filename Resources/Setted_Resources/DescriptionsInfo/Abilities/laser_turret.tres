@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://d6i3kxmbq5jk"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_yg278"]
+[ext_resource type="Texture2D" uid="uid://dm3qoo4ay3xtb" path="res://Sprites/Abilities/LaserTurretAbility.png" id="2_sy1ij"]
+
+[resource]
+script = ExtResource("1_yg278")
+cooldown = "55"
+energy_use = "140"
+texture = ExtResource("2_sy1ij")
+description = "The laser turret ability summons a powerful laser turret that will attack your enemies, piercing them."

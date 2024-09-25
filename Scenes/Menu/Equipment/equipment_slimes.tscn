@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://dl5qufxb6ccbr"]
+[gd_scene load_steps=47 format=3 uid="uid://dl5qufxb6ccbr"]
 
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="1_2p5bb"]
 [ext_resource type="Texture2D" uid="uid://wndohrfqfgps" path="res://Sprites/Menu/BigSquareButton.png" id="1_effe7"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://btbyybmf11qhp" path="res://Sprites/Menu/BigSquareButtonHover.png" id="3_vf304"]
 [ext_resource type="Texture2D" uid="uid://c6quj2tp30e11" path="res://Sprites/Menu/BigSquareButtonLocked.png" id="4_q4utm"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_c7iad"]
-[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="7_eq28f"]
+[ext_resource type="Resource" uid="uid://ww2uutnntteg" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/green_slime.tres" id="6_dsme3"]
 [ext_resource type="Texture2D" uid="uid://dgfd4sxovmv7x" path="res://Sprites/Menu/ButtonPress.png" id="7_r3oru"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equip_Button_Slime.gd" id="8_4f1vp"]
 [ext_resource type="Texture2D" uid="uid://dag02bqhw2gkp" path="res://Sprites/Menu/ButtonHover.png" id="8_6yfho"]
@@ -15,19 +15,24 @@
 [ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="12_hfvdf"]
 [ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="13_hjphn"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="13_rec6h"]
+[ext_resource type="Resource" uid="uid://bxpuwkom51mug" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/creamy_slime.tres" id="15_o33qb"]
 [ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="17_44xo5"]
 [ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="17_t21qu"]
+[ext_resource type="Resource" uid="uid://dlvqgng5lcri7" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/yellow_slime.tres" id="19_tik1n"]
 [ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="21_xwjku"]
 [ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/YellowSlime.png" id="22_21ydp"]
+[ext_resource type="Resource" uid="uid://dkf6q0x882113" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/cosmic_slime.tres" id="23_n21uw"]
 [ext_resource type="PackedScene" uid="uid://wdae0dm20e6b" path="res://Scenes/Player/Creamy_Slime/creamy_slime.tscn" id="24_shm6n"]
 [ext_resource type="Texture2D" uid="uid://ci0eacecnl8qc" path="res://Sprites/Player/CreamySlime/CreamySlime.png" id="25_261bj"]
 [ext_resource type="PackedScene" uid="uid://orhaho5ua2ql" path="res://Scenes/Player/Cosmic_Slime/cosmic_slime.tscn" id="27_4fdp1"]
+[ext_resource type="Resource" uid="uid://bcta52d775vpu" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/white_slime.tres" id="27_eb5m0"]
 [ext_resource type="Texture2D" uid="uid://fjihwpk2byji" path="res://Sprites/Player/CreamySlime/CakeTrapPerk.png" id="27_hxen7"]
 [ext_resource type="Texture2D" uid="uid://cdl782lgjoomy" path="res://Sprites/Player/CosmicSlime/CosmicSlime.png" id="28_i7h66"]
 [ext_resource type="Texture2D" uid="uid://cblwq2tfc0r5g" path="res://Sprites/Player/CosmicSlime/StellarMarkPerk.png" id="29_7dio5"]
 [ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="30_l04nd"]
 [ext_resource type="Texture2D" uid="uid://bddffopcfdi2j" path="res://Sprites/Player/WhiteSlime/WhiteSlime.png" id="31_6bily"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="31_7tju5"]
+[ext_resource type="Resource" uid="uid://cpl58uheuuilp" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/goldfish_slime.tres" id="31_xndjy"]
 [ext_resource type="Texture2D" uid="uid://knmiocqsvdad" path="res://Sprites/Player/WhiteSlime/GlacibotPerk.png" id="32_jcjqk"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="32_sjew7"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="33_05f0y"]
@@ -35,126 +40,15 @@
 [ext_resource type="Texture2D" uid="uid://c5kuqg6fiqrvu" path="res://Sprites/Player/GoldfishSlime/GoldfishSlime.png" id="34_d5vnq"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Page_Button.gd" id="34_ea7m1"]
 [ext_resource type="Texture2D" uid="uid://dg0nrays7p61" path="res://Sprites/Player/GoldfishSlime/GoldfishBlessPerk.png" id="35_gymdr"]
+[ext_resource type="Resource" uid="uid://nnr5icqnvvln" path="res://Resources/Setted_Resources/DescriptionsInfo/Slimes/poo_slime.tres" id="35_x7dyc"]
 [ext_resource type="PackedScene" uid="uid://djhhdxr628rcc" path="res://Scenes/Player/Poo_Slime/poo_slime.tscn" id="36_b3bwh"]
 [ext_resource type="Texture2D" uid="uid://dhaj8lsbb5i7" path="res://Sprites/Player/PooSlime/PooSlime.png" id="37_m6bvc"]
 [ext_resource type="Texture2D" uid="uid://4ue6mog615ia" path="res://Sprites/Player/PooSlime/FartAttackPerk.png" id="38_687om"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eq72e"]
-atlas = ExtResource("12_hfvdf")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_f6bpx"]
-script = ExtResource("7_eq28f")
-life = "100"
-max_energy = "200"
-speed = "110"
-resistance = "0"
-perk_texture = ExtResource("13_hjphn")
-perk_cooldown = "0"
-perk_energy_use = "1"
-texture = SubResource("AtlasTexture_eq72e")
-description = "The green slime has the sprint perk, that boosts your movement speed while holding your perk key."
 
 [sub_resource type="LabelSettings" id="LabelSettings_t6myi"]
 font = ExtResource("11_g2ecg")
 font_color = Color(0.494118, 0.00392157, 0, 1)
 outline_size = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g4m2n"]
-atlas = ExtResource("25_261bj")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_rtpvt"]
-script = ExtResource("7_eq28f")
-life = "70"
-max_energy = "230"
-speed = "115"
-resistance = "0"
-perk_texture = ExtResource("27_hxen7")
-perk_cooldown = "2"
-perk_energy_use = "60"
-texture = SubResource("AtlasTexture_g4m2n")
-description = "The creamy slime has the cake trap perk, which summons a cake that attracts some enemies and explode in a time after detecting an enemy. The cake is a lie. This slime also recover energy sightly faster."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_04ji8"]
-atlas = ExtResource("22_21ydp")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_ti174"]
-script = ExtResource("7_eq28f")
-life = "120"
-max_energy = "170"
-speed = "100"
-resistance = "2"
-perk_texture = ExtResource("17_t21qu")
-perk_cooldown = "0"
-perk_energy_use = "1.2"
-texture = SubResource("AtlasTexture_04ji8")
-description = "The yellow slime has the shock defense perk. While holding your perk key, you will damage all the enemies that are touching you."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bfo5t"]
-atlas = ExtResource("28_i7h66")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_4swl2"]
-script = ExtResource("7_eq28f")
-life = "60"
-max_energy = "320"
-speed = "115"
-resistance = "0"
-perk_texture = ExtResource("29_7dio5")
-perk_cooldown = "0"
-perk_energy_use = "1.3"
-texture = SubResource("AtlasTexture_bfo5t")
-description = "The cosmic slime has the stellar mark perk. Hold your perk key to mark a nearby enemy with cosmic power, when you kill that marked enemy you'll recover 50% of your energy. Also, when you mark an enemy, it's damage and life will be reduced by half. Recovers energy faster."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ujye2"]
-atlas = ExtResource("31_6bily")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_rb36a"]
-script = ExtResource("7_eq28f")
-life = "70"
-max_energy = "260"
-speed = "105"
-resistance = "0"
-perk_texture = ExtResource("32_jcjqk")
-perk_cooldown = "0"
-perk_energy_use = "1.2"
-texture = SubResource("AtlasTexture_ujye2")
-description = "The White Slime has the Glacibot perk. With this perk, holding your perk key will summon a temporal Glacibot that will fight for you. Recovers energy sightly faster."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v65de"]
-atlas = ExtResource("34_d5vnq")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_qeypo"]
-script = ExtResource("7_eq28f")
-life = "160"
-max_energy = "140"
-speed = "90"
-resistance = "5"
-perk_texture = ExtResource("35_gymdr")
-perk_cooldown = "0"
-perk_energy_use = "1"
-texture = SubResource("AtlasTexture_v65de")
-description = "The Goldfish Slime has the Goldfish Bless Perk. While holding your perk key, you will recover life and your resistance will be upgraded, but your speed will be reduced. Recovers energy sightly slower."
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f35wi"]
-atlas = ExtResource("37_m6bvc")
-region = Rect2(1, 0, 15, 10)
-
-[sub_resource type="Resource" id="Resource_a1p8q"]
-script = ExtResource("7_eq28f")
-life = "110"
-max_energy = "210"
-speed = "110"
-resistance = "1"
-perk_texture = ExtResource("38_687om")
-perk_cooldown = "0"
-perk_energy_use = "1"
-texture = SubResource("AtlasTexture_f35wi")
-description = "This is the... the Poo Slime. It has the Fart Attack Perk. Hold your perk key and your Slime will fart, poisoning nearby enemies."
 
 [sub_resource type="LabelSettings" id="LabelSettings_kaxso"]
 font = ExtResource("11_g2ecg")
@@ -190,7 +84,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_f6bpx")
+info = ExtResource("6_dsme3")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Green_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -237,7 +131,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_rtpvt")
+info = ExtResource("15_o33qb")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Creamy_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -284,7 +178,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_ti174")
+info = ExtResource("19_tik1n")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Yellow_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -332,7 +226,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_4swl2")
+info = ExtResource("23_n21uw")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_1/Cosmic_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -389,7 +283,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_rb36a")
+info = ExtResource("27_eb5m0")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/White_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -436,7 +330,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_qeypo")
+info = ExtResource("31_xndjy")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/Goldfish_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)
@@ -483,7 +377,7 @@ texture_hover = ExtResource("3_vf304")
 texture_disabled = ExtResource("4_q4utm")
 script = ExtResource("5_c7iad")
 type_of_object = 0
-info = SubResource("Resource_a1p8q")
+info = ExtResource("35_x7dyc")
 
 [node name="Equip_Button" type="TextureButton" parent="Page_2/Poo_Slime"]
 self_modulate = Color(0, 0.968627, 0.00784314, 1)

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://dy0smxsupxrm6"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_ble2k"]
+[ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="2_6jo1q"]
+
+[resource]
+script = ExtResource("1_ble2k")
+texture = ExtResource("2_6jo1q")
+description = "The life regen passive heals you 3HP every 6 seconds."

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://cdnxnqhabikj4"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_iqa1x"]
+[ext_resource type="Texture2D" uid="uid://b27rbgvhlf0ex" path="res://Sprites/Pets/BabyCannon/BabyCannonDisplay.png" id="2_0a1nn"]
+
+[resource]
+script = ExtResource("1_iqa1x")
+texture = ExtResource("2_0a1nn")
+description = "Baby Cannon! A cannon has never looked so cute before. I want to pet him so bad, and I'm sure you want it too. Cosmetic item, it has no effect."

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://b7i3nm40xytts"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_0hsif"]
+[ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="2_ihlkb"]
+
+[resource]
+script = ExtResource("1_0hsif")
+texture = ExtResource("2_ihlkb")
+description = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."

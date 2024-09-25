@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://d32x7m5o3d0f5"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_lryhf"]
+[ext_resource type="Texture2D" uid="uid://brp7538ftbvf5" path="res://Sprites/Hats/DevilishHorns.png" id="2_uasep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mql35"]
+atlas = ExtResource("2_uasep")
+region = Rect2(0, 0, 15, 7)
+
+[resource]
+script = ExtResource("1_lryhf")
+texture = SubResource("AtlasTexture_mql35")
+description = "Devilish horns? That's kind of evil and cool... And another thing that I don't want to mention. Cosmetic item, it has no effect."

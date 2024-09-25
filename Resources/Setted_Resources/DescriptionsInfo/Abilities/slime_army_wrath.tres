@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://d3k1aovc1n7ft"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_60gke"]
+[ext_resource type="Texture2D" uid="uid://cphatfhm3iqp5" path="res://Sprites/Abilities/SlimeArmyWrathAbility.png" id="2_nkaag"]
+
+[resource]
+script = ExtResource("1_60gke")
+cooldown = "24"
+energy_use = "70"
+texture = ExtResource("2_nkaag")
+description = "The Slime Army Wrath ability gives all your summons (turrets and minions) a x3 damage buff for a limited time."

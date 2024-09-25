@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SlimeInfo" load_steps=5 format=3 uid="uid://ww2uutnntteg"]
+
+[ext_resource type="Texture2D" uid="uid://dkk3f3prjpkvg" path="res://Sprites/Player/GreenSlime/SprintPerk.png" id="1_ylt2m"]
+[ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_5ug2f"]
+[ext_resource type="Texture2D" uid="uid://g1xdeps4pcd5" path="res://Sprites/Player/GreenSlime/GreenSlime.png" id="3_7mms4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eq72e"]
+atlas = ExtResource("3_7mms4")
+region = Rect2(1, 0, 15, 10)
+
+[resource]
+script = ExtResource("2_5ug2f")
+life = "100"
+max_energy = "200"
+speed = "110"
+resistance = "0"
+perk_texture = ExtResource("1_ylt2m")
+perk_cooldown = "0"
+perk_energy_use = "1"
+texture = SubResource("AtlasTexture_eq72e")
+description = "The green slime has the sprint perk, that boosts your movement speed while holding your perk key."

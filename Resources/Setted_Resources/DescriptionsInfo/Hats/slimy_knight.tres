@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://mra4ju6ykag6"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_vhy5a"]
+[ext_resource type="Texture2D" uid="uid://dgjs6acdj11ot" path="res://Sprites/Hats/SlimyKnight.png" id="2_nqej7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hp80e"]
+atlas = ExtResource("2_nqej7")
+region = Rect2(1, 0, 15, 9)
+
+[resource]
+script = ExtResource("1_vhy5a")
+texture = SubResource("AtlasTexture_hp80e")
+description = "Slimy Knight! You should be a fan of that funny game of that bug that says \"Garama!\", \"Shaw!\". I'm, too. Cosmetic item, it has no effect."

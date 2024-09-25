@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=4 format=3 uid="uid://djvn6s0ufwhfu"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_f5amw"]
+[ext_resource type="Texture2D" uid="uid://b8p08vx5ohvby" path="res://Sprites/Hats/WitchHat.png" id="2_vngne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mqn6i"]
+atlas = ExtResource("2_vngne")
+region = Rect2(0, 0, 15, 13)
+
+[resource]
+script = ExtResource("1_f5amw")
+texture = SubResource("AtlasTexture_mqn6i")
+description = "A witch hat! I see, so you like being magic and misterious. Cosmetic item, it has no effect."

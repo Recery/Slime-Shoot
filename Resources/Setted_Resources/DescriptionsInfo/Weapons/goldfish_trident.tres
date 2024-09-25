@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=3 format=3 uid="uid://cve8xom6627ud"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_vhbgl"]
+[ext_resource type="Texture2D" uid="uid://diyl4yku8xv0r" path="res://Sprites/Weapons/GoldfishTrident.png" id="2_w5452"]
+
+[resource]
+script = ExtResource("1_vhbgl")
+cooldown = "2.5"
+energy_use = "95"
+texture = ExtResource("2_w5452")
+description = "Use the Goldfish Trident and you'll charge at your mouse position, dealing damage and stealing life to all enemies in your path. You won't take damage while charging. Goldfish Slime signature weapon."

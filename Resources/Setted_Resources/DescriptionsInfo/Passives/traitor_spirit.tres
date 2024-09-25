@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemInfo" load_steps=3 format=3 uid="uid://bd3rvntucn0j"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="1_c76av"]
+[ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="2_1k6ju"]
+
+[resource]
+script = ExtResource("1_c76av")
+texture = ExtResource("2_1k6ju")
+description = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."

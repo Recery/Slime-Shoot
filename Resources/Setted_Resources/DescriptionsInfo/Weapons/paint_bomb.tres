@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="UsableItemInfo" load_steps=4 format=3 uid="uid://dlpbrc3mkyght"]
+
+[ext_resource type="Script" path="res://Resources/Scripts/weapon_info.gd" id="1_uxuyq"]
+[ext_resource type="Texture2D" uid="uid://cagdrf4uyy1l4" path="res://Sprites/Weapons/PaintBomb.png" id="2_ycbpm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oegwg"]
+atlas = ExtResource("2_ycbpm")
+region = Rect2(0, 0, 7, 10)
+
+[resource]
+script = ExtResource("1_uxuyq")
+cooldown = "2.1"
+energy_use = "70"
+texture = SubResource("AtlasTexture_oegwg")
+description = "The paint bomb deals low damage to the first enemy it hits. After that, it creates a paint puddle that will constantly damage and slow down enemies inside it."
