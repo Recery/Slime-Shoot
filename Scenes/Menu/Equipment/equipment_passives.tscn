@@ -1,115 +1,62 @@
-[gd_scene load_steps=55 format=3 uid="uid://dp0eoiclataar"]
+[gd_scene load_steps=54 format=3 uid="uid://dp0eoiclataar"]
 
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_qx2i8"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_k7hyb"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_ksbbk"]
 [ext_resource type="Texture2D" uid="uid://3xydeogin75d" path="res://Sprites/Menu/SmallButtonLocked.png" id="4_ufowc"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Description_Button.gd" id="5_ywpcj"]
+[ext_resource type="Resource" uid="uid://csjpfnhok7kay" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/energy_loot.tres" id="6_k2ctt"]
 [ext_resource type="Texture2D" uid="uid://d2nao0frg851b" path="res://Sprites/Passives/LifeRegenPassive.png" id="6_lphj4"]
-[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="6_xp7r1"]
 [ext_resource type="Texture2D" uid="uid://c4kmrioxayp1c" path="res://Sprites/Menu/KeyFrame.png" id="7_iy4b2"]
 [ext_resource type="Texture2D" uid="uid://ctgm1hiwc578x" path="res://Sprites/Menu/KeyFramePress.png" id="8_vcpna"]
 [ext_resource type="Texture2D" uid="uid://djy63s21fhgml" path="res://Sprites/Menu/KeyFrameHover.png" id="9_cen6v"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Slot_Selection_Passives.gd" id="10_4yeco"]
 [ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="10_gysxj"]
 [ext_resource type="PackedScene" uid="uid://cg6u0ffwolmut" path="res://Scenes/Passives/life_regen_passive.tscn" id="11_8ilpw"]
+[ext_resource type="Resource" uid="uid://dy0smxsupxrm6" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/life_regen.tres" id="14_14bm0"]
 [ext_resource type="Texture2D" uid="uid://odvmr4eo07xb" path="res://Sprites/Passives/EnergyLootPassive.png" id="15_q4wss"]
 [ext_resource type="PackedScene" uid="uid://btekfbe0jpc7x" path="res://Scenes/Passives/energy_loot_passive.tscn" id="16_fvnnu"]
 [ext_resource type="Texture2D" uid="uid://c330afso8cxev" path="res://Sprites/Menu/Button.png" id="16_svsdt"]
+[ext_resource type="Resource" uid="uid://bifblietin6b0" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/resistance.tres" id="17_jrd14"]
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/Equipped_Passives_Sprite.gd" id="17_lkvr6"]
 [ext_resource type="Texture2D" uid="uid://58atlpp0h8ty" path="res://Sprites/Passives/ResistancePassive.png" id="17_xdo0y"]
 [ext_resource type="PackedScene" uid="uid://dsvtj72ccpu5e" path="res://Scenes/Passives/resistance_passive.tscn" id="18_gotk5"]
 [ext_resource type="Texture2D" uid="uid://bpc1c6uxpklp" path="res://Sprites/Passives/ExtraSpeedPassive.png" id="19_nighk"]
 [ext_resource type="PackedScene" uid="uid://crj0pwayi1t0i" path="res://Scenes/Passives/extra_speed_passive.tscn" id="20_71gix"]
+[ext_resource type="Resource" uid="uid://bsnokv5asricu" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/extra_speed.tres" id="20_odj1c"]
 [ext_resource type="Texture2D" uid="uid://b5g618h3ns3he" path="res://Sprites/Passives/MiniBotPassive.png" id="21_ctbsa"]
 [ext_resource type="PackedScene" uid="uid://b6sp51iby0xnt" path="res://Scenes/Passives/mini_bot_passive.tscn" id="22_e1s0c"]
+[ext_resource type="Resource" uid="uid://fxt7enhtjkk" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/minibot.tres" id="23_ftny0"]
 [ext_resource type="Texture2D" uid="uid://bv386jjvqxa16" path="res://Sprites/Passives/CriticalDamagePassive.png" id="23_k05s4"]
 [ext_resource type="PackedScene" uid="uid://b1r5mv3opfofm" path="res://Scenes/Passives/critical_damage_passive.tscn" id="24_j36c0"]
 [ext_resource type="Texture2D" uid="uid://cy6imfwi0wuqn" path="res://Sprites/Passives/ExtraEnergyPassive.png" id="25_6fsua"]
+[ext_resource type="Resource" uid="uid://ct0v3uq0fxu76" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/critical_damage.tres" id="26_13ge2"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="26_jkijh"]
 [ext_resource type="Texture2D" uid="uid://cvdtt6fqwvwsu" path="res://Sprites/Passives/SharperWeaponsPassive.png" id="27_fwe5e"]
 [ext_resource type="PackedScene" uid="uid://camfigffwx7ea" path="res://Scenes/Passives/sharper_weapons_passive.tscn" id="28_mfbs2"]
+[ext_resource type="Resource" uid="uid://5p8srlckpn72" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/extra_energy.tres" id="29_5ldmx"]
 [ext_resource type="Texture2D" uid="uid://cy615oucucj6k" path="res://Sprites/Passives/MeteorPassive.png" id="29_i4xvq"]
 [ext_resource type="PackedScene" uid="uid://bdjxtrv6jpkxd" path="res://Scenes/Passives/meteor_passive.tscn" id="30_iv02c"]
 [ext_resource type="Texture2D" uid="uid://b8u8ld8q2cgcr" path="res://Sprites/Passives/CoffeeTrailPassive.png" id="31_htjx6"]
+[ext_resource type="Resource" uid="uid://hopfkk4ssx5n" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/sharper_weapons.tres" id="32_4q3np"]
 [ext_resource type="PackedScene" uid="uid://byh2ontnavkxs" path="res://Scenes/Passives/coffee_trail_passive.tscn" id="32_hh6om"]
 [ext_resource type="Texture2D" uid="uid://b8tx3826fcggy" path="res://Sprites/Passives/EnemyHDDPassive.png" id="33_uqbx4"]
 [ext_resource type="PackedScene" uid="uid://bpdhevfg5utky" path="res://Scenes/Passives/enemy_HDD_passive.tscn" id="34_0jyv0"]
 [ext_resource type="Texture2D" uid="uid://caymtft3jefkg" path="res://Sprites/Passives/TraitorSpiritPassive.png" id="35_jmvm4"]
+[ext_resource type="Resource" uid="uid://cpbcoepmx35ky" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/meteor.tres" id="35_lrar1"]
 [ext_resource type="PackedScene" uid="uid://coclfnr3b0qaw" path="res://Scenes/Passives/traitor_spirit_passive.tscn" id="36_edytl"]
 [ext_resource type="LabelSettings" uid="uid://cr6cnbs787fr1" path="res://Resources/Setted_Resources/cinematic_description_text.tres" id="37_443nq"]
 [ext_resource type="Texture2D" uid="uid://cwl5xjkqdigjt" path="res://Sprites/Passives/ElectricVinePassive.png" id="37_ujqlb"]
 [ext_resource type="PackedScene" uid="uid://cac1cadcxq0ad" path="res://Scenes/Passives/electric_vine_passive.tscn" id="38_r8882"]
-
-[sub_resource type="Resource" id="Resource_58qy0"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("15_q4wss")
-description = "The energy loot passive will make you recover energy when you kill an enemy. The energy recovered is based on the score given by the enemy."
+[ext_resource type="Resource" uid="uid://du5nj27duy8cp" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/coffee_trail.tres" id="38_wlkge"]
+[ext_resource type="Resource" uid="uid://b7i3nm40xytts" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/enemy_HDD.tres" id="41_komvi"]
+[ext_resource type="Resource" uid="uid://bd3rvntucn0j" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/traitor_spirit.tres" id="44_3f5mc"]
+[ext_resource type="Resource" uid="uid://cgc6887tsey7c" path="res://Resources/Setted_Resources/DescriptionsInfo/Passives/electric_vine.tres" id="47_ae2vh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_non8x"]
 font = ExtResource("10_gysxj")
 font_color = Color(1, 0.313726, 0.247059, 1)
 outline_size = 3
-
-[sub_resource type="Resource" id="Resource_6bg8y"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("6_lphj4")
-description = "The life regen passive heals you 3HP every 6 seconds."
-
-[sub_resource type="Resource" id="Resource_uylvx"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("17_xdo0y")
-description = "With the resistance passive you will receive less damage from enemy attacks."
-
-[sub_resource type="Resource" id="Resource_vcox2"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("19_nighk")
-description = "The extra speed passive gives you a small speed buff."
-
-[sub_resource type="Resource" id="Resource_136c5"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("21_ctbsa")
-description = "The mini bot passive summons 2 mini bots that will help you fighting enemies."
-
-[sub_resource type="Resource" id="Resource_73twc"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("23_k05s4")
-description = "With the Critical Damage passive, when you attack you have a 5% chance of getting a short x2 damage buff."
-
-[sub_resource type="Resource" id="Resource_f3n7r"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("25_6fsua")
-description = "The extra energy passive boosts your max energy by 75 points."
-
-[sub_resource type="Resource" id="Resource_bgma5"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("27_fwe5e")
-description = "With the sharper weapons passive, all your limited piercing attacks will pierce an extra enemy."
-
-[sub_resource type="Resource" id="Resource_45346"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("29_i4xvq")
-description = "With the meteor passive, every 8 seconds a powerful meteor will fall at your mouse position, dealing area damage to nearby enemies."
-
-[sub_resource type="Resource" id="Resource_i4nsi"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("31_htjx6")
-description = "With the coffee trail passive, you constantly create coffee puddles in your path. Enemies that touch it will massively increase their speed, but die after a few seconds."
-
-[sub_resource type="Resource" id="Resource_odqkw"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("33_uqbx4")
-description = "The enemy HDD passive stores data from the points received by killing enemies. From each data point of the HDD, you will recover life when needed. Can store up to 400 SB (Slimebytes)."
-
-[sub_resource type="Resource" id="Resource_hlxj0"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("35_jmvm4")
-description = "The Traitor Spirit passive makes the spirit of each defeated enemy to orbit around you, dealing damage to the first enemy it touches based on the defeated enemy damage."
-
-[sub_resource type="Resource" id="Resource_l82y2"]
-script = ExtResource("6_xp7r1")
-texture = ExtResource("37_ujqlb")
-description = "With the Electric Vine passive, from time to time some electric vines are going to trap a nearby enemy and damage it to death. Also, enemies near to electric vines will receive some damage."
 
 [node name="Equipment_Passives" type="Control"]
 layout_mode = 3
@@ -148,7 +95,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_58qy0")
+info = ExtResource("6_k2ctt")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Energy_Loot"]
 position = Vector2(14, 13)
@@ -246,7 +193,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_6bg8y")
+info = ExtResource("14_14bm0")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Life_Regen"]
 position = Vector2(14, 13)
@@ -344,7 +291,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_uylvx")
+info = ExtResource("17_jrd14")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Resistance"]
 position = Vector2(14, 13)
@@ -442,7 +389,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_vcox2")
+info = ExtResource("20_odj1c")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Speed"]
 position = Vector2(14, 13)
@@ -540,7 +487,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_136c5")
+info = ExtResource("23_ftny0")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Mini_Bot"]
 position = Vector2(14, 13)
@@ -638,7 +585,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_73twc")
+info = ExtResource("26_13ge2")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Critical_Damage"]
 position = Vector2(14, 13)
@@ -736,7 +683,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_f3n7r")
+info = ExtResource("29_5ldmx")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Extra_Energy"]
 position = Vector2(14, 13)
@@ -834,7 +781,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_bgma5")
+info = ExtResource("32_4q3np")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row1/Sharper_Weapons"]
 position = Vector2(14, 13)
@@ -936,7 +883,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_45346")
+info = ExtResource("35_lrar1")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Meteor"]
 position = Vector2(14, 13)
@@ -1034,7 +981,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_i4nsi")
+info = ExtResource("38_wlkge")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Coffee_Trail"]
 position = Vector2(14, 13)
@@ -1132,7 +1079,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_odqkw")
+info = ExtResource("41_komvi")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Enemy_HDD"]
 position = Vector2(14, 13)
@@ -1230,7 +1177,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_hlxj0")
+info = ExtResource("44_3f5mc")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Traitor_Spirit"]
 position = Vector2(14, 13)
@@ -1328,7 +1275,7 @@ texture_hover = ExtResource("3_ksbbk")
 texture_disabled = ExtResource("4_ufowc")
 script = ExtResource("5_ywpcj")
 type_of_object = 3
-info = SubResource("Resource_l82y2")
+info = ExtResource("47_ae2vh")
 
 [node name="Passive" type="Sprite2D" parent="Rows/Row2/Electric_Vine"]
 position = Vector2(14, 13)

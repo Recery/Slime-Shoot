@@ -2,7 +2,7 @@ extends Resource
 class_name SaveEquipment
 
 @export var equipped_slime := load("res://Scenes/Player/Green_Slime/green_slime.tscn")
-@export var unlocked_slimes := [load("res://Scenes/Player/Green_Slime/green_slime.tscn"), load("res://Scenes/Player/White_Slime/white_slime.tscn")]
+@export var unlocked_slimes := [load("res://Scenes/Player/Green_Slime/green_slime.tscn")]
 
 @export var equipped_weapons := [load("res://Scenes/Weapons/weedtite_microgun.tscn"), null, null]
 @export var unlocked_weapons := [load("res://Scenes/Weapons/weedtite_microgun.tscn")]

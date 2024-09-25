@@ -6,4 +6,4 @@
 [resource]
 script = ExtResource("1_60s0g")
 texture = ExtResource("2_bg408")
-description = "The mini bot passive summons 2 mini bots that will help you fighting enemies."
+description = "The Minibot passive summons 2 Minibots that will help you fighting enemies."

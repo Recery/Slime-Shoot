@@ -16,8 +16,7 @@ enum object_types {SLIME, WEAPON, ABILITY, PASSIVE, HAT, PET}
 ## determina que slime lo desbloquea.
 @export var unlocked_by_slime : PackedScene = load("res://Scenes/Player/Green_Slime/green_slime.tscn")
 
-@export_group("Other info")
-@export var texture : Texture2D
+@export_group("Description info")
 @export var description_info : ItemInfo
 
 @onready var price_label := get_node("Price") as Label
@@ -26,7 +25,9 @@ var unlocked_array : Array
 
 func _ready() -> void:
 	price_label.text = str(needed_points)
-	get_node("Item").texture = texture
+	get_node("Item").texture = description_info.texture
+	if has_node("Perk") and description_info is SlimeInfo:
+		get_node("Perk").texture = description_info.perk_texture
 	
 	Events.save_file_changed.connect(set_button_states)
 	set_button_states()
