@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="1_gfs7h"]
 [ext_resource type="Texture2D" uid="uid://dlw6hsul56alj" path="res://Sprites/Menu/Blue_Button_Press.png" id="2_d023j"]
 [ext_resource type="Texture2D" uid="uid://7t2kig2227a5" path="res://Sprites/Menu/Blue_Button_Hover.png" id="3_bg3ys"]
-[ext_resource type="Script" path="res://Scenes/Menu/Check_Button.gd" id="4_n3t34"]
+[ext_resource type="Script" path="res://Scripts/Menu/Settings/Check_Button.gd" id="4_n3t34"]
 
 [node name="Check_Button" type="TextureButton"]
 offset_left = -98.0
