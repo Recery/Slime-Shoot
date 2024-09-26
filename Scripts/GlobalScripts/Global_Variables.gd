@@ -4,7 +4,6 @@ signal change_main_scene(scene)
 
 var main_scene : Node
 var current_score : int # El puntaje no se reinicia a cero hasta que se entre nuevamente a un mapa desde el menu
-var total_points
 var player : Player
 
 var map_state_data : MapStateData
@@ -22,9 +21,6 @@ enum menu_maps {
 	CYBERSPACE
 	}
 var menu_map_photo := menu_maps.GRASSLANDS
-
-func _init() -> void:
-	total_points = 500
 
 func _ready() -> void:
 	main_scene = get_tree().root.get_child(5).get_child(0)
