@@ -34,6 +34,6 @@ func set_main_scene(scene : Node) -> void:
 	
 	if not main_scene.is_node_ready(): await main_scene.ready
 	for child in Funcs.get_all_children(main_scene):
-		if child.name == "Shadow" and not SaveSystem.get_curr_file().save_settings.shadows:
+		if child.name == "Shadow" and not SaveSystem.settings_data.shadows:
 			if not child.get_parent().is_in_group("Player_Slime"):
 				child.queue_free()

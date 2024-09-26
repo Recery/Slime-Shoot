@@ -138,7 +138,7 @@ func connect_damage_collision():
 func create_children():
 	add_child(load("res://Scenes/Player/dark_mode_rect.tscn").instantiate())
 	
-	if SaveSystem.get_curr_file().save_settings.show_FPS_counter:
+	if SaveSystem.settings_data.show_FPS_counter:
 		add_child(load("res://Scenes/Useful/fps_counter.tscn").instantiate())
 	
 	if SaveSystem.get_curr_file().save_equipment.equipped_hat != null:

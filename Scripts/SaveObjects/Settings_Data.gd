@@ -6,3 +6,5 @@ class_name SettingsData
 @export var sound_volume := -15
 @export var music_volume := -15
 @export var max_fps := 60
+
+@export var curr_save_slot : int = 0

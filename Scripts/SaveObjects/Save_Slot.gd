@@ -10,7 +10,7 @@ func _ready() -> void:
 	get_node("Slot").text = "S" + str(slot+1)
 	Events.draw_equipped_slime.connect(draw_slime)
 	
-	if not SaveSystem.get_save_file(slot).saved:
+	if not SaveSystem.is_file_saved(slot):
 		disable_file()
 
 func disable_file() -> void:
@@ -41,7 +41,7 @@ func set_active(active : bool) -> void:
 
 func _process(_delta: float) -> void:
 	points_label.text = str(SaveSystem.get_save_file(slot).points)
-	set_active(SaveSystem.curr_slot == slot)
+	set_active(SaveSystem.settings_data.curr_save_slot == slot)
 
 func draw_slime() -> void:
 	Funcs.remove_direct_children(slime_pos)

@@ -122,7 +122,7 @@ func init_pathfinding() -> void:
 	cooldown_pathfinding.start()
 
 func init_shadows() -> void:
-	if not SaveSystem.get_curr_file().save_settings.shadows and has_node("Shadow"):
+	if not SaveSystem.settings_data.shadows and has_node("Shadow"):
 		get_node("Shadow").queue_free()
 
 var custom_target_pos
