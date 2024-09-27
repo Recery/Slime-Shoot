@@ -2788,23 +2788,3 @@ offset_right = 18.0
 offset_bottom = 21.0
 text = "<"
 label_settings = SubResource("LabelSettings_o4dkv")
-
-[connection signal="pressed" from="Rows/Row1/Evil_Ball" to="Rows/Row1/Evil_Ball" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Balloon" to="Rows/Row1/Balloon" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Big_Evil_Ball" to="Rows/Row1/Big_Evil_Ball" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Bomb" to="Rows/Row1/Bomb" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Cannon" to="Rows/Row1/Cannon" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Clown_Bomb" to="Rows/Row1/Clown_Bomb" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Slime_Eater_Moth" to="Rows/Row1/Slime_Eater_Moth" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row1/Slime_Eater_Larva" to="Rows/Row1/Slime_Eater_Larva" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Chameleon" to="Rows/Row2/Chameleon" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Scorpion" to="Rows/Row2/Scorpion" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Rolling_Cactus" to="Rows/Row2/Rolling_Cactus" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Sandstone_Golem" to="Rows/Row2/Sandstone_Golem" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Stoddler" to="Rows/Row2/Stoddler" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Desert_Mother" to="Rows/Row2/Desert_Mother" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Mummified_Slime" to="Rows/Row2/Mummified_Slime" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row2/Sock" to="Rows/Row2/Sock" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row3/Frozen_Bomber" to="Rows/Row3/Frozen_Bomber" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row3/Boolean" to="Rows/Row3/Boolean" method="_on_pressed"]
-[connection signal="pressed" from="Rows/Row3/Bootstrapper" to="Rows/Row3/Bootstrapper" method="_on_pressed"]

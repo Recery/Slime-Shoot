@@ -6,13 +6,18 @@ extends TextureButton
 @export var enemy : PackedScene
 
 func _ready() -> void:
-	if not SaveSystem.get_curr_file().almanac_unlocked.has(enemy.get_path()):
-		disabled = true
-		if has_node("Enemy_Sprite"): get_node("Enemy_Sprite").visible = false
+	set_button_state()
+	Events.save_file_changed.connect(set_button_state)
 	
 	back_button.pressed.connect(_on_back_button_pressed)
 
-func _on_pressed():
+func set_button_state() -> void:
+	var active := SaveSystem.get_curr_file().almanac_unlocked.has(enemy.get_path())
+	
+	disabled = not active
+	if has_node("Enemy_Sprite"): get_node("Enemy_Sprite").visible = active
+
+func _pressed():
 	activated = true
 	Funcs.sound_play("res://Sounds/uiclick.mp3", 20)
 	Vars.main_scene.get_node("BackButton").visible = false
