@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfselgvligbfk" path="res://Sprites/Player/YellowSlime/ShockDefensePerk.png" id="1_jeib0"]
 [ext_resource type="Script" path="res://Resources/Scripts/slime_info.gd" id="2_ejk7y"]
-[ext_resource type="Texture2D" path="res://Sprites/Player/YellowSlime/YellowSlime.png" id="3_voi0n"]
+[ext_resource type="Texture2D" uid="uid://pjwkiwsctmu3" path="res://Sprites/Player/YellowSlime/YellowSlime.png" id="3_voi0n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_04ji8"]
 atlas = ExtResource("3_voi0n")

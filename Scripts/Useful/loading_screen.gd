@@ -27,7 +27,8 @@ var tips := [
 "You don't understand what your enemies do? Check the enemy almanac!",
 "Pluto is not a planet, stop living in the past and accept it.",
 "Fun fact: Recery likes saying fun fact.",
-"Alt+F4 to get infinite green apples... Wait, it's a joke, don't close Slime Shoot!"
+"Alt+F4 to get infinite green apples... Wait, it's a joke, don't close Slime Shoot!",
+"Don't worry, the game saves itself!"
 ]
 
 func _ready() -> void:
