@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dflcc4sd53cuw"]
+[gd_scene load_steps=22 format=3 uid="uid://dflcc4sd53cuw"]
 
 [ext_resource type="Script" path="res://Scripts/Menu/Equipment/description.gd" id="1_is8ot"]
 [ext_resource type="Texture2D" uid="uid://8sdxpso45do3" path="res://Sprites/Menu/Blue_Button.png" id="2_jh1go"]
@@ -41,10 +41,21 @@ texture_margin_top = 9.0
 texture_margin_right = 1.0
 texture_margin_bottom = 9.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai0vy"]
+content_margin_left = 4.0
+content_margin_right = 4.0
+bg_color = Color(0, 0, 0, 0.756863)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+anti_aliasing = false
+
 [sub_resource type="Theme" id="Theme_643p6"]
 VScrollBar/styles/grabber = SubResource("StyleBoxTexture_iid0c")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_rx54w")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_wwjh2")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_ai0vy")
 
 [sub_resource type="LabelSettings" id="LabelSettings_uynh0"]
 font = ExtResource("4_wx27r")
