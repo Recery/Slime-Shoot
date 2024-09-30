@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://wxhnxi04x2af"]
+
+[ext_resource type="Script" path="res://Scripts/Garden/Equipment/SeedPacket.gd" id="1_84wq6"]
+[ext_resource type="Texture2D" uid="uid://cgggbxnytc4fh" path="res://Sprites/Garden/Equipment/SeedPackets/GreenAppleSeedPacket.png" id="1_oamvf"]
+[ext_resource type="PackedScene" uid="uid://b4vckb5vjawe5" path="res://Scenes/Garden/Crops/green_apple_plant.tscn" id="2_1f5d3"]
+[ext_resource type="Script" path="res://Scripts/Useful/Friendly_Projectile.gd" id="4_bar1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6007b"]
+size = Vector2(16, 10)
+
+[node name="Green_Apple_Seed_Packet" type="Sprite2D" node_paths=PackedStringArray("plant_projectile", "collision")]
+texture = ExtResource("1_oamvf")
+script = ExtResource("1_84wq6")
+crop_to_plant = ExtResource("2_1f5d3")
+plant_projectile = NodePath("Plant_Projectile")
+collision = NodePath("Plant_Projectile/CollisionShape2D")
+shoot_cooldown = 0.8
+original_energy_use = 24.0
+energy_recover_cooldown = 1.1
+
+[node name="Plant_Projectile" type="Area2D" parent="."]
+position = Vector2(6.5, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_bar1h")
+despawn_time = 0.0
+has_movement = false
+collide_with_tiles = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant_Projectile"]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_6007b")
+disabled = true

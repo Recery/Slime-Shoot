@@ -1,11 +1,17 @@
-[gd_scene load_steps=27 format=3 uid="uid://xcb3sy5rg4sn"]
+[gd_scene load_steps=33 format=3 uid="uid://xcb3sy5rg4sn"]
 
 [ext_resource type="PackedScene" uid="uid://cnh8ic5jmr58n" path="res://Scenes/Menu/Map_Selection/map_button.tscn" id="1_rdn44"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="2_iuk1d"]
 [ext_resource type="Texture2D" uid="uid://128nynnnkr1o" path="res://Sprites/Menu/MapsButtons/Grasslands.png" id="2_p60ma"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="3_533b4"]
 [ext_resource type="Texture2D" uid="uid://b4yrmjylnrsr4" path="res://Sprites/Menu/MapsButtons/GrasslandsHover.png" id="3_vm7vn"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="4_tb6dc"]
+[ext_resource type="Texture2D" uid="uid://dn18x01wiqpkp" path="res://Sprites/Menu/WateringCanIcon.png" id="5_2oyx1"]
+[ext_resource type="Script" path="res://Scripts/Menu/Map_Selection/Map_Button.gd" id="5_3dfqj"]
 [ext_resource type="Texture2D" uid="uid://c2ywsxqb03dlp" path="res://Sprites/Menu/MapsButtons/Arrow.png" id="5_5qald"]
 [ext_resource type="PackedScene" uid="uid://cfc8fu5xdeo55" path="res://Scenes/Maps/Grasslands_Level.tscn" id="5_xac7s"]
 [ext_resource type="PackedScene" uid="uid://dwmfsbcjcol8y" path="res://Scenes/Player/Green_Slime/green_slime.tscn" id="6_l5pek"]
+[ext_resource type="PackedScene" uid="uid://bnlp3lra2kqco" path="res://Scenes/Maps/slime_garden.tscn" id="6_uerab"]
 [ext_resource type="Texture2D" uid="uid://cghidm4qs0u3q" path="res://Sprites/Menu/MapsButtons/Desert.png" id="7_6egdv"]
 [ext_resource type="PackedScene" uid="uid://btb457grqow0g" path="res://Scenes/Cinematic/intro.tscn" id="7_6w4tq"]
 [ext_resource type="Texture2D" uid="uid://bynae8dkavjoa" path="res://Sprites/Menu/MapsButtons/DesertHover.png" id="8_4vrjy"]
@@ -60,6 +66,27 @@ offset_left = 48.0
 offset_top = -27.0
 offset_right = 88.0
 offset_bottom = 13.0
+
+[node name="Garden" type="TextureButton" parent="Buttons"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 75.0
+offset_right = 91.0
+offset_bottom = 103.0
+texture_normal = ExtResource("2_iuk1d")
+texture_pressed = ExtResource("3_533b4")
+texture_hover = ExtResource("4_tb6dc")
+script = ExtResource("5_3dfqj")
+map_to_enter = ExtResource("6_uerab")
+unlocked_by_slime = ExtResource("6_l5pek")
+map_name = "Slime Garden"
+
+[node name="Icon" type="TextureRect" parent="Buttons/Garden"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 28.0
+texture = ExtResource("5_2oyx1")
+stretch_mode = 3
 
 [node name="Grasslands" parent="Buttons" instance=ExtResource("1_rdn44")]
 layout_mode = 1

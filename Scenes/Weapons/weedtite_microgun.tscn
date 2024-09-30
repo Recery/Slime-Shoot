@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/Weapons/Weedtite_Microgun.gd" id="2_wefgy"]
 [ext_resource type="AudioStream" uid="uid://cu5k7coib4glb" path="res://Sounds/PistolShoot.mp3" id="3_fy22e"]
 
-[node name="Snowy_Uzi" type="Sprite2D"]
+[node name="Weedtite_Microgun" type="Sprite2D"]
 texture_filter = 1
 texture = ExtResource("1_kntt3")
 script = ExtResource("2_wefgy")

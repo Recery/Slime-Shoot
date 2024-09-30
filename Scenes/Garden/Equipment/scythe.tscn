@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpm234cvp806n"]
+
+[ext_resource type="Texture2D" uid="uid://bbd0iu5s50kxc" path="res://Sprites/Garden/Equipment/Scythe.png" id="1_cgkwo"]
+[ext_resource type="Script" path="res://Scripts/Garden/Equipment/scythe.gd" id="2_rkrd7"]
+
+[node name="Scythe" type="Sprite2D"]
+texture = ExtResource("1_cgkwo")
+script = ExtResource("2_rkrd7")
+shoot_cooldown = 1.1
+original_energy_use = 24.0
+energy_recover_cooldown = 1.2
+
+[node name="Slash_Pos" type="Node2D" parent="."]
+position = Vector2(6, 0)
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]

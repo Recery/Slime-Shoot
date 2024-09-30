@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1oyb3yl0q0e"]
+
+[ext_resource type="Script" path="res://Scripts/Garden/farmland.gd" id="1_r8en3"]
+[ext_resource type="Texture2D" uid="uid://bcxgb3lihlvgc" path="res://Sprites/Garden/FarmLand.png" id="2_27m5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ib8"]
+size = Vector2(24, 24)
+
+[node name="Farmland" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_r8en3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_27m5k")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q4ib8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
