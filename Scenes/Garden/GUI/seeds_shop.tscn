@@ -1,0 +1,260 @@
+[gd_scene load_steps=46 format=3 uid="uid://bmjmhqfsykeak"]
+
+[ext_resource type="Texture2D" uid="uid://8gjwtphg7oat" path="res://Sprites/Menu/PointsPanel.png" id="1_kgdqf"]
+[ext_resource type="Texture2D" uid="uid://bfgsuwwcnqokj" path="res://Sprites/Menu/GreenAppleDisplay.png" id="2_lh6cl"]
+[ext_resource type="FontFile" uid="uid://b0ut30id2qj3r" path="res://Fonts/dogicapixel.ttf" id="3_xrp4m"]
+[ext_resource type="Script" path="res://Scripts/Useful/Points.gd" id="4_ggkl2"]
+[ext_resource type="PackedScene" uid="uid://hrendj7cy1wp" path="res://Scenes/Menu/Shop/Shop_Button.tscn" id="5_g2yrm"]
+[ext_resource type="Script" path="res://Scripts/Garden/GUI/Shop_Button.gd" id="6_g0eum"]
+[ext_resource type="PackedScene" uid="uid://bs7cy46mfg3li" path="res://Scenes/Weapons/grenade.tscn" id="7_ibs5m"]
+[ext_resource type="PackedScene" uid="uid://wxhnxi04x2af" path="res://Scenes/Garden/Equipment/green_apple_seed_packet.tscn" id="7_nn0dd"]
+[ext_resource type="Script" path="res://Resources/Scripts/item_info.gd" id="8_0vejy"]
+[ext_resource type="Resource" uid="uid://c0yr6ffhat72u" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/grenade.tres" id="8_do1hp"]
+[ext_resource type="PackedScene" uid="uid://cd1txb43a6bug" path="res://Scenes/Weapons/mini_knife.tscn" id="9_3ive4"]
+[ext_resource type="Texture2D" uid="uid://cgggbxnytc4fh" path="res://Sprites/Garden/Equipment/SeedPackets/GreenAppleSeedPacket.png" id="9_ixjhk"]
+[ext_resource type="Resource" uid="uid://bm3w815s37y05" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/mini_knife.tres" id="10_dup6v"]
+[ext_resource type="PackedScene" uid="uid://dqqybqprvuj7i" path="res://Scenes/Weapons/rock.tscn" id="11_b5mp0"]
+[ext_resource type="Resource" uid="uid://b3vx20t3vh6hg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/rock.tres" id="12_qdvnm"]
+[ext_resource type="PackedScene" uid="uid://0fax33b8yau" path="res://Scenes/Weapons/frost_staff.tscn" id="13_rhd51"]
+[ext_resource type="Resource" uid="uid://dpxf2rhu40e3n" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/frost_staff.tres" id="14_puiqi"]
+[ext_resource type="PackedScene" uid="uid://xfg1addbh7i3" path="res://Scenes/Weapons/energy_lantern.tscn" id="15_eq6g5"]
+[ext_resource type="Resource" uid="uid://dprxo51li7dwl" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/energy_lantern.tres" id="16_44t53"]
+[ext_resource type="PackedScene" uid="uid://k8ownvc83oig" path="res://Scenes/Weapons/baby_log.tscn" id="17_hk2ax"]
+[ext_resource type="Resource" uid="uid://1j5be2omqqck" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/baby_log.tres" id="18_3fuat"]
+[ext_resource type="PackedScene" uid="uid://drstnvaxkms6w" path="res://Scenes/Weapons/sandy_eagle.tscn" id="19_x3m4i"]
+[ext_resource type="PackedScene" uid="uid://3lce3d7w25x3" path="res://Scenes/Player/Yellow_Slime/yellow_slime.tscn" id="20_g1x20"]
+[ext_resource type="Resource" uid="uid://cnfmabu4p5wlg" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/sandy_eagle.tres" id="21_rc0oa"]
+[ext_resource type="PackedScene" uid="uid://bodvguqwnpkwj" path="res://Scenes/Weapons/paint_bomb.tscn" id="22_apq4c"]
+[ext_resource type="Resource" uid="uid://dlpbrc3mkyght" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/paint_bomb.tres" id="23_7yoat"]
+[ext_resource type="PackedScene" uid="uid://bxkmog2pchtmw" path="res://Scenes/Weapons/Thingy_Of_The_Thing/thingy_of_the_thing.tscn" id="24_qkrt0"]
+[ext_resource type="Resource" uid="uid://crjt0qpm266ae" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/thingy_of_the_thing.tres" id="25_gq5ij"]
+[ext_resource type="PackedScene" uid="uid://ddrwbogyfr3sr" path="res://Scenes/Weapons/pressure_washer.tscn" id="26_j84a7"]
+[ext_resource type="Resource" uid="uid://c8kqfa8iw5fit" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/pressure_washer.tres" id="27_fpvik"]
+[ext_resource type="PackedScene" uid="uid://cc8qstvwg1e3o" path="res://Scenes/Weapons/snowy_uzi.tscn" id="28_r5tp1"]
+[ext_resource type="PackedScene" uid="uid://btggtpp08413a" path="res://Scenes/Player/White_Slime/white_slime.tscn" id="29_y1oc5"]
+[ext_resource type="Resource" uid="uid://dcrcb1ipdcxg0" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/snowy_uzi.tres" id="30_qwxhr"]
+[ext_resource type="PackedScene" uid="uid://bstcsdgr6hq2f" path="res://Scenes/Weapons/green_apple_stick.tscn" id="31_gn2f7"]
+[ext_resource type="Resource" uid="uid://yl82i4tvahcr" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/green_apple_stick.tres" id="32_iy55d"]
+[ext_resource type="PackedScene" uid="uid://ycrv083kmlcw" path="res://Scenes/Weapons/goldfish_trident.tscn" id="33_ootch"]
+[ext_resource type="PackedScene" uid="uid://dgvl1dkp18d0t" path="res://Scenes/Player/Goldfish_Slime/goldfish_slime.tscn" id="34_c04rf"]
+[ext_resource type="Resource" uid="uid://cve8xom6627ud" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/goldfish_trident.tres" id="35_kgs5m"]
+[ext_resource type="Texture2D" uid="uid://br06ilqk4ph1t" path="res://Sprites/Menu/SmallButton.png" id="36_4xknh"]
+[ext_resource type="Texture2D" uid="uid://bckq4415dpkmq" path="res://Sprites/Menu/SmallButtonPress.png" id="37_m6xmg"]
+[ext_resource type="Texture2D" uid="uid://bo05c63fb5nmd" path="res://Sprites/Menu/SmallButtonHover.png" id="38_573s3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6eyim"]
+font = ExtResource("3_xrp4m")
+font_size = 8
+font_color = Color(0.341176, 0.541176, 1, 1)
+outline_size = 3
+
+[sub_resource type="Resource" id="Resource_ombir"]
+script = ExtResource("8_0vejy")
+texture = ExtResource("9_ixjhk")
+description = "The Green Apple seed packet lets you plant a green apple seed in soil, which grows into a big green apple after some time. Harvesting it gives you some green apples to buy stuff!"
+
+[sub_resource type="LabelSettings" id="LabelSettings_utxhg"]
+font = ExtResource("3_xrp4m")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3y3vt"]
+font = ExtResource("3_xrp4m")
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Seeds_Shop" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchor_right = 0.227
+anchor_bottom = 0.227
+offset_right = 0.495972
+offset_bottom = -0.0960083
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(262, 147)
+
+[node name="Dark_Background" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 0
+offset_left = -91.0
+offset_top = -49.0
+offset_right = 365.0
+offset_bottom = 235.0
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="Points_Panel" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.231373, 0.172549, 1)
+position = Vector2(131, 20)
+texture = ExtResource("1_kgdqf")
+
+[node name="Row" type="HBoxContainer" parent="Points_Panel"]
+offset_left = -31.0
+offset_top = -5.0
+offset_right = 31.0
+offset_bottom = 7.0
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Green_Apple" type="TextureRect" parent="Points_Panel/Row"]
+layout_mode = 2
+texture = ExtResource("2_lh6cl")
+stretch_mode = 2
+
+[node name="Points" type="Label" parent="Points_Panel/Row"]
+layout_mode = 2
+text = "111111"
+label_settings = SubResource("LabelSettings_6eyim")
+vertical_alignment = 1
+script = ExtResource("4_ggkl2")
+
+[node name="Seed_Packets" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 12.0
+offset_top = 46.0
+offset_right = 250.0
+offset_bottom = 138.0
+
+[node name="Rows" type="VBoxContainer" parent="Seed_Packets"]
+layout_mode = 0
+offset_right = 238.0
+offset_bottom = 60.0
+
+[node name="Row1" type="HBoxContainer" parent="Seed_Packets/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Green_Apple_Plant" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+script = ExtResource("6_g0eum")
+price = 50
+object_type = 0
+object_to_buy = ExtResource("7_nn0dd")
+description_info = SubResource("Resource_ombir")
+
+[node name="Grenade" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 400
+object_to_buy = ExtResource("7_ibs5m")
+description_info = ExtResource("8_do1hp")
+
+[node name="Mini_Knife" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 250
+object_to_buy = ExtResource("9_3ive4")
+description_info = ExtResource("10_dup6v")
+
+[node name="Rock" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 200
+object_to_buy = ExtResource("11_b5mp0")
+description_info = ExtResource("12_qdvnm")
+
+[node name="Frost_Staff" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 600
+object_to_buy = ExtResource("13_rhd51")
+description_info = ExtResource("14_puiqi")
+
+[node name="Energy_Lantern" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 550
+object_to_buy = ExtResource("15_eq6g5")
+description_info = ExtResource("16_44t53")
+
+[node name="Baby_Log" parent="Seed_Packets/Rows/Row1" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 450
+object_to_buy = ExtResource("17_hk2ax")
+description_info = ExtResource("18_3fuat")
+
+[node name="Row2" type="HBoxContainer" parent="Seed_Packets/Rows"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="Sandy_Eagle" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 1300
+object_to_buy = ExtResource("19_x3m4i")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("20_g1x20")
+description_info = ExtResource("21_rc0oa")
+
+[node name="Paint_Bomb" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 1300
+object_to_buy = ExtResource("22_apq4c")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("20_g1x20")
+description_info = ExtResource("23_7yoat")
+
+[node name="Thingy_Of_The_Thing" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 1150
+object_to_buy = ExtResource("24_qkrt0")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("20_g1x20")
+description_info = ExtResource("25_gq5ij")
+
+[node name="Pressure_Washer" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 1750
+object_to_buy = ExtResource("26_j84a7")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("20_g1x20")
+description_info = ExtResource("27_fpvik")
+
+[node name="Snowy_Uzi" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 2100
+object_to_buy = ExtResource("28_r5tp1")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("29_y1oc5")
+description_info = ExtResource("30_qwxhr")
+
+[node name="Green_Apple_Stick" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 2400
+object_to_buy = ExtResource("31_gn2f7")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("29_y1oc5")
+description_info = ExtResource("32_iy55d")
+
+[node name="Goldfish_Trident" parent="Seed_Packets/Rows/Row2" instance=ExtResource("5_g2yrm")]
+layout_mode = 2
+needed_points = 2500
+object_to_buy = ExtResource("33_ootch")
+unlocked_in_adventure = true
+unlocked_by_slime = ExtResource("34_c04rf")
+description_info = ExtResource("35_kgs5m")
+
+[node name="Weapon_Shop_Text" type="Label" parent="Seed_Packets"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 69.0
+offset_right = 207.0
+offset_bottom = 92.0
+text = "Seeds shop"
+label_settings = SubResource("LabelSettings_utxhg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="TextureButton" parent="."]
+offset_left = 5.0
+offset_top = 115.0
+offset_right = 33.0
+offset_bottom = 143.0
+texture_normal = ExtResource("36_4xknh")
+texture_pressed = ExtResource("37_m6xmg")
+texture_hover = ExtResource("38_573s3")
+metadata/_edit_group_ = true
+
+[node name="BackText" type="Label" parent="BackButton"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 18.0
+offset_bottom = 21.0
+text = "<"
+label_settings = SubResource("LabelSettings_3y3vt")

@@ -92,7 +92,7 @@
 [ext_resource type="PackedScene" uid="uid://b1r5mv3opfofm" path="res://Scenes/Passives/critical_damage_passive.tscn" id="69_8aj8j"]
 [ext_resource type="PackedScene" uid="uid://b2i1l32mu6f6n" path="res://Scenes/Abilities/cheese_transmutation_ability.tscn" id="69_rbdai"]
 [ext_resource type="Resource" uid="uid://c0yr6ffhat72u" path="res://Resources/Setted_Resources/DescriptionsInfo/Weapons/grenade.tres" id="70_au7rw"]
-[ext_resource type="PackedScene" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
+[ext_resource type="PackedScene" uid="uid://51lcfqt4842s" path="res://Scenes/Pets/baby_cannon.tscn" id="70_s47oh"]
 [ext_resource type="PackedScene" uid="uid://b76rgp7vc3wms" path="res://Scenes/Passives/extra_energy_passive.tscn" id="71_kowf4"]
 [ext_resource type="PackedScene" uid="uid://dv2jygicebcm8" path="res://Scenes/Abilities/lethal_vacuum_cleaner_ability.tscn" id="71_lft1i"]
 [ext_resource type="Resource" uid="uid://dyrgrqju25xgf" path="res://Resources/Setted_Resources/DescriptionsInfo/Hats/cat_ears.tres" id="71_pah4n"]

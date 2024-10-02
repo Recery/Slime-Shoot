@@ -4,7 +4,7 @@ class_name SaveEquipment
 @export var equipped_slime := load("res://Scenes/Player/Green_Slime/green_slime.tscn")
 @export var unlocked_slimes := [load("res://Scenes/Player/Green_Slime/green_slime.tscn")]
 
-@export var equipped_weapons := [load("res://Scenes/Garden/Equipment/green_apple_seed_packet.tscn"),
+@export var equipped_weapons := [load("res://Scenes/Garden/Equipment/weedtite_plant_seed_packet.tscn"),
 load("res://Scenes/Garden/Equipment/watering_can.tscn"),
 load("res://Scenes/Garden/Equipment/scythe.tscn")]
 @export var unlocked_weapons := [load("res://Scenes/Weapons/weedtite_microgun.tscn")]

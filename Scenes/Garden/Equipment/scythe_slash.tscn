@@ -65,6 +65,7 @@ _data = {
 }
 
 [node name="Scythe_Slash" type="Area2D" groups=["Harvester"]]
+position = Vector2(1.78814e-07, 0)
 scale = Vector2(2.5, 2.5)
 collision_layer = 2
 collision_mask = 0
@@ -74,7 +75,7 @@ despawn_time = 2.0
 has_movement = false
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5.6, -2.98023e-08)
+position = Vector2(4, -2.98023e-08)
 texture = ExtResource("2_ayrtf")
 hframes = 3
 
@@ -86,7 +87,7 @@ autoplay = "slash"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(10.6667, 0)
-polygon = PackedVector2Array(-10.6667, 0, -4.66667, 4.4, -4.66667, -4.4)
+polygon = PackedVector2Array(-10.6667, 0, -6.6667, 4.4, -6.6667, -4.4)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

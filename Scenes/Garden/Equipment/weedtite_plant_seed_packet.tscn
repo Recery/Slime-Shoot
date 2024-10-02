@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnngo4x78d5oa"]
+
+[ext_resource type="Texture2D" uid="uid://io2on64fgwpw" path="res://Sprites/Garden/Equipment/SeedPackets/WeedtiteSeedPacket.png" id="1_j0jqf"]
+[ext_resource type="Script" path="res://Scripts/Garden/Equipment/SeedPacket.gd" id="2_ffxqf"]
+[ext_resource type="PackedScene" uid="uid://ls6a80ou0soo" path="res://Scenes/Garden/Crops/weedtite_plant.tscn" id="3_y78ov"]
+[ext_resource type="Script" path="res://Scripts/Useful/Friendly_Projectile.gd" id="4_rx28k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbwo2"]
+size = Vector2(16, 10)
+
+[node name="Weedtite_Plant_Seed_Packet" type="Sprite2D" node_paths=PackedStringArray("plant_projectile", "collision")]
+texture = ExtResource("1_j0jqf")
+script = ExtResource("2_ffxqf")
+crop_to_plant = ExtResource("3_y78ov")
+plant_projectile = NodePath("Plant_Projectile")
+collision = NodePath("Plant_Projectile/CollisionShape2D")
+shoot_cooldown = 0.8
+original_energy_use = 24.0
+energy_recover_cooldown = 1.1
+
+[node name="Plant_Projectile" type="Area2D" parent="."]
+position = Vector2(6.5, 0)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("4_rx28k")
+despawn_time = 0.0
+has_movement = false
+collide_with_tiles = false
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant_Projectile"]
+position = Vector2(6.5, 0)
+shape = SubResource("RectangleShape2D_kbwo2")
+disabled = true

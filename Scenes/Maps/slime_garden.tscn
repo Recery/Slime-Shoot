@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bnlp3lra2kqco"]
+[gd_scene load_steps=14 format=3 uid="uid://bnlp3lra2kqco"]
 
 [ext_resource type="Script" path="res://Scripts/Useful/map.gd" id="1_pugkn"]
 [ext_resource type="Script" path="res://Resources/Scripts/EnemySpawnerTable.gd" id="2_aetjw"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dxt8e0f3v06l2" path="res://Sprites/Tiles/TileWater.png" id="5_lkykp"]
 [ext_resource type="Texture2D" uid="uid://bwnd282vormk4" path="res://Sprites/Tiles/TileBridge.png" id="6_hpkjv"]
 [ext_resource type="PackedScene" uid="uid://de1oyb3yl0q0e" path="res://Scenes/Garden/farmland.tscn" id="7_f3y7r"]
+[ext_resource type="PackedScene" uid="uid://cu0suow5wr5ko" path="res://Scenes/Garden/red_slime_npc.tscn" id="8_74osb"]
 
 [sub_resource type="Resource" id="Resource_5c0gy"]
 script = ExtResource("2_aetjw")
@@ -200,6 +201,12 @@ layer_2/tile_data = PackedInt32Array(-393215, 2, 1, -327679, 2, 0, -393216, 6553
 [node name="Farm_Land" parent="." instance=ExtResource("7_f3y7r")]
 position = Vector2(-72, -32)
 
+[node name="Farm_Land2" parent="." instance=ExtResource("7_f3y7r")]
+position = Vector2(-120, -8)
+
 [node name="Spawn_Position" type="Node2D" parent="."]
 
 [node name="Bullets" type="Node2D" parent="."]
+
+[node name="Red_Slime_NPC" parent="." instance=ExtResource("8_74osb")]
+position = Vector2(-16, -48)

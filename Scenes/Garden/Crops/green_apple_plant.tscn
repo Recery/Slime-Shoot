@@ -7,15 +7,10 @@
 [sub_resource type="Resource" id="Resource_76g2v"]
 script = ExtResource("2_av1wr")
 stages_textures = Array[Texture2D]([])
-grow_time = 30
+grow_time = 90
 
-[node name="Green_Apple_Plant" type="Area2D" node_paths=PackedStringArray("sprite")]
-script = ExtResource("1_qqh4r")
-sprite = NodePath("Sprite2D")
-crop_data = SubResource("Resource_76g2v")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Green_Apple_Plant" type="Sprite2D"]
 texture = ExtResource("3_m82h5")
 hframes = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+script = ExtResource("1_qqh4r")
+crop_data = SubResource("Resource_76g2v")

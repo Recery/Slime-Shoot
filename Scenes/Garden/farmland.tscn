@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://de1oyb3yl0q0e"]
+[gd_scene load_steps=5 format=3 uid="uid://de1oyb3yl0q0e"]
 
 [ext_resource type="Script" path="res://Scripts/Garden/farmland.gd" id="1_r8en3"]
 [ext_resource type="Texture2D" uid="uid://bcxgb3lihlvgc" path="res://Sprites/Garden/FarmLand.png" id="2_27m5k"]
+[ext_resource type="PackedScene" uid="uid://d21s3kgqk1hjy" path="res://Scenes/Useful/mini_progress_bar.tscn" id="3_hsams"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q4ib8"]
 size = Vector2(24, 24)
@@ -17,5 +18,9 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_q4ib8")
+
+[node name="Moisture_Progress" parent="." instance=ExtResource("3_hsams")]
+position = Vector2(-7.5, -9)
+fill_with_timer = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
